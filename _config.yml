@@ -1,0 +1,13 @@
+permalink: pretty
+
+url: "https://labs.maptiler.com/maplibre-web"
+
+maps:
+  key: R8rAisQ0L6EL1wW8JVYQ
+
+sass:
+  style: :compressed
+  sass_dir: style/
+
+exclude:
+  - "style/bootstrap/site"
