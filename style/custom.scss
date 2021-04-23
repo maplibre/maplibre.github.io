@@ -1,0 +1,16 @@
+.bg-navbar{
+  background: rgba(40, 93, 170, .9);
+}
+.bg-title{
+  background-color: #285DAA;
+  background-position: center;
+  height: 250px;
+}
+.home-banner{
+  background-color: rgba(255, 255, 255, .9);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 60%;
+  z-index: $zindex-sticky;
+}

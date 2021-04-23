@@ -15,6 +15,26 @@
   </head>
 
   <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <svg width="141" height="30" viewBox="0 0 141 30" xmlns="http://www.w3.org/2000/svg"><use href="/img/maplibre-logo.svg#maplibre-logo"></use></svg>
+      </a>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/about/">About</a>
+          <a class="nav-link" href="#">Docs</a>
+          <a class="nav-link" href="#">Download</a>
+          <a class="nav-link py-0 d-flex align-items-center" href="https://github.com/MapLibre">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><use href="/img/github.svg#github"></use></svg>
+          </a>
+        </div>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
    {{ content }}
   </body>
 </html>
