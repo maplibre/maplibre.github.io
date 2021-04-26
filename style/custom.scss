@@ -22,3 +22,25 @@
   z-index: $zindex-sticky;
   transform: translateY(-50%);
 }
+.title-image{
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
+}
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+ul {
+  list-style: none;
+  li::before {
+    content: "\2022";
+    color: $secondary;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -2em;
+  }
+}
