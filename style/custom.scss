@@ -7,7 +7,7 @@
 }
 .bg-title{
   background-color: #285DAA;
-  background-image: url('/img/title-map.png');
+  background-image: url('#{$baseurl}/img/title-map.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
