@@ -9,30 +9,33 @@
     <meta name="description" content="{{ page.description }}">
     <meta name="theme-color" content="#fff">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/style/base.css">
     <title>{{ page.title }}</title>
   </head>
 
   <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-navbar fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top {% if page.fullscreen != null %}bg-fullscreen{% else %}bg-navbar{% endif %} ">
     <div class="container">
       <a class="navbar-brand" href="/">
         <svg width="141" height="30" viewBox="0 0 141 30" xmlns="http://www.w3.org/2000/svg"><use href="/img/maplibre-logo.svg#maplibre-logo"></use></svg>
       </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link" href="/about/">About</a>
           <a class="nav-link" href="#">Docs</a>
           <a class="nav-link" href="#">Download</a>
-          <a class="nav-link py-0 d-flex align-items-center" href="https://github.com/MapLibre">
+          <a class="nav-link py-1 py-lg-0 d-flex align-items-center" href="https://github.com/MapLibre">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><use href="/img/github.svg#github"></use></svg>
           </a>
         </div>
       </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+
     </div>
   </nav>
    {{ content }}
