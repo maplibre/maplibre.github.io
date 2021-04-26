@@ -12,9 +12,16 @@
     <meta property="og:image" content="{{ "/img/share-image.png" | absolute_url }}">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="512">
-    <meta property="og:title" content="{% if page.title %}{{ page.title }} – {% endif %}{{ title }}">
+    <meta property="og:title" content="{{ page.title }}">
     <meta property="og:description" content="{{ page.description }}">
     <meta property="og:url" content="{{ page.url }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@maplibre">
+    <meta name="twitter:creator" content="@maplibre">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.description }}">
+    <meta name="twitter:image:src" content="{{ "/img/share-image.png" | absolute_url }}">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
