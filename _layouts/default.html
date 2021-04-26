@@ -17,7 +17,7 @@
   </head>
 
   <body>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top {% if page.fullscreen != null %}bg-fullscreen{% else %}bg-navbar{% endif %} ">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top {% if page.fullscreen != true %}bg-navbar{% else %}bg-fullscreen{% endif %} ">
     <div class="container">
       <a class="navbar-brand" href="/">
         <svg width="141" height="30" viewBox="0 0 141 30" xmlns="http://www.w3.org/2000/svg"><use href="/img/maplibre-logo.svg#maplibre-logo"></use></svg>
@@ -38,6 +38,40 @@
 
     </div>
   </nav>
-   {{ content }}
+    {{ content }}
+   {% if page.fullscreen != true %}
+   <footer class="position-absolute bottom-0 w-100">
+     <div class="container border-top border-gray">
+       <div class="row py-3">
+         <div class="col-sm-6">
+           <div class="nav">
+             <a class="nav-link text-black-50" href="/">Home</a>
+             <a class="nav-link text-black-50" href="/about/">About</a>
+             <a class="nav-link text-black-50" href="#">Contact</a>
+           </div>
+         </div>
+         <div class="col-sm-6">
+           <div class="nav justify-content-end">
+             <a class="nav-link text-black-50" href="#">
+               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><use href="/img/icon/fb.svg#fb"></use></svg>
+             </a>
+             <a class="nav-link text-black-50" href="#">
+               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><use href="/img/icon/linkedin.svg#linkedin"></use></svg>
+             </a>
+             <a class="nav-link text-black-50" href="#">
+               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><use href="/img/icon/twt.svg#twt"></use></svg>
+             </a>
+             <a class="nav-link text-black-50" href="#">
+               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><use href="/img/icon/ytb.svg#ytb"></use></svg>
+             </a>
+             <a class="nav-link text-black-50" href="#">
+               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><use href="/img/icon/ig.svg#ig"></use></svg>
+             </a>
+           </div>
+         </div>
+       </div>
+     </div>
+   </footer>
+   {% endif %}
   </body>
 </html>
