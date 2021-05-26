@@ -1,8 +1,8 @@
 function mapPreview() {
   var map = new maplibregl.Map({
       container: 'map',
-      style: 'https://api.maptiler.com/maps/streets/style.json?key=ACFD57pfZ53N62uqhZ8K', // replace with correct map style
+      style: 'https://demotiles.maplibre.org/style.json',
       center: [0, 0],
-      zoom: 2
+      zoom: 1
   });
 }
