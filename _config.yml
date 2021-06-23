@@ -1,7 +1,7 @@
 permalink: pretty
 
-url: "https://labs.maptiler.com/"
-baseurl: "/maplibre.github.io/"
+url: "https://maplibre.org/"
+baseurl: ""
 
 maps:
   key: R8rAisQ0L6EL1wW8JVYQ
