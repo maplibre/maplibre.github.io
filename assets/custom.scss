@@ -1,20 +1,20 @@
-.bg-fullscreen{
-  background: rgba(40, 93, 170, .9);
+.bg-fullscreen {
+  background: rgba(40, 93, 170, 0.9);
 }
-.bg-navbar{
-  background: #285DAA;
-  border-bottom: 1px solid rgba(255, 255, 255, .3);
+.bg-navbar {
+  background: #285daa;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
-.bg-title{
-  background-color: #285DAA;
-  background-image: url('/img/title-map.png');
+.bg-title {
+  background-color: #285daa;
+  background-image: url("/img/title-map.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 250px;
 }
-.home-banner{
-  background-color: rgba(255, 255, 255, .9);
+.home-banner {
+  background-color: rgba(255, 255, 255, 0.9);
   position: absolute;
   left: 0;
   top: 50%;
@@ -22,16 +22,16 @@
   z-index: $zindex-sticky;
   transform: translateY(-50%);
 }
-.title-image{
+.title-image {
   @include media-breakpoint-down(md) {
     width: 100%;
   }
 }
 #map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
 }
 ul {
   list-style: none;

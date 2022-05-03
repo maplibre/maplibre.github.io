@@ -1,17 +1,21 @@
 {
-    "name": "maplibre",
-    "version": "1.0.0",
-    "description": "our website",
-    "main": "index.js",
-    "dependencies": {
-        "bootstrap": "^5.1.3",
-        "maplibre-gl": "^2.1.9",
-        "@fontsource/alata": "^4.5.7"
-    },
-    "scripts": {
-        "build": "hugo --minify",
-        "serve": "hugo serve",
-        "postinstall": "cp -r node_modules/@fontsource/alata/files static/"
-    },
-    "author": ""
+  "name": "maplibre",
+  "version": "1.0.0",
+  "description": "our website",
+  "main": "index.js",
+  "dependencies": {
+    "@fontsource/alata": "^4.5.7",
+    "bootstrap": "^5.1.3",
+    "maplibre-gl": "^2.1.9"
+  },
+  "scripts": {
+    "build": "hugo --minify",
+    "serve": "hugo serve",
+    "format": "prettier --write .",
+    "postinstall": "cp -r node_modules/@fontsource/alata/files static/"
+  },
+  "author": "",
+  "devDependencies": {
+    "prettier": "2.6.2"
+  }
 }

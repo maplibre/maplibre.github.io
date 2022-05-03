@@ -1,48 +1,45 @@
-
 @import "../node_modules/bootstrap/scss/functions";
 
-$white:    #fff;
+$white: #fff;
 
 $spacer: 1rem;
 
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
   3: $spacer,
   4: $spacer * 1.5,
   5: $spacer * 3,
   6: $spacer * 3.75,
-) ;
+);
 
-$blue:    #306FCA ;
-$secondary:     #87B2F0 ;
-$body-color:                #304B72;
-$link-color:                              $secondary ;
+$blue: #306fca;
+$secondary: #87b2f0;
+$body-color: #304b72;
+$link-color: $secondary;
 
-$link-decoration:                         none ;
+$link-decoration: none;
 
-$paragraph-margin-bottom:   20px ;
+$paragraph-margin-bottom: 20px;
 
-$h1-font-size:                30px ;
-$h2-font-size:                24px ;
-$h3-font-size:                22px ;
-$h4-font-size:                18px ;
+$h1-font-size: 30px;
+$h2-font-size: 24px;
+$h3-font-size: 22px;
+$h4-font-size: 18px;
 
-$headings-margin-bottom:      20px ;
-$headings-font-family:        'Alata', sans-serif ;
+$headings-margin-bottom: 20px;
+$headings-font-family: "Alata", sans-serif;
 
+$text-muted: #979da6;
 
-$text-muted:                  #979DA6 ;
+$input-btn-focus-width: 0;
 
-$input-btn-focus-width:         0 ;
+$navbar-nav-link-padding-x: 29px;
 
-$navbar-nav-link-padding-x:         29px ;
+$navbar-dark-color: $white;
 
-
-$navbar-dark-color:                 $white ;
-
-$navbar-dark-toggler-border-color:  none ;
+$navbar-dark-toggler-border-color: none;
 
 @import "../node_modules/bootstrap/scss/variables";
 
@@ -83,9 +80,7 @@ $navbar-dark-toggler-border-color:  none ;
 @import "../node_modules/bootstrap/scss/helpers";
 @import "../node_modules/bootstrap/scss/utilities/api";
 
-
 @import "./custom.scss";
 @import "../node_modules/maplibre-gl/dist/maplibre-gl.css";
-
 
 @import "../node_modules/@fontsource/alata/400";
