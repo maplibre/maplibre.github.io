@@ -3,105 +3,94 @@ title: Projects
 keywords: maplibre
 description: MapLibre GL JS, Native & additional projects
 permalink: /projects/
-menu: main
+menu: [main, footer]
 weight: 30
 ---
 
-<div class="container-fluid px-0 mb-6">
-  <div class="row mx-0 bg-title text-center align-items-center">
-    <h1 class="text-white pt-6">Projects</h1>
-  </div>
+<div class="col-sm-8">
+  <h2 id="js">MapLibre GL JS</h2>
+  <p>Open-source JavaScript library for publishing maps on your websites.</p>
+  <p>
+    Fast displaying of maps is possible thanks to GPU-accelerated vector tile
+    rendering.
+  </p>
+  <p>
+    Originated as an open-source fork of <i>mapbox-gl-js</i>, the library is
+    intended to be a drop-in replacement for the Mapbox’s version with
+    additional functionality.
+  </p>
+  <p>
+    See documentation:
+    <a href="https://maplibre.org/maplibre-gl-js-docs"
+      >maplibre.org/maplibre-gl-js-docs</a
+    >
+  </p>
+  <p>Third party integrations:</p>
+  <ul>
+    <li>
+      MapTiler
+      <a href="https://docs.maptiler.com/maplibre-gl-js"
+        >docs.maptiler.com/maplibre-gl-js</a
+      >
+    </li>
+  </ul>
+
+  <h2 class="mt-6" id="native">MapLibre Native</h2>
+  <p>
+    Open-source SDK for Android and iOS allowing displaying maps inside of your
+    mobile applications, desktop application, or embedded devices.
+  </p>
+  <p>
+    This toolset grants fast maps displaying in iOS and Android apps using the
+    same GPU-based acceleration as the JavaScript version.
+  </p>
+  <p>
+    <i>MapLibre-Native</i> is an open source fork of <i>mapbox-native</i> with
+    additional functionality.
+  </p>
+  <p>
+    View on GitHub:
+    <a href="https://github.com/maplibre/maplibre-gl-native"
+      >github.com/maplibre/maplibre-gl-native</a
+    >
+  </p>
+  <p>Third party integrations:</p>
+  <ul>
+    <li>
+      MapTiler Android
+      <a href="https://docs.maptiler.com/maplibre-gl-native-android"
+        >docs.maptiler.com/maplibre-gl-native-android</a
+      >
+    </li>
+    <li>
+      MapTiler iOS
+      <a href="https://docs.maptiler.com/maplibre-gl-native-ios"
+        >docs.maptiler.com/maplibre-gl-native-ios</a
+      >
+    </li>
+  </ul>
+
+  <h2 class="mt-6" id="other">Additional projects</h2>
+  <p>
+    Binding for additional languages (such as React.js, Vue) or and external
+    libraries.
+  </p>
+  <p>Plugins extending the functionality of the core SDKs.</p>
+  <p>
+    See
+    <a href="https://github.com/maplibre/awesome-maplibre"
+      >awesome-maplibre on GitHub</a
+    >.
+  </p>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8">
-      <h2 id="js">MapLibre GL JS</h2>
-      <p>
-        Open-source JavaScript library for publishing maps on your websites.
-      </p>
-      <p>
-        Fast displaying of maps is possible thanks to GPU-accelerated vector
-        tile rendering.
-      </p>
-      <p>
-        Originated as an open-source fork of <i>mapbox-gl-js</i>, the library is
-        intended to be a drop-in replacement for the Mapbox’s version with
-        additional functionality.
-      </p>
-      <p>
-        See documentation:
-        <a href="https://maplibre.org/maplibre-gl-js-docs"
-          >maplibre.org/maplibre-gl-js-docs</a
-        >
-      </p>
-      <p>Third party integrations:</p>
-      <ul>
-        <li>
-          MapTiler
-          <a href="https://docs.maptiler.com/maplibre-gl-js"
-            >docs.maptiler.com/maplibre-gl-js</a
-          >
-        </li>
-      </ul>
 
-      <h2 class="mt-6" id="native">MapLibre Native</h2>
-      <p>
-        Open-source SDK for Android and iOS allowing displaying maps inside of
-        your mobile applications, desktop application, or embedded devices.
-      </p>
-      <p>
-        This toolset grants fast maps displaying in iOS and Android apps using
-        the same GPU-based acceleration as the JavaScript version.
-      </p>
-      <p>
-        <i>MapLibre-Native</i> is an open source fork of
-        <i>mapbox-native</i> with additional functionality.
-      </p>
-      <p>
-        View on GitHub:
-        <a href="https://github.com/maplibre/maplibre-gl-native"
-          >github.com/maplibre/maplibre-gl-native</a
-        >
-      </p>
-      <p>Third party integrations:</p>
-      <ul>
-        <li>
-          MapTiler Android
-          <a href="https://docs.maptiler.com/maplibre-gl-native-android"
-            >docs.maptiler.com/maplibre-gl-native-android</a
-          >
-        </li>
-        <li>
-          MapTiler iOS
-          <a href="https://docs.maptiler.com/maplibre-gl-native-ios"
-            >docs.maptiler.com/maplibre-gl-native-ios</a
-          >
-        </li>
-      </ul>
-
-      <h2 class="mt-6" id="other">Additional projects</h2>
-      <p>
-        Binding for additional languages (such as React.js, Vue) or and external
-        libraries.
-      </p>
-      <p>Plugins extending the functionality of the core SDKs.</p>
-      <p>
-        See
-        <a href="https://github.com/maplibre/awesome-maplibre"
-          >awesome-maplibre on GitHub</a
-        >.
-      </p>
-    </div>
-
-    <div class="col-sm-4">
-      <h2>MapLibre GL JS</h2>
-      <picture>
-        <a href="https://demotiles.maplibre.org/"
-          ><img loading="lazy" class="w-100 h-auto rounded shadow my-3"
-          src="/img/maplibre-gl-js-safari.png?abc" | absolute_url }}"
-          alt="MapLibre GL JS on Safari"></a
-        >
-      </picture>
-    </div>
-  </div>
+<div class="col-sm-4">
+  <h2>MapLibre GL JS</h2>
+  <picture>
+    <a href="https://demotiles.maplibre.org/"
+      ><img loading="lazy" class="w-100 h-auto rounded shadow my-3"
+      src="/img/maplibre-gl-js-safari.png?abc" | absolute_url }}" alt="MapLibre
+      GL JS on Safari"></a
+    >
+  </picture>
 </div>
