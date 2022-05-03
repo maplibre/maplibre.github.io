@@ -1,8 +1,4 @@
 
-// Bootstrap and its default variables
-
-
-
 @import "../node_modules/bootstrap/scss/functions";
 
 $white:    #fff;
@@ -89,4 +85,7 @@ $navbar-dark-toggler-border-color:  none ;
 
 
 @import "./custom.scss";
-@import "./maplibre-gl.css";
+@import "../node_modules/maplibre-gl/dist/maplibre-gl.css";
+
+
+@import "../node_modules/@fontsource/alata/400";

@@ -1,5 +1,7 @@
+import {Map} from 'maplibre-gl'
+
 function mapPreview() {
-  var map = new maplibregl.Map({
+  var map = new Map({
       container: 'map',
       style: 'https://demotiles.maplibre.org/style.json',
       center: [0, 0],
@@ -29,3 +31,5 @@ function mapPreview() {
     setInterval(playAnimation,lastPoint.Pause + lastPoint.Duration);
 
 }
+
+window.mapPreview = mapPreview;

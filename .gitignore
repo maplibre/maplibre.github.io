@@ -13,3 +13,5 @@ hugo.linux
 /.hugo_build.lock
 
 node_modules
+
+static/files
