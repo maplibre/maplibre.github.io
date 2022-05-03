@@ -6,6 +6,13 @@ title = 'MapLibre'
 
 [menu]
   [[menu.main]]
+    identifier = "news"
+    name = "News"
+    url = "/news"
+    weight = 30
+
+
+  [[menu.main]]
     identifier = "community"
     name = "Community"
     url = "https://maplibre.org/community"

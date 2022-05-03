@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="container-fluid px-0 mb-6">
+  <div class="row mx-0 bg-title text-center align-items-center">
+    <h1 class="text-white pt-6">
+      <span class="text-secondary">{{ .Title }}</span> {{ $.Site.Title }}
+    </h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    {{ range .Pages }}
+
+    <div class="col-sm-8">
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      {{.Content}}
+    </div>
+
+    {{ end }}
+  </div>
+</div>
+
+{{ end }}
