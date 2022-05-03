@@ -1,0 +1,18 @@
+baseURL = 'https://maplibre.org/'
+languageCode = 'en-us'
+title = 'MapLibre'
+
+
+
+[menu]
+  [[menu.main]]
+    identifier = "community"
+    name = "Community"
+    url = "https://maplibre.org/community"
+    weight = 40
+
+
+[params]
+  key = "R8AisQ0L6EL1wW8JVYQ"
+  description = "Tesla's Awesome Hugo Site"
+  keywords = ""

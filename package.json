@@ -1,0 +1,16 @@
+{
+    "name": "maplibre",
+    "version": "1.0.0",
+    "description": "our website",
+    "main": "index.js",
+    "dependencies": {
+        "bootstrap": "^5.1.3"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "build": "hugo --minify",
+        "serve": "hugo serve",
+        "postinstall": "mkdir -p static/js/vendor/ && cp node_modules/bootstrap/dist/js/bootstrap.min.js static/js/vendor/"
+    },
+    "author": ""
+}

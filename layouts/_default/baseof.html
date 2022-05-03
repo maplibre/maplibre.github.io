@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="{{ $.Site.Author }}">
+    <meta name="keywords" content="{{ $.Site.Params.keywords }}">
+    <meta name="description" content="{{ $.Site.Params.description }}">
+    <meta name="theme-color" content="#fff">
+
+    <meta property="og:image" content="/img/share-image.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="MapLibre">
+    <meta property="og:title" content="{{ $.Site.Title }}">
+    <meta property="og:description" content="{{ $.Site.Params.description }}">
+    <meta property="og:url" content="{{ $.Site.BaseURL }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@maplibre">
+    <meta name="twitter:creator" content="@maplibre">
+    <meta name="twitter:title" content="{{ $.Site.Title }}">
+    <meta name="twitter:description" content="{{ $.Site.Params.description }}">
+    <meta name="twitter:image:src" content="/img/share-image.png">
+    <meta name="twitter:image:alt" content="MapLibre">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <script src="/js/maplibre-gl.js"></script>
+    <script src="/js/index.js"></script>
+
+    {{ $style := resources.Get "style.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+    <title>{{ $.Site.Title }} - {{ .Title }}</title>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PRQ9ZC7');</script>
+<!-- End Google Tag Manager -->
+
+  </head>
+
+  <body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ9ZC7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top {{ if not .Params.fullscreen }}bg-navbar{{ else }}bg-fullscreen {{ end }} ">
+    <div class="container">
+      <a class="navbar-brand" href="/" aria-label="MapLibre">
+        <svg aria-hidden="true" width="141" height="30" viewBox="0 0 141 30" xmlns="http://www.w3.org/2000/svg"><use href="/img/maplibre-logo.svg#maplibre-logo"></use></svg>
+      </a>
+      <div class="d-flex">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="nav-link py-1 py-lg-0 d-flex align-items-center d-lg-none text-white" href="https://github.com/MapLibre" aria-label="MapLibre organization on Github">
+          <svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><use href="/img/github.svg#github"></use></svg>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+
+
+          {{ range .Site.Menus.main }}
+                  <li>
+                    <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
+                  </li>
+          {{ end }}
+          <a class="nav-link" href="https://github.com/sponsors/maplibre"><span aria-hidden="true">♡</span> Sponsor</a>
+        </div>
+      </div>
+      <a class="nav-link py-1 py-lg-0 d-none align-items-center d-lg-flex text-white" href="https://github.com/MapLibre" aria-label="MapLibre organization on Github">
+        <svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><use href="/img/github.svg#github"></use></svg>
+      </a>
+    </div>
+  </nav>
+   {{- block "main" . }}{{- end }}
+   
+   {{ if not .Params.fullscreen }}
+   <footer class="mt-auto">
+     <div class="container pb-4 pt-6">
+       <a href="/" aria-label="MapLibre">
+         <svg aria-hidden="true" width="141" height="30" viewBox="0 0 141 30" xmlns="http://www.w3.org/2000/svg"><use href="/img/maplibre-logo-dark.svg#maplibre"></use></svg>
+       </a>
+     </div>
+     <div class="container border-top border-gray">
+       <div class="row py-3">
+         <div class="col-sm-6">
+           <div class="nav">
+          {{ range .Site.Menus.footer }}
+          <li>
+            <a class="nav-link text-black-50" href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
+           </div>
+         </div>
+         <div class="col-sm-6">
+           <div class="nav justify-content-end">
+             <a class="nav-link text-black-50" href="#" aria-label="MapLibre on Facebook">
+               <svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><use href="/img/icon/fb.svg#fb"></use></svg>
+             </a>
+             <a class="nav-link text-black-50" href="#" aria-label="MapLibre on LinkedIn">
+               <svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><use href="/img/icon/linkedin.svg#linkedin"></use></svg>
+             </a>
+             <a class="nav-link text-black-50" href="#" aria-label="MapLibre on Twitter">
+               <svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><use href="/img/icon/twt.svg#twt"></use></svg>
+             </a>
+             <a class="nav-link text-black-50" href="#" aria-label="MapLibre on YouTube">
+               <svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><use href="/img/icon/ytb.svg#ytb"></use></svg>
+             </a>
+             <a class="nav-link text-black-50" href="#" aria-label="MapLibre on Instagram">
+               <svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><use href="/img/icon/ig.svg#ig"></use></svg>
+             </a>
+           </div>
+         </div>
+       </div>
+     </div>
+   </footer>
+   {{ end }}
+  </body>
+</html>
