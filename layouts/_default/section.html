@@ -7,15 +7,28 @@
   </div>
 </div>
 <div class="container">
+  {{ if .Content }}
+  {{ .Content }}
+  {{ end }}
   <div class="row">
-    {{ range .Pages }}
 
-    <div class="col-sm-8">
-      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-      {{.Content}}
-    </div>
+  
+    <ul class="section-list">
+      {{ range .Paginator.Pages }}
+      <li class="col-sm-8">
+          <a href="{{ .RelPermalink }}">
+              {{- .Title | markdownify }}
+          </a>
+          {{ partial "post_meta.html" . }}
+        </li>
+      {{ end }}
+    </ul>
 
-    {{ end }}
+
+  
+  {{/* Display paginator */}}
+  {{ template "_internal/pagination.html" . }}
+   
   </div>
 </div>
 {{ end }}
