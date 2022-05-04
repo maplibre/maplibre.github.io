@@ -8,16 +8,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: "12"
+          node-version: "16"
       - name: Hugo setup
         uses: peaceiris/actions-hugo@v2.4.13
         with:
           hugo-version: 0.97.3
           extended: true
       - name: NPM install
-        run: npm install
+        run: npm ci
       - name: Build
         run: npm run build
