@@ -2,21 +2,15 @@ baseURL = 'https://maplibre.org/'
 languageCode = 'en-us'
 title = 'MapLibre'
 
-
+sectionPagesMenu = "main"
 
 [menu]
-  [[menu.main]]
-    identifier = "news"
-    name = "News"
-    url = "/news"
-    weight = 30
-
 
   [[menu.main]]
     identifier = "community"
     name = "Community"
     url = "https://maplibre.org/community"
-    weight = 40
+    weight = 1000
 
 
 [params]
