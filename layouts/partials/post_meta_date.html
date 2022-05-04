@@ -1,15 +1,16 @@
 {{ $dateFormat := default "Jan 2, 2006" (index .Site.Params "datefmt") }}
 
-
 {{ $readTime := mul (div (countwords .Content) 200.0) 60 }}
 {{ $minutes := math.Ceil (div $readTime 60) }}
 
-
-
 {{- if not .Date.IsZero -}}
-<div class="post-meta-date">
-    <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format $dateFormat }}</time>
+  <div class="post-meta-date">
+    <time datetime="{{ .Date.Format " 2006-01-02" }}"
+      >{{ .Date.Format $dateFormat }}</time
+    >
     <span> · </span>
-    <span>{{ $minutes }} {{ cond (eq $minutes 1) "minute" "minutes" }} read</span>
-</div>
-{{end}}
+    <span
+      >{{ $minutes }} {{ cond (eq $minutes 1) "minute" "minutes" }} read</span
+    >
+  </div>
+{{ end }}

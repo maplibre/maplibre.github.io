@@ -2,7 +2,7 @@ name: Build & Deploy
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: '12'
+          node-version: "12"
       - name: Hugo setup
         uses: peaceiris/actions-hugo@v2.4.13
         with:

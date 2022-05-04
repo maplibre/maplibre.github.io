@@ -60,11 +60,11 @@ ul.section-list {
 
   li {
     margin: 10px 0;
-  
+
     &:before {
       margin-right: 5px;
-      color:   $secondary;
-      content: '# ';
+      color: $secondary;
+      content: "# ";
     }
   }
 }
