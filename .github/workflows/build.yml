@@ -1,0 +1,23 @@
+name: Build & Deploy
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+      - name: Hugo setup
+        uses: peaceiris/actions-hugo@v2.4.13
+        with:
+          hugo-version: 0.76.5
+          extended: true
+      - name: NPM install
+        run: npm install
+      - name: Build
+        run: npm run build
