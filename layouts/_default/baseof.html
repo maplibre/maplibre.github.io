@@ -36,35 +36,9 @@
     <script type="text/javascript" src="{{ $built.RelPermalink }}"></script>
 
     <title>{{ $.Site.Title }} - {{ .Title }}</title>
-
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-PRQ9ZC7");
-    </script>
-    <!-- End Google Tag Manager -->
   </head>
 
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-PRQ9ZC7"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <nav
       class="navbar navbar-expand-lg navbar-dark fixed-top {{ if not .Params.fullscreen }}bg-navbar{{ else }}bg-fullscreen {{ end }} "
     >
