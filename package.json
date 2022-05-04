@@ -12,6 +12,7 @@
     "build": "hugo --minify",
     "serve": "hugo serve",
     "format": "prettier --write .",
+    "format-check": "prettier --check .",
     "postinstall": "cp -r node_modules/@fontsource/alata/files static/"
   },
   "author": "",

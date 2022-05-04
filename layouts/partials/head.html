@@ -30,8 +30,7 @@
   {{ $opts := dict "targetPath" "main.js" }}
   {{ $built := resources.Get
     "map-preview.js" | js.Build $opts
-  }}  
-  <script type="text/javascript" src="{{ $built.RelPermalink }}"></script>
+  }}  <script type="text/javascript" src="{{ $built.RelPermalink }}"></script>
 
   <title>{{ $.Site.Title }} - {{ .Title }}</title>
 </head>
