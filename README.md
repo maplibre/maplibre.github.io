@@ -11,9 +11,9 @@ Features:
 ## Building
 
 1. [Install Hugo](https://gohugo.io/getting-started/installing/)
-1. Run `npm install` to setup the dependencies
-1. Run `npm run serve`
-1. Open the URL which is printed in the terminal
+2. Run `npm install` to setup the dependencies
+3. Run `npm run serve`
+4. Open the URL which is printed in the terminal
 
 After making any changes, make sure to run `npm run format`.
 
