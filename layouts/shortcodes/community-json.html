@@ -1,0 +1,11 @@
+[
+{{ range $.Site.Data.community }}
+  {{ $url := print "https://github.com/" .github ".png?size=50" }}
+
+  {{ $img := resources.GetRemote $url }}
+  {{ $path := print "images/" .github ".png" }}
+  {{ $img := $img.Content | resources.FromString $path }}
+  { url: "{{ $img.RelPermalink }}", latlon: [{{ index  .latlon 0 }},
+  {{ index .latlon 1 }}], href: "{{ print "https://github.com/" .github }}" },
+{{ end }}
+]

@@ -7,26 +7,28 @@ type: community
 ---
 
 <style>
-    #map {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-    }
+  #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
 
-    .marker {
-        display: block;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        padding: 0;
-    }
+  .marker {
+    display: block;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+  }
 </style>
 
-
 <div>
-    <div id="map"></div>
+  <div id="map"></div>
 </div>
+
 <script>
-    communityMap()
+    const communityData = {{< community-json >}};
+
+    communityMap(communityData)
 </script>

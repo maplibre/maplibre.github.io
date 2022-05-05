@@ -1,6 +1,11 @@
-import { Map, AttributionControl, NavigationControl, Marker } from "maplibre-gl";
+import {
+  Map,
+  AttributionControl,
+  NavigationControl,
+  Marker,
+} from "maplibre-gl";
 
-function communityMap() {
+function communityMap(community) {
   var map = new Map({
     container: "map",
     style: "https://demotiles.maplibre.org/style.json",
@@ -18,26 +23,15 @@ function communityMap() {
 
   map.addControl(new NavigationControl());
 
-  fetch("/community.json")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      data.map((person) => {
-        var el = document.createElement("a");
-        el.className = "marker";
-        el.style.backgroundImage = `url(https://github.com/${person.github}.png?size=50)`;
-        el.style.width = "50px";
-        el.style.height = "50px";
-        el.href = `https://github.com/${person.github}`;
-        new Marker(el)
-          .setLngLat([person.latlon[1], person.latlon[0]])
-          .addTo(map);
-      });
-    })
-    .catch(function (err) {
-      console.log(`error: ${err}`);
-    });
+  community.map((person) => {
+    var el = document.createElement("a");
+    el.className = "marker";
+    el.style.backgroundImage = `url(${person.url})`;
+    el.style.width = "50px";
+    el.style.height = "50px";
+    el.href = person.href;
+    new Marker(el).setLngLat([person.latlon[1], person.latlon[0]]).addTo(map);
+  });
 }
 
 function mapPreview() {
