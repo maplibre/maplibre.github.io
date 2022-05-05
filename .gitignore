@@ -17,3 +17,5 @@ node_modules
 static/files
 
 public
+
+.hugo
