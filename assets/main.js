@@ -30,6 +30,7 @@ function communityMap(community) {
     el.style.width = "50px";
     el.style.height = "50px";
     el.href = person.href;
+    el.title = person.name;
     new Marker(el).setLngLat([person.latlon[1], person.latlon[0]]).addTo(map);
   });
 }
