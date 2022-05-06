@@ -7,6 +7,17 @@
     </div>
   </div>
   <div class="container">
-    <div class="row">{{ .Content }}</div>
+
+
+    <div class="row">
+      {{ partial "post_meta_date.html" . }}
+      <div>
+        Categories:
+          {{ range (.GetTerms "categories") }}
+              <span class="badge bg-light"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span>
+         {{ end }}
+      </div>
+    </div>
+    <div class="row mt-4">{{ .Content }}</div>
   </div>
 {{ end }}
