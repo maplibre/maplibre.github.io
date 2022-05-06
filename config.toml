@@ -6,7 +6,7 @@ sectionPagesMenu = "main"
 
 copyright = "Creative Commons Zero v1.0 Universal"
 
-enableGitInfo = "true"
+enableGitInfo = true
 summaryLength = 30
 enableEmoji = true
 

@@ -38,12 +38,12 @@
 
         <div class="col-sm-2 flex">
           {{ with .githubProjectUrl }}
-            <div class="d-flex justify-content-center">
-              <a href="{{ . }}">Site on GitHub</a>
-              {{ if $.GitInfo }}
+            <div class="text-black-50 d-flex justify-content-center">
+              <a class="text-black-50" href="{{ . }}">GitHub</a>
+              {{ with $.gitinfo }}
                 @
-                <a href="{{ . }}/commit/{{ $.GitInfo.Hash }}"
-                  >{{ $.GitInfo.AbbreviatedHash }}</a
+                <a class="text-black-50" href="{{ . }}/commit/{{ $.gitinfo.Hash }}"
+                  >{{ $.gitinfo.AbbreviatedHash }}</a
                 >
               {{ end }}
             </div>
