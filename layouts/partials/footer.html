@@ -42,7 +42,9 @@
               <a class="text-black-50" href="{{ . }}">GitHub</a>
               {{ with $.gitinfo }}
                 @
-                <a class="text-black-50" href="{{ . }}/commit/{{ $.gitinfo.Hash }}"
+                <a
+                  class="text-black-50"
+                  href="{{ . }}/commit/{{ $.gitinfo.Hash }}"
                   >{{ $.gitinfo.AbbreviatedHash }}</a
                 >
               {{ end }}

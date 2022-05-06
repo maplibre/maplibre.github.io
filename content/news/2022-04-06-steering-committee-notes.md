@@ -1,7 +1,7 @@
 ---
 title: "Steering Committee Notes"
 date: "2022-04-06"
-categories: [ "steering-committee" ]
+categories: ["steering-committee"]
 ---
 
 Steering committee meeting notes available
