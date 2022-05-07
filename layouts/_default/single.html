@@ -16,6 +16,19 @@
             ><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span
           >
         {{ end }}
+
+      </div>
+      <div>
+        Authors:
+        <span>
+          {{- range .Params.authors }}
+            {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+              <span class="badge bg-light"
+                ><a href="{{ .Permalink }}">{{ .Params.title }}</a></span
+              >
+            {{ end }}
+          {{ end }}
+        </span>
       </div>
     </div>
     <div class="row mt-4">

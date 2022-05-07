@@ -12,6 +12,10 @@ enableEmoji = true
 
 paginate = 10
 
+[taxonomies]
+  author = "authors"
+  category = "categories"
+
 [menu]
 
   [[menu.main]]

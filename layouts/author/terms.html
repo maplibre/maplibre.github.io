@@ -1,0 +1,24 @@
+{{ define "main" }}
+  <div class="container-fluid px-0 mb-6">
+    <div class="row mx-0 bg-title text-center align-items-center">
+      <h1 class="text-white pt-6">
+        <span class="text-secondary">{{ .Title }}</span> {{ $.Site.Title }}
+      </h1>
+    </div>
+  </div>
+  <div class="container">
+    {{ if .Content }}{{ .Content }}{{ end }}
+    <div class="row">
+      <ul class="section-list">
+        {{ range .Data.Pages }}
+          <li class="col-sm-8">
+            <a href="{{ .RelPermalink }}"> {{-  .Params.title | markdownify }} </a>
+          </li>
+        {{ end }}
+      </ul>
+
+      {{/* Display paginator */}}
+      {{ template "_internal/pagination.html" . }}
+    </div>
+  </div>
+{{ end }}
