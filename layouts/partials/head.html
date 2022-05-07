@@ -23,7 +23,8 @@
   <meta name="twitter:image:src" content="/img/share-image.png" />
   <meta name="twitter:image:alt" content="MapLibre" />
 
-  {{ $style := resources.Get "style.scss" | resources.ToCSS | resources.Minify |
+  {{ $options := (dict "includePaths" (slice "node_modules") "transpiler" "libsass") }}
+  {{ $style := resources.Get "style.scss" | resources.ToCSS $options | resources.Minify |
     resources.Fingerprint
   }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
@@ -35,7 +36,7 @@
 
   {{ $opts := dict "targetPath" "main.js" }}
   {{ $built := resources.Get
-    "map-preview.js" | js.Build $opts
+    "main.js" | js.Build $opts
   }}  <script type="text/javascript" src="{{ $built.RelPermalink }}"></script>
 
   <title>{{ $.Site.Title }} - {{ .Title }}</title>

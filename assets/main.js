@@ -1,5 +1,40 @@
-import { Map } from "maplibre-gl";
+import {
+  Map,
+  AttributionControl,
+  NavigationControl,
+  Marker,
+} from "maplibre-gl";
 import "bootstrap";
+
+function communityMap(community) {
+  var map = new Map({
+    container: "map",
+    style: "https://demotiles.maplibre.org/style.json",
+    center: [0, 0],
+    zoom: 1,
+    hash: true,
+    attributionControl: false,
+  }).addControl(
+    new AttributionControl({
+      compact: false,
+      customAttribution:
+        'OpenStreetMap contributors. | <a href="https://github.com/maplibre/community">Edit on GitHub.</a>',
+    })
+  );
+
+  map.addControl(new NavigationControl());
+
+  community.map((person) => {
+    var el = document.createElement("a");
+    el.className = "marker";
+    el.style.backgroundImage = `url(${person.url})`;
+    el.style.width = "50px";
+    el.style.height = "50px";
+    el.href = person.href;
+    el.title = person.name;
+    new Marker(el).setLngLat([person.latlon[1], person.latlon[0]]).addTo(map);
+  });
+}
 
 function mapPreview() {
   var map = new Map({
@@ -69,4 +104,5 @@ function mapPreview() {
     setInterval(playAnimation, lastPoint.Pause + lastPoint.Duration);
 }
 
+window.communityMap = communityMap;
 window.mapPreview = mapPreview;
