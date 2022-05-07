@@ -2,6 +2,7 @@
 title: "Steering Committee Notes"
 date: "2022-02-09"
 categories: ["steering-committee"]
+authors: [wipfli]
 ---
 
 Steering committee meeting notes available
