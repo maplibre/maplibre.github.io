@@ -21804,8 +21804,8 @@ uniform ${i3} ${o3} u_${a3};
         Zoom: 3.4916772106200415,
         Duration: 5e3,
         Pause: 3e3,
-        Rotation: -52.8,
-        Pitch: 29.5
+        Rotation: 0,
+        Pitch: 0
       },
       {
         lng: 5.388541216098361,
@@ -21813,8 +21813,8 @@ uniform ${i3} ${o3} u_${a3};
         Zoom: 6.15010124013107,
         Duration: 1e4,
         Pause: 8e3,
-        Rotation: -12,
-        Pitch: 41.5
+        Rotation: 0,
+        Pitch: 0
       },
       {
         lng: -0.08411085041984734,
