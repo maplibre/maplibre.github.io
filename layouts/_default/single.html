@@ -7,6 +7,34 @@
     </div>
   </div>
   <div class="container">
-    <div class="row">{{ .Content }}</div>
+    <div class="row">
+      {{ partial "post_meta_date.html" . }}
+      <div>
+        Categories:
+        {{ range (.GetTerms "categories") }}
+          <span class="badge bg-light"
+            ><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span
+          >
+        {{ end }}
+
+      </div>
+      <div>
+        Authors:
+        <span>
+          {{- range .Params.authors }}
+            {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+              <span class="badge bg-light"
+                ><a href="{{ .Permalink }}">{{ .Params.title }}</a></span
+              >
+            {{ end }}
+          {{ end }}
+        </span>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div>
+        {{ .Content }}
+      </div>
+    </div>
   </div>
 {{ end }}

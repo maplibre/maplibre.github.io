@@ -15,7 +15,7 @@
     </div>
     <div class="container border-top border-gray">
       <div class="row py-3">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
           <div class="nav">
             {{ range .menu }}
               <li>
@@ -26,7 +26,33 @@
             {{ end }}
           </div>
         </div>
-        <div class="col-sm-6">
+
+        <div class="col-sm-4">
+          {{/* Display copyright if available */}}
+          {{ with .copyright }}
+            <div class="d-flex justify-content-center text-black-50">
+              {{- . -}}
+            </div>
+          {{ end }}
+        </div>
+
+        <div class="col-sm-2 flex">
+          {{ with .githubProjectUrl }}
+            <div class="text-black-50 d-flex justify-content-center">
+              <a class="text-black-50" href="{{ . }}">GitHub</a>
+              {{ with $.gitinfo }}
+                @
+                <a
+                  class="text-black-50"
+                  href="{{ . }}/commit/{{ $.gitinfo.Hash }}"
+                  >{{ $.gitinfo.AbbreviatedHash }}</a
+                >
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+
+        <div class="col-sm-2">
           <div class="nav justify-content-end">
             <a
               class="nav-link text-black-50"
