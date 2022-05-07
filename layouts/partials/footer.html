@@ -1,0 +1,52 @@
+{{ if not .fullscreen }}
+  <footer class="mt-auto">
+    <div class="container pb-4 pt-6">
+      <a href="/" aria-label="MapLibre">
+        <svg
+          aria-hidden="true"
+          width="141"
+          height="30"
+          viewBox="0 0 141 30"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use href="/img/maplibre-logo-dark.svg#maplibre"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="container border-top border-gray">
+      <div class="row py-3">
+        <div class="col-sm-6">
+          <div class="nav">
+            {{ range .menu }}
+              <li>
+                <a class="nav-link text-black-50" href="{{ .URL }}"
+                  >{{ .Name }}</a
+                >
+              </li>
+            {{ end }}
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="nav justify-content-end">
+            <a
+              class="nav-link text-black-50"
+              href="https://twitter.com/maplibre"
+              aria-label="MapLibre on Twitter"
+            >
+              <svg
+                aria-hidden="true"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+              >
+                <use href="/img/icon/twt.svg#twt"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+{{ end }}

@@ -1,0 +1,48 @@
+baseURL = 'https://maplibre.org/'
+languageCode = 'en-us'
+title = 'MapLibre'
+
+sectionPagesMenu = "main"
+
+copyright = "Creative Commons Zero v1.0 Universal"
+
+enableGitInfo = "true"
+summaryLength = 30
+enableEmoji = true
+
+paginate = 10
+
+[menu]
+
+  [[menu.main]]
+    identifier = "community"
+    name = "Community"
+    url = "https://maplibre.org/community"
+    weight = 1000
+
+
+[params]
+  description = "MapLibre is a community-governed collection of open source mapping libraries"
+  keywords = "maplibre maps"
+
+# Links format
+[permalinks]
+  posts = "/posts/:year/:month/:slug/"
+  datefmt  = "Jan 2, 2006"
+
+  [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = true
+    tabWidth = 4
+    style = 'friendly'
