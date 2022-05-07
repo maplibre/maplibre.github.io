@@ -1,37 +1,7 @@
 {{ define "main" }}
-  <div class="container-fluid px-0 mb-6">
-    <div class="row mx-0 bg-title text-center align-items-center">
-      <h1 class="text-white pt-6">
-        <span class="text-secondary"> {{ .Title }}</span> {{ $.Site.Title }}
-      </h1>
-    </div>
-  </div>
+  {{ partial "title-header.html" (dict "sitetitle" $.Site.Title "title" .Title) }}
   <div class="container">
     <div class="row">
-      {{ partial "post_meta_date.html" . }}
-      <div>
-        Categories:
-        {{ range (.GetTerms "categories") }}
-          <span class="badge bg-light"
-            ><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span
-          >
-        {{ end }}
-
-      </div>
-      <div>
-        Authors:
-        <span>
-          {{- range .Params.authors }}
-            {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-              <span class="badge bg-light"
-                ><a href="{{ .Permalink }}">{{ .Params.title }}</a></span
-              >
-            {{ end }}
-          {{ end }}
-        </span>
-      </div>
-    </div>
-    <div class="row mt-4">
       <div>
         {{ .Content }}
       </div>
