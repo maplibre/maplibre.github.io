@@ -12,7 +12,9 @@
       <ul class="section-list">
         {{ range .Data.Pages }}
           <li class="col-sm-8">
-            <a href="{{ .RelPermalink }}"> {{-  .Params.title | markdownify }} </a>
+            <a href="{{ .RelPermalink }}">
+              {{- .Params.title | markdownify }}
+            </a>
           </li>
         {{ end }}
       </ul>

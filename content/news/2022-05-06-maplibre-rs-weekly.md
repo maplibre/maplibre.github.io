@@ -12,7 +12,7 @@ authors: [maxammann]
 About one month ago, the MapLibre organisation started to host the maplibre-rs project (formerly known as mapr). I was happy about the opportunity and the support from the Geo community. It seems like I was not the first with the idea of a map rendering engine in Rust. In the discussion [#18](https://github.com/maplibre/maplibre-rs/discussions/18) a lot of people showed what they have been working on in the past.
 The maplibre-rs project is the place where we can bundle our efforts to create a new, unique and fun rendering engine.
 
-At about the same time, researchers form the University of Applied Sciences and Arts (HES-SO/HEIG-VD),  Switzerland, approached the maplibre-rs project. The maplibre-rs implementation should serve as a proof of concept to show that a true cross-platform experience is possible with WebGPU and Rust.
+At about the same time, researchers form the University of Applied Sciences and Arts (HES-SO/HEIG-VD), Switzerland, approached the maplibre-rs project. The maplibre-rs implementation should serve as a proof of concept to show that a true cross-platform experience is possible with WebGPU and Rust.
 
 I'm looking forward what we will create in the following year!
 
