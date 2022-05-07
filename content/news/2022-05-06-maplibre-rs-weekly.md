@@ -10,10 +10,10 @@ authors:
 
 ## 📰 News
 
-About one months ago the MapLibre organisation aquired the maplibre-rs project (formerly known as mapr). I was happy about the opertunity and the support from the Geo community. It seems like I was not the first with the idea of a map rendering engine in Rust. In the discussion [#18](https://github.com/maplibre/maplibre-rs/discussions/18) a lot of people showed what they have been working on in the past.
-The maplibre-rs project is not the place where we can bundle our efforts to create a new, unique and fun rendering engine.
+About one month ago, the MapLibre organisation started to host the maplibre-rs project (formerly known as mapr). I was happy about the opportunity and the support from the Geo community. It seems like I was not the first with the idea of a map rendering engine in Rust. In the discussion [#18](https://github.com/maplibre/maplibre-rs/discussions/18) a lot of people showed what they have been working on in the past.
+The maplibre-rs project is the place where we can bundle our efforts to create a new, unique and fun rendering engine.
 
-About the same time researchers form the "University of Applied Sciences and Arts (HES-SO/HEIG-VD)" from Switzerland approached the maplibre-rs project. The maplibre-rs implementation should serve as a proof of concept to proof that a truely cross-platform experience is possible with WebGPU and Rust.
+At about the same time, researchers form the University of Applied Sciences and Arts (HES-SO/HEIG-VD),  Switzerland, approached the maplibre-rs project. The maplibre-rs implementation should serve as a proof of concept to show that a true cross-platform experience is possible with WebGPU and Rust.
 
 I'm looking forward what we will create in the following year!
 
@@ -32,9 +32,9 @@ The following will summarizes what happened last week on GitHub.
 - [#46](https://github.com/maplibre/maplibre-rs/pull/46) Prepare for publishing on crates.io
   > Some preparations are finished and maplibre-rs is available [here](https://crates.io/crates/maplibre)
 - [#38](https://github.com/maplibre/maplibre-rs/pull/38) optimize zoom bounds
-  > Computing some coordinates if faster now.
+  > Computing some coordinates is faster now.
 - [#63](https://github.com/maplibre/maplibre-rs/pull/63) Move platform specific code to web
-  > Most of the web related suff lives now in the `web` crates and no longer in the core crate `maplibre`.
+  > Most of the web related stuff lives now in the `web` crates and no longer in the core crate `maplibre`.
 
 ### 🔧 Fixes
 
