@@ -21781,6 +21781,30 @@ uniform ${i3} ${o3} u_${a3};
   defineJQueryPlugin(Toast);
 
   // <stdin>
+  function communityMap(community) {
+    var map = new import_maplibre_gl.Map({
+      container: "map",
+      style: "https://demotiles.maplibre.org/style.json",
+      center: [0, 0],
+      zoom: 1,
+      hash: true,
+      attributionControl: false
+    }).addControl(new import_maplibre_gl.AttributionControl({
+      compact: false,
+      customAttribution: 'OpenStreetMap contributors. | <a href="https://github.com/maplibre/community">Edit on GitHub.</a>'
+    }));
+    map.addControl(new import_maplibre_gl.NavigationControl());
+    community.map((person) => {
+      var el = document.createElement("a");
+      el.className = "marker";
+      el.style.backgroundImage = `url(${person.url})`;
+      el.style.width = "50px";
+      el.style.height = "50px";
+      el.href = person.href;
+      el.title = person.name;
+      new import_maplibre_gl.Marker(el).setLngLat([person.latlon[1], person.latlon[0]]).addTo(map);
+    });
+  }
   function mapPreview() {
     var map = new import_maplibre_gl.Map({
       container: "map",
@@ -21843,6 +21867,7 @@ uniform ${i3} ${o3} u_${a3};
     }
     window.onload = playAnimation, setInterval(playAnimation, lastPoint.Pause + lastPoint.Duration);
   }
+  window.communityMap = communityMap;
   window.mapPreview = mapPreview;
 })();
 /*!
