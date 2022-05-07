@@ -27,6 +27,12 @@
     resources.Fingerprint
   }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+
+  {{ $style := readFile "node_modules/maplibre-gl/dist/maplibre-gl.css" | resources.FromString "mapbox-gl.css" |
+    resources.Fingerprint
+  }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+
   {{ $opts := dict "targetPath" "main.js" }}
   {{ $built := resources.Get
     "map-preview.js" | js.Build $opts
