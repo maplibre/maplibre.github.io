@@ -1,0 +1,29 @@
+{{ define "main" }}
+  {{ partial "title-header.html" (dict "sitetitle" $.Site.Title "title" .Title) }}
+  <div class="container">
+    {{ if .Content }}{{ .Content }}{{ end }}
+    <div class="row">
+      <div>
+        {{ range .Pages }}
+          <div class="col-sm-8">
+            <h2>{{ .Title }}</h2>
+            <div class="mb-5">
+              {{ with .Params.github }}
+                <span class="badge bg-light"><a href="{{ . }}">GitHub</a></span>
+              {{ end }}
+              {{ with .Params.documentation }}
+                {{ range . }}
+                  <span class="badge bg-light"
+                    ><a href="{{ .url }}">Docs: {{ .name }}</a></span
+                  >
+                {{ end }}
+              {{ end }}
+            </div>
+            <div>{{ .Content }}</div>
+          </div>
+        {{ end }}
+      </div>
+      {{ template "_internal/pagination.html" . }}
+    </div>
+  </div>
+{{ end }}
