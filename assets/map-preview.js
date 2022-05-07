@@ -1,4 +1,5 @@
 import { Map } from "maplibre-gl";
+import "bootstrap";
 
 function mapPreview() {
   var map = new Map({
