@@ -7,7 +7,7 @@
         {{ range .Pages }}
           <div class="col-sm-8">
             <h2>{{ .Title }}</h2>
-            <div class="mb-5">
+            <div class="mb-3">
               {{ with .Params.github }}
                 <span class="badge bg-light"><a href="{{ . }}">GitHub</a></span>
               {{ end }}
@@ -20,6 +20,7 @@
               {{ end }}
             </div>
             <div>{{ .Content }}</div>
+            <hr />
           </div>
         {{ end }}
       </div>
