@@ -1,12 +1,5 @@
 {{ define "main" }}
-  <div class="container-fluid px-0 mb-6">
-    <div class="row mx-0 bg-title text-center align-items-center">
-      <h1 class="text-white pt-6">
-        <span class="text-secondary"> {{ .Params.title }}</span>
-        {{ $.Site.Title }}
-      </h1>
-    </div>
-  </div>
+  {{ partial "title-header.html" (dict "sitetitle" $.Site.Title "title" .Params.title) }}
   <div class="container">
     <div class="row">
       <div>
@@ -22,11 +15,7 @@
 
 
         <h2>Articles</h2>
-        <ul>
-          {{ range .Data.Pages }}
-            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-          {{ end }}
-        </ul>
+        {{ partial "post-list.html" (.Paginate .Data.Pages) }}
       </div>
     </div>
   </div>

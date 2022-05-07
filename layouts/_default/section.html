@@ -9,17 +9,7 @@
   <div class="container">
     {{ if .Content }}{{ .Content }}{{ end }}
     <div class="row">
-      <ul class="section-list">
-        {{ range .Paginator.Pages }}
-          <li class="col-sm-8">
-            <a href="{{ .RelPermalink }}"> {{- .Title | markdownify }} </a>
-            {{ partial "post_meta.html" . }}
-          </li>
-        {{ end }}
-      </ul>
-
-      {{/* Display paginator */}}
-      {{ template "_internal/pagination.html" . }}
+      {{ partial "post-list.html" .Paginator }}
     </div>
   </div>
 {{ end }}

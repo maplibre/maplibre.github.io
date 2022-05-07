@@ -4,6 +4,7 @@ import {
   NavigationControl,
   Marker,
 } from "maplibre-gl";
+import "bootstrap";
 
 function communityMap(community) {
   var map = new Map({
@@ -59,8 +60,8 @@ function mapPreview() {
       Zoom: 3.4916772106200415,
       Duration: 5000,
       Pause: 3000,
-      Rotation: -52.8,
-      Pitch: 29.5,
+      Rotation: 0,
+      Pitch: 0,
     },
     {
       lng: 5.388541216098361,
@@ -68,8 +69,8 @@ function mapPreview() {
       Zoom: 6.15010124013107,
       Duration: 10000,
       Pause: 8000,
-      Rotation: -12,
-      Pitch: 41.5,
+      Rotation: 0,
+      Pitch: 0,
     },
     {
       lng: -0.08411085041984734,
