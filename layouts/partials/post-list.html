@@ -1,9 +1,0 @@
-<ul class="section-list">
-  {{ range .Pages }}
-    <li class="col-sm-8">
-      <a href="{{ .RelPermalink }}"> {{- .Title | markdownify }} </a>
-      {{ partial "post_meta.html" . }}
-    </li>
-  {{ end }}
-</ul>
-{{ template "_internal/pagination.html" . }}
