@@ -1,19 +1,19 @@
 ---
 title: "maplibre-rs"
-weight: -900
+weight: 100
 github: https://github.com/maplibre/maplibre-rs
+logo: "logo"
 documentation:
   - url: https://docs.rs/maplibre/
-    name: API
+    name: Rust API Documentation
   - url: https://maxammann.org/maplibre-rs/docs/
-    name: Rust Book
+    name: Book
 resources:
   - name: logo
     src: maplibre-rs-with-text.svg
     title: maplibre-rs logo
+stable: false
 ---
-
-{{< page-figure "logo" >}}
 
 maplibre-rs is a portable and performant vector maps renderer. We aim to support web, mobile and desktop applications. This
 is achieved by the novel [WebGPU](https://www.w3.org/TR/webgpu/) specification. Plenty of native implementations are
