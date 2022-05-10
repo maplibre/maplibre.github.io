@@ -11,6 +11,6 @@ stable: true
 Open-source JavaScript library for publishing maps on your websites.
 Fast displaying of maps is possible thanks to GPU-accelerated vector tile rendering.
 
-Originated as an open-source fork of *mapbox-gl-js*, the library is
+Originated as an open-source fork of _mapbox-gl-js_, the library is
 intended to be a drop-in replacement for the Mapbox’s version with
 additional functionality.

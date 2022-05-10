@@ -15,5 +15,5 @@ mobile applications, desktop application, or embedded devices.
 This toolset grants fast maps displaying in iOS and Android apps using the
 same GPU-based acceleration as the JavaScript version.
 
-*MapLibre-Native* is an open source fork of *mapbox-native* with
+_MapLibre-Native_ is an open source fork of _mapbox-native_ with
 additional functionality.
