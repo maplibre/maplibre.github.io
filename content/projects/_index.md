@@ -1,5 +1,5 @@
 ---
 title: "Projects"
-menu: [main, footer]
+menu: [footer]
 weight: 90
 ---
