@@ -1,7 +1,7 @@
 ---
 title: "MapLibre GL JS"
 weight: -1000
-github: https://github.com/maplibre/maplibre-gl-native
+github: https://github.com/maplibre/maplibre-gl-js
 documentation:
   - url: https://maplibre.org/maplibre-gl-js-docs
     name: "API Documentation"
