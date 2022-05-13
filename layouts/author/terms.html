@@ -3,18 +3,19 @@
   <div class="container">
     {{ if .Content }}{{ .Content }}{{ end }}
     <div class="row">
-      <ul class="section-list">
-        {{ range .Data.Pages }}
-          <li class="col-sm-8">
-            <a href="{{ .RelPermalink }}">
-              {{- .Params.title | markdownify }}
-            </a>
-          </li>
-        {{ end }}
-      </ul>
-
-      {{/* Display paginator */}}
-      {{ template "_internal/pagination.html" . }}
+      <div class="col-sm-8">
+        <ul class="section-list">
+          {{ range .Data.Pages }}
+            <li>
+              <a href="{{ .RelPermalink }}">
+                {{- .Params.title | markdownify }}
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+        {{/* Display paginator */}}
+        {{ template "_internal/pagination.html" . }}
+      </div>
     </div>
   </div>
 {{ end }}
