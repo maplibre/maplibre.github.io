@@ -1,11 +1,5 @@
 {{ define "main" }}
-  <div class="container-fluid px-0 mb-6">
-    <div class="row mx-0 bg-title text-center align-items-center">
-      <h1 class="text-white pt-6">
-        <span class="text-secondary">{{ .Title }}</span> {{ $.Site.Title }}
-      </h1>
-    </div>
-  </div>
+  {{ partial "title-header.html" (dict "sitetitle" $.Site.Title "title" .Title) 100100 }}
   <div class="container">
     {{ if .Content }}{{ .Content }}{{ end }}
     <div class="row">
