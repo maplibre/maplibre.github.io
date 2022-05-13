@@ -8,4 +8,4 @@ documentation:
 stable: true
 ---
 
-A plugin to show routing directions on a MapLibre GL JS map
+Geocoding for MapLibre GL JS
