@@ -21794,6 +21794,12 @@ uniform ${i3} ${o3} u_${a3};
       customAttribution: 'OpenStreetMap contributors. | <a href="https://github.com/maplibre/community">Edit on GitHub.</a>'
     }));
     map.addControl(new import_maplibre_gl.NavigationControl());
+    const lngs = community.map((person) => person.latlon[1]);
+    const lats = community.map((person) => person.latlon[0]);
+    map.fitBounds([
+      [Math.min(...lngs), Math.min(...lats)],
+      [Math.max(...lngs), Math.max(...lats)]
+    ], { padding: 50 });
     community.map((person) => {
       var el = document.createElement("a");
       el.className = "marker";
