@@ -24,6 +24,17 @@ function communityMap(community) {
 
   map.addControl(new NavigationControl());
 
+  const lngs = community.map((person) => person.latlon[1]);
+  const lats = community.map((person) => person.latlon[0]);
+
+  map.fitBounds(
+    [
+      [Math.min(...lngs), Math.min(...lats)],
+      [Math.max(...lngs), Math.max(...lats)],
+    ],
+    { padding: 50 }
+  );
+
   community.map((person) => {
     var el = document.createElement("a");
     el.className = "marker";
