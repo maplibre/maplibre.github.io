@@ -1,0 +1,2 @@
+{{ $data := getJSON (printf "https://api.github.com/repos/maplibre/%s/issues/%d" (.Get 0) (.Get 1) ) }}
+<a href="{{ $data.url }}">#{{ $data.number }}</a> {{ $data.title }}

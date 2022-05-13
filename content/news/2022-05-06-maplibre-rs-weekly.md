@@ -22,18 +22,18 @@ The following will summarizes what happened last week on GitHub.
 
 ### 🎁 New Features
 
-- [#13](https://github.com/maplibre/maplibre-rs/pull/13), [#33](https://github.com/maplibre/maplibre-rs/pull/33) Add support for Gradle
-  > It's not possible to easily use maplibre-rs on Android. Sadly only fullscreen is supported right now.
-- [#15](https://github.com/maplibre/maplibre-rs/pull/15) Add support for XCode and Swift Packages
-  > It's not possible to easily use maplibre-rs on iOS and macOS. Sadly only fullscreen is supported right now.
-- [#43](https://github.com/maplibre/maplibre-rs/pull/43) Create a proper web package
-  > It's not possible to easily use maplibre-rs on the web via an NPM package.
-- [#46](https://github.com/maplibre/maplibre-rs/pull/46) Prepare for publishing on crates.io
-  > Some preparations are finished and maplibre-rs is available [here](https://crates.io/crates/maplibre)
-- [#38](https://github.com/maplibre/maplibre-rs/pull/38) optimize zoom bounds
-  > Computing some coordinates is faster now.
-- [#63](https://github.com/maplibre/maplibre-rs/pull/63) Move platform specific code to web
-  > Most of the web related stuff lives now in the `web` crates and no longer in the core crate `maplibre`.
+- [#13](https://github.com/maplibre/maplibre-rs/pull/13), [#33](https://github.com/maplibre/maplibre-rs/pull/33) Add support for Gradle<br>
+  It's not possible to easily use maplibre-rs on Android. Sadly only fullscreen is supported right now.
+- [#15](https://github.com/maplibre/maplibre-rs/pull/15) Add support for XCode and Swift Packages<br>
+  It's not possible to easily use maplibre-rs on iOS and macOS. Sadly only fullscreen is supported right now.
+- [#43](https://github.com/maplibre/maplibre-rs/pull/43) Create a proper web package<br>
+  It's not possible to easily use maplibre-rs on the web via an NPM package.
+- [#46](https://github.com/maplibre/maplibre-rs/pull/46) Prepare for publishing on crates.io<br>
+  Some preparations are finished and maplibre-rs is available [here](https://crates.io/crates/maplibre)
+- [#38](https://github.com/maplibre/maplibre-rs/pull/38) optimize zoom bounds<br>
+  Computing some coordinates is faster now.
+- [#63](https://github.com/maplibre/maplibre-rs/pull/63) Move platform specific code to web<br>
+  Most of the web related stuff lives now in the `web` crates and no longer in the core crate `maplibre`.
 
 ### 🔧 Fixes
 
@@ -44,7 +44,7 @@ The following will summarizes what happened last week on GitHub.
 - [#52](https://github.com/maplibre/maplibre-rs/pull/52) Add packaging Documentation
 - [#54](https://github.com/maplibre/maplibre-rs/pull/54) Improve the MacOS documentation
 
-### 🧵 Discussions
+### 🧵 Current Discussions
 
 - [#18](https://github.com/maplibre/maplibre-rs/discussions/18) Looking forward
   What's up in the mapping community?
