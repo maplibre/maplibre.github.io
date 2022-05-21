@@ -31,8 +31,6 @@ The map shows contributors to MapLibre projects as recorded in the public git co
 
 Location information was taken from people's public GitHub profiles.
 
-<a href="https://maplibre.org/community/"><img src="map.png" width=650></a>
-
 ### Please Add Me
 
 If you would like to be included in the MapLibre community map, fork this repo, edit `data/community.json`, and make a pull request. Or just open an issue...
