@@ -1,5 +1,5 @@
 ---
-title: "maplibre-rs weekly"
+title: "maplibre-rs monthly"
 date: 2022-05-23T20:16:02+02:00
 categories: ["maplibre-rs"]
 authors: [maxammann]
