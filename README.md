@@ -22,7 +22,6 @@ After making any changes, make sure to run `npm run format`.
 
 In order to build the website run `npm run build`. The built website is available in `public/`.
 
-
 # maplibre-rs weekly
 
 In order to create a news post for maplibre-rs do the following:

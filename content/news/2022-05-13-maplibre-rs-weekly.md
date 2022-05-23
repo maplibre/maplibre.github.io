@@ -69,5 +69,3 @@ Some architectural discussions:
 
 - {{< github-user iakev >}} - For resolving `.unwrap()`s in the code
 - {{< github-user neimsaci >}} - For adding contributors to the README
-
-

@@ -1,6 +1,6 @@
 ---
 title: "maplibre-rs monthly"
-date: {{ .Date }}
+date: { { .Date } }
 categories: ["maplibre-rs"]
 authors: [maxammann]
 draft: true
@@ -11,6 +11,7 @@ draft: true
 ## 📰 News
 
 TODO
+
 ## 🏠 House Keeping
 
 The following will summarizes what happened last week on GitHub.
