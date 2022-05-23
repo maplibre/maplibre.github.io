@@ -1,5 +1,5 @@
 ---
-title: "maplibre-rs: Weekly Progress"
+title: "maplibre-rs weekly"
 date: "2022-05-13"
 categories: ["maplibre-rs"]
 authors: [maxammann]
