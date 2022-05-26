@@ -7,12 +7,7 @@ type: community
 ---
 
 <style>
-  .community-map {
-    height: 100%;
-    width: 100%;
-  }
-
-  .community-map-wrapper {
+  #community-map {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -28,9 +23,7 @@ type: community
   }
 </style>
 
-<div class="community-map-wrapper">
-  <div id="community-map" class="community-map"></div>
-</div>
+<div id="community-map"></div>
 
 <script>
     const communityData = {{< community-json >}};
