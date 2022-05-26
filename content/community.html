@@ -7,7 +7,12 @@ type: community
 ---
 
 <style>
-  #commmunity-map {
+  .commmunity-map {
+    height: 100%;
+    width: 100%;
+  }
+
+  .community-map-wrapper {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -23,8 +28,8 @@ type: community
   }
 </style>
 
-<div>
-  <div id="community-map"></div>
+<div class="community-map-wrapper">
+  <div id="community-map" class="commmunity-map"></div>
 </div>
 
 <script>
