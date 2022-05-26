@@ -35,9 +35,7 @@
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
   {{ $opts := dict "targetPath" "main.js" }}
-  {{ $built := resources.Get
-    "main.js" | js.Build $opts
-  }}  <script type="text/javascript" src="{{ $built.RelPermalink }}"></script>
+  {{ $built := resources.Get "main.js" | js.Build $opts | resources.Fingerprint }}  <script type="text/javascript" src="{{ $built.RelPermalink }}"></script>
 
   <title>{{ $.Site.Title }} - {{ .Title }}</title>
 </head>
