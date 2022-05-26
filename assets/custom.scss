@@ -27,10 +27,16 @@
     width: 100%;
   }
 }
-#home-map {
+
+.home-map-wrapper {
   position: absolute;
   top: 0;
   bottom: 0;
+  width: 100%;
+}
+
+.home-map {
+  height: 100%;
   width: 100%;
 }
 
