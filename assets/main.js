@@ -7,9 +7,9 @@ import {
 } from "maplibre-gl";
 import "bootstrap";
 
-function communityMap(community) {
+function communityMap(container, community) {
   var map = new Map({
-    container: "community-map",
+    container,
     style: "https://demotiles.maplibre.org/style.json",
     center: [0, 0],
     zoom: 1,
@@ -48,9 +48,9 @@ function communityMap(community) {
   });
 }
 
-function mapPreview() {
+function mapPreview(container) {
   var map = new Map({
-    container: "home-map",
+    container,
     style: "https://demotiles.maplibre.org/style.json",
     center: [0, 0],
     zoom: 1,
@@ -116,9 +116,9 @@ function mapPreview() {
     setInterval(playAnimation, lastPoint.Pause + lastPoint.Duration);
 }
 
-function terrain3dMap() {
+function terrain3dMap(container) {
   var map = (window.map = new Map({
-    container: "map",
+    container,
     zoom: 12,
     center: [11.39085, 47.27574],
     pitch: 52,
