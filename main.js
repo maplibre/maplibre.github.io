@@ -22200,9 +22200,9 @@ uniform ${i3} ${o3} u_${a3};
   defineJQueryPlugin(Toast);
 
   // <stdin>
-  function communityMap(community) {
+  function communityMap(container, community) {
     var map = new import_maplibre_gl.Map({
-      container: "community-map",
+      container,
       style: "https://demotiles.maplibre.org/style.json",
       center: [0, 0],
       zoom: 1,
@@ -22230,9 +22230,9 @@ uniform ${i3} ${o3} u_${a3};
       new import_maplibre_gl.Marker(el).setLngLat([person.latlon[1], person.latlon[0]]).addTo(map);
     });
   }
-  function mapPreview() {
+  function mapPreview(container) {
     var map = new import_maplibre_gl.Map({
-      container: "home-map",
+      container,
       style: "https://demotiles.maplibre.org/style.json",
       center: [0, 0],
       zoom: 1
@@ -22292,9 +22292,9 @@ uniform ${i3} ${o3} u_${a3};
     }
     window.onload = playAnimation, setInterval(playAnimation, lastPoint.Pause + lastPoint.Duration);
   }
-  function terrain3dMap() {
+  function terrain3dMap(container) {
     var map = window.map = new import_maplibre_gl.Map({
-      container: "map",
+      container,
       zoom: 12,
       center: [11.39085, 47.27574],
       pitch: 52,
