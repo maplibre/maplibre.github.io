@@ -22202,7 +22202,7 @@ uniform ${i3} ${o3} u_${a3};
   // <stdin>
   function communityMap(community) {
     var map = new import_maplibre_gl.Map({
-      container: "map",
+      container: "community-map",
       style: "https://demotiles.maplibre.org/style.json",
       center: [0, 0],
       zoom: 1,
@@ -22232,7 +22232,7 @@ uniform ${i3} ${o3} u_${a3};
   }
   function mapPreview() {
     var map = new import_maplibre_gl.Map({
-      container: "map",
+      container: "home-map",
       style: "https://demotiles.maplibre.org/style.json",
       center: [0, 0],
       zoom: 1
