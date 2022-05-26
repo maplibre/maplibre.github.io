@@ -5,7 +5,16 @@ menu: footer
 weight: -10
 ---
 
-<div class="home-map-wrapper"><div id="map" class="home-map"></div></div>
+<style>
+  #home-map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
+
+<div id="home-map"></div>
 <div class="home-banner">
   <div class="row align-items-center p-5">
     <div class="col-lg-8 text-lg-center">
@@ -36,5 +45,5 @@ weight: -10
   </div>
 </div>
 <script type="text/javascript">
-  mapPreview();
+  mapPreview("home-map");
 </script>
