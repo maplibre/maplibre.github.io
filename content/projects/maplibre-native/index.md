@@ -3,7 +3,7 @@ title: "MapLibre Native"
 weight: -900
 github: https://github.com/maplibre/maplibre-gl-native
 documentation:
-  - url: https://docs.maptiler.com/maplibre-gl-native-android
+  - url: https://maplibre.org/maplibre-gl-native/android/api/
     name: Android API Documentation
   - url: https://docs.maptiler.com/maplibre-gl-native-ios
     name: iOS API Documentation
