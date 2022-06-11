@@ -29,9 +29,9 @@ We want to use this contribution as a stepping stone to participate in projects 
 ## Have you supported other open-source projects in the past?
 
 - [QGIS.org - Sustaining Member](https://qgis.org/en/site/about/sustaining_members.html)
-[Funded "Vector Tile native support in QGIS" Crowdfunding Project](https://www.lutraconsulting.co.uk/crowdfunding/vectortile-qgis/)
-[OSGeoJP (Japan Chapter of OSGeo Foundation) - Institutional Sponsor](https://www.osgeo.jp/sponsor)
-[OpenStreetMap Foundation Japan - "State of the Map" Conference Sponsor, 2017-2020)](https://stateofthemap.jp/) (As we haven't had a conference since 2020 due to the global situation)
+  [Funded "Vector Tile native support in QGIS" Crowdfunding Project](https://www.lutraconsulting.co.uk/crowdfunding/vectortile-qgis/)
+  [OSGeoJP (Japan Chapter of OSGeo Foundation) - Institutional Sponsor](https://www.osgeo.jp/sponsor)
+  [OpenStreetMap Foundation Japan - "State of the Map" Conference Sponsor, 2017-2020)](https://stateofthemap.jp/) (As we haven't had a conference since 2020 due to the global situation)
 
 ## Is MapLibre well aligned with the needs of the local mapping community in Japan?
 
