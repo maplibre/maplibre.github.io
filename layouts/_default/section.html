@@ -3,9 +3,10 @@
   <div class="container">
     {{ if .Content }}{{ .Content }}{{ end }}
     <div class="row">
-      <div style="">
-        {{ partial "post-list.html" .Paginator }}
-      </div>
+      {{ partial "post-list.html" .Paginator }}
+    </div>
+    <div class="row">
+      {{ template "_internal/pagination.html" . }}
     </div>
   </div>
 {{ end }}
