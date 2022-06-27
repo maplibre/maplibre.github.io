@@ -1,5 +1,11 @@
-{{ $lastweek := (now.AddDate 0 0 -7 | time.Format "2006-01-02") }}
-{{ $postResponse := resources.GetRemote (printf "https://api.github.com/search/issues?q=repo:%s%%20type:%s%%20created:%%3E=%s" .repo "issue" $lastweek) (dict
+{{ $lastweek := now.AddDate 0 0 -7 }}
+{{ $date := ($lastweek | time.Format "2006-01-02")  }}
+
+{{ if (os.Getenv "HUGO_SINCE") }}
+{{ $date = os.Getenv "HUGO_SINCE" }}
+{{ end }}
+
+{{ $postResponse := resources.GetRemote (printf "https://api.github.com/search/issues?q=repo:%s%%20type:%s%%20created:%%3E=%s" .repo "issue" $date) (dict
     "method" "get"
     "body" nil
     "headers" (dict

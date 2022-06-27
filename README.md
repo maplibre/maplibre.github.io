@@ -27,7 +27,7 @@ In order to build the website run `npm run build`. The built website is availabl
 In order to create a news post for maplibre-rs do the following:
 
 ```bash
-hugo new -k maplibre-rs-news news/2022-05-23-maplibre-rs-weekly.md
+HUGO_SINCE=2022-05-26 hugo new -k maplibre-rs-news news/2022-05-23-maplibre-rs-weekly.md
 ```
 
 This will fetch the last weeks issues and PRs and prepare a post for you.
