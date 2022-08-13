@@ -22210,7 +22210,7 @@ uniform ${i3} ${o3} u_${a3};
       attributionControl: false
     }).addControl(new import_maplibre_gl.AttributionControl({
       compact: false,
-      customAttribution: 'OpenStreetMap contributors. | <a href="https://github.com/maplibre/community">Edit on GitHub.</a>'
+      customAttribution: 'OpenStreetMap contributors. | <a href="https://github.com/maplibre/maplibre.github.io">Edit on GitHub.</a>'
     }));
     map.addControl(new import_maplibre_gl.NavigationControl());
     const lngs = community.map((person) => person.latlon[1]);
