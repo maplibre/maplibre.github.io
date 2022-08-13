@@ -10,7 +10,7 @@ enableGitInfo = true
 summaryLength = 30
 enableEmoji = true
 
-paginate = 10
+paginate = 50
 
 [taxonomies]
   author = "authors"
