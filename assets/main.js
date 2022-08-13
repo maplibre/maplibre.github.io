@@ -19,7 +19,7 @@ function communityMap(container, community) {
     new AttributionControl({
       compact: false,
       customAttribution:
-        'OpenStreetMap contributors. | <a href="https://github.com/maplibre/community">Edit on GitHub.</a>',
+        'OpenStreetMap contributors. | <a href="https://github.com/maplibre/maplibre.github.io">Edit on GitHub.</a>',
     })
   );
 
