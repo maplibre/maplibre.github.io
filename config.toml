@@ -19,7 +19,7 @@ paginate = 50
 [menu]
 
 [params]
-  description = "MapLibre is a community-governed collection of open source mapping libraries"
+  description = "Open-source mapping libraries for web and mobile app developers."
   keywords = "maplibre maps"
   githubProjectUrl = "https://github.com/maplibre/maplibre.github.io"
 
