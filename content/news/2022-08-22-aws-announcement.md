@@ -22,7 +22,6 @@ Location Service’s recommended map renderer and forms the basis of AWS Amplify
 display and geocoding capabilities. We’ve been excited to see the project grow since it
 launched in 2020 and look forward to continuing our work with the MapLibre Organization.
 
-
 ## 2. Why is the support and growth of the MapLibre community important to AWS and its customers?
 
 Many AWS customers already use MapLibre, so this is an opportunity to help support ongoing
