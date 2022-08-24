@@ -8,7 +8,7 @@ documentation:
 stable: true
 ---
 
-Open-source JavaScript library for publishing maps on your websites.
+Open-source TypeScript library for publishing maps on your websites.
 Fast displaying of maps is possible thanks to GPU-accelerated vector tile rendering.
 
 Originated as an open-source fork of _mapbox-gl-js_, the library is
