@@ -7,7 +7,7 @@
       "label": "hugo",
       "type": "shell",
       "command": "hugo",
-      "args": ["serve", "-D"],
+      "args": ["serve", "--buildDrafts", "--buildFuture"],
       "problemMatcher": [],
       "runOptions": {
         "runOn": "folderOpen"
