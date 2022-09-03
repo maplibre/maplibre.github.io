@@ -5,8 +5,12 @@ github: https://github.com/maplibre/maplibre-gl-native
 documentation:
   - url: https://maplibre.org/maplibre-gl-native/android/api/
     name: Android API Documentation
+  - url: https://docs.maptiler.com/maplibre-gl-native-android/
+    name: Android Examples
   - url: https://maplibre.org/maplibre-gl-native/ios/api/
     name: iOS API Documentation
+  - url: https://docs.maptiler.com/maplibre-gl-native-ios/
+    name: iOS Examples
 stable: true
 ---
 
