@@ -16,7 +16,7 @@ And because a picture is worth a thousand words:
 
 {{< page-figure "collage.jpeg" "Our community" 1000 />}}
 
-Behind the scenes, I was working on providing an alternative multi-threading implementation for the web platform. Because atomics are only supported by [enabling specific HTTP headers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), we really need a more portable implementation which does not rely on these atomics. Instead of doing real multithreading in the browser, we want to do multiprocessing through WebWorkers. I designed an interface which should work well for most data-processing needs. The interface is called `AsyncProcedureCall`. 
+Behind the scenes, I was working on providing an alternative multi-threading implementation for the web platform. Because atomics are only supported by [enabling specific HTTP headers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), we really need a more portable implementation which does not rely on these atomics. Instead of doing real multithreading in the browser, we want to do multiprocessing through WebWorkers. I designed an interface which should work well for most data-processing needs. The interface is called `AsyncProcedureCall`.
 
 ```Rust
 #[derive(Clone)]
@@ -43,7 +43,6 @@ pub trait AsyncProcedureCall<T: Transferables, HC: HttpClient>: 'static {
 
 ```
 
-
 Instead of relying on mutexes and MPSC channels, the implementation of this `APC` for the web relies on WebWorkers and sending [ArrayBuffers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer).
 
 I'm working on this in a rather large [PR](https://github.com/maplibre/maplibre-rs/pull/174). As not much else is going on in the project, merging probably won't cause issues.
@@ -69,7 +68,6 @@ The following will summarizes what happened last week on GitHub.
 - [#80](https://github.com/maplibre/maplibre-rs/pull/80) Refactor WebWorker pool by [@maxammann](https://github.com/maxammann)<br>
   This is the start of a major refactor for async tasks on the web.
 
-
 ### 🎁 New Issues
 
 - [#166](https://github.com/maplibre/maplibre-rs/issues/166) ReferenceError: Can't find variable: Worker by [@maxammann](https://github.com/maxammann)<br>
@@ -80,8 +78,6 @@ The following will summarizes what happened last week on GitHub.
 
 - [#161](https://github.com/maplibre/maplibre-rs/issues/161) Limit the maximum and minimum zoom level by [@hanchao](https://github.com/hanchao)<br>
   We got a great bug report! It seems like people are experimenting with maplibre-rs in the wild!
-
-
 
 ### 🧵 Current Discussions
 
