@@ -3,7 +3,7 @@ title: "maplibre-rs monthly"
 date: 2022-09-24
 categories: ["maplibre-rs"]
 authors: [maxammann]
-draft: true
+draft: false
 ---
 
 [maplibre-rs](https://github.com/maplibre/maplibre-rs) is an upcoming and cross-platform vector map renderer written in Rust. If you want to get in touch with the developers, visit the [#maplibre:matrix.org](https://matrix.to/#/#mapr:matrix.org) chat or join the MapLibre (#maplibre and #maplibre-rs) community within the OpenStreetMap Slack. You can get an invitation [here](https://osmus-slack.herokuapp.com/).
