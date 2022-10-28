@@ -14,7 +14,7 @@ MapLibre GL Native is planning for modularization and migration to Metal, Apple'
 
 We are happy to announce that Stamen Design, with technical leadership by Wet Dog Weather and funding from AWS, have begun planning for the modularization of MapLibre rendering and a separate proposal for migrating the iOS SDK from OpenGL to Metal.
 
-Stamen provides full-stack cartographic services to clients who rely heavily on projects like MapLibre, which tie all the parts of the modern mapping stack – tiles, styles, and SDKS – together. Steve Gifford from Wet Dog Weather will be the technical lead for this project, and Stephanie May, Damon Burgett, and Camilla Mahon from Stamen will support the effort to get these plans in front of the community.
+Stamen provides full-stack cartographic services to clients who rely heavily on projects like MapLibre, which tie all the parts of the modern mapping stack – tiles, styles, and SDKs – together. Steve Gifford from Wet Dog Weather will be the technical lead for this project, and Stephanie May, Damon Burgett, and Camilla Mahon from Stamen will support the effort to get these plans in front of the community.
 
 AWS identified that their iOS customers have a strong need for a Metal map renderer and are glad to support the MapLibre community with this contribution.
 
