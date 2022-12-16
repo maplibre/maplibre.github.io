@@ -20,7 +20,7 @@ To share your own idea, do this:
 2. Press "New discussion"
 3. Use a catchy title
 4. Put an image if you have one (maps people really like visuals...)
-5. Describe the idea in a few sentenses
+5. Describe the idea in a few sentences
 
 ## Voting
 
