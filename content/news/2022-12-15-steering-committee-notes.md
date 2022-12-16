@@ -7,4 +7,4 @@ authors: [wipfli]
 
 Yesterday, we had a first MapLibre Eastern Call at 9 AM CET, the native technical steering committee meeting at 7 PM CET, and the web technical steering committee meeting at 8 PM CET. All notes are avaialbe at [https://github.com/maplibre/maplibre/discussions/154](https://github.com/maplibre/maplibre/discussions/154).
 
-It was great to see so many people from all over the world and participation from companies including Amazon, Apple, Grab, Microsoft, Meta, Stamen, Mierune, TomTom, MapTiler, Lyft, Stadia Maps, and RobLabs!
+It was great to see so many people from all over the world and participation from companies including Amazon, Apple, Grab, Lyft, MapTiler, Meta, Microsoft, Mierune, RobLabs, Stadia Maps, Stamen, and TomTom!
