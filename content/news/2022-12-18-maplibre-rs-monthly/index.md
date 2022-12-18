@@ -6,7 +6,7 @@ authors: [maxammann]
 draft: false
 ---
 
-[maplibre-rs](https://github.com/maplibre/maplibre-rs) is an upcoming and cross-platform vector map renderer written in Rust. If you want to get in touch with the developers, visit the [#maplibre:matrix.org](https://matrix.to/#/#mapr:matrix.org) chat or join the MapLibre (#maplibre and #maplibre-rs) community within the OpenStreetMap Slack. You can get an invitation [here](https://osmus-slack.herokuapp.com/).
+[maplibre-rs](https://github.com/maplibre/maplibre-rs) is an upcoming and cross-platform vector map renderer written in Rust. If you want to get in touch with the developers, visit the [#maplibre:matrix.org](https://matrix.to/#/#mapr:matrix.org) chat or join the MapLibre (#maplibre and #maplibre-rs) community within the OpenStreetMap Slack. You can get an invitation [here](https://slack.openstreetmap.us/).
 
 ## 📰 News
 
@@ -108,7 +108,6 @@ The following will summarizes what happened last week on GitHub.
 - [#149](https://github.com/maplibre/maplibre-rs/pull/149) Define a minimum and maximum pitch by [@maxammann](https://github.com/maxammann)<br>
   TODO:remove or add comment
 
-
 ### 🎁 New Issues
 
 - [#229](https://github.com/maplibre/maplibre-rs/issues/229) Limit work done per frame by [@maxammann](https://github.com/maxammann)<br>
@@ -149,7 +148,6 @@ The following will summarizes what happened last week on GitHub.
 
 - [#182](https://github.com/maplibre/maplibre-rs/issues/182) Flutter support by [@maxammann](https://github.com/maxammann)<br>
   TODO:remove or add comment
-
 
 ### 🧵 Current Discussions
 
