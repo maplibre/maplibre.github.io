@@ -1,6 +1,7 @@
 ---
 title: "maplibre-rs monthly"
-date: { { .Date } }
+# prettier-ignore
+date: {{ .Date }}
 categories: ["maplibre-rs"]
 authors: [maxammann]
 draft: true
