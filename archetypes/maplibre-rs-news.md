@@ -1,6 +1,6 @@
 ---
 title: "maplibre-rs monthly"
-date: { { .Date } }
+date: {{ .Date }}
 categories: ["maplibre-rs"]
 authors: [maxammann]
 draft: true
