@@ -13,7 +13,7 @@
   <meta property="og:image:alt" content="MapLibre" />
   <meta property="og:title" content="{{ .Title }}" />
   <meta property="og:description" content="{{ .Params.description }}" />
-  <meta property="og:url" content="{{ .BaseURL }}" />
+  <meta property="og:url" content="{{ .Permalink | absURL }}" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@maplibre" />
