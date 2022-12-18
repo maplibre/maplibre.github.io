@@ -10,7 +10,31 @@ draft: false
 
 ## 📰 News
 
-TODO
+{{< page-figure "egui.png" "egui integration" 1000 >}}
+egui integration
+{{< /page-figure >}}
+{{< page-figure "extrusion.png" "building extrusion" 1000 >}}
+3D building extrusion
+{{< /page-figure >}}
+{{< page-figure "raster.png" "raster tile rendering" 1000 >}}
+Raster tiles
+{{< /page-figure >}}
+
+<figure>
+  <video
+    class="w-50 p-3"
+    src="sdf-rendering.webm"
+    autoplay
+    muted
+    controls
+    loop
+  ></video>
+  
+  <figcaption>
+    Text Rendering using SDFs
+  </figcaption>
+</figure>
+
 
 ## 🏠 House Keeping
 

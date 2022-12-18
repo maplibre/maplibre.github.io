@@ -14,7 +14,9 @@ It has been an exciting summer - FOSS4G happened and a [paper](https://maplibre.
 
 And because a picture is worth a thousand words:
 
-{{< page-figure "collage.jpeg" "Our community" 1000 />}}
+{{< page-figure "collage.jpeg" "Our community" 1000 >}}
+Our community
+{{< /page-figure >}}
 
 Behind the scenes, I was working on providing an alternative multi-threading implementation for the web platform. Because atomics are only supported by [enabling specific HTTP headers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), we really need a more portable implementation which does not rely on these atomics. Instead of doing real multithreading in the browser, we want to do multiprocessing through WebWorkers. I designed an interface which should work well for most data-processing needs. The interface is called `AsyncProcedureCall`.
 

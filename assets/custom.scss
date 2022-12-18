@@ -75,3 +75,27 @@ ul.section-list {
     fill: $secondary;
   }
 }
+
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  counter-increment: figureIndex;
+
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+
+  figcaption::before {
+    content: "Figure " counter(figureIndex) ": ";
+  }
+  figcaption {
+    max-width: 90%;
+    margin-top: 20px;
+
+    p:first-child  {
+      display: inline;
+    }
+  }
+}
