@@ -16,7 +16,7 @@ would like to hear from you in what direction we should take the project with th
 
 To share your own idea, do this:
 
-1. Go to the [Bounties overview page](https://github.com/maplibre/maplibre/discussions/categories/bounties-cross-project-direction)
+1. Go to the [Bounties overview page](https://github.com/maplibre/maplibre/discussions/categories/bounties-cross-project-directions)
 2. Press "New discussion"
 3. Use a catchy title
 4. Put an image if you have one (maps people really like visuals...)
