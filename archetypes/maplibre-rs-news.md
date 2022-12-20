@@ -14,7 +14,7 @@ If you want to get in touch with the developers, visit the [#maplibre:matrix.org
 
 TODO
 
-## 🏠 House Keeping
+## 🏠 Housekeeping
 
 The following will summarizes what happened last week on GitHub.
 

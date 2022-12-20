@@ -17,7 +17,7 @@ I'm happy to announce that [@ybiletskyi](https://github.com/ybiletskyi) and [@Qu
 
 The paper about maplibre-rs for FOSS4G is finished! Looking forward to meet all of you in August!
 
-## 🏠 House Keeping
+## 🏠 Housekeeping
 
 The following will summarizes what happened last week on GitHub.
 

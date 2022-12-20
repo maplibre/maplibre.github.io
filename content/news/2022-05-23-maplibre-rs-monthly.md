@@ -18,7 +18,7 @@ This week we continued to work on the scientific publication around maplibre-rs.
 
 From now on this news will only be posted monthly, as I will have significantly less time for maplibre-rs in the next 3 months.
 
-## 🏠 House Keeping
+## 🏠 Housekeeping
 
 The following will summarizes what happened last week on GitHub.
 

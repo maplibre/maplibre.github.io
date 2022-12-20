@@ -16,7 +16,7 @@ At about the same time, researchers form the University of Applied Sciences and 
 
 I'm looking forward what we will create in the following year!
 
-## 🏠 House Keeping
+## 🏠 Housekeeping
 
 The following will summarizes what happened last week on GitHub.
 

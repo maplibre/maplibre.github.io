@@ -17,7 +17,7 @@ In the past week, I extracted the render from [Bevy](https://bevyengine.org/). A
 
 Because I'm quite unexperienced in the world of 3D graphics, I dediced to base the renderer on some existing one. The best renderers in the Rust world are currently Bevy and rend3. After evaluating both renderers I decided to go with the Bevy one, because rend3 had usages of `unsafe. Both renderers are based around the idea of a [render graph](https://logins.github.io/graphics/2021/05/31/RenderGraphs.html).
 
-## 🏠 House Keeping
+## 🏠 Housekeeping
 
 The following will summarizes what happened last week on GitHub.
 

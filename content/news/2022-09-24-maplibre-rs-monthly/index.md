@@ -49,7 +49,7 @@ Instead of relying on mutexes and MPSC channels, the implementation of this `APC
 
 I'm working on this in a rather large [PR](https://github.com/maplibre/maplibre-rs/pull/174). As not much else is going on in the project, merging probably won't cause issues.
 
-## 🏠 House Keeping
+## 🏠 Housekeeping
 
 The following will summarizes what happened last week on GitHub.
 
