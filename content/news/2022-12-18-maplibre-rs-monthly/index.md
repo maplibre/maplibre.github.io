@@ -24,13 +24,12 @@ egui integration
 
 In late summer, [@Drabble](https://github.com/Drabble) already started working on a proof-of-concept for extruded 3D buildings. The work required several rebases over the months, but it survived and looks stunning!
 As per-feature rendering is currently missing, all buildings have the same hight right now. I hope to change that in the near future.
-Though, I noticed that implementing design changes are usually accompanied by multiple concrete problems. 
+Though, I noticed that implementing design changes are usually accompanied by multiple concrete problems.
 As we integrate more features which are dependent on feature properties (building height, color properties, etc.) the required design changes will be uncovered.
 
 {{< page-figure "extrusion.png" "building extrusion" 1000 >}}
 3D building extrusion
 {{< /page-figure >}}
-
 
 In parallel [@Quillasp](https://github.com/Quillasp) worked on adding raster tile support to maplibre-rs. It already works on native platforms (Android, iOS, Linux, Windows) and in browsers. Though, the decoding of the images is done using WebWorkers. In the future, the browser should be tasked with the decoding jobs.
 
@@ -41,7 +40,6 @@ Raster tiles
 Last but not least, I ported the SDF font rendering from the maps-rs prototype by [Luke Seelenbinder](https://github.com/lseelenbinder).
 On the second try, it worked quite perfectly. Currently, there is no collision detection in place, which means that labels overlap while zooming in and out. Collision detection on its own is an interesting problem. On the OSM Slack we discussed whether this could be implemented on the GPU.
 Current ideas for that are documented in a deck.gl [GitHub issue](https://github.com/visgl/deck.gl/issues/7374).
-
 
 <figure>
   <video
@@ -58,7 +56,7 @@ Current ideas for that are documented in a deck.gl [GitHub issue](https://github
 </figure>
 
 All of the above features are not yet merged into the main branch of maplibre-rs as further design changed need to happen.
-For example, the management of GPU resources is very verbose right now. Additions of GPU resources and requires changes in some core 
+For example, the management of GPU resources is very verbose right now. Additions of GPU resources and requires changes in some core
 engine `struct`. To mitigate this, further abstractions need to be invented.
 After those design changes and resolving all discussions in the PRs we can merge in the features.
 
@@ -116,7 +114,6 @@ The following will summarizes what happened last week on GitHub.
 - [#229](https://github.com/maplibre/maplibre-rs/issues/229) Limit work done per frame by [@maxammann](https://github.com/maxammann)<br>
   This should reduce frame drops.
 
-
 - [#216](https://github.com/maplibre/maplibre-rs/issues/216) Upgrade criterion and use cargo-criterion by [@maxammann](https://github.com/maxammann)<br>
 
 - [#212](https://github.com/maplibre/maplibre-rs/issues/212) Rendering does not work on Windows+Nvidia+Vulkan by [@maxammann](https://github.com/maxammann)<br>
@@ -124,7 +121,6 @@ The following will summarizes what happened last week on GitHub.
 
 - [#201](https://github.com/maplibre/maplibre-rs/issues/201) Upgrade Rust to 1.65 by [@maxammann](https://github.com/maxammann)<br>
   New goodies!
-
 
 - [#187](https://github.com/maplibre/maplibre-rs/issues/187) maplibre-demo: High CPU and GPU usage on macOS while idle by [@vollkorntomate](https://github.com/vollkorntomate)<br>
   Discussions about idling.
@@ -145,5 +141,3 @@ None
 - [@julienr](https://github.com/julienr) - Thanks for code improvements!
 - [@Quillasp](https://github.com/Quillasp) - Thanks for raster tile rendering!
 - [@vollkorntomate](https://github.com/vollkorntomate) - Thanks for raising a discussion about CPU/GPU usage!
-
-
