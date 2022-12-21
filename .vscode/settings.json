@@ -1,12 +1,6 @@
 {
   "files.insertFinalNewline": true,
-  "spellright.documentTypes": [
-    "markdown",
-    "latex",
-    "plaintext"
-  ],
+  "spellright.documentTypes": ["markdown", "latex", "plaintext"],
   "task.allowAutomaticTasks": "on",
-  "spellright.language": [
-    "en_US"
-  ]
+  "spellright.language": ["en_US"]
 }
