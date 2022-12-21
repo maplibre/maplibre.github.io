@@ -6,5 +6,3 @@
 
 {{ $data := getJSON (printf "https://api.github.com/users/%s" (.Get 0) ) $headers }}
 <a href="{{ $data.url }}">@{{ $data.login }}</a>
-
-(dict "Authorization" "Bearer abcd")
