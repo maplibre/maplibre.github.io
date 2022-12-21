@@ -1,5 +1,5 @@
 ---
-title: "Steering Committee Notes June"
+title: "Steering Committee Notes December"
 date: "2022-12-15"
 categories: ["steering-committee"]
 authors: [wipfli]
