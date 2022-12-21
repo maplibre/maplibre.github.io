@@ -1,2 +1,8 @@
-{{ $data := getJSON (printf "https://api.github.com/users/%s" (.Get 0) ) }}
+{{ $headers := dict }}
+
+{{ if (os.Getenv "HUGO_GITHUB_TOKEN") }}
+  {{ $headers = dict "Authorization" (printf "Bearer %s" (os.Getenv "HUGO_GITHUB_TOKEN")) }}
+{{ end }}
+
+{{ $data := getJSON (printf "https://api.github.com/users/%s" (.Get 0) ) $headers }}
 <a href="{{ $data.url }}">@{{ $data.login }}</a>

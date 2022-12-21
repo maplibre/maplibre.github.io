@@ -6,7 +6,7 @@ authors: [maxammann]
 draft: false
 ---
 
-[maplibre-rs](https://github.com/maplibre/maplibre-rs) is an upcoming and cross-platform vector map renderer written in Rust. If you want to get in touch with the developers, visit the [#maplibre:matrix.org](https://matrix.to/#/#mapr:matrix.org) chat or join the MapLibre (#maplibre and #maplibre-rs) community within the OpenStreetMap Slack. You can get an invitation [here](https://osmus-slack.herokuapp.com/).
+[maplibre-rs](https://github.com/maplibre/maplibre-rs) is an upcoming and cross-platform vector map renderer written in Rust. If you want to get in touch with the developers, visit the [#maplibre:matrix.org](https://matrix.to/#/#mapr:matrix.org) chat or join the MapLibre (#maplibre and #maplibre-rs) community within the OpenStreetMap Slack. You can get an invitation [here](https://slack.openstreetmap.us).
 
 ## 📰 News
 
@@ -14,7 +14,9 @@ It has been an exciting summer - FOSS4G happened and a [paper](https://maplibre.
 
 And because a picture is worth a thousand words:
 
-{{< page-figure "collage.jpeg" "Our community" 1000 />}}
+{{< page-figure "collage.jpeg" "Our community" 1000 >}}
+Our community
+{{< /page-figure >}}
 
 Behind the scenes, I was working on providing an alternative multi-threading implementation for the web platform. Because atomics are only supported by [enabling specific HTTP headers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), we really need a more portable implementation which does not rely on these atomics. Instead of doing real multithreading in the browser, we want to do multiprocessing through WebWorkers. I designed an interface which should work well for most data-processing needs. The interface is called `AsyncProcedureCall`.
 
@@ -47,7 +49,7 @@ Instead of relying on mutexes and MPSC channels, the implementation of this `APC
 
 I'm working on this in a rather large [PR](https://github.com/maplibre/maplibre-rs/pull/174). As not much else is going on in the project, merging probably won't cause issues.
 
-## 🏠 House Keeping
+## 🏠 Housekeeping
 
 The following will summarizes what happened last week on GitHub.
 

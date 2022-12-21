@@ -5,7 +5,7 @@ categories: ["maplibre-rs"]
 authors: [maxammann]
 ---
 
-[maplibre-rs](https://github.com/maplibre/maplibre-rs) is an upcoming and cross-platform vector map renderer written in Rust. If you want to get in touch with the developers visit the [#maplibre:matrix.org](https://matrix.to/#/#mapr:matrix.org) chat or join the MapLibre (#maplibre and #maplibre-rs) community within the OpenStreetMap Slack. You can get an invite [here](https://osmus-slack.herokuapp.com/).
+[maplibre-rs](https://github.com/maplibre/maplibre-rs) is an upcoming and cross-platform vector map renderer written in Rust. If you want to get in touch with the developers visit the [#maplibre:matrix.org](https://matrix.to/#/#mapr:matrix.org) chat or join the MapLibre (#maplibre and #maplibre-rs) community within the OpenStreetMap Slack. You can get an invite [here](https://slack.openstreetmap.us).
 
 ## 📰 News
 
@@ -17,38 +17,38 @@ In the past week, I extracted the render from [Bevy](https://bevyengine.org/). A
 
 Because I'm quite unexperienced in the world of 3D graphics, I dediced to base the renderer on some existing one. The best renderers in the Rust world are currently Bevy and rend3. After evaluating both renderers I decided to go with the Bevy one, because rend3 had usages of `unsafe. Both renderers are based around the idea of a [render graph](https://logins.github.io/graphics/2021/05/31/RenderGraphs.html).
 
-## 🏠 House Keeping
+## 🏠 Housekeeping
 
 The following will summarizes what happened last week on GitHub.
 
 ### 🎁 New Features
 
-- {{< github-issue maplibre-rs 99 >}}<br>
+- [#99](https://github.com/maplibre/maplibre-rs/issues/99) Postponed: Experimentally render to an Android surface  
   Experiment which renders to an Android Surface instead of the whole screen.
-- {{< github-issue maplibre-rs 93 >}}, {{< github-issue maplibre-rs 94 >}}<br>
+- [#93](https://github.com/maplibre/maplibre-rs/issues/93) Add Render Graph from Bevy , [#94](https://github.com/maplibre/maplibre-rs/issues/94) Experiment: Render Graph from rend3  
   Experiment with a new render engine. This will probably define the architecture of maplibre.
-- {{< github-issue maplibre-rs 77 >}}<br>
-  I'm not sure whether Futures should be `Send` or not.
-- {{< github-issue maplibre-rs 80 >}}<br>
+- [#77](https://github.com/maplibre/maplibre-rs/issues/77) Postponed: Use only non-send futures  
+  I’m not sure whether Futures should be `Send` or not.
+- [#80](https://github.com/maplibre/maplibre-rs/issues/80) Refactor WebWorker pool  
   Restructure and optimize WebWorker pool.
-- {{< github-issue maplibre-rs 70 >}}<br>
+- [#70](https://github.com/maplibre/maplibre-rs/issues/70) Experimentally add a headless mode  
   Experiment with a headless mode.
-- {{< github-issue maplibre-rs 85 >}}<br>
-- {{< github-issue maplibre-rs 86 >}}<br>
+- [#85](https://github.com/maplibre/maplibre-rs/issues/85) Contributors README.md
+- [#86](https://github.com/maplibre/maplibre-rs/issues/86) Move winit code to maplibre-winit  
   Extract `winit` dependency from main crate.
 
 ### 🔧 Fixes
 
-- {{< github-issue maplibre-rs 97 >}}<br>
+- [#97](https://github.com/maplibre/maplibre-rs/issues/97) Initial start of removing unwrap from a Result type  
   Remove `.unwrap()` from code.
-- {{< github-issue maplibre-rs 88 >}}<br>
+- [#88](https://github.com/maplibre/maplibre-rs/issues/88) Postponed: Inspect WASM size  
   Optimze WASM size.
-- {{< github-issue maplibre-rs 81 >}}
+- [#81](https://github.com/maplibre/maplibre-rs/issues/81) Update license and code of conduct
 
 ### 📄 Documentation
 
-- {{< github-issue maplibre-rs 84 >}}
-- {{< github-issue maplibre-rs 87 >}}
+- [#84](https://github.com/maplibre/maplibre-rs/issues/84) Write the Microsoft Windows build documentation
+- [#87](https://github.com/maplibre/maplibre-rs/issues/87) Improve the Cargo documentation
 
 ### 🧵 Current Discussions
 
