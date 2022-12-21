@@ -14,7 +14,7 @@ Technically, this is not a "monthly" as I did not find the time in the past mont
 A lot has happened in the past months, though!
 
 At least three major features and a few quality-of-developer-life features are cooking and are soon ready for testing.
-For better debugging I integreated egui into maplibre-rs. This should make it easy to display statistics like the current FPS or selected feature on the map. I could also imagine that a style editor in the style of [Maputnik](https://maputnik.github.io/) could be feasible.
+For better debugging I integrated [egui](https://github.com/emilk/egui) into maplibre-rs. This should make it easy to display statistics like the current FPS or selected feature on the map. I could also imagine that a style editor in the style of [Maputnik](https://maputnik.github.io/) could be feasible.
 
 Apart from egui, I also added a visualizing red border around tiles. This helped to improve the data loading performance of the renderer, as it become obvious which data loaded too slow.
 
@@ -23,15 +23,15 @@ egui integration
 {{< /page-figure >}}
 
 In late summer, [@Drabble](https://github.com/Drabble) already started working on a proof-of-concept for extruded 3D buildings. The work required several rebases over the months, but it survived and looks stunning!
-As per-feature rendering is currently missing, all buildings have the same hight right now. I hope to change that in the near future.
-Though, I noticed that implementing design changes are usually accompanied by multiple concrete problems.
+As per-feature rendering is currently missing, all buildings have the same height right now. I hope to change that in the near future.
+I noticed that design changes are usually accompanied by multiple concrete problems.
 As we integrate more features which are dependent on feature properties (building height, color properties, etc.) the required design changes will be uncovered.
 
 {{< page-figure "extrusion.png" "building extrusion" 1000 >}}
 3D building extrusion
 {{< /page-figure >}}
 
-In parallel [@Quillasp](https://github.com/Quillasp) worked on adding raster tile support to maplibre-rs. It already works on native platforms (Android, iOS, Linux, Windows) and in browsers. Though, the decoding of the images is done using WebWorkers. In the future, the browser should be tasked with the decoding jobs.
+In parallel [@Quillasp](https://github.com/Quillasp) worked on adding raster tile support to maplibre-rs. It already works on native platforms (Android, iOS, Linux, Windows) and in browsers. The decoding of the images is done using WebWorkers. In the future, the browser should be tasked with the decoding jobs.
 
 {{< page-figure "raster.png" "raster tile rendering" 1000 >}}
 Raster tiles
@@ -55,7 +55,7 @@ Current ideas for that are documented in a deck.gl [GitHub issue](https://github
   </figcaption>
 </figure>
 
-All of the above features are not yet merged into the main branch of maplibre-rs as further design changed need to happen.
+All the above features are not yet merged into the main branch of maplibre-rs as further design changed need to happen.
 For example, the management of GPU resources is very verbose right now. Additions of GPU resources and requires changes in some core
 engine `struct`. To mitigate this, further abstractions need to be invented.
 After those design changes and resolving all discussions in the PRs we can merge in the features.
