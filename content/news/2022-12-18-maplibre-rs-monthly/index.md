@@ -16,7 +16,7 @@ A lot has happened in the past months, though!
 At least three major features and a few quality-of-developer-life features are cooking and are soon ready for testing.
 For better debugging I integrated [egui](https://github.com/emilk/egui) into maplibre-rs. This should make it easy to display statistics like the current FPS or selected feature on the map. I could also imagine that a style editor in the style of [Maputnik](https://maputnik.github.io/) could be feasible.
 
-Apart from egui, I also added a visualizing red border around tiles. This helped to improve the data loading performance of the renderer, as it become obvious which data loaded too slow.
+Apart from egui, I also added a visualizing red border around tiles. This helped to improve the data loading performance of the renderer, as it became obvious which data loaded too slow.
 
 {{< page-figure "egui.png" "egui integration" 1000 >}}
 egui integration
@@ -55,7 +55,7 @@ Current ideas for that are documented in a deck.gl [GitHub issue](https://github
   </figcaption>
 </figure>
 
-All the above features are not yet merged into the main branch of maplibre-rs as further design changed need to happen.
+All the above features are not yet merged into the main branch of maplibre-rs as further design changes need to happen.
 For example, the management of GPU resources is very verbose right now. Additions of GPU resources and requires changes in some core
 engine `struct`. To mitigate this, further abstractions need to be invented.
 After those design changes and resolving all discussions in the PRs we can merge in the features.
@@ -68,7 +68,7 @@ Finally, I want to mention that maplibre-rs has now an RFC process described [he
 
 ## 🏠 Housekeeping
 
-The following will summarizes what happened last week on GitHub.
+The following will summarize what happened last week on GitHub.
 
 ### 🎁 Merged Pull Requests
 
@@ -82,7 +82,7 @@ The following will summarizes what happened last week on GitHub.
   Texture formats are now selected based on what the GPU supports.
 
 - [#222](https://github.com/maplibre/maplibre-rs/pull/222) Improve error handling by [@maxammann](https://github.com/maxammann)<br>
-  Complete rewrite of errors throuout maplibre-rs to follow best practices.
+  Complete rewrite of errors throughout maplibre-rs to follow best practices.
 
 - [#214](https://github.com/maplibre/maplibre-rs/pull/214) Make writing rendered tiles to disk optional, and disable for bench by [@maxammann](https://github.com/maxammann)<br>
   Benchmarks no longer write PNGs to disk.
