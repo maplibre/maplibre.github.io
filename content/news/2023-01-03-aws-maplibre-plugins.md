@@ -5,7 +5,7 @@ categories: ["announcements"]
 authors: [austyle]
 ---
 
-Considering that MapLibre is an open-source fork of the Mapbox rendering library, many of the Mapbox plugins can be used in conjunction with the MapLibre without any issue in JavaScript. However, since MapLibre is a TypeScript library in the same spirit if you wish to use some of the popular Mapbox plugins in your TypeScript application you will likely run into the TypeScript compiler throwing a lot of type inference errors. This is because these plugins were developed with Mapbox solely in mind.
+Considering that MapLibre is an open-source fork of the Mapbox rendering library, many of the Mapbox plugins can be used in conjunction with MapLibre without any issue in JavaScript. However, since MapLibre is a TypeScript library in the same spirit, if you wish to use some of the popular Mapbox plugins in your TypeScript application you will likely run into the TypeScript compiler throwing a lot of type inference errors. This is because these plugins were developed with Mapbox solely in mind.
 
 To quickly step over these compiler complaints you may reach for the all powerful `@ts-ignore` to do something like this when using [@mapbox/mapbox-gl-draw](https://github.com/mapbox/mapbox-gl-draw):
 
@@ -27,7 +27,7 @@ Currently, we need to do this because when using TypeScript the plugin makes the
 
 In order to avoid what could be an illusive bug in the future and to add compatibility for both MapLibre and Mapbox libraries, there is a solution! We at MapLibre recommend updating existing plugins and building new plugins to support both libraries. Here are some of the ways we can achieve that.
 
-Both recommendations include using TypeScript's implementation of Intersection Types which combines multiple types into one allowing you to add together existing types to get a single type that has all the features you need. The fist example below shows how do accomplish this using default imports from the mapping libraries and the second example outlines how to accomplish the same effect with named imports.
+Both recommendations include using TypeScript's implementation of Intersection Types which combines multiple types into one allowing you to add together existing types to get a single type that has all the features you need. The first example below shows how to accomplish this using default imports from the mapping libraries and the second example outlines how to accomplish the same effect with named imports.
 
 ### Example 1: Intersection Types with Default Imports
 ```typescript
