@@ -1,7 +1,7 @@
 ---
 title: "Developing Plugins for MapLibre Interoperability"
 date: "2023-01-04"
-categories: ["announcements"]
+categories: ["community-post"]
 authors: [austyle]
 ---
 
