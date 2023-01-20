@@ -48,7 +48,7 @@ Now that the Governing Board has decided how to split the Bounty budget in strat
 
 The [Bounty System](https://github.com/maplibre/maplibre/wiki/Bounty-System) wiki page describes the full process.
 
-For each Bounty Direction, there will be a tracking GitHub Issue in https://github.com/maplibre/maplibre. Individual Bounties tickets will be published in MapLibre GL JS, MapLibre GL Native and other repositories and they will reference their Bounty Direction ticket in maplibre/maplibre.
+For each Bounty Direction, there is a tracking [GitHub Issue in maplibre/maplibre](https://github.com/maplibre/maplibre/issues?q=is%3Aissue+is%3Aopen+label%3A%22bounty+direction%22). Individual Bounties tickets will be published in MapLibre GL JS, MapLibre GL Native and other repositories and they will reference their Bounty Direction ticket in maplibre/maplibre.
 
 ## Working on Bounties
 
