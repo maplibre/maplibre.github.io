@@ -23,7 +23,7 @@ function communityMap(container, community) {
     })
   );
 
-  map.addControl(new NavigationControl());
+  map.addControl(new NavigationControl(), "bottom-right");
 
   const lngs = community.map((person) => person.latlon[1]);
   const lats = community.map((person) => person.latlon[0]);
