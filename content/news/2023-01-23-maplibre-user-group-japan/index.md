@@ -15,4 +15,4 @@ Official Website: https://bit.ly/mug--jp
 
 Twitter Space: https://twitter.com/i/spaces/1OyKAVvlgvbGb
 
-Yasunori Kirimoto and Kanahiro Iguchi who are both [MapLibre Voting Members](https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md) are organizing the User Group. The plan is to create online meetups and bring people together who are interested in MapLibre. They also have some nice MapLibre swag for you...
+Yasunori Kirimoto and Kanahiro Iguchi who are both [MapLibre Voting Members](https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md) are organizing the User Group. The plan is to create online meetups and bring people together who are interested in MapLibre. They also have some nice MapLibre swag for you!
