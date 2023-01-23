@@ -22192,7 +22192,7 @@ uniform ${i3} ${o3} u_${a3};
       compact: false,
       customAttribution: 'OpenStreetMap contributors. | <a href="https://github.com/maplibre/maplibre.github.io">Edit on GitHub.</a>'
     }));
-    map.addControl(new import_maplibre_gl.NavigationControl());
+    map.addControl(new import_maplibre_gl.NavigationControl(), "bottom-right");
     const lngs = community.map((person) => person.latlon[1]);
     const lats = community.map((person) => person.latlon[0]);
     map.fitBounds([
