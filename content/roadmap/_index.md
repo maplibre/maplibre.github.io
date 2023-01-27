@@ -119,16 +119,6 @@ You can propose strategic cross-project directions in this [GitHub Discussion](h
 
   <div class="col-lg-4">
     <div class="card">
-      <img class="card-img-top" src="youtube-tutorials/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
-      <div class="card-body">
-        <h5 class="card-title">Youtube Tutorials</h5>
-        <a href="youtube-tutorials/" class="btn btn-primary">Read more...</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-4">
-    <div class="card">
       <img class="card-img-top" src="js-docs/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
       <div class="card-body">
         <h5 class="card-title">JS Documentation Website</h5>
