@@ -1,6 +1,5 @@
 ---
 title: Roadmap - Community & Governance
-menu: []
 weight: 10
 ---
 

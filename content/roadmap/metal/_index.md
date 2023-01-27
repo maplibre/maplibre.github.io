@@ -1,6 +1,5 @@
 ---
 title: Roadmap - Metal
-menu: []
 weight: 10
 ---
 
