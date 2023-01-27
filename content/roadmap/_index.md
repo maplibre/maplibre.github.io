@@ -83,7 +83,6 @@ You can propose strategic cross-project directions in this [GitHub Discussion](h
   </div>
 </div>
 
-
 <hr/>
 <h2>Released</h2>
 

@@ -5,9 +5,9 @@ weight: 10
 
 Goals:
 
-* Space for experimentation and innovation
-* Experiment with next-generation map rendering
-* Explore latest available technologies
+- Space for experimentation and innovation
+- Experiment with next-generation map rendering
+- Explore latest available technologies
 
 <p>
     <img src="image.png" style="max-width:600px;width:100%">

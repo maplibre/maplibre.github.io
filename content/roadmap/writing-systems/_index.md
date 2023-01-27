@@ -5,7 +5,7 @@ weight: 10
 
 Goals:
 
-* Support text rendering for more languages, in particular Brahmic/Indic scripts.
+- Support text rendering for more languages, in particular Brahmic/Indic scripts.
 
 <p>
     <img src="image.png" style="max-width:600px;width:100%">

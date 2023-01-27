@@ -5,9 +5,9 @@ weight: 10
 
 Goals:
 
-* Speed - initialization and rendering
-* Optimization related to initialization time of the rendering libraries, delay before the map appears in the app.
-* Rendering performance improvements, measurement, test and best-practice documentation.
+- Speed - initialization and rendering
+- Optimization related to initialization time of the rendering libraries, delay before the map appears in the app.
+- Rendering performance improvements, measurement, test and best-practice documentation.
 
 <p>
     <img src="image.png" style="max-width:600px;width:100%">
