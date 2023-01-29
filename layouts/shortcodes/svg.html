@@ -1,4 +1,4 @@
-{{$svg := .Get 0}}
+{{ $svg := .Get 0 }}
 <span style="width: 20px; display: inline-block;">
-    {{ $svg  | readFile | safeHTML }}
+  {{ $svg  | readFile | safeHTML }}
 </span>
