@@ -17,7 +17,7 @@ weight: -10
 <div id="home-map"></div>
 <div class="home-banner">
   <div class="row align-items-center p-5">
-    <div class="col-lg-8 text-lg-center">
+    <div class="col-lg-7 text-lg-center">
       <svg
         aria-label="MapLibre"
         class="title-image"
@@ -29,23 +29,27 @@ weight: -10
         <use href="/img/maplibre-logo-big.svg#maplibre"></use>
       </svg>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-5">
       <h1 class="h2 mt-2 mt-lg-0">Open Maps SDKs</h1>
       <p>Open-source mapping libraries for web and mobile app developers.</p>
       <a
         class="btn btn-primary mt-1 landing-platform-icon"
         href="/projects/maplibre-gl-js"
       >
-        MapLibre GL JS |
-        {{< svg "assets/devicon/typescript.svg" >}}
+        <span class="d-flex flex-row justify-content-between">
+          <span class="me-3">MapLibre GL JS</span>
+          {{< svg "assets/devicon/typescript.svg" >}}
+        </span>
       </a>
       <a
         class="btn btn-primary mt-1 landing-platform-icon"
         href="/projects/maplibre-native"
       >
-        MapLibre GL Native |
-        {{< svg "assets/devicon/android.svg" >}}
-        {{< svg "assets/devicon/apple.svg" >}}
+        <span class="d-flex flex-row justify-content-between">
+          <span class="me-3">MapLibre GL Native</span>
+          {{< svg "assets/devicon/android.svg" >}}
+          {{< svg "assets/devicon/apple.svg" >}}
+        </span>
       </a>
     </div>
   </div>
