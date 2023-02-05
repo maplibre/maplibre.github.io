@@ -1,0 +1,5 @@
+Contact: mailto:security@maplibre.org
+Expires: 2023-12-31T23:00:00.000Z
+Preferred-Languages: en
+Canonical: https://maplibre.org/.well-known/security.txt
+Policy: https://github.com/maplibre/maplibre/blob/main/SECURITY_POLICY.txt
