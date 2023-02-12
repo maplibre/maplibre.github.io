@@ -11,6 +11,8 @@ documentation:
     name: iOS API Documentation
   - url: https://docs.maptiler.com/maplibre-gl-native-ios/
     name: iOS Examples
+  - url: https://maplibre.org/maplibre-gl-native/cpp/api/
+    name: Core C++ API
   - url: https://maplibre.org/maplibre-gl-native/docs/book/
     name: Book
 stable: true
