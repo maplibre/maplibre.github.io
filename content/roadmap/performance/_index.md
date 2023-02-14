@@ -15,7 +15,7 @@ Goals:
 
 Image Credit: <a href="https://upload.wikimedia.org/wikipedia/commons/3/33/Cartoon_space_rocket.png">Wikipedia</a>
 
-GitHub Tracking Issue: https://github.com/maplibre/maplibre/issues/192
+GitHub Tracking Issue (💰 Bounties): https://github.com/maplibre/maplibre/issues/192
 
 Bounty Proposal Discussion: https://github.com/maplibre/maplibre/discussions/160
 

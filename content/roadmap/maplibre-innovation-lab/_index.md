@@ -15,6 +15,6 @@ Goals:
 
 Image Credit: <a href="https://freesvg.org/chemical-beaker">freesvg.org</a>
 
-GitHub Tracking Issue: https://github.com/maplibre/maplibre/issues/194
+GitHub Tracking Issue (💰 Bounties): https://github.com/maplibre/maplibre/issues/194
 
 Bounty Direction budget: USD 5,000
