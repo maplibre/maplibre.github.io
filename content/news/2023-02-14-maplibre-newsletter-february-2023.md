@@ -46,7 +46,7 @@ In the last Technical Steering Committee meeting on Feb 8th, 2023, we had the pl
 
 There were some discussions around how to move the style specification forward and how the contribution process can be more stream-lined.
 
-We publish MapLibre GL JS v3.0.0-pre.4 on NPM. Try it out and let us know what you think. All bug reports are welcome! The new features, bug fixes and breaking changes are documented in the [CHANGELOG](https://github.com/maplibre/maplibre-gl-js/blob/main/CHANGELOG.md).
+We published MapLibre GL JS v3.0.0-pre.4 on npm. Try it out and let us know what you think. All bug reports are welcome! The new features, bug fixes and breaking changes are documented in the [CHANGELOG](https://github.com/maplibre/maplibre-gl-js/blob/main/CHANGELOG.md).
 
 ### Bounties
 
