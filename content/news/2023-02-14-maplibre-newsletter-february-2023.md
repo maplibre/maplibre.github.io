@@ -36,7 +36,13 @@ Currently, the following Bounties are available (see [here](https://github.com/m
 
 Code contributions since January 15th, 2023:
 
-- [louwers](https://github.com/maplibre/maplibre-gl-native/commits?author=louwers) contributed 20 pull requests focusing on improved continuous integration and documentation.
+- [louwers](https://github.com/maplibre/maplibre-gl-native/commits?author=louwers) contributed 20 pull requests.
+  - Continuous integration for Android is now green again. We no longer use a custom Docker image.
+  - The various README files throughout the repository where refreshed.
+  - The [Android API docs](https://maplibre.org/maplibre-gl-native/android/api/) now use Dokka, which is a documentation generator with better support for Kotlin than the previously used Javadoc.
+  - New [Core C++ docs](https://maplibre.org/maplibre-gl-native/cpp/api/) were published as well, using Doxygen as documentation generator.
+  - C++17 is used for compilation and some parts of the codebase were updated to take advantage of this. 
+
 - [tdcosta100](https://github.com/maplibre/maplibre-gl-native/commits?author=tdcosta100) contributed 4 pull requests to prepare Windows support.
 - [KiwiKilian](https://github.com/maplibre/maplibre-gl-native/commits?author=KiwiKilian) improved the node documentation.
 - [fynngodau](https://github.com/maplibre/maplibre-gl-native/commits?author=fynngodau) contributed 2 pull requests to improve Kotlin code and fix an issue with bitmaps.
