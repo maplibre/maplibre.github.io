@@ -8,6 +8,10 @@ draft: false
 
 # MapLibre Newsletter - February 2023
 
+## Organization
+
+We have successfully registered the MapLibre trademark in the [US](https://tsdr.uspto.gov/#caseNumber=97744197&caseType=SERIAL_NO&searchType=statusSearch) and in the [EU](https://euipo.europa.eu/eSearch/#details/trademarks/018773096). Open Source Collective, our fiscal host, holds the MapLibre trademarks.
+
 ## Events
 
 - On Jan 30th, 2023, about 20 people came together for the first MapLibre Switzerland meetup in Olten. After a short overview presentation by Oliver Wipfli, we had a discussion about what people need. Feature-state in Native, rendering of 3D buildings, and improving the style specification were discussed. After that we went for Pizza. Thanks Robin Schmid for hosting us in the SBB office and thanks everyone for coming!
