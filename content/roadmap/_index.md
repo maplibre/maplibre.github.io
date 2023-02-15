@@ -3,6 +3,11 @@ title: Roadmap
 weight: 10
 ---
 
+<div class="alert alert-success" role="alert">
+<b>Bounties:</b> Some projects on our Roadmap have Bounties, i.e., you can get paid for working on them. 
+<a class="btn btn-primary" href="step-by-step-bounties-guide">Read Step-by-Step Bounties Guide...</a>  
+</div>
+
 <hr/>
 <h2>Under Consideration</h2>
 
