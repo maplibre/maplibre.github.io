@@ -1,6 +1,6 @@
 ---
 title: "MapLibre Newsletter February 2023"
-date: 2023-02-14
+date: 2023-02-16
 categories: ["newsletter"]
 authors: [wipfli]
 draft: false
@@ -8,9 +8,13 @@ draft: false
 
 # MapLibre Newsletter - February 2023
 
-## Organization
+## General
 
 We have successfully registered the MapLibre trademark in the [US](https://tsdr.uspto.gov/#caseNumber=97744197&caseType=SERIAL_NO&searchType=statusSearch) and in the [EU](https://euipo.europa.eu/eSearch/#details/trademarks/018773096). Open Source Collective, our fiscal host, holds the MapLibre trademarks.
+
+MapLibre React Native has been published. Thanks Ian, Luke, and Jérôme for contributing this package. Read more [here](https://maplibre.org/news/2023-02-08-maplibre-react-native-announcement/).
+
+There is an ongoing discussion if a style editor should be maintained under the MapLibre umbrella. See <a href="https://github.com/maplibre/maplibre/discussions/153#discussioncomment-4776796">style editor discussion</a>.
 
 ## Events
 
@@ -22,33 +26,36 @@ We have successfully registered the MapLibre trademark in the [US](https://tsdr.
 
 We are happy to welcome Bart Louwers and Ovidiu Voda as Maintainers of MapLibre GL Native. They started in January 2023 and we can see how their work has a positive impact on MapLibre GL Native with many new people contributing to the repo. Thank you both for your efforts!
 
-MapLibre GL Native for Android [v10.0.0-pre.0](https://github.com/maplibre/maplibre-gl-native/releases/tag/android-v10.0.0-pre.0) is out now. Try it out and let us know what you think. All bug reports are welcome! The new features, bug fixes and breaking changes are documented in the [release notes](https://github.com/maplibre/maplibre-gl-native/releases/tag/android-v10.0.0-pre.0).
+MapLibre GL Native for Android [v10.0.0](https://github.com/maplibre/maplibre-gl-native/releases/tag/android-v10.0.0) is out now. Try it out and let us know what you think. All bug reports are welcome! The new features, bug fixes and breaking changes are documented in the [release notes](https://github.com/maplibre/maplibre-gl-native/releases/tag/android-v10.0.0).
 
-### Bounties
+### Bounties 💰
 
-MapLibre GL Native published Bounties for code development tasks. Read our step-by-step guide [LINK] to learn how you can work on Bounties and get paid.
+MapLibre GL Native published Bounties for code development tasks. Read our [step-by-step bounties guide](https://maplibre.org/roadmap/step-by-step-bounties-guide/) to learn how you can work on Bounties and get paid.
 
 Currently, the following Bounties are available (see [here](https://github.com/maplibre/maplibre-gl-native/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22+) for an up-to-date list):
 
-- Documentation: Update the Android test app: [#741](https://github.com/maplibre/maplibre-gl-native/issues/741)
+- Documentation: Getting started guide iOS: [#809](https://github.com/maplibre/maplibre-gl-native/issues/809)
+- Documentation: Getting started guide Android: [#808](https://github.com/maplibre/maplibre-gl-native/issues/808)
+- Documentation: Tutorial annotations iOS: [#810](https://github.com/maplibre/maplibre-gl-native/issues/810)
+- Documentation: Tutorial annotations Android: [#811](https://github.com/maplibre/maplibre-gl-native/issues/811)
+- Documentation: Example current location iOS: [#813](https://github.com/maplibre/maplibre-gl-native/issues/813)
+- Documentation: Example current location Android: [#812](https://github.com/maplibre/maplibre-gl-native/issues/812)
 
-### GitHub
+### Contributions
 
 Code contributions since January 15th, 2023:
 
 - [louwers](https://github.com/maplibre/maplibre-gl-native/commits?author=louwers) contributed 20 pull requests.
-
   - Continuous integration for Android is now green again. We no longer use a custom Docker image.
   - The various README files throughout the repository where refreshed.
   - The [Android API docs](https://maplibre.org/maplibre-gl-native/android/api/) now use Dokka, which is a documentation generator with better support for Kotlin than the previously used Javadoc.
   - New [Core C++ docs](https://maplibre.org/maplibre-gl-native/cpp/api/) were published as well, using Doxygen as documentation generator.
   - C++17 is used for compilation and some parts of the codebase were updated to take advantage of this.
-
 - [tdcosta100](https://github.com/maplibre/maplibre-gl-native/commits?author=tdcosta100) contributed 4 pull requests to prepare Windows support.
 - [KiwiKilian](https://github.com/maplibre/maplibre-gl-native/commits?author=KiwiKilian) improved the node documentation.
 - [fynngodau](https://github.com/maplibre/maplibre-gl-native/commits?author=fynngodau) contributed 2 pull requests to improve Kotlin code and fix an issue with bitmaps.
 - [hallahan](https://github.com/maplibre/maplibre-gl-native/commits?author=hallahan) improved the iOS docs.
-- [birkskyum](https://github.com/maplibre/maplibre-gl-native/commits?author=birkskyum) updated AGP.
+- [birkskyum](https://github.com/maplibre/maplibre-gl-native/commits?author=birkskyum) updated the Android Gradle Plugin.
 - [alanchenboy](https://github.com/maplibre/maplibre-gl-native/commits?author=alanchenboy) contributed 2 pull requests to fix a snapshotting crash and enable C++ unit tests.
 
 ## MapLibre GL JS
@@ -59,9 +66,11 @@ There were some discussions around how to move the style specification forward a
 
 We published MapLibre GL JS v3.0.0-pre.4 on npm. Try it out and let us know what you think. All bug reports are welcome! The new features, bug fixes and breaking changes are documented in the [CHANGELOG](https://github.com/maplibre/maplibre-gl-js/blob/main/CHANGELOG.md).
 
-### Bounties
+Ah, and MapLibre GL JS has now 4k Stars on GitHub ([star-history.com](https://star-history.com/#maplibre/maplibre-gl-js&Date)). Congratulations MapLibre GL JS!
 
-MapLibre GL JS published Bounties for code development tasks. Read our step-by-step guide [LINK] to learn how you can work on Bounties and get paid.
+### Bounties 💰
+
+MapLibre GL JS published Bounties for code development tasks. Read our [step-by-step bounties guide](https://maplibre.org/roadmap/step-by-step-bounties-guide/) to learn how you can work on Bounties and get paid.
 
 Currently, the following Bounties are available (see [here](https://github.com/maplibre/maplibre-gl-js/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22+) for an up-to-date list):
 
@@ -70,7 +79,7 @@ Currently, the following Bounties are available (see [here](https://github.com/m
 - Terrain3D: Fix a panning issue:[ #2094](https://github.com/maplibre/maplibre-gl-js/issues/2094)
 - Performance: Improve the benchmarks code: [#982](https://github.com/maplibre/maplibre-gl-js/issues/2094)
 
-### GitHub
+### Contributions
 
 Code contributions since January 15th, 2023:
 
