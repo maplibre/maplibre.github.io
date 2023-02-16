@@ -9,7 +9,7 @@ weight: 10
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xl-2 text-center">
-      <a href="https://github.com/birkskyum">
+      <a href="birk">
       <img
         src="https://avatars.githubusercontent.com/u/74932975?v=4"
         width="150"
@@ -19,7 +19,7 @@ weight: 10
         <h3 class="m-3">Birk Skyum</h3>
     </div>
     <div class="col-xl-2 text-center">
-      <a href="https://github.com/HarelM">
+      <a href="harel">
       <img
         src="https://avatars.githubusercontent.com/u/3269297?v=4"
         width="150"
@@ -29,7 +29,7 @@ weight: 10
       <h3 class="m-3">Harel Mazor</h3>
     </div>
     <div class="col-xl-2 text-center">
-      <a href="https://github.com/lseelenbinder">
+      <a href="luke">
       <img
         src="https://avatars.githubusercontent.com/u/157650?v=4"
         width="150"
@@ -39,7 +39,7 @@ weight: 10
         <h3 class="m-3">Luke Seelenbinder</h3>
     </div>
     <div class="col-xl-2 text-center">
-      <a href="https://github.com/klokan">
+      <a href="petr">
       <img
         src="https://avatars.githubusercontent.com/u/59284?v=4"
         width="150"
@@ -49,7 +49,7 @@ weight: 10
         <h3 class="m-3">Petr Pridal</h3>
     </div>
     <div class="col-xl-2 text-center">
-      <a href="https://github.com/nyurik">
+      <a href="yuri">
       <img
         src="https://avatars.githubusercontent.com/u/1641515?v=4"
         width="150"
@@ -61,14 +61,13 @@ weight: 10
   </div>
 </div>
 
-
 <hr class="mt-5"/>
 <h1 class="text-center">Team</h1>
 
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xl-2 text-center">
-      <a href="https://github.com/louwers">
+      <a href="bart">
       <img
         src="https://avatars.githubusercontent.com/u/649392?v=4"
         width="150"
@@ -79,7 +78,7 @@ weight: 10
         Maintainer Native
     </div>
     <div class="col-xl-2 text-center">
-      <a href="https://github.com/HarelM">
+      <a href="harel">
       <img
         src="https://avatars.githubusercontent.com/u/3269297?v=4"
         width="150"
@@ -90,7 +89,7 @@ weight: 10
       Maintainer Web
     </div>
     <div class="col-xl-2 text-center">
-      <a href="https://github.com/wipfli">
+      <a href="oliver">
       <img
         src="https://avatars.githubusercontent.com/u/53421382?v=4"
         width="150"
@@ -101,7 +100,7 @@ weight: 10
         <p>Coordinator</p>  
     </div>
     <div class="col-xl-2 text-center">
-      <a href="https://github.com/ovivoda">
+      <a href="ovi">
       <img
         src="https://avatars.githubusercontent.com/u/5989047?v=4"
         width="150"
@@ -115,5 +114,16 @@ weight: 10
 </div>
 
 <hr class="mt-5"/>
-<h1 class="text-center">Oranization</h1>
+<h2>Join Our Community</h2>
 
+The people in our [community](/community) talk with each other mainly in the following three ways:
+
+- Discussions, Issues, and Pull Requests on GitHub
+- MapLibre Slack channel
+- Technical Steering Committee meetings
+
+You find all Discussions, Issues, and Pull Requests in our [public GitHub repostories](https://github.com/maplibre).
+
+The MapLibre Slack channel is generously hosted by OpenStreetMap US (thanks [Maggie](https://www.linkedin.com/in/maggiecawley/)). You can join our Slack channel at https://slack.openstreetmap.us and then you can join the main `#maplibre` channel as well as topic-specific channels such as `#maplibre-gl-js`.
+
+The Technical Steering Committee meetings take place on a monthly basis. They are usually on the second Wednesday of the month in the evening Europe-time. These monthly meetings are open to everybody and you are welcome to join us there and say hi. The meeting zoom link gets published in our Slack channel roughly 1 week before the meeting.
