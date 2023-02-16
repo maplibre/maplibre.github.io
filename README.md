@@ -49,7 +49,6 @@ If you would like to be included in the MapLibre community map, fork this repo, 
 
 If you are on the map, but don't want to be, please open a pull request or issue.
 
-
 ## Pull Request Approvals
 
 Pull Requests need to be approved by at least one Governing Board or Team member, see our [About page](https://maplibre.org/about).
