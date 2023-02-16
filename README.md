@@ -22,7 +22,7 @@ After making any changes, make sure to run `npm run format`.
 
 In order to build the website run `npm run build`. The built website is available in `public/`.
 
-# maplibre-rs weekly
+## maplibre-rs weekly
 
 In order to create a news post for maplibre-rs do the following:
 
@@ -32,7 +32,7 @@ HUGO_SINCE=2022-05-26 hugo new -k maplibre-rs-news news/2022-05-23-maplibre-rs-w
 
 This will fetch the last weeks issues and PRs and prepare a post for you.
 
-# MapLibre community map
+## MapLibre community map
 
 The data for https://maplibre.org/community/ is managed at `data/community.json`.
 It shows a map of the MapLibre community members.
@@ -48,3 +48,8 @@ If you would like to be included in the MapLibre community map, fork this repo, 
 ### Please Remove Me
 
 If you are on the map, but don't want to be, please open a pull request or issue.
+
+
+## Pull Request Approvals
+
+Pull Requests need to be approved by at least one Governing Board or Team member, see our [About page](https://maplibre.org/about).
