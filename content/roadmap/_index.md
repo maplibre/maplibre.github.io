@@ -3,6 +3,11 @@ title: Roadmap
 weight: 10
 ---
 
+<div class="alert alert-success" role="alert">
+<b>Bounties:</b> Some projects on our Roadmap have Bounties, i.e., you can get paid for working on them. 
+<a class="btn btn-primary" href="step-by-step-bounties-guide">Read Step-by-Step Bounties Guide...</a>  
+</div>
+
 <hr/>
 <h2>Under Consideration</h2>
 
@@ -28,6 +33,7 @@ You can propose strategic cross-project directions in this [GitHub Discussion](h
       <div class="card-body">
         <h5 class="card-title">Terrain3D Improvements</h5>
         <a href="terrain3d-improvements/" class="btn btn-primary">Read more...</a>
+        <a href="https://github.com/maplibre/maplibre/issues/189" class="btn btn-light">💰 Bounties</a>
       </div>
     </div>
   </div>
@@ -38,6 +44,7 @@ You can propose strategic cross-project directions in this [GitHub Discussion](h
       <div class="card-body">
         <h5 class="card-title">Globe View</h5>
         <a href="globe-view/" class="btn btn-primary">Read more...</a>
+        <a href="https://github.com/maplibre/maplibre/issues/190" class="btn btn-light">💰 Bounties</a>
       </div>
     </div>
   </div>
@@ -48,6 +55,7 @@ You can propose strategic cross-project directions in this [GitHub Discussion](h
       <div class="card-body">
         <h5 class="card-title">Documentation</h5>
         <a href="documentation/" class="btn btn-primary">Read more...</a>
+        <a href="https://github.com/maplibre/maplibre/issues/191" class="btn btn-light">💰 Bounties</a>
       </div>
     </div>
   </div>
@@ -58,6 +66,7 @@ You can propose strategic cross-project directions in this [GitHub Discussion](h
       <div class="card-body">
         <h5 class="card-title">Writing Systems</h5>
         <a href="writing-systems/" class="btn btn-primary">Read more...</a>
+        <a href="https://github.com/maplibre/maplibre/issues/193" class="btn btn-light">💰 Bounties</a>
       </div>
     </div>
   </div>
@@ -68,6 +77,7 @@ You can propose strategic cross-project directions in this [GitHub Discussion](h
       <div class="card-body">
         <h5 class="card-title">Performance</h5>
         <a href="performance/" class="btn btn-primary">Read more...</a>
+        <a href="https://github.com/maplibre/maplibre/issues/192" class="btn btn-light">💰 Bounties</a>
       </div>
     </div>
   </div>
@@ -78,6 +88,7 @@ You can propose strategic cross-project directions in this [GitHub Discussion](h
       <div class="card-body">
         <h5 class="card-title">MapLibre Innovation Lab</h5>
         <a href="maplibre-innovation-lab/" class="btn btn-primary">Read more...</a>
+        <a href="https://github.com/maplibre/maplibre/issues/194" class="btn btn-light">💰 Bounties</a>
       </div>
     </div>
   </div>

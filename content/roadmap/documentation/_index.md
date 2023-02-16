@@ -12,6 +12,6 @@ Goals:
     <img src="image.png" style="max-width:600px;width:100%">
 </p>
 
-GitHub Tracking Issue: https://github.com/maplibre/maplibre/issues/191
+GitHub Tracking Issue (💰 Bounties): https://github.com/maplibre/maplibre/issues/191
 
 Bounty Direction budget: USD 10,000

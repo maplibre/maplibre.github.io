@@ -12,7 +12,7 @@ Goals:
     <img src="image.png" style="max-width:600px;width:100%">
 </p>
 
-GitHub Tracking Issue: https://github.com/maplibre/maplibre/issues/190
+GitHub Tracking Issue (💰 Bounties): https://github.com/maplibre/maplibre/issues/190
 
 Bounty Proposal Discussion: https://github.com/maplibre/maplibre/discussions/161
 

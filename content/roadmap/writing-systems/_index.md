@@ -13,7 +13,7 @@ Goals:
 
 Image Credit: <a href="https://en.wikipedia.org/wiki/Brahmic_scripts#/media/File:Different_scripts_of_different_languages_of_India.jpg">Wikipedia</a>
 
-GitHub Tracking Issue: https://github.com/maplibre/maplibre/issues/193
+GitHub Tracking Issue (💰 Bounties): https://github.com/maplibre/maplibre/issues/193
 
 Bounty Proposal Discussion: https://github.com/maplibre/maplibre/discussions/166
 
