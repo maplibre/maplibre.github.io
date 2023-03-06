@@ -18,6 +18,6 @@ The value that highly customizable vector tile based maps bring is undisputed. I
 
 So far my work as Maintainer Native has been challenging, yet rewarding. Map rendering is hard. Multi-platform native development is hard. There is a dizzying array of technologies, build tools and dependencies involved. There is a lot of potential to make the project more mature and easier to contribute to. I love helping to realize that potential. I am also a C++ geek, and I am looking forward to the [redesign](https://github.com/maplibre/maplibre-gl-native/blob/main/design-proposals/2022-10-27-rendering-modularization.md) of some of the internals, and to deepen my knowledge of the code base further, so I can be the most effective maintainer I can be.
 
-Maps serve a vast number of purposes. Something I am passionate about is democratizing urban design. In plain English that means giving people the tools to (re)shape their cities and neighborhoods, so they are a pleasure to live in. Maps are an essential part of that.
+Maps serve a vast number of purposes. Something I am passionate about is democratizing urban design and urban mobility. In plain English that means giving people the tools to (re)shape their cities to be a pleasure to live in and to move through. Maps are an essential part of that.
 
 Feel free to reach out to me on Slack in case you have any feedback or suggestions, or if you want contribute to MapLibre GL Native, but you are not sure where or how to start.
