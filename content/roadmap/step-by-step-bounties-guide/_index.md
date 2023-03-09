@@ -16,6 +16,8 @@ To work on Bounties, follow this step-by-step guide:
 
 1. Alternatively you can suggest Bounties yourself. For this, create a GitHub Issue with clear deliverables and ask a maintainer if they can assign a Bounty to your Issue. Please make sure that your ticket falls within a [cross-project direction approved for Bounties](https://github.com/maplibre/maplibre/issues?q=is%3Aissue+is%3Aopen+label%3A%22bounty+direction%22).
 
+Additionally, you can also suggest an **epic**, i.e., a series of tickets with a Bounty for each ticket that together move the project forward in one of the Bounty directions. You can suggest the size of the Bounties on each ticket yourself and a maintainer will confirm if the amount is adequate.
+
 1. Once you are done with the work, the maintainers will confirm that all deliverables were met in the GitHub Issue of the Bounty.
 
 1. You create an invoice for MapLibre on OpenCollective for the Bounty you have completed. For this, submit an expense at https://opencollective.com/maplibre. Please include in the invoice a link to the GitHub Issue of the Bounty.
