@@ -29,6 +29,8 @@ Refer to the <a href="https://github.com/maplibre/maplibre/wiki/Bounty-System#bo
 
 1. You create an invoice for MapLibre on OpenCollective for the bounty you have completed. For this, submit an expense at https://opencollective.com/maplibre. Please include in the invoice a link to the GitHub issue of the bounty.
 
+1. Post a link to the invoice on the GitHub issue.
+
 1. We approve your expense on Open Collective and the money gets transferred to your account.
 
 ---
