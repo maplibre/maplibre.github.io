@@ -31,7 +31,7 @@ Refer to the <a href="https://github.com/maplibre/maplibre/wiki/Bounty-System#bo
 
 1. Post a link to the invoice on the GitHub issue.
 
-1. We approve your expense on Open Collective and the money gets transferred to your account.
+1. Every 16th of the month expenses will be approved on Open Collective. After this is done the money gets transferred to your account.
 
 ---
 
