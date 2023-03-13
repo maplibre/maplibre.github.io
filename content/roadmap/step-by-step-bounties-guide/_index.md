@@ -19,7 +19,7 @@ Once you are in the Developer pool, you can start doing bounties. There are thre
 
 - **Suggesting a bounty**: Alternatively, you can suggest things you would like to work on yourself. For this, create a GitHub issue with clear deliverables and ask a maintainer if they can assign a bounty to your issue. Please make sure that your ticket falls within a <a href="https://github.com/maplibre/maplibre/issues?q=is%3Aissue+is%3Aopen+label%3A%22bounty+direction%22">cross-project direction approved for bounties</a>.
 
-- **Suggesting an epic**: Additionally, you can also suggest an *epic*, i.e., a series of tickets with a bounty for each ticket that together move the project forward in one of the bounty directions. You can suggest the size of the bounties on each ticket yourself, and a maintainer will confirm if the amount is adequate.
+- **Suggesting an epic**: Additionally, you can also suggest an _epic_, i.e., a series of tickets with a bounty for each ticket that together move the project forward in one of the bounty directions. You can suggest the size of the bounties on each ticket yourself, and a maintainer will confirm if the amount is adequate.
 
 Refer to the <a href="https://github.com/maplibre/maplibre/wiki/Bounty-System#bounty-sizes">possible sizes of the bounties</a>.
 
