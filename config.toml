@@ -4,7 +4,7 @@ title = 'MapLibre'
 
 sectionPagesMenu = "main"
 
-copyright = "Creative Commons Zero v1.0 Universal"
+copyright = "CC0"
 
 enableGitInfo = true
 summaryLength = 30

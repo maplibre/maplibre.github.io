@@ -23,6 +23,8 @@
   <meta name="twitter:image:src" content="/img/share-image.png" />
   <meta name="twitter:image:alt" content="MapLibre" />
 
+  <link rel="me" href="https://mastodon.social/@maplibre" />
+
   {{ $options := (dict "includePaths" (slice "node_modules") "transpiler" "libsass") }}
   {{ $style := resources.Get "style.scss" | resources.ToCSS $options | resources.Minify |
     resources.Fingerprint
