@@ -40,7 +40,6 @@ We have a Mastodon account now: https://mastodon.social/@maplibre/.
 ## Past Events
 
 - [Yasunori Kirimoto](https://www.linkedin.com/feed/update/urn:li:activity:7035571220767019008/) gave a talk about MapLibre at FOSS4G Hokkaido, which took place for the first time in 3 years in person again!
-  
 - [Chris Beddow](https://www.linkedin.com/in/cbed/) organized a great meetup for everybody interested in maps in Meta's Zurich office. Among several other talks, [Bart Louwers](https://maplibre.org/about/bart) gave a talk about the past, present, and future of MapLibre GL Native. [Manuel Roth](https://www.linkedin.com/in/manuel-roth/) from the Swiss TV broadcaster SRF gave a talk about how they use MapLibre GL JS and MapLibre GL Native for the weather app SRF Meteo. Thank you both for the inspiring presentations!
 
 The Meta maps meetup was also the first time that Oliver Wipfli and Bart Louwers met in person. It was great to see each other and discuss all things around MapLibre!
@@ -49,16 +48,13 @@ The Meta maps meetup was also the first time that Oliver Wipfli and Bart Louwers
 
 <i>Oliver Wipfli (l.) and Bart Louwers (r.) had a floating meeting on lake Zurich.</i>
 
-
 ## MapLibre GL Native
 
 People interested in contributing can schedule a call with Bart Louwers, maintainer native: <a href="https://github.com/maplibre/maplibre-gl-native/discussions/898">maplibre/maplibre-gl-native#898</a>.
 
-
 #### Bounties 💰
 
 Have a look at all available [Bounties in MapLibre GL Native](https://github.com/maplibre/maplibre-gl-native/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22%2C%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+XL%22%2C%22%F0%9F%92%B0+bounty+XXL%22+) and feel free to propose Bounties yourself. Read our [step-by-step Bounties guide](http://localhost:45707/roadmap/step-by-step-bounties-guide/).
-
 
 #### Contributions
 
@@ -97,7 +93,6 @@ Contributions since February 16th, 2023:
   - <a href="https://github.com/maplibre/maplibre-gl-style-spec/issues/60">Design Proposal: Expanding tileSources bounds</a> by pramilk (Microsoft)
   - <a href="https://github.com/maplibre/maplibre-gl-style-spec/issues/61">Design proposal: Support for refreshTiles per tile source</a> by pramilk (Microsoft)
   - <a href="https://github.com/maplibre/maplibre-gl-style-spec/issues/62">Design proposal: Add elevation to symbol layer</a> by HarelM (maintainer web)
-
 
 ## Upcoming Events
 
