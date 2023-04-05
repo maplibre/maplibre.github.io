@@ -8,11 +8,6 @@ weight: 10
 <a class="btn btn-primary" href="step-by-step-bounties-guide">Read Step-by-Step Bounties Guide...</a>  
 </div>
 
-<div class="alert alert-success" role="alert">
-<b>Voting:</b> Give your feedback on what should be on MapLibre's roadmap until April 4th, 2023.
-<a class="btn btn-primary" href="/news/2023-03-13-second-call-for-bounties/">Give Feedback...</a>  
-</div>
-
 <hr/>
 <h2>Under Consideration</h2>
 
