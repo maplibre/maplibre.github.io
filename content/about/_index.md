@@ -114,16 +114,5 @@ weight: 10
 </div>
 
 <hr class="mt-5"/>
-<h2>Join Our Community</h2>
-
-The people in our [community](/community) talk with each other mainly in the following three ways:
-
-- Discussions, Issues, and Pull Requests on GitHub
-- MapLibre Slack channel
-- Technical Steering Committee meetings
-
-You find all Discussions, Issues, and Pull Requests in our [public GitHub repostories](https://github.com/maplibre).
-
-The MapLibre Slack channel is generously hosted by OpenStreetMap US (thanks [Maggie](https://www.linkedin.com/in/maggiecawley/)). You can join our Slack channel at https://slack.openstreetmap.us and then you can join the main `#maplibre` channel as well as topic-specific channels such as `#maplibre-gl-js`.
 
 The Technical Steering Committee meetings take place on a monthly basis. They are usually on the second Wednesday of the month in the evening Europe-time. These monthly meetings are open to everybody and you are welcome to join us there and say hi. The meeting zoom link gets published in our Slack channel roughly 1 week before the meeting.

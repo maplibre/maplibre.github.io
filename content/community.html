@@ -1,17 +1,21 @@
 ---
 title: Community
-fullscreen: true
 menu: [main]
 weight: 1000
 type: community
 ---
 
 <style>
+  ol li h5 {
+    margin-bottom: 0;
+  }
+  ol li {
+    margin-bottom: 1em;
+  }
   #community-map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
+    height: 90vh;
+    width: 90vw;
+    margin: 0 auto;
   }
 
   .marker {
@@ -22,11 +26,63 @@ type: community
     padding: 0;
   }
 </style>
+<div class="container-fluid px-0 mb-6">
+  <div class="row mx-0 bg-title text-center align-items-center">
+    <h1 class="text-white pt-6">
+      <span class="text-secondary">Community</span> MapLibre
+    </h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <h1>Welcome to Our Community</h1>
 
-<div id="community-map"></div>
+    <p>
+      The people in our community talk with each other mainly in the following
+      three ways:
+    </p>
 
-<script>
-    const communityData = {{< community-json >}};
+    <ol>
+      <li>
+        <h5>Discussions, Issues, and Pull Requests on GitHub</h5>
+        You find all Discussions, Issues, and Pull Requests in our
+        <a href="https://github.com/maplibre" target="_blank"
+          >public GitHub repostories</a
+        >.
+      </li>
+      <li>
+        <h5>MapLibre Slack channel</h5>
+        The MapLibre Slack channel is generously hosted by OpenStreetMap US
+        (thanks
+        <a href="https://www.linkedin.com/in/maggiecawley/" target="_blank"
+          >Maggie</a
+        >). You can join our Slack channel at
+        <a href="https://slack.openstreetmap.us" target="_blank"
+          >https://slack.openstreetmap.us</a
+        >
+        and then you can join the main <code>#maplibre</code> channel as well as
+        topic-specific channels such as <code>#maplibre-gl-js</code>
+      </li>
+      <li>
+        <h5>Technical Steering Committee meetings</h5>
+        The
+        <a href="/about/" target="_blank">Technical Steering Committee</a>
+        meetings take place on a monthly basis. They are usually on the second
+        Wednesday of the month in the evening Europe-time. These monthly
+        meetings are open to everybody and you are welcome to join us there and
+        say hi. The meeting zoom link gets published in our Slack channel
+        roughly 1 week before the meeting.
+      </li>
+    </ol>
 
-    communityMap("community-map", communityData)
-</script>
+    <h2>Contributors, alumni, & board members around the globe</h2>
+
+    <div id="community-map"></div>
+
+    <script>
+      const communityData = {{< community-json >}};
+
+      communityMap("community-map", communityData)
+    </script>
+  </div>
+</div>
