@@ -11,15 +11,15 @@ MapLibre uses OpenCollective for transparent accounting, see https://opencollect
 
 #### Q1 2023
 
-* [Financial-Report-Q1-2023.pdf](Financial-Report-Q1-2023.pdf)
-* [Financial-Report-Q1-2023.xlsx](Financial-Report-Q1-2023.xlsx)
+- [Financial-Report-Q1-2023.pdf](Financial-Report-Q1-2023.pdf)
+- [Financial-Report-Q1-2023.xlsx](Financial-Report-Q1-2023.xlsx)
 
 #### Nov, Dec 2022
 
-* [Financial-Report-Nov-Dec-2022.pdf](Financial-Report-Nov-Dec-2022.pdf)
-* [Financial-Report-Nov-Dec-2022.xlsx](Financial-Report-Nov-Dec-2022.xlsx)
+- [Financial-Report-Nov-Dec-2022.pdf](Financial-Report-Nov-Dec-2022.pdf)
+- [Financial-Report-Nov-Dec-2022.xlsx](Financial-Report-Nov-Dec-2022.xlsx)
 
 #### Sep, Oct, Nov 2022
 
-* [Financial-Report-Sep-Oct-Nov-2022.pdf](Financial-Report-Sep-Oct-Nov-2022.pdf)
-* [Financial-Report-Sep-Oct-Nov-2022.xlsx](Financial-Report-Sep-Oct-Nov-2022.xlsx)
+- [Financial-Report-Sep-Oct-Nov-2022.pdf](Financial-Report-Sep-Oct-Nov-2022.pdf)
+- [Financial-Report-Sep-Oct-Nov-2022.xlsx](Financial-Report-Sep-Oct-Nov-2022.xlsx)
