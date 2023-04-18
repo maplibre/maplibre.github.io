@@ -113,6 +113,12 @@ weight: 10
   </div>
 </div>
 
-<hr class="mt-5"/>
+<hr/>
+<h1 class="text-center">Charter</h1>
 
-The Technical Steering Committee meetings take place on a monthly basis. They are usually on the second Wednesday of the month in the evening Europe-time. These monthly meetings are open to everybody and you are welcome to join us there and say hi. The meeting zoom link gets published in our Slack channel roughly 1 week before the meeting.
+The [MapLibre Charter](https://github.com/maplibre/maplibre/blob/main/CHARTER.md) defines the basic rules and goals of the MapLibre Organzation.
+
+<hr/>
+<h1 class="text-center">Reports</h1>
+
+MapLibre finances are transparent and the accounting is fully public. Find qauarter financial reports in the [Reports](reports) page.
