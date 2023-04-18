@@ -44,10 +44,10 @@ Project highlights since March 20'th, 2023:
 - Work was focused on shaders reorg and tests
 - [Project roadmap](https://github.com/orgs/maplibre/projects/8)
 - Upgrade to OpenGL ES 3.0
-    - Motivation, consequences:
-        - Most of android devices are compatible with ES 3.0
-        - One platform that will suffer a drawback till metal will be implemented is MacOS.
-        - A branch was be created for OpenGl ES 2.0 support: [opengl-2](https://github.com/maplibre/maplibre-gl-native/tree/opengl-2)
+  - Motivation, consequences:
+    - Most of android devices are compatible with ES 3.0
+    - One platform that will suffer a drawback till metal will be implemented is MacOS.
+    - A branch was be created for OpenGl ES 2.0 support: [opengl-2](https://github.com/maplibre/maplibre-gl-native/tree/opengl-2)
 
 ## MapLibre GL JS
 
