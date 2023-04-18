@@ -20,29 +20,61 @@ TBD
 
 ## MapLibre GL Native
 
-TBD
+People interested in contributing can schedule a call with Bart Louwers, maintainer native: <a href="https://github.com/maplibre/maplibre-gl-native/discussions/898">maplibre/maplibre-gl-native#898</a>.
 
 #### Bounties 💰
 
-TBD
+Have a look at all available [Bounties in MapLibre GL Native](https://github.com/maplibre/maplibre-gl-native/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22%2C%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+XL%22%2C%22%F0%9F%92%B0+bounty+XXL%22+) and feel free to propose Bounties yourself. Read our [step-by-step Bounties guide](http://localhost:45707/roadmap/step-by-step-bounties-guide/).
 
 #### Contributions
 
-Contributions since March 20th, 2023:
+Contributions since March 20'th, 2023:
 
-TBD
+Most notable PRs
+
+- First finalised bounty [#808](https://github.com/maplibre/maplibre-gl-native/issues/808)
+- Split repository initiative for [Qt platform](https://github.com/maplibre/maplibre-native-qt)
+- Rendering Modularization work that will lead to metal implementation
+- OpenGL 2 support is dropped. For the ones that still want to use OpenGL 2 please refear to: [opengl-2](https://github.com/maplibre/maplibre-gl-native/tree/opengl-2)
+
+### Rendering Modularization & Metal project
+
+Project highlights since March 20'th, 2023:
+
+- Work was focused on shaders reorg and tests
+- [Project roadmap](https://github.com/orgs/maplibre/projects/8)
+- Upgrade to OpenGL ES 3.0
+    - Motivation, consequences:
+        - Most of android devices are compatible with ES 3.0
+        - One platform that will suffer a drawback till metal will be implemented is MacOS.
+        - A branch was be created for OpenGl ES 2.0 support: [opengl-2](https://github.com/maplibre/maplibre-gl-native/tree/opengl-2)
 
 ## MapLibre GL JS
 
 #### Bounties 💰
 
-TBD
+Bounties completed since March 20'th 2023:
+
+- [Use @maplibre/maplibre-gl-style-spec in MapLibre GL JS](https://github.com/maplibre/maplibre-gl-js/issues/2194)
+- [Opacity fix for setTerrain](https://github.com/maplibre/maplibre-gl-js/issues/2035)
+- [Fix for bad position of 3D model when 3D terrain is enabled](https://github.com/maplibre/maplibre-gl-js/issues/1654)
 
 #### Contributions
 
-Contributions since March 20th, 2023:
+Most notable PRs since March 20th, 2023:
 
-TBD
+- Yi Zhang(Microsoft) [Lazy serialization of layers](https://github.com/maplibre/maplibre-gl-js/pull/2306)
+- Victor Gerard Temprano [Warnonce for Terrain Source](https://github.com/maplibre/maplibre-gl-js/pull/2298)
+- Cuong Nguyen [Add queryTerrainElevation](https://github.com/maplibre/maplibre-gl-js/pull/2279)
+
+## MapLibre StyleSpecs
+
+#### Debated design proposals:
+
+- [Support for refreshTiles per tile source](https://github.com/maplibre/maplibre-style-spec/issues/61)
+- [Expanding tileSources bounds](https://github.com/maplibre/maplibre-style-spec/issues/60)
+- [Add elevation to symbol layer](https://github.com/maplibre/maplibre-style-spec/issues/62)
+- [Update text-offset to better support variable anchor placement](https://github.com/maplibre/maplibre-style-spec/issues/112)
 
 ## Upcoming Events
 
