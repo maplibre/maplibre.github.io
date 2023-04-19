@@ -64,7 +64,6 @@ Bounties completed since March 20'th 2023:
 Most notable PRs since March 20th, 2023:
 
 - Yi Zhang(Microsoft) - Improve initial loading performance by lazy serializing layers only when needed. ([#2306](https://github.com/maplibre/maplibre-gl-js/pull/2306))
-- Victor Gerard Temprano - Adding a `warnonce` when terrain and hillshade source are the same ([#2298](https://github.com/maplibre/maplibre-gl-js/pull/2298))
 - Cuong Nguyen - Add queryTerrainElevation allows getting terrain elevation in meters at specific point ([#2264](https://github.com/maplibre/maplibre-gl-js/pull/2264))
 
 ## MapLibre StyleSpecs
