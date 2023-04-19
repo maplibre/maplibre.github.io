@@ -32,8 +32,8 @@ Contributions since March 20'th, 2023:
 
 Most notable PRs
 
-- First finalised bounty [#808](https://github.com/maplibre/maplibre-gl-native/issues/808)
-- Split repository initiative for [Qt platform](https://github.com/maplibre/maplibre-native-qt)
+- First bounty was finalised by Loc Nguyen: Getting Started Guide MapLibre GL Native for Android has now step by step guides and also a demo codebase [#808](https://github.com/maplibre/maplibre-gl-native/issues/808)
+- Thanks to Tadej Novak we have our first split repository initiative. We started with Qt platform [Qt platform](https://github.com/maplibre/maplibre-native-qt)
 - Rendering Modularization work that will lead to metal implementation
 - OpenGL 2 support is dropped. For the ones that still want to use OpenGL 2 please refear to: [opengl-2](https://github.com/maplibre/maplibre-gl-native/tree/opengl-2)
 
@@ -55,17 +55,17 @@ Project highlights since March 20'th, 2023:
 
 Bounties completed since March 20'th 2023:
 
-- [Use @maplibre/maplibre-gl-style-spec in MapLibre GL JS](https://github.com/maplibre/maplibre-gl-js/issues/2194)
-- [Opacity fix for setTerrain](https://github.com/maplibre/maplibre-gl-js/issues/2035)
-- [Fix for bad position of 3D model when 3D terrain is enabled](https://github.com/maplibre/maplibre-gl-js/issues/1654)
+- Remove style-spec from the repo in favor of references to the npm package [Use @maplibre/maplibre-gl-style-spec in MapLibre GL JS](https://github.com/maplibre/maplibre-gl-js/issues/2194)
+- Victor Gerard Temprano helped out with the opacity fix for serTerrain by adding a warnonce when it detects that a user is using the same source for a hillshade and for 3D terrain [Opacity fix for setTerrain](https://github.com/maplibre/maplibre-gl-js/issues/2035)
+- Add queryTerrainElevation allows getting terrain elevation in meters at specific point ([#2264](https://github.com/maplibre/maplibre-gl-js/pull/2264))
 
 #### Contributions
 
 Most notable PRs since March 20th, 2023:
 
-- Yi Zhang(Microsoft) [Lazy serialization of layers](https://github.com/maplibre/maplibre-gl-js/pull/2306)
-- Victor Gerard Temprano [Warnonce for Terrain Source](https://github.com/maplibre/maplibre-gl-js/pull/2298)
-- Cuong Nguyen [Add queryTerrainElevation](https://github.com/maplibre/maplibre-gl-js/pull/2279)
+- Yi Zhang(Microsoft) - Improve initial loading performance by lazy serializing layers only when needed. ([#2306](https://github.com/maplibre/maplibre-gl-js/pull/2306))
+- Victor Gerard Temprano - Adding a `warnonce` when terrain and hillshade source are the same ([#2298](https://github.com/maplibre/maplibre-gl-js/pull/2298))
+- Cuong Nguyen - Add queryTerrainElevation allows getting terrain elevation in meters at specific point ([#2264](https://github.com/maplibre/maplibre-gl-js/pull/2264))
 
 ## MapLibre StyleSpecs
 
