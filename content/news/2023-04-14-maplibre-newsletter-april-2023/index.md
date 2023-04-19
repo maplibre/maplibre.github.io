@@ -56,7 +56,7 @@ Project highlights since March 20'th, 2023:
 Bounties completed since March 20'th 2023:
 
 - Remove style-spec from the repo in favor of references to the npm package [Use @maplibre/maplibre-gl-style-spec in MapLibre GL JS](https://github.com/maplibre/maplibre-gl-js/issues/2194)
-- Victor Gerard Temprano helped out with the opacity fix for serTerrain by adding a warnonce when it detects that a user is using the same source for a hillshade and for 3D terrain [Opacity fix for setTerrain](https://github.com/maplibre/maplibre-gl-js/issues/2035)
+- Victor Gerard Temprano helped out with the opacity fix for setTerrain by adding a warnonce when it detects that a user is using the same source for a hillshade and for 3D terrain [Opacity fix for setTerrain](https://github.com/maplibre/maplibre-gl-js/issues/2035)
 - Add queryTerrainElevation allows getting terrain elevation in meters at specific point ([#2264](https://github.com/maplibre/maplibre-gl-js/pull/2264))
 
 #### Contributions
