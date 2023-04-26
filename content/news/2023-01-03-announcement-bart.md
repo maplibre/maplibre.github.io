@@ -22,7 +22,7 @@ Bart is excited to meet the people involved in the project and learn more about 
 - GitHub: https://github.com/louwers/
 - Slack: `@Bart Louwers` in the OSMUS Slack channel at https://slack.openstreetmap.us/
 
-Bart's responsibilities in the Maintainer Native role (see https://github.com/maplibre/maplibre/wiki/Maintainer-Native-Role#responsibilities) are focused on making sure that the MapLibre GL Native repository is in good shape, that contributors get answers to issues and pull requests in a timely manner, and that it becomes easier for new people to get started with the codebase.
+Bart's responsibilities in the Maintainer Native role (see https://github.com/maplibre/maplibre/wiki/Maintainer-Native-Role#responsibilities) are focused on making sure that the MapLibre Native repository is in good shape, that contributors get answers to issues and pull requests in a timely manner, and that it becomes easier for new people to get started with the codebase.
 
 We plan to initially work together for two months, January and February 2023, and then evaluate how we best proceed. Thank you for trusting us and starting this adventure with us, Bart!
 
@@ -32,6 +32,6 @@ To quote the [MapLibre Sponsorship Program](https://maplibre.org/files/Word-Doc-
 
 <i>The biggest challenge for an open-source project like MapLibre is continuous dedication. Volunteers tend to provide excellent short-term contributions, but a project's long-term viability depends on the members actively responding to new users’ questions and contributions. We think that the only way to ensure long-term stability is to hire maintainers whose responsibility will be to organize and coordinate rather than to code.</i>
 
-By participating in the MapLibre Sponsorship Program, you can ensure that MapLibre GL Native and MapLibre GL JS become long-term sustainable projects on which you and your users can count!
+By participating in the MapLibre Sponsorship Program, you can ensure that MapLibre Native and MapLibre GL JS become long-term sustainable projects on which you and your users can count!
 
 We wish Bart a good start and are excited to see what the future brings.

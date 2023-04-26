@@ -28,7 +28,7 @@ MapLibre was created from the beginning to be a community-governed project, but 
 
 With the arrival of the sponsorship funding we were ready to pay somebody for the coordination of hiring maintainers and building further partnerships with companies that use MapLibre. The Governing Board appointed me for the coordinator role and I became the first freelancer working for MapLibre. I was worried that switching from a hobby to being paid could be bad, but wasn't -- again because the people who contribute to MapLibre are all excellent and supported me throughout the process.
 
-I am proud to have hired Bart and Ovi as maintainers for MapLibre GL Native and Harel as maintainer for MapLibre GL JS. They make the projects a better place and help contributors achieve their goals. The partnerships with companies keep solidifying and we see that our libraries are production-ready and are being used in the largest consumer apps and websites in the world.
+I am proud to have hired Bart and Ovi as maintainers for MapLibre Native and Harel as maintainer for MapLibre GL JS. They make the projects a better place and help contributors achieve their goals. The partnerships with companies keep solidifying and we see that our libraries are production-ready and are being used in the largest consumer apps and websites in the world.
 
 My personal wish for the future is that MapLibre stays a project that welcomes new people. I found it always faciating that new people could come to MapLibre and have an impact. Let's keep it like this and remind ourselves always that we also once joined the project and were newcomers.
 

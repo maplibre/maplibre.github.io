@@ -14,7 +14,7 @@ Deliverables:
 
 - Sponsorship - communication, formalized process, fundraising
 - Recruitment campaign - collect a list of candidates for the roles of maintainer, developer (keen on bounties), backup coordinator and secretary
-- Active hiring and interviews: Hire a maintainer for MapLibre GL Native
+- Active hiring and interviews: Hire a maintainer for MapLibre Native
 - Implement a bounty system
 - Develop and document organizational processes - budget, roles, time tracking, roadmaps
 - Ensure smooth operation - meetings announcements, communication
