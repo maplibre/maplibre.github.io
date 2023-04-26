@@ -30,13 +30,13 @@ Finally, MapLibre GL JS has hit 200k weekly downloads on [npm](https://www.npmjs
 
 The amounts allocated to [Bounty Directions](https://github.com/maplibre/maplibre/issues?q=is%3Aissue+is%3Aopen+label%3A%22bounty+direction%22) are pre-approved budgets. If an individual or a company would like to work on a Bounty Direction but requires more funding, they can make a request to the Governing Board to increase the budget of a Bounty Direction.
 
-## MapLibre GL Native
+## MapLibre Native
 
 People interested in contributing can schedule a call with Bart Louwers, Maintainer MapLibre Native: <a href="https://github.com/maplibre/maplibre-gl-native/discussions/898">maplibre/maplibre-gl-native#898</a>.
 
 #### Bounties 💰
 
-Have a look at all available [Bounties in MapLibre GL Native](https://github.com/maplibre/maplibre-gl-native/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22%2C%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+XL%22%2C%22%F0%9F%92%B0+bounty+XXL%22+) and feel free to propose Bounties yourself. Read our [step-by-step Bounties guide](http://localhost:45707/roadmap/step-by-step-bounties-guide/).
+Have a look at all available [Bounties in MapLibre Native](https://github.com/maplibre/maplibre-gl-native/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22%2C%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+XL%22%2C%22%F0%9F%92%B0+bounty+XXL%22+) and feel free to propose Bounties yourself. Read our [step-by-step Bounties guide](http://localhost:45707/roadmap/step-by-step-bounties-guide/).
 
 #### Contributions
 
@@ -44,7 +44,7 @@ Contributions since March 20th, 2023:
 
 Most notable PRs:
 
-- First bounty was finalised by Loc Nguyen: Getting Started Guide MapLibre GL Native for Android has now step by step guides and also a demo codebase [#808](https://github.com/maplibre/maplibre-gl-native/issues/808)
+- First bounty was finalised by Loc Nguyen: Getting Started Guide MapLibre Native for Android has now step by step guides and also a demo codebase [#808](https://github.com/maplibre/maplibre-gl-native/issues/808)
 - Thanks to Tadej Novak we have our first split repository initiative. We started with Qt platform [Qt platform](https://github.com/maplibre/maplibre-native-qt)
 - OpenGL 2 support is dropped. For the ones that still want to use OpenGL 2 please refer to the [opengl-2](https://github.com/maplibre/maplibre-gl-native/tree/opengl-2) branch.
 
