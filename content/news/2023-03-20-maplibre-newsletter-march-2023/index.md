@@ -12,7 +12,7 @@ draft: false
 
 #### Bounty Program
 
-We invite you to share feedback on what features and improvements in MapLibre GL JS and MapLibre GL Native would be helpful for you. Tell us what you need and vote for the things which are most important to you following these [feedback instructions](https://maplibre.org/news/2023-03-13-second-call-for-bounties/).
+We invite you to share feedback on what features and improvements in MapLibre GL JS and MapLibre Native would be helpful for you. Tell us what you need and vote for the things which are most important to you following these [feedback instructions](https://maplibre.org/news/2023-03-13-second-call-for-bounties/).
 
 The MapLibre Governing Board will take your feedback and decide how to allocate Bounty resources on roadmap projects on April 4th, 2023.
 
@@ -40,7 +40,7 @@ We have a Mastodon account now: https://mastodon.social/@maplibre/.
 ## Past Events
 
 - [Yasunori Kirimoto](https://www.linkedin.com/feed/update/urn:li:activity:7035571220767019008/) gave a talk about MapLibre at FOSS4G Hokkaido, which took place for the first time in 3 years in person again!
-- [Chris Beddow](https://www.linkedin.com/in/cbed/) organized a great meetup for everybody interested in maps in Meta's Zurich office. Among several other talks, [Bart Louwers](https://maplibre.org/about/bart) gave a talk about the past, present, and future of MapLibre GL Native. [Manuel Roth](https://www.linkedin.com/in/manuel-roth/) from the Swiss TV broadcaster SRF gave a talk about how they use MapLibre GL JS and MapLibre GL Native for the weather app SRF Meteo. Thank you both for the inspiring presentations!
+- [Chris Beddow](https://www.linkedin.com/in/cbed/) organized a great meetup for everybody interested in maps in Meta's Zurich office. Among several other talks, [Bart Louwers](https://maplibre.org/about/bart) gave a talk about the past, present, and future of MapLibre Native. [Manuel Roth](https://www.linkedin.com/in/manuel-roth/) from the Swiss TV broadcaster SRF gave a talk about how they use MapLibre GL JS and MapLibre Native for the weather app SRF Meteo. Thank you both for the inspiring presentations!
 
 The Meta maps meetup was also the first time that Oliver Wipfli and Bart Louwers met in person. It was great to see each other and discuss all things around MapLibre!
 
@@ -48,13 +48,13 @@ The Meta maps meetup was also the first time that Oliver Wipfli and Bart Louwers
 
 <i>Oliver Wipfli (l.) and Bart Louwers (r.) had a floating meeting on lake Zurich.</i>
 
-## MapLibre GL Native
+## MapLibre Native
 
 People interested in contributing can schedule a call with Bart Louwers, maintainer native: <a href="https://github.com/maplibre/maplibre-gl-native/discussions/898">maplibre/maplibre-gl-native#898</a>.
 
 #### Bounties 💰
 
-Have a look at all available [Bounties in MapLibre GL Native](https://github.com/maplibre/maplibre-gl-native/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22%2C%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+XL%22%2C%22%F0%9F%92%B0+bounty+XXL%22+) and feel free to propose Bounties yourself. Read our [step-by-step Bounties guide](http://localhost:45707/roadmap/step-by-step-bounties-guide/).
+Have a look at all available [Bounties in MapLibre Native](https://github.com/maplibre/maplibre-gl-native/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22%2C%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+XL%22%2C%22%F0%9F%92%B0+bounty+XXL%22+) and feel free to propose Bounties yourself. Read our [step-by-step Bounties guide](http://localhost:45707/roadmap/step-by-step-bounties-guide/).
 
 #### Contributions
 

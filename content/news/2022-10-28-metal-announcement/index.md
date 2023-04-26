@@ -6,7 +6,7 @@ authors: [wipfli]
 draft: false
 ---
 
-MapLibre GL Native is planning for modularization and migration to Metal, Apple's graphics framework, for rendering on iOS mobile devices.
+MapLibre Native is planning for modularization and migration to Metal, Apple's graphics framework, for rendering on iOS mobile devices.
 
 <p>
 <img src="metal.png" alt="Metal" style="max-width:600px;width:100%">

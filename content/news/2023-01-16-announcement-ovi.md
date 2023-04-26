@@ -5,7 +5,7 @@ categories: ["announcements"]
 authors: [wipfli]
 ---
 
-With Ovidiu Voda starting today, we are proud to now have two people working as Maintainers on MapLibre GL Native. Please give Ovi a warm welcome!
+With Ovidiu Voda starting today, we are proud to now have two people working as Maintainers on MapLibre Native. Please give Ovi a warm welcome!
 
 Ovi is going to work together with Bart Louwers on Native and he is looking forward to meeting everyone involved in the project. Feel free to reach out to Ovi and say hi to him.
 
