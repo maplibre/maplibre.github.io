@@ -5,7 +5,7 @@ github: https://github.com/maplibre/maplibre-native
 documentation:
   - url: https://maplibre.org/maplibre-native/android/api/
     name: Android API Documentation
-  - url: https://docs.maptiler.com/maplibre-native-android/
+  - url: https://docs.maptiler.com/maplibre-gl-native-android/
     name: Android Examples
   - url: https://maplibre.org/maplibre-native/ios/api/
     name: iOS API Documentation
