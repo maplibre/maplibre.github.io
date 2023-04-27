@@ -1,7 +1,7 @@
 ---
 title: "Metal Announcement"
 date: 2022-10-28
-categories: ["maplibre-gl-native"]
+categories: ["maplibre-native"]
 authors: [wipfli]
 draft: false
 ---
@@ -12,7 +12,7 @@ MapLibre Native is planning for modularization and migration to Metal, Apple's g
 <img src="metal.png" alt="Metal" style="max-width:600px;width:100%">
 </p>
 
-A design proposal for the modularization of the map rendering architecture can be found at https://github.com/maplibre/maplibre-gl-native/pull/547. This modularization will allow new rendering architectures to be implemented quickly and more easily, and we anticipate that the modularization will give us a concrete framework to better interrogate various migration strategies. Feel free to share your thoughts on this approach in the Pull Request.
+A design proposal for the modularization of the map rendering architecture can be found at https://github.com/maplibre/maplibre-native/pull/547. This modularization will allow new rendering architectures to be implemented quickly and more easily, and we anticipate that the modularization will give us a concrete framework to better interrogate various migration strategies. Feel free to share your thoughts on this approach in the Pull Request.
 
 The modularization design proposal process will be immediately followed by a second proposal to migrate the renderer to Metal.
 

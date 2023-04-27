@@ -1,19 +1,19 @@
 ---
 title: "MapLibre Native"
 weight: -900
-github: https://github.com/maplibre/maplibre-gl-native
+github: https://github.com/maplibre/maplibre-native
 documentation:
-  - url: https://maplibre.org/maplibre-gl-native/android/api/
+  - url: https://maplibre.org/maplibre-native/android/api/
     name: Android API Documentation
-  - url: https://docs.maptiler.com/maplibre-gl-native-android/
+  - url: https://docs.maptiler.com/maplibre-native-android/
     name: Android Examples
-  - url: https://maplibre.org/maplibre-gl-native/ios/api/
+  - url: https://maplibre.org/maplibre-native/ios/api/
     name: iOS API Documentation
-  - url: https://docs.maptiler.com/maplibre-gl-native-ios/
+  - url: https://docs.maptiler.com/maplibre-native-ios/
     name: iOS Examples
-  - url: https://maplibre.org/maplibre-gl-native/cpp/api/
+  - url: https://maplibre.org/maplibre-native/cpp/api/
     name: Core C++ API
-  - url: https://maplibre.org/maplibre-gl-native/docs/book/
+  - url: https://maplibre.org/maplibre-native/docs/book/
     name: Book
 stable: true
 ---
@@ -29,5 +29,5 @@ Starting is 2023, we plan to overhaul the library and complement the existing Op
 
 More information can be found in the following design proposals:
 
-- [Rendering Modularization Proposal](https://github.com/maplibre/maplibre-gl-native/pull/547/)
-- [Metal Port Design Proposal](https://github.com/maplibre/maplibre-gl-native/pull/580/)
+- [Rendering Modularization Proposal](https://github.com/maplibre/maplibre-native/pull/547/)
+- [Metal Port Design Proposal](https://github.com/maplibre/maplibre-native/pull/580/)
