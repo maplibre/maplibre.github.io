@@ -22,15 +22,15 @@ There is an ongoing discussion if a style editor should be maintained under the 
 - On Feb 1st, 2023, more than 40 people joined the first MapLibre User Group Japan online meeting. Thanks Yasunori Kirimoto and Kanahiro Iguchi for organizing this!
 - On Feb 8th, 2023, Alan Chen Wei from GrabMaps gave a presentation about how Grab implemented Khmer text rendering with HarfBuzz. Video recording is available [here](https://zoom.us/rec/share/X4c7fjSQiFkl1jNNMRiqt9jqeLK3ZCJZ5SuMhi8-qzzcVnDisfcABqLqIZcHflTv.3loRYzsO4OhqSsYt?startTime=1675843326000) Passcode: `JHnxr8*3`. Thanks for the interesting talk, Alan!
 
-## MapLibre GL Native
+## MapLibre Native
 
-We are happy to welcome Bart Louwers and Ovidiu Voda as Maintainers of MapLibre GL Native. They started in January 2023 and we can see how their work has a positive impact on MapLibre GL Native with many new people contributing to the repo. Thank you both for your efforts!
+We are happy to welcome Bart Louwers and Ovidiu Voda as Maintainers of MapLibre Native. They started in January 2023 and we can see how their work has a positive impact on MapLibre Native with many new people contributing to the repo. Thank you both for your efforts!
 
-MapLibre GL Native for Android [v10.0.0](https://github.com/maplibre/maplibre-gl-native/releases/tag/android-v10.0.0) is out now. Try it out and let us know what you think. All bug reports are welcome! The new features, bug fixes and breaking changes are documented in the [release notes](https://github.com/maplibre/maplibre-gl-native/releases/tag/android-v10.0.0).
+MapLibre Native for Android [v10.0.0](https://github.com/maplibre/maplibre-gl-native/releases/tag/android-v10.0.0) is out now. Try it out and let us know what you think. All bug reports are welcome! The new features, bug fixes and breaking changes are documented in the [release notes](https://github.com/maplibre/maplibre-gl-native/releases/tag/android-v10.0.0).
 
 ### Bounties 💰
 
-MapLibre GL Native published Bounties for code development tasks. Read our [step-by-step bounties guide](https://maplibre.org/roadmap/step-by-step-bounties-guide/) to learn how you can work on Bounties and get paid.
+MapLibre Native published Bounties for code development tasks. Read our [step-by-step bounties guide](https://maplibre.org/roadmap/step-by-step-bounties-guide/) to learn how you can work on Bounties and get paid.
 
 Currently, the following Bounties are available (see [here](https://github.com/maplibre/maplibre-gl-native/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22+) for an up-to-date list):
 

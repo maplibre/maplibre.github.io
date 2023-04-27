@@ -10,6 +10,8 @@ enableGitInfo = true
 summaryLength = 30
 enableEmoji = true
 
+timeout = '60s'
+
 paginate = 50
 
 [taxonomies]

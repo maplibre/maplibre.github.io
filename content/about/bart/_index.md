@@ -20,4 +20,4 @@ So far my work as Maintainer Native has been challenging, yet rewarding. Map ren
 
 Maps serve a vast number of purposes. Something I am passionate about is democratizing urban design and urban mobility. In plain English that means giving people the tools to (re)shape their cities to be a pleasure to live in and to move through. Maps are an essential part of that.
 
-Feel free to reach out to me on Slack in case you have any feedback or suggestions, or if you want contribute to MapLibre GL Native, but you are not sure where or how to start.
+Feel free to reach out to me on Slack in case you have any feedback or suggestions, or if you want contribute to MapLibre Native, but you are not sure where or how to start.

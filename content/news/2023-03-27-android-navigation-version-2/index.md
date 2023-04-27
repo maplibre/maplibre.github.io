@@ -6,12 +6,12 @@ authors: [boldtrn]
 draft: false
 ---
 
-We just released version 2.0.0 of [MapLibre's navigation library](https://github.com/maplibre/maplibre-navigation-android). The update comes with the latest version of MapLibre GL Native (10.0.2) and includes a navigation UI by default.
+We just released version 2.0.0 of [MapLibre's navigation library](https://github.com/maplibre/maplibre-navigation-android). The update comes with the latest version of MapLibre Native (10.0.2) and includes a navigation UI by default.
 
 <img src="maplibre-navigation-android.png" alt="Screenshot of MapLibre Navigation V2" style="max-width:600px;width:100%">
 
 MapLibre Navigation Android is an open source navigation library which allows everyone to build a customized navigation experience on Android.
-You can easily integrate a lot of different tiles, as you are used to from MapLibre GL Native.
+You can easily integrate a lot of different tiles, as you are used to from MapLibre Native.
 You can integrate your own routing backend, OSRM and GraphHopper (using the `/navigate` endpoint) are easy to implement.
 You can build your own navigation UI. An example implementation of such a custom implementation can be found in the [Kurviger App](https://play.google.com/store/apps/details?id=com.kurviger.app).
 
