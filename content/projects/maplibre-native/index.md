@@ -9,7 +9,7 @@ documentation:
     name: Android Examples
   - url: https://maplibre.org/maplibre-native/ios/api/
     name: iOS API Documentation
-  - url: https://docs.maptiler.com/maplibre-native-ios/
+  - url: https://docs.maptiler.com/maplibre-gl-native-ios/
     name: iOS Examples
   - url: https://maplibre.org/maplibre-native/cpp/api/
     name: Core C++ API
