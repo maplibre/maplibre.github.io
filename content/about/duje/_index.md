@@ -25,7 +25,7 @@ weight: 10
 
 End? No, the journey doesn't end here. MapLibre is another path. One that we
 all must take. On 2020-12-08 22:42:56 UTC MapLibre restarted mapping with its
-mission to provide freedom and independence. Eventually, this is what everybody
+mission to provide freedom and independence. In the end, this is what everybody
 is seeking, from a little project to enterprise endeavours. I am Duje and I am
 assisting as a Coordinator to help maintain what the community has built so
 carefully which means to me:
