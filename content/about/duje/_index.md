@@ -22,7 +22,6 @@ weight: 10
         |/               `..; .'
 </div>
 
-
 End? No, the journey doesn't end here. MapLibre is another path. One that we
 all must take. On 2020-12-08 22:42:56 UTC MapLibre restarted mapping with its
 mission to provide freedom and independence. In the end, this is what everybody
