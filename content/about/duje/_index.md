@@ -35,7 +35,7 @@ carefully. For me, this means:
 - Listen to and discuss with the vivid community which corner to turn next
 - Make MapLibre seen and accessible to everyone
 
-To sidewalk talks where everyone feels comfortable in the MapLibre world.
+Here's to sidewalk talks where everyone feels comfortable in the MapLibre world.
 
 Gladly find me in my alley: <span><a
 href="https://osmus.slack.com/team/U04EHNS1JKC">Slack</a></span>
