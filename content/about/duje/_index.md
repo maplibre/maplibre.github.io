@@ -32,7 +32,7 @@ carefully. For me, this means:
 
 - Assure MapLibre's fundraising and a healthy Sponsorship Program to keep
   MapLibre on the map
-- Listen to and discuss with the vivid community which corner to turn next
+- Listen to and discuss with the vibrant community which corner to turn next
 - Make MapLibre seen and accessible to everyone
 
 Here's to sidewalk talks where everyone feels comfortable in the MapLibre world.
