@@ -28,7 +28,7 @@ all must take. On 2020-12-08 22:42:56 UTC MapLibre restarted mapping with its
 mission to provide freedom and independence. In the end, this is what everybody
 is seeking, from a little project to enterprise endeavours. I am Duje, and I am
 assisting as a Coordinator to help maintain what the community has built so
-carefully which means to me:
+carefully. For me, this means:
 
 - Assure MapLibre's fundraising and a healthy Sponsorship Program to keep
   MapLibre on the map
