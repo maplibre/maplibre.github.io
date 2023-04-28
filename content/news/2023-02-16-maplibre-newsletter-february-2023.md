@@ -26,37 +26,37 @@ There is an ongoing discussion if a style editor should be maintained under the 
 
 We are happy to welcome Bart Louwers and Ovidiu Voda as Maintainers of MapLibre Native. They started in January 2023 and we can see how their work has a positive impact on MapLibre Native with many new people contributing to the repo. Thank you both for your efforts!
 
-MapLibre Native for Android [v10.0.0](https://github.com/maplibre/maplibre-gl-native/releases/tag/android-v10.0.0) is out now. Try it out and let us know what you think. All bug reports are welcome! The new features, bug fixes and breaking changes are documented in the [release notes](https://github.com/maplibre/maplibre-gl-native/releases/tag/android-v10.0.0).
+MapLibre Native for Android [v10.0.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v10.0.0) is out now. Try it out and let us know what you think. All bug reports are welcome! The new features, bug fixes and breaking changes are documented in the [release notes](https://github.com/maplibre/maplibre-native/releases/tag/android-v10.0.0).
 
 ### Bounties 💰
 
 MapLibre Native published Bounties for code development tasks. Read our [step-by-step bounties guide](https://maplibre.org/roadmap/step-by-step-bounties-guide/) to learn how you can work on Bounties and get paid.
 
-Currently, the following Bounties are available (see [here](https://github.com/maplibre/maplibre-gl-native/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22+) for an up-to-date list):
+Currently, the following Bounties are available (see [here](https://github.com/maplibre/maplibre-native/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22+) for an up-to-date list):
 
-- Documentation: Getting started guide iOS: [#809](https://github.com/maplibre/maplibre-gl-native/issues/809)
-- Documentation: Getting started guide Android: [#808](https://github.com/maplibre/maplibre-gl-native/issues/808)
-- Documentation: Tutorial annotations iOS: [#810](https://github.com/maplibre/maplibre-gl-native/issues/810)
-- Documentation: Tutorial annotations Android: [#811](https://github.com/maplibre/maplibre-gl-native/issues/811)
-- Documentation: Example current location iOS: [#813](https://github.com/maplibre/maplibre-gl-native/issues/813)
-- Documentation: Example current location Android: [#812](https://github.com/maplibre/maplibre-gl-native/issues/812)
+- Documentation: Getting started guide iOS: [#809](https://github.com/maplibre/maplibre-native/issues/809)
+- Documentation: Getting started guide Android: [#808](https://github.com/maplibre/maplibre-native/issues/808)
+- Documentation: Tutorial annotations iOS: [#810](https://github.com/maplibre/maplibre-native/issues/810)
+- Documentation: Tutorial annotations Android: [#811](https://github.com/maplibre/maplibre-native/issues/811)
+- Documentation: Example current location iOS: [#813](https://github.com/maplibre/maplibre-native/issues/813)
+- Documentation: Example current location Android: [#812](https://github.com/maplibre/maplibre-native/issues/812)
 
 ### Contributions
 
 Code contributions since January 15th, 2023:
 
-- [louwers](https://github.com/maplibre/maplibre-gl-native/commits?author=louwers) contributed 20 pull requests.
+- [louwers](https://github.com/maplibre/maplibre-native/commits?author=louwers) contributed 20 pull requests.
   - Continuous integration for Android is now green again. We no longer use a custom Docker image.
   - The various README files throughout the repository where refreshed.
-  - The [Android API docs](https://maplibre.org/maplibre-gl-native/android/api/) now use Dokka, which is a documentation generator with better support for Kotlin than the previously used Javadoc.
-  - New [Core C++ docs](https://maplibre.org/maplibre-gl-native/cpp/api/) were published as well, using Doxygen as documentation generator.
+  - The [Android API docs](https://maplibre.org/maplibre-native/android/api/) now use Dokka, which is a documentation generator with better support for Kotlin than the previously used Javadoc.
+  - New [Core C++ docs](https://maplibre.org/maplibre-native/cpp/api/) were published as well, using Doxygen as documentation generator.
   - C++17 is used for compilation and some parts of the codebase were updated to take advantage of this.
-- [tdcosta100](https://github.com/maplibre/maplibre-gl-native/commits?author=tdcosta100) contributed 4 pull requests to prepare Windows support.
-- [KiwiKilian](https://github.com/maplibre/maplibre-gl-native/commits?author=KiwiKilian) improved the node documentation.
-- [fynngodau](https://github.com/maplibre/maplibre-gl-native/commits?author=fynngodau) contributed 2 pull requests to improve Kotlin code and fix an issue with bitmaps.
-- [hallahan](https://github.com/maplibre/maplibre-gl-native/commits?author=hallahan) improved the iOS docs.
-- [birkskyum](https://github.com/maplibre/maplibre-gl-native/commits?author=birkskyum) updated the Android Gradle Plugin.
-- [alanchenboy](https://github.com/maplibre/maplibre-gl-native/commits?author=alanchenboy) contributed 2 pull requests to fix a snapshotting crash and enable C++ unit tests.
+- [tdcosta100](https://github.com/maplibre/maplibre-native/commits?author=tdcosta100) contributed 4 pull requests to prepare Windows support.
+- [KiwiKilian](https://github.com/maplibre/maplibre-native/commits?author=KiwiKilian) improved the node documentation.
+- [fynngodau](https://github.com/maplibre/maplibre-native/commits?author=fynngodau) contributed 2 pull requests to improve Kotlin code and fix an issue with bitmaps.
+- [hallahan](https://github.com/maplibre/maplibre-native/commits?author=hallahan) improved the iOS docs.
+- [birkskyum](https://github.com/maplibre/maplibre-native/commits?author=birkskyum) updated the Android Gradle Plugin.
+- [alanchenboy](https://github.com/maplibre/maplibre-native/commits?author=alanchenboy) contributed 2 pull requests to fix a snapshotting crash and enable C++ unit tests.
 
 ## MapLibre GL JS
 

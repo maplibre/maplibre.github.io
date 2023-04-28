@@ -32,11 +32,11 @@ The amounts allocated to [Bounty Directions](https://github.com/maplibre/maplibr
 
 ## MapLibre Native
 
-People interested in contributing can schedule a call with Bart Louwers, Maintainer MapLibre Native: <a href="https://github.com/maplibre/maplibre-gl-native/discussions/898">maplibre/maplibre-gl-native#898</a>.
+People interested in contributing can schedule a call with Bart Louwers, Maintainer MapLibre Native: <a href="https://github.com/maplibre/maplibre-native/discussions/898">maplibre/maplibre-native#898</a>.
 
 #### Bounties 💰
 
-Have a look at all available [Bounties in MapLibre Native](https://github.com/maplibre/maplibre-gl-native/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22%2C%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+XL%22%2C%22%F0%9F%92%B0+bounty+XXL%22+) and feel free to propose Bounties yourself. Read our [step-by-step Bounties guide](http://localhost:45707/roadmap/step-by-step-bounties-guide/).
+Have a look at all available [Bounties in MapLibre Native](https://github.com/maplibre/maplibre-native/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22%2C%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+XL%22%2C%22%F0%9F%92%B0+bounty+XXL%22+) and feel free to propose Bounties yourself. Read our [step-by-step Bounties guide](http://localhost:45707/roadmap/step-by-step-bounties-guide/).
 
 #### Contributions
 
@@ -44,9 +44,9 @@ Contributions since March 20th, 2023:
 
 Most notable PRs:
 
-- First bounty was finalised by Loc Nguyen: Getting Started Guide MapLibre Native for Android has now step by step guides and also a demo codebase [#808](https://github.com/maplibre/maplibre-gl-native/issues/808)
+- First bounty was finalised by Loc Nguyen: Getting Started Guide MapLibre Native for Android has now step by step guides and also a demo codebase [#808](https://github.com/maplibre/maplibre-native/issues/808)
 - Thanks to Tadej Novak we have our first split repository initiative. We started with Qt platform [Qt platform](https://github.com/maplibre/maplibre-native-qt)
-- OpenGL 2 support is dropped. For the ones that still want to use OpenGL 2 please refer to the [opengl-2](https://github.com/maplibre/maplibre-gl-native/tree/opengl-2) branch.
+- OpenGL 2 support is dropped. For the ones that still want to use OpenGL 2 please refer to the [opengl-2](https://github.com/maplibre/maplibre-native/tree/opengl-2) branch.
 
 ### Rendering Modularization & Metal project
 
@@ -58,7 +58,7 @@ Project highlights since March 20th, 2023:
   - Motivation, consequences:
     - Most Android devices are compatible with OpenGL ES 3.0
     - One platform that will suffer a drawback until the Metal backend will be implemented is macOS
-    - A branch was created for OpenGL ES 2.0 support: [opengl-2](https://github.com/maplibre/maplibre-gl-native/tree/opengl-2)
+    - A branch was created for OpenGL ES 2.0 support: [opengl-2](https://github.com/maplibre/maplibre-native/tree/opengl-2)
 
 ## MapLibre GL JS
 
