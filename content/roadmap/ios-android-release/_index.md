@@ -11,6 +11,6 @@ https://www.maptiler.com/news/2021/06/maplibre-gl-native-open-source-mobile-sdk-
     <img src="image.png" style="max-width:600px;width:100%">
 </p>
 
-GitHub: https://github.com/maplibre/maplibre-gl-native
+GitHub: https://github.com/maplibre/maplibre-native
 
 Released: June 2021

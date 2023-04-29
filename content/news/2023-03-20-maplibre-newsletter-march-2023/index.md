@@ -50,11 +50,11 @@ The Meta maps meetup was also the first time that Oliver Wipfli and Bart Louwers
 
 ## MapLibre Native
 
-People interested in contributing can schedule a call with Bart Louwers, maintainer native: <a href="https://github.com/maplibre/maplibre-gl-native/discussions/898">maplibre/maplibre-gl-native#898</a>.
+People interested in contributing can schedule a call with Bart Louwers, maintainer native: <a href="https://github.com/maplibre/maplibre-native/discussions/898">maplibre/maplibre-native#898</a>.
 
 #### Bounties 💰
 
-Have a look at all available [Bounties in MapLibre Native](https://github.com/maplibre/maplibre-gl-native/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22%2C%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+XL%22%2C%22%F0%9F%92%B0+bounty+XXL%22+) and feel free to propose Bounties yourself. Read our [step-by-step Bounties guide](http://localhost:45707/roadmap/step-by-step-bounties-guide/).
+Have a look at all available [Bounties in MapLibre Native](https://github.com/maplibre/maplibre-native/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22%2C%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+XL%22%2C%22%F0%9F%92%B0+bounty+XXL%22+) and feel free to propose Bounties yourself. Read our [step-by-step Bounties guide](http://localhost:45707/roadmap/step-by-step-bounties-guide/).
 
 #### Contributions
 
@@ -69,7 +69,7 @@ Most notable PRs
 
 Open discussions:
 
-- Code organization proposal <a href="https://github.com/maplibre/maplibre-gl-native/pull/789">maplibre-gl-native#789</a>.
+- Code organization proposal <a href="https://github.com/maplibre/maplibre-native/pull/789">maplibre-native#789</a>.
 
 ## MapLibre GL JS
 
