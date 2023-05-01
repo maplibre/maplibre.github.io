@@ -3,28 +3,34 @@ title: About - Duje Schröder
 weight: 10
 ---
 
-<div class="text-center mb-5">
+<div class="text-center mb-4">
     <img
         src="https://avatars.githubusercontent.com/u/23352538?v=4"
         width="150"
         class="rounded-circle mt-3"
     />
     <h3 class="m-3">Duje Schröder</h3>
-    <p>Assistant Coordinator</p>
-</div>
-
-<div class="text-center">
-   _,--',     _,_._.--._______
- .--.--';_'-. ',_";_      _.,-'
-.'--'.  _.'    {`'-;_ .-...'
-      '-:_      )  / `' '=.
-        ) >     {_/     /.)..
-        |/               `..; .'
+    <p>Coordinator Assistant</p>
+    <pre style="font-size:10px">
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . .#####. . . . . . . . . . . . . . . . . .
+    . . . . . . . . .#### . . . ####. . .###############. . .
+    . . ########. ##. ##. . . ######################### . . .
+    . . . ##########. . . . ######################. . . . . .
+    . . . .######## . . . .   ################### . . . . . .
+    . . . . ### .   . . . .#####. ##############. # . . . . .
+    . . . . . ##### . . . .#######. ##########. . . . . . . .
+    . . . . . .###### . . . .#### . . . . .## . . . . . . . .
+    . . . . . . ##### . . . .#### # . . . . . ##### . . . . .
+    . . . . . . ### . . . . . ##. . . . . . . . ### .#. . . .
+    . . . . . . ##. . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    </pre>
 </div>
 
 End? No, the journey doesn't end here. MapLibre is another path. One that we
 all must take. On 2020-12-08 22:42:56 UTC MapLibre restarted mapping with its
-mission to provide freedom and independence. In the end, this is what everybody
+mission to provide freedom and independence. Eventually, this is what everybody
 is seeking, from a little project to enterprise endeavours. I am Duje, and I am
 assisting as a Coordinator to help maintain what the community has built so
 carefully. For me, this means:
