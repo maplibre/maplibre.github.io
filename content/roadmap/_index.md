@@ -92,6 +92,62 @@ You can propose strategic cross-project directions in this [GitHub Discussion](h
       </div>
     </div>
   </div>
+
+  <div class="col-lg-4">
+    <div class="card">
+      <img class="card-img-top" src="blending-modes/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
+      <div class="card-body">
+        <h5 class="card-title">Blending Modes</h5>
+        <a href="blending-modes/" class="btn btn-primary">Read more...</a>
+        <a href="https://github.com/maplibre/maplibre/issues/269" class="btn btn-light">💰 Bounties</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card">
+      <img class="card-img-top" src="modernize-codebase/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
+      <div class="card-body">
+        <h5 class="card-title">Modernize Codebase</h5>
+        <a href="modernize-codebase/" class="btn btn-primary">Read more...</a>
+        <a href="https://github.com/maplibre/maplibre/issues/270" class="btn btn-light">💰 Bounties</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card">
+      <img class="card-img-top" src="svg-symbol-source/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
+      <div class="card-body">
+        <h5 class="card-title">SVG Symbol Source</h5>
+        <a href="svg-symbol-source/" class="btn btn-primary">Read more...</a>
+        <a href="https://github.com/maplibre/maplibre/issues/271" class="btn btn-light">💰 Bounties</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card">
+      <img class="card-img-top" src="non-mercator-projection/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
+      <div class="card-body">
+        <h5 class="card-title">Non-Mercator Projection</h5>
+        <a href="non-mercator-projection/" class="btn btn-primary">Read more...</a>
+        <a href="https://github.com/maplibre/maplibre/issues/272" class="btn btn-light">💰 Bounties</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card">
+      <img class="card-img-top" src="leightweight-renderers/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
+      <div class="card-body">
+        <h5 class="card-title">Leightweight Renderers</h5>
+        <a href="leightweight-renderers/" class="btn btn-primary">Read more...</a>
+        <a href="https://github.com/maplibre/maplibre/issues/273" class="btn btn-light">💰 Bounties</a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <hr/>
