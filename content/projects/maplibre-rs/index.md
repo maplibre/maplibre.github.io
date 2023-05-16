@@ -7,6 +7,8 @@ documentation:
     name: Rust API Documentation
   - url: https://maplibre.org/maplibre-rs/book/
     name: Book
+  - url: https://maplibre.org/maplibre-style-spec
+    name: "Style Spec"
 stable: false
 ---
 
