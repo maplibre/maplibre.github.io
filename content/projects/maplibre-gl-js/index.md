@@ -5,6 +5,8 @@ github: https://github.com/maplibre/maplibre-gl-js
 documentation:
   - url: https://maplibre.org/maplibre-gl-js-docs
     name: "API Documentation"
+  - url: https://maplibre.org/maplibre-style-spec
+    name: "Style Spec"
 stable: true
 ---
 

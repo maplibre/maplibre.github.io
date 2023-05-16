@@ -15,6 +15,8 @@ documentation:
     name: Core C++ API
   - url: https://maplibre.org/maplibre-native/docs/book/
     name: Book
+  - url: https://maplibre.org/maplibre-style-spec
+    name: "Style Spec"
 stable: true
 ---
 
