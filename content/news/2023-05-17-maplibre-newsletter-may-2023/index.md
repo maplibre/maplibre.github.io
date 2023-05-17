@@ -36,21 +36,21 @@ In the upcoming days, you will find a step-by-step guide on what to hand in for 
 
 Bounties completed since April 14th, 2023:
 
-- Replace playwright with puppeteer ([#2481](https://github.com/maplibre/maplibre-gl-js/issues/2481))
-- Parallelize test workflow (splitting up jobs) ([#2482](https://github.com/maplibre/maplibre-gl-js/issues/2482))
-- Update WebGL types in vertex buffer and uniform binding ([#2515](https://github.com/maplibre/maplibre-gl-js/issues/2515))
-- Split tests run to optimize CI run time ([#2411](https://github.com/maplibre/maplibre-gl-js/issues/2411))
+- Replace [Playwright](https://github.com/microsoft/playwright) with [Puppeteer](https://github.com/puppeteer/puppeteer): [#2481](https://github.com/maplibre/maplibre-gl-js/issues/2481)
+- Parallelize test workflow by splitting up jobs: [#2482](https://github.com/maplibre/maplibre-gl-js/issues/2482)
+- Update WebGL types in vertex buffer and uniform binding: [#2515](https://github.com/maplibre/maplibre-gl-js/issues/2515)
+- Split tests run to optimize CI run time: [#2411](https://github.com/maplibre/maplibre-gl-js/issues/2411)
 
-Thanks Birk for the contributions!
+Thanks [Birk](https://github.com/birkskyum) for the contributions!
 
 #### Contributions
 
 Most notable contributions since April 14th, 2023:
 
-- Lazy load default style properties on demand to improve loading performance and reduce memory usage. ([#2476](https://github.com/maplibre/maplibre-gl-js/pull/2476))
-- Remove support for `hsl` css color in a format that does not comply with the CSS Color specification. Colors defined in `hsl(110, 0.7, 0.055)` format will no longer work, instead it is recommended to use the format with percentages `hsl(110, 70%, 5.5%)`. ([#2376](https://github.com/maplibre/maplibre-gl-js/pull/2376))
-- Remove "mapbox-gl-supported" package from API. If needed, please reference it directly instead of going through MapLibre. ([#2451](https://github.com/maplibre/maplibre-gl-js/pull/2451))
-- Remove WebGL1 support ([#2512](https://github.com/maplibre/maplibre-gl-js/pull/2512))
+- Lazy load default style properties on demand to improve loading performance and reduce memory usage: [#2476](https://github.com/maplibre/maplibre-gl-js/pull/2476)
+- Remove support for `hsl` CSS color in a format that does not comply with the CSS color specification. Colors defined in the following format **will no longer work**: `hsl(110, 0.7, 0.055). Instead **it is recommended** to use the percentage format: `hsl(110, 70%, 5.5%)`. See the PR: [#2376](https://github.com/maplibre/maplibre-gl-js/pull/2376)
+- Remove "mapbox-gl-supported" package from API. If needed, please reference it directly instead of going through MapLibre: ([#2451](https://github.com/maplibre/maplibre-gl-js/pull/2451))
+- Remove WebGL1 support: ([#2512](https://github.com/maplibre/maplibre-gl-js/pull/2512))
 
 ## MapLibre Native
 
@@ -60,24 +60,30 @@ People interested in contributing can schedule a call with Bart Louwers, Maintai
 
 Most notable contributions since April 14th, 2023:
 
-- Maplibre-gl-native became Maplibre-native ([#1090](https://github.com/maplibre/maplibre-native/pull/1090))
-- Code format via clang-format was added to the repo ([#1086](https://github.com/maplibre/maplibre-native/pull/1086))
+- "maplibre-gl-native" became "maplibre-native": [#1090](https://github.com/maplibre/maplibre-native/pull/1090)
+- Code format via clang-format was added: [#1086](https://github.com/maplibre/maplibre-native/pull/1086)
 - Code coverage can now be checked [here](https://app.codecov.io/github/maplibre/maplibre-native/tree/main)
-- Render tests are now running on Linux. The test results are uploaded and a bot posts a link to the results on PRs([#1069](https://github.com/maplibre/maplibre-native/pull/1069))
-- A size test was created for iOS. Similar as above, a bot will comment on each PR regarding the percentage size change of the library. ([#1092](https://github.com/maplibre/maplibre-native/pull/1092))
+- Render tests are now running on Linux. The test results are uploaded and a bot posts a link to the results on a PR: [#1069](https://github.com/maplibre/maplibre-native/pull/1069)
+- A size test was created for iOS. Similar as above, a bot will comment on each PR regarding the percentage size change of the library: [#1092](https://github.com/maplibre/maplibre-native/pull/1092)
 
 ## Metal
 
-Check up on weekly updates from now on [here](https://github.com/maplibre/maplibre-native/discussions/1072)
+Check up on weekly updates from now on [here](https://github.com/maplibre/maplibre-native/discussions/1072) and follow the project roadmap [here](https://github.com/orgs/maplibre/projects/8)
 
 Highlights since April 14th, 2023:
 
-- For the last few weeks the focused was on:
-  - restructuring the code around drawables, builders and render loop.
-  - Introducing UBO’s
-  - Refactoring different Layers starting with BackgroundLayer, FillLayer, CircleLayer and LineLayer
-- The Project Roadmap can be found [here](https://github.com/orgs/maplibre/projects/8)
+- Restructuring the code around drawables, builders and render loop
+- Introducing [UBOs](https://www.khronos.org/opengl/wiki/Uniform_Buffer_Object)
+- Refactoring layers starting with BackgroundLayer, FillLayer, CircleLayer and LineLayer
 
 ## Events
 
-TBD
+We would like to point out the [MapLibre User Group Japan](https://bit.ly/mug--jp) initiated by [Yasunori](https://github.com/dayjournal). The 5th event will take place [here](https://twitter.com/i/spaces/1nAJErzVBvgxL), June 7th, 2023 19:00 (JST). At the previous event 32 listeners participated when [MapLibre Native](https://github.com/maplibre/maplibre-native) was introduced. Another focus was [FOSS4G](https://2023.foss4g.org/). Anyone who is interested, please do not hesitate to join. Everyone is welcome.
+
+## Next Up
+
+We are looking forward to the preparations on the upcoming Governing Board Elections that will take place August 24th, 2023.
+
+Thank you to all of you, you are the core of it.
+
+Your MapLibre
