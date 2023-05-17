@@ -28,7 +28,7 @@ We would like to remind you about our news in April:
 
 "The amounts allocated to [Bounty Directions](https://github.com/maplibre/maplibre/issues?q=is%3Aissue+is%3Aopen+label%3A%22bounty+direction%22) are pre-approved budgets. If an individual or a company would like to work on a Bounty Direction but requires more funding, they can make a request to the Governing Board to increase the budget of a Bounty Direction."
 
-In the upcoming days, you will find a step-by-step guide on what to hand in for a "Budget Increase" in our [wiki](https://github.com/maplibre/maplibre/wiki/Bounty-System).
+In the upcoming days, you will find a step-by-step guide on what to hand in for a "Budget Increase". On top of that, we are excited to add "Bounty Direction Suggestion". Both can be applied for by companies as well as individuals. All details can be found in our [wiki](https://github.com/maplibre/maplibre/wiki/Bounty-System). We are very much looking forward to your input.
 
 ## MapLibre GL JS
 
