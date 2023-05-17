@@ -32,13 +32,25 @@ In the upcoming days, you will find a step-by-step guide on what to hand in for 
 
 ## MapLibre GL JS
 
-TBD
+#### Bounties 💰
+
+Bounties completed since April 14th, 2023:
+
+- Replace playwright with puppeteer ([#2481](https://github.com/maplibre/maplibre-gl-js/issues/2481))
+- Parallelize test workflow (splitting up jobs) ([#2482](https://github.com/maplibre/maplibre-gl-js/issues/2482))
+- Update WebGL types in vertex buffer and uniform binding ([#2515](https://github.com/maplibre/maplibre-gl-js/issues/2515))
+- Split tests run to optimize CI run time ([#2411](https://github.com/maplibre/maplibre-gl-js/issues/2411))
+
+Thanks Birk for the contributions!
 
 #### Contributions
 
 Most notable contributions since April 14th, 2023:
 
-TBD
+- Lazy load default style properties on demand to improve loading performance and reduce memory usage. ([#2476](https://github.com/maplibre/maplibre-gl-js/pull/2476))
+- Remove support for `hsl` css color in a format that does not comply with the CSS Color specification. Colors defined in `hsl(110, 0.7, 0.055)` format will no longer work, instead it is recommended to use the format with percentages `hsl(110, 70%, 5.5%)`. ([#2376](https://github.com/maplibre/maplibre-gl-js/pull/2376))
+- Remove "mapbox-gl-supported" package from API. If needed, please reference it directly instead of going through MapLibre. ([#2451](https://github.com/maplibre/maplibre-gl-js/pull/2451))
+- Remove WebGL1 support ([#2512](https://github.com/maplibre/maplibre-gl-js/pull/2512))
 
 ## MapLibre Native
 
@@ -48,13 +60,23 @@ People interested in contributing can schedule a call with Bart Louwers, Maintai
 
 Most notable contributions since April 14th, 2023:
 
-TBD
+- Maplibre-gl-native became Maplibre-native ([#1090](https://github.com/maplibre/maplibre-native/pull/1090))
+- Code format via clang-format was added to the repo ([#1086](https://github.com/maplibre/maplibre-native/pull/1086))
+- Code coverage can now be checked [here](https://app.codecov.io/github/maplibre/maplibre-native/tree/main)
+- Render tests are now running on Linux. The test results are uploaded and a bot posts a link to the results on PRs([#1069](https://github.com/maplibre/maplibre-native/pull/1069))
+- A size test was created for iOS. Similar as above, a bot will comment on each PR regarding the percentage size change of the library. ([#1092](https://github.com/maplibre/maplibre-native/pull/1092))
 
 ## Metal
 
-Check up on weekly updates from now on [here](https://github.com/maplibre/maplibre-native/discussions/1072).
+Check up on weekly updates from now on [here](https://github.com/maplibre/maplibre-native/discussions/1072)
 
 Highlights since April 14th, 2023:
+
+- For the last few weeks the focused was on:
+  - restructuring the code around drawables, builders and render loop.
+  - Introducing UBO’s
+  - Refactoring different Layers starting with BackgroundLayer, FillLayer, CircleLayer and LineLayer
+- The Project Roadmap can be found [here](https://github.com/orgs/maplibre/projects/8)
 
 ## Events
 
