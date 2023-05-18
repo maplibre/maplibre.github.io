@@ -92,7 +92,7 @@ We would like to point out the [MapLibre User Group Japan](https://bit.ly/mug--j
 
 ## Next Up
 
-You will find us at [SotMUS](https://2023.stateofthemap.us/). [Yuri's](https://github.com/nyurik) topic June 9th 12:25pm (GMT-4) is: "MVT Tiles and Autonomous Driving, and other non-UI usage" with a Q&A, and June 10th 4:10pm (GMT-4): "MapLibre: a perfect map vis - are we there yet?". [Steve](https://github.com/sjg-wdw) will speaking about the status and future of MapLibre Native June 10th 2:45pm (GMT-4).
+You will find us at [SotMUS](https://2023.stateofthemap.us/schedule). [Yuri's](https://github.com/nyurik) topic June 9th 12:25pm (GMT-4) is: "MVT Tiles and Autonomous Driving, and other non-UI usage" with a Q&A, and June 10th 4:10pm (GMT-4): "MapLibre: a perfect map vis - are we there yet?". [Steve](https://github.com/sjg-wdw) will speak about the status and future of MapLibre Native June 10th 2:45pm (GMT-4).
 
 We are looking forward to the preparations on the upcoming Governing Board Elections that will take place August 24th, 2023.
 
