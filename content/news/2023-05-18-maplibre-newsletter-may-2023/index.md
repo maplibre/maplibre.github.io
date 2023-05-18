@@ -10,19 +10,29 @@ draft: false
 
 ## Highlights
 
+#### Mierune
+
+<a href="https://www.mierune.co.jp/?lang=en">
+  <img src="/img/mierune-logo.svg" width="25%" />
+</a>
+
 We would like to thank our first sponsor [Mierune](https://www.mierune.co.jp/) for their continued trust in MapLibre.
 
-Many real-world applications have been built with MapLibre. As suggested in https://github.com/maplibre/maplibre/discussions/242 it is about bringing the Community together. Implementing new ideas is what will make MapLibre thrive further. We want to recognize all of your efforts, collectively, and so decided to expand on the idea of the [MapLibre Innovation Lab](https://lab.maplibre.org/).
+#### MapLibre Innovation Lab
+
+Many real-world applications have been built with MapLibre. As suggested in https://github.com/maplibre/maplibre/discussions/242 it is about bringing the Community together. Implementing new ideas is what will make MapLibre thrive further. We want to recognize all of your efforts, collectively, and so decided to expand on the idea of the MapLibre Innovation Lab - stay tuned.
+
+#### OGC Sprint
 
 <a href="https://www.ogc.org/initiatives/ogcsprints/">
-<img src="ogc-sprint.jpg">
+  <img src="ogc-sprint.jpg" style="max-width:600px;width:100%">
 </a>
 
 Left to right: Oliver Wipfli (MapLibre), Brandon Liu (Protomaps), Emmanuel Belo (CamptoCamp), Bart Louwers (MapLibre)
 
 To engage with the Community in person, MapLibre was represented at the [OGC Code Sprint](https://www.linkedin.com/posts/camptocamp-sa_the-ogc-code-sprint-at-camptocamp-activity-7062726780234682368-9Dq_) in April. We mingled with fellow geospatial developers at the beautiful offices of the host [CamptoCamp](https://www.camptocamp.org/). We enjoyed a family-like gathering with Lake Geneva and its surrounding mountains only a stone's throw away. As of [MapLibre GL JS](https://github.com/maplibre/maplibre-gl-js), we tested a pitch-dependent field of view, which can be used to let 3D buildings 'pop out' as you change the pitch. Additionally, we experimented to make the depth buffer accessible for end users, which can be used to implement effects, such as fog, in the near future. Regarding [MapLibre Native](https://github.com/maplibre/maplibre-native), some work on CI was done: from now on, a bot leaves comments with a link of the results on PRs when render tests have run.
 
-#### Bounty Programm 💰
+#### Bounty Program 💰
 
 We would like to remind you about our news in April:
 
@@ -68,7 +78,7 @@ Most notable contributions since April 14th, 2023:
 
 ## Metal
 
-Check up on weekly updates from now on [here](https://github.com/maplibre/maplibre-native/discussions/1072) and follow the project roadmap [here](https://github.com/orgs/maplibre/projects/8)
+Check up on weekly updates from now on [here](https://github.com/maplibre/maplibre-native/discussions/1072) and follow the project roadmap [here](https://github.com/orgs/maplibre/projects/8).
 
 Highlights since April 14th, 2023:
 
@@ -81,6 +91,8 @@ Highlights since April 14th, 2023:
 We would like to point out the [MapLibre User Group Japan](https://bit.ly/mug--jp) initiated by [Yasunori](https://github.com/dayjournal). The 5th event will take place [here](https://twitter.com/i/spaces/1nAJErzVBvgxL), June 7th, 2023 19:00 (JST). At the previous event 32 listeners participated when [MapLibre Native](https://github.com/maplibre/maplibre-native) was introduced. Another focus was [FOSS4G](https://2023.foss4g.org/). Anyone who is interested, please do not hesitate to join. Everyone is welcome.
 
 ## Next Up
+
+You will find us at [SotMUS](https://2023.stateofthemap.us/). [Yuri's](https://github.com/nyurik) topic June 9th 12:25pm (GMT-4) is: "MVT Tiles and Autonomous Driving, and other non-UI usage" with a Q&A, and June 10th 4:10pm (GMT-4): "MapLibre: a perfect map vis - are we there yet?". [Steve](https://github.com/sjg-wdw) will speaking about the status and future of MapLibre Native June 10th 2:45pm (GMT-4).
 
 We are looking forward to the preparations on the upcoming Governing Board Elections that will take place August 24th, 2023.
 
