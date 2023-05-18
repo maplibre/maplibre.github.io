@@ -48,7 +48,7 @@ Thanks [Birk](https://github.com/birkskyum) for the contributions!
 Most notable contributions since April 14th, 2023:
 
 - Lazy load default style properties on demand to improve loading performance and reduce memory usage: [#2476](https://github.com/maplibre/maplibre-gl-js/pull/2476)
-- Remove support for `hsl` CSS color in a format that does not comply with the CSS color specification. Colors defined in the following format **will no longer work**: `hsl(110, 0.7, 0.055). Instead **it is recommended** to use the percentage format: `hsl(110, 70%, 5.5%)`. See the PR: [#2376](https://github.com/maplibre/maplibre-gl-js/pull/2376)
+- Remove support for `hsl` CSS color in a format that does not comply with the CSS color specification. Colors defined in the following format **will no longer work**: `hsl(110, 0.7, 0.055)`. Instead **it is recommended** to use the percentage format: `hsl(110, 70%, 5.5%)`. See the PR: [#2376](https://github.com/maplibre/maplibre-gl-js/pull/2376)
 - Remove "mapbox-gl-supported" package from API. If needed, please reference it directly instead of going through MapLibre: ([#2451](https://github.com/maplibre/maplibre-gl-js/pull/2451))
 - Remove WebGL1 support: ([#2512](https://github.com/maplibre/maplibre-gl-js/pull/2512))
 
