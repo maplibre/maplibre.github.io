@@ -113,7 +113,13 @@ Here are some showcases of what you can do with MapLibre GL JS v3, that prior ve
 
 **transformCameraUpdate**
 
-Syncing two maps - [Minimap demo](https://stackblitz.com/edit/vitejs-vite-8nntze?file=src%2FMinimap.tsx)
+Sync two maps with the camera transform - [Minimap demo](https://stackblitz.com/edit/vitejs-vite-8nntze?file=src%2FMinimap.tsx)
+
+<a href="https://stackblitz.com/edit/vitejs-vite-8nntze?file=src%2FMinimap.tsx">
+  <img src="minimap.png" style="max-width:600px;width:100%">
+</a>
+
+
 
 **Interleaved rendering of DeckGL attribute transitions**
 
@@ -121,9 +127,20 @@ Syncing two maps - [Minimap demo](https://stackblitz.com/edit/vitejs-vite-8nntze
 
 2.4.0 - [Not animating](https://codepen.io/birkskyum-1471370946/pen/qBJyRdR)
 
+
+<a href="https://codepen.io/birkskyum-1471370946/pen/VwEBPYW">
+  <img src="attributetransitions.png" style="max-width:600px;width:100%">
+</a>
+
+
 **Interleaved rendering of DeckGL GPU accelerated GridLayer**
 
-3.0.0 [Works](https://stackblitz.com/edit/vitejs-vite-asczxg?file=package.json) - Uses WebGL2
+3.0.0 [GPU Accelerated](https://stackblitz.com/edit/vitejs-vite-asczxg?file=package.json) - Uses WebGL2
 
 2.4.0 [Breaks](https://stackblitz.com/edit/vitejs-vite-9scpcz?file=package.json) - Browser console prints "Browser not supported"
+
+<a href="https://stackblitz.com/edit/vitejs-vite-asczxg?file=package.json">
+  <img src="gpugridlayer.png" style="max-width:600px;width:100%">
+</a>
+
 
