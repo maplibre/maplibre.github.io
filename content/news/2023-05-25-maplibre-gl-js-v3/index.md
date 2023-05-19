@@ -134,3 +134,7 @@ Here are some showcases of what you can do with MapLibre GL JS v3, that prior ve
 3.0.0 [Works](https://stackblitz.com/edit/vitejs-vite-asczxg?file=package.json) - Uses WebGL2
 
 2.4.0 [Breaks](https://stackblitz.com/edit/vitejs-vite-9scpcz?file=package.json) - Browser console prints "Browser not supported"
+
+**transformCameraUpdate demo**
+
+.. Insert here
