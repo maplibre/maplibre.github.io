@@ -76,7 +76,7 @@ Most of these hanges will not affect your code but read carefully through the li
 - [Breaking] Remove deprecated mapboxgl css classes ([#1575](https://github.com/maplibre/maplibre-gl-js/pull/1575))
 - [Breaking] Full transition from WebGL 1 to WebGL 2 ([#2512](https://github.com/maplibre/maplibre-gl-js/pull/2512))
   - WebGL2 has finally reached a level of browser support that allow us, and large projects like [Unity](https://forum.unity.com/threads/removing-support-for-gles2-and-webgl1-in-2023-1a.1360090/) to embrace it fully. This gives us lots of new features, and oportunities to improve performance though paralellization. It also removes the friction that exist when using MapLibre GL JS with libraries in the ecosystem that has moved to WebGL2 already. Most WebGL1 code will still work, as WebGL2 is mostly backwards compatible.
-- [Breaking] toBounds method of class LngLat is replaced by a static method fromLngLat of class LngLatBounds ([#2188](https://github.com/maplibre/maplibre-gl-js/pull/2188))
+- [Breaking] `LngLat.toBounds()` is replaced by a static method `LngLatBounds.fromLngLat()` ([#2188](https://github.com/maplibre/maplibre-gl-js/pull/2188))
 - [Breaking] Make geojson data source a required field to align with the docs ([#1396](https://github.com/maplibre/maplibre-gl-js/issue/1396))
 - [Breaking] Improve control initial loading performance by forcing fadeDuration to 0 till first idle event ([#2447](https://github.com/maplibre/maplibre-gl-js/pull/2447))
 - [Breaking] Remove "mapbox-gl-supported" package from API. If needed, please reference it directly instead of going through MapLibre. ([#2451](https://github.com/maplibre/maplibre-gl-js/pull/2451))
