@@ -111,6 +111,10 @@ Most of these changes will not affect your code but read carefully through the l
 
 Here are some showcases of what you can do with MapLibre GL JS v3, that prior versions couldn't do:
 
+**transformCameraUpdate**
+
+Syncing two maps - [Minimap demo](https://stackblitz.com/edit/vitejs-vite-8nntze?file=src%2FMinimap.tsx)
+
 **Interleaved rendering of DeckGL attribute transitions**
 
 3.0.0 - [Animating](https://codepen.io/birkskyum-1471370946/pen/VwEBPYW) - Uses WebGL2
@@ -123,6 +127,3 @@ Here are some showcases of what you can do with MapLibre GL JS v3, that prior ve
 
 2.4.0 [Breaks](https://stackblitz.com/edit/vitejs-vite-9scpcz?file=package.json) - Browser console prints "Browser not supported"
 
-**transformCameraUpdate demo**
-
-.. Insert here - minimap 
