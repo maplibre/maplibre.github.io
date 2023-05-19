@@ -6,11 +6,47 @@ authors: [birk]
 draft: false
 ---
 
-This release has been in the making for almost a year, and it's finally ready!
+This release is a big step for MapLibre GL JS! With more than 500 commits, and almost a year in the making, version 3.0.0 is surely our best release yet. Lots of features, performance improvement, bug fixes and a few potentially breaking changes, that we deemed necessary to keep the project healthy going forward, are to be found here.
 
-All the changes are listed here, first with the backward compatible features and improvements, then the potentially breaking changes that we deem necessary to keep the project healthy, and lastly the bug fixes. All of these changes make version 3.0.0 our best release yet!
+Before the full list of changes, two notable features are worth mentioning: **transformCameraUpdate** and **WebGL2**. To really show what they each bring to the table in this release, we made some demos as well. Enjoy!
 
-At the bottom of the page, you'll find some demos of some of the new functionality this release brings. Enjoy!
+### **transformCameraUpdate**
+
+This new feature makes it possible to get direct access to the camera transform, and manipulate it, continously whenever the map is attempting to change it's viewport. It's a small hook, but it's very powerful. It's especially handy for reactive frameworks, where the camera state might be put in a store which can trigger side effects like listing the points of interest currently visible on the map. Another example of when it's relevant is when synching multiple maps, as exemplified with a demo a minimap and a main map that drives each other here:
+
+Sync two maps with the camera transform - [Minimap demo](https://stackblitz.com/edit/vitejs-vite-8nntze?file=src%2FMinimap.tsx)
+
+<a href="https://stackblitz.com/edit/vitejs-vite-8nntze?file=src%2FMinimap.tsx">
+  <img src="minimap.png" style="max-width:600px;width:100%">
+</a>
+
+### **WebGL2**
+
+WebGL2 has finally reached a level of browser support that allow us, and large projects like [Unity](https://forum.unity.com/threads/removing-support-for-gles2-and-webgl1-in-2023-1a.1360090/) to embrace it fully. While WebGL2 is mostly backwards compatible, it gives us lots of new features, and oportunities to improve performance though paralellization. It also removes the friction that exist when using MapLibre GL JS with libraries in the ecosystem that has moved to WebGL2 already - two examples of which can be seen in the demos below:
+
+**Interleaved rendering of DeckGL attribute transitions**
+
+3.0.0 - [Animating](https://codepen.io/birkskyum-1471370946/pen/VwEBPYW) - Uses WebGL2
+
+2.4.0 - [Not animating](https://codepen.io/birkskyum-1471370946/pen/qBJyRdR)
+
+<a href="https://codepen.io/birkskyum-1471370946/pen/VwEBPYW">
+  <img src="attributetransitions.png" style="max-width:600px;width:100%">
+</a>
+
+**Interleaved rendering of DeckGL GPU accelerated GridLayer**
+
+3.0.0 [GPU Accelerated](https://stackblitz.com/edit/vitejs-vite-asczxg?file=package.json) - Uses WebGL2
+
+2.4.0 [Breaks](https://stackblitz.com/edit/vitejs-vite-9scpcz?file=package.json) - Browser console prints "Browser not supported"
+
+<a href="https://stackblitz.com/edit/vitejs-vite-asczxg?file=package.json">
+  <img src="gpugridlayer.png" style="max-width:600px;width:100%">
+</a>
+
+
+# Changelog
+And now for the full list of changes:
 
 ## New features and improvements
 
@@ -66,7 +102,6 @@ Most of these changes will not affect your code but read carefully through the l
 - [Breaking] Move terrain object from style.terrain to map.terrain ([#1628](https://github.com/maplibre/maplibre-gl-js/pull/1628))
 - [Breaking] Remove deprecated mapboxgl css classes ([#1575](https://github.com/maplibre/maplibre-gl-js/pull/1575))
 - [Breaking] Full transition from WebGL 1 to WebGL 2 ([#2512](https://github.com/maplibre/maplibre-gl-js/pull/2512))
-  - WebGL2 has finally reached a level of browser support that allow us, and large projects like [Unity](https://forum.unity.com/threads/removing-support-for-gles2-and-webgl1-in-2023-1a.1360090/) to embrace it fully. This gives us lots of new features, and oportunities to improve performance though paralellization. It also removes the friction that exist when using MapLibre GL JS with libraries in the ecosystem that has moved to WebGL2 already. Most WebGL1 code will still work, as WebGL2 is mostly backwards compatible.
 - [Breaking] `LngLat.toBounds()` is replaced by a static method `LngLatBounds.fromLngLat()` ([#2188](https://github.com/maplibre/maplibre-gl-js/pull/2188))
 - [Breaking] Make geojson data source a required field to align with the docs ([#1396](https://github.com/maplibre/maplibre-gl-js/issue/1396))
 - [Breaking] Improve control initial loading performance by forcing fadeDuration to 0 till first idle event ([#2447](https://github.com/maplibre/maplibre-gl-js/pull/2447))
@@ -108,36 +143,3 @@ Most of these changes will not affect your code but read carefully through the l
 - Fix showTileBoundaries to show the first vector source [#1395](https://github.com/maplibre/maplibre-gl-js/pull/1395)
 - Fix `match` expression type ([#1631](https://github.com/maplibre/maplibre-gl-js/pull/1631))
 
-## Demos
-
-Here are some showcases of what you can do with MapLibre GL JS v3, that prior versions couldn't do:
-
-**transformCameraUpdate**
-
-This new feature makes it a lot easier to continuously get and even manipulate the camera position of an ongoing viewport update. It's especially handy for reactive frameworks, where the camera state might be put in a store which can trigger side effects. As an example of when it's relevant to sync two maps with the same camera position, here is a demo of a minimap and a main map that drives each other:
-
-Sync two maps with the camera transform - [Minimap demo](https://stackblitz.com/edit/vitejs-vite-8nntze?file=src%2FMinimap.tsx)
-
-<a href="https://stackblitz.com/edit/vitejs-vite-8nntze?file=src%2FMinimap.tsx">
-  <img src="minimap.png" style="max-width:600px;width:100%">
-</a>
-
-**Interleaved rendering of DeckGL attribute transitions**
-
-3.0.0 - [Animating](https://codepen.io/birkskyum-1471370946/pen/VwEBPYW) - Uses WebGL2
-
-2.4.0 - [Not animating](https://codepen.io/birkskyum-1471370946/pen/qBJyRdR)
-
-<a href="https://codepen.io/birkskyum-1471370946/pen/VwEBPYW">
-  <img src="attributetransitions.png" style="max-width:600px;width:100%">
-</a>
-
-**Interleaved rendering of DeckGL GPU accelerated GridLayer**
-
-3.0.0 [GPU Accelerated](https://stackblitz.com/edit/vitejs-vite-asczxg?file=package.json) - Uses WebGL2
-
-2.4.0 [Breaks](https://stackblitz.com/edit/vitejs-vite-9scpcz?file=package.json) - Browser console prints "Browser not supported"
-
-<a href="https://stackblitz.com/edit/vitejs-vite-asczxg?file=package.json">
-  <img src="gpugridlayer.png" style="max-width:600px;width:100%">
-</a>
