@@ -72,7 +72,8 @@ Most of these changes will not affect your code but read carefully through the l
 - [Breaking] Improve control initial loading performance by forcing fadeDuration to 0 till first idle event ([#2447](https://github.com/maplibre/maplibre-gl-js/pull/2447))
 - [Breaking] Remove "mapbox-gl-supported" package from API. If needed, please reference it directly instead of going through MapLibre. ([#2451](https://github.com/maplibre/maplibre-gl-js/pull/2451))
 - [Breaking] Improve control performance by restricting worker count to a max of 1 except for Safari browser. ([#2354](https://github.com/maplibre/maplibre-gl-js/pull/2354))
-- 
+-
+
 ## Bug fixes
 
 - Fixes issue with ResizeObserver firing an initial 'resize' event (since 3.0.0-pre.5) ([#2551](https://github.com/maplibre/maplibre-gl-js/issues/2551))
@@ -119,19 +120,15 @@ Sync two maps with the camera transform - [Minimap demo](https://stackblitz.com/
   <img src="minimap.png" style="max-width:600px;width:100%">
 </a>
 
-
-
 **Interleaved rendering of DeckGL attribute transitions**
 
 3.0.0 - [Animating](https://codepen.io/birkskyum-1471370946/pen/VwEBPYW) - Uses WebGL2
 
 2.4.0 - [Not animating](https://codepen.io/birkskyum-1471370946/pen/qBJyRdR)
 
-
 <a href="https://codepen.io/birkskyum-1471370946/pen/VwEBPYW">
   <img src="attributetransitions.png" style="max-width:600px;width:100%">
 </a>
-
 
 **Interleaved rendering of DeckGL GPU accelerated GridLayer**
 
@@ -142,5 +139,3 @@ Sync two maps with the camera transform - [Minimap demo](https://stackblitz.com/
 <a href="https://stackblitz.com/edit/vitejs-vite-asczxg?file=package.json">
   <img src="gpugridlayer.png" style="max-width:600px;width:100%">
 </a>
-
-
