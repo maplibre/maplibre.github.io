@@ -8,7 +8,7 @@ draft: false
 
 This release has been in the making for almost a year, and it's finally ready!
 
-All the changes are listed here, first with the backward compatible features and improvements, then the potentially breaking changes that we deem necessary to keep the project healthy, and lastly the bug fixes. All of these changes make version 3.0.0 our best release yet.
+All the changes are listed here, first with the backward compatible features and improvements, then the potentially breaking changes that we deem necessary to keep the project healthy, and lastly the bug fixes. All of these changes make version 3.0.0 our best release yet!
 
 ## New features and improvements
 
@@ -117,4 +117,18 @@ Most of these features won't demand any changes to your code, but read carefully
 - Fix showTileBoundaries to show the first vector source [#1395](https://github.com/maplibre/maplibre-gl-js/pull/1395)
 - Fix `match` expression type ([#1631](https://github.com/maplibre/maplibre-gl-js/pull/1631))
 
-Enjoy!
+## Demos
+Here are some showcases of what you can do with MapLibre GL JS v3, that prior versions couldn't do:
+
+
+**Interleaved rendering of DeckGL attribute transitions**
+
+3.0.0 - [Animating](https://codepen.io/birkskyum-1471370946/pen/VwEBPYW) - Uses WebGL2
+
+2.4.0 - [Not animating](https://codepen.io/birkskyum-1471370946/pen/qBJyRdR)
+
+**Interleaved rendering of DeckGL GPU accelerated GridLayer**
+
+3.0.0 [Works](https://stackblitz.com/edit/vitejs-vite-asczxg?file=package.json) - Uses WebGL2
+
+2.4.0 [Breaks](https://stackblitz.com/edit/vitejs-vite-9scpcz?file=package.json) - Browser console prints "Browser not supported"
