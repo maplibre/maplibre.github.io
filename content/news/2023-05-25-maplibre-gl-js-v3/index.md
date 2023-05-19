@@ -6,7 +6,7 @@ authors: [birk]
 draft: false
 ---
 
-This release is a big step for MapLibre GL JS! With more than 500 commits, and almost a year in the making, version 3.0.0 is surely our best release yet. Lots of features, performance improvement, bug fixes and a few potentially breaking changes, that we deemed necessary to keep the project healthy going forward, are to be found here.
+This release is a big step for MapLibre GL JS! With more than 500 commits, and almost a year in the making, version 3.0.0 is surely our best release yet. Lots of features, performance improvement, bug fixes and a few potentially breaking changes that were necessary to keep the project healthy going forward are to be found here.
 
 Before the full list of changes, two notable features are worth mentioning: **transformCameraUpdate** and **WebGL2**. To really show what they each bring to the table in this release, we made some demos as well. Enjoy!
 
