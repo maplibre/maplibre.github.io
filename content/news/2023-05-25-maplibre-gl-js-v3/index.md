@@ -10,6 +10,8 @@ This release has been in the making for almost a year, and it's finally ready!
 
 All the changes are listed here, first with the backward compatible features and improvements, then the potentially breaking changes that we deem necessary to keep the project healthy, and lastly the bug fixes. All of these changes make version 3.0.0 our best release yet!
 
+At the bottom of the page, you'll find some demos of some of the new functionality this release brings. Enjoy!
+
 ## New features and improvements
 
 - Improve control performance by restricting worker count to a max of 1 except for Safari browser. ([#2354](https://github.com/maplibre/maplibre-gl-js/pull/2354))
@@ -118,8 +120,8 @@ Most of these features won't demand any changes to your code, but read carefully
 - Fix `match` expression type ([#1631](https://github.com/maplibre/maplibre-gl-js/pull/1631))
 
 ## Demos
-Here are some showcases of what you can do with MapLibre GL JS v3, that prior versions couldn't do:
 
+Here are some showcases of what you can do with MapLibre GL JS v3, that prior versions couldn't do:
 
 **Interleaved rendering of DeckGL attribute transitions**
 
