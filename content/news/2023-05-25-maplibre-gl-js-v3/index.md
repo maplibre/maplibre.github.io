@@ -114,6 +114,8 @@ Here are some showcases of what you can do with MapLibre GL JS v3, that prior ve
 
 **transformCameraUpdate**
 
+This new feature makes it a lot easier to continuously get and even manipulate the camera position of an ongoing viewport update. It's especially handy for reactive frameworks, where the camera state might be put in a store which can trigger side effects. As an example of when it's relevant to sync two maps with the same camera position, here is a demo of a minimap and a main map that drives each other:
+
 Sync two maps with the camera transform - [Minimap demo](https://stackblitz.com/edit/vitejs-vite-8nntze?file=src%2FMinimap.tsx)
 
 <a href="https://stackblitz.com/edit/vitejs-vite-8nntze?file=src%2FMinimap.tsx">
