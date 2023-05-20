@@ -9,11 +9,27 @@ draft: false
 This release is a big step for MapLibre GL JS! With more than 500 commits, and almost a year in the making, version 3.0.0 is surely our best release yet. Lots of features, performance improvement, bug fixes and a few potentially breaking changes that were necessary, to keep the project healthy, are to be found here.
 
 **A note on migration:**
-Most users will be able to update to v3 without code changes, but it's recommended to read the section of potentially breaking changes below carefully to assess if you're code needs migration.
+Most users will be able to update to v3 without code changes, but it's recommended to read the section of potentially breaking changes in the changelog carefully to assess if you're code needs migration.
 
-Before the full list of changes, two notable features are worth mentioning: **transformCameraUpdate** and **WebGL2**. To really show what they each bring to the table in this release, we made some demos as well. Enjoy!
+# Notable changes for this release
 
-### **transformCameraUpdate**
+## Performance
+
+A lot of work has been put into making this version of MapLibre GL JS faster. Here are some of the highlights:
+
+- Lazy load default style properties on demand to improve loading performance and reduce memory usage. ([#2476](https://github.com/maplibre/maplibre-gl-js/pull/2476))
+- Improve performance by sending style layers to the worker thread before processing it on the main thread to allow parallel processing ([#2131](https://github.com/maplibre/maplibre-gl-js/pull/2131))
+- Improve performance when forcing full symbol placement by short circuiting pause checks ([#2241](https://github.com/maplibre/maplibre-gl-js/pull/2241))
+- Improve initial loading performance by lazy serializing layers only when needed. ([#2306](https://github.com/maplibre/maplibre-gl-js/pull/2306))
+- Add validateStyle MapOption to allow disabling style validation for faster performance in production environment. ([#2390](https://github.com/maplibre/maplibre-gl-js/pull/2390))
+- Throttle the image request queue while the map is moving to improve performance ([#2097](https://github.com/maplibre/maplibre-gl-js/issues/2097)
+- Improve control initial loading performance by forcing fadeDuration to 0 till first idle event ([#2447](https://github.com/maplibre/maplibre-gl-js/pull/2447))
+- Improve control performance by restricting worker count to a max of 1 except for Safari browser. ([#2354](https://github.com/maplibre/maplibre-gl-js/pull/2354))
+- Bump KDBush and supercluster for better memory efficiency ([#2522](https://github.com/maplibre/maplibre-gl-js/pull/2522))
+
+
+
+## transformCameraUpdate
 
 This new feature makes it possible to get direct access to the camera transform, and manipulate it, continously whenever the map is attempting to change it's viewport. It's a small hook, but it's very powerful. It's especially handy for reactive frameworks, where the camera state might be put in a store which can trigger side effects like listing the points of interest currently visible on the map. Another example of when it's relevant is when synching multiple maps, as exemplified with a demo a minimap and a main map that drives each other here:
 
@@ -23,7 +39,19 @@ Sync two maps with the camera transform - [Minimap demo](https://stackblitz.com/
   <img src="minimap.png" style="max-width:600px;width:100%">
 </a>
 
-### **WebGL2**
+## Terrain 3D fixes
+
+The terrain is becoming more stable, with a range of bug fixes landing in v3.
+
+- Add queryTerrainElevation allows getting terrain elevation in meters at a specific point ([#2264](https://github.com/maplibre/maplibre-gl-js/pull/2264))
+- Adding a `warnonce` when terrain and hillshade source are the same ([#2298](https://github.com/maplibre/maplibre-gl-js/pull/2298))
+- Move terrain object from style.terrain to map.terrain ([#1628](https://github.com/maplibre/maplibre-gl-js/pull/1628))
+- Fix the gap between terrain elevated tiles ([#1602](https://github.com/maplibre/maplibre-gl-js/issues/1602))
+- Fix wrap coords in `getTerrain` when `fitBounds` across the AM ([#2155](https://github.com/maplibre/maplibre-gl-js/pull/2155))
+- Fix `getElevation()` causing uncaught error ([#1650](https://github.com/maplibre/maplibre-gl-js/issues/1650)).
+
+
+## WebGL2
 
 WebGL2 has finally reached a level of browser support that allow us, and large projects like [Unity](https://forum.unity.com/threads/removing-support-for-gles2-and-webgl1-in-2023-1a.1360090/) to embrace it fully. While WebGL2 is mostly backwards compatible, it gives us lots of new features, and oportunities to improve performance though paralellization. It also removes the friction that exist when using MapLibre GL JS with libraries in the ecosystem that has moved to WebGL2 already - two examples of which can be seen in the demos below:
 
@@ -47,9 +75,10 @@ WebGL2 has finally reached a level of browser support that allow us, and large p
   <img src="gpugridlayer.png" style="max-width:600px;width:100%">
 </a>
 
-
 # Changelog
-And now for the full list of changes:
+See a full changelog in [here](https://github.com/maplibre/maplibre-gl-js/blob/main/CHANGELOG.md#300), including the list of potentially breaking changes.
+
+> BELOW WILL BE MOVED INTO THE v3 changelog
 
 ## New features and improvements
 
