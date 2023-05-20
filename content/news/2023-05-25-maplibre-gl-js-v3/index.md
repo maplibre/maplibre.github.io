@@ -6,7 +6,10 @@ authors: [birk]
 draft: false
 ---
 
-This release is a big step for MapLibre GL JS! With more than 500 commits, and almost a year in the making, version 3.0.0 is surely our best release yet. Lots of features, performance improvement, bug fixes and a few potentially breaking changes that were necessary to keep the project healthy going forward are to be found here. That said, we make an effort to ensure that migration is trivial, and for most users no code changes will be needed when updating to v3.
+This release is a big step for MapLibre GL JS! With more than 500 commits, and almost a year in the making, version 3.0.0 is surely our best release yet. Lots of features, performance improvement, bug fixes and a few potentially breaking changes that were necessary, to keep the project healthy, are to be found here.
+
+**A note on migration:**
+Most users will be able to update to v3 without code changes, but it's recommended to read the section of potentially breaking changes below carefully to assess if you're code needs migration.
 
 Before the full list of changes, two notable features are worth mentioning: **transformCameraUpdate** and **WebGL2**. To really show what they each bring to the table in this release, we made some demos as well. Enjoy!
 
@@ -56,7 +59,7 @@ And now for the full list of changes:
 - Set fetchPriority for HTMLImageElement to help improve raster-heavy scenarios ([#2459](https://github.com/maplibre/maplibre-gl-js/pull/2459))
 - Reduce rendering calls on initial load. No reason to try rendering before the style is loaded. ([#2464](https://github.com/maplibre/maplibre-gl-js/pull/2464))
 - Lazy load default style properties on demand to improve loading performance and reduce memory usage. ([#2476](https://github.com/maplibre/maplibre-gl-js/pull/2476))
-- Use WebGL2 context when available ([#1891](https://github.com/maplibre/maplibre-gl-js/pull/1891
+- WebGL2 support ([#1891](https://github.com/maplibre/maplibre-gl-js/pull/1891
 - Add queryTerrainElevation allows getting terrain elevation in meters at a specific point ([#2264](https://github.com/maplibre/maplibre-gl-js/pull/2264))
 - Improve performance by sending style layers to the worker thread before processing it on the main thread to allow parallel processing ([#2131](https://github.com/maplibre/maplibre-gl-js/pull/2131))
 - Add Map.getImage() to retrieve previously-loaded images. ([#2168](https://github.com/maplibre/maplibre-gl-js/pull/2168))
@@ -100,8 +103,8 @@ Most of these changes will not affect your code but read carefully through the l
 - Improve rendering of areas below sea level, and remove elevationOffset workaround ([#1578](https://github.com/maplibre/maplibre-gl-js/pull/1578))
 - Remove support for `hsl` css color in a format that does not comply with the CSS Color specification. Colors defined in `hsl(110, 0.7, 0.055)` format will no longer work, instead it is recommended to use the format with percentages `hsl(110, 70%, 5.5%)`. ([#2376](https://github.com/maplibre/maplibre-gl-js/pull/2376))
 - Move terrain object from style.terrain to map.terrain ([#1628](https://github.com/maplibre/maplibre-gl-js/pull/1628))
-- Remove deprecated mapboxgl css classes ([#1575](https://github.com/maplibre/maplibre-gl-js/pull/1575))
-- Full transition from WebGL 1 to WebGL 2 ([#2512](https://github.com/maplibre/maplibre-gl-js/pull/2512))
+- Remove deprecated `mapboxgl-` css classes (use `maplibregl-` instead) ([#1575](https://github.com/maplibre/maplibre-gl-js/pull/1575))
+- Full transition from WebGL 1 to WebGL 2 ([browser support](https://caniuse.com/?search=webgl2)) ([#2512](https://github.com/maplibre/maplibre-gl-js/pull/2512))
 - `LngLat.toBounds()` is replaced by a static method `LngLatBounds.fromLngLat()` ([#2188](https://github.com/maplibre/maplibre-gl-js/pull/2188))
 - Make geojson data source a required field to align with the docs ([#1396](https://github.com/maplibre/maplibre-gl-js/issue/1396))
 - Improve control initial loading performance by forcing fadeDuration to 0 till first idle event ([#2447](https://github.com/maplibre/maplibre-gl-js/pull/2447))
