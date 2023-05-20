@@ -39,7 +39,7 @@ Sync two maps with the camera transform - [Minimap demo](https://stackblitz.com/
   <img src="minimap.png" style="max-width:600px;width:100%">
 </a>
 
-## Terrain 3D fixes
+## Terrain 3D
 
 The terrain is becoming more stable, with a range of bug fixes landing in v3.
 
