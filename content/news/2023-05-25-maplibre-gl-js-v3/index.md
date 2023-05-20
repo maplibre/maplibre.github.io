@@ -31,7 +31,6 @@ A lot of work has been put into making this version of MapLibre GL JS faster. He
 - Make request for ImageSource cancelable ([#1802](https://github.com/maplibre/maplibre-gl-js/pull/1802))
 - Prevent unnecessary reload of raster sources when RTL Text Plugin loads ([#2380](https://github.com/maplibre/maplibre-gl-js/issues/2380))
 
-
 ## transformCameraUpdate
 
 This new feature makes it possible to get direct access to the camera transform, and manipulate it, continously whenever the map is attempting to change it's viewport. It's a small hook, but it's very powerful. It's especially handy for reactive frameworks, where the camera state might be put in a store which can trigger side effects like listing the points of interest currently visible on the map. Another example of when it's relevant is when synching multiple maps, as exemplified with a demo a minimap and a main map that drives each other here:
@@ -81,6 +80,7 @@ WebGL2 has finally reached a level of browser support that allow us, and large p
 </a>
 
 # Changelog
+
 See a full changelog in [here](https://github.com/maplibre/maplibre-gl-js/blob/main/CHANGELOG.md#300), including the list of potentially breaking changes.
 
 > BELOW WILL BE MOVED INTO THE v3 changelog
@@ -175,4 +175,3 @@ Most of these changes will not affect your code but read carefully through the l
 - Fix the gap between terrain elevated tiles ([#1602](https://github.com/maplibre/maplibre-gl-js/issues/1602))
 - Fix showTileBoundaries to show the first vector source [#1395](https://github.com/maplibre/maplibre-gl-js/pull/1395)
 - Fix `match` expression type ([#1631](https://github.com/maplibre/maplibre-gl-js/pull/1631))
-
