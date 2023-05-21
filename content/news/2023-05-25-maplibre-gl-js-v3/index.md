@@ -15,7 +15,6 @@ Thanks for the code contributions!
 
 [@VehpuS](https://github.com/VehpuS), [@ZeLonewolf](https://github.com/ZeLonewolf), [@kevinschaul](https://github.com/kevinschaul), [@zstadler](https://github.com/zstadler), [@smellyshovel](https://github.com/smellyshovel), [@jleedev](https://github.com/jleedev), [@kircher1](https://github.com/kircher1), [@prozessor13](https://github.com/prozessor13), [@llambanna](https://github.com/llambanna), [@IvanSanchez](https://github.com/IvanSanchez), [@tordans](https://github.com/tordans), [@ChrisLoer](https://github.com/ChrisLoer), [@Pessimistress](https://github.com/Pessimistress), [@cns](https://github.com/cns), [@acalcutt](https://github.com/acalcutt), [@vanilla](https://github.com/vanilla), [@lukashass](https://github.com/lukashass), [@birkskyum](https://github.com/birkskyum), [@HarelM](https://github.com/HarelM), [@zhangyiatmicrosoft](https://github.com/zhangyiatmicrosoft), [@rotu](https://github.com/rotu), [@pramilk](https://github.com/pramilk), [@wipfli](https://github.com/wipfli), [@xabbu42](https://github.com/xabbu42)
 
-
 # Notable changes for this release
 
 ## Performance
