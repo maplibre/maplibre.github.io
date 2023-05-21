@@ -14,4 +14,4 @@ Alan Wei Chen from [GrabMaps](https://www.grab.com/sg/business/maps/) is giving 
 
 The next MapLibre Eastern Call is on Wednesday, Feb 8th, 2023 from 9 AM to 10 AM CET. To get the link to the video call, you can join our Slack channel in the OpenStreetMap US Slack. Go to https://slack.openstreetmap.us and join the `#maplibre` channel and look for "MapLibre Eastern Call" to find the zoom link. We are looking forward to seeing you there!
 
-Alan Wei Chen ([GitHub profile](https://github.com/alanchenboy)) and his team at GrabMaps are active contributors of MapLibre GL Native and we are glad that they support the open-source community and help building the best map renderer in the world together!
+Alan Wei Chen ([GitHub profile](https://github.com/alanchenboy)) and his team at GrabMaps are active contributors of MapLibre Native and we are glad that they support the open-source community and help building the best map renderer in the world together!

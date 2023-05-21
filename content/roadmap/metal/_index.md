@@ -13,7 +13,9 @@ First, the codebase shall be modularized to prepare the existing OpenGL architec
 
 Read the Design Proposals on GitHub:
 
-- [2022-10-27-rendering-modularization.md](https://github.com/maplibre/maplibre-gl-native/blob/main/design-proposals/2022-10-27-rendering-modularization.md)
-- [2022-11-29-metal-port.md](https://github.com/maplibre/maplibre-gl-native/blob/main/design-proposals/2022-11-29-metal-port.md)
+- [2022-10-27-rendering-modularization.md](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2022-10-27-rendering-modularization.md)
+- [2022-11-29-metal-port.md](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2022-11-29-metal-port.md)
 
-Everyone is welcome to collaborate on the Metal port!
+## Status (2023-03-24)
+
+The Metal project team has started working with the goal of delivering a Metal beta release by the end of 2023. AWS and Meta are supporting this initiative.

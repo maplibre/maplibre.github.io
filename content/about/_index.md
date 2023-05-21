@@ -110,20 +110,26 @@ weight: 10
         <h3 class="m-3">Ovi Voda</h3>
         Maintainer Native
     </div>
+    <div class="col-xl-2 text-center">
+      <a href="duje">
+      <img
+        src="https://avatars.githubusercontent.com/u/23352538?v=4"
+        width="150"
+        class="rounded-circle mt-3"
+      />
+    </a>
+      <h3 class="m-3">Duje Schröder</h3>
+      Coordinator Assistant
+    </div>
   </div>
 </div>
 
-<hr class="mt-5"/>
-<h2>Join Our Community</h2>
+<hr/>
+<h1 class="text-center">Charter</h1>
 
-The people in our [community](/community) talk with each other mainly in the following three ways:
+The [MapLibre Charter](https://github.com/maplibre/maplibre/blob/main/CHARTER.md) defines the basic rules and goals of the MapLibre Organzation.
 
-- Discussions, Issues, and Pull Requests on GitHub
-- MapLibre Slack channel
-- Technical Steering Committee meetings
+<hr/>
+<h1 class="text-center">Reports</h1>
 
-You find all Discussions, Issues, and Pull Requests in our [public GitHub repostories](https://github.com/maplibre).
-
-The MapLibre Slack channel is generously hosted by OpenStreetMap US (thanks [Maggie](https://www.linkedin.com/in/maggiecawley/)). You can join our Slack channel at https://slack.openstreetmap.us and then you can join the main `#maplibre` channel as well as topic-specific channels such as `#maplibre-gl-js`.
-
-The Technical Steering Committee meetings take place on a monthly basis. They are usually on the second Wednesday of the month in the evening Europe-time. These monthly meetings are open to everybody and you are welcome to join us there and say hi. The meeting zoom link gets published in our Slack channel roughly 1 week before the meeting.
+MapLibre finances are transparent and the accounting is fully public. Find qauarter financial reports in the [Reports](reports) page.

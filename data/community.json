@@ -396,10 +396,6 @@
     "latlon": [52.8627198, 6.2292417]
   },
   {
-    "github": "blymemikkel",
-    "latlon": [55.6793621, 12.5529445]
-  },
-  {
     "github": "caspg",
     "latlon": [51.6084498, 21.3886359]
   },
@@ -430,5 +426,89 @@
   {
     "github": "louwers",
     "latlon": [51.6736149, 8.3456179]
+  },
+  {
+    "github": "kuhnroyal",
+    "latlon": [51.3417825, 12.3936349]
+  },
+  {
+    "github": "GaelleJoubert",
+    "latlon": [47.7052663, 3.0617212]
+  },
+  {
+    "github": "mariusvn",
+    "latlon": [43.6100162, 3.8741693]
+  },
+  {
+    "github": "giswqs",
+    "latlon": [35.958462, -83.9250825]
+  },
+  {
+    "github": "tempranova",
+    "latlon": [49.1432323, -123.1687834]
+  },
+  {
+    "github": "tomhicks",
+    "latlon": [41.3777915, 2.1052325]
+  },
+  {
+    "github": "manhcuongincusar1",
+    "latlon": [50.121212, 8.6365638]
+  },
+  {
+    "github": "ChrisLoer",
+    "latlon": [47.5543129, -122.7033675]
+  },
+  {
+    "github": "tordans",
+    "latlon": [52.4041574, 13.4060083]
+  },
+  {
+    "github": "parkerziegler",
+    "latlon": [37.9016138, -122.2392437]
+  },
+  {
+    "github": "llambanna",
+    "latlon": [-45.6891451, 168.5365816]
+  },
+  {
+    "github": "kevinschaul",
+    "latlon": [41.7108625, -87.6341434]
+  },
+  {
+    "github": "IhsenBen",
+    "latlon": [43.55671, 7.0240993]
+  },
+  {
+    "github": "mohitsaxenaknoldus",
+    "latlon": [28.6669324, 77.0560342]
+  },
+  {
+    "github": "austyle",
+    "latlon": [37.2308433, -79.4020879]
+  },
+  {
+    "github": "Michael-loc009",
+    "latlon": [10.6382033, 106.7473817]
+  },
+  {
+    "github": "TimSylvester",
+    "latlon": [42.8142373, -122.4809172]
+  },
+  {
+    "github": "etnav",
+    "latlon": [52.1846496, 9.5080512]
+  },
+  {
+    "github": "mnutt",
+    "latlon": [40.6224107, -74.1895746]
+  },
+  {
+    "github": "KiwiKilian",
+    "latlon": [47.7784711, 13.0370226]
+  },
+  {
+    "github": "hallahan",
+    "latlon": [37.0125909, -121.8433058]
   }
 ]

@@ -29,7 +29,7 @@ My focuses for the upcoming months:
 
 - Finalize the organization structure while supporting a Governing Board
   culture and habits that ensure it will succeed long-term
-- Ensure MapLibre GL Native becomes a much healthier project with near
+- Ensure MapLibre Native becomes a much healthier project with near
   parity to GL JS
 - Foster the continued development of MapLibre RS, a prototype of a future,
   unified cross-platform renderer
