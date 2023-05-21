@@ -19,3 +19,10 @@ Read the Design Proposals on GitHub:
 ## Status (2023-03-24)
 
 The Metal project team has started working with the goal of delivering a Metal beta release by the end of 2023. AWS and Meta are supporting this initiative.
+
+## Status (2023-05-21)
+
+The Metal project is ongoing. Below are the updates:
+
+- All team members are now onboarded
+- Project Phase 1: Rendering Modularisation is underway with the goal of reaching a stable phase that will allow a pre-release, before going full steam on Metal implementation.
