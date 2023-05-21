@@ -11,6 +11,9 @@ This release is a big step for MapLibre GL JS! With more than 500 commits, and a
 **A note on migration:**
 Most users will be able to update to v3 without code changes, but it's recommended to read the section of potentially breaking changes in the changelog carefully to assess if you're code needs migration.
 
+Thanks for the code contributions!
+
+[@VehpuS](https://github.com/VehpuS), [@ZeLonewolf](https://github.com/ZeLonewolf), [@kevinschaul](https://github.com/kevinschaul), [@zstadler](https://github.com/zstadler), [@smellyshovel](https://github.com/smellyshovel), [@kircher1](https://github.com/kircher1), [@prozessor13](https://github.com/prozessor13), [@llambanna](https://github.com/llambanna), [@IvanSanchez](https://github.com/IvanSanchez), [@tordans](https://github.com/tordans), [@ChrisLoer](https://github.com/ChrisLoer), [@cns](https://github.com/cns), [@acalcutt](https://github.com/acalcutt), [@vanilla](https://github.com/vanilla), [@lukashass](https://github.com/lukashass), [@birkskyum](https://github.com/birkskyum), [@HarelM](https://github.com/HarelM), [@zhangyiatmicrosoft](https://github.com/zhangyiatmicrosoft), [@rotu](https://github.com/rotu), [@pramilk](https://github.com/pramilk), [@wipfli](https://github.com/wipfli), [@xabbu42](https://github.com/xabbu42)
 # Notable changes for this release
 
 ## Performance
@@ -84,6 +87,10 @@ WebGL2 has finally reached a level of browser support that allow us, and large p
 See a full changelog in [here](https://github.com/maplibre/maplibre-gl-js/blob/main/CHANGELOG.md#300), including the list of potentially breaking changes.
 
 > BELOW WILL BE MOVED INTO THE v3 changelog
+
+# 3.0.0
+
+@
 
 ## New features and improvements
 
