@@ -11,7 +11,7 @@ This release is a big step for MapLibre GL JS! With more than 500 commits, and a
 **A note on migration:**
 Most users will be able to update to v3 without code changes, but it's recommended to read the section of potentially breaking changes in the changelog carefully to assess if you're code needs migration.
 
-Thanks for the code contributions!
+Thanks for all the code contributions!
 
 [@prozessor13](https://github.com/prozessor13), [@rotu](https://github.com/rotu), [@acalcutt](https://github.com/acalcutt), [@ambientlight](https://github.com/ambientlight), [@Pessimistress](https://github.com/Pessimistress), [@HarelM](https://github.com/HarelM), [@birkskyum](https://github.com/birkskyum), [@zhangyiatmicrosoft](https://github.com/zhangyiatmicrosoft), [@pramilk](https://github.com/pramilk), [@wipfli](https://github.com/wipfli), [@xabbu42](https://github.com/xabbu42), [@ZeLonewolf](https://github.com/ZeLonewolf), [@kevinschaul](https://github.com/kevinschaul), [@zstadler](https://github.com/zstadler), [@smellyshovel](https://github.com/smellyshovel), [@jleedev](https://github.com/jleedev), [@kircher1](https://github.com/kircher1), [@llambanna](https://github.com/llambanna), [@IvanSanchez](https://github.com/IvanSanchez), [@tordans](https://github.com/tordans), [@ChrisLoer](https://github.com/ChrisLoer), [@cns](https://github.com/cns), [@vanilla](https://github.com/vanilla), [@lukashass](https://github.com/lukashass), [@VehpuS](https://github.com/VehpuS), 
 
