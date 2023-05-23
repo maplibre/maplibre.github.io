@@ -1,7 +1,9 @@
 ---
 title: "MapLibre GL JS v3"
-date: 2023-05-25
+date: 2023-05-23
 categories: ["announcements"]
+images: 
+    - header.png
 authors: [birk]
 draft: false
 ---
@@ -17,7 +19,7 @@ Thanks for all the code contributions!
 
 Facilitated by:
 
-[@HarelM](https://github.com/HarelM), [@BirkSkyum](https://github.com/BirkSkyum), [@wipfli](https://github.com/wipfli), 
+[@HarelM](https://github.com/HarelM), [@BirkSkyum](https://github.com/BirkSkyum), [@wipfli](https://github.com/wipfli)
 
 # Notable changes for this release
 
@@ -50,6 +52,9 @@ Sync two maps with the camera transform - [Minimap demo](https://stackblitz.com/
   <img src="minimap.png" style="max-width:600px;width:100%">
 </a>
 
+
+<br /><br />
+
 ## Terrain 3D
 
 The terrain is becoming more stable, with a range of improvements landing in v3.
@@ -79,6 +84,7 @@ WebGL2 has finally reached a level of browser support that allows us, and large 
 <a href="https://codepen.io/birkskyum-1471370946/pen/VwEBPYW">
   <img src="attributetransitions.png" style="max-width:600px;width:100%">
 </a>
+<br /><br />
 
 **Interleaved rendering of DeckGL GPU accelerated GridLayer**
 
@@ -89,6 +95,7 @@ WebGL2 has finally reached a level of browser support that allows us, and large 
 <a href="https://stackblitz.com/edit/vitejs-vite-asczxg?file=package.json">
   <img src="gpugridlayer.png" style="max-width:600px;width:100%">
 </a>
+<br /><br />
 
 ## Color spaces
 
