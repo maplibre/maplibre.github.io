@@ -90,6 +90,14 @@ WebGL2 has finally reached a level of browser support that allows us, and large 
   <img src="gpugridlayer.png" style="max-width:600px;width:100%">
 </a>
 
+## Color spaces
+
+We now align better with the CSS Spec for color spaces, by using the D50 illuminant instead of the D65. This brings us more continuous color spaces with the `interpolate-hcl`. To see what that means in practice, the demo [here](https://kajkal.github.io/maplibre-gl-style-spec-color-demo/swipe.html) is a visualization of the color spaces. You can i.e. select 3.0.0-pre.4 and 3.0.0-pre.5, which is when the addition was made, and move the cursor up and down to compare them.
+
+<a href="https://kajkal.github.io/maplibre-gl-style-spec-color-demo/swipe.html">
+  <img src="colorspaces.png" style="max-width:600px;width:100%">
+</a>
+
 # Changelog
 
 See a full changelog [here](https://github.com/maplibre/maplibre-gl-js/blob/main/CHANGELOG.md#300), including the list of potentially breaking changes.
