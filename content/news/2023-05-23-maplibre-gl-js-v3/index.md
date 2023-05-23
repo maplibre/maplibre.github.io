@@ -2,6 +2,7 @@
 title: "MapLibre GL JS v3"
 date: 2023-05-23
 categories: ["announcements"]
+description: "MapLibre GL JS v3 - Improvements to WebGL2, Terrain3D, Color spaces, Performance and more!"
 images:
   - header.png
 authors: [birk]
