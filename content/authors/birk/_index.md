@@ -1,6 +1,6 @@
 ---
-title: About - Birk Skyum
-weight: 10
+title: Birk Skyum
+github: birkskyum
 ---
 
 <div class="text-center mb-5">
@@ -11,7 +11,7 @@ weight: 10
     />
     <h3 class="m-3">Birk Skyum</h3>
     <p>Member of the Governing Board</p>
-    <p><a href="https://www.linkedin.com/in/birkskyum/">LinkedIn</a> · <a href="https://github.com/birkskyum">GitHub</a> · <a href="https://osmus.slack.com/team/U02GUMY099R">Slack</a>
+    <p><a href="https://github.com/birkskyum">GitHub</a> · <a href="https://osmus.slack.com/team/U02GUMY099R">Slack</a> · <a href="https://www.linkedin.com/in/birkskyum/">LinkedIn</a>
 </div>
 
 Hi, I'm Birk. I'm a board member and a frequent contributor in MapLibre. I focus on getting
