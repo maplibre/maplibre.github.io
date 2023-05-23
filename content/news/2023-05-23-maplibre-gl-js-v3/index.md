@@ -2,8 +2,8 @@
 title: "MapLibre GL JS v3"
 date: 2023-05-23
 categories: ["announcements"]
-images: 
-    - header.png
+images:
+  - header.png
 authors: [birk]
 draft: false
 ---
@@ -51,7 +51,6 @@ Sync two maps with the camera transform - [Minimap demo](https://stackblitz.com/
 <a href="https://stackblitz.com/edit/vitejs-vite-8nntze?file=src%2FMinimap.tsx">
   <img src="minimap.png" style="max-width:600px;width:100%">
 </a>
-
 
 <br /><br />
 
