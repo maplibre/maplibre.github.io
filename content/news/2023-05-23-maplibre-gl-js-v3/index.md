@@ -53,15 +53,15 @@ A lot of work has been put into making this version of MapLibre GL JS faster. He
 
 ## transformCameraUpdate
 
-This new feature makes it possible to get direct access to the camera transform, and manipulate it, continuously whenever the map is attempting to change it's viewport. It's a small hook, but it's very powerful. It's especially handy for reactive frameworks, where the camera state might be put in a store which can trigger side effects like listing the points of interest currently visible on the map. Another example of when it's relevant is when synching multiple maps, as exemplified with a demo of a minimap and a main map that drives each other here:
-
-Sync two maps with the camera transform - [Minimap demo](https://stackblitz.com/edit/vitejs-vite-8nntze?file=src%2FMinimap.tsx)
-
 <a href="https://stackblitz.com/edit/vitejs-vite-8nntze?file=src%2FMinimap.tsx">
   <img src="minimap.png" style="max-width:600px;width:100%">
 </a>
 
-<br /><br />
+This new feature makes it possible to get direct access to the camera transform, and manipulate it, continuously whenever the map is attempting to change it's viewport. It's a small hook, but it's very powerful. It's especially handy for reactive frameworks, where the camera state might be put in a store which can trigger side effects like listing the points of interest currently visible on the map. Another example of when it's relevant is when synching multiple maps, as exemplified with a demo of a minimap and a main map that drives each other here:
+
+Sync two maps with the camera transform - [Minimap demo](https://stackblitz.com/edit/vitejs-vite-8nntze?file=src%2FMinimap.tsx)
+
+<br />
 
 ## Terrain 3D
 
@@ -79,39 +79,43 @@ The terrain is becoming more stable, with a range of improvements landing in v3.
 - Fix overlapping of 3D building parts when 3D Terrain is activated ([#2513](https://github.com/maplibre/maplibre-gl-js/issues/2513))
 - Show 3D buildings located below sea level when 3D Terrain is activated ([#2544](https://github.com/maplibre/maplibre-gl-js/issues/2544))
 
+<br />
+
 ## WebGL2
 
 WebGL2 has finally reached a level of browser support that allows us, and large projects like [Unity](https://forum.unity.com/threads/removing-support-for-gles2-and-webgl1-in-2023-1a.1360090/) to embrace it fully. While WebGL2 is mostly backward compatible, it gives us lots of new features, and opportunities to improve performance through parallelization. It also removes the friction that exists when using MapLibre GL JS with libraries in the ecosystem that has moved to WebGL2 already - two examples of which can be seen in the demos below:
 
 **Interleaved rendering of DeckGL attribute transitions**
 
+<a href="https://codepen.io/birkskyum-1471370946/pen/VwEBPYW">
+  <img src="attributetransitions.png" style="max-width:600px;width:100%">
+</a>
+
 3.0.0 - [Animating](https://codepen.io/birkskyum-1471370946/pen/VwEBPYW) - Uses WebGL2
 
 2.4.0 - [Not animating](https://codepen.io/birkskyum-1471370946/pen/qBJyRdR)
 
-<a href="https://codepen.io/birkskyum-1471370946/pen/VwEBPYW">
-  <img src="attributetransitions.png" style="max-width:600px;width:100%">
-</a>
-<br /><br />
+<br />
 
 **Interleaved rendering of DeckGL GPU accelerated GridLayer**
+
+<a href="https://stackblitz.com/edit/vitejs-vite-asczxg?file=package.json">
+  <img src="gpugridlayer.png" style="max-width:600px;width:100%">
+</a>
 
 3.0.0 [GPU Accelerated](https://stackblitz.com/edit/vitejs-vite-asczxg?file=package.json) - Uses WebGL2
 
 2.4.0 [Breaks](https://stackblitz.com/edit/vitejs-vite-9scpcz?file=package.json) - Browser console prints "Browser not supported"
 
-<a href="https://stackblitz.com/edit/vitejs-vite-asczxg?file=package.json">
-  <img src="gpugridlayer.png" style="max-width:600px;width:100%">
-</a>
-<br /><br />
+<br />
 
 ## Color spaces
-
-We now align better with the CSS Spec for color spaces, by using the D50 illuminant instead of the D65. This brings us more continuous color spaces with the `interpolate-hcl`. To see what that means in practice, the demo [here](https://kajkal.github.io/maplibre-gl-style-spec-color-demo/swipe.html) is a visualization of the color spaces. You can i.e. select 3.0.0-pre.4 and 3.0.0-pre.5, which is when the addition was made, and move the cursor up and down to compare them.
 
 <a href="https://kajkal.github.io/maplibre-gl-style-spec-color-demo/swipe.html">
   <img src="colorspaces.png" style="max-width:600px;width:100%">
 </a>
+
+We now align better with the CSS Spec for color spaces, by using the D50 illuminant instead of the D65. This brings us more continuous color spaces with the `interpolate-hcl`. To see what that means in practice, the demo [here](https://kajkal.github.io/maplibre-gl-style-spec-color-demo/swipe.html) is a visualization of the color spaces. You can i.e. select 3.0.0-pre.4 and 3.0.0-pre.5, which is when the addition was made, and move the cursor up and down to compare them.
 
 # Changelog
 
