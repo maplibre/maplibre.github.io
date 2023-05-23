@@ -14,7 +14,7 @@ draft: false
 <meta name="twitter:creator" content="@maplibre">
 <meta name="twitter:title" content="MapLibre GL JS v3">
 <meta name="twitter:description" content="New additions in MapLibre GL JS v3 includes a full transition to WebGL2, improvements to performance, fixes to the Terrain3D, CSS4 compliant colors, hooks for better camera control and more!">
-<meta name="twitter:image" content="/img/share-image.png">
+<meta name="twitter:image" content="header.png">
 
 This release is a big step for MapLibre GL JS! With more than 500 commits, and almost a year in the making, version 3.0.0 is surely our best release yet. Lots of features, performance improvement, bug fixes and a few potentially breaking changes that were necessary, to keep the project healthy, are to be found here.
 
