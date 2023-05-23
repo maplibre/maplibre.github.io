@@ -79,7 +79,6 @@ WebGL2 has finally reached a level of browser support that allows us, and large 
 
 **Interleaved rendering of DeckGL attribute transitions**
 
-
 <a href="https://codepen.io/birkskyum-1471370946/pen/VwEBPYW">
   <img src="attributetransitions.png" style="max-width:600px;width:100%">
 </a>
@@ -100,7 +99,6 @@ WebGL2 has finally reached a level of browser support that allows us, and large 
 
 2.4.0 [Breaks](https://stackblitz.com/edit/vitejs-vite-9scpcz?file=package.json) - Browser console prints "Browser not supported"
 
-
 <br />
 
 ## Color spaces
@@ -110,7 +108,6 @@ WebGL2 has finally reached a level of browser support that allows us, and large 
 </a>
 
 We now align better with the CSS Spec for color spaces, by using the D50 illuminant instead of the D65. This brings us more continuous color spaces with the `interpolate-hcl`. To see what that means in practice, the demo [here](https://kajkal.github.io/maplibre-gl-style-spec-color-demo/swipe.html) is a visualization of the color spaces. You can i.e. select 3.0.0-pre.4 and 3.0.0-pre.5, which is when the addition was made, and move the cursor up and down to compare them.
-
 
 # Changelog
 
