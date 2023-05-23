@@ -16,6 +16,6 @@ GitHub Tracking Issue (💰 Bounties): https://github.com/maplibre/maplibre/issu
 
 Bounty Proposal Discussion: https://github.com/maplibre/maplibre/discussions/161
 
-Total Pre-Approved* Budget: USD 20,000
+Total Pre-Approved\* Budget: USD 20,000
 
-*) The MapLibre Governing Board has given a pre-approval for this amount. If you require more funding to work on this Bounty Direction, please get in touch with the Governing Board. See also "Budget Increase" in the wiki: https://github.com/maplibre/maplibre/wiki/Bounty-System
+\*) The MapLibre Governing Board has given a pre-approval for this amount. If you require more funding to work on this Bounty Direction, please get in touch with the Governing Board. See also "Budget Increase" in the wiki: https://github.com/maplibre/maplibre/wiki/Bounty-System
