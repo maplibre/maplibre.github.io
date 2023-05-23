@@ -13,7 +13,11 @@ Most users will be able to update to v3 without code changes, but it's recommend
 
 Thanks for all the code contributions!
 
-[@prozessor13](https://github.com/prozessor13), [@rotu](https://github.com/rotu), [@acalcutt](https://github.com/acalcutt), [@BirkSkyum](https://github.com/BirkSkyum), [@ambientlight](https://github.com/ambientlight), [@Pessimistress](https://github.com/Pessimistress), [@HarelM](https://github.com/HarelM), [@zhangyiatmicrosoft](https://github.com/zhangyiatmicrosoft), [@pramilk](https://github.com/pramilk), [@wipfli](https://github.com/wipfli), [@xabbu42](https://github.com/xabbu42), [@ZeLonewolf](https://github.com/ZeLonewolf), [@kevinschaul](https://github.com/kevinschaul), [@zstadler](https://github.com/zstadler), [@smellyshovel](https://github.com/smellyshovel), [@jleedev](https://github.com/jleedev), [@kircher1](https://github.com/kircher1), [@llambanna](https://github.com/llambanna), [@IvanSanchez](https://github.com/IvanSanchez), [@tordans](https://github.com/tordans), [@ChrisLoer](https://github.com/ChrisLoer), [@cns-solutions-admin](https://github.com/cns-solutions-admin), [@vanilla-lake](https://github.com/vanilla-lake), [@lukashass](https://github.com/lukashass), [@VehpuS](https://github.com/VehpuS),
+[@rotu](https://github.com/rotu), [@pramilk](https://github.com/pramilk), [@zhangyiatmicrosoft](https://github.com/zhangyiatmicrosoft), [@prozessor13](https://github.com/prozessor13), [@Pessimistress](https://github.com/Pessimistress), [@ChrisLoer](https://github.com/ChrisLoer), [@xabbu42](https://github.com/xabbu42), [@VehpuS](https://github.com/VehpuS), [@zstadler](https://github.com/zstadler), [@ZeLonewolf](https://github.com/ZeLonewolf), [@kajkal](https://github.com/kajkal), [@kevinschaul](https://github.com/kevinschaul), [@ambientlight](https://github.com/ambientlight), [@smellyshovel](https://github.com/smellyshovel), [@kircher1](https://github.com/kircher1), [@tordans](https://github.com/tordans), [@IvanSanchez](https://github.com/IvanSanchez), [@acalcutt](https://github.com/acalcutt), [@jleedev](https://github.com/jleedev), [@llambanna](https://github.com/llambanna), [@cns-solutions-admin](https://github.com/cns-solutions-admin), [@vanilla-lake](https://github.com/vanilla-lake), [@lukashass](https://github.com/lukashass)
+
+Facilitated by:
+
+[@HarelM](https://github.com/HarelM), [@BirkSkyum](https://github.com/BirkSkyum), [@wipfli](https://github.com/wipfli), 
 
 # Notable changes for this release
 
