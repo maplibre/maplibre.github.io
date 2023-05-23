@@ -9,6 +9,14 @@ authors: [birk]
 draft: false
 ---
 
+<meta name="twitter:site" content="@maplibre">
+<meta name="twitter:title" content="MapLibre GL JS v3">
+<meta property="twitter:domain" content="maplibre.org">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://maplibre.org/news/2023-05-23-maplibre-gl-js-v3/">
+<meta name="twitter:description" content="MapLibre GL JS v3 - Improvements to Terrain3D, WebGL2, Color spaces, Performance and more!">
+<meta name="twitter:image" content="https://maplibre.org/news/2023-05-23-maplibre-gl-js-v3/header.png">
+
 This release is a big step for MapLibre GL JS! With more than 500 commits, and almost a year in the making, version 3.0.0 is surely our best release yet. Lots of features, performance improvement, bug fixes and a few potentially breaking changes that were necessary, to keep the project healthy, are to be found here.
 
 **A note on migration:**
