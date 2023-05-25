@@ -7,6 +7,8 @@ documentation:
     name: "API Documentation"
   - url: https://maplibre.org/maplibre-style-spec
     name: "Style Spec"
+  - url: https://maplibre.org/maplibre-gl-js-docs/plugins/
+    name: "Plugins"
 stable: true
 ---
 
