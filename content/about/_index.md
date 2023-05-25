@@ -132,4 +132,8 @@ The [MapLibre Charter](https://github.com/maplibre/maplibre/blob/main/CHARTER.md
 <hr/>
 <h1 class="text-center">Reports</h1>
 
-MapLibre finances are transparent and the accounting is fully public. Find qauarter financial reports in the [Reports](reports) page.
+MapLibre finances are transparent and the accounting is fully public. Find quarterly financial reports in the [Reports](reports) page.
+
+<hr/>
+<h1 class="text-center">Strategy</h1>
+The MapLibre <a href="/files/MapLibre-Strategy-2023.pdf">Strategy 2023</a> outlines a vision for our future. We invite everyone to join our path and build the best software for maps together.
