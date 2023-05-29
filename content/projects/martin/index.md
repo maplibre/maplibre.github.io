@@ -4,7 +4,9 @@ weight: 100
 github: https://github.com/maplibre/martin
 documentation:
   - url: https://martin.maplibre.org/
-    name: Intro
+    name: Demo
+  - url: https://maplibre.org/martin/
+    name: Docs
 stable: true
 ---
 
