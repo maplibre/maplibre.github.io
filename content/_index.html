@@ -16,22 +16,22 @@ weight: -10
 
 <div id="home-map"></div>
 <div class="home-banner">
-  <div class="row align-items-center p-5">
-    <div class="col-lg-7 text-lg-center">
+  <div class="row align-items-center" style="padding: 40px 10px;">
+    <div>
       <svg
-        aria-label="MapLibre"
-        class="title-image"
-        width="353"
-        height="76"
-        viewBox="0 0 353 76"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <use href="/img/maplibre-logo-big.svg#maplibre"></use>
-      </svg>
-    </div>
-    <div class="col-lg-5">
-      <h1 class="h2 mt-2 mt-lg-0">Open Maps SDKs</h1>
+      aria-label="MapLibre"
+      class="title-image"
+      width="353"
+      height="76"
+      viewBox="0 0 353 76"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <use href="/img/maplibre-logo-big.svg#maplibre"></use>
+    </svg>
+      <h1 class="h2 mt-2 mt-lg-0" style="padding-top: 10px;">Open Maps SDKs</h1>
       <p>Open-source mapping libraries for web and mobile app developers.</p>
+      <div style="display:flex; justify-content: center;">
+      <div style="display:flex; flex-direction: column; justify-content: space-between;">
       <a
         class="btn btn-primary mt-1 landing-platform-icon"
         href="/projects/maplibre-gl-js"
@@ -51,15 +51,18 @@ weight: -10
           {{< svg "assets/devicon/apple.svg" >}}
         </span>
       </a>
+      </div>
       <a
+        style="margin-left: 5px;"
         class="btn btn-primary mt-1 landing-platform-icon"
         href="/maplibre-style-spec/"
       >
-        <span class="d-flex flex-row justify-content-between">
-          <span class="me-3">MapLibre Style Spec</span>
-          {{< svg "assets/devicon/stylespec.svg" >}}
+        <span style="display:flex; flex-direction:column; align-items: center; height: 100%; justify-content: center;">
+          <span >Style</span><span >Spec</span>
+          {{< svg "assets/devicon/palette.svg" >}}
         </span>
       </a>
+    </div>
     </div>
   </div>
 </div>
