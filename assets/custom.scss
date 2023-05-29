@@ -14,13 +14,25 @@
   height: 250px;
 }
 .home-banner {
-  background-color: rgba(255, 255, 255, 0.9);
   position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   left: 0;
   top: 50%;
-  width: 65%;
   z-index: $zindex-sticky;
+  pointer-events: none;
   transform: translateY(-50%);
+
+  > div {
+    text-align: center;
+    pointer-events: all;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  a span {
+    align-items: center;
+  }
 }
 .title-image {
   @include media-breakpoint-down(md) {
