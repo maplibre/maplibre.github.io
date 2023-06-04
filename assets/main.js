@@ -45,7 +45,9 @@ function communityMap(container, community) {
     anchor.href = person.href;
     anchor.title = person.name;
     anchor.append(img);
-    new Marker(anchor).setLngLat([person.latlon[1], person.latlon[0]]).addTo(map);
+    new Marker(anchor)
+      .setLngLat([person.latlon[1], person.latlon[0]])
+      .addTo(map);
   });
 }
 
