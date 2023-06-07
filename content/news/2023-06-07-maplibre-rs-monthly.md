@@ -7,7 +7,7 @@ authors: [maxammann]
 ---
 
 It is finally time for a new maplibre-rs monthly! Or should I say yearly? The last update was 2022 and we already have 2023!
-Even though a lot of time has passed the development in maplibre-rs did not come to a total standstill, even though it may look like it did.
+The development of maplibre-rs did not come to a total standstill, even though it may look like it did.
 
 ## 📰 News
 
