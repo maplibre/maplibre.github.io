@@ -4,7 +4,6 @@ title: "maplibre-rs monthly (special issue)"
 date: 2023-06-07T21:46:44+02:00
 categories: ["maplibre-rs"]
 authors: [maxammann]
-draft: true
 ---
 
 It is finally time for a new maplibre-rs monthly! Or should I say yearly? The last update was 2022 and we already have 2023!
