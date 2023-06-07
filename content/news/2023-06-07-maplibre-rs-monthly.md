@@ -50,7 +50,6 @@ The following will summarizes what happened last week on GitHub.
 
 ### 🎁 Merged Pull Requests
 
-
 - [#285](https://github.com/maplibre/maplibre-rs/pull/285) chore: Inline format args by [@nyurik](https://github.com/nyurik)<br>
 - [#282](https://github.com/maplibre/maplibre-rs/pull/282) chore: Bump consolidated dependencies by [@nyurik](https://github.com/nyurik)<br>
 - [#281](https://github.com/maplibre/maplibre-rs/pull/281) chore: Consolidate dependency version mgmt by [@nyurik](https://github.com/nyurik)<br>
@@ -60,7 +59,7 @@ The following will summarizes what happened last week on GitHub.
   And cleaning up!
 - [#277](https://github.com/maplibre/maplibre-rs/pull/277) Update wgpu to 0.16 by [@maxammann](https://github.com/maxammann)<br>
   It is gerat to see wgpu progress!
-- [#275](https://github.com/maplibre/maplibre-rs/pull/275) Fix webgpu demo  by [@maxammann](https://github.com/maxammann)<br>
+- [#275](https://github.com/maplibre/maplibre-rs/pull/275) Fix webgpu demo by [@maxammann](https://github.com/maxammann)<br>
   WebGPU demo finally runs on stable Chrome!
 - [#272](https://github.com/maplibre/maplibre-rs/pull/272) Upgrade to wgpu to fix issue on 0.15 by [@maxammann](https://github.com/maxammann)<br>
 - [#271](https://github.com/maplibre/maplibre-rs/pull/271) Spell fixes, possibly breaking "Uninizalized" rename by [@nyurik](https://github.com/nyurik)<br>
@@ -86,9 +85,7 @@ The following will summarizes what happened last week on GitHub.
 - [#236](https://github.com/maplibre/maplibre-rs/pull/236) Tile source fixes by [@maxammann](https://github.com/maxammann)<br>
 - [#235](https://github.com/maplibre/maplibre-rs/pull/235) Bump prost crate version to 0.11.5 by [@Tristramg](https://github.com/Tristramg)<br>
 
-
 ### 🎁 New Issues
-
 
 - [#283](https://github.com/maplibre/maplibre-rs/issues/283) 3D model experiemnts glTF by [@maxammann](https://github.com/maxammann)<br>
   It would be very fun to have some glTF models in maplibre-rs as a demo!
