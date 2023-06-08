@@ -22181,7 +22181,7 @@ uniform ${i3} ${o3} u_${a3};
 
   // <stdin>
   function communityMap(container, community) {
-    var map = new import_maplibre_gl.Map({
+    const map = new import_maplibre_gl.Map({
       container,
       style: "https://demotiles.maplibre.org/style.json",
       center: [0, 0],
@@ -22192,7 +22192,7 @@ uniform ${i3} ${o3} u_${a3};
       compact: false,
       customAttribution: 'OpenStreetMap contributors. | <a href="https://github.com/maplibre/maplibre.github.io">Edit on GitHub.</a>'
     }));
-    map.addControl(new import_maplibre_gl.NavigationControl(), "bottom-right");
+    map.addControl(new import_maplibre_gl.NavigationControl());
     const lngs = community.map((person) => person.latlon[1]);
     const lats = community.map((person) => person.latlon[0]);
     map.fitBounds([
@@ -22200,24 +22200,24 @@ uniform ${i3} ${o3} u_${a3};
       [Math.max(...lngs), Math.max(...lats)]
     ], { padding: 50 });
     community.map((person) => {
-      var el = document.createElement("a");
-      el.className = "marker";
-      el.style.backgroundImage = `url(${person.url})`;
-      el.style.width = "50px";
-      el.style.height = "50px";
-      el.href = person.href;
-      el.title = person.name;
-      new import_maplibre_gl.Marker(el).setLngLat([person.latlon[1], person.latlon[0]]).addTo(map);
+      const img = document.createElement("img");
+      img.className = "marker";
+      img.src = person.url;
+      const anchor = document.createElement("a");
+      anchor.href = person.href;
+      anchor.title = person.name;
+      anchor.append(img);
+      new import_maplibre_gl.Marker(anchor).setLngLat([person.latlon[1], person.latlon[0]]).addTo(map);
     });
   }
   function mapPreview(container) {
-    var map = new import_maplibre_gl.Map({
+    const map = new import_maplibre_gl.Map({
       container,
       style: "https://demotiles.maplibre.org/style.json",
       center: [0, 0],
       zoom: 1
     });
-    var mapAnimation = [
+    const mapAnimation = [
       {
         lng: -0.08411085041984734,
         lat: 7.115464377381386,
@@ -22255,9 +22255,9 @@ uniform ${i3} ${o3} u_${a3};
         Pitch: 0
       }
     ];
-    var lastPoint = mapAnimation[mapAnimation.length - 1];
+    const lastPoint = mapAnimation[mapAnimation.length - 1];
     function playAnimation() {
-      mapAnimation.forEach(function(item, index) {
+      mapAnimation.forEach(function(item, _) {
         setTimeout(function() {
           map.flyTo({
             duration: item.Duration,
@@ -22273,7 +22273,7 @@ uniform ${i3} ${o3} u_${a3};
     window.onload = playAnimation, setInterval(playAnimation, lastPoint.Pause + lastPoint.Duration);
   }
   function terrain3dMap(container) {
-    var map = window.map = new import_maplibre_gl.Map({
+    const map = window.map = new import_maplibre_gl.Map({
       container,
       zoom: 12,
       center: [11.39085, 47.27574],
