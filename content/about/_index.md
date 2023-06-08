@@ -3,7 +3,7 @@ title: About
 weight: 10
 ---
 
-  <p>
+  <p class="text-center">
     The MapLibre Organization is an umbrella for open-source mapping libraries
     with the two central rendering projects being
     <a href="https://github.com/maplibre/maplibre-gl-js">MapLibre GL JS</a> and
@@ -141,6 +141,7 @@ weight: 10
   </div>
 </div>
 
+<div class="text-center">
 <hr/>
 <h1 class="text-center">Charter</h1>
 
@@ -154,3 +155,4 @@ MapLibre finances are transparent and the accounting is fully public. Find quart
 <hr/>
 <h1 class="text-center">Strategy</h1>
 The MapLibre <a href="https://drive.google.com/file/d/1F5abpGx8VlVse4SHGwxgRRY1wQ29i-0_/view?usp=share_link">Strategy 2023</a> outlines a vision for our future. We invite everyone to join our path and build the best software for maps together.
+</div>
