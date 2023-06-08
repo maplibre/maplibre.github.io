@@ -8,7 +8,7 @@ import {
 import "bootstrap";
 
 function communityMap(container, community) {
-  var map = new Map({
+  const map = new Map({
     container,
     style: "https://demotiles.maplibre.org/style.json",
     center: [0, 0],
@@ -23,7 +23,7 @@ function communityMap(container, community) {
     })
   );
 
-  map.addControl(new NavigationControl(), "bottom-right");
+  map.addControl(new NavigationControl());
 
   const lngs = community.map((person) => person.latlon[1]);
   const lats = community.map((person) => person.latlon[0]);
@@ -37,26 +37,29 @@ function communityMap(container, community) {
   );
 
   community.map((person) => {
-    var el = document.createElement("a");
-    el.className = "marker";
-    el.style.backgroundImage = `url(${person.url})`;
-    el.style.width = "50px";
-    el.style.height = "50px";
-    el.href = person.href;
-    el.title = person.name;
-    new Marker(el).setLngLat([person.latlon[1], person.latlon[0]]).addTo(map);
+    const img = document.createElement("img");
+    img.className = "marker";
+    img.src = person.url;
+
+    const anchor = document.createElement("a");
+    anchor.href = person.href;
+    anchor.title = person.name;
+    anchor.append(img);
+    new Marker(anchor)
+      .setLngLat([person.latlon[1], person.latlon[0]])
+      .addTo(map);
   });
 }
 
 function mapPreview(container) {
-  var map = new Map({
+  const map = new Map({
     container,
     style: "https://demotiles.maplibre.org/style.json",
     center: [0, 0],
     zoom: 1,
   });
 
-  var mapAnimation = [
+  const mapAnimation = [
     {
       lng: -0.08411085041984734,
       lat: 7.115464377381386,
@@ -95,10 +98,10 @@ function mapPreview(container) {
     },
   ];
 
-  var lastPoint = mapAnimation[mapAnimation.length - 1];
+  const lastPoint = mapAnimation[mapAnimation.length - 1];
 
   function playAnimation() {
-    mapAnimation.forEach(function (item, index) {
+    mapAnimation.forEach(function (item, _) {
       setTimeout(function () {
         map.flyTo({
           duration: item.Duration,
@@ -117,7 +120,7 @@ function mapPreview(container) {
 }
 
 function terrain3dMap(container) {
-  var map = (window.map = new Map({
+  const map = (window.map = new Map({
     container,
     zoom: 12,
     center: [11.39085, 47.27574],

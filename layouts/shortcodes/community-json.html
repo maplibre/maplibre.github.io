@@ -1,5 +1,5 @@
 [
-{{ range $.Site.Data.community }}
+{{ range (shuffle $.Site.Data.community) }}
   {{ $gh_name := .github }}
   {{ $latlon := .latlon }}
   {{ $url := print "https://github.com/" $gh_name ".png?size=50" }}
