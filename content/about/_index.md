@@ -23,8 +23,6 @@ weight: 10
 <hr/>
 <h1 class="text-center">Governing Board</h1>
 
-
-
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xl-2 text-center">
