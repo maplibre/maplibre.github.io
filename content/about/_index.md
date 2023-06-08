@@ -3,8 +3,27 @@ title: About
 weight: 10
 ---
 
+  <p>
+    The MapLibre Organization is an umbrella for open-source mapping libraries
+    with the two central rendering projects being
+    <a href="https://github.com/maplibre/maplibre-gl-js">MapLibre GL JS</a> and
+    <a href="https://github.com/maplibre/maplibre-native">MapLibre Native</a>
+    which are surrounded by an ecosystem of plugins and tools to generate maps.
+    The MapLibre <a href="https://maplibre.org/about/">Governing Board</a> was
+    elected by the
+    <a href="https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md"
+      >Voting Members</a
+    >, a group who represents the broader community, in August 2022 and is in
+    charge to steer the Organization. The project coordinator is
+    <a href="https://github.com/wipfli">Oliver Wipfli</a> who supports the
+    Governing Board in organizational tasks.
+  </p>
+
+<br />
 <hr/>
 <h1 class="text-center">Governing Board</h1>
+
+
 
 <div class="container">
   <div class="row justify-content-center">
