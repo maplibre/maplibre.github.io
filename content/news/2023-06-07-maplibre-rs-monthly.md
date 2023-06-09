@@ -11,7 +11,7 @@ The development of maplibre-rs did not come to a total standstill, even though i
 
 ## 📰 News
 
-Actually, I have great news about the project.
+Actually, we have great news about the project.
 
 <div style="font-size: 20px; font-weight: bold; text-align: center">🎉🎉🎉 maplibre-rs is now a supported MapLibre project! 🎉🎉🎉</div>
 
@@ -39,8 +39,8 @@ See [here](https://github.com/maplibre/maplibre/pull/282) to have more insight o
 Back to the progress in maplibre-rs.
 A lot has happened in the past half year. I have been focusing on getting the plugin architecture in a working state. It is now possible to enable or disable features like raster or vector rendering at compile time and runtime. This means that features are now well separated.
 
-Right now, I am focusing on getting the projection correct in [this PR](https://github.com/maplibre/maplibre-rs/pull/233/). Unfortunately, there is quite some match involved and the maplibre-gl-js source code does not explain much.
-So in order to get this correct (and yes we sadly have to get this 100% correct) I will have to do some math on paper sadly and then create unit tests to validate my assumptions.
+Right now, I am focusing on getting the projection correct in [this PR](https://github.com/maplibre/maplibre-rs/pull/233/). Unfortunately, there is quite some maths involved and the maplibre-gl-js source code does not explain much.
+So in order to get this correct (and yes we absolutely have to get this 100% correct) I will have to do some math on paper and then create unit tests to validate my assumptions. This takes a lot of time, but is really fun!
 This will definitely also benefit the other MapLibre projects, as I am documenting the insights. I created a [GeoGebra visualization](https://www.geogebra.org/m/cvhtwhng) of the current near and far plane calculations.
 
 ## 🏠 Housekeeping
