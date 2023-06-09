@@ -92,7 +92,7 @@ weight: 10
       />
     </a>
         <h3 class="m-3">Bart Louwers</h3>
-        Maintainer Native
+        MapLibre Native Maintainer
     </div>
     <div class="col-xl-2 text-center">
       <a href="harel">
@@ -103,7 +103,7 @@ weight: 10
       />
     </a>
       <h3 class="m-3">Harel Mazor</h3>
-      Maintainer Web
+      MapLibre GL JS Maintainer
     </div>
     <div class="col-xl-2 text-center">
       <a href="oliver">
@@ -125,7 +125,7 @@ weight: 10
       />
     </a>
         <h3 class="m-3">Ovi Voda</h3>
-        Maintainer Native
+        MapLibre Native Maintainer
     </div>
     <div class="col-xl-2 text-center">
       <a href="duje">
