@@ -13,9 +13,9 @@ jobs:
         with:
           node-version: "16"
       - name: Hugo setup
-        uses: peaceiris/actions-hugo@v2.4.13
+        uses: peaceiris/actions-hugo@v2.6.0
         with:
-          hugo-version: 0.97.3
+          hugo-version: 0.113.0
           extended: true
       - name: NPM install
         run: npm ci
