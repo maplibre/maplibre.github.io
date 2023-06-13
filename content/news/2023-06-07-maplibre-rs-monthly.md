@@ -21,7 +21,7 @@ You may wonder what that means: The gist of it is that the project can now use d
 
 #### Why did maplibre-rs become a sponsored project?
 
-The maplibre-rs project is a research-and-development (R&D) undertaking. While there is the goal of reaching feature parity with maplibre-gl-js or maplibre-native, this is years away and certainly not something we can reach with the current development pace. Though, what we can achieve right now is to put new ideas to the test. New fundamental concepts are relatively easy to implement in maplibre-rs, whereas in maplibre-native they would need a major refactoring. For instance, maplibre-rs has already proven, that WebGPU API is sufficient to implement a map renderer. Which means that maplibre-native could actually target WebGPU in order to reach all platforms (including the Web).
+The maplibre-rs project is a research-and-development (R&D) undertaking. While there is the goal of reaching feature parity with MapLibre Native or Web, this is years away and certainly not something we can reach with the current development pace. Though, what we can achieve right now is to put new ideas to the test. New fundamental concepts are relatively easy to implement in maplibre-rs, whereas in MapLibre Native they would need a major refactoring. For instance, maplibre-rs has already proven, that WebGPU API is sufficient to implement a map renderer. Which means that MapLibre Native could actually target WebGPU in order to reach all platforms (including the Web).
 
 #### What will happen next?
 
@@ -31,7 +31,7 @@ As already mentioned, we first have to see which incentives bring maplibre-rs fo
 
 #### Who on earth decided that?
 
-The governing board by vote! If you did not yet know, MapLibre is governed by an [elected](http://localhost:1313/about/).
+The governing board by vote! If you did not yet know, MapLibre is governed by an [elected board](https://maplibre.org/about/).
 See [here](https://github.com/maplibre/maplibre/pull/282) to have more insight on the process.
 
 ---
