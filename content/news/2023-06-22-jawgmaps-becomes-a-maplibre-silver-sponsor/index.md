@@ -1,6 +1,6 @@
 ---
 title: "JawgMaps becomes a MapLibre Silver Sponsor"
-date: "2023-06-06"
+date: "2023-06-22"
 categories: ["announcements"]
 authors: [duje]
 draft: false
