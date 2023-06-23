@@ -42,7 +42,7 @@ These are the most significant architectural changes to MapLibre Native since th
 - After adding the render tests to the coverage report, we are now at [79% coverage](https://app.codecov.io/github/maplibre/maplibre-native).
 - Birk Skyum contributed various PRs.
 
-## MapLibre Martin
+## Martin
 
 Martin, a blazingly fast tile server that supports generating and serving vector tiles on the fly from large PostGIS databases, PMTiles, and MBTile files has released v0.8.7. What's new?
 
