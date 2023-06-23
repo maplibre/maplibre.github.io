@@ -14,6 +14,23 @@ As with every newsletter, we would like to call attention to the fact that we ha
 
 Check out the [Step-by-Step Bounties Guide](https://maplibre.org/roadmap/step-by-step-bounties-guide/) and get in touch via GitHub or [Slack](https://slack.openstreetmap.us/) (`#maplibre-native`).
 
+## MapLibre Martin
+
+Martin, a blazingly fast tile server that supports generating and serving vector tiles on the fly from large PostGIS databases, PMTiles, and MBTile files has released v0.8.7. What's new?
+
+### Dynamic Sprite Support
+
+Given a directory with SVG images, Martin will dynamically generate a sprite index and a PNG image, for both low and high resolution displays. Per MapLibre sprites API, the new feature supports:
+
+`/sprite/<sprite_id>.json`: Metadata about the sprite file - all images from a directory
+`/sprite/<sprite_id>.png`: All images combined into a single PNG
+`/sprite/<sprite_id>@2x.json`: Same but for high DPI devices
+`/sprite/<sprite_id>@2x.png`
+
+### Copy MBTile Tool
+
+The `mbtiles` tool lets users partially copy an mbtiles file, filtering to specific zooms, and convert de-duplicated to a flat mbtiles format from now on.
+
 ## MapLibre Native
 
 ### Getting Ready for the Mega Merge
