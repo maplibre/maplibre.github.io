@@ -10,6 +10,12 @@ draft: false
 
 ## Highlights
 
+### JawgMaps
+
+<a href="https://www.jawg.io/en/">
+  <img src="/img/jawgmaps-logo.svg" width="25%" />
+</a>
+
 We would like to thank JawgMaps for their trust. As you might have read in our [previous announcement](https://maplibre.org/news/2023-06-22-jawgmaps-becomes-a-maplibre-silver-sponsor/), JawgMaps has joined the MapLibre Sponsorship Program and supports us as a Silver Sponsor!
 
 ## MapLibre Native
