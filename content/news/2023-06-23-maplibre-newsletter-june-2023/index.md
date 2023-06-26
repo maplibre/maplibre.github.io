@@ -8,17 +8,9 @@ draft: false
 
 # MapLibre Newsletter - June 2023
 
-## Bounties 💰
+## Highlights
 
-As with every newsletter, we would like to call attention to the fact that we have monetary awards available for developers wanting to push MapLibre forward in [one of the Bounty Directions](https://github.com/maplibre/maplibre/issues?q=is%3Aissue+is%3Aopen+label%3A%22bounty+direction%22). For MapLibre Native in particular, we are looking for **iOS developers with Objective-C experience** to help [modernize the iOS codebase](https://github.com/maplibre/maplibre-native/issues/1248).
-
-Check out the [Step-by-Step Bounties Guide](https://maplibre.org/roadmap/step-by-step-bounties-guide/) and get in touch via GitHub or [Slack](https://slack.openstreetmap.us/) (`#maplibre-native`).
-
-## MapLibre GL JS
-
-### Version 3
-
-As with our best release yet of v3 you find the separate post [here](https://maplibre.org/news/2023-05-23-maplibre-gl-js-v3/). Worth noting with v3.1 is that a WebGL1 fallback was added to accomodate users without WebGL2 support: [#2653](https://github.com/maplibre/maplibre-gl-js/issues/2653)
+We would like to thank JawgMaps for their trust. As you might have read in our [previous announcement](https://maplibre.org/news/2023-06-22-jawgmaps-becomes-a-maplibre-silver-sponsor/), JawgMaps has joined the MapLibre Sponsorship Program and supports us as a Silver Sponsor!
 
 ## MapLibre Native
 
@@ -42,6 +34,12 @@ These are the most significant architectural changes to MapLibre Native since th
 - After adding the render tests to the coverage report, we are now at [79% coverage](https://app.codecov.io/github/maplibre/maplibre-native).
 - Birk Skyum contributed various PRs.
 
+## MapLibre GL JS
+
+### Version 3
+
+As with our best release yet of v3 you find the separate post [here](https://maplibre.org/news/2023-05-23-maplibre-gl-js-v3/). Worth noting with v3.1 is that a WebGL1 fallback was added to accomodate users without WebGL2 support: [#2653](https://github.com/maplibre/maplibre-gl-js/issues/2653)
+
 ## Martin
 
 Martin, a blazingly fast tile server that supports generating and serving vector tiles on the fly from large PostGIS databases, PMTiles, and MBTile files has released v0.8.7. What's new?
@@ -58,3 +56,9 @@ Given a directory with SVG images, Martin will dynamically generate a sprite ind
 ### Copy MBTile Tool
 
 The `mbtiles` tool lets users partially copy an mbtiles file, filtering to specific zooms, and convert de-duplicated to a flat mbtiles format from now on.
+
+## Bounties 💰
+
+As with every newsletter, we would like to call attention to the fact that we have monetary awards available for developers wanting to push MapLibre forward in [one of the Bounty Directions](https://github.com/maplibre/maplibre/issues?q=is%3Aissue+is%3Aopen+label%3A%22bounty+direction%22). For MapLibre Native in particular, we are looking for **iOS developers with Objective-C experience** to help [modernize the iOS codebase](https://github.com/maplibre/maplibre-native/issues/1248).
+
+Check out the [Step-by-Step Bounties Guide](https://maplibre.org/roadmap/step-by-step-bounties-guide/) and get in touch via GitHub or [Slack](https://slack.openstreetmap.us/) (`#maplibre-native`).
