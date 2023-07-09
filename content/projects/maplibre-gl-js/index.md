@@ -3,11 +3,11 @@ title: "MapLibre GL JS"
 weight: -1000
 github: https://github.com/maplibre/maplibre-gl-js
 documentation:
-  - url: https://maplibre.org/maplibre-gl-js-docs
+  - url: https://maplibre.org/maplibre-gl-js/docs
     name: "API Documentation"
   - url: https://maplibre.org/maplibre-style-spec
     name: "Style Spec"
-  - url: https://maplibre.org/maplibre-gl-js-docs/plugins/
+  - url: https://maplibre.org/maplibre-gl-js/docs/plugins/
     name: "Plugins"
 stable: true
 ---
