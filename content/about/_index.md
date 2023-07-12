@@ -117,17 +117,6 @@ weight: 10
         <p>Coordinator</p>  
     </div>
     <div class="col-xl-2 text-center">
-      <a href="ovi">
-      <img
-        src="https://avatars.githubusercontent.com/u/5989047?v=4"
-        width="150"
-        class="rounded-circle mt-3"
-      />
-    </a>
-        <h3 class="m-3">Ovi Voda</h3>
-        MapLibre Native Maintainer
-    </div>
-    <div class="col-xl-2 text-center">
       <a href="duje">
       <img
         src="https://avatars.githubusercontent.com/u/23352538?v=4"
@@ -137,6 +126,24 @@ weight: 10
     </a>
       <h3 class="m-3">Duje Schröder</h3>
       Coordinator Assistant
+    </div>
+  </div>
+</div>
+
+<hr class="mt-5"/>
+<h1 class="text-center">Alumni</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xl-2 text-center">
+      <span href="ovi">
+      <img
+        src="https://avatars.githubusercontent.com/u/5989047?v=4"
+        width="150"
+        class="rounded-circle mt-3"
+      />
+    </span>
+        <h3 class="m-3">Ovi Voda</h3>
+        MapLibre Native Maintainer
     </div>
   </div>
 </div>
