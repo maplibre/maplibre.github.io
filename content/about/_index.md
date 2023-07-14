@@ -130,23 +130,6 @@ weight: 10
   </div>
 </div>
 
-<hr class="mt-5"/>
-<h1 class="text-center">Alumni</h1>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-xl-2 text-center">
-      <span href="ovi">
-      <img
-        src="https://avatars.githubusercontent.com/u/5989047?v=4"
-        width="150"
-        class="rounded-circle mt-3"
-      />
-    </span>
-        <h3 class="m-3">Ovi Voda</h3>
-        MapLibre Native Maintainer
-    </div>
-  </div>
-</div>
 
 <div class="text-center">
 <hr/>
@@ -162,4 +145,16 @@ MapLibre finances are transparent and the accounting is fully public. Find quart
 <hr/>
 <h1 class="text-center">Strategy</h1>
 The MapLibre <a href="https://drive.google.com/file/d/1F5abpGx8VlVse4SHGwxgRRY1wQ29i-0_/view?usp=share_link">Strategy 2023</a> outlines a vision for our future. We invite everyone to join our path and build the best software for maps together.
+
+<hr class="mt-5"/>
+<h1 class="text-center">Alumni</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xl-2 text-center">
+        <h3 class="m-3">Ovi Voda</h3>
+        MapLibre Native Maintainer
+    </div>
+  </div>
+</div>
+
 </div>
