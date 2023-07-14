@@ -130,7 +130,6 @@ weight: 10
   </div>
 </div>
 
-
 <div class="text-center">
 <hr/>
 <h1 class="text-center">Charter</h1>
@@ -152,7 +151,6 @@ The MapLibre <a href="https://drive.google.com/file/d/1F5abpGx8VlVse4SHGwxgRRY1w
   <div class="row justify-content-center">
     <div class="col-xl-2 text-center">
         <h3 class="m-3">Ovi Voda</h3>
-        MapLibre Native Maintainer
     </div>
   </div>
 </div>
