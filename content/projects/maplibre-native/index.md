@@ -27,7 +27,7 @@ same GPU-based acceleration as the TypeScript version.
 
 _MapLibre Native_ is an open source fork of _mapbox-gl-native_.
 
-Starting is 2023, we plan to overhaul the library and complement the existing OpenGL rendering backend with a Metal rendering backend for fast and efficient rendering on iOS devices. The overhaul is a great opportunity for you to learn more about the library and get involved with the MapLibre community.
+Starting in 2023, we plan to overhaul the library and complement the existing OpenGL rendering backend with a Metal rendering backend for fast and efficient rendering on iOS devices. The overhaul is a great opportunity for you to learn more about the library and get involved with the MapLibre community.
 
 More information can be found in the following design proposals:
 
