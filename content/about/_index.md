@@ -154,5 +154,5 @@ MapLibre finances are transparent and the accounting is fully public. Find quart
 
 <hr/>
 <h1 class="text-center">Strategy</h1>
-The MapLibre <a href="https://drive.google.com/file/d/1UU_wVaM13LDuKw1oGAwc5TtUP9JUKBdG/view?usp=sharing">Strategy 2023</a> outlines a vision for our future. We invite everyone to join our path and build the best software for maps together.
+The MapLibre <a href="https://drive.google.com/file/d/1tZtMrg0B4c8l-uEaeu4xiQ27qMTCPb-z/view?usp=sharing">Strategy 2023</a> outlines a vision for our future. We invite everyone to join our path and build the best software for maps together.
 </div>
