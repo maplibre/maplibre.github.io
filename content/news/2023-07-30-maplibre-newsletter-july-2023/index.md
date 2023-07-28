@@ -56,7 +56,11 @@ TBD
 
 ## Events
 
-TBD
+[Bart Louwers](https://github.com/louwers) will be [holding a talk](https://www.linkedin.com/feed/update/urn:li:ugcPost:7090276373935620096/) at [FOSS4G NL](https://foss4g.nl/) in [Middelburg](https://www.openstreetmap.org/search?query=Middelburg#map=13/51.5053/3.6178) September 14th, 2023.
+
+[Yuri Astrakhan](https://github.com/nyurik) will represent MapLibre at [FOSS4G NA](https://foss4gna.org/) in [Baltimore](https://www.openstreetmap.org/search?query=Baltimore#map=12/39.2847/-76.6205) October 23rd to 25th, 2023.
+
+Come by and get to know us in person.
 
 ## Next Up
 
