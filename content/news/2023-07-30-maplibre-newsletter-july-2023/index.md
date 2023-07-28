@@ -14,7 +14,9 @@ draft: false
 
 Harfbuzz has been introduced to render complex text. Check out the demo [here](https://github.com/maplibre/maplibre-native/pull/1289).
 
-We want to emphasize [Markus Tremmel's](https://github.com/mactrem) input of prototyping new vector tile formats. Find his own words [here](https://github.com/mactrem/cov-tiles/discussions/6).
+### COVTiles
+
+We want to emphasize [Markus Tremmel's](https://github.com/mactrem) input of prototyping a new vector tile format. Find his own words [here](https://github.com/mactrem/cov-tiles/discussions/6).
 
 ## MapLibre Native
 
