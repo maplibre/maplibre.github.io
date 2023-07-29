@@ -41,7 +41,6 @@ We are now running an iOS render test on an a real iOS device for every PR. Than
 
 The design proposal from Fynn Godau to [overhaul the Annotations API on Android](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2023-06-17-android-annotations.md) has been merged.
 
-
 ### Metal
 
 Work on the Metal rendering backend has started, and the first important steps have been completed. The first one being: drawing nothing with Metal. And the second one being: drawing a triangle with Metal!
