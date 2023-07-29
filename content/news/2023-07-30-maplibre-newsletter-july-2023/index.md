@@ -52,7 +52,7 @@ Work on the Metal rendering backend has started, and the first important steps h
 
 ## MapLibre GL JS
 
-TBD
+A pre-release of the new documentation site can be found [here](https://maplibre.org/maplibre-gl-js/docs/).
 
 ## Events
 
