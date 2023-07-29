@@ -54,6 +54,8 @@ Work on the Metal rendering backend has started, and the first important steps h
 
 A pre-release of the new documentation site can be found [here](https://maplibre.org/maplibre-gl-js/docs/).
 
+In addition, we released [v3.2.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v3.2.0) and [v3.2.1](https://github.com/maplibre/maplibre-gl-js/releases/tag/v3.2.1).
+
 ## Events
 
 [Bart Louwers](https://github.com/louwers) will be [holding a talk](https://www.linkedin.com/feed/update/urn:li:ugcPost:7090276373935620096/) at [FOSS4G NL](https://foss4g.nl/) in [Middelburg](https://www.openstreetmap.org/search?query=Middelburg#map=13/51.5053/3.6178) September 14th, 2023.
