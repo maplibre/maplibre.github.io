@@ -12,7 +12,7 @@ draft: false
 
 ### COVTiles
 
-We want to emphasize [Markus Tremmel's](https://github.com/mactrem) input of prototyping a new vector tile format. Find his own words here: https://github.com/mactrem/cov-tiles/discussions/6
+We want to emphasize [Markus Tremmel's](https://github.com/mactrem) input of prototyping a new vector tile format called [COVTiles](https://github.com/mactrem/cov-tiles#cloud-optimized-vector-tiles-covtiles)
 
 ## MapLibre Native
 
