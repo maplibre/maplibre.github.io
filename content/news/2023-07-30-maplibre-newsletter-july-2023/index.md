@@ -1,5 +1,5 @@
 ---
-title: "MapLibre Newsletter June 2023"
+title: "MapLibre Newsletter July 2023"
 date: 2023-07-30
 categories: ["newsletter"]
 authors: [duje]
@@ -10,15 +10,15 @@ draft: false
 
 ## Highlights
 
-### Harfbuzz
-
-Harfbuzz has been introduced to render complex text. Check out the demo [here](https://github.com/maplibre/maplibre-native/pull/1289).
-
 ### COVTiles
 
-We want to emphasize [Markus Tremmel's](https://github.com/mactrem) input of prototyping a new vector tile format. Find his own words [here](https://github.com/mactrem/cov-tiles/discussions/6).
+We want to emphasize [Markus Tremmel's](https://github.com/mactrem) input of prototyping a new vector tile format. Find his own words here: https://github.com/mactrem/cov-tiles/discussions/6
 
 ## MapLibre Native
+
+### Harfbuzz
+
+Harfbuzz has been introduced to render complex text. Check out [#1289](https://github.com/maplibre/maplibre-native/pull/1289) of [Wei Chen](https://github.com/alanchenboy).
 
 ### Renderer Modularization PRs
 
@@ -35,7 +35,7 @@ As mentioned during the Technical Steering Committee this month, we now exclusiv
 
 We are now running an iOS render test on an a real iOS device for every PR. Thanks to the credits we have from AWS this is possible. You should be greeted with a green checkmark from your friendly MapLibre Native Bot when making a PR:
 
-<img src="ios-render-test.png" style="max-width: 100%; height: auto;">
+<img src="https://user-images.githubusercontent.com/23352538/257043827-3ec7ea6b-8757-4fa8-b4c6-b43787e329aa.png" style="max-width: 100%; height: auto;">
 
 ### Android
 
@@ -45,7 +45,7 @@ The design proposal from Fynn Godau to [overhaul the Annotations API on Android]
 
 Work on the Metal rendering backend has started, and the first important steps have been completed. The first one being: drawing nothing with Metal. And the second one being: drawing a triangle with Metal!
 
-<img src="triangle-metal.png" style="max-width: 100%; height: auto;">
+<img src="https://user-images.githubusercontent.com/23352538/257043837-0dc17470-e1e7-49d5-8042-890482671023.png" style="max-width: 100%; height: auto;">
 
 (Screenshot from Tim Sylvester showing a triangle rendered with Metal.)
 
