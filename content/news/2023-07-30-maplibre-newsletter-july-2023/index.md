@@ -65,4 +65,4 @@ Come by and get to know us in person.
 
 ## Next Up
 
-The Governing Board Elections 2023 are taking place August 24th, 2023. Please follow [this issue](https://github.com/maplibre/maplibre/issues/298) for all relevant news.
+The Governing Board Elections 2023 are taking place August 24th, 2023. Please follow [this issue](https://github.com/maplibre/maplibre/issues/298) for all relevant news. You can suggest a new Voting Member thru [this issue](https://github.com/maplibre/maplibre/issues/300).
