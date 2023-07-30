@@ -53,7 +53,7 @@ Work on the Metal rendering backend has started, and the first important steps h
 
 A pre-release of the new documentation site can be found [here](https://maplibre.org/maplibre-gl-js/docs/).
 
-In addition, we released [v3.2.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v3.2.0) and [v3.2.1](https://github.com/maplibre/maplibre-gl-js/releases/tag/v3.2.1).
+In addition, we released [v3.2.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v3.2.0) and [v3.2.1](https://github.com/maplibre/maplibre-gl-js/releases/tag/v3.2.1) with a lot of exciting new features and a lot of bug fixes. Click on the links above to see a detailed list of all the changes in each version.
 
 ## Events
 
