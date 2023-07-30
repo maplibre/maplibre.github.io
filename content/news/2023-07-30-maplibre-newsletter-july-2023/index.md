@@ -35,7 +35,7 @@ As mentioned during the Technical Steering Committee this month, we now exclusiv
 
 We are now running an iOS render test on an a real iOS device for every PR. Thanks to the credits we have from AWS this is possible. You should be greeted with a green checkmark from your friendly MapLibre Native Bot when making a PR:
 
-<img src="ios-render-test.png">
+<img src="ios-render-test.png" style="max-width: 100%; height: auto;">
 
 ### Android
 
@@ -45,7 +45,7 @@ The design proposal from Fynn Godau to [overhaul the Annotations API on Android]
 
 Work on the Metal rendering backend has started, and the first important steps have been completed. The first one being: drawing nothing with Metal. And the second one being: drawing a triangle with Metal!
 
-<img src="triangle-metal.png">
+<img src="triangle-metal.png" style="max-width: 100%; height: auto;">
 
 (Screenshot from Tim Sylvester showing a triangle rendered with Metal.)
 
