@@ -18,7 +18,7 @@ We want to emphasize [Markus Tremmel's](https://github.com/mactrem) input of pro
 
 ### Harfbuzz
 
-Harfbuzz has been introduced to render complex text. Check out [#1289](https://github.com/maplibre/maplibre-native/pull/1289) of [Wei Chen](https://github.com/alanchenboy).
+[Alan Wei Chen](https://github.com/alanchenboy) from the Grab Maps team opened a Pull Request to introduce Harfbuzz, the text shaping engine, in MapLibre Native. In the future this will allow to render Indic and South-East Asian languages such as Hindi or Khmer in MapLibre. Have a look at Alan's proposal and feel free to share your feedback at https://github.com/maplibre/maplibre-native/pull/1439!
 
 ### Renderer Modularization PRs
 
