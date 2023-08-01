@@ -18,7 +18,7 @@ We want to emphasize [Markus Tremmel's](https://github.com/mactrem) input of pro
 
 ### Harfbuzz
 
-[Alan Wei Chen](https://github.com/alanchenboy) has shared a demo using Harfbuzz to render complex text. Check out [#1289](https://github.com/maplibre/maplibre-native/pull/1439).
+[Alan Wei Chen](https://github.com/alanchenboy) has shared a demo using Harfbuzz to render complex text. Check out [#1439](https://github.com/maplibre/maplibre-native/pull/1439).
 
 ### Renderer Modularization PRs
 
