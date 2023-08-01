@@ -12,17 +12,17 @@ draft: false
 
 ### COVTiles
 
-We want to emphasize [Markus Tremmel's](https://github.com/mactrem) input of prototyping a new vector tile format called [COVTiles](https://github.com/mactrem/cov-tiles#cloud-optimized-vector-tiles-covtiles)
+We want to emphasize [Markus Tremmel's](https://github.com/mactrem) input of prototyping a new vector tile format called [COVTiles](https://github.com/mactrem/cov-tiles#cloud-optimized-vector-tiles-covtiles).
 
 ## MapLibre Native
 
 ### Harfbuzz
 
-Harfbuzz has been introduced to render complex text. Check out [#1289](https://github.com/maplibre/maplibre-native/pull/1289) of [Wei Chen](https://github.com/alanchenboy).
+[Alan Wei Chen](https://github.com/alanchenboy) has shared a demo using Harfbuzz to render complex text. Check out [#1289](https://github.com/maplibre/maplibre-native/pull/1289).
 
 ### Renderer Modularization PRs
 
-The new Modularized renderer architecture based on Drawables is being merged. The `topic/drawable` will be merged into `topic/drawable-reviewed`. The last improvement and fixes will be made on this branch, and then we will merge the changes into `main`. The legacy renderer pass will remain active until the Drawable renderer pass is stable enough. At that point, we will flip the switch and eventually the legacy renderer code will be removed. If you are interested in following along or make code reviews, please see an overview of the relevant PRs here: maplibre/maplibre-native#1389
+The new Modularized renderer architecture based on Drawables is being merged. The `topic/drawable` will be merged into `topic/drawable-reviewed`. The last improvement and fixes will be made on this branch, and then we will merge the changes into `main`. The legacy renderer pass will remain active until the Drawable renderer pass is stable enough. At that point, we will flip the switch and eventually the legacy renderer code will be removed. If you are interested in following along or make code reviews, please see an overview of the relevant PRs [on GitHub](https://github.com/maplibre/maplibre-native/issues/1389).
 
 - [Original Design Proposal](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2022-10-27-rendering-modularization.md)
 - [MapLibre Phase 1 Design: Results](https://docs.google.com/document/d/1QtsUgDyD-Rt1McvJFz7HbHvEKli3tRVfxdW7fLDF-g8/edit#heading=h.dwpgby211stb)
