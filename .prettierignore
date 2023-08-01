@@ -14,3 +14,4 @@ static/files
 public
 
 render-heading.html
+layouts/_default/_markup/render-link.html
