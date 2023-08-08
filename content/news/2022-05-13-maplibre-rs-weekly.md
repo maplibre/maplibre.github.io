@@ -68,4 +68,4 @@ Some architectural discussions:
 ### 👋 New Contributors
 
 - {{< github-user iakev >}} - For resolving `.unwrap()`s in the code
-- {{< github-user neimsaci >}} - For adding contributors to the README
+- neimsaci - For adding contributors to the README
