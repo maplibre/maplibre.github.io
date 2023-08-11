@@ -8,7 +8,7 @@ draft: false
 
 Radar is joining the MapLibre Sponsorship Program as a Silver Sponsor.
 
-<img src="https://user-images.githubusercontent.com/23352538/260055940-f64730b0-eed8-4c3a-8aa2-6009b0056a61.png" width="100%" />
+<img src="https://user-images.githubusercontent.com/74932975/260068393-4b267b2c-a4f9-4be1-8997-2b8c1d88825e.png" width="100%" />
 
 [Tim Julien](https://github.com/tjulien), CTO at Radar, was so kind to share a few insights into Radar and its relationship to MapLibre below:
 
