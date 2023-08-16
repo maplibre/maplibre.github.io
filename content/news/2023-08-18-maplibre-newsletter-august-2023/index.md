@@ -14,4 +14,8 @@ draft: false
 
 ## MapLibre GL JS
 
+Versions 3.2.1 and 3.3.0 were released this month.
+We've added a new style spec property and implementation called `text-variable-anchor-offset` which is very exciting!
+We've improved the docs by removing some internal classes.
+
 ## Events
