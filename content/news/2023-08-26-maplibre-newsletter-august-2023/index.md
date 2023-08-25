@@ -58,7 +58,11 @@ We've added a new style spec property and implementation called `text-variable-a
 
 ## Events
 
+### State of the Map Europe
+
 MapLibre will be represented by [Bart Louwers](https://github.com/louwers) and [Luke Seelenbinder](https://github.com/lseelenbinder) at [State of the Map Europe](https://stateofthemap.eu/) in [Antwerp](https://www.openstreetmap.org/search?query=Filip%20Williotstraat%209%2C%202600%20Antwerpen%2C%20Belgien#map=19/51.18690/4.43596) November 10-12th, 2023.
+
+### FOSS4G (Seoul)
 
 For late November, [Jashanpreet Singh](https://github.com/jashanbhullar) plans to hold a talk on the state of Maplibre at [FOSS4G in Seoul](https://foss4g.asia/2023/).
 
