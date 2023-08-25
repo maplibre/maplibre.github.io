@@ -10,7 +10,7 @@ draft: false
 
 ## Highlights
 
-## Governing Board Elections
+### Governing Board Elections
 
 We want to thank each and every of our (49 new) [Voting Members](https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md) for their vote and are looking forward to a next great year with our vibrant community. The result of the election will be published separately next week.
 
