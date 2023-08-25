@@ -1,6 +1,6 @@
 ---
 title: "MapLibre Newsletter August 2023"
-date: 2023-08-18
+date: 2023-08-26
 categories: ["newsletter"]
 authors: [duje]
 draft: false
@@ -12,7 +12,7 @@ draft: false
 
 ## Governing Board Elections
 
-We want to thank each and every of our (49 new) Voting Member for their vote and are looking forward to a next great year with our vibrant community. The result of the election will be published separately next week.
+We want to thank each and every of our (49 new) [Voting Members](https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md) for their vote and are looking forward to a next great year with our vibrant community. The result of the election will be published separately next week.
 
 ## MapLibre Native
 
@@ -28,7 +28,9 @@ After we are confident that the new renderer is stable, another PR will be creat
 
 The architectural changes part of the modularized renderer are paying off, since the Metal team is now implementing the Metal renderer at an impressive pace, with barely any changes needed to the now platform agnostic layers. Keep an eye on the incoming PRs and the [project board](https://github.com/orgs/maplibre/projects/8) to stay updated on the progress.
 
-https://github-production-user-asset-6210df.s3.amazonaws.com/649392/262630734-f606fea1-ccc1-4cbb-8d67-0837bbe824be.mov
+<video controls style="max-width: 100%;">
+  <source src="https://github-production-user-asset-6210df.s3.amazonaws.com/649392/262630734-f606fea1-ccc1-4cbb-8d67-0837bbe824be.mov" />
+</video>
 
 *Video from Alex Cristici showing the Heatmap layer rendered with Metal*
 
@@ -42,7 +44,7 @@ https://github-production-user-asset-6210df.s3.amazonaws.com/649392/262630734-f6
 
 Ian Wagner showed a demo using SwiftUI to declaratively control MapLibre Native. He is very interested in your feedback. Check out the [repository](https://github.com/stadiamaps/maplibre-swiftui-dsl-playground) and the short demo below.
 
-https://github-production-user-asset-6210df.s3.amazonaws.com/649392/262635495-5969a2f7-3334-414d-bf19-45ab3ae5aae6.gif
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/649392/262635495-5969a2f7-3334-414d-bf19-45ab3ae5aae6.gif" style="max-width: 100%; height: auto;">
 
 ## Android
 
@@ -57,5 +59,7 @@ We've added a new style spec property and implementation called `text-variable-a
 ## Events
 
 MapLibre will be represented by [Bart Louwers](https://github.com/louwers) and [Luke Seelenbinder](https://github.com/lseelenbinder) at [State of the Map Europe](https://stateofthemap.eu/) in [Antwerp](https://www.openstreetmap.org/search?query=Filip%20Williotstraat%209%2C%202600%20Antwerpen%2C%20Belgien#map=19/51.18690/4.43596) November 10-12th, 2023.
+
+For late November, [Jashanpreet Singh](https://github.com/jashanbhullar) plans to hold a talk on the state of Maplibre at [FOSS4G in Seoul](https://foss4g.asia/2023/).
 
 Come by and get to know us in person.
