@@ -40,13 +40,13 @@ The architectural changes part of the modularized renderer are paying off, since
 - The C++ Unit Tests are now running on a real iOS device as part of the PR checks.
 - CodeQL code scanning has been enabled for C++ code. This mitigation strategy has been added to the [security policy](https://github.com/maplibre/maplibre-native/security/policy) and a tag was created to keep track of potential [security](https://github.com/maplibre/maplibre-native/labels/security) improvements.
 
-## iOS
+### iOS
 
 Ian Wagner showed a demo using SwiftUI to declaratively control MapLibre Native. He is very interested in your feedback. Check out the [repository](https://github.com/stadiamaps/maplibre-swiftui-dsl-playground) and the short demo below.
 
 <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/649392/262635495-5969a2f7-3334-414d-bf19-45ab3ae5aae6.gif" style="max-width: 100%; height: auto;">
 
-## Android
+### Android
 
 Fynn Godau has outlined a detailed plan to [revamp and modernize the annotations API on Android](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2023-06-17-android-annotations.md). He will use a feature branch until the changes are complete. Keep an eye [on his PRs](https://github.com/maplibre/maplibre-native/pulls?q=is%3Apr+is%3Aopen+label%3Aandroid+author%3Afynngodau). Reviews and comments welcome.
 
