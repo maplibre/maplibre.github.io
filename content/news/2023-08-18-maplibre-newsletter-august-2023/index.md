@@ -10,12 +10,52 @@ draft: false
 
 ## Highlights
 
+## Governing Board Elections
+
+We want to thank each and every of our (49 new) Voting Member for their vote and are looking forward to a next great year with our vibrant community. The result of the election will be published separately next week.
+
 ## MapLibre Native
+
+### Drawable
+
+The new modularized renderer [has been reviewed](https://github.com/maplibre/maplibre-native/issues/1389). This happened in three stages: first the architectural changes were reviewed (new concepts), then these were tied into the exiting rendering loop in a another PR and finally a PR that contained all updates layers that update `Drawable`s. There are some [Q&A meeting notes](https://github.com/maplibre/maplibre-native/discussions/1532) available for the last PR for those interested.
+
+The next step is to check in the now reviewed `topic/drawable` branch into `main`. This will likely happen before the end of August, and requires fixing the last remaining rendering inconsistencies. The code of the legacy renderer is left in place. Using a build config the new Drawable renderer can be activated. At this point we will make pre-releases for at least Android and iOS and invite the community to test out these pre-releases in their real world apps and projects.
+
+After we are confident that the new renderer is stable, another PR will be created that enables the drawable renderer by default. At some point in the future the code of the legacy renderer can be removed altogether.
+
+### Metal
+
+The architectural changes part of the modularized renderer are paying off, since the Metal team is now implementing the Metal renderer at an impressive pace, with barely any changes needed to the now platform agnostic layers. Keep an eye on the incoming PRs and the [project board](https://github.com/orgs/maplibre/projects/8) to stay updated on the progress.
+
+https://github-production-user-asset-6210df.s3.amazonaws.com/649392/262630734-f606fea1-ccc1-4cbb-8d67-0837bbe824be.mov
+
+*Video from Alex Cristici showing the Heatmap layer rendered with Metal*
+
+### General
+
+- We have been accepted into the AWS Open Source Credits Program, with a very generous $ 25.000 credits available for the MapLibre project the coming 12 months.
+- The C++ Unit Tests are now running on a real iOS device as part of the PR checks.
+- CodeQL code scanning has been enabled for C++ code. This mitigation strategy has been added to the [security policy](https://github.com/maplibre/maplibre-native/security/policy) and a tag was created to keep track of potential [security](https://github.com/maplibre/maplibre-native/labels/security) improvements.
+
+## iOS
+
+Ian Wagner showed a demo using SwiftUI to declaratively control MapLibre Native. He is very interested in your feedback. Check out the [repository](https://github.com/stadiamaps/maplibre-swiftui-dsl-playground) and the short demo below.
+
+https://github-production-user-asset-6210df.s3.amazonaws.com/649392/262635495-5969a2f7-3334-414d-bf19-45ab3ae5aae6.gif
+
+## Android
+
+Fynn Godau has outlined a detailed plan to [revamp and modernize the annotations API on Android](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2023-06-17-android-annotations.md). He will use a feature branch until the changes are complete. Keep an eye [on his PRs](https://github.com/maplibre/maplibre-native/pulls?q=is%3Apr+is%3Aopen+label%3Aandroid+author%3Afynngodau). Reviews and comments welcome.
 
 ## MapLibre GL JS
 
-Versions 3.2.1 and 3.3.0 were released this month.
-We've added a new style spec property and implementation called `text-variable-anchor-offset` which is very exciting!
-We've improved the docs by removing some internal classes.
+We've added a new style spec property and implementation called `text-variable-anchor-offset` which is very exciting! Check out our demo [here](https://maplibre.org/maplibre-gl-js/docs/examples/variable-offset-label-placement/). [This](https://github.com/maplibre/maplibre-style-spec/issues/112) has been the initial design proposal. Also, we've improved the docs by removing some internal classes.
+
+[v3.2.2](https://github.com/maplibre/maplibre-gl-js/releases/tag/v3.2.2) and [v3.3.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v3.3.0) were released this month.
 
 ## Events
+
+MapLibre will be represented by [Bart Louwers](https://github.com/louwers) and [Luke Seelenbinder](https://github.com/lseelenbinder) at [State of the Map Europe](https://stateofthemap.eu/) in [Antwerp](https://www.openstreetmap.org/search?query=Filip%20Williotstraat%209%2C%202600%20Antwerpen%2C%20Belgien#map=19/51.18690/4.43596) November 10-12th, 2023.
+
+Come by and get to know us in person.
