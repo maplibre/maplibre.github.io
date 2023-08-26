@@ -52,13 +52,19 @@ Fynn Godau has outlined a detailed plan to [revamp and modernize the annotations
 
 ## MapLibre GL JS
 
+### text-variable-anchor-offset
+
 <video controls style="max-width: 100%;">
   <source src="https://github-production-user-asset-6210df.s3.amazonaws.com/74932975/263372435-a4bd0397-287a-403f-bffa-da6aa8ba70df.mov" />
 </video>
 
-We've added a new style spec property and implementation called `text-variable-anchor-offset` which is very exciting! Check out our demo [here](https://maplibre.org/maplibre-gl-js/docs/examples/variable-offset-label-placement/). [This](https://github.com/maplibre/maplibre-style-spec/issues/112) has been the initial design proposal. Also, we've improved the docs by removing some internal classes.
+We've added a new style spec property and implementation called `text-variable-anchor-offset` which is very exciting! Check out our demo [here](https://maplibre.org/maplibre-gl-js/docs/examples/variable-offset-label-placement/). [This](https://github.com/maplibre/maplibre-style-spec/issues/112) has been the initial design proposal. 
 
-[v3.2.2](https://github.com/maplibre/maplibre-gl-js/releases/tag/v3.2.2) and [v3.3.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v3.3.0) were released this month.
+### General
+
+- We've improved the docs by removing some internal classes.
+
+- [v3.2.2](https://github.com/maplibre/maplibre-gl-js/releases/tag/v3.2.2) and [v3.3.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v3.3.0) were released this month.
 
 ## Events
 
