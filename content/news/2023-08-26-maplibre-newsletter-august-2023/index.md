@@ -58,6 +58,10 @@ We've added a new style spec property and implementation called `text-variable-a
 
 ## Events
 
+### FOSS4G NL
+
+We would like to remind you of what we have mentioned in our newsletter in July: [Bart Louwers](https://github.com/louwers) will be [holding a talk](https://www.linkedin.com/feed/update/urn:li:ugcPost:7090276373935620096/) at [FOSS4G NL](https://foss4g.nl/) in [Middelburg](https://www.openstreetmap.org/search?query=Middelburg#map=13/51.5053/3.6178) September 14th, 2023.
+
 ### State of the Map Europe
 
 MapLibre will be represented by [Bart Louwers](https://github.com/louwers) and [Luke Seelenbinder](https://github.com/lseelenbinder) at [State of the Map Europe](https://stateofthemap.eu/) in [Antwerp](https://www.openstreetmap.org/search?query=Filip%20Williotstraat%209%2C%202600%20Antwerpen%2C%20Belgien#map=19/51.18690/4.43596) November 10-12th, 2023.
