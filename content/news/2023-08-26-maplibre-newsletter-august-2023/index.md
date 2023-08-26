@@ -32,7 +32,7 @@ The architectural changes part of the modularized renderer are paying off, since
   <source src="https://github-production-user-asset-6210df.s3.amazonaws.com/649392/262630734-f606fea1-ccc1-4cbb-8d67-0837bbe824be.mov" />
 </video>
 
-*Video from Alex Cristici showing the Heatmap layer rendered with Metal*
+_Video from Alex Cristici showing the Heatmap layer rendered with Metal_
 
 ### General
 
