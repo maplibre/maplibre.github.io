@@ -45,6 +45,7 @@ _Video from Alex Cristici showing the Heatmap layer rendered with Metal_
 Ian Wagner showed a demo using SwiftUI to declaratively control MapLibre Native. He is very interested in your feedback. Check out the [repository](https://github.com/stadiamaps/maplibre-swiftui-dsl-playground) and the short demo below.
 
 <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/649392/262635495-5969a2f7-3334-414d-bf19-45ab3ae5aae6.gif" style="max-width: 100%; height: auto;">
+<br><br>
 
 ### Android
 
@@ -58,7 +59,7 @@ Fynn Godau has outlined a detailed plan to [revamp and modernize the annotations
   <source src="https://github-production-user-asset-6210df.s3.amazonaws.com/74932975/263372435-a4bd0397-287a-403f-bffa-da6aa8ba70df.mov" />
 </video>
 
-We've added a new style spec property and implementation called `text-variable-anchor-offset` which is very exciting! Check out our demo [here](https://maplibre.org/maplibre-gl-js/docs/examples/variable-offset-label-placement/). [This](https://github.com/maplibre/maplibre-style-spec/issues/112) has been the initial design proposal. 
+We've added a new style spec property and implementation called `text-variable-anchor-offset` which is very exciting! Check out our demo [here](https://maplibre.org/maplibre-gl-js/docs/examples/variable-offset-label-placement/). [This](https://github.com/maplibre/maplibre-style-spec/issues/112) has been the initial design proposal.
 
 ### General
 
