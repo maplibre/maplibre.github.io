@@ -6,15 +6,6 @@
     target="_blank" rel="noopener"
   {{ end }}
 >
-  {{- if strings.HasPrefix .Destination "https://github.com/" -}}
-    {{- $url_parts := split (replace .Destination "https://github.com/" "") "/" -}}
-    {{- if eq (len $url_parts) 4 -}}
-      #{{- index $url_parts (sub (len  $url_parts) 1) -}}
-    {{- else -}}
-      {{- .Text | safeHTML -}}
-    {{- end -}}
-  {{- else -}}
-    {{- .Text | safeHTML -}}
-  {{- end -}}
+  {{- .Text | safeHTML -}}
 </a>
 {{- /* This comment removes trailing newlines. */ -}}
