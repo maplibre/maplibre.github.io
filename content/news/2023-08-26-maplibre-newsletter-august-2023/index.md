@@ -36,7 +36,6 @@ _Video from Alex Cristici showing the Heatmap layer rendered with Metal_
 
 ### General
 
-- We have been accepted into the AWS Open Source Credits Program, with a very generous $ 25.000 credits available for the MapLibre project the coming 12 months.
 - The C++ Unit Tests are now running on a real iOS device as part of the PR checks.
 - CodeQL code scanning has been enabled for C++ code. This mitigation strategy has been added to the [security policy](https://github.com/maplibre/maplibre-native/security/policy) and a tag was created to keep track of potential [security](https://github.com/maplibre/maplibre-native/labels/security) improvements.
 
