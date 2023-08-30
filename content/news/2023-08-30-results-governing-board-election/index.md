@@ -6,12 +6,10 @@ authors: [wipfli]
 draft: false
 ---
 
-
 The MapLibre Governing Board Elections are finished - all existing Board members have been reelected.
 
 <hr/>
 <h1 class="text-center">MapLibre Governing Board 2023</h1>
-
 
 <div class="container">
   <div class="row justify-content-center">
@@ -59,7 +57,6 @@ The MapLibre Governing Board Elections are finished - all existing Board members
 </div>
 
 <hr/>
-
 
 Congratulations to the elected Board members and a big thank you to Jonah Adkins for running for the Board as the only newcomer!
 
