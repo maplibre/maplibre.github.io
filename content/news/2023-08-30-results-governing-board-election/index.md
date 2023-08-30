@@ -64,6 +64,6 @@ Prior to the Governing Board Elections, 50 new Voting Members were nominated and
 
 Out of the 93 Voting Members, 58 participated in the vote, resulting in a voter turnout of 62 percent.
 
-Since the voting body is a small group of people, we used ranked-choice voting based on the Meek STV method. For a detailed run-down of the calculation, see the [voting results](https://github.com/maplibre/maplibre/blob/main/2023-polls/MapLibre-Governing-Board-Election-Results.pdf).
+Since the voting body is a small group of people, we used ranked-choice voting based on the Meek STV method. For a detailed run-down of the calculation, see the [voting results](https://www.opavote.com/results/5696407649386496) ([mirror](https://github.com/maplibre/maplibre/blob/main/2023-polls/MapLibre-Governing-Board-Election-Results.pdf)).
 
 Thanks to all Voting Members for participating in the election, and thanks to all new Governing Board members for volunteering your time for MapLibre!
