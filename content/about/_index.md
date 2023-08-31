@@ -13,7 +13,7 @@ weight: 10
     elected by the
     <a href="https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md"
       >Voting Members</a
-    >, a group who represents the broader community, in August 2022 and is in
+    >, a group who represents the broader community, in August 2023 and is in
     charge to steer the Organization. The project coordinator is
     <a href="https://github.com/wipfli">Oliver Wipfli</a> who supports the
     Governing Board in organizational tasks.
