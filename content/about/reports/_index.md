@@ -9,6 +9,10 @@ MapLibre uses OpenCollective for transparent accounting, see https://opencollect
 
 [Open Source Collective](https://opencollective.com/opensource), a 501(c)(6) registered non-profit organization based in Covina, CA (USA), is MapLibre's fiscal host.
 
+#### Q2 2023
+
+- [Financial-Report-Q2-2023.pdf](Financial-Report-Q2-2023.pdf)
+
 #### Q1 2023
 
 - [Financial-Report-Q1-2023.pdf](Financial-Report-Q1-2023.pdf)
