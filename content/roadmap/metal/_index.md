@@ -20,7 +20,7 @@ Refer to the [MapLibre Native Metal Project Board](https://github.com/orgs/mapli
 
 ## Status (2023-09-05)
 
-The rendering modularization effort is now mostly [complete](https://github.com/maplibre/maplibre-native/issues/1389). The new renderer can enabled with a feature flag, the legacy renderer is still the default at this point. The new render will continue to receive stability and [performance](https://github.com/maplibre/maplibre-native/issues/1548) upgrades and will be 'field tested' by various stakeholders before it will become the default.
+The rendering modularization effort is now mostly [complete](https://github.com/maplibre/maplibre-native/issues/1389). The new renderer can be enabled with a feature flag, the legacy renderer is still the default at this point. The new render will continue to receive stability and [performance](https://github.com/maplibre/maplibre-native/issues/1548) upgrades and will be 'field tested' by various stakeholders before it will become the default.
 
 Now that the architectural changes have been completed, the focus of the team has shifted to implementing a Metal renderer. The new architecture seems to be paying off, because they have produced a working Metal renderer in lightning speed. The first adventurous [alpha testers](https://github.com/maplibre/maplibre-native/issues/1609) of Metal support in MapLibre Native can get their hands on it sometime in September 2023.
 
