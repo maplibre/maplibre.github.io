@@ -20,7 +20,7 @@ function communityMap(container, community) {
       compact: false,
       customAttribution:
         'OpenStreetMap contributors. | <a href="https://github.com/maplibre/maplibre.github.io">Edit on GitHub.</a>',
-    }),
+    })
   );
 
   map.addControl(new NavigationControl());
@@ -33,7 +33,7 @@ function communityMap(container, community) {
       [Math.min(...lngs), Math.min(...lats)],
       [Math.max(...lngs), Math.max(...lats)],
     ],
-    { padding: 50 },
+    { padding: 50 }
   );
 
   community.map((person) => {
@@ -175,14 +175,14 @@ function terrain3dMap(container) {
       visualizePitch: true,
       showZoom: true,
       showCompass: true,
-    }),
+    })
   );
 
   map.addControl(
     new TerrainControl({
       source: "terrainSource",
       exaggeration: 1,
-    }),
+    })
   );
 }
 
