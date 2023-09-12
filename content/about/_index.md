@@ -116,17 +116,6 @@ weight: 10
         <h3 class="m-3">Oliver Wipfli</h3>
         <p>Coordinator</p>  
     </div>
-    <div class="col-xl-2 text-center">
-      <a href="duje">
-      <img
-        src="https://avatars.githubusercontent.com/u/23352538?v=4"
-        width="150"
-        class="rounded-circle mt-3"
-      />
-    </a>
-      <h3 class="m-3">Duje Schröder</h3>
-      Coordinator Assistant
-    </div>
   </div>
 </div>
 
