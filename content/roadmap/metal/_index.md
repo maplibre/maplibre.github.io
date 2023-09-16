@@ -18,19 +18,27 @@ Read the Design Proposals on GitHub:
 
 Refer to the [MapLibre Native Metal Project Board](https://github.com/orgs/maplibre/projects/8) on GitHub for the most up-to-date status.
 
-## Status (2023-09-05)
+## Status (September 2023)
 
 The rendering modularization effort is now mostly [complete](https://github.com/maplibre/maplibre-native/issues/1389). The new renderer can be enabled with a feature flag, the legacy renderer is still the default at this point. The new render will continue to receive stability and [performance](https://github.com/maplibre/maplibre-native/issues/1548) upgrades and will be 'field tested' by various stakeholders before it will become the default.
 
 Now that the architectural changes have been completed, the focus of the team has shifted to implementing a Metal renderer. The new architecture seems to be paying off, because they have produced a working Metal renderer in lightning speed. The first adventurous [alpha testers](https://github.com/maplibre/maplibre-native/issues/1609) of Metal support in MapLibre Native can get their hands on it sometime in September 2023.
 
-## Status (2023-03-24)
+## Status (August 2023)
 
-The Metal project team has started working with the goal of delivering a Metal beta release by the end of 2023. AWS and Meta are supporting this initiative.
+[MapLibre Native Metal August 2023 Status Report (pdf)](https://docs.google.com/viewer?url=https://github.com/maplibre/maplibre.github.io/files/12641198/August.2023.Status.pdf).
 
-## Status (2023-05-21)
+## Status (July 2023)
+
+[MapLibre Native  Metal July 2023 Status Report (pdf)](https://docs.google.com/viewer?url=https://github.com/maplibre/maplibre.github.io/files/12641196/July.2023.Status.pdf).
+
+## Status (May 2023)
 
 The Metal project is ongoing. Below are the updates:
 
 - All team members are now onboarded
 - Project Phase 1: Rendering Modularisation is underway with the goal of reaching a stable phase that will allow a pre-release, before going full steam on Metal implementation.
+
+## Status (March 2023)
+
+The Metal project team has started working with the goal of delivering a Metal beta release by the end of 2023. AWS and Meta are supporting this initiative.
