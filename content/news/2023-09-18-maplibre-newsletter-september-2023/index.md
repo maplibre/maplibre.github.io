@@ -41,6 +41,9 @@ Furthermore, there is an ongoing discussion about how to support more writing sy
 
 ## MapLibre GL JS
 
+We've released version 3.3.1 with a few minor bug fixes related to typings and improved license.txt file handling for packaging tools.
+
+
 ### Add subtitle...
 
 ## Upcoming Events
