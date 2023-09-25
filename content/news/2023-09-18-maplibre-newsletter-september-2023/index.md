@@ -67,6 +67,6 @@ The MapLibre User Group Japan will organize an in-person meetup in November. If 
 
 ### MapLibre Online Conference Day
 
-We plan to do an online conference day. The date is still to be defined, but if you are interested in giving a talk, you can fill out the following form already now: [https://forms.gle/AKg63TnASSWXfZi66](https://forms.gle/AKg63TnASSWXfZi66) 
+We plan to do an online conference day. The date is still to be defined, but if you are interested in giving a talk, you can fill out the following form already now: [https://forms.gle/AKg63TnASSWXfZi66](https://forms.gle/AKg63TnASSWXfZi66)
 
 More info on the conference day will follow in the MapLibre Slack channel, on social media, and here in the Newsletter.
