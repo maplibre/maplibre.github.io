@@ -25,6 +25,12 @@ Thank you all for promoting MapLibre at these events!
 
 <i>From left to right: Bart Louwers at FOSS4G NL, Yuri Astrakhan and Haowen You at the Open Visualization Collaborator Summit.</i>
 
+### Engineering Proposals by Wet Dog Weather
+
+Wet Dog Weather, the engineering contractor of AWS that led the Metal migration in MapLibre Native, has filed a series of engineering proposals, see [here](https://github.com/maplibre/maplibre/discussions?discussions_q=is%3Aopen+author%3Asjg-wdw+).
+
+The proposals include things like **Terrain 3D**, **Globe View**, and many other exciting features for MapLibre Native. If your company is interested in these features, get in touch with Steve Gifford, CEO of Wet Dog Weather, to discuss funding opportunities. You find him in the [MapLibre Slack channel](https://slack.openstreetmap.us/).
+
 ## MapLibre Style Specification
 
 Last month, several design proposals have been opened in the [MapLibre Style Spec repo on GitHub](https://github.com/maplibre/maplibre-style-spec). Here is an overview:
@@ -43,9 +49,6 @@ Furthermore, there is an ongoing discussion about how to support more writing sy
 
 We've released version 3.3.1 with a few minor bug fixes related to typings and improved license.txt file handling for packaging tools.
 
-
-### Add subtitle...
-
 ## Upcoming Events
 
 ### State of the Map Europe
@@ -57,6 +60,10 @@ MapLibre will be represented by [Bart Louwers](https://github.com/louwers) and [
 For late November, [Jashanpreet Singh](https://github.com/jashanbhullar) plans to hold a talk on the state of Maplibre at [FOSS4G in Seoul](https://foss4g.asia/2023/).
 
 Come by and get to know us in person.
+
+### MapLibre Meetup Japan
+
+The MapLibre User Group Japan will organize an in-person meetup in November. If you are interested in joining the meetup in Japan, contact Yasunori Kirimoto in the [MapLibre Slack channel](https://slack.openstreetmap.us/). They even have MapLibre t-shirts!
 
 ### MapLibre Online Conference Day
 
