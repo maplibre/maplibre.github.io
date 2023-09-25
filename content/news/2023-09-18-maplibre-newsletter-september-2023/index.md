@@ -2,7 +2,7 @@
 title: "MapLibre Newsletter September 2023"
 date: 2023-09-18
 categories: ["newsletter"]
-authors: [wipfli]
+authors: [wipfli, harel, bart]
 draft: false
 ---
 
@@ -16,7 +16,7 @@ It is already one year now that MapLibre has an elected Governing Board, and as 
 
 MapLibre was represented at two events in the last month:
 
-- Bart Louwers, Maintainer Native, gave a talk at [FOSS4G NL](https://foss4g.nl/) in Middelburg
+- Bart Louwers, Maintainer Native, gave a talk at [FOSS4G NL](https://foss4g.nl/) in Middelburg.
 - Yuri Astrakhan, MapLibre Governing Board Member, and Haowen You, Engineering Manager at AWS, gave talks at the [Open Visualization Collaborator Summit](https://deck.gl/events/new-york-summit-2023/) in New York City.
 
 Thank you all for promoting MapLibre at these events!
@@ -43,7 +43,19 @@ Furthermore, there is an ongoing discussion about how to support more writing sy
 
 ## MapLibre Native
 
-### Add subtitle...
+### Metal Port
+
+<img src="https://camo.githubusercontent.com/4b554e9a3a17846c585aab0acddb6ed2bc07f09a10dddf984cca212c2605d1b3/68747470733a2f2f6d61706c696272652e6f72672f6e6577732f323032332d30332d32332d6d6574616c2d70726f6a6563742d7465616d2d737461727465642f73637265656e73686f742e706e67" style="max-width: 300px" />
+
+On January 4th, 2022 Steve Gifford posted a [thread on GitHub Discussions](https://github.com/maplibre/maplibre-native/discussions/202): have we considered a [Metal](https://developer.apple.com/metal/) port? It seemed like a momentous effort at the time, and not just from an engineering perspective, because it was. Thanks to the persistence of some key players and the hard work of graphics engineers part the 'Metal team' this year, that Metal port is closer than ever. This month, we have pushed out a [pre-release](https://github.com/maplibre/maplibre-native/issues/1609) of MapLibre Native for iOS with Metal support. Thanks to everyone who gave it a spin thus far and that let us know their experiences with it. We will continue to push out pre-releases regularly as the last features are implemented and performance is further improved.
+
+### Android Annotations
+
+Fynn Godeau's work on a [user-friendly Kotlin-based Annotations API](https://github.com/maplibre/maplibre-native/issues/1491) is ongoing. We are highly appreciative of Fynn's work done as part of the [Modernization](https://maplibre.org/roadmap/modernize-codebase/) bounty direction. Also thanks to Artak Kalantarian for helping review some of this work.
+
+## iOS Modernization
+
+With the release of Swift 5.9 with seamless C++ interoperability and a powerful macro system, new avenues are opening up for [modernizing the iOS codebase](https://github.com/maplibre/maplibre-native/issues/1248). Ian Wagner is playing with some ideas. Join us in the `#maplibre-ios` channel on Slack or leave a comment on GitHub if you are interested in this as well.
 
 ## MapLibre GL JS
 
@@ -57,7 +69,7 @@ MapLibre will be represented by [Bart Louwers](https://github.com/louwers) and [
 
 ### FOSS4G (Seoul)
 
-For late November, [Jashanpreet Singh](https://github.com/jashanbhullar) plans to hold a talk on the state of Maplibre at [FOSS4G in Seoul](https://foss4g.asia/2023/).
+For late November, [Jashanpreet Singh](https://github.com/jashanbhullar) plans to hold a talk on the state of MapLibre at [FOSS4G in Seoul](https://foss4g.asia/2023/).
 
 Come by and get to know us in person.
 
