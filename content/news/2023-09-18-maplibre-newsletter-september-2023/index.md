@@ -37,7 +37,7 @@ Last month, several design proposals were opened in the [MapLibre Style Spec rep
 
 - Add a `pitch` style spec expression similar to the `zoom` expression. [#346](https://github.com/maplibre/maplibre-style-spec/issues/346).
 - Support arbitrary base and interval values in RasterDEM sources [#326](https://github.com/maplibre/maplibre-style-spec/issues/326).
-- Change default value for text-font to Noto Sans Regular [#311](https://github.com/maplibre/maplibre-style-spec/issues/311)
+- Change default value for text-font to Noto Sans Regular [#311](https://github.com/maplibre/maplibre-style-spec/issues/311).
 
 Furthermore, there is an ongoing discussion about how to support more writing systems such as Indic scripts with Harfbuzz text shaping. Read more [here](https://github.com/maplibre/maplibre-style-spec/discussions/312).
 
