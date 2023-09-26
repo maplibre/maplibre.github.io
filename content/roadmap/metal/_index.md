@@ -26,11 +26,11 @@ Now that the architectural changes have been completed, the focus of the team ha
 
 ## Status (August 2023)
 
-[MapLibre Native Metal August 2023 Status Report (pdf)](https://docs.google.com/viewer?url=https://github.com/maplibre/maplibre.github.io/files/12641198/August.2023.Status.pdf).
+[MapLibre Native Metal August 2023 Status Report (pdf)](https://github.com/maplibre/maplibre.github.io/files/12641198/August.2023.Status.pdf).
 
 ## Status (July 2023)
 
-[MapLibre Native Metal July 2023 Status Report (pdf)](https://docs.google.com/viewer?url=https://github.com/maplibre/maplibre.github.io/files/12641196/July.2023.Status.pdf).
+[MapLibre Native Metal July 2023 Status Report (pdf)](https://github.com/maplibre/maplibre.github.io/files/12641196/July.2023.Status.pdf).
 
 ## Status (May 2023)
 
