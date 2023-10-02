@@ -18,6 +18,10 @@ Read the Design Proposals on GitHub:
 
 Refer to the [MapLibre Native Metal Project Board](https://github.com/orgs/maplibre/projects/8) on GitHub for the most up-to-date status.
 
+## Status (August 2023)
+
+[MapLibre Native Metal August 2023 Status Report (pdf)](/pdfs/2023-09-metal-status.pdf).
+
 ## Status (September 2023)
 
 The rendering modularization effort is now mostly [complete](https://github.com/maplibre/maplibre-native/issues/1389). The new renderer can be enabled with a feature flag, the legacy renderer is still the default at this point. The new render will continue to receive stability and [performance](https://github.com/maplibre/maplibre-native/issues/1548) upgrades and will be 'field tested' by various stakeholders before it will become the default.
@@ -26,11 +30,11 @@ Now that the architectural changes have been completed, the focus of the team ha
 
 ## Status (August 2023)
 
-[MapLibre Native Metal August 2023 Status Report (pdf)](https://docs.google.com/viewer?url=https://github.com/maplibre/maplibre.github.io/files/12641198/August.2023.Status.pdf).
+[MapLibre Native Metal August 2023 Status Report (pdf)](/pdfs/2023-08-metal-status.pdf).
 
 ## Status (July 2023)
 
-[MapLibre Native Metal July 2023 Status Report (pdf)](https://docs.google.com/viewer?url=https://github.com/maplibre/maplibre.github.io/files/12641196/July.2023.Status.pdf).
+[MapLibre Native Metal July 2023 Status Report (pdf)](/pdfs/2023-07-metal-status.pdf).
 
 ## Status (May 2023)
 
