@@ -3,12 +3,12 @@ title: About
 weight: 10
 ---
 
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-sm-10">
+
+
   <p class="text-center">
-    The MapLibre Organization is an umbrella for open-source mapping libraries
-    with the two central rendering projects being
-    <a href="https://github.com/maplibre/maplibre-gl-js">MapLibre GL JS</a> and
-    <a href="https://github.com/maplibre/maplibre-native">MapLibre Native</a>
-    which are surrounded by an ecosystem of plugins and tools to generate maps.
     The MapLibre <a href="https://maplibre.org/about/">Governing Board</a> was
     elected by the
     <a href="https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md"
@@ -24,53 +24,53 @@ weight: 10
 <h1 class="text-center">Governing Board</h1>
 
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-xl-2 text-center">
+  <div class="justify-content-center" style="display:flex; gap: 20px; flex-wrap: wrap;">
+    <div class="text-center">
       <a href="birk">
       <img
         src="https://avatars.githubusercontent.com/u/74932975?v=4"
         width="150"
-        class="rounded-circle mt-3"
+        class="rounded-circle mt-3 border  border-white"
       />
     </a>
         <h3 class="m-3">Birk Skyum</h3>
     </div>
-    <div class="col-xl-2 text-center">
+    <div class="text-center">
       <a href="harel">
       <img
         src="https://avatars.githubusercontent.com/u/3269297?v=4"
         width="150"
-        class="rounded-circle mt-3"
+        class="rounded-circle mt-3 border  border-white"
       />
     </a>
       <h3 class="m-3">Harel Mazor</h3>
     </div>
-    <div class="col-xl-2 text-center">
+    <div class="text-center">
       <a href="luke">
       <img
         src="https://avatars.githubusercontent.com/u/157650?v=4"
         width="150"
-        class="rounded-circle mt-3"
+        class="rounded-circle mt-3 border  border-white"
       />
     </a>
         <h3 class="m-3">Luke Seelenbinder</h3>
     </div>
-    <div class="col-xl-2 text-center">
+    <div class="text-center">
       <a href="petr">
       <img
         src="https://avatars.githubusercontent.com/u/59284?v=4"
         width="150"
-        class="rounded-circle mt-3"
+        class="rounded-circle mt-3 border  border-white"
       />
     </a>
         <h3 class="m-3">Petr Pridal</h3>
     </div>
-    <div class="col-xl-2 text-center">
+    <div class="text-center">
       <a href="yuri">
       <img
         src="https://avatars.githubusercontent.com/u/1641515?v=4"
         width="150"
-        class="rounded-circle mt-3"
+        class="rounded-circle mt-3 border  border-white"
       />
     </a>
         <h3 class="m-3">Yuri Astrakhan</h3>
@@ -82,35 +82,35 @@ weight: 10
 <h1 class="text-center">Team</h1>
 
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-xl-2 text-center">
+  <div class="justify-content-center" style="display:flex; gap: 20px; flex-wrap: wrap;">
+    <div class="text-center">
       <a href="bart">
       <img
         src="https://avatars.githubusercontent.com/u/649392?v=4"
         width="150"
-        class="rounded-circle mt-3"
+        class="rounded-circle mt-3 border  border-white"
       />
     </a>
         <h3 class="m-3">Bart Louwers</h3>
         MapLibre Native Maintainer
     </div>
-    <div class="col-xl-2 text-center">
+    <div class="text-center">
       <a href="harel">
       <img
         src="https://avatars.githubusercontent.com/u/3269297?v=4"
         width="150"
-        class="rounded-circle mt-3"
+        class="rounded-circle mt-3 border  border-white"
       />
     </a>
       <h3 class="m-3">Harel Mazor</h3>
       MapLibre GL JS Maintainer
     </div>
-    <div class="col-xl-2 text-center">
+    <div class="text-center">
       <a href="oliver">
       <img
         src="https://avatars.githubusercontent.com/u/53421382?v=4"
         width="150"
-        class="rounded-circle mt-3"
+        class="rounded-circle mt-3 border  border-white"
       />
     </a>
         <h3 class="m-3">Oliver Wipfli</h3>
@@ -138,10 +138,16 @@ The MapLibre <a href="https://drive.google.com/file/d/1AIwWuNw4BbN0qCUIw_WDk9VTM
 <h1 class="text-center">Alumni</h1>
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-xl-2 text-center">
-        <h3 class="m-3">Ovi Voda</h3>
+    <div class="col-12 text-center">
+        <p class="m-3"><a href="https://github.com/duje">Duje Schröder</a> - Assistant Coordinator</p>
+        <p class="m-3"><a href="https://github.com/ovivoda">Ovidiu Voda</a> - MapLibre Native Maintainer</p>
     </div>
   </div>
 </div>
 
 </div>
+
+</div>
+</div>
+</div>
+
