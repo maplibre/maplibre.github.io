@@ -30,7 +30,9 @@
   {{ end }}
   {{ with .Params.documentation }}
     {{ range . }}
-      <span class="badge bg-primary text-white"><a href="{{ .url }}">{{ .name }}</a></span>
+      <span class="badge bg-primary text-white"
+        ><a href="{{ .url }}">{{ .name }}</a></span
+      >
     {{ end }}
   {{ end }}
 </div>
