@@ -2,17 +2,13 @@ $background: rgb(17, 23, 37);
 
 body {
   background-color: $background;
-
 }
 
-
-
-
 .badge {
-
   background-color: rgb(48, 111, 202) !important;
 
-  path, a {
+  path,
+  a {
     color: white !important;
     fill: white !important;
   }
@@ -27,7 +23,7 @@ body {
   /* top: 58px;
   bottom: 0; */
   // max-width: 800px;
-  
+
   height: 300px;
   border-radius: 10px;
 }
@@ -39,7 +35,7 @@ body {
   flex-direction: column;
 
   width: 100%;
-  
+
   align-items: center;
   justify-content: center;
   gap: 30px;
@@ -51,8 +47,6 @@ hr {
   border: none !important;
   opacity: 1;
 }
-
-
 
 main a {
   word-break: break-all;
@@ -106,9 +100,6 @@ main a {
   }
 }
 
-
-
-
 #sponsor-list {
   img {
     background-color: white;
@@ -117,7 +108,6 @@ main a {
     aspect-ratio: 2;
   }
 }
-
 
 ul.projects {
   list-style: none;

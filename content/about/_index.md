@@ -7,7 +7,6 @@ weight: 10
 <div class="row justify-content-center">
 <div class="col-sm-10">
 
-
   <p class="text-center">
     The MapLibre <a href="https://maplibre.org/about/">Governing Board</a> was
     elected by the
@@ -150,4 +149,3 @@ The MapLibre <a href="https://drive.google.com/file/d/1AIwWuNw4BbN0qCUIw_WDk9VTM
 </div>
 </div>
 </div>
-
