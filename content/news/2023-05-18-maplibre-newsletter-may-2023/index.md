@@ -20,7 +20,7 @@ We would like to thank our first sponsor [Mierune](https://www.mierune.co.jp/) f
 
 #### MapLibre Innovation Lab
 
-Many real-world applications have been built with MapLibre. As suggested in https://github.com/maplibre/maplibre/discussions/242 it is about bringing the Community together. Implementing new ideas is what will make MapLibre thrive further. We want to recognize all of your efforts, collectively, and so decided to expand on the idea of the MapLibre Innovation Lab - stay tuned.
+Many real-world applications have been built with MapLibre. As suggested [here](https://github.com/maplibre/maplibre/discussions/242) it is about bringing the Community together. Implementing new ideas is what will make MapLibre thrive further. We want to recognize all of your efforts, collectively, and so decided to expand on the idea of the MapLibre Innovation Lab - stay tuned.
 
 #### OGC Sprint
 

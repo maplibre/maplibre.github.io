@@ -10,7 +10,7 @@ draft: false
 
 ## Highlights
 
-<img src="https://maplibre.org/news/2023-04-06-komoot-becomes-a-maplibre-silver-sponsor/maplibre-komoot-logo.svg" width=450>
+<img style="max-width:100%;" src="https://maplibre.org/news/2023-04-06-komoot-becomes-a-maplibre-silver-sponsor/maplibre-komoot-logo.svg" width=450>
 
 **Komoot** joined the MapLibre Sponsorship Program as a Silver Sponsor. Welcome komoot, we are glad to have you in the MapLibre community! Read the [news announcement...](https://maplibre.org/news/2023-04-06-komoot-becomes-a-maplibre-silver-sponsor/)
 
@@ -18,10 +18,10 @@ We released version 2.0.0 of the **Android Navigation** library. Big thanks to R
 
 The **Metal Project Team** has now officially started to work on the MapLibre Native migration from OpenGL to Metal on Apple devices. Steve Gifford wrote a [blog post](https://www.wetdogweather.com/blog/maplibre-upgrade) about the role of WetDogWeather in this migration. Our goal is to get a Metal Beta release out by the end of 2023. Read more about it in our [news announcement...](https://maplibre.org/news/2023-03-23-metal-project-team-started/)
 
-MapLibre is happy to host a new repository: `flutter-maplibre-gl`! This project provides MapLibre bindings for Flutter. [https://github.com/maplibre/flutter-maplibre-gl](https://github.com/maplibre/flutter-maplibre-gl)
+MapLibre is happy to host a new repository: `flutter-maplibre-gl`! This project provides MapLibre bindings for Flutter. [flutter-maplibre-gl](https://github.com/maplibre/flutter-maplibre-gl)
 
 <a href="https://www.npmjs.com/package/maplibre-gl">
-  <img src="npm-200k.png">
+  <img style="max-width:100%;" src="npm-200k.png">
 </a>
 
 Finally, MapLibre GL JS has hit 200k weekly downloads on [npm](https://www.npmjs.com/package/maplibre-gl) for the first time!
@@ -80,9 +80,9 @@ Most notable PRs since March 20th, 2023:
 
 ## MapLibre Style Specification
 
-The MapLibre Style Specification has been moved out of MapLibre GL JS and lives now in its own repository: https://github.com/maplibre/maplibre-style-spec
+The MapLibre Style Specification has been moved out of MapLibre GL JS and lives now in its own repository: [maplibre-style-spec](https://github.com/maplibre/maplibre-style-spec)
 
-Big thanks to Birk Skyum for bringing up the new documentation website for the style spec at https://maplibre.org/maplibre-style-spec/!
+Big thanks to Birk Skyum for bringing up the new documentation website for the style spec at [MapLibre Style Spec](https://maplibre.org/maplibre-style-spec/)!
 
 #### Debated design proposals:
 
@@ -94,7 +94,7 @@ Big thanks to Birk Skyum for bringing up the new documentation website for the s
 Since there are now two design proposals that expand the <a href="https://github.com/mapbox/tilejson-spec">TileJSON specification</a>, we plan to create a fork of TileJSON and maintain it in the MapLibre Organization.
 
 <a href="https://github.com/maplibre/maplibre-style-spec/issues/60">
-<img src="tile-bounds.png">
+<img style="max-width:100%;" src="tile-bounds.png">
 </a>
 
 <i>Some data sources like traffic have non-global coverage. To avoid loading empty tiles, we want to introduce more complex source tile bounds in the TileJSON specification.</i>
