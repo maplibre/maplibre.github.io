@@ -1,0 +1,12 @@
+{{ range (shuffle $.Site.Data.board) }}
+  <div class="text-center">
+    <a href="{{ .link }}">
+      <img
+        src="{{ .avatar }}"
+        width="150"
+        class="rounded-circle mt-3 border  border-white"
+      />
+    </a>
+    <h3 class="m-3">{{ .name }}</h3>
+  </div>
+{{ end }}
