@@ -22993,7 +22993,7 @@ uniform ${i3} ${s3} u_${a3};
       {
         lng: 5.388541216098361,
         lat: 45.57339756361293,
-        Zoom: 6.15010124013107,
+        Zoom: 2.15010124013107,
         Duration: 1e4,
         Pause: 8e3,
         Rotation: 0,
@@ -23003,8 +23003,8 @@ uniform ${i3} ${s3} u_${a3};
         lng: -0.08411085041984734,
         lat: 7.115464377381386,
         Zoom: 1.3295073440521066,
-        Duration: 1e5,
-        Pause: 18e3,
+        Duration: 1e4,
+        Pause: 8e3,
         Rotation: 0,
         Pitch: 0
       }
