@@ -5,6 +5,6 @@ categories: ["steering-committee"]
 authors: [wipfli]
 ---
 
-We had our first monthly meeting of 2023. You find the meeting notes here: https://github.com/maplibre/maplibre/discussions/187
+We had our first monthly meeting of 2023. You find the meeting notes <a href="https://github.com/maplibre/maplibre/discussions/187">here</a>.
 
 Feel free to join our next monthly meeting on Wednesday, Feb 8th, 2023. The technical steering committee meetings are open to everyone!

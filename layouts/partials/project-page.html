@@ -8,10 +8,10 @@
 
 <div class="mb-4 fs-4">
   {{ if not .Params.stable }}
-    <span class="badge bg-warning text-dark">Unstable</span>
+    <span class="badge bg-warning text-dark ">Unstable</span>
   {{ end }}
   {{ with .Params.github }}
-    <span class="badge bg-light">
+    <span class="badge bg-primary text-white">
       <a href="{{ . }}">
         <svg
           role="img"
@@ -30,7 +30,9 @@
   {{ end }}
   {{ with .Params.documentation }}
     {{ range . }}
-      <span class="badge bg-light"><a href="{{ .url }}">{{ .name }}</a></span>
+      <span class="badge bg-primary text-white"
+        ><a href="{{ .url }}">{{ .name }}</a></span
+      >
     {{ end }}
   {{ end }}
 </div>

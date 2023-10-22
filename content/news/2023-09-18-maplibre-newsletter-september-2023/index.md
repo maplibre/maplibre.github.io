@@ -21,7 +21,7 @@ MapLibre was represented at two events in the last month:
 
 Thank you all for promoting MapLibre at these events!
 
-<img src="speakers.jpg" style="max-width: 650px;">
+<img src="speakers.jpg" style="width: 650px; max-width: 100%;">
 
 <i>From left to right: Bart Louwers at FOSS4G NL, Yuri Astrakhan and Haowen You at the Open Visualization Collaborator Summit.</i>
 
@@ -45,7 +45,7 @@ Furthermore, there is an ongoing discussion about how to support more writing sy
 
 ### Metal Port
 
-<img src="https://camo.githubusercontent.com/4b554e9a3a17846c585aab0acddb6ed2bc07f09a10dddf984cca212c2605d1b3/68747470733a2f2f6d61706c696272652e6f72672f6e6577732f323032332d30332d32332d6d6574616c2d70726f6a6563742d7465616d2d737461727465642f73637265656e73686f742e706e67" style="max-width: 300px" />
+<img src="https://camo.githubusercontent.com/4b554e9a3a17846c585aab0acddb6ed2bc07f09a10dddf984cca212c2605d1b3/68747470733a2f2f6d61706c696272652e6f72672f6e6577732f323032332d30332d32332d6d6574616c2d70726f6a6563742d7465616d2d737461727465642f73637265656e73686f742e706e67" style="width: 300px; max-width: 100%" />
 
 On January 4th, 2022 Steve Gifford posted a [thread on GitHub Discussions](https://github.com/maplibre/maplibre-native/discussions/202): have we considered a [Metal](https://developer.apple.com/metal/) port? It seemed like a momentous effort at the time, and not just from an engineering perspective, because it was. Thanks to the persistence of some key players and the hard work of graphics engineers who were part of the 'Metal team' this year, that Metal port is closer than ever.
 
@@ -83,6 +83,6 @@ The MapLibre User Group Japan will organize an in-person meetup in November. If 
 
 ### MapLibre Online Conference Day
 
-We plan to do an online conference day. The date is still to be defined, but if you are interested in giving a talk, you can fill out the following form already now: [https://forms.gle/AKg63TnASSWXfZi66](https://forms.gle/AKg63TnASSWXfZi66)
+We plan to do an online conference day. The date is still to be defined, but if you are interested in giving a talk, you can fill out the following form already now: [link](https://forms.gle/AKg63TnASSWXfZi66)
 
 More info on the conference day will follow in the MapLibre Slack channel, on social media, and here in the Newsletter.

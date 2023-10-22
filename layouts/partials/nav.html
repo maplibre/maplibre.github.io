@@ -1,5 +1,5 @@
 <nav
-  class="navbar navbar-expand-lg navbar-dark fixed-top {{ if not .fullscreen }}
+  class="navbar navbar-expand-lg navbar-dark  {{ if not .fullscreen }}
     bg-navbar
   {{ else }}
     bg-fullscreen
@@ -7,15 +7,11 @@
 >
   <div class="container">
     <a class="navbar-brand" href="/" aria-label="MapLibre">
-      <svg
-        aria-hidden="true"
-        width="141"
-        height="30"
-        viewBox="0 0 141 30"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <use href="/img/maplibre-logo.svg#maplibre-logo"></use>
-      </svg>
+      <object
+        width="120"
+        data="/img/maplibre-logo.svg"
+        type="image/svg+xml"
+      ></object>
     </a>
     <div class="d-flex">
       <button

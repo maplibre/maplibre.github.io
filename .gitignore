@@ -1,4 +1,5 @@
 # Generated files by hugo
+.DS_Store
 /public/
 /resources/_gen/
 /assets/jsconfig.json

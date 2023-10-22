@@ -1,33 +1,103 @@
+$background: rgb(17, 23, 37);
+
+body {
+  background-color: $background;
+}
+
+.badge {
+  font-size: 14px;
+  margin: 2px 0px;
+}
+
+.badge {
+  background-color: #1058c0 !important;
+
+  path,
+  a {
+    color: white !important;
+    fill: white !important;
+  }
+}
+
+.post-meta-date {
+  color: rgb(177, 177, 230) !important;
+}
+
+object {
+  pointer-events: none;
+  display: block;
+}
+
+#home-map {
+  /* position: absolute; */
+  /* top: 58px;
+  bottom: 0; */
+  // max-width: 800px;
+
+  height: 300px;
+  border-radius: 10px;
+}
+
+#home-wrapper {
+  padding: 0 10px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+hr {
+  height: 1px !important;
+  background-color: rgb(57, 64, 99) !important;
+  border: none !important;
+  opacity: 1;
+}
+
+main a {
+  word-break: normal;
+}
+
+.silver-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 .bg-fullscreen {
-  background: rgba(40, 93, 170, 0.9);
+  background: $background;
 }
 .bg-navbar {
-  background: #285daa;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  background: $background;
+  // border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .bg-title {
-  background-color: #285daa;
-  background-image: url("/img/title-map.png");
+  background-color: $background;
+  // background-image: url("/img/title-map.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 250px;
+  // height: 250px;
 }
 .home-banner {
-  position: absolute;
-  width: 100%;
+  // position: absolute;
+  // width: 100%;
+
   display: flex;
   justify-content: center;
-  left: 0;
-  top: 50%;
+  // top: 50%;
   z-index: $zindex-sticky;
   pointer-events: none;
-  transform: translateY(-50%);
+  // transform: translateY(-50%);
 
   > div {
     text-align: center;
     pointer-events: all;
-    background-color: rgba(255, 255, 255, 0.9);
+    // background-color: rgba(255, 255, 255, 0.9);
   }
 
   a span {
@@ -37,6 +107,15 @@
 .title-image {
   @include media-breakpoint-down(md) {
     width: 100%;
+  }
+}
+
+#sponsor-list {
+  img {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    aspect-ratio: 2;
   }
 }
 

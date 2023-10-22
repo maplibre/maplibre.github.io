@@ -7,14 +7,15 @@ type: community
 
 <style>
   ol li h5 {
-    margin-bottom: 0;
+    margin-bottom: 0.5em;
   }
   ol li {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
   }
   #community-map {
-    height: 90vh;
-    width: 90vw;
+    border-radius: 10px;
+    height: 600px;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -36,50 +37,52 @@ type: community
   </div>
 </div>
 <div class="container">
-  <div class="row">
-    <h1>Welcome to Our Community</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-10 col-lg-8">
+      <h1>Welcome to Our Community</h1>
 
-    <p>
-      The people in our community talk with each other mainly in the following
-      three ways:
-    </p>
+      <p>
+        The people in our community talk with each other mainly in the following
+        three ways:
+      </p>
 
-    <ol>
-      <li>
-        <h5>Discussions, Issues, and Pull Requests on GitHub</h5>
-        You find all Discussions, Issues, and Pull Requests in our
-        <a href="https://github.com/maplibre" target="_blank"
-          >public GitHub repostories</a
-        >.
-      </li>
-      <li>
-        <h5>MapLibre Slack channel</h5>
-        The MapLibre Slack channel is generously hosted by OpenStreetMap US
-        (thanks
-        <a href="https://www.linkedin.com/in/maggiecawley/" target="_blank"
-          >Maggie</a
-        >). You can join our Slack channel at
-        <a href="https://slack.openstreetmap.us" target="_blank"
-          >https://slack.openstreetmap.us</a
-        >
-        and then you can join the main <code>#maplibre</code> channel as well as
-        topic-specific channels such as <code>#maplibre-gl-js</code>
-      </li>
-      <li>
-        <h5>Technical Steering Committee meetings</h5>
-        The
-        <a href="/about/" target="_blank">Technical Steering Committee</a>
-        meetings take place on a monthly basis. They are usually on the second
-        Wednesday of the month in the evening Europe-time. These monthly
-        meetings are open to everybody and you are welcome to join us there and
-        say hi. The meeting zoom link gets published in our Slack channel
-        roughly 1 week before the meeting.
-      </li>
-    </ol>
+      <ol>
+        <li>
+          <h5>Discussions, Issues, and Pull Requests on GitHub</h5>
+          You find all Discussions, Issues, and Pull Requests in our
+          <a href="https://github.com/maplibre" target="_blank"
+            >public GitHub repostories</a
+          >.
+        </li>
+        <li>
+          <h5>MapLibre Slack channel</h5>
+          The MapLibre Slack channel is generously hosted by OpenStreetMap US
+          (thanks
+          <a href="https://www.linkedin.com/in/maggiecawley/" target="_blank"
+            >Maggie</a
+          >). You can join our Slack channel at
+          <a href="https://slack.openstreetmap.us" target="_blank"
+            >https://slack.openstreetmap.us</a
+          >
+          and then you can join the main <code>#maplibre</code> channel as well
+          as topic-specific channels such as <code>#maplibre-gl-js</code>
+        </li>
+        <li>
+          <h5>Technical Steering Committee meetings</h5>
+          The
+          <a href="/about/" target="_blank">Technical Steering Committee</a>
+          meetings take place on a monthly basis. They are usually on the second
+          Wednesday of the month in the evening Europe-time. These monthly
+          meetings are open to everybody and you are welcome to join us there
+          and say hi. The meeting zoom link gets published in our Slack channel
+          roughly 1 week before the meeting.
+        </li>
+      </ol>
 
-    <h2>Contributors, alumni, & board members around the globe</h2>
+      <h2>Contributors, alumni, & board members around the globe</h2>
 
-    <div id="community-map"></div>
+      <div id="community-map"></div>
+    </div>
 
     <script>
       const communityData = {{< community-json >}};
