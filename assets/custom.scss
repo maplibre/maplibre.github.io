@@ -23,6 +23,11 @@ body {
   color: rgb(177, 177, 230) !important;
 }
 
+object {
+  pointer-events: none;
+  display: block;
+}
+
 #home-map {
   /* position: absolute; */
   /* top: 58px;
