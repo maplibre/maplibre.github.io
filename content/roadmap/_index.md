@@ -1,7 +1,18 @@
-<!-- ---
+---
 title: Roadmap
 weight: 10
 ---
+
+
+<style>
+  .card{
+    background-color: #1e3150;
+
+    > img {
+      background-color: white;
+    }
+  }
+</style>
 
 <div class="alert alert-success" role="alert">
 <b>Bounties:</b> Some projects on our Roadmap have Bounties, i.e., you can get paid for working on them.
@@ -214,4 +225,4 @@ You can propose strategic cross-project directions in this [GitHub Discussion](h
     </div>
   </div>
 
-</div> -->
+</div>
