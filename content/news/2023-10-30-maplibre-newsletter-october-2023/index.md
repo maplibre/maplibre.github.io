@@ -8,16 +8,15 @@ draft: false
 
 # MapLibre Newsletter - October 2023
 
-
 ## MapLibre GL JS
 
 Just in time for this newsletter, MapLibre GL JS has gained over [5000 Stars on GitHub](https://github.com/maplibre/maplibre-gl-js/stargazers). Great that we got so far and thanks to everyone who contributed in the past and made this possible!
 
 In the last month, 5 releases of MapLibre GL JS were made. Below you find some highlights, for a full list of improvements please have a look at the [changelog](https://github.com/maplibre/maplibre-gl-js/blob/main/CHANGELOG.md).
 
-* Safari DEM fix: In a new version of the Safari browser, Apple has introduced some random noise in images in private mode. While usually users don't notice this effect, it had drastic consequences for terrain3d and client-side hillshading. Mike Barry fixed this issue by using a JavaScript library for decoding PNGs rather than the browser api. See [pull request](https://github.com/maplibre/maplibre-gl-js/pull/3185).
-* High-resolution CJK: Users of Chinese Japanese and Korean (CJK) languages get to enjoy labels now at twice the resolution. This makes CJK text labels more readable and the map overall more appealing. Thanks Brandon Liu for contributing this! See [pull request](https://github.com/maplibre/maplibre-gl-js/pull/3006).
-* Custom raster DEM encoding: Isaac Besora Vilardaga from Felt made the encoding of raster digital elevation model (DEM) tiles configurable. This means that the user can now specify a custom base and interval value for the DEM tiles. See [pull request](https://github.com/maplibre/maplibre-gl-js/pull/3087).
+- Safari DEM fix: In a new version of the Safari browser, Apple has introduced some random noise in images in private mode. While usually users don't notice this effect, it had drastic consequences for terrain3d and client-side hillshading. Mike Barry fixed this issue by using a JavaScript library for decoding PNGs rather than the browser api. See [pull request](https://github.com/maplibre/maplibre-gl-js/pull/3185).
+- High-resolution CJK: Users of Chinese Japanese and Korean (CJK) languages get to enjoy labels now at twice the resolution. This makes CJK text labels more readable and the map overall more appealing. Thanks Brandon Liu for contributing this! See [pull request](https://github.com/maplibre/maplibre-gl-js/pull/3006).
+- Custom raster DEM encoding: Isaac Besora Vilardaga from Felt made the encoding of raster digital elevation model (DEM) tiles configurable. This means that the user can now specify a custom base and interval value for the DEM tiles. See [pull request](https://github.com/maplibre/maplibre-gl-js/pull/3087).
 
 Finally, we are working on moving some of the old callback-based design to more modern JavaScript Promises allowing the use of async and await. While this change is still in the making, it will most likely lead to a series of breaking changes. Feedback on this design change is more than welcome. Feel free to share your thoughts in this [pull request](https://github.com/maplibre/maplibre-gl-js/pull/3233).
 
