@@ -36,6 +36,12 @@ Related to the point above, Oliver Wipfli wrote a great article on [text renderi
 
 Tadej Novak is making progress on splitting out the Qt platform to [its own repository](https://github.com/maplibre/maplibre-native-qt). The Qt platform will be used to experiment with platform bindings living in a separate repository.
 
+## Martin
+
+The [Martin Tile Server v0.10](https://github.com/maplibre/martin/releases/tag/v0.10.0) was just released, adding support for dynamic font glyph range generation. Now you can provide any fonts to Martin, and it will automatically create SDF glyph ranges for MapLibre-GL with `/font/<name>/<start>-<end>` endpoint. Fonts also allow glyph fallback: list font names as comma-separated values, and whichever font first has the glyph, that's the glyph that will be included. This way you can specify fallback fonts: `/font/Font1,Font2,Font3/0-255`.
+
+Other new features include MBtiles diffing and patching for the `mbtiles` utility, and improvements to the Martin startup time with auto bounds computation timeout.
+
 ## Upcoming Events
 
 ### State of the Map Europe
