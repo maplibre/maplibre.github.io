@@ -22,4 +22,3 @@ Meta is also supporting a range of other geospatial open-source projects, see <a
 We thank everyone at Meta for your trust, your contributions, and for the generous Gold sponsorship!
 
 It is great to collaborate with such amazing people and we are looking forward to a productive future.
-
