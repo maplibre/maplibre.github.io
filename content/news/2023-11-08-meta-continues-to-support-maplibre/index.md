@@ -1,6 +1,6 @@
 ---
 title: "Meta continues to support MapLibre"
-date: "2023-11-04"
+date: "2023-11-08"
 categories: ["announcements"]
 authors: [wipfli]
 draft: false
