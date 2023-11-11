@@ -9,11 +9,6 @@ weight: 10
 </div>
 
 <hr/>
-<h2>Under Consideration</h2>
-
-You can propose strategic cross-project directions in this [GitHub Discussion](https://github.com/maplibre/maplibre/discussions/categories/bounties-cross-project-directions). The MapLibre Governing Board determines which projects are on the roadmap and is thankful for all input!
-
-<hr/>
 <h2>In Progress</h2>
 
 <div class="row gy-4">
@@ -40,22 +35,39 @@ You can propose strategic cross-project directions in this [GitHub Discussion](h
 
   <div class="col-lg-4">
     <div class="card">
-      <img class="card-img-top" src="globe-view/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
+      <img class="card-img-top" src="documentation/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
       <div class="card-body">
-        <h5 class="card-title">Globe View</h5>
-        <a href="globe-view/" class="btn btn-primary">Read more...</a>
-        <a href="https://github.com/maplibre/maplibre/issues/190" class="btn btn-light">💰 Bounties</a>
+        <h5 class="card-title">Documentation</h5>
+        <a href="documentation/" class="btn btn-primary">Read more...</a>
+        <a href="https://github.com/maplibre/maplibre/issues/191" class="btn btn-light">💰 Bounties</a>
       </div>
     </div>
   </div>
 
   <div class="col-lg-4">
     <div class="card">
-      <img class="card-img-top" src="documentation/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
+      <img class="card-img-top" src="modernize-codebase/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
       <div class="card-body">
-        <h5 class="card-title">Documentation</h5>
-        <a href="documentation/" class="btn btn-primary">Read more...</a>
-        <a href="https://github.com/maplibre/maplibre/issues/191" class="btn btn-light">💰 Bounties</a>
+        <h5 class="card-title">Modernize Codebase</h5>
+        <a href="modernize-codebase/" class="btn btn-primary">Read more...</a>
+        <a href="https://github.com/maplibre/maplibre/issues/270" class="btn btn-light">💰 Bounties</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<hr/>
+<h2>Under Consideration</h2>
+
+<div class="row gy-4">
+  <div class="col-lg-4">
+    <div class="card">
+      <img class="card-img-top" src="globe-view/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
+      <div class="card-body">
+        <h5 class="card-title">Globe View</h5>
+        <a href="globe-view/" class="btn btn-primary">Read more...</a>
+        <a href="https://github.com/maplibre/maplibre/issues/190" class="btn btn-light">💰 Bounties</a>
       </div>
     </div>
   </div>
@@ -84,33 +96,11 @@ You can propose strategic cross-project directions in this [GitHub Discussion](h
 
   <div class="col-lg-4">
     <div class="card">
-      <img class="card-img-top" src="maplibre-innovation-lab/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
-      <div class="card-body">
-        <h5 class="card-title">MapLibre Innovation Lab</h5>
-        <a href="maplibre-innovation-lab/" class="btn btn-primary">Read more...</a>
-        <a href="https://github.com/maplibre/maplibre/issues/194" class="btn btn-light">💰 Bounties</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-4">
-    <div class="card">
       <img class="card-img-top" src="blending-modes/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
       <div class="card-body">
         <h5 class="card-title">Blending Modes</h5>
         <a href="blending-modes/" class="btn btn-primary">Read more...</a>
         <a href="https://github.com/maplibre/maplibre/issues/269" class="btn btn-light">💰 Bounties</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-4">
-    <div class="card">
-      <img class="card-img-top" src="modernize-codebase/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
-      <div class="card-body">
-        <h5 class="card-title">Modernize Codebase</h5>
-        <a href="modernize-codebase/" class="btn btn-primary">Read more...</a>
-        <a href="https://github.com/maplibre/maplibre/issues/270" class="btn btn-light">💰 Bounties</a>
       </div>
     </div>
   </div>
@@ -147,7 +137,6 @@ You can propose strategic cross-project directions in this [GitHub Discussion](h
       </div>
     </div>
   </div>
-
 </div>
 
 <hr/>
