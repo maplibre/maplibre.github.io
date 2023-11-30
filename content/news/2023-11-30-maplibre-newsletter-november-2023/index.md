@@ -57,7 +57,7 @@ The new Martin tile server now has a tool similar to `tilelive-copy` to bulk cop
 
 Use case: generate several areas of the map from PostgreSQL tables/functions or other sources, and even merge multiple tile layers together into a single tileset and store them into an .mbtiles file.
 
-Another new tool improvement: `mbtiles summary` prints now in-depth details about an mbtiles file.
+In other news, `mbtiles summary` tool can now print in-depth details about an mbtiles file such as per-zoom statistics.
 
 See https://github.com/maplibre/martin/releases/tag/v0.11.0
 
