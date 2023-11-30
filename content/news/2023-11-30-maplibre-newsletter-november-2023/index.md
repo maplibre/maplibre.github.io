@@ -53,7 +53,7 @@ Re-enabling macOS support using the Metal renderer (native macOS, Qt, Node.js) w
 
 ## Martin
 
-Martin tile server now has a tool similar to `tilelive-copy` and `tippecanoe` to copy tiles in bulk from any source supported by the Martin tile server, using the same source configuration system/CLI parameters, but without starting up the whole tile server in order to generate them. Available as a standalone binary with no external dependencies.
+Martin tile server has a new tool similar to `tilelive-copy` and `tippecanoe` to bulk-copy tiles from any supported source. The `martin-cp` tool uses the same source configuration system/CLI parameters as Martin itself, but without starting up the whole tile server in order to generate them. The tool is available as a standalone binary with no external dependencies.
 
 Use case: generate several areas of the map from PostgreSQL tables/functions or other sources, and even merge multiple tile layers together into a single .mbtiles tileset file.
 
