@@ -25,7 +25,7 @@ We are excited to see where this will bring us!
 <a href="https://pheonor.github.io/globe-demo/"><img src="globe.jpg" style="max-width: 100%"></a>
 <br>
 
-<i>Globe view proof-of-concept by Vivan Larrieu. Link: https://pheonor.github.io/globe-demo/.</i>
+<i>Globe view proof of concept by Vivan Larrieu. Link: https://pheonor.github.io/globe-demo/.</i>
 
 ## MapLibre Native
 
