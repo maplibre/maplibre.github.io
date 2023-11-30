@@ -18,7 +18,7 @@ You can now start testing the version 4 pre-releases at https://github.com/mapli
 
 ### Globe
 
-Not just one, but actually two proof-of-concepts for a globe view were shared by two independent developers this month. See https://github.com/maplibre/maplibre/discussions/161.
+Not just one, but actually two proofs of concept for a globe view were shared by two independent developers this month. See https://github.com/maplibre/maplibre/discussions/161.
 
 We are excited to see where this will bring us!
 
