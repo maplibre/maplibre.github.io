@@ -22,11 +22,11 @@ So, big thanks to all our [sponsors](/sponsors) - you are essential to everyone'
 
 # MapLibre GL JS
 
-  - Two 4.0 pre-releases were published.
-  - Two plugin owners that were affected by the 4.0 breaking changes had updated their code to facilitate the new version.
-  - Some 3D bugs were solved by Aiden (snailbones).
-  - Globe POC is continuing.
-  - There is an initial discussion about MapLibre components being separated from the main core code in the v4 breaking changes [issue](https://github.com/maplibre/maplibre-gl-js/issues/3052).
+- Two 4.0 pre-releases were published.
+- Two plugin owners that were affected by the 4.0 breaking changes had updated their code to facilitate the new version.
+- Some 3D bugs were solved by Aiden (snailbones).
+- Globe POC is continuing.
+- There is an initial discussion about MapLibre components being separated from the main core code in the v4 breaking changes [issue](https://github.com/maplibre/maplibre-gl-js/issues/3052).
 
 # MapLibre GL Native
 
@@ -39,6 +39,3 @@ We published two new releases recently: 0.18.0 and 0.17.0.
 0.18.0 contains a major new feature: you can now set arbitrary layer properties at runtime (#303). We also improved the documentation for users and contributors (updated old docs and added new docs) and work continues on pushing releases to pub.dev (The version currently published on pub.dev does not work on the web #309).
 
 0.17.0 contains a lot of new features and bugfixes (too many to list all of them here) that lived in the repo for some time but had not been "officially released" so far. 0.17.0 also contains some breaking changes, but the release notes contain instructions on how to easily fix them. Also, developers do not need to adapt their Podfile for iOS apps anymore as it was previously described in the Readme. Developers who previously added these lines should remove them, since not removing these lines may cause a build failure on iOS.
-
-
- 
