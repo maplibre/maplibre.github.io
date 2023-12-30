@@ -1,0 +1,44 @@
+---
+title: "MapLibre Newsletter December 2023"
+date: "2023-12-30"
+categories: ["announcements"]
+authors: [wipfli]
+draft: false
+---
+
+# MapLibre Newsletter - December 2023
+
+<a href="https://demotiles.maplibre.org"><img src="./happy-2024.jpg" style="max-width: 100%"></a>
+
+MapLibre wishes you all the best for 2024! https://demotiles.maplibre.org
+
+2023 was an interesting year for MapLibre. It was the first time that we had paid maintainers who took care of MapLibre GL JS and MapLibre Native. Harel Mazor and Bart Louwers are the main people who served in this role and thanks to their great effort, contributing to MapLibre was faster and smoother than ever before.
+
+It was also the first time that a large engineering collaboration between two main corporate sponsors took place. The codebase modernization and implementation of a Metal rendering backend in MapLibre Native was supported by AWS and Meta. A team of people from different backgrounds and employers all worked together in a productive way and delivered by the end of this year a Metal pre-release that meets expectations. This was only possible thanks to the tireless work of people like Haowen You from AWS, Marc Regan and Marc Wilson from Meta, Steve Gifford and Tim Sylvester from Wet Dog Weather, and Alex Cristici and Stefan Karschti. Thank you all for being so professional!
+
+MapLibre would not be what it is today without the financial support of our sponsors. They are the ones who enable this organization to deliver professional maintenance, fast code reviews, and support for newcomers. We are convinced that only with paid maintainers we can keep up with the complexity and workload entailed by a state-of-the-art maps toolkit.
+
+So, big thanks to all our [sponsors](/sponsors) - you are essential to everyone's success!
+
+# MapLibre GL JS
+
+  - Two 4.0 pre-releases were published.
+  - Two plugin owners that were affected by the 4.0 breaking changes had updated their code to facilitate the new version.
+  - Some 3D bugs were solved by Aiden (snailbones).
+  - Globe POC is continuing.
+  - There is an initial discussion about MapLibre components being separated from the main core code in the v4 breaking changes [issue](https://github.com/maplibre/maplibre-gl-js/issues/3052).
+
+# MapLibre GL Native
+
+The Metal team made a lot of progress with the Metal renderer being on-par with the legacy OpenGL renderer. Performance on Android is also expected to be at the original level soon. Read the full November status report [here](/roadmap/metal/).
+
+# MapLibre Flutter GL
+
+We published two new releases recently: 0.18.0 and 0.17.0.
+
+0.18.0 contains a major new feature: you can now set arbitrary layer properties at runtime (#303). We also improved the documentation for users and contributors (updated old docs and added new docs) and work continues on pushing releases to pub.dev (The version currently published on pub.dev does not work on the web #309).
+
+0.17.0 contains a lot of new features and bugfixes (too many to list all of them here) that lived in the repo for some time but had not been "officially released" so far. 0.17.0 also contains some breaking changes, but the release notes contain instructions on how to easily fix them. Also, developers do not need to adapt their Podfile for iOS apps anymore as it was previously described in the Readme. Developers who previously added these lines should remove them, since not removing these lines may cause a build failure on iOS.
+
+
+ 
