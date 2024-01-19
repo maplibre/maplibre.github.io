@@ -24,16 +24,6 @@ weight: 10
 <div class="row gy-4">
   <div class="col-lg-4">
     <div class="card">
-      <img class="card-img-top" src="metal/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
-      <div class="card-body">
-        <h5 class="card-title">Metal</h5>
-        <a href="metal/" class="btn btn-primary">Read more...</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-4">
-    <div class="card">
       <img class="card-img-top" src="terrain3d-improvements/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
       <div class="card-body">
         <h5 class="card-title">Terrain3D Improvements</h5>
@@ -153,6 +143,17 @@ weight: 10
 <h2>Released</h2>
 
 <div class="row gy-4">
+
+  <div class="col-lg-4">
+    <div class="card">
+      <img class="card-img-top" src="metal/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
+      <div class="card-body">
+        <h5 class="card-title">Metal</h5>
+        <a href="metal/" class="btn btn-primary">Read more...</a>
+      </div>
+    </div>
+  </div>
+  
   <div class="col-lg-4">
     <div class="card">
       <img class="card-img-top" src="terrain3d/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
