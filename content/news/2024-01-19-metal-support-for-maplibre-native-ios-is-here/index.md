@@ -21,4 +21,4 @@ The work has been sponsored by AWS and Meta. We would like to extend a big Thank
 
 ## Try It Out Today!
 
-If you develop for iOS, the new v6.0.0 release is available on [GitHub](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.0.0), CocoaPods and the [Swift Package Index](https://swiftpackageindex.com/maplibre/maplibre-gl-native-distribution).
+If you develop for iOS, the new v6.0.0 release is available on [GitHub](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.0.0), [CocoaPods](https://cocoapods.org/) and the [Swift Package Index](https://swiftpackageindex.com/maplibre/maplibre-gl-native-distribution).
