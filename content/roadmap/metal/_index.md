@@ -18,6 +18,10 @@ Read the Design Proposals on GitHub:
 
 Refer to the [MapLibre Native Metal Project Board](https://github.com/orgs/maplibre/projects/8) on GitHub for the most up-to-date status.
 
+## Status (January 2023)
+
+MapLibre Native for iOS 6.0.0 was released with Metal support. See the [announcement](/news/2024-01-16-maplibre-native-metal-announcement/).
+
 ## Status (November 2023)
 
 [MapLibre Native Metal Status Report November 2023](https://docs.google.com/document/d/e/2PACX-1vTo3kD9L3JufM_Cqu30vMnmjl33-1QsxuEm7tpk10Mm9GixU3vFyJtcLslX4haiAspza0lz76GStnDo/pub)
