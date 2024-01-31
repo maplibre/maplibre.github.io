@@ -1,7 +1,7 @@
 ---
 title: "MapLibre Newsletter January 2024"
 date: "2024-01-30"
-categories: ["announcements"]
+categories: ["newsletter"]
 authors: [wipfli]
 draft: false
 ---
