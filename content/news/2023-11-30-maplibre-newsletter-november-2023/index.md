@@ -1,7 +1,7 @@
 ---
 title: "MapLibre Newsletter November 2023"
 date: "2023-11-30"
-categories: ["announcements"]
+categories: ["newsletter"]
 authors: [wipfli, yuri, bart]
 draft: false
 ---

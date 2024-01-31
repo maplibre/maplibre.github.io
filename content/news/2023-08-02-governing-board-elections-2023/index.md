@@ -1,7 +1,7 @@
 ---
 title: "Governing Board Elections 2023"
 date: 2023-08-02
-categories: ["newsletter"]
+categories: ["announcements"]
 authors: [duje]
 draft: false
 ---
