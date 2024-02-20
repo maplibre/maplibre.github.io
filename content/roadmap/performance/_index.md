@@ -17,6 +17,8 @@ Image Credit: <a href="https://upload.wikimedia.org/wikipedia/commons/3/33/Carto
 
 GitHub Tracking Issue (💰 Bounties): https://github.com/maplibre/maplibre/issues/192
 
+MapLibre Native: [Issues and Pull Requests](https://github.com/maplibre/maplibre-native/labels/%E2%9A%A1%20performance)
+
 Bounty Proposal Discussion: https://github.com/maplibre/maplibre/discussions/160
 
 Total Pre-Approved\* Budget: USD 10,000
