@@ -55,11 +55,6 @@ weight: 10
     </div>
   </div>
 
-</div>
-
-<hr/>
-<h2>Under Consideration</h2>
-
 <div class="row gy-4">
   <div class="col-lg-4">
     <div class="card">
@@ -93,6 +88,11 @@ weight: 10
       </div>
     </div>
   </div>
+
+</div>
+
+<hr/>
+<h2>Under Consideration</h2>
 
   <div class="col-lg-4">
     <div class="card">
