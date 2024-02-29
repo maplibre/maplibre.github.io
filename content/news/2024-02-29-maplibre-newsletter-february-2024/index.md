@@ -2,7 +2,7 @@
 title: "MapLibre Newsletter February 2024"
 date: "2024-02-29"
 categories: ["newsletter"]
-authors: [wipfli]
+authors: [wipfli, harel, bart]
 draft: false
 ---
 
