@@ -18,7 +18,7 @@ Version 4.0.0, 4.0.1 and 4.0.2 were released and we are back with releasing vers
 
 We had an interesting discussion about `geometry-type` in the monthly meeting and we are looking for more feedback from the community around how to move forward. Share your thoughts [here](https://github.com/maplibre/maplibre-style-spec/discussions/536).
 
-Finally, we are happy to mention that Sergei Bachinin was added as a contributor to maplibre-gl-js.
+Lastly, we are happy to mention that Sergei Bachinin was added as a contributor to maplibre-gl-js.
 
 # MapLibre Native
 
