@@ -115,8 +115,10 @@ function mapPreview(container) {
     });
   }
 
-  (window.onload = playAnimation),
-    setInterval(playAnimation, lastPoint.Pause + lastPoint.Duration);
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    (window.onload = playAnimation),
+      setInterval(playAnimation, lastPoint.Pause + lastPoint.Duration);
+  }
 }
 
 function terrain3dMap(container) {
