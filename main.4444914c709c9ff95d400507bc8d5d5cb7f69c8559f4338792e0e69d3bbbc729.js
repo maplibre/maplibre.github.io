@@ -23024,7 +23024,9 @@ uniform ${i3} ${s3} u_${a3};
         }, item.Pause);
       });
     }
-    window.onload = playAnimation, setInterval(playAnimation, lastPoint.Pause + lastPoint.Duration);
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      window.onload = playAnimation, setInterval(playAnimation, lastPoint.Pause + lastPoint.Duration);
+    }
   }
   function terrain3dMap(container) {
     const map = window.map = new import_maplibre_gl.Map({
