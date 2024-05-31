@@ -16,11 +16,11 @@ draft: false
 
 ### MapLibre Tile Format - MLT
 
-Several months ago, [Markus Tremmel](https://github.com/mactrem) presented in a monthly MapLibre meeting his research on a new vector tile format and how it might outperform conventional Mapbox Vector Tiles. Microsoft has now contracted Stamen for an initial proof of concept that will focus on tile size benchmarks and JavaScript decoding performance.
+In a monthly MapLibre meeting several months ago, [Markus Tremmel](https://github.com/mactrem) presented his research on a new vector tile format and how it might outperform conventional Mapbox Vector Tiles (MVT). Microsoft has now contracted Stamen for a proof of concept that will focus on tile size benchmarks and JavaScript decoding performance.
 
-We migrated Markus' private GitHub repo to the newly created [maplibre-tile-spec](https://github.com/maplibre/maplibre-tile-spec) repository where you will find all ongoing coding work. Discussions are also taking place in our open `#maplibre-tile-format` channel in the [OSMUS slack](https://slack.openstreetmap.us/).
+We migrated Markus' private GitHub repository to the newly created [maplibre-tile-spec](https://github.com/maplibre/maplibre-tile-spec) repository where you will find all ongoing coding work. Discussions are also taking place in our open `#maplibre-tile-format` channel in the [OSMUS slack](https://slack.openstreetmap.us/).
 
-We chose the file suffix .mlt for this new experimental vector tile format to distinguish it from the existing .mvt format. MLT tiles already achieve up to 6x size reduction compared to MVT tiles for large tiles. Planned improvements include zero-copy direct-to-GPU pre-tessellated geometries, support for more complex nested types and lists, linear referencing as well as m-values.
+We chose the file suffix `.mlt` for this new experimental vector tile format to distinguish it from the existing `.mvt` format. MLT tiles already achieve up to 6x size reduction compared to MVT tiles for large tiles. Planned improvements include zero-copy direct-to-GPU pre-tessellated geometries, support for more complex nested types and lists, linear referencing as well as m-values.
 
 ### Flutter
 
@@ -45,7 +45,7 @@ Some guides have been added to the [iOS Documentation](https://maplibre.org/mapl
 ## MapLibre GL JS
 
 We have released four (!) versions this month: [4.2.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v4.2.0), [4.3.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v4.3.0), [4.3.1](https://github.com/maplibre/maplibre-gl-js/releases/tag/v4.3.1), [4.3.2](https://github.com/maplibre/maplibre-gl-js/releases/tag/v4.3.2).
-We finally added support for the `distance` expression that was missing in terms of parity between web and native, thus making web a superset of native when it comes to expression support - meaning that all the styles that work for native should work for web as well and look similar. Thanks to Bart Louwers we now can properly track this with the parity script. In the style spec documentation website we added links to open GitHub Issues about feature parity between MapLibre Native and MapLibre GL JS.
+We finally added support for the [`distance`](https://maplibre.org/maplibre-style-spec/expressions/#distance) expression that was missing in terms of parity between web and native, thus making web a superset of native when it comes to expression support - meaning that all the styles that work for native should work for web as well and look similar. Thanks to Bart Louwers we now can properly track this with the parity script. In the style spec documentation website we added links to open GitHub Issues about feature parity between MapLibre Native and MapLibre GL JS.
 
 As part of the globe effort there was a need to fix the collision boxes bugs. Jakub, who is making great progress with the globe code, has been able to port these fixes to the main version, making the collision boxes experience a lot better.
 
@@ -74,4 +74,4 @@ You are invited to join our monthly meetings as always on the second Wednesday o
 Also if you want to meet some MapLibre community members in person you can do so at the following events:
 
 - [State of the Map US](https://openstreetmap.us/events/state-of-the-map-us/), June 6 - 8, 2024
-- [Foss4g EU](https://2024.europe.foss4g.org/), July 1 - 7, 2024
+- [FOSS4G EU](https://2024.europe.foss4g.org/), July 1 - 7, 2024
