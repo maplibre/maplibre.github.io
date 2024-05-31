@@ -1,0 +1,77 @@
+---
+title: "MapLibre Newsletter May 2024"
+date: "2024-05-31"
+categories: ["newsletter"]
+authors: [wipfli, harel, bart, yuri]
+draft: false
+---
+
+# MapLibre Newsletter - May 2024
+
+[Mierune](https://www.mierune.co.jp/), our first-ever sponsor, has made a donation again to support MapLibre in 2024 for the third year in a row. Thank you so much Mierune!
+
+<img src="maplibre-mierune-logo.svg" width="100%"/>
+<br />
+<br />
+
+### MapLibre Tile Format - MLT
+
+Several months ago, [Markus Tremmel](https://github.com/mactrem) presented in a monthly MapLibre meeting his research on a new vector tile format and how it might outperform conventional Mapbox Vector Tiles. Microsoft has now contracted Stamen for an initial proof of concept that will focus on tile size benchmarks and JavaScript decoding performance.
+
+We migrated Markus' private GitHub repo to the newly created [maplibre-tile-spec](https://github.com/maplibre/maplibre-tile-spec) repository where you will find all ongoing coding work. Discussions are also taking place in our open `#maplibre-tile-format` channel in the [OSMUS slack](https://slack.openstreetmap.us/).
+
+We chose the file suffix .mlt for this new experimental vector tile format to distinguish it from the existing .mvt format. MLT tiles already achieve up to 6x size reduction compared to MVT tiles for large tiles. Planned improvements include zero-copy direct-to-GPU pre-tessellated geometries, support for more complex nested types and lists, linear referencing as well as m-values.
+
+### Flutter
+
+We are happy that two new people volunteer to help maintain [maplibre-flutter-gl](https://github.com/maplibre/flutter-maplibre-gl): Joscha Eckert and Peter Leibinger. Welcome!
+
+## MapLibre Native
+
+MapLibre Native is used in production at our sponsors AWS and Meta and these large-scale deployments with many different mobile devices can expose rare, hard-to-reproduce 'long-tail' crashes. We are committed to the stability of the library and welcome bug reports for such crashes. To investigate these issues, we require a symbolicated crash report which can be generated using the debug symbols provided with the library for iOS and Android. More information can be found on the GitHub wiki ([iOS](<https://github.com/maplibre/maplibre-native/wiki/Symbolicating-Crash-Reports-MapLibre-Native-(iOS)>) and [Android](<https://github.com/maplibre/maplibre-native/wiki/Symbolicating-Crash-Reports-MapLibre-Native-(Android)>)).
+
+[MapLibre Native Android 11.0.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.0.0) was released. The [documentation](https://maplibre.org/maplibre-native/android/api/) was updated with the new package prefix.
+
+This month, several iOS patch releases were made as well as a pre-release for Android (e.g. [#2442](https://github.com/maplibre/maplibre-native/pull/2442), [#2395](https://github.com/maplibre/maplibre-native/pull/2395), [#2379](https://github.com/maplibre/maplibre-native/pull/2379)). More stability improvements are underway.
+
+Stefan Karschti, one of the developers that implemented [Metal](https://maplibre.org/news/2024-01-19-metal-support-for-maplibre-native-ios-is-here/) support for MapLibre Native, has left the Metal team (a.k.a. MapLibre Native Team). Stefan, thank you for your many contributions! We are happy that you want to continue being a member of the MapLibre [community](https://maplibre.org/community/#8.49/46.7351/23.6051)!
+
+One way to ensure MapLibre Native and MapLibre GL JS remain interoperable is to make sure we share the same render tests. Storing the render tests in a shared repository would complicate pull requests too much, so instead we wrote a script that we periodically run to check which render tests are missing in each repo. The result is a [render test parity status report](https://gist.github.com/louwers/0259c83872da7093670627a43f32b4a1) with corresponding [tracking issue](https://github.com/maplibre/maplibre-native/issues/2445).
+
+Some guides have been added to the [iOS Documentation](https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre/) demonstrating how to use the library with SwiftUI. People who are familiar with using MapLibre Native on iOS are invited to make a PR to [add more guides](https://github.com/maplibre/maplibre-native/blob/main/platform/ios/CONTRIBUTING.md#documentation) to the DocC-based documentation site.
+
+**Are you using MapLibre Native?** If yes, please leave a comment on the [discussion thread](https://github.com/maplibre/maplibre-native/discussions/690) on GitHub.
+
+## MapLibre GL JS
+
+We have released four (!) versions this month: [4.2.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v4.2.0), [4.3.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v4.3.0), [4.3.1](https://github.com/maplibre/maplibre-gl-js/releases/tag/v4.3.1), [4.3.2](https://github.com/maplibre/maplibre-gl-js/releases/tag/v4.3.2).
+We finally added support for the `distance` expression that was missing in terms of parity between web and native, thus making web a superset of native when it comes to expression support - meaning that all the styles that work for native should work for web as well and look similar. Thanks to Bart Louwers we now can properly track this with the parity script. In the style spec documentation website we added links to open GitHub Issues about feature parity between MapLibre Native and MapLibre GL JS.
+
+As part of the globe effort there was a need to fix the collision boxes bugs. Jakub, who is making great progress with the globe code, has been able to port these fixes to the main version, making the collision boxes experience a lot better.
+
+The globe is in its final stretch now. Most of the issues have been fixed and most map features and style are supported. There is still work to be done but you can admire how nicely it looks already now:
+
+<img src="globe.jpg" width="100%"/>
+<br />
+<br />
+
+<i>A globe view screenshot from [Pull Request #4067](https://github.com/maplibre/maplibre-gl-js/pull/4067) with different debug labels.</i>
+
+There are some minor changes with rendering we expect to introduce in the next version related to brackets and new lines so keep an eye for those.
+
+Regarding Terrain3D, we have fixed most of the issues with movements when terrain is on so now the panning and pinching is much smoother.
+
+Overall, this month was amazing in terms of contribution from the community. We see that the library is steadily gaining momentum and we would like to thank the community for upstreaming all their work!
+
+## Next Meetings and Conferences
+
+You are invited to join our monthly meetings as always on the second Wednesday of the month. Zoom links will be posted in the MapLibre [Slack](https://slack.openstreetmap.us) channel.
+
+- MapLibre Navigation, Wed June 12th, 2024, 6 PM CEST
+- MapLibre Native, Wed June 12th, 2024, 7 PM CEST
+- MapLibre GL JS, Wed June 12th, 2024, 8 PM CEST
+
+Also if you want to meet some MapLibre community members in person you can do so at the following events:
+
+- [State of the Map US](https://openstreetmap.us/events/state-of-the-map-us/), June 6 - 8, 2024
+- [Foss4g EU](https://2024.europe.foss4g.org/), July 1 - 7, 2024
