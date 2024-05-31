@@ -14,7 +14,7 @@ draft: false
 <br />
 <br />
 
-### MapLibre Tile Format - MLT
+## MapLibre Tile Format - MLT
 
 In a monthly MapLibre meeting several months ago, [Markus Tremmel](https://github.com/mactrem) presented his research on a new vector tile format and how it might outperform conventional Mapbox Vector Tiles (MVT). Microsoft has now contracted Stamen for a proof of concept that will focus on tile size benchmarks and JavaScript decoding performance.
 
@@ -22,7 +22,7 @@ We migrated Markus' private GitHub repository to the newly created [maplibre-til
 
 We chose the file suffix `.mlt` for this new experimental vector tile format to distinguish it from the existing `.mvt` format. MLT tiles already achieve up to 6x size reduction compared to MVT tiles for large tiles. Planned improvements include zero-copy direct-to-GPU pre-tessellated geometries, support for more complex nested types and lists, linear referencing as well as m-values.
 
-### Flutter
+## Flutter
 
 We are happy that two new people volunteer to help maintain [maplibre-flutter-gl](https://github.com/maplibre/flutter-maplibre-gl): Joscha Eckert and Peter Leibinger. Welcome!
 
