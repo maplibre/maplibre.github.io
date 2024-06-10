@@ -5,9 +5,13 @@ weight: 10
 
 ## Financial Reports
 
-MapLibre uses OpenCollective for transparent accounting, see https://opencollective.com/maplibre. Below you find quarterly financial reports which break the transactions down into categories. The [MapLibre Sponsorship Program](/sponsors) allocates a fraction of larger donations to bounties. This is why we keep track of two accounts: the General account and the Bounty account.
+MapLibre uses OpenCollective for transparent accounting, see https://opencollective.com/maplibre. Below you find quarterly financial reports which break the transactions down into categories. The [MapLibre Sponsorship Program](/sponsors) allocates a fraction of larger donations to the Development Fund. This is why we keep track of two accounts: the General account and the Development Fund account.
 
 [Open Source Collective](https://opencollective.com/opensource), a 501(c)(6) registered non-profit organization based in Covina, CA (USA), is MapLibre's fiscal host.
+
+#### Q1 2024
+
+- [Financial-Report-Q1-2024.pdf](Financial-Report-Q1-2024.pdf)
 
 #### Q4 2023
 
