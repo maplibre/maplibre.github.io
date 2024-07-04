@@ -168,10 +168,6 @@
     "latlon": [46.8932152, 7.397615]
   },
   {
-    "github": "yasikovsky",
-    "latlon": [51.8684516, 14.6497922]
-  },
-  {
     "github": "roblabs",
     "latlon": [32.8242404, -117.3891624]
   },
@@ -510,5 +506,9 @@
   {
     "github": "ianthetechie",
     "latlon": [37.670157, 126.59667]
+  },
+  {
+    "github": "stefankarschti",
+    "latlon": [46.769271, 23.590132]
   }
 ]
