@@ -88,5 +88,5 @@ You find the zoom links for these meetings in the MapLibre Slack channel. Get an
 
 There are also some in-person events coming up where you can meet with MapLibre community members:
 
-- [FOSS4G BE+NL](https://foss4g.be/nl/), 25-27 September 2024, Baarle (Belgium & the Netherlands)
 - [2024 Open Visualization Collaborator Summit](https://github.com/visgl/deck.gl/discussions/8835), 10-11 September 2024, London (UK)
+- [FOSS4G BE+NL](https://foss4g.be/nl/), 25-27 September 2024, Baarle (Belgium & the Netherlands)
