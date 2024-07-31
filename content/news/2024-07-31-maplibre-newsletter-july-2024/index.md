@@ -30,7 +30,7 @@ We will again use the email voting system OpaVote for the Governing Board electi
 
 The main focus of this month was to push forward the globe view. A lot of effort went into the globe controls, gestures, and refactoring the transform class to be different between the globe and Mercator view. This is the final stretch for the globe and we are aiming to release it by the end of this year.
 
-We would like to repeat here our gratitude to Jakub for his amazing work on the globe implementation!
+We would like to repeat here our gratitude to Jakub Pelc for his amazing work on the globe implementation!
 
 While the changes in globe are not considered breaking changes of the public API, the direction right now is to nevertheless bump the major version and release the globe view feature in MapLibre GL JS v5. This is to avoid unexpected breaking changes in plugins and other external libraries that might expect certain behavior from the internal implementation such as the transform class.
 
