@@ -22,7 +22,7 @@ The [MapLibre Governing Board 2024](https://github.com/maplibre/maplibre/issues/
 
 There are no restrictions on being a Board member and we welcome all candidacies. If you are interested in serving on the Board, please [register as a candidate](https://github.com/maplibre/maplibre/discussions/375).
 
-The MapLibre Voting Members are the people who elect the MapLibre Governing Board. They can also vote on changes to the [MapLibre Charter](https://github.com/maplibre/maplibre/blob/main/CHARTER.md). Like every year, [we are inviting](https://github.com/maplibre/maplibre/issues/376) more people to the group of MapLibre Voting Members before the 2024 election. This is a great opportunity to look back at what happened last year and thank important contributors and donors of MapLibre.
+The MapLibre Voting Members are the people who elect the MapLibre Governing Board. They can also vote on changes to the [MapLibre Charter](https://github.com/maplibre/maplibre/blob/main/CHARTER.md). Like every year, we are inviting more people to the group of MapLibre Voting Members before the 2024 election. This is a great opportunity to look back at what happened last year and thank important contributors and donors of MapLibre. Existing Voting Members can nominate new Voting Members, read more [here](https://github.com/maplibre/maplibre/issues/376).
 
 We will again use the email voting system OpaVote for the Governing Board election. Sometimes the OpaVote emails can end up in the spam folder. If you are a Voting Member, it might make sense to explicitly allow emails from noreply@opavote.com as a preparation.
 
