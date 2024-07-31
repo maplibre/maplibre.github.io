@@ -28,7 +28,7 @@ We will again use the email voting system OpaVote for the Governing Board electi
 
 ## MapLibre GL JS
 
-The main focus of this month was to push forward the globe view. A lot of effort went into the globe controls, gestures, and refactoring the transform class to be different between the globe and mercator view. This is the final stretch for the globe and we are aiming to release it by the end of this year.
+The main focus of this month was to push forward the globe view. A lot of effort went into the globe controls, gestures, and refactoring the transform class to be different between the globe and Mercator view. This is the final stretch for the globe and we are aiming to release it by the end of this year.
 
 We would like to repeat here our gratitude to Jakub for his amazing work on the globe implementation!
 
