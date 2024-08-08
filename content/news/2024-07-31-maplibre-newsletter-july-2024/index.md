@@ -46,7 +46,7 @@ Some new articles have been added to the new iOS documentation, including inform
 
 Some improvements were made to the included [Dockerfile](https://github.com/maplibre/maplibre-native/tree/main/docker) and accompanying instructions to make Linux builds of MapLibre Native.
 
-A Pull Request showing a [proof-of-concept](https://github.com/maplibre/maplibre-native/pull/2647) that integrates Rust build tools into the CMake build config was opened this month. The PR swaps out [cppcolorparser](https://github.com/maplibre/maplibre-native/blob/main/vendor/csscolorparser/csscolorparser.cpp) with a similar Rust library, just to see if a Rust dependency can be added while still building and running. It does build, and it does run.
+A Pull Request showing a [proof-of-concept](https://github.com/maplibre/maplibre-native/pull/2647) that integrates Rust build tools into the CMake build config was opened this month. The PR swaps out [cppcolorparser](https://github.com/maplibre/maplibre-native/blob/main/vendor/csscolorparser/csscolorparser.cpp) with a similar Rust library, just to see if a Rust dependency can be added while still building and running. It does build, and it does run. If successful, this will allow MapLibre Native to gain safety, speed, and stability of Rust components, while keeping existing functionality and API for our users.
 
 Furthermore:
 
