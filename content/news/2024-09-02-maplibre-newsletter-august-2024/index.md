@@ -40,6 +40,8 @@ The globe branch now supports the custom layer interface and the transform class
 
 Once the globe branch will be merged to main, which should happen in the next month or two, we will start to prepare version 5. You can find a list of anticipated breaking changes [here](https://github.com/maplibre/maplibre-gl-js/issues/3834).
 
+Finally, we would like to congratulate Jakub Pelc for joining the maplibre-gl-js contributors. Jakub is working hard on the globe branch while upstreaming some of his bug fixes to the main branch! His work is nothing less than amazing! THANKS Jakub!!
+
 ## MapLibre Native
 
 - An initial integration of the Vulkan backend with Android is expected to land soon ([#2711](https://github.com/maplibre/maplibre-native/pull/2711)). We will be releasing an 'Early Access' version of MapLibre Android which will contain only Vulkan support next month (September 2024). This version is not intended to be used in production, but a way to get the Vulkan-based renderer in the hands of the community to get feedback. If you are interested to help testing Vulkan on Android please leave a comment in [this GitHub thread](https://github.com/maplibre/maplibre-native/issues/2787) and we will notify you once the release is out.
