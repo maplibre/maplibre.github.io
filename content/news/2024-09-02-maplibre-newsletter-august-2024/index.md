@@ -38,7 +38,7 @@ Among the highlights of these versions are a lot of small bug fixes, better CJKV
 
 The globe branch now supports the custom layer interface and the transform class was split into parts.
 
-Once the globe branch will be merged to main, which should happen in the next month or two, we will start to prepare version 5. You find a list of anticipated breaking changes [here](https://github.com/maplibre/maplibre-gl-js/issues/3834).
+Once the globe branch will be merged to main, which should happen in the next month or two, we will start to prepare version 5. You can find a list of anticipated breaking changes [here](https://github.com/maplibre/maplibre-gl-js/issues/3834).
 
 ## MapLibre Native
 
