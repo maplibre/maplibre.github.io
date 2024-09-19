@@ -11,7 +11,7 @@ weight: 10
     />
     <h3 class="m-3">Petr Pridal</h3>
     <p>Member of the Governing Board</p>
-    <p><a href="https://www.linkedin.com/in/klokan/">LinkedIn</a> · <a href="https://github.com/klokan">GitHub</a> · <a href="https://osmus.slack.com/team/UQJSSE2PP">Slack</a> · <a href="https://twitter.com/petrpridal">Twitter</a>
+    <p><a href="https://www.linkedin.com/in/klokan/">LinkedIn</a> · <a href="https://github.com/klokan">GitHub</a> · <a href="https://osmus.slack.com/team/UQJSSE2PP">Slack</a> · <a href="https://x.com/petrpridal">X</a>
 </div>
 
 As one of the founders, I have had a chance to help to shape the MapLibre

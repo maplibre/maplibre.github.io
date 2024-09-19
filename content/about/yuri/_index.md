@@ -11,14 +11,14 @@ weight: 10
     />
     <h3 class="m-3">Yuri Astrakhan</h3>
     <p>Member of the Governing Board</p>
-    <p><a href="https://www.linkedin.com/in/yurik/">LinkedIn</a> · <a href="https://github.com/nyurik">GitHub</a> · <a href="https://osmus.slack.com/team/UD83BMK5W">Slack</a> · <a href="https://twitter.com/nyuriks">Twitter</a>
+    <p><a href="https://www.linkedin.com/in/yurik/">LinkedIn</a> · <a href="https://github.com/nyurik">GitHub</a> · <a href="https://osmus.slack.com/team/UD83BMK5W">Slack</a> · <a href="https://x.com/nyuriks">X</a>
 </div>
 
 I feel it is important to show what I did so far, and explain how I see
 MapLibre's future. I have served on the Board since MapLibre's inception, so
 here it goes...
 
-- I kick-started MapLibre via a Twitter post. There are some good replies
+- I kick-started MapLibre via a X post. There are some good replies
   including the one from the Mapbox CEO just eight minutes after my initial
   tweet...
 - Created the MapLibre GitHub organization, set up OpenCollective banking

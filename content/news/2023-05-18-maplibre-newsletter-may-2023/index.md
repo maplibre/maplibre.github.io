@@ -88,7 +88,7 @@ Highlights since April 14th, 2023:
 
 ## Events
 
-We would like to point out the [MapLibre User Group Japan](https://bit.ly/mug--jp) initiated by [Yasunori](https://github.com/dayjournal). The 5th event will take place [here](https://twitter.com/i/spaces/1nAJErzVBvgxL), June 14th, 2023 19:00 (JST). At the previous event 32 listeners participated when [MapLibre Native](https://github.com/maplibre/maplibre-native) was introduced. Another focus was [FOSS4G](https://2023.foss4g.org/). Anyone who is interested, please do not hesitate to join. Everyone is welcome.
+We would like to point out the [MapLibre User Group Japan](https://bit.ly/mug--jp) initiated by [Yasunori](https://github.com/dayjournal). The 5th event will take place [here](https://x.com/i/spaces/1nAJErzVBvgxL), June 14th, 2023 19:00 (JST). At the previous event 32 listeners participated when [MapLibre Native](https://github.com/maplibre/maplibre-native) was introduced. Another focus was [FOSS4G](https://2023.foss4g.org/). Anyone who is interested, please do not hesitate to join. Everyone is welcome.
 
 ## Next Up
 

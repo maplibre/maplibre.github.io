@@ -13,6 +13,6 @@ If you speak Japanese and you are interested in map rendering, have a look at th
 <br />
 <a href="https://bit.ly/mug--jp">Official Website</a>
 <br />
-<a href="https://twitter.com/i/spaces/1OyKAVvlgvbGb">Twitter Space</a>
+<a href="https://x.com/i/spaces/1OyKAVvlgvbGb">X Space</a>
 <br />
 Yasunori Kirimoto and Kanahiro Iguchi who are both <a href="https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md">MapLibre Voting Members</a> are organizing the User Group. The plan is to create online meetups and bring people together who are interested in MapLibre. They also have some nice MapLibre swag for you!

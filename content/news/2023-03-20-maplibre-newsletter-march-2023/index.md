@@ -30,8 +30,8 @@ Read all the stories:
 
 - [Felt](https://felt.com/blog/maplibre-rendering-engine)
 - [The Washington Post](https://www.kschaul.com/post/2023/02/16/how-the-post-is-replacing-mapbox-with-open-source-solutions/)
-- [Austrian public broadcaster ORF.at](https://twitter.com/devORFat/status/1632467991269867521)
-- [UK office for national statistics](https://twitter.com/DrMalcolmMorgan/status/1629848619728732161)
+- [Austrian public broadcaster ORF.at](https://x.com/devORFat/status/1632467991269867521)
+- [UK office for national statistics](https://x.com/DrMalcolmMorgan/status/1629848619728732161)
 
 #### Random
 

@@ -11,7 +11,7 @@ weight: 10
     />
     <h3 class="m-3">Luke Seelenbinder</h3>
     <p>Member of the Governing Board</p>
-    <p><a href="https://www.linkedin.com/in/lukeseelenbinder/">LinkedIn</a> · <a href="https://github.com/lseelenbinder">GitHub</a> · <a href="https://osmus.slack.com/team/U01GBD8M138">Slack</a> · <a href="https://twitter.com/lseelenbinder">Twitter</a>
+    <p><a href="https://www.linkedin.com/in/lukeseelenbinder/">LinkedIn</a> · <a href="https://github.com/lseelenbinder">GitHub</a> · <a href="https://osmus.slack.com/team/U01GBD8M138">Slack</a> · <a href="https://x.com/lseelenbinder">X</a>
 </div>
 
 As part of the founding group, I strongly believe that open-source map
@@ -20,7 +20,7 @@ large organizations), and that's why I initially led (along with my fearless
 fellow founding members) the push to ensure there was a single,
 vendor-neutral, and community-led fork of Mapbox GL JS, and I'm really
 excited to see the community and engagement grow over the last years. So
-far, I've been most involved in the background, from Twitter-spamming at the
+far, I've been most involved in the background, from X-spamming at the
 beginning to build an initial group, to helping build the organizational
 charter, talking to sponsors, writing organizational docs and presentations,
 and ensuring we have a solid foundation for the future.
