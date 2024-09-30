@@ -2,7 +2,7 @@
 title: "MapLibre Newsletter September 2024"
 date: "2024-09-30"
 categories: ["newsletter"]
-authors: [wipfli, ianthetechie, harel, bart]
+authors: [ramyaragupathy, ianthetechie, harel, bart]
 draft: false
 ---
 
