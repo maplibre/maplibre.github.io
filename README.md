@@ -16,7 +16,7 @@ Features:
 3. Run `npm run serve` or `./hugow --get-extended serve`
 4. Open the URL which is printed in the terminal
 
-After making any changes, make sure to run `npm run format`.
+After making any changes, make sure to run `npm run format` and `npm run format-check`.
 
 ## Building for Production
 
