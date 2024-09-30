@@ -28,7 +28,7 @@ We are also planning some breaking changes as part of this version which you can
 Apart from the exiting news about the globe finally making its way to the main branch there are also some experiments to allow controlling the roll angle of the map to facilitate for some aviation use cases.
 ![image](https://github.com/user-attachments/assets/0a0771e6-11d9-40b4-9c49-409733b420dc)
 
-More about it can be found here, there are bounties related to this effort as well if you are interested in developing this, or if your company needs this feature you can chip-in for the costs:
+More about it can be found in the linked issue below, there are bounties related to this effort as well if you are interested in developing this, or if your company needs this feature you can chip-in for the costs:
 
 - https://github.com/maplibre/maplibre-gl-js/issues/4717#issuecomment-2368502154
 
