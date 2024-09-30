@@ -21,7 +21,7 @@ If you'd like to help shape the future of MapLibre in SwiftUI, join us in the `#
 
 In this month three version were released: 4.7.0, 4.7.1 and 5.0.0-pre.1.
 The prerelease of version 5 is meant to get some feedback on the newly added globe feature!
-We are also planning some breaking changes as part of this version which you can find here, most of them are not disruptive:
+We are also planning some breaking changes as part of this version which you can find below, most of them are not disruptive:
 
 - https://github.com/maplibre/maplibre-gl-js/issues/3834
 
