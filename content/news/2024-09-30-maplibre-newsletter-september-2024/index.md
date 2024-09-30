@@ -1,5 +1,5 @@
 ---
-title: "MapLibre Newsletter August 2024"
+title: "MapLibre Newsletter September 2024"
 date: "2024-09-30"
 categories: ["newsletter"]
 authors: [wipfli, ianthetechie, harel, bart]
