@@ -10,7 +10,10 @@ draft: false
 
 We’re delighted to begin the September newsletter with a heartfelt THANK YOU to Microsoft for their unwavering support as a sponsor of MapLibre in 2024!
 
+<a href="https://www.microsoft.com/en-in">
 <img src="msft-sponsor-sep-newsletter.png" width="100%"/>
+</a>
+<br />
 
 ## MapLibre GL JS
 
