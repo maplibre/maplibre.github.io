@@ -14,7 +14,6 @@ We’re delighted to begin the September newsletter with a heartfelt THANK YOU t
 
 ## MapLibre GL JS
 
-
 In this month three version were released: 4.7.0, 4.7.1 and 5.0.0-pre.1.
 The prerelease of version 5 is meant to get some feedback on the newly added globe feature!
 We are also planning some breaking changes as part of this version which you can find below, most of them are not disruptive:
@@ -42,7 +41,6 @@ More about it can be found in the linked issue below, there are bounties related
 
 - Support for [PMTiles](https://github.com/protomaps/PMTiles) may come to MapLibre Native soon! There is an open PR ([#2882](https://github.com/maplibre/maplibre-native/pull/2882)) from Tiago Costa with a request to try it out.
 
-
 ## SwiftUI DSL
 
 MapLibre has a new hosted project: the [SwiftUI DSL for MapLibre native](https://github.com/maplibre/swiftui-dsl)! Originally started by Ian Wagner from [Stadia Maps](https://stadiamaps.com/), the goal of the project is to give MapLibre developers on iOS an experience that rivals the latest MapKit for SwiftUI APIs.
@@ -55,8 +53,8 @@ If you'd like to help shape the future of MapLibre in SwiftUI, join us in the `#
 
 he upcoming monthly meetings will be held as usual on the second Wednesday of the month, which falls on October 9th, 2024. These calls are open to everyone, and we encourage you to join us and say hello!
 
-	•	MapLibre Navigation: October 9th, 2024, 6:00–7:00 PM CEST
-	•	MapLibre Native: October 9th, 2024, 7:00–8:00 PM CEST
-	•	MapLibre GL JS: October 9th, 2024, 8:00–9:00 PM CEST
+    •	MapLibre Navigation: October 9th, 2024, 6:00–7:00 PM CEST
+    •	MapLibre Native: October 9th, 2024, 7:00–8:00 PM CEST
+    •	MapLibre GL JS: October 9th, 2024, 8:00–9:00 PM CEST
 
 Zoom links for these meetings can be found in the MapLibre Slack channel. If you’re not already a member, you can easily join by getting an automated invite at https://slack.openstreetmap.us/.
