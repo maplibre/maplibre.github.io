@@ -10,21 +10,33 @@ draft: false
 
 We’re delighted to begin the September newsletter with a heartfelt THANK YOU to Microsoft for their unwavering support as a sponsor of MapLibre in 2024!
 
-<a href="https://www.microsoft.com/en-in">
-<img src="msft-sponsor-sep-newsletter.png" width="100%"/>
+<a href="https://www.microsoft.com/">
+<img src="msft-sponsor-sep-newsletter.svg" width="100%"/>
 </a>
+<br />
 <br />
 
 ## MapLibre GL JS
 
-In this month three version were released: 4.7.0, 4.7.1 and 5.0.0-pre.1.
-The prerelease of version 5 is meant to get some feedback on the newly added globe feature!
+In this month three versions were released: 4.7.0, 4.7.1 and 5.0.0-pre.1.
+
+The pre-release of version 5 is meant to get some feedback on the newly added globe feature!
+
+<a href="globe.html">
+<img src="globe.jpg" width="100%"/>
+</a>
+<br/>
+<br/>
+
+Feel free to try out our v5.0.0-pre.1 <a href="globe.html">globe demo</a>.
+
 We are also planning some breaking changes as part of this version which you can find below, most of them are not disruptive:
 
 - https://github.com/maplibre/maplibre-gl-js/issues/3834
 
 Apart from the exciting news about the globe finally making its way to the main branch there are also some experiments to allow controlling the roll angle of the map to facilitate for some aviation use cases.
-<img src="gj-js-roll-angle.png" width="100%"/>
+
+<img src="gl-js-roll-angle.jpg" width="100%"/>
 
 More about it can be found in the linked issue below, there are bounties related to this effort as well if you are interested in developing this, or if your company needs this feature you can chip-in for the costs:
 
@@ -54,10 +66,10 @@ If you'd like to help shape the future of MapLibre in SwiftUI, join us in the `#
 
 ## Meetings and Events
 
-he upcoming monthly meetings will be held as usual on the second Wednesday of the month, which falls on October 9th, 2024. These calls are open to everyone, and we encourage you to join us and say hello!
+The upcoming monthly meetings will be held as usual on the second Wednesday of the month, which falls on October 9th, 2024. These calls are open to everyone, and we encourage you to join us and say hello!
 
-    •	MapLibre Navigation: October 9th, 2024, 6:00–7:00 PM CEST
-    •	MapLibre Native: October 9th, 2024, 7:00–8:00 PM CEST
-    •	MapLibre GL JS: October 9th, 2024, 8:00–9:00 PM CEST
+- MapLibre Navigation: October 9th, 2024, 6:00–7:00 PM CEST
+- MapLibre Native: October 9th, 2024, 7:00–8:00 PM CEST
+- MapLibre GL JS: October 9th, 2024, 8:00–9:00 PM CEST
 
 Zoom links for these meetings can be found in the MapLibre Slack channel. If you’re not already a member, you can easily join by getting an automated invite at https://slack.openstreetmap.us/.
