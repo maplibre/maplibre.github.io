@@ -119,6 +119,10 @@ main a {
   }
 }
 
+.person {
+  max-width: 175px;
+}
+
 ul.projects {
   list-style: none;
   li::before {
