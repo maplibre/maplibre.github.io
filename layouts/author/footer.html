@@ -1,0 +1,144 @@
+{{ if not .fullscreen }}
+  <footer class="mt-auto">
+    <div class="container pb-4 pt-6"></div>
+    <hr />
+    <div class="container">
+      <div class="row py-3">
+        <div class="col-4">
+          <a href="/" aria-label="MapLibre">
+            <object
+              height="30"
+              width="120"
+              data="/img/maplibre-logo.svg"
+              type="image/svg+xml"
+            ></object>
+
+            <!--       
+            <svg
+              aria-hidden="true"
+              width="141"
+              height="30"
+              viewBox="0 0 141 30"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <use href="/img/maplibre-logo-dark.svg#maplibre"></use>
+            </svg> -->
+          </a>
+        </div>
+        <!-- <div class="col-sm-6">
+          <div class="nav">
+            {{ range .menu }}
+          <li>
+            <a class="nav-link text-white" href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+        {{ end }}
+          </div>
+        </div> -->
+
+        <!-- <div class="col-sm-1">
+          {{/* Display copyright if available */}}
+          {{ with .copyright }}
+          <div class="d-flex justify-content-center text-white nav-link">
+            {{- . -}}
+          </div>
+        {{ end }}
+        </div> -->
+
+        <!-- <div class="col-sm-2 flex">
+          {{ with .githubProjectUrl }}
+          <div class="text-white d-flex justify-content-center nav-link">
+            <a class="text-white" href="{{ . }}">GitHub</a>
+            {{ with $.gitinfo }}
+              @
+              <a class="text-white" href="{{ . }}/commit/{{ $.gitinfo.Hash }}"
+                >{{ $.gitinfo.AbbreviatedHash }}</a
+              >
+            {{ end }}
+          </div>
+        {{ end }}
+        </div> -->
+
+        <div class="col-8">
+          <div class="nav justify-content-end">
+            <a
+              class="nav-link text-white"
+              href="https://mastodon.social/@maplibre"
+              aria-label="MapLibre on Mastodon"
+            >
+              <svg
+                id="mas"
+                viewBox="0 0 16 16"
+                width="16"
+                height="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="white"
+                  d="M 15.659 9.592 C 15.424 10.72 13.553 11.956 11.404 12.195 C 10.283 12.32 9.18 12.434 8.003 12.384 C 6.079 12.302 4.56 11.956 4.56 11.956 C 4.56 12.13 4.572 12.297 4.595 12.452 C 4.845 14.224 6.478 14.33 8.025 14.379 C 9.586 14.429 10.976 14.02 10.976 14.02 L 11.04 15.337 C 11.04 15.337 9.948 15.884 8.003 15.984 C 6.93 16.039 5.598 15.959 4.047 15.576 C 0.683 14.746 0.104 11.4 0.015 8.006 C -0.012 6.998 0.005 6.048 0.005 5.253 C 0.005 1.782 2.443 0.765 2.443 0.765 C 3.672 0.238 5.782 0.017 7.975 0 L 8.029 0 C 10.221 0.017 12.332 0.238 13.561 0.765 C 13.561 0.765 15.999 1.782 15.999 5.253 C 15.999 5.253 16.03 7.814 15.659 9.592 Z M 13.124 5.522 L 13.124 9.725 L 11.339 9.725 L 11.339 5.646 C 11.339 4.786 10.951 4.35 10.175 4.35 C 9.317 4.35 8.887 4.867 8.887 5.891 L 8.887 8.124 L 7.113 8.124 L 7.113 5.891 C 7.113 4.867 6.683 4.35 5.825 4.35 C 5.049 4.35 4.661 4.786 4.661 5.646 L 4.661 9.725 L 2.876 9.725 L 2.876 5.522 C 2.876 4.663 3.111 3.981 3.582 3.476 C 4.067 2.971 4.703 2.712 5.493 2.712 C 6.406 2.712 7.098 3.039 7.555 3.695 L 8 4.39 L 8.445 3.695 C 8.902 3.039 9.594 2.712 10.507 2.712 C 11.297 2.712 11.933 2.971 12.418 3.476 C 12.889 3.981 13.124 4.663 13.124 5.522 Z"
+                  style="stroke:none;stroke-miterlimit:10;fill-rule:evenodd;"
+                />
+              </svg>
+            </a>
+            <a
+              class="nav-link text-white"
+              href="https://twitter.com/maplibre"
+              aria-label="MapLibre on X"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 1200 1227"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
+                  fill="white"
+                />
+              </svg>
+            </a>
+            <a
+              class="nav-link text-white"
+              href="https://www.linkedin.com/company/maplibre"
+              aria-label="MapLibre on Linkedin"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 72 72"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g fill="none" fill-rule="evenodd">
+                  <path
+                    d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z"
+                    fill="#fff"
+                  />
+                  <path
+                    d="M62,62 L51.315625,62 L51.315625,43.8021149 C51.315625,38.8127542 49.4197917,36.0245323 45.4707031,36.0245323 C41.1746094,36.0245323 38.9300781,38.9261103 38.9300781,43.8021149 L38.9300781,62 L28.6333333,62 L28.6333333,27.3333333 L38.9300781,27.3333333 L38.9300781,32.0029283 C38.9300781,32.0029283 42.0260417,26.2742151 49.3825521,26.2742151 C56.7356771,26.2742151 62,30.7644705 62,40.051212 L62,62 Z M16.349349,22.7940133 C12.8420573,22.7940133 10,19.9296567 10,16.3970067 C10,12.8643566 12.8420573,10 16.349349,10 C19.8566406,10 22.6970052,12.8643566 22.6970052,16.3970067 C22.6970052,19.9296567 19.8566406,22.7940133 16.349349,22.7940133 Z M11.0325521,62 L21.769401,62 L21.769401,27.3333333 L11.0325521,27.3333333 L11.0325521,62 Z"
+                    fill="#000"
+                  />
+                </g>
+              </svg>
+            </a>
+            <a
+              class="nav-link text-white"
+              href="https://github.com/MapLibre"
+              aria-label="MapLibre on GitHub"
+            >
+              <svg
+                aria-hidden="true"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 30 30"
+              >
+                <use href="/img/github.svg#github"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+{{ end }}

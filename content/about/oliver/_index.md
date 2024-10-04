@@ -11,7 +11,7 @@ weight: 10
     />
     <h3 class="m-3">Oliver Wipfli</h3>
     <p>Coordinator</p>
-    <p><a href="https://www.linkedin.com/in/oliver-wipfli-562258210/">LinkedIn</a> · <a href="https://github.com/wipfli">GitHub</a> · <a href="https://osmus.slack.com/team/U01P70N4EMD">Slack</a> · <a href="https://twitter.com/leichteralsluft">Twitter</a> 
+    <p><a href="https://www.linkedin.com/in/oliver-wipfli-562258210/">LinkedIn</a> · <a href="https://github.com/wipfli">GitHub</a> · <a href="https://osmus.slack.com/team/U01P70N4EMD">Slack</a> · <a href="https://twitter.com/leichteralsluft">X</a> 
 </div>
 
 Hi, I'm Oliver and I am MapLibre's Coordinator.

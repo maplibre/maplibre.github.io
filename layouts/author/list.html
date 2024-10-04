@@ -6,10 +6,10 @@
         <div class="col-md-10 col-lg-8">
           <h2>Bio</h2>
           {{ .Content }}
-          {{ with .Params.twitter }}
+          {{ with .Params.x }}
             <p>
               <a href="https://twitter.com/{{ substr . 1 }}">
-                Follow {{ $.Params.name }} on Twitter
+                Follow {{ $.Params.name }} on x
               </a>
             </p>
           {{ end }}

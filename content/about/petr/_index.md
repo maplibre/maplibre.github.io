@@ -11,50 +11,35 @@ weight: 10
     />
     <h3 class="m-3">Petr Pridal</h3>
     <p>Member of the Governing Board</p>
-    <p><a href="https://www.linkedin.com/in/klokan/">LinkedIn</a> · <a href="https://github.com/klokan">GitHub</a> · <a href="https://osmus.slack.com/team/UQJSSE2PP">Slack</a> · <a href="https://twitter.com/petrpridal">Twitter</a>
+    <p><a href="https://www.linkedin.com/in/klokan/">LinkedIn</a> · <a href="https://github.com/klokan">GitHub</a> · <a href="https://osmus.slack.com/team/UQJSSE2PP">Slack</a> · <a href="https://twitter.com/petrpridal">X</a>
 </div>
 
-As one of the founders, I have had a chance to help to shape the MapLibre
-project into the current form. My vision for the project is to make it the
-best rendering library for maps out there - used by millions of people every
-day - vendor/provider independent - and with true community governance. Many
-of my ideas where to go practically are drafted in our
-<a href="https://maplibre.org/roadmap">roadmap</a>. Some of them I have
-helped to make happen practically with the assistance of my team:
+My name is [Petr Pridal](https://maplibre.org/about/petr/), known as Klokan. I am co-founder of MapLibre, founder of OpenMapTiles, EPSG.io, author of GDAL2Tiles, architect of OldMapsOnline.org, contributor to open-source cartography on multiple fronts and projects, entrepreneur and CEO of MapTiler.com.
 
-- First release of MapLibre SDK for Android and iOS (Native)
-- Design project logo, visual identity, presentation template, first version
-  of website <a href="https://maplibre.org/">https://maplibre.org</a> with
-  animated map and demotiles for CI and tests - all contributed to the
-  project as there was a need for it
-- Initial version of the pitch slidedeck & sponsorship presentation for
-  successful fund-raising and setup of donations
-- Promoting the project on conferences (SOTM, FOSS4G), in press (opensource.com,...) and on social media
-- Technical Steering Committee organization and moderation, and active work
-  on current Board
+I am keen to offer my services to the MapLibre project and community again - as self-nominee for the governing board in 2025, because I strongly believe in the viability of open-source components for developers.
 
-I believe JavaScript and Native are the core and essential projects of the
-MapLibre organization, and especially Native needs more love and focus right
-now - to get to parity with JS. These are the cornerstones on which other
-projects grow - and the success of MapLibre depends on the success of the
-two. Focus is important - but there is a need for new MapLibre projects too
-(hopefully the upcoming Planetiler, continued innovation in Rust or other
-tools) which brings benefits to the community and allows larger reach and
-will shape the project's future, and they are also really cool technically.
+In the upcoming year, I want to help to push forward:
 
-I am an entrepreneur and software architect. I am a challenge seeker, Swiss
-resident born in the Czech Republic, and father of two boys. I hope to be
-able to contribute with my experience and from my position of CEO of
-<a href="https://maptiler.com">MapTiler.com</a> - acting on the board as a
-representative of the vendors who are using the MapLibre in production
-systems with thousands of customers. I have practical experience from board
-meetings, education in management and board governance from IMD in
-Switzerland, degree in Computer Science and PhD in cartography. Furthermore,
-my visionary mind and workaholism helped to shape
-<a href="https://openmaptiles.org">OpenMapTiles.org</a>,
-<a href="https://epsg.io">EPSG.io</a>, GDAL2Tiles,
-<a href="https://oldmapsonline.org">OldMapsOnline.org</a>, etc. More about
-me on <a href="https://www.linkedin.com/in/klokan/">LinkedIn</a> and
-<a href="https://www.instagram.com/pridalpetr/">Instagram</a>.
+- [MapLibre Globe visualization](https://labs.maptiler.com/showcase/globe/) as production ready functionality for everyone (huge thanks @windycom @kubapelc already!)
+  [![maplibre-globe](https://github.com/user-attachments/assets/896961e5-a3fe-4a06-8e85-b3a981450c49)](https://labs.maptiler.com/showcase/globe/)
 
-Let's bring the MapLibre project to the next level - together :-)</p>
+- Kick-off new [WebGPU](https://en.wikipedia.org/wiki/WebGPU) renderer in TypeScript - to benefit from GPU accelerated processing of label collisions, data parsing & handling, transformations, improved font rendering, well-structured web workers, and prepare the map library for the integration of accelerated AI inference in the future. Let's gain more computational boost on modern hardware, which is closer to Vulkan and Metal instead of decades old OpenGL - while working on web-first code, but keep in sync with mobile and backend platforms
+- Ensure amazing benefits of growing [MLT - MapLibre Tile format](https://github.com/maplibre/maplibre-tile-spec) becomes reality in production, but does not slow down stable GL JS - with the biggest optimizations to be made in the new WebGPU renderer
+- Support further [performance boosts](https://labs.maptiler.com/sdk-benchmarks/) for MapLibre to build the fastest rendering map library out there
+
+Please vote for me, so I can continue to contribute with improvement of processes and governance of the project - while helping to shape the future with strategical insights from industry and with my executive experience.
+
+I have a degree in Computer Science, I have been coding myself for years, I also have extensive practical experience in management as well as education in board governance from IMD in Switzerland.
+
+In the past, I was fighting on the board of MapLibre for:
+
+- clear processes - hiring + documented roles & responsibilities (see subpages at [wiki](https://github.com/maplibre/maplibre/wiki))
+- measurable goals aligned to [the project strategy](https://drive.google.com/file/d/1F5abpGx8VlVse4SHGwxgRRY1wQ29i-0_/view)
+- transparent accounting (have a look yourself at https://opencollective.com/maplibre#category-BUDGET)
+- clear [sponsorship offer](https://maplibre.org/sponsors/Slide-Deck-MapLibre-Sponsorship-Program.pdf) leading to raising money, allowing employment of maintainers in this open-source project
+- trademarks - I donated the MapLibre EU trademark to the organization
+- focus on becoming "the best rendering library" out there with innovation and clear roadmap
+
+In previous years me and my team helped with setting up of this project, branding and identity of the project, we contributed in code on the initial version of Native, pushed initial announcements and assisted on many other fronts.
+
+Let’s bring the MapLibre project to the next level - together :-)

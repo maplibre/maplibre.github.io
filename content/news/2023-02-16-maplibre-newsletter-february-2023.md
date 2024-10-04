@@ -96,6 +96,6 @@ Code contributions since January 15th, 2023:
 
 ## Upcoming Events
 
-- MapLibre User Group Japan: The next Japanese-speaking Twitter Space meeting will be on March 1st, 2023 at 19:00 JST. More info at [https://bit.ly/mug--jp](https://bit.ly/mug--jp)
+- MapLibre User Group Japan: The next Japanese-speaking X Space meeting will be on March 1st, 2023 at 19:00 JST. More info at [https://bit.ly/mug--jp](https://bit.ly/mug--jp)
 - Meta maps meetup Zurich: On March 9th, 2023, Meta is inviting everybody to its Zurich office for a local maps meetup. More info can be found at [https://www.eventbrite.com/e/zurich-maps-geo-stammtisch-tickets-529414020587](https://www.eventbrite.com/e/zurich-maps-geo-stammtisch-tickets-529414020587)
 - MapLibre Technical Steering Committee meeting: Our monthly meetings are open to everybody. They always take place on the second Wednesday of the month. The next monthly meeting is on March 8th, 2023 with the Native meeting at 7 PM - 8 PM CET and the Web meeting at 8 PM to 9 PM CET. Zoom link can be found in our #maplibre Slack channel roughly one hour before the meetings. Join our slack at [https://slack.openstreetmap.us](https://slack.openstreetmap.us).
