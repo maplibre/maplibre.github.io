@@ -11,7 +11,7 @@ weight: 10
     />
     <h3 class="m-3">Yuri Astrakhan</h3>
     <p>Member of the Governing Board</p>
-    <p><a href="https://www.linkedin.com/in/yurik/">LinkedIn</a> · <a href="https://github.com/nyurik">GitHub</a> · <a href="https://osmus.slack.com/team/UD83BMK5W">Slack</a> · <a href="https://x.com/nyuriks">X</a>
+    <p><a href="https://www.linkedin.com/in/yurik/">LinkedIn</a> · <a href="https://github.com/nyurik">GitHub</a> · <a href="https://osmus.slack.com/team/UD83BMK5W">Slack</a> · <a href="https://twitter.com/nyuriks">X</a>
 </div>
 
 As a passionate advocate for open-source mapping software, I'm committed to driving MapLibre's mission forward.  After the license change, I proposed community to get together under `MapLibre` name, co-founded our organization, set up OpenCollective, did the initial re-branding and CI automation of the code.

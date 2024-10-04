@@ -18,16 +18,13 @@
   <meta property="og:description" content="{{ .Params.description }}" />
   <meta property="og:url" content="{{ .Permalink | absURL }}" />
 
-  <meta name="x:card" content="summary_large_image" />
-  <meta name="x:site" content="@maplibre" />
-  <meta name="x:creator" content="@maplibre" />
-  <meta name="x:title" content="{{ .Title }}" />
-  <meta name="x:description" content="{{ .Params.description }}" />
-  <meta
-    name="x:image:src"
-    content="https://maplibre.org/img/share-image.png"
-  />
-  <meta name="x:image:alt" content="MapLibre" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@maplibre" />
+  <meta name="twitter:creator" content="@maplibre" />
+  <meta name="twitter:title" content="{{ .Title }}" />
+  <meta name="twitter:description" content="{{ .Params.description }}" />
+  <meta name="twitter:image:src" content="https://maplibre.org/img/share-image.png" />
+  <meta name="twitter:image:alt" content="MapLibre" />
 
   <link rel="manifest" href="/site.webmanifest" />
 

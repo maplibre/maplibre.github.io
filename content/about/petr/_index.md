@@ -11,7 +11,7 @@ weight: 10
     />
     <h3 class="m-3">Petr Pridal</h3>
     <p>Member of the Governing Board</p>
-    <p><a href="https://www.linkedin.com/in/klokan/">LinkedIn</a> · <a href="https://github.com/klokan">GitHub</a> · <a href="https://osmus.slack.com/team/UQJSSE2PP">Slack</a> · <a href="https://x.com/petrpridal">X</a>
+    <p><a href="https://www.linkedin.com/in/klokan/">LinkedIn</a> · <a href="https://github.com/klokan">GitHub</a> · <a href="https://osmus.slack.com/team/UQJSSE2PP">Slack</a> · <a href="https://twitter.com/petrpridal">X</a>
 </div>
 
 My name is [Petr Pridal](https://maplibre.org/about/petr/), known as Klokan. I am co-founder of MapLibre, founder of OpenMapTiles, EPSG.io, author of GDAL2Tiles, architect of OldMapsOnline.org, contributor to open-source cartography on multiple fronts and projects, entrepreneur and CEO of MapTiler.com.
