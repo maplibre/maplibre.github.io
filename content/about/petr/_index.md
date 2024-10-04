@@ -19,11 +19,12 @@ My name is [Petr Pridal](https://maplibre.org/about/petr/), known as Klokan. I a
 I am keen to offer my services to the MapLibre project and community again - as self-nominee for the governing board in 2025, because I strongly believe in the viability of open-source components for developers.
 
 In the upcoming year, I want to help to push forward:
+
 - [MapLibre Globe visualization](https://labs.maptiler.com/showcase/globe/) as production ready functionality for everyone (huge thanks @windycom @kubapelc already!)
-[![maplibre-globe](https://github.com/user-attachments/assets/896961e5-a3fe-4a06-8e85-b3a981450c49)](https://labs.maptiler.com/showcase/globe/)
+  [![maplibre-globe](https://github.com/user-attachments/assets/896961e5-a3fe-4a06-8e85-b3a981450c49)](https://labs.maptiler.com/showcase/globe/)
 
 - Kick-off new [WebGPU](https://en.wikipedia.org/wiki/WebGPU) renderer in TypeScript - to benefit from GPU accelerated processing of label collisions, data parsing & handling, transformations, improved font rendering, well-structured web workers, and prepare the map library for the integration of accelerated AI inference in the future. Let's gain more computational boost on modern hardware, which is closer to Vulkan and Metal instead of decades old OpenGL - while working on web-first code, but keep in sync with mobile and backend platforms
-- Ensure amazing benefits of growing [MLT - MapLibre Tile format]( https://github.com/maplibre/maplibre-tile-spec) becomes reality in production, but does not slow down stable GL JS - with the biggest optimizations to be made in the new WebGPU renderer
+- Ensure amazing benefits of growing [MLT - MapLibre Tile format](https://github.com/maplibre/maplibre-tile-spec) becomes reality in production, but does not slow down stable GL JS - with the biggest optimizations to be made in the new WebGPU renderer
 - Support further [performance boosts](https://labs.maptiler.com/sdk-benchmarks/) for MapLibre to build the fastest rendering map library out there
 
 Please vote for me, so I can continue to contribute with improvement of processes and governance of the project - while helping to shape the future with strategical insights from industry and with my executive experience.

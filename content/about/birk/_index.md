@@ -25,7 +25,8 @@ From 2021-2023 I spent the majority of my time working on tooling, general maint
 This past year I directed my attention more towards community and R&D:
 
 ### DevRel - Community and ecosystem
- I've been focusing on helping onboard projects that can benefit from MapLibre to our community, and make sure our compatibility in the ecosystem stays high. Notable examples are:
+
+I've been focusing on helping onboard projects that can benefit from MapLibre to our community, and make sure our compatibility in the ecosystem stays high. Notable examples are:
 
 - [Plotly.js](https://github.com/plotly/plotly.js) (MIT-license), an awesome python plotting library, with 4m weekly downloads, that will have support maplibre from the next minor (RC release any day now), and exclusively support maplibre from next major. ( https://github.com/plotly/plotly.js/pull/7015#issuecomment-2275965617 )
 
@@ -36,15 +37,17 @@ This past year I directed my attention more towards community and R&D:
 - [OpenPilot](https://github.com/commaai/openpilot) (MIT-license) - Took contact to the team. It's running MapLibre Native now https://github.com/commaai/openpilot/issues/26739
 
 I expect to start collaborating with this team soon - there's a vote on this change in progress.
+
 - [Apache Superset](https://github.com/apache/superset) (ofc. Apache license - 61k GitHub stars) - https://github.com/apache/superset/issues/28356
 
 ### Breaking new ground - Healthy competition amongst our renderers
+
 In the past year I've been thinking a lot about our long-term strategy, around if we can unify maplibre to a single renderer. In that case we have to figure if it's possible to make MapLibre Native run on the web, and if MapLibre GL JS can be fast enough for mobile use, or if it's better to introduce a third renderer that's a bit of both. I don't know the answer here, but I know that we can pursue each to learn more, and then reassess at a later point. My work in this regard is:
 
 _**Can we make Native portable?**_
 
 I've been doing some pioneering work regarding exploring our options for [MapLibre Native Wasm](https://birkskyum.github.io/maplibre-native-wasm/) compilation to run in the browser, which I demonstrated with our first Wasm demo [here](https://birkskyum-maplibre-native-wasm.pages.dev/qt-for-webassembly/webgl1-from-opengl2-legacy-renderer/). This could be the first baby step towards increasing the portability of Native to web, thus making it truly cross-platform.
 
-_**Can we make GL JS fast?**_ 
+_**Can we make GL JS fast?**_
 
 I push for our MapLibre GL JS to move forward towards a [modular graphics backend](https://github.com/maplibre/maplibre-gl-js/issues/4511), so that we can begin refactor to adopt faster WebGL2 and WebGPU functionality. I started [migrating to webgl2](https://github.com/maplibre/maplibre-gl-js/pull/2599) a year ago, but due to a lack of this refactor we had to put this work on hold, and even down-compile to webgl1. If we can make GL JS run super fast, and it already have super high portability, and a much simpler codebase, then I believe it can stand the pressure of the Native renderers.
