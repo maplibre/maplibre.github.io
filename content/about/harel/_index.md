@@ -10,7 +10,7 @@ weight: 10
         class="rounded-circle mt-3"
     />
     <h3 class="m-3">Harel Mazor</h3>
-    <p>Member of the Governing Board and Maintainer Web</p>
+    <p>Maintainer Web</p>
     <p><a href="https://www.linkedin.com/in/harel-mazor-1298b139/">LinkedIn</a> · <a href="https://github.com/HarelM">GitHub</a> · <a href="https://osmus.slack.com/team/ULPGVUPL1">Slack</a> · <a href="https://x.com/Harel_M">X</a></p>
 </div>
 
