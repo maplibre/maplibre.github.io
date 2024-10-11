@@ -18,7 +18,7 @@ On behalf of the community, we would like to extend a heartfelt thanks to Oliver
 
 ### Share your farewell messages!
 
-Many of you from the community would have had a chance to work with Oliver and have your own stories to share. Please [leave a personal message for Oliver on GitHub](https://github.com/maplibre/maplibre/discussions/xxx)!
+Many of you from the community would have had a chance to work with Oliver and have your own stories to share. Please [leave a personal message for Oliver on GitHub](https://github.com/maplibre/maplibre/discussions/414)!
 
 <a href="/about/harel">
     <img
