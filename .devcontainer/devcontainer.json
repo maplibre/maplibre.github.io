@@ -1,4 +1,4 @@
 {
-  "image": "hugomods/hugo:latest",
+  "image": "hugomods/hugo:0.113.0",
   "features": {}
 }
