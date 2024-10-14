@@ -14,7 +14,7 @@ weight: 10
     <p><a href="https://www.linkedin.com/in/harel-mazor-1298b139/">LinkedIn</a> · <a href="https://github.com/HarelM">GitHub</a> · <a href="https://osmus.slack.com/team/ULPGVUPL1">Slack</a> · <a href="https://twitter.com/Harel_M">X</a></p>
 </div>
 
-I believe we have a true chance for greatness with MapLibre. 
+I believe we have a true chance for greatness with MapLibre.
 As an Open Source promoter I believe in transparency and giving back
 to the community what's rightfully theirs. Moving this project forward to
 new technologies and new markets will be my main focus, making sure we
