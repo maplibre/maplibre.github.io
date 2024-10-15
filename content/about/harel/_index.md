@@ -14,12 +14,12 @@ weight: 10
     <p><a href="https://www.linkedin.com/in/harel-mazor-1298b139/">LinkedIn</a> · <a href="https://github.com/HarelM">GitHub</a> · <a href="https://osmus.slack.com/team/ULPGVUPL1">Slack</a> · <a href="https://twitter.com/Harel_M">X</a></p>
 </div>
 
-I believe we have a true chance for greatness with MapLibre. As a Board
-member and an Open Source promoter I believe in transparency and giving back
+I believe we have a true chance for greatness with MapLibre.
+As an Open Source promoter I believe in transparency and giving back
 to the community what's rightfully theirs. Moving this project forward to
 new technologies and new markets will be my main focus, making sure we
 harness the power of the community by constantly updating our technology
-stack.
+stack and encoureging the community to contibute to the codebase.
 
 In the day I work as a group leader in Dell Technologies and at night I'm
 working on an open source hobby project called Israel Hiking Map
@@ -32,7 +32,7 @@ The contribution that started my journey in MapLibre was the addition of the
 maplibre like never before.
 
 I've pushed forward the typescript migration along with the modernization of
-the maplibre-gl-js stack, and helped with the 3D terrain effort.
+the maplibre-gl-js stack, and helped with the 3D terrain and globe effort.
 
 I generally enjoy participating in open source projects from the development
 side of things and you probably know me from the annoying code review
