@@ -1,5 +1,5 @@
 ---
-title: Roadmap - Leightweight Renderers
+title: Roadmap - Lightweight Renderers
 weight: 10
 ---
 
