@@ -141,10 +141,10 @@ weight: 10
 
   <div class="col-lg-4">
     <div class="card">
-      <img class="card-img-top" src="leightweight-renderers/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
+      <img class="card-img-top" src="lightweight-renderers/image.png" style="width: 100%; height: 250px; object-fit: cover;"/>
       <div class="card-body">
-        <h5 class="card-title">Leightweight Renderers</h5>
-        <a href="leightweight-renderers/" class="btn btn-primary">Read more...</a>
+        <h5 class="card-title">Lightweight Renderers</h5>
+        <a href="lightweight-renderers/" class="btn btn-primary">Read more...</a>
         <a href="https://github.com/maplibre/maplibre/issues/273" class="btn btn-light">💰 Bounties</a>
       </div>
     </div>
