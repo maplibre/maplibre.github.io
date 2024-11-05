@@ -1,75 +1,81 @@
 ---
 title: "MapLibre Newsletter October 2024"
-date: "2024-10-30"
+date: "2024-11-03"
 categories: ["newsletter"]
 authors: [meena]
 draft: false
 ---
 
-# MapLibre Newsletter - October 2024
+# MapLibre Newsletter - November 2024
 
-We’re delighted to begin the September newsletter with a heartfelt THANK YOU to Microsoft for their unwavering support as a sponsor of MapLibre in 2024!
+We’re delighted to begin the November newsletter with a gracious and hearty Thank You to Meta for their unwavering support as a sponsor of MapLibre in 2024! We look forward to what is to come. 
 
-<a href="https://www.microsoft.com/">
-<img src="msft-sponsor-sep-newsletter.svg" width="100%"/>
+<a href="https://www.meta.com/">
+<img src="Meta.png" width="100%"/>
 </a>
 <br />
 <br />
 
 ## MapLibre GL JS
 
-In this month three versions were released: 4.7.0, 4.7.1 and 5.0.0-pre.1.
+We have released versions 5.0.0-pre.2, 5.0.0-pre.3 and 5.0.0-pre.4 this month.
+One interesting feature that was recently added was the support for pitch larger than 90 degrees.
 
-The pre-release of version 5 is meant to get some feedback on the newly added globe feature!
+Here's an interesting situation that should be possible now:
 
-<a href="globe.html">
-<img src="globe.jpg" width="100%"/>
+
+<a href="pitchlarger90degrees.png">
+<img src="pitchlarger90degrees.png" width="100%"/>
 </a>
 <br/>
 <br/>
 
-Feel free to try out our v5.0.0-pre.1 <a href="globe.html">globe demo</a>.
+An interesting read on how this works can be found [here] (https://github.com/maplibre/maplibre-gl-js/blob/49d7fc96ad883b4e1042fe305cd0c0a16ccd9732/developer-guides/center-point.md)
 
-We are also planning some breaking changes as part of this version which you can find below, most of them are not disruptive:
+WWe have introduced some breaking changes in these versions as was planned for version 5, to make sure to take a look at the changelog for more details.
+There are still open issues with globe and other improvement we plan to add as part of this major release.
+See the initial post in the following issue to see the current status:
 
-- https://github.com/maplibre/maplibre-gl-js/issues/3834
+[Breaking Changes in MapLibre GLJS v5 maplibre gl-js#3834] (https://github.com/maplibre/maplibre-gl-js/issues/3834)
 
-Apart from the exciting news about the globe finally making its way to the main branch there are also some experiments to allow controlling the roll angle of the map to facilitate for some aviation use cases.
-
-<img src="gl-js-roll-angle.jpg" width="100%"/>
-
-More about it can be found in the linked issue below, there are bounties related to this effort as well if you are interested in developing this, or if your company needs this feature you can chip-in for the costs:
-
-- https://github.com/maplibre/maplibre-gl-js/issues/4717#issuecomment-2368502154
+Overall we are progressing well and ironing out the globe feature.
 
 ## MapLibre Native
 
-- The most significant development this month was the [MapLibre Native Android pre-release](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.3.0-vulkan-pre0) that uses [Vulkan](https://www.vulkan.org/) for rendering. We did some benchmarks and the results [look promising](https://github.com/maplibre/maplibre-native/issues/2787#issuecomment-2368938676). Especially newer devices seem to benefit from this modern graphics API, although we are still validating these results and exploring opportunities to take advantage of Vulkan's capabilities. Since the Vulkan backend is still in development, now is the best time to try it out and to let us know any regressions you encounter (either as an issue or in the [pre-release thread](https://github.com/maplibre/maplibre-native/issues/2787)). You can test it by using `11.3.0-vulkan-pre0` as a version (or the latest Vulkan version from [Maven Central](https://central.sonatype.com/artifact/org.maplibre.gl/android-sdk/versions)).
+- Development of the Vulkan backend continued this month. We also ran another benchmark on AWS Device Farm, using even more device types this time. One conclusion you may draw from the results is that Vulkan will offer a solid performance boost on modern devices. We're still validating these results. Stay tuned for an Android official release following later this year!
 
-- Support for [`textFitWidth` and `textFitHeight`](https://maplibre.org/maplibre-style-spec/sprite/#text-fit-properties) properties landed in [#2780](https://github.com/maplibre/maplibre-native/pull/2780) this month. Support for specifying [padding for icons](https://maplibre.org/maplibre-style-spec/types/#padding) on all sides separately landed in [#2845](https://github.com/maplibre/maplibre-native/pull/2845). Both features are used in Bing Maps, and were implemented by Microsoft engineers (among which Alexey Kon). We are thankful for these contributions that work towards [feature parity with MapLibre GL JS](https://github.com/maplibre/maplibre-native/issues?q=is%3Aissue+is%3Aopen+label%3Ajs-parity).
 
-- MapLibre Native Android [11.3.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.3.0), [11.4.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.4.0) and [11.5.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.5.0) were released. This last release inadvertently included a small API change, which will mostly be resolved again by [#2880](https://github.com/maplibre/maplibre-native/pull/2880#pullrequestreview-2336900203). A pesky bug in the emulator was plaguing MapLibre Native Android ever since 11.0.0, but we added a workaround in the latest release, so that working with the emulator should be viable again.
+- Kaushal Kumar Singh rewrote the Android build config from Groovy to the more modern Kotlin in [#2902](https://github.com/maplibre/maplibre-native/pull/2902). 
 
-- MapLibre Native iOS [6.6.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.6.0) and [6.7.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.7.0) were released.
+-Support for text-variable-anchor-offset has been merged [#2921](hhttps://github.com/maplibre/maplibre-native/pull/2921). This feature is one of the features that Microsoft championed to be added to MapLibre GL JS, and now ported to MapLibre Native. We're happy with this contribution and are excited about Microsoft adopting MapLibre Native. 
 
-- MapLibre Node.js 6.0.0 was released which brings support for Metal on macOS, and uses the new [drawable](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2022-10-27-rendering-modularization.md) renderer architecture.
+- MapLibre iOS [6.7.1 and 6.8.0] were released. (https://github.com/maplibre/maplibre-native/releases?q=ios&expanded=true).
 
-- Support for [PMTiles](https://github.com/protomaps/PMTiles) may come to MapLibre Native soon! There is an open PR ([#2882](https://github.com/maplibre/maplibre-native/pull/2882)) from Tiago Costa with a request to try it out.
+-  MapLibre Android [11.5.1] were released. (https://github.com/maplibre/maplibre-native/releases?q=android-v11&expanded=true).
 
-## SwiftUI DSL
+- We also made two releases for [MapLibre Android v10](https://github.com/maplibre/maplibre-native/releases?q=android-v10&expanded=true) with some backports.
 
-MapLibre has a new hosted project: the [SwiftUI DSL for MapLibre native](https://github.com/maplibre/swiftui-dsl)! Originally started by Ian Wagner from [Stadia Maps](https://stadiamaps.com/), the goal of the project is to give MapLibre developers on iOS an experience that rivals the latest MapKit for SwiftUI APIs.
+## Flutter
 
-[Jacob Fielding](https://github.com/archdoog) ([Rallista](https://rallista.app/)), [Patrick Wolowicz](https://subzero.eu/) and [Patrick Kladek](https://github.com/Patrick-Kladek) ([HudHud](https://hudhud.sa/en)) shared the same vision, and have each contributed significantly to the ongoing development over the last year. This is a great example of the collaboration that MapLibre seeks to enable across the industry, and the authors are excited to have the project officially hosted under the MapLibre organization.
+We’re conducting a brief survey to gather feedback on MapLibre Flutter. The survey takes only about 2 minutes to complete and will help to identify strengths and areas for improvement. If you've worked with MapLibre on Flutter, your input is highly appreciated.
+ [You can participate here](https://forms.gle/UTB6KjVFtmYv2RzU8) 
 
-If you'd like to help shape the future of MapLibre in SwiftUI, join us in the `#maplibre-swiftui-compose-playground` channel on [Slack](https://slack.openstreetmap.us/).
+## Conferences
+
+Check out these events to attend: 
+[FOSS4G2025Belem] (https://2024.foss4g.org/en/)
+[FOSSGIS2025] (https://fossgis-konferenz.de/2025/programm/)
 
 ## Meetings and Events
 
-The upcoming monthly meetings will be held as usual on the second Wednesday of the month, which falls on October 9th, 2024. These calls are open to everyone, and we encourage you to join us and say hello!
+The upcoming monthly meetings will be held as usual on the second Wednesday of the month. These calls are open to everyone, and we encourage you to join us and say hello!
 
-- MapLibre Navigation: October 9th, 2024, 6:00–7:00 PM CEST
-- MapLibre Native: October 9th, 2024, 7:00–8:00 PM CEST
-- MapLibre GL JS: October 9th, 2024, 8:00–9:00 PM CEST
+- MapLibre Navigation: November 13th, 2024, 6:00–7:00 PM CEST
+- MapLibre Native: November 13th, 2024, 7:00–8:00 PM CEST
+- MapLibre GL JS: November 13th, 2024, 8:00–9:00 PM CEST
 
 Zoom links for these meetings can be found in the MapLibre Slack channel. If you’re not already a member, you can easily join by getting an automated invite at https://slack.openstreetmap.us/.
+
+## Announcing Developer CXNs (connections) with MapLibre Board: 
+We are collecting interest from developers in connecting with the board "Develooper CXN." We are happy to invite you to connect 1-1 with a board member of MapLibre. Our board boasts various backgrounds, experiences and executive level leadership. They are invested in the growth of our company and would like to hear your ideas.  
+Fill out your interest form [Dev CXN with MapLibre Board] (https://forms.gle/sxcKNXja4u1s7ENV7)
