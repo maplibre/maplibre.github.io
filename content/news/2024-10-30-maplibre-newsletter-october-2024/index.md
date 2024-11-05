@@ -51,7 +51,7 @@ Overall we are progressing well and ironing out the globe feature.
 
 - MapLibre iOS [6.7.1 and 6.8.0] were released. (https://github.com/maplibre/maplibre-native/releases?q=ios&expanded=true).
 
--  MapLibre Android [11.5.1] were released. (https://github.com/maplibre/maplibre-native/releases?q=android-v11&expanded=true).
+-  MapLibre Android [11.5.1] was released. (https://github.com/maplibre/maplibre-native/releases?q=android-v11&expanded=true).
 
 - We also made two releases for [MapLibre Android v10](https://github.com/maplibre/maplibre-native/releases?q=android-v10&expanded=true) with some backports.
 
