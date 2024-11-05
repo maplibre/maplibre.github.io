@@ -39,11 +39,11 @@ Overall we are progressing well and ironing out the globe feature.
 
 ## MapLibre Native
 
-For MapLibre Native, we have continued development of Vulkan, along with Android and iOS updates and feature parity. 
+For MapLibre Native, we have continued development of Vulkan, along with Android and iOS updates and feature parity.
 
 - Development of the Vulkan backend continued this month. We also ran another benchmark on AWS Device Farm, using even more device types this time. One conclusion you may draw from the [results](https://github.com/maplibre/maplibre-native/issues/2787#issuecomment-2432251912) is that Vulkan will offer a solid performance boost on modern devices. We're still validating these results. Stay tuned for an Android official release following later this year!
 - Kaushal Kumar Singh rewrote the Android build config from Groovy to the more modern Kotlin in [#2902](https://github.com/maplibre/maplibre-native/pull/2902).
--Support for text-variable-anchor-offset has been merged [#2921](https://github.com/maplibre/maplibre-native/pull/2921). This feature is one of the features that Microsoft championed to be added to MapLibre GL JS, and now ported to MapLibre Native. We're happy with this contribution and are excited about Microsoft adopting MapLibre Native.
+  -Support for text-variable-anchor-offset has been merged [#2921](https://github.com/maplibre/maplibre-native/pull/2921). This feature is one of the features that Microsoft championed to be added to MapLibre GL JS, and now ported to MapLibre Native. We're happy with this contribution and are excited about Microsoft adopting MapLibre Native.
 - MapLibre iOS [6.7.1 and 6.8.0](https://github.com/maplibre/maplibre-native/releases?q=ios&expanded=true) were released.
 - MapLibre Android [11.5.1] was released. (https://github.com/maplibre/maplibre-native/releases?q=android-v11&expanded=true).
 - We also made two releases for [MapLibre Android v10](https://github.com/maplibre/maplibre-native/releases?q=android-v10&expanded=true) with some backports.
@@ -56,7 +56,6 @@ You can participate [here]. (https://forms.gle/UTB6KjVFtmYv2RzU8)
 ## Conferences
 
 Check out these events to attend:
-
 
 - [FOSS4G 2024 in Belem, Brazil](https://2024.foss4g.org/en/)
 - [FOSSGIS 2025 in Münster, Germany](https://fossgis-konferenz.de/2025/programm/)
