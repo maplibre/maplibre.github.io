@@ -33,7 +33,7 @@ Here's an interesting situation that should be possible now:
 An interesting read on how this works can be found [here] (https://github.com/maplibre/maplibre-gl-js/blob/49d7fc96ad883b4e1042fe305cd0c0a16ccd9732/developer-guides/center-point.md)
 
 We have introduced some breaking changes in these versions as was planned for version 5, so make sure to take a look at the changelog for more details.
-There are still open issues with globe and other improvement we plan to add as part of this major release.
+There are still open issues with globe and other improvements we plan to add as part of this major release. Stay tuned!
 See the initial post in the following issue to see the current status:
 
 [Breaking Changes in MapLibre GLJS v5 maplibre gl-js#3834] (https://github.com/maplibre/maplibre-gl-js/issues/3834)
