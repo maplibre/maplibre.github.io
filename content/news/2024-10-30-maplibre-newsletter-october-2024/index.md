@@ -6,7 +6,7 @@ authors: [meena, bart, harel]
 draft: false
 ---
 
-# MapLibre Newsletter - November 2024
+# MapLibre Newsletter - October 2024
 
 We’re delighted to begin the November newsletter with a gracious and hearty Thank You to Meta for their unwavering support as a sponsor of MapLibre in 2024! We look forward to what is to come.
 
