@@ -43,7 +43,7 @@ Overall we are progressing well and ironing out the globe feature.
 - Kaushal Kumar Singh rewrote the Android build config from Groovy to the more modern Kotlin in [#2902](https://github.com/maplibre/maplibre-native/pull/2902).
 - Support for [`text-variable-anchor-offset`](https://maplibre.org/maplibre-style-spec/layers/#text-variable-anchor-offset) has been merged ([#2921](https://github.com/maplibre/maplibre-native/pull/2921)). This feature is one of the features that Microsoft championed to be added to MapLibre GL JS, and now ported to MapLibre Native. We're happy with this contribution and are excited about Microsoft adopting MapLibre Native.
 - MapLibre iOS [6.7.1 and 6.8.0](https://github.com/maplibre/maplibre-native/releases?q=ios&expanded=true) were released.
-- MapLibre Android [11.5.1] was released. (https://github.com/maplibre/maplibre-native/releases?q=android-v11&expanded=true).
+- MapLibre Android [11.5.1](https://github.com/maplibre/maplibre-native/releases?q=android-v11&expanded=true) was released.
 - We also made two releases for [MapLibre Android v10](https://github.com/maplibre/maplibre-native/releases?q=android-v10&expanded=true) with some backports.
 
 ## Flutter
