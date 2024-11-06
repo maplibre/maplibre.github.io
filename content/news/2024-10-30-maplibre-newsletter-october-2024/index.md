@@ -65,7 +65,7 @@ The upcoming monthly meetings will be held as usual on the second Wednesday of t
 
 - MapLibre Navigation: November 13th, 2024, 6:00–7:00 PM CET
 - MapLibre Native: November 13th, 2024, 7:00–8:00 PM CET
-- MapLibre GL JS: November 9th, 2024, 8:00–9:00 PM CET
+- MapLibre GL JS: November 13th, 2024, 8:00–9:00 PM CET
 
 Zoom links for these meetings can be found in the MapLibre Slack channel. If you’re not already a member, you can easily join by getting an automated invite at https://slack.openstreetmap.us/.
 
