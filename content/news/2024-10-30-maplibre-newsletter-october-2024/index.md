@@ -71,8 +71,8 @@ The upcoming monthly meetings will be held as usual on the second Wednesday of t
 
 Zoom links for these meetings can be found in the MapLibre Slack channel. If you’re not already a member, you can easily join by getting an automated invite at https://slack.openstreetmap.us/.
 
-## Developer CXN with MapLibre Board
+## Developer Connection with MapLibre Board
 
-We are excited to introduce an option to connect one-to-one with a member of the MapLibre Board. Our board boasts various backgrounds, experiences and executive level leadership. We invite you to connect to share your ideas for building the MapLibre product. We encourage you to take this opportunity to engage in mentorship and contribute to MapLibre.
+We are excited to introduce an option to connect one-to-one with a member of the MapLibre Board. Our board boasts various backgrounds, experiences and executive level leadership. We invite you to connect to share your ideas for building the MapLibre project.
 
-- [Sign-Up for a 1-1 Developer CXN with MapLibre Board](https://forms.gle/ZdndaYL8jikw31dh6)
+- [Sign-Up for a 1-1 Developer Connection with MapLibre Board](https://forms.gle/ZdndaYL8jikw31dh6)
