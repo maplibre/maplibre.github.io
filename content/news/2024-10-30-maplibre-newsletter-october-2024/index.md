@@ -8,7 +8,7 @@ draft: false
 
 # MapLibre Newsletter - October 2024
 
-We’re delighted to begin the November newsletter with a gracious and hearty Thank You to Meta for their unwavering support as a sponsor of MapLibre in 2024! We look forward to what is to come.
+We’re delighted to begin the October newsletter with a gracious and hearty Thank You to Meta for their unwavering support as a sponsor of MapLibre in 2024! We look forward to what is to come.
 
 <a href="https://www.meta.com/">
 <img src="Meta.png" width="100%"/>
@@ -57,14 +57,15 @@ Check out these events to attend:
 
 - [FOSS4G 2024 in Belem, Brazil](https://2024.foss4g.org/en/)
 - [FOSSGIS 2025 in Münster, Germany](https://fossgis-konferenz.de/2025/programm/)
+- [State of the Map Asia 2024, Bangladesh](https://stateofthemap.asia/)
 
 ## Meetings and Events
 
 The upcoming monthly meetings will be held as usual on the second Wednesday of the month. These calls are open to everyone, and we encourage you to join us and say hello!
 
-- MapLibre Navigation: November 13th, 2024, 6:00–7:00 PM CEST
-- MapLibre Native: November 13th, 2024, 7:00–8:00 PM CEST
-- MapLibre GL JS: November 9th, 2024, 8:00–9:00 PM CEST
+- MapLibre Navigation: November 13th, 2024, 6:00–7:00 PM CET
+- MapLibre Native: November 13th, 2024, 7:00–8:00 PM CET
+- MapLibre GL JS: November 13th, 2024, 8:00–9:00 PM CET
 
 Zoom links for these meetings can be found in the MapLibre Slack channel. If you’re not already a member, you can easily join by getting an automated invite at https://slack.openstreetmap.us/.
 
