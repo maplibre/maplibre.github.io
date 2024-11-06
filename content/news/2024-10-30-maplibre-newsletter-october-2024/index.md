@@ -73,4 +73,4 @@ Zoom links for these meetings can be found in the MapLibre Slack channel. If you
 
 We are excited to introduce an option to connect one-to-one with a member of the MapLibre Board. Our board boasts various backgrounds, experiences and executive level leadership. We invite you to connect to share your ideas for building the MapLibre project.
 
-- [Sign-Up for a 1-1 Developer Connection with MapLibre Board](https://forms.gle/ZdndaYL8jikw31dh6)
+- [Sign-Up for a 1-1 Developer Connection with MapLibre Board](https://forms.gle/tSEPUKi98i8fTCP59)
