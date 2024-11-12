@@ -1,5 +1,5 @@
 ---
-title: "Team update and ongoing commitment to the community"
+title: "Team update and our ongoing commitment to the community"
 date: "2024-11-12"
 categories: ["announcements"]
 authors: [board]
