@@ -1,8 +1,13 @@
-{{ $headers := dict }}
+{{ $url := "https://api.github.com/repos/maplibre/maplibre/contents/CHARTER.md?ref=main" }}
+{{ $cacheKey := print $url (now.Format "2006-01-02") }}
+{{ $opts := dict "key" $cacheKey }}
 
 {{ if (os.Getenv "HUGO_GITHUB_TOKEN") }}
-  {{ $headers = dict "Authorization" (printf "Bearer %s" (os.Getenv "HUGO_GITHUB_TOKEN")) }}
+  {{ $headers := dict "Authorization" (printf "Bearer %s" (os.Getenv "HUGO_GITHUB_TOKEN")) }}
+  {{ $opts = $opts | append dict
+    "headers" $headers
+  }}
 {{ end }}
 
-{{ $resp := getJSON "https://api.github.com/repos/maplibre/maplibre/contents/CHARTER.md?ref=main" $headers }}
+{{ $resp := resources.GetRemote $url $opts | transform.Unmarshal }}
 {{ $resp.content | base64Decode | markdownify }}
