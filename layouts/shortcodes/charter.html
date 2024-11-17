@@ -2,11 +2,9 @@
 {{ $cacheKey := print $url (now.Format "2006-01-02") }}
 {{ $opts := dict "key" $cacheKey }}
 
-{{ if (os.Getenv "HUGO_GITHUB_TOKEN") }}
-  {{ $headers := dict "Authorization" (printf "Bearer %s" (os.Getenv "HUGO_GITHUB_TOKEN")) }}
-  {{ $opts = $opts | append dict
-    "headers" $headers
-  }}
+{{ with os.Getenv "HUGO_GITHUB_TOKEN" }}
+  {{ $headers := dict "Authorization" (printf "Bearer %s" .) }}
+  {{ $opts = merge $opts (dict "headers" $headers) }}
 {{ end }}
 
 {{ $resp := resources.GetRemote $url $opts | transform.Unmarshal }}
