@@ -20,6 +20,6 @@ jobs:
       - name: NPM install
         run: npm ci
       - name: Build
-        run: HUGO_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} npm run build
+        run: npm run build
       - name: Check formatting
         run: npm run format-check
