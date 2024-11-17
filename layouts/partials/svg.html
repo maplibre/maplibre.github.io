@@ -1,0 +1,6 @@
+<span style="
+    {{- with .width }}width:{{ . }};{{ end -}}
+    {{- with .height }}height:{{ . }};{{ end -}}
+    display: inline-block;">
+  {{ .src  | readFile | safeHTML }}
+</span>
