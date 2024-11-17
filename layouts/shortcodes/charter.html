@@ -1,8 +1,0 @@
-{{ $headers := dict }}
-
-{{ if (os.Getenv "HUGO_GITHUB_TOKEN") }}
-  {{ $headers = dict "Authorization" (printf "Bearer %s" (os.Getenv "HUGO_GITHUB_TOKEN")) }}
-{{ end }}
-
-{{ $resp := getJSON "https://api.github.com/repos/maplibre/maplibre/contents/CHARTER.md?ref=main" $headers }}
-{{ $resp.content | base64Decode | markdownify }}
