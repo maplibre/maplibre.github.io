@@ -7,12 +7,7 @@
 >
   <div class="container">
     <a class="navbar-brand" href="/" aria-label="MapLibre">
-      <object
-        height="30"
-        width="120"
-        data="/img/maplibre-logo.svg"
-        type="image/svg+xml"
-      ></object>
+      {{ partial "svg.html" (dict "src" "static/img/maplibre-logo.svg" "height" "30px" "width" "120px") }}
     </a>
     <div class="d-flex">
       <button
