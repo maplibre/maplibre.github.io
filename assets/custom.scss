@@ -135,12 +135,19 @@ ul.projects {
   }
 }
 
-.heading-link {
-  border-bottom: none;
-  &::before {
-    font-size: 1rem;
-    content: "🔗";
-  }
+
+.heading-link,
+.heading-link:hover {
+    color: var(--bs-body-color);
+    border-bottom: none;
+}
+
+.heading-link:hover {
+    &::after {
+        font-size: 1rem;
+        content: "🔗";
+        padding-left: 10px;
+    }
 }
 
 ul.section-list {

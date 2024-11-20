@@ -1,2 +1,2 @@
 
-<h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }} <a class="heading-link" href="#{{ .Anchor | safeURL }}"></a></h{{ .Level }}>
+<a class="heading-link d-flex flex-col" href="#{{ .Anchor | safeURL }}"><h{{ .Level }} id="{{ .Anchor | safeURL }}">{{ .Text | safeHTML }}</h{{ .Level }}></a>
