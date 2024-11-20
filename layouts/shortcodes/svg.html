@@ -1,4 +1,8 @@
-{{ $svg := .Get 0 }}
-<span style="width: 20px; display: inline-block;">
-  {{ $svg  | readFile | safeHTML }}
+<span
+  style="
+    {{- with .Get "width" }}width:{{ . }};{{ end -}}
+    {{- with .Get "height" }}height: {{ . }};{{ end -}}
+    display: inline-block;"
+>
+  {{ .Get "src"  | readFile | safeHTML }}
 </span>
