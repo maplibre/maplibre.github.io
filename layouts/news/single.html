@@ -14,20 +14,18 @@
           >
         {{- end }}
         by
-        {{- $lastAuthor := sub (len .Params.authors) 1 -}}
-        {{- range $index, $author := .Params.authors }}
-          {{- if gt $index 0 }}
-            {{ if eq $index $lastAuthor }}and{{ else }},{{ end }}
-          {{ end -}}
-          {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize $author)) }}
+        {{ $lastAuthor := sub (len .Params.authors) 1 -}}
+        {{- range $index, $author := .Params.authors -}}
+          {{- if gt $index 0 -}}
+            {{- if eq $index $lastAuthor }} and {{ else }}, {{ end }}
+          {{- end -}}
+          {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize $author)) -}}
             <a href="{{ .Permalink }}">{{ .Params.title | default $author }}</a>
-          {{ end }}
-        {{ end }}
-        ‐
+          {{- end -}}
+        {{- end }}
+        ·
         <strong
-          >{{ $minutes }}
-          {{ cond (eq $minutes 1) "minutes" "minutes" }}
-          read</strong
+          >{{ $minutes }}&nbsp{{ cond (eq $minutes 1) "minutes" "minutes" }}&nbsp;read</strong
         >
       </div>
       <div class="col-md-10 col-lg-8">
