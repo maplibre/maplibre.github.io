@@ -34,15 +34,30 @@
   <link rel="me" href="https://mastodon.social/@maplibre" />
 
   {{ $options := (dict "includePaths" (slice "node_modules") "transpiler" "libsass") }}
-  {{ $style := resources.Get "style.scss" | resources.ToCSS $options | resources.Minify |
-    resources.Fingerprint
-  }}
+  {{ $style := resources.Get "style.scss" | resources.ToCSS $options | resources.Minify }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+  <link
+    rel="preload"
+    href="/files/alata-latin-400-normal.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+  />
 
-  {{ $style := readFile "node_modules/maplibre-gl/dist/maplibre-gl.css" | resources.FromString "mapbox-gl.css" |
-    resources.Fingerprint
-  }}
+  {{ $style := readFile "node_modules/maplibre-gl/dist/maplibre-gl.css" | resources.FromString "maplibre-gl.css" }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+  <link
+    rel="preload"
+    href="https://demotiles.maplibre.org/style.json"
+    as="fetch"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="https://demotiles.maplibre.org/tiles/tiles.json"
+    as="fetch"
+    crossorigin
+  />
 
   {{ $opts := dict "targetPath" "main.js" }}
   {{ $built := resources.Get "main.js" | js.Build $opts | resources.Fingerprint }}  <script type="text/javascript" src="{{ $built.RelPermalink }}"></script>
