@@ -25,7 +25,8 @@
         {{ end }}
         ‐
         <strong
-          >{{ $minutes }} {{ cond (eq $minutes 1) "minutes" "minutes" }}
+          >{{ $minutes }}
+          {{ cond (eq $minutes 1) "minutes" "minutes" }}
           read</strong
         >
       </div>
