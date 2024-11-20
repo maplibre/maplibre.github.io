@@ -6,8 +6,6 @@ authors: [duje]
 draft: false
 ---
 
-# MapLibre Newsletter - May 2023
-
 ## Highlights
 
 #### Mierune

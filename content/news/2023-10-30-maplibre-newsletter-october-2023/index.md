@@ -6,8 +6,6 @@ authors: [wipfli, harel, bart]
 draft: false
 ---
 
-# MapLibre Newsletter - October 2023
-
 ## MapLibre GL JS
 
 Just in time for this newsletter, MapLibre GL JS has gained over [5000 Stars on GitHub](https://github.com/maplibre/maplibre-gl-js/stargazers). Great that we got so far and thanks to everyone who contributed in the past and made this possible!

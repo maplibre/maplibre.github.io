@@ -6,8 +6,6 @@ authors: [duje]
 draft: false
 ---
 
-# MapLibre Newsletter - June 2023
-
 ## Highlights
 
 ### JawgMaps

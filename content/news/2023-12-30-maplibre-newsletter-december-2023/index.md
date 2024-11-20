@@ -6,8 +6,6 @@ authors: [wipfli]
 draft: false
 ---
 
-# MapLibre Newsletter - December 2023
-
 <a href="https://demotiles.maplibre.org"><img src="./happy-2024.jpg" style="max-width: 100%"></a>
 
 MapLibre wishes you all the best for 2024! https://demotiles.maplibre.org

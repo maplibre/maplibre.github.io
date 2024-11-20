@@ -6,8 +6,6 @@ authors: [wipfli]
 draft: false
 ---
 
-# MapLibre Newsletter - February 2023
-
 ## General
 
 We have successfully registered the MapLibre trademark in the [US](https://tsdr.uspto.gov/#caseNumber=97744197&caseType=SERIAL_NO&searchType=statusSearch) and in the [EU](https://euipo.europa.eu/eSearch/#details/trademarks/018773096). Open Source Collective, our fiscal host, holds the MapLibre trademarks.

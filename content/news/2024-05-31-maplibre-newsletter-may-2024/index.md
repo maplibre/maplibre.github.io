@@ -6,8 +6,6 @@ authors: [wipfli, harel, bart, yuri]
 draft: false
 ---
 
-# MapLibre Newsletter - May 2024
-
 [Mierune](https://www.mierune.co.jp/), our first-ever sponsor, has made a donation again to support MapLibre in 2024 for the third year in a row. Thank you so much Mierune!
 
 <img src="maplibre-mierune-logo.svg" width="100%"/>

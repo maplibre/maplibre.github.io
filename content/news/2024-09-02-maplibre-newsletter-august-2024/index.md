@@ -6,8 +6,6 @@ authors: [wipfli, harel, bart]
 draft: false
 ---
 
-# MapLibre Newsletter - August 2024
-
 We are glad to open the August newsletter with a cordial THANK YOU to [Radar](https://radar.com) for continuing to sponsor MapLibre in 2024!
 
 <a href="https://www.radar.com/">

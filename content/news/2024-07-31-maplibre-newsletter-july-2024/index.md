@@ -6,8 +6,6 @@ authors: [wipfli, harel, bart, hactar]
 draft: false
 ---
 
-# MapLibre Newsletter - July 2024
-
 [Jawg Maps](https://www.jawg.io/en/) continues to support MapLibre in 2024 - Thank You!
 
 <a href="https://www.jawg.io/en/">
