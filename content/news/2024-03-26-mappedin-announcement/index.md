@@ -3,9 +3,6 @@ title: "Mappedin joins the MapLibre Sponsorship Program"
 date: "2024-03-26"
 categories: ["announcements"]
 authors: [birk]
-images:
-  - image: maplibre-mapme-logo.png
-    href: https://mapme.com/
 draft: false
 ---
 
