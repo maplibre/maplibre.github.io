@@ -135,19 +135,18 @@ ul.projects {
   }
 }
 
-
 .heading-link,
 .heading-link:hover {
-    color: var(--bs-body-color);
-    border-bottom: none;
+  color: var(--bs-body-color);
+  border-bottom: none;
 }
 
 .heading-link:hover {
-    &::after {
-        font-size: 1rem;
-        content: "🔗";
-        padding-left: 10px;
-    }
+  &::after {
+    font-size: 1rem;
+    content: "🔗";
+    padding-left: 10px;
+  }
 }
 
 ul.section-list {
