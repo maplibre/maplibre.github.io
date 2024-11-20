@@ -1,5 +1,4 @@
 {{ $dateFormat := default "Jan 2, 2006" (index .Site.Params "datefmt") }}
-
 {{ $readTime := mul (div (countwords .Content) 200.0) 60 }}
 {{ $minutes := math.Ceil (div $readTime 60) }}
 

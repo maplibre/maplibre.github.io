@@ -19,10 +19,6 @@ body {
   }
 }
 
-.post-meta-date {
-  color: rgb(177, 177, 230) !important;
-}
-
 object {
   pointer-events: none;
   display: block;
@@ -146,20 +142,24 @@ ul.projects {
 ul.section-list {
   list-style: none;
   padding: 0;
+  .card {
+    background-color: transparent;
+    color: var(--bs-body-color);
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  .card:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+  }
 
   li {
     margin: 10px 0;
-
-    &:before {
-      margin-right: 5px;
-      color: $secondary;
-      content: "# ";
-    }
   }
 }
 
 .post-meta-date {
-  color: #7a7a7a;
+  color: rgb(177, 177, 230);
 }
 
 .inline-icon {
