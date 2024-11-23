@@ -18,10 +18,10 @@
         {{- range $index, $author := .Params.authors -}}
           {{- if gt $index 0 -}}
             {{- if eq $index $lastAuthor }}
-              &nbsp;and&nbsp;
-            {{- else -}}
-              ,&nbsp;
-            {{- end -}}
+              and
+            {{ else -}}
+              ,
+            {{ end -}}
           {{- end -}}
           {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize $author)) -}}
             <a href="{{ .Permalink }}">{{ .Params.title | default $author }}</a>
