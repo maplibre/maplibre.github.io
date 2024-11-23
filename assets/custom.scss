@@ -131,11 +131,17 @@ ul.projects {
   }
 }
 
-.heading-link {
+.heading-link,
+.heading-link:hover {
+  color: var(--bs-body-color);
   border-bottom: none;
-  &::before {
+}
+
+.heading-link:hover {
+  &::after {
     font-size: 1rem;
     content: "🔗";
+    padding-left: 10px;
   }
 }
 
