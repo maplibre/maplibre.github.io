@@ -27,10 +27,6 @@
             <a href="{{ .Permalink }}">{{ .Params.title | default $author }}</a>
           {{- end -}}
         {{- end }}
-        ·
-        <strong
-          >{{ $minutes }}&nbsp{{ cond (eq $minutes 1) "minutes" "minutes" }}&nbsp;read</strong
-        >
       </div>
       {{ with (.GetTerms "categories") -}}
         <div class="mb-3">
