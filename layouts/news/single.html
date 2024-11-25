@@ -1,45 +1,36 @@
 {{ define "main" }}
   {{ partial "title-header.html" (dict "sitetitle" $.Site.Title "title" .Title) }}
   <div class="container">
-    <div class="row justify-content-center col-md-10 col-lg-8">
-      <div class="mb-1">
-        {{ $dateFormat := default "Jan 2, 2006" (index .Site.Params "datefmt") }}
-        {{ $readTime := mul (div (countwords .Content) 200.0) 60 }}
-        {{ $minutes := math.Ceil (div $readTime 60) }}
-        Posted
-        {{ if not .Date.IsZero -}}
-          on
-          <time datetime="{{ .Date.Format " 2006-01-02" }}"
-            >{{ .Date.Format $dateFormat }}</time
-          >
-        {{- end }}
-        by
-        {{ $lastAuthor := sub (len .Params.authors) 1 -}}
-        {{- range $index, $author := .Params.authors -}}
-          {{- if gt $index 0 -}}
-            {{- if eq $index $lastAuthor }}
-              and
-            {{ else -}}
-              ,
-            {{ end -}}
-          {{- end -}}
-          {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize $author)) -}}
-            <a href="{{ .Permalink }}">{{ .Params.title | default $author }}</a>
-          {{- end -}}
-        {{- end }}
-      </div>
-      {{ with (.GetTerms "categories") -}}
-        <div class="mb-3">
-          {{ range . -}}
-            <span class="badge bg-light">
-              <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
-            </span>
-          {{- end }}
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8 mb-4">
+        {{ partial "post_meta_date.html" . }}
+        <div>
+          Categories:
+          {{ range (.GetTerms "categories") }}
+            <span class="badge bg-light"
+              ><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span
+            >
+          {{ end }}
+
         </div>
-      {{ end -}}
-      <article>
-        {{ .Content }}
-      </article>
+        <div>
+          Authors:
+          <span>
+            {{- range .Params.authors }}
+              {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+                <span class="badge bg-light"
+                  ><a href="{{ .Permalink }}">{{ .Params.title }}</a></span
+                >
+              {{ end }}
+            {{ end }}
+          </span>
+        </div>
+      </div>
+      <div class="col-md-10 col-lg-8">
+        <div>
+          {{ .Content }}
+        </div>
+      </div>
     </div>
   </div>
 {{ end }}
