@@ -6,8 +6,6 @@ authors: [wipfli]
 draft: false
 ---
 
-# MapLibre Newsletter - March 2023
-
 ## General
 
 #### Bounty Program

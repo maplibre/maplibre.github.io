@@ -6,8 +6,6 @@ authors: [duje]
 draft: false
 ---
 
-# MapLibre Newsletter - August 2023
-
 ## Highlights
 
 ### Governing Board Elections

@@ -6,8 +6,6 @@ authors: [wipfli, harel, bart, yuri]
 draft: false
 ---
 
-# MapLibre Newsletter - June 2024
-
 We would like to open the June newsletter by thanking [komoot](https://komoot.com/) for their continued support as a member of the MapLibre Sponsorship Program!
 
 <a href="https://komoot.com/">

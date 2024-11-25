@@ -6,8 +6,6 @@ authors: [wipfli, harel, bart]
 draft: false
 ---
 
-# MapLibre Newsletter - March 2024
-
 In March 2024, we onboarded [maplibre-gl-inspect](https://github.com/maplibre/maplibre-gl-inspect) into the MapLibre GitHub organization. MapLibre GL Inspect is a small plugin for MapLibre GL JS that allows you to inspect the contents of vector tiles including the attributes of vector tile features. Special thanks to [Andrew Calcutt](https://github.com/acalcutt) who maintained this plugin over the last years and made sure it works with MapLibre GL JS.
 
 ## MapLibre GL JS

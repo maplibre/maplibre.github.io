@@ -6,8 +6,6 @@ authors: [wipfli, harel, bart, boldtrn]
 draft: false
 ---
 
-# MapLibre Newsletter - April 2024
-
 At the end of March, we were happy to announce that Mappedin, a global leader in indoor mapping and spatial data management, joined the MapLibre Sponsorship Program. Let us give a warm welcome to our latest sponsor Mappedin!
 
 <div id="sponsor-list">

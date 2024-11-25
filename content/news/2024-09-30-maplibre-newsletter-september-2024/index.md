@@ -6,8 +6,6 @@ authors: [ramyaragupathy, ianthetechie, harel, bart]
 draft: false
 ---
 
-# MapLibre Newsletter - September 2024
-
 We’re delighted to begin the September newsletter with a heartfelt THANK YOU to Microsoft for their unwavering support as a sponsor of MapLibre in 2024!
 
 <a href="https://www.microsoft.com/">

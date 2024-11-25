@@ -6,8 +6,6 @@ authors: [wipfli, harel, bart]
 draft: false
 ---
 
-# MapLibre Newsletter - September 2023
-
 ### Governing Board Elections
 
 It is already one year now that MapLibre has an elected Governing Board, and as the Board members serve a one-year-term, it was time for new Governing Board Elections. We held the Elections and all existing Board members have been re-elected. Read more [here](https://maplibre.org/news/2023-08-30-results-governing-board-election/).

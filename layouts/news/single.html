@@ -7,30 +7,29 @@
         <div>
           Categories:
           {{ range (.GetTerms "categories") }}
-            <span class="badge bg-light"
-              ><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></span
-            >
+            <span class="badge bg-light">
+              <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+            </span>
           {{ end }}
-
         </div>
         <div>
           Authors:
           <span>
-            {{- range .Params.authors }}
+            {{- range $author := .Params.authors }}
               {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
-                <span class="badge bg-light"
-                  ><a href="{{ .Permalink }}">{{ .Params.title }}</a></span
-                >
+                <span class="badge bg-light">
+                  <a href="{{ .Permalink }}"
+                    >{{ .Params.title | default $author }}</a
+                  >
+                </span>
               {{ end }}
             {{ end }}
           </span>
         </div>
       </div>
-      <div class="col-md-10 col-lg-8">
-        <div>
-          {{ .Content }}
-        </div>
-      </div>
+      <article class="col-md-10 col-lg-8">
+        {{ .Content }}
+      </article>
     </div>
   </div>
 {{ end }}

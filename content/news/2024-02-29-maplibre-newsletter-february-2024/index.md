@@ -6,8 +6,6 @@ authors: [wipfli, harel, bart]
 draft: false
 ---
 
-# MapLibre Newsletter - February 2024
-
 In February 2024, we were happy to [announce](https://maplibre.org/news/2024-02-20-msft-announcement/) that Microsoft has joined the MapLibre Sponsorship Program. With Amazon, Meta, and Microsoft we now have three companies that have a seat in the MapLibre Advisory Council which meets with members of the MapLibre Governing Board on a quarterly basis.
 
 MapLibre's fiscal host is called Open Source Collective, a non-profit organization based in the US. We would like to emphasize that Open Source Collective is a fully independent organization from Open Collective Foundation despite the similarity in name. Since the two entities are fully independent, the announced dissolution of the Open Collective Foundation will have no consequences to the operations of Open Source Collective and therefore will also have **no consequences for MapLibre and its sponsors**. You can read more about it in this in [blog post](https://opencollective.com/opensource/updates/regarding-the-announcement-to-dissolve-open-collective-foundation) of Lauren Gardner, the Executive Director of Open Source Collective.

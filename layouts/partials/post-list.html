@@ -1,10 +1,12 @@
-<ul class="section-list">
+<ul class="section-list gx-5">
   {{ range .Pages }}
-    <li class="mb-5">
-      <a href="{{ .RelPermalink }}">
-        <strong> {{- .Title | markdownify }} </strong>
-      </a>
-      {{ partial "post_meta.html" . }}
-    </li>
+    <a href="{{ .RelPermalink }}">
+      <li class="card">
+        <div class="card-body">
+          <h2 class="h3">{{- .Title | markdownify }}</h2>
+          {{ partial "post_meta.html" . }}
+        </div>
+      </li>
+    </a>
   {{ end }}
 </ul>

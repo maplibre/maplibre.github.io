@@ -6,8 +6,6 @@ authors: [wipfli, yuri, bart]
 draft: false
 ---
 
-# MapLibre Newsletter - November 2023
-
 ## MapLibre GL JS
 
 ### v4

@@ -6,8 +6,6 @@ authors: [wipfli]
 draft: false
 ---
 
-# MapLibre Newsletter - April 2023
-
 ## Highlights
 
 <img style="max-width:100%;" src="https://maplibre.org/news/2023-04-06-komoot-becomes-a-maplibre-silver-sponsor/maplibre-komoot-logo.svg" width=450>

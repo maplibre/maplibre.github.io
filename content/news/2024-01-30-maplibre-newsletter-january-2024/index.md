@@ -6,8 +6,6 @@ authors: [wipfli]
 draft: false
 ---
 
-# MapLibre Newsletter - January 2024
-
 A lot of great things happened this January: Maputnik, Metal, new releases of MapLibre Native Node bindings and Martin, and hopefully our last prerelease of MapLibre GL JS v4 all appeared this month.
 
 # MapLibre GL JS

@@ -6,8 +6,6 @@ authors: [duje]
 draft: false
 ---
 
-# MapLibre Newsletter - July 2023
-
 ## Highlights
 
 ### COVTiles
