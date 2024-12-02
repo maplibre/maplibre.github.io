@@ -6,7 +6,7 @@ authors: [bart, harel, josxha, boldtrn, ramyaragupathy]
 draft: false
 ---
 
-November month has seen a lot of updates from across different proejcts in Maplibre ecosystem. From ulitple pre-releases for MapLibre GL JS and to groundbreaking udpates in Maplibre Native, there's a lot to explore.
+November month has seen a lot of updates from across different projects in Maplibre ecosystem. From mulitple pre-releases for MapLibre GL JS and to groundbreaking udpates in Maplibre Native, there's a lot to explore.
 
 In addition, a recent survey shed light on user feedback for flutter Maplibre GL. Don't forget to check upcoming map events and join us for the monthly meetings to stay connected with the community.
 
@@ -15,7 +15,7 @@ Let's dive in!
 ## MapLibre GL JS
 
 We have released versions [5.0.0-pre.5](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.5), [5.0.0-pre.6](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.6), [5.0.0-pre.7](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.7) and [5.0.0-pre.8](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.8) this month!
-These pre-release versions introduced most of the breaking changes we have planned for the version 5.
+These pre-release versions introduced most of the breaking changes we have planned for version 5.
 
 For other features we thought about introducing as a breaking change, we found a solution that does not require a breaking change and we'll see if and when they will be introduced in the future.
 
@@ -27,10 +27,10 @@ We have solved all the showstopper bugs for this release and there's only a few 
 
 - MapLibre Android [11.6.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.6.0) and [11.6.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.6.1) have been released.
 - MapLibre iOS [6.8.1](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.8.1) was released.
-- We created a new documentation site to host [MapLibre Android Examples](https://maplibre.org/maplibre-native/android/examples/). This provides a more accessible resource compared to the [API Documentation](https://maplibre.org/maplibre-native/android/api/). More examples are underway, contributions are of course welcomed.
+- We created a new documentation site to host [MapLibre Android Examples](https://maplibre.org/maplibre-native/android/examples/). This provides a more accessible resource compared to the [API Documentation](https://maplibre.org/maplibre-native/android/api/). More examples are underway, contributions are, of course, welcomed.
 - [Flitsmeister](https://www.flitsmeister.nl/) has released a sample project demonstrating how to use MapLibre Android with **Android Auto**: [GitHub Repo](https://github.com/flitsmeister/MapLibre-Android-Auto-Sample). We're thrilled to see Flitsmeister share their hard-earned expertise with the community. It's also exciting to see the FOSS magic at work, with suggestions for improvements already coming from other members of the community.
 - We're experimenting with some new GitHub functionality: [issue templates and issue types](https://github.com/maplibre/maplibre-native/discussions/3053).
-- Engineers working for [HudHud](https://hudhud.sa/en) have kicked off the development of brining **3D Model Support** to MapLibre Native. To implement this properly we need to "revive the 3D pass" (which is currently unused), which brings about plenty of complexities. It will be a while until proper 3D support will land, but watch this space, and join the monthly meetings, if you are interested in this.
+- Engineers working for [HudHud](https://hudhud.sa/en) have kicked off the development for **3D Model Support** in MapLibre Native. To implement this properly we need to "revive the 3D pass" (which is currently unused), which brings about plenty of complexities. It will be a while until proper 3D support will land, but watch this space, and join the monthly meetings, if you are interested in this.
 
 ### Vulkan
 
