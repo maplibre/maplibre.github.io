@@ -6,13 +6,20 @@ authors: [bart, harel, josxha, boltrn, ramya]
 draft: false
 ---
 
+November month has seen a lot of updates from across different proejcts in Maplibre ecosystem. From ulitple pre-releases for MapLibre GL JS and to groundbreaking udpates in Maplibre Native, there's a lot to explore.
+
+In addition, a recent survey shed light on user feedback for flutter Maplibre GL. Don't forget to check upcoming map events and join us for the monthly meetings to stay connected with the community.
+
+Let's dive in!
+
 ## MapLibre GL JS
 
-We have released versions 5.0.0-pre.5, 5.0.0-pre.6, 5.0.0-pre.7 and 5.0.0-pre.8 this month!
-These version introduced most of the breaking changes we have planned for this version.
-For other feature we thought about introducing as a breaking change, we found a solution that does not require a breaking change and we'll see if and when they will be introduced in the future.
-We have solved all the showstopper bugs for this release and there's only a few minor things we would like to include before creating a production ready version.
-To see the current status of version 5 you can follow the initial post in the following issue:
+We have released versions [5.0.0-pre.5](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.5), [5.0.0-pre.6](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.6), [5.0.0-pre.7](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.7) and [5.0.0-pre.8](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.8) this month!
+These pre-release versions introduced most of the breaking changes we have planned for the version 5.
+
+For other features we thought about introducing as a breaking change, we found a solution that does not require a breaking change and we'll see if and when they will be introduced in the future.
+
+We have solved all the showstopper bugs for this release and there's only a few minor things we would like to include before creating a production ready version. To see the current status of version 5 you can follow the initial post in the following issue:
 
 - https://github.com/maplibre/maplibre-gl-js/issues/3834
 
@@ -45,7 +52,7 @@ Help us test Vulkan support and ensure there are no regressions for your app by 
 
 ## Flutter MapLibre GL
 
-The survey conducted last month found that users appreciate MapLibre on Flutter and rate the flutter-maplibre-gl package with 4.1 out of 5 stars overall. The package is praised for its performance, lower cost and integration with Flutter, among other things.
+The survey conducted last month found that users appreciate MapLibre on Flutter and rate the flutter-maplibre-gl package with **4.1 out of 5 stars overall**. The package is praised for its performance, lower cost and integration with Flutter, among other things.
 Stability and platform differences were identified as issues, as 46% of users reported have been affected by platform-specific behavior and 44% of users experienced crashes.
 
 <img src="flutter-survey-results.png" width="50%" style="display: block;
@@ -64,7 +71,8 @@ Maplibre-Navigation-Android has been updated to use the latest Maplibre-Native r
 
 Check out these events to attend:
 
-- [FOSS4G 2024 in Belem, Brazil](https://2024.foss4g.org/en/)
+- [FOSS4G 2024 in Belem, Brazil](https://2024.foss4g.org/en/) between 02nd-08th December
+- [FOSS4G Asia 2024 in Bangkok, Thailand](https://foss4g.asia/2024/) between 15th-18th December
 
 ## Meetings and Events
 
@@ -75,9 +83,3 @@ The upcoming monthly meetings will be held as usual on the second Wednesday of t
 - MapLibre GL JS: December 11th, 2024, 8:00–9:00 PM CET
 
 Zoom links for these meetings can be found in the MapLibre Slack channel. If you’re not already a member, you can easily join by getting an automated invite at https://slack.openstreetmap.us/.
-
-## Developer Connection with MapLibre Board
-
-We are excited to introduce an option to connect one-to-one with a member of the MapLibre Board. Our board boasts various backgrounds, experiences and executive level leadership. We invite you to connect to share your ideas for building the MapLibre project.
-
-- [Sign-Up for a 1-1 Developer Connection with MapLibre Board](https://forms.gle/tSEPUKi98i8fTCP59)
