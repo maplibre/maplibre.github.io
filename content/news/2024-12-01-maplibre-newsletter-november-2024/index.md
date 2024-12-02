@@ -48,7 +48,11 @@ Help us test Vulkan support and ensure there are no regressions for your app by 
 The survey conducted last month found that users appreciate MapLibre on Flutter and rate the flutter-maplibre-gl package with 4.1 out of 5 stars overall. The package is praised for its performance, lower cost and integration with Flutter, among other things.
 Stability and platform differences were identified as issues, as 46% of users reported have been affected by platform-specific behavior and 44% of users experienced crashes.
 
-<img src="https://github.com/user-attachments/assets/c1ae5448-8e94-45dd-8687-6292329d7210" width="30%" />
+<img src="flutter-survey-results.png" width="50%" style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;"/>
+</br>
 
 ## Navigation Android
 
