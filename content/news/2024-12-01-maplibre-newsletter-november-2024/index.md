@@ -2,7 +2,7 @@
 title: "MapLibre Newsletter November 2024"
 date: "2024-12-01"
 categories: ["newsletter"]
-authors: [bart, harel, josxha, boldtrn, ramya]
+authors: [bart, harel, josxha, boldtrn, ramyaragupathy]
 draft: false
 ---
 
