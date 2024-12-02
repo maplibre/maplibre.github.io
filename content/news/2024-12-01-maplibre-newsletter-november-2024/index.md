@@ -55,10 +55,10 @@ Help us test Vulkan support and ensure there are no regressions for your app by 
 The survey conducted last month found that users appreciate MapLibre on Flutter and rate the flutter-maplibre-gl package with **4.1 out of 5 stars overall**. The package is praised for its performance, lower cost and integration with Flutter, among other things.
 Stability and platform differences were identified as issues, as 46% of users reported have been affected by platform-specific behavior and 44% of users experienced crashes.
 
-<img src="flutter-survey-results.png" width="50%" style="display: block;
+<a href="flutter-survey-results.png"><img src="flutter-survey-results.png" width="50%" style="display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;"/>
+  width: 50%;" alt="MapLibre Flutter Survey Results infographic summarizing the findings of a survey conducted on users of the MapLibre Flutter package. Key points include: 62% use it for commercial projects, 72% use it on iOS, and the package has an overall score of 4.1/5. Issues like platform-specific behavior (46%) and app crashes (44%) were reported, while features like navigation, better error logs, and 3D tiles are desired by users. Key features include performance, ease of use, and multi-platform support."/></a>
 </br>
 
 ## Navigation Android
@@ -71,8 +71,9 @@ Maplibre-Navigation-Android has been updated to use the latest Maplibre-Native r
 
 Check out these events to attend:
 
-- [FOSS4G 2024 in Belem, Brazil](https://2024.foss4g.org/en/) between 02nd-08th December
-- [FOSS4G Asia 2024 in Bangkok, Thailand](https://foss4g.asia/2024/) between 15th-18th December
+- [FOSS4G 2024 in Belem, Brazil](https://2024.foss4g.org/en/) between 2nd to 8th December 2024
+- [FOSS4G Asia 2024 in Bangkok, Thailand](https://foss4g.asia/2024/) between 15th to 18th December 2024
+- [FOSSGIS in Münster, Germany](https://fossgis-konferenz.de/2025/programm/) between 26th to 29th March 2025
 
 ## Community Events
 
