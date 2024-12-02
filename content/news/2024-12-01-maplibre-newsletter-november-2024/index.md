@@ -74,7 +74,13 @@ Check out these events to attend:
 - [FOSS4G 2024 in Belem, Brazil](https://2024.foss4g.org/en/) between 02nd-08th December
 - [FOSS4G Asia 2024 in Bangkok, Thailand](https://foss4g.asia/2024/) between 15th-18th December
 
-## Meetings and Events
+## Community Events
+
+**_MapLibre Meetup Japan #03 @ Tokyo_** was held on November 8th, hosted by the MapLibre User Group Japan (MUG-JP). This event marked the group’s first in-person gathering and saw an impressive turnout of nearly 40 users. The meetup provided a fantastic opportunity to share knowledge and raise awareness about MapLibre.
+
+A huge thank you to everyone who participated and supported this event! We look forward to more such community engagements in the future. For more details about the event, check out the MapLibre [Slack conversation](https://osmus.slack.com/archives/C01G3D28DAB/p1731329007263679).
+
+## Monthly Meetings
 
 The upcoming monthly meetings will be held as usual on the second Wednesday of the month. These calls are open to everyone, and we encourage you to join us and say hello!
 
