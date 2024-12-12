@@ -3,7 +3,7 @@ title: Roadmap - Vulkan
 weight: 10
 ---
 
-[Vulkan](https://www.vulkan.org/) is a next-generation graphics API developed by the Khronos Group. In December 2024 MapLibre Android with Vulkan support was released. It is available as a separate package from Maven Central as [`org.maplibre.gl:android-sdk-vulkan`](https://central.sonatype.com/artifact/org.maplibre.gl/android-sdk-vulkan).
+[Vulkan](https://www.vulkan.org/) is a next-generation graphics API developed by the Khronos Group. In December 2024, MapLibre Android with Vulkan support was released. It is available as a separate package from Maven Central as [`org.maplibre.gl:android-sdk-vulkan`](https://central.sonatype.com/artifact/org.maplibre.gl/android-sdk-vulkan).
 
 ## See Also
 

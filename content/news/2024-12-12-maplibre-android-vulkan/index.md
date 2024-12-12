@@ -18,14 +18,12 @@ Vulkan is a modern graphics API which brings advantages such as improved perform
 
 ## Thank You
 
-The project was brought to fruition by a team of graphics engineers colloquially known as the MapLibre Native Development Team: Alex Cristici, Adrian Cojocaru, Tim Sylvester, Marc Wilson and led by Steve Gifford. Adrian was brought on the team as Vulkan expert early this year, and he did the main development push for Vulkan. The [rendering modularization](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2022-10-27-rendering-modularization.md) effort of last year laid the ground work for being able to implement other rendering backends. Many thanks to everyone involved.
+The project was brought to fruition by a team of graphics engineers colloquially known as the MapLibre Native Development Team: _Alex Cristici_, _Adrian Cojocaru_, _Tim Sylvester_, _Marc Wilson_ and led by _Steve Gifford_. Adrian was brought on the team as Vulkan expert early this year, and he did the main development push for Vulkan. The [rendering modularization](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2022-10-27-rendering-modularization.md) effort of last year laid the ground work for being able to implement other rendering backends. Many thanks to everyone involved.
 
 Another big thanks goes to AWS for sponsoring this project.
 
 Lastly, thanks to everyone that tried out the pre-releases and gave us feedback!
- 
+
 ## Using MapLibre Android with Vulkan
 
 MapLibre Android with Vulkan support is available as [`org.maplibre.gl:android-sdk-vulkan`](https://central.sonatype.com/artifact/org.maplibre.gl/android-sdk-vulkan/11.7.0) on Maven Central. For more details about this release, refer to the [changelog](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.7.0).
-
-
