@@ -1,0 +1,35 @@
+---
+title: "MapLibre Android with Vulkan Support Released"
+date: "2024-12-12"
+categories: ["announcements"]
+authors: [bart]
+draft: false
+---
+
+We are excited to announce the official release of MapLibre Android with Vulkan support!
+
+<p style="text-align:center;">
+<img src="vulkan_landscape.png" alt="Screenshot of MapLibre Android with Vulkan logo" style="max-width:600px;width:100%">
+</p>
+
+## Vulkan
+
+Vulkan is a modern graphics API which brings advantages such as improved performance, improved observability and better stability. Vulkan is poised to replace OpenGL ES eventually on Android. Starting 2026, new devices will only support OpenGL ES through a[ translation layer](https://developer.android.com/games/develop/vulkan/overview). Just like the [Metal backend](https://maplibre.org/news/2024-01-19-metal-support-for-maplibre-native-ios-is-here/) prepared MapLibre Native for the future on iOS, the Vulkan backend prepares the project for the future on Android.
+
+[^1]: 
+
+[^2]: https://developer.android.com/about/dashboards
+
+## Thank You
+
+The project was brought to fruition by a team of graphics engineers colloquially known as the MapLibre Native Development Team: Alex Cristici, Adrian Cojocaru, Tim Sylvester, Marc Wilson and led by Steve Gifford. Adrian was brought on the team as Vulkan expert early this year, and he did the main development push for Vulkan. The [rendering modularization](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2022-10-27-rendering-modularization.md) effort of last year laid the ground work for being able to implement other rendering backends. Many thanks to everyone involved.
+
+Another big thanks goes to AWS for sponsoring this project.
+
+Lastly, thanks to everyone that tried out the pre-releases and gave us feedback!
+ 
+## Using MapLibre Android with Vulkan
+
+MapLibre Android with Vulkan support is available as [`org.maplibre.gl:android-sdk-vulkan`](https://central.sonatype.com/artifact/org.maplibre.gl/android-sdk-vulkan/11.7.0) on Maven Central. For more details about this release, refer to the [changelog](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.7.0).
+
+
