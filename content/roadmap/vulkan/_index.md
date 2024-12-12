@@ -10,4 +10,4 @@ weight: 10
 - [Newsletter of June 2024](/news/2024-06-30-maplibre-newsletter-june-2024/#maplibre-native)
 - [Initial Vulkan Pull Request by Adrian Cojocaru](https://github.com/maplibre/maplibre-native/pull/2564)
 - [MapLibre Android 11.7.0 changelog](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.7.0).
-- [MapLibre Android with Vulkan Support Released (Announcement)]()
+- [MapLibre Android with Vulkan Support Released (Announcement)](/news/2024-12-12-maplibre-android-vulkan)
