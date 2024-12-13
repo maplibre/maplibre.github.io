@@ -34,7 +34,7 @@
   <link rel="me" href="https://mastodon.social/@maplibre" />
 
   {{ $options := (dict "includePaths" (slice "node_modules") "transpiler" "libsass") }}
-  {{ $style := resources.Get "style.scss" | resources.ToCSS $options | resources.Minify }}
+  {{ $style := resources.Get "style.scss" | css.Sass $options | resources.Minify }}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
   <link
     rel="preload"
