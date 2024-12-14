@@ -1,5 +1,5 @@
 ---
-title:  Haowen You
+title: Haowen You
 handle: haowen
 ---
 

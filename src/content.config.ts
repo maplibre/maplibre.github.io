@@ -34,7 +34,7 @@ const bios = defineCollection({
 const roadmapItems = defineCollection({
   loader: glob({ pattern: "**/*.mdx", base: "./src/content/roadmap" }),
   schema: z.object({
-    title: z.string()
+    title: z.string(),
   }),
 });
 

@@ -1,7 +1,6 @@
 {
-    "files.insertFinalNewline": true,
-    "spellright.documentTypes": ["markdown", "latex", "plaintext"],
-    "task.allowAutomaticTasks": "on",
-    "spellright.language": ["en_US"]
-  }
-  
+  "files.insertFinalNewline": true,
+  "spellright.documentTypes": ["markdown", "latex", "plaintext"],
+  "task.allowAutomaticTasks": "on",
+  "spellright.language": ["en_US"]
+}
