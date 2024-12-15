@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{ partial "head.html" . }}
+
+
+  <body>
+    {{ partial "nav.html" (dict "menu" $.Site.Menus.main "fullscreen" .Params.fullscreen) }}
+    {{- block "main" . }}{{- end }}
+    {{ partial "footer.html" (dict "menu" $.Site.Menus.footer "fullscreen" .Params.fullscreen  "githubProjectUrl" $.Site.Params.githubProjectUrl  "copyright" $.Site.Copyright "gitinfo" $.GitInfo ) }}
+  </body>
+</html>

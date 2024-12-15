@@ -1,0 +1,86 @@
+---
+title: "MapLibre Newsletter June 2024"
+date: "2024-06-30"
+categories: ["newsletter"]
+authors: [wipfli, harel, bart, yuri]
+draft: false
+---
+
+We would like to open the June newsletter by thanking [komoot](https://komoot.com/) for their continued support as a member of the MapLibre Sponsorship Program!
+
+<a href="https://komoot.com/">
+<img src="maplibre-komoot-logo.svg" width="100%"/>
+</a>
+<br />
+<br />
+
+In June 2024, we were also happy to welcome [Mapme](https://mapme.com) as a new Silver tier sponsor, see [announcement](https://maplibre.org/news/2024-06-28-mapme-announcement/).
+
+## MapLibre GL JS
+
+Two minor versions were released: [4.4.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v4.4.0) and [4.5.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v4.5.0). Some of the highlights of these versions are the addition of a new unminified production build and an initial sky implementation that includes sky color, horizon color and fog color:
+
+<a href="https://maplibre.org/maplibre-gl-js/docs/examples/sky-with-fog-and-terrain/">
+<img src="sky.png">
+</a>
+<br/>
+<br/>
+
+The sky pull request was waiting for a long time for some love and care and with the help of Jakub and Vivian we were finally able to push it through, thank you!
+
+Furthermore, atmosphere was added to the globe branch to make the globe more realistic:
+
+<img src="atmosphere.jpg" width="100%">
+<br/>
+<br/>
+
+In the MapLibre style specification, the sky spec was updated to allow moving forward with the sky implementation and atmosphere. Please keep in mind that the sky spec is still experimental.
+
+## MapLibre Native
+
+This month the MapLibre Native (Rendering) Team, previously known as the Metal team, kicked off the R&D for a Vulkan backend.
+
+[Vulkan](https://en.wikipedia.org/wiki/Vulkan) is a next-generation graphics API developed by the Khronos Group, the same entity behind OpenGL (ES). While OpenGL ES has served us well, and will continue to do so for the foreseeable future, it was developed a long time ago and it is beginning to show its age. We are running into some of its limitations when trying to realize further performance gains.
+
+While a Vulkan backend will likely not give us an automatic performance boost, it does offer a lot more control. We know that the automotive industry is following this development with interest. It turns out that in-car systems tend to use resource-constrained customized SOCs where Vulkan offers exactly the kind of tuning and observability that is helpful. Of course, phones, desktops and other devices that support Vulkan, where MapLibre Native is already commonly used, also stand to benefit.
+
+[Adrian Cojocaru](https://github.com/adrian-cojocaru) joined the MapLibre Native (Rendering) Team and the MapLibre community this month. A warm welcome to Adrian! He is a graphics engineer with a background in the games industry and is bolstering the Vulkan expertise of the team. He has hit the ground running this month and already shared a screenshot with a functional fill layer that uses Vulkan.
+
+<img src="vulkan.jpg" width="100%">
+<i>The Vulkan rendering backend can already now display lines and polygons, see <a href="https://github.com/maplibre/maplibre-native/pull/2564">https://github.com/maplibre/maplibre-native/pull/2564</a>.</i>
+<br/>
+<br/>
+
+If you want to stay up-to-date, join the discussion or even participate in the development of the Vulkan backend, join us on GitHub, the monthly TSC meetings and/or on Slack.
+
+- [MapLibre Android 11.0.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.0.1) was released.
+- [MapLibre Native iOS 6.5.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.5.0) was released.
+
+Building an app using MapLibre Native with just the API documentation and snippets of code scattered over the internet or in for example the test apps, is not an easy task. We are working to consolidate existing examples and write new ones for our documentation. We created milestones to track progress on this (see [iOS Examples](https://github.com/maplibre/maplibre-native/milestone/15) and [Android Examples](https://github.com/maplibre/maplibre-native/milestone/17)). If you have interesting usage patterns to share, you are invited to create an issue or make a pull request.
+
+## Martin
+
+The long awaited Martin tile server v0.14 has been released!
+
+- AWS Lambda support
+- Options to set preferred response encodings (e.g. if browser supports gzip & brotli, can set which should be returned)
+- `mbtiles` can now create binary-diffing between tiles, making diffs much smaller
+- numerous bug fixes, docs, and other improvements
+
+https://github.com/maplibre/martin/releases/tag/v0.14.0
+
+## MapLibre Tile Format
+
+The 4 weeks long proof-of-concept on a new vector tile format that was commissioned by Microsoft and executed by Stamen in collaboration with [Dane Springmeyer](https://github.com/springmeyer) has already finished. The results look very promising: The team was able to show that tiles can indeed be smaller and they implemented a JavaScript decoder which is working correctly.
+
+First performance benchmarks show that the new decoder can be within a factor of 2 or 3 of the speed of the state-of-the art MVT decoding library. The team also identified significant opportunities for performance optimizations, read more [here](https://github.com/maplibre/maplibre-tile-spec/blob/main/js/future.md).
+
+<a href="https://github.com/ebrelsford">Eric</a> from Stamen was even able to integrate the new MLT decoder in a MapLibre GL JS fork and thanks to this you can now enjoy the first MLT map in this <a href="https://mltdemo.stamen.com/">demo</a>.
+
+## Events
+
+Find members of the MapLibre community at the following events:
+
+- FOSS4G EU, 1-7 July, Tartu (Estonia)
+- State of the Map Europe, 18-21 July, Łódź (Poland)
+- FOSS4G BE+NL, 25-27 September 2024, Baarle (Belgium & the Netherlands)

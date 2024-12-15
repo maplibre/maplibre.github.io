@@ -1,0 +1,17 @@
+---
+title: "Grab Talk Khmer"
+date: 2023-01-12
+categories: ["announcements"]
+authors: [wipfli]
+draft: false
+---
+
+Alan Wei Chen from [GrabMaps](https://www.grab.com/sg/business/maps/) is giving a talk about how Grab renders text labels in the Khmer language using FreeType and HarfBuzz in the next MapLibre Eastern Call. Feel free to join the presentation!
+
+<p>
+<img src="khmer.png" alt="Map with Khmer text labels" style="max-width:600px;width:100%">
+</p>
+
+The next MapLibre Eastern Call is on Wednesday, Feb 8th, 2023 from 9 AM to 10 AM CET. To get the link to the video call, you can join our Slack channel in the OpenStreetMap US Slack. Go to https://slack.openstreetmap.us and join the `#maplibre` channel and look for "MapLibre Eastern Call" to find the zoom link. We are looking forward to seeing you there!
+
+Alan Wei Chen ([GitHub profile](https://github.com/alanchenboy)) and his team at GrabMaps are active contributors of MapLibre Native and we are glad that they support the open-source community and help building the best map renderer in the world together!

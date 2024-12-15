@@ -6,23 +6,35 @@ Features:
 
 - News and blog posts can be published
 - External dependencies are handled via NPM
+- Hugo is bundling the CSS and JS
 
-## 🧞 Commands
+## Building
 
-All commands are run from the root of the project, from a terminal:
+1. [Install Hugo](https://gohugo.io/getting-started/installing/), which meets the version requirement `>=v0.97.3+extended` (the `+extended` indicates that the "extended" version of Hugo is required).
+   Alternative: If Hugo is not available in a recent version on your platform, then use the wrapper script `./hugow --get-extended`.
+2. Run `npm install` to setup the dependencies
+3. Run `npm run serve` or `./hugow --get-extended serve`
+4. Open the URL which is printed in the terminal
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+After making any changes, make sure to run `npm run format` and `npm run format-check`.
+
+## Building for Production
+
+In order to build the website run `npm run build`. The built website is available in `public/`.
+
+## maplibre-rs weekly
+
+In order to create a news post for maplibre-rs do the following:
+
+```bash
+HUGO_SINCE=2022-05-26 hugo new -k maplibre-rs-news news/2022-05-23-maplibre-rs-weekly.md
+```
+
+This will fetch the last weeks issues and PRs and prepare a post for you.
 
 ## MapLibre community map
 
-The data for https://maplibre.org/community/ is managed at `src/content/community.json`.
+The data for https://maplibre.org/community/ is managed at `data/community.json`.
 It shows a map of the MapLibre community members.
 
 The map shows contributors to MapLibre projects as recorded in the public git committer history.
@@ -31,7 +43,7 @@ Location information was taken from people's public GitHub profiles.
 
 ### Please Add Me
 
-If you would like to be included in the MapLibre community map, fork this repo, edit `src/content/community.json`, and make a pull request. Or just open an issue...
+If you would like to be included in the MapLibre community map, fork this repo, edit `data/community.json`, and make a pull request. Or just open an issue...
 
 ### Please Remove Me
 

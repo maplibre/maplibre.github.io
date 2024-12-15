@@ -1,0 +1,26 @@
+{{ define "main" }}
+  {{ partial "title-header.html" (dict "sitetitle" $.Site.Title "title" .Params.title) }}
+  <div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="col-md-10 col-lg-8">
+          <h2>Bio</h2>
+          {{ .Content }}
+          {{ with .Params.x }}
+            <p>
+              <a href="https://twitter.com/{{ substr . 1 }}">
+                Follow {{ $.Params.name }} on x
+              </a>
+            </p>
+          {{ end }}
+
+
+          <h2>Articles</h2>
+          {{ partial "post-list.html" (.Paginate .Data.Pages) }}
+
+          {{ template "_internal/pagination.html" . }}
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }}

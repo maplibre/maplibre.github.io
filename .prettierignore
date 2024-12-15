@@ -1,5 +1,17 @@
 # Generated files by hugo
 /public/
-/dist/
-/.astro
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Temporary lock file while building
+/.hugo_build.lock
+
 node_modules
+
+static/files
+
+public
+
+render-heading.html
+layouts/_default/_markup/render-link.html

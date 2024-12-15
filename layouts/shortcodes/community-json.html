@@ -1,0 +1,18 @@
+[
+{{ range (shuffle $.Site.Data.community) }}
+  {{ $gh_name := .github }}
+  {{ $latlon := .latlon }}
+  {{ $url := print "https://github.com/" $gh_name ".png?size=50" }}
+  {{ $img := resources.GetRemote $url }}
+  {{ with $img }}
+    {{ $path := print "images/" $gh_name ".png" }}
+    {{ $img := .Content | resources.FromString $path }}
+    { url: "{{ .RelPermalink }}", latlon: [{{ index  $latlon 0 }},
+    {{ index $latlon 1 }}], href: "{{ print "https://github.com/" $gh_name }}",
+    name: "{{ $gh_name }}", },
+  {{ else }}
+    {{ errorf "Failed to add GitHub user %q to the community map" $gh_name }}
+  {{ end }}
+
+{{ end }}
+]

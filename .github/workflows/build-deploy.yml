@@ -12,6 +12,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "20"
+      - name: Hugo setup
+        uses: peaceiris/actions-hugo@v3.0.0
+        with:
+          hugo-version: 0.134.2
+          extended: true
       - name: NPM install
         run: npm ci
       - name: Build
