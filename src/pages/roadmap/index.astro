@@ -1,28 +1,32 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import terrain3dImprovementsImage from "../../content/roadmap/terrain3d-improvements/image.png";
-import documentationImage from "../../content/roadmap/documentation/image.png";
-import modernizeCodebaseImage from "../../content/roadmap/modernize-codebase/image.png";
-import globeViewImage from "../../content/roadmap/globe-view/image.png";
-import writingSystemsImage from "../../content/roadmap/writing-systems/image.png";
-import performanceImage from "../../content/roadmap/performance/image.png";
-import vulkanImage from "../../content/roadmap/vulkan/image.png";
-import blendingModesImage from "../../content/roadmap/blending-modes/image.png";
-import svgSymbolSourceImage from "../../content/roadmap/svg-symbol-source/image.png";
-import nonMercatorProjectionImage from "../../content/roadmap/non-mercator-projection/image.png";
-import lightweightRenderersImage from "../../content/roadmap/lightweight-renderers/image.png";
-import metalImage from "../../content/roadmap/metal/image.png";
-import terrain3dImage from "../../content/roadmap/terrain3d/image.png";
-import communityGovernanceImage from "../../content/roadmap/community-governance/image.png";
-import iosAndroidReleaseImage from "../../content/roadmap/ios-android-release/image.png";
-import jsDocsImage from "../../content/roadmap/js-docs/image.png";
-import typescriptImage from "../../content/roadmap/typescript/image.jpeg";
-import projectWebsiteImage from "../../content/roadmap/project-website/image.png";
+import TitleHeader from "../../components/TitleHeader.astro";
+import { getCollection } from "astro:content";
 title: "Roadmap";
+
+const roadmapItems = (await getCollection("roadmapItems"));
+
+const sections = [
+  {
+    status: "in-progress",
+    title: "In Progress",
+  },
+  {
+    status: "under-consideration",
+    title: "Under Consideration",
+  },
+  {
+    status: "released",
+    title: "Released",
+  }
+]
+
 ---
 
 <Layout title="Roadmap">
+
+  <TitleHeader>Roadmap</TitleHeader>
   <style>
     .card {
       background-color: #1e3150;
@@ -42,359 +46,42 @@ title: "Roadmap";
     </div>
 
     <hr />
-    <h2>In Progress</h2>
 
-    <div class="row gy-4">
-      <div class="col-lg-4">
-        <div class="card">
-          <Image
-            class="card-img-top"
-            src={terrain3dImprovementsImage}
-            alt="Terrain3D Improvements"
-            style="width: 100%; height: 250px; object-fit: cover;"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Terrain3D Improvements</h5>
-            <a href="roadmap/terrain3d-improvements/" class="btn btn-primary"
-              >Read more...</a
-            >
-            <a
-              href="https://github.com/maplibre/maplibre/issues/189"
-              class="btn btn-light">💰 Bounties</a
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="card">
-          <Image
-            class="card-img-top"
-            src={documentationImage}
-            alt="Documentation"
-            style="width: 100%; height: 250px; object-fit: cover;"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Documentation</h5>
-            <a href="roadmap/documentation/" class="btn btn-primary"
-              >Read more...</a
-            >
-            <a
-              href="https://github.com/maplibre/maplibre/issues/191"
-              class="btn btn-light">💰 Bounties</a
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="card">
-          <Image
-            class="card-img-top"
-            src={modernizeCodebaseImage}
-            alt="Modernize Codebase"
-            style="width: 100%; height: 250px; object-fit: cover;"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Modernize Codebase</h5>
-            <a href="roadmap/modernize-codebase/" class="btn btn-primary"
-              >Read more...</a
-            >
-            <a
-              href="https://github.com/maplibre/maplibre/issues/270"
-              class="btn btn-light">💰 Bounties</a
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="row gy-4">
-        <div class="col-lg-4">
-          <div class="card">
+    {sections.map(section=>(
+    <h2>{section.title}</h2>
+    <style>
+      .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-bottom: 50px;
+      }
+    </style>
+    <div class="grid-container">
+      {roadmapItems.filter(item => item.data.status == section.status).map(item => {
+      return (
+      <div class="card">
             <Image
               class="card-img-top"
-              src={globeViewImage}
-              alt="Globe View"
+              src={item.data.heroImage}
+              alt={item.data.title}
               style="width: 100%; height: 250px; object-fit: cover;"
             />
             <div class="card-body">
-              <h5 class="card-title">Globe View</h5>
-              <a href="roadmap/globe-view/" class="btn btn-primary"
-                >Read more...</a
-              >
-              <a
-                href="https://github.com/maplibre/maplibre/issues/190"
-                class="btn btn-light">💰 Bounties</a
-              >
+              <h5 class="card-title">{item.data.title}</h5>
+              <a href={`roadmap/${item.id}`} class="btn btn-primary"
+                >Read more...</a>
+              {item.data.bountyActive ? <a
+                href={item.data.bountyLink}
+                class="btn btn-light">💰 Bounties</a>
+              : null}
             </div>
           </div>
-        </div>
+          )
+      })}
 
-        <div class="col-lg-4">
-          <div class="card">
-            <Image
-              class="card-img-top"
-              src={writingSystemsImage}
-              alt="Writing Systems"
-              style="width: 100%; height: 250px; object-fit: cover;"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Writing Systems</h5>
-              <a href="roadmap/writing-systems/" class="btn btn-primary"
-                >Read more...</a
-              >
-              <a
-                href="https://github.com/maplibre/maplibre/issues/193"
-                class="btn btn-light">💰 Bounties</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="card">
-            <Image
-              class="card-img-top"
-              src={performanceImage}
-              alt="Performance"
-              style="width: 100%; height: 250px; object-fit: cover;"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Performance</h5>
-              <a href="roadmap/performance/" class="btn btn-primary"
-                >Read more...</a
-              >
-              <a
-                href="https://github.com/maplibre/maplibre/issues/192"
-                class="btn btn-light">💰 Bounties</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr />
-      <h2>Under Consideration</h2>
-
-      <div class="col-lg-4">
-        <div class="card">
-          <Image
-            class="card-img-top"
-            src={blendingModesImage}
-            alt="Blending Modes"
-            style="width: 100%; height: 250px; object-fit: cover;"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Blending Modes</h5>
-            <a href="roadmap/blending-modes/" class="btn btn-primary"
-              >Read more...</a
-            >
-            <a
-              href="https://github.com/maplibre/maplibre/issues/269"
-              class="btn btn-light">💰 Bounties</a
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="card">
-          <Image
-            class="card-img-top"
-            src={svgSymbolSourceImage}
-            alt="SVG Symbol Source"
-            style="width: 100%; height: 250px; object-fit: cover;"
-          />
-          <div class="card-body">
-            <h5 class="card-title">SVG Symbol Source</h5>
-            <a href="roadmap/svg-symbol-source/" class="btn btn-primary"
-              >Read more...</a
-            >
-            <a
-              href="https://github.com/maplibre/maplibre/issues/271"
-              class="btn btn-light">💰 Bounties</a
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="card">
-          <Image
-            class="card-img-top"
-            src={nonMercatorProjectionImage}
-            alt="Non-Mercator Projection"
-            style="width: 100%; height: 250px; object-fit: cover;"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Non-Mercator Projection</h5>
-            <a href="roadmap/non-mercator-projection/" class="btn btn-primary"
-              >Read more...</a
-            >
-            <a
-              href="https://github.com/maplibre/maplibre/issues/272"
-              class="btn btn-light">💰 Bounties</a
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="card">
-          <Image
-            class="card-img-top"
-            src={lightweightRenderersImage}
-            alt="Lightweight Renderers"
-            style="width: 100%; height: 250px; object-fit: cover;"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Lightweight Renderers</h5>
-            <a href="roadmap/lightweight-renderers/" class="btn btn-primary"
-              >Read more...</a
-            >
-            <a
-              href="https://github.com/maplibre/maplibre/issues/273"
-              class="btn btn-light">💰 Bounties</a
-            >
-          </div>
-        </div>
-      </div>
     </div>
+    ))}
 
-    <hr />
-    <h2>Released</h2>
-
-    <div class="row gy-4">
-      <div class="col-lg-4">
-        <div class="card">
-          <Image
-            class="card-img-top"
-            src={vulkanImage}
-            alt="Vulkan"
-            style="width: 100%; height: 250px; object-fit: cover;"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Vulkan</h5>
-            <a href="roadmap/vulkan/" class="btn btn-primary">Read more...</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row gy-4">
-      <div class="col-lg-4">
-        <div class="card">
-          <Image
-            class="card-img-top"
-            src={metalImage}
-            alt="Metal"
-            style="width: 100%; height: 250px; object-fit: cover;"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Metal</h5>
-            <a href="roadmap/metal/" class="btn btn-primary">Read more...</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="card">
-          <Image
-            class="card-img-top"
-            src={terrain3dImage}
-            alt="Terrain3D"
-            style="width: 100%; height: 250px; object-fit: cover;"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Terrain3D</h5>
-            <a href="roadmap/terrain3d/" class="btn btn-primary">Read more...</a
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="card">
-          <Image
-            class="card-img-top"
-            src={communityGovernanceImage}
-            alt="Community & Governance"
-            style="width: 100%; height: 250px; object-fit: cover;"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Community & Governance</h5>
-            <a href="roadmap/community-governance/" class="btn btn-primary"
-              >Read more...</a
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="card">
-          <Image
-            class="card-img-top"
-            src={iosAndroidReleaseImage}
-            alt="iOS and Android SDK Release"
-            style="width: 100%; height: 250px; object-fit: cover;"
-          />
-          <div class="card-body">
-            <h5 class="card-title">iOS and Android SDK Release</h5>
-            <a href="roadmap/ios-android-release/" class="btn btn-primary"
-              >Read more...</a
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="card">
-          <Image
-            class="card-img-top"
-            src={jsDocsImage}
-            alt="JS Documentation Website"
-            style="width: 100%; height: 250px; object-fit: cover;"
-          />
-          <div class="card-body">
-            <h5 class="card-title">JS Documentation Website</h5>
-            <a href="roadmap/js-docs/" class="btn btn-primary">Read more...</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="card">
-          <Image
-            class="card-img-top"
-            src={typescriptImage}
-            alt="TypeScript"
-            style="width: 100%; height: 250px; object-fit: cover;"
-          />
-          <div class="card-body">
-            <h5 class="card-title">TypeScript</h5>
-            <a href="roadmap/typescript/" class="btn btn-primary"
-              >Read more...</a
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4">
-        <div class="card">
-          <Image
-            class="card-img-top"
-            src={projectWebsiteImage}
-            alt="Project Website"
-            style="width: 100%; height: 250px; object-fit: cover;"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Project Website</h5>
-            <a href="roadmap/project-website/" class="btn btn-primary"
-              >Read more...</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </Layout>

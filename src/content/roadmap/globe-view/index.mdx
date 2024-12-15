@@ -1,22 +1,15 @@
 ---
 title: Globe View
+heroImage: './image.png'
+status: in-progress
+bountyActive: true
+bountyLink: https://github.com/maplibre/maplibre/issues/190
 ---
-
-import { Image } from "astro:assets";
-import globe from "./image.png";
 
 Goals:
 
 - Zoom out via Adaptive Composite Map Projection
 - Ability to show and interact with Globe (or alternative view on earth) when map is zoomed out - while reusing and loading the same Mercator vector tile and raster data - client side reprojection of the data - using Adaptive Composite Map Projection - where deeply zoomed you are in Mercator - but from certain zoom level up there is transition to another projection.
-
-<p>
-  <Image
-    alt="globe"
-    src={globe}
-    style="max-width:600px;height:auto;width:100%"
-  />
-</p>
 
 GitHub Tracking Issue (💰 Bounties): https://github.com/maplibre/maplibre/issues/190
 

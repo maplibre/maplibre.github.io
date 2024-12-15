@@ -1,19 +1,10 @@
 ---
 title: Metal
+heroImage: './image.png'
+status: released
 ---
 
-import { Image } from "astro:assets";
-import metal from "./image.png";
-
 Implement a Metal graphics backend to ensure iOS in future releases is fully supported, as Apple is deprecating OpenGL.
-
-<p>
-  <Image
-    alt="metal"
-    src={metal}
-    style="max-width:600px;height:auto;width:100%"
-  />
-</p>
 
 First, the codebase shall be modularized to prepare the existing OpenGL architecture for a more modern graphics backend like Metal. Once the renderer is modularized, we will proceed with implementing the actual Metal redering backend.
 
