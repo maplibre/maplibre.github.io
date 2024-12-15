@@ -16,12 +16,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"roadmapItems">;
 const roadmapItem = Astro.props;
 const { Content } = await render(roadmapItem);
-
 import { Image } from "astro:assets";
-// import  heroImage from `../../content/roadmap/${roadmapItem.id}/${roadmapItem.data.heroImage}`;
-
-// const images = import.meta.glob<{ default: ImageMetadata }>('/src/content/roadmap/**/*.{jpeg,jpg,png,gif}');
-// console.log(images)
 ---
 
 <Layout title={roadmapItem.data.title}>
