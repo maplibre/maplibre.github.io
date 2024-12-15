@@ -5,7 +5,7 @@ import TitleHeader from "../../components/TitleHeader.astro";
 import { getCollection } from "astro:content";
 title: "Roadmap";
 
-const roadmapItems = (await getCollection("roadmapItems"));
+const roadmapItems = await getCollection("roadmapItems");
 
 const sections = [
   {
@@ -19,13 +19,11 @@ const sections = [
   {
     status: "released",
     title: "Released",
-  }
-]
-
+  },
+];
 ---
 
 <Layout title="Roadmap">
-
   <TitleHeader>Roadmap</TitleHeader>
   <style>
     .card {
@@ -47,43 +45,45 @@ const sections = [
 
     <hr />
 
-    {sections.map(section=>(
-      <>
-    <h2>{section.title}</h2>
-    <style>
-      .grid-container {
-      display: grid;
+    {
+      sections.map((section) => (
+        <>
+          <h2>{section.title}</h2>
+
+          <div
+            style="display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 1rem;
-      margin-bottom: 50px;
-      }
-    </style>
-    <div class="grid-container">
-      {roadmapItems.filter(item => item.data.status == section.status).map(item => {
-      return (
-      <div class="card">
-            <Image
-              class="card-img-top"
-              src={item.data.heroImage}
-              alt={item.data.title}
-              style="width: 100%; height: 250px; object-fit: cover;"
-            />
-            <div class="card-body">
-              <h5 class="card-title">{item.data.title}</h5>
-              <a href={`roadmap/${item.id}`} class="btn btn-primary"
-                >Read more...</a>
-              {item.data.bountyActive ? <a
-                href={item.data.bountyLink}
-                class="btn btn-light">💰 Bounties</a>
-              : null}
-            </div>
+      margin-bottom: 50px;"
+          >
+            {roadmapItems
+              .filter((item) => item.data.status == section.status)
+              .map((item) => {
+                return (
+                  <div class="card">
+                    <Image
+                      class="card-img-top"
+                      src={item.data.heroImage}
+                      alt={item.data.title}
+                      style="width: 100%; height: 250px; object-fit: cover;"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">{item.data.title}</h5>
+                      <a href={`roadmap/${item.id}`} class="btn btn-primary">
+                        Read more...
+                      </a>
+                      {item.data.bountyActive ? (
+                        <a href={item.data.bountyLink} class="btn btn-light">
+                          💰 Bounties
+                        </a>
+                      ) : null}
+                    </div>
+                  </div>
+                );
+              })}
           </div>
-          )
-      })}
-
-    </div>
-    </>
-    ))}
-
+        </>
+      ))
+    }
   </div>
 </Layout>
