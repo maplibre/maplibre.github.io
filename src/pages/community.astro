@@ -1,0 +1,129 @@
+---
+import Layout from "../layouts/Layout.astro";
+import fs from "node:fs/promises";
+
+title: "Community";
+
+import communityMembersJSON from "../content/community.json" with { type: "json" };
+await fs.mkdir("public/community", { recursive: true });
+for (const index in communityMembersJSON) {
+  const person = communityMembersJSON[index];
+
+  const imagePath = `public/community/${person.github}.png`;
+  try {
+    await fs.access(imagePath);
+    continue;
+  } catch {
+    // File does not exist, proceed to fetch and save it
+  }
+
+  const response = await fetch(
+    `https://github.com/${person.github}.png?size=50`,
+  ).catch((error) => {
+    console.error(`Failed to fetch image for ${person.github}`, error);
+  });
+
+  if (response.status !== 200) {
+    console.error(
+      `Failed to fetch image for ${person.github}`,
+      response.statusText,
+    );
+    continue;
+  }
+  const image = await response.arrayBuffer();
+  await fs.writeFile(imagePath, Buffer.from(image));
+}
+
+import { CommunityMap } from "../components/CommunityMap.tsx";
+import TitleHeader from "../components/TitleHeader.astro";
+---
+
+<Layout title="Community">
+  <div class="container">
+    <style lang="css" is:global>
+      ol li h5 {
+        margin-bottom: 0.5em;
+      }
+      ol li {
+        margin-bottom: 2em;
+      }
+      #community-map {
+        border-radius: 10px;
+        height: 600px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .marker {
+        display: block;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 0;
+
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+      }
+    </style>
+    <TitleHeader>Community</TitleHeader>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+          <h1>Welcome to Our Community</h1>
+
+          <p>
+            The people in our community talk with each other mainly in the
+            following three ways:
+          </p>
+
+          <ol>
+            <li>
+              <h5>Discussions, Issues, and Pull Requests on GitHub</h5>
+              You find all Discussions, Issues, and Pull Requests in our
+              <a href="https://github.com/maplibre" target="_blank"
+                >public GitHub repostories</a
+              >.
+            </li>
+            <li>
+              <h5>MapLibre Slack channel</h5>
+              The MapLibre Slack channel is generously hosted by OpenStreetMap US
+              (thanks
+              <a
+                href="https://www.linkedin.com/in/maggiecawley/"
+                target="_blank">Maggie</a
+              >). You can join our Slack channel at
+              <a href="https://slack.openstreetmap.us" target="_blank"
+                >https://slack.openstreetmap.us</a
+              >
+              and then you can join the main <code>#maplibre</code> channel as well
+              as topic-specific channels such as <code>#maplibre-gl-js</code>
+            </li>
+            <li>
+              <h5>Technical Steering Committee meetings</h5>
+              The
+              <a href="about/" target="_blank">Technical Steering Committee</a>
+              meetings take place on a monthly basis. They are usually on the second
+              Wednesday of the month in the evening Europe-time. These monthly meetings
+              are open to everybody and you are welcome to join us there and say
+              hi. The meeting zoom link gets published in our Slack channel roughly
+              1 week before the meeting.
+            </li>
+          </ol>
+
+          <h2>Contributors, alumni, & board members around the globe</h2>
+
+          <CommunityMap members={communityMembersJSON} client:only="solid-js" />
+        </div>
+
+        <script>
+          // <alert(Astro.props.communityMembers)
+
+          // const communityData = await import("/community") {{< community-json >}};
+
+          // communityMap("community-map", communityData)
+        </script>
+      </div>
+    </div>
+  </div>
+</Layout>

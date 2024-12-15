@@ -1,0 +1,66 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import { render } from "astro:content";
+import TitleHeader from "../../components/TitleHeader.astro";
+import Layout from "../../layouts/Layout.astro";
+import Badge from "../../components/Badge.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("news");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: post,
+  }));
+}
+
+type Props = CollectionEntry<"news">;
+
+const post = Astro.props;
+const { Content } = await render(post);
+
+function capitalizeFirstLetter(val: string) {
+  return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+}
+
+const authors = await getCollection("authors", (author) => {
+  return post.data.authors.includes(author.data.handle);
+});
+---
+
+<Layout title={post.data.title} description={post.data.description}>
+  <TitleHeader>{post.data.title}</TitleHeader>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8">
+        <p style="color: #9b91d2; margin: 0;">
+          {
+            post.data.date.toLocaleDateString("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            })
+          }
+        </p>
+        <div>
+          Categories: {
+            post.data.categories.map((cat) => (
+              <a href={`categories/${cat}`}>
+                <Badge>{capitalizeFirstLetter(cat)}</Badge>
+              </a>
+            ))
+          }
+        </div>
+        <div style="margin-bottom: 20px;">
+          Authors: {
+            authors.map((author) => (
+              <a href={`authors/${author.id}`}>
+                <Badge>{author.data.title}</Badge>
+              </a>
+            ))
+          }
+        </div>
+        <Content />
+      </div>
+    </div>
+  </div>
+</Layout>

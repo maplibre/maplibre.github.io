@@ -1,0 +1,38 @@
+---
+title: "MapLibre Newsletter March 2024"
+date: "2024-03-25"
+categories: ["newsletter"]
+authors: [wipfli, harel, bart]
+draft: false
+---
+
+import screenshot from "./screenshot.png";
+import { Image } from "astro:assets";
+
+# MapLibre Newsletter - March 2024
+
+In March 2024, we onboarded [maplibre-gl-inspect](https://github.com/maplibre/maplibre-gl-inspect) into the MapLibre GitHub organization. MapLibre GL Inspect is a small plugin for MapLibre GL JS that allows you to inspect the contents of vector tiles including the attributes of vector tile features. Special thanks to [Andrew Calcutt](https://github.com/acalcutt) who maintained this plugin over the last years and made sure it works with MapLibre GL JS.
+
+## MapLibre GL JS
+
+We are happy to share that this month the first [Globe Pull Request](https://github.com/maplibre/maplibre-gl-js/pull/3783) was reviewed and merged into a special branch in MapLibre GL JS. With this branch, we hope to foster collaboration between the people who are working on the Globe, which includes so far mainly [Jakub Pelc](https://github.com/kubapelc) and [Vivian Larrieu](https://github.com/pheonor).
+
+Furthermore, we release versions [4.1.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v4.1.0) and [4.1.1](https://github.com/maplibre/maplibre-gl-js/releases/tag/v4.1.1) of MapLibre GL JS. Thanks to everyone who contributed new features and bug fixes to these versions.
+
+## MapLibre Native
+
+Here are the March updates from MapLibre Native:
+
+- The MapLibre Native for Android 11.0.0 [pre-release](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.0.0-pre0) has been out for almost a month now. We thank everyone for their feedback so far! Please give it a spin, and [report any issues](https://github.com/maplibre/maplibre-native/issues/1608) you encounter, see [Maven Central](https://central.sonatype.com/artifact/org.maplibre.gl/android-sdk). The final release is set for the 28th of March if no critical issues are reported.
+
+- We have additional [benchmarks](https://github.com/maplibre/maplibre-native/tree/main/benchmark) using Google's Benchmark library that are running on CI now. Keep an eye out for the results that show up on PRs. Contributors are invited to add additional benchmarks for performance critical code.
+
+- Tim Sylvester added a PR to track what dependencies are used by expressions ([#2113](https://github.com/maplibre/maplibre-native/pull/2113)).
+
+- Marc Wilson fixed an implementation issue with the location indicator on Android, which was causing threads to be constantly created and destroyed ([#2182](https://github.com/maplibre/maplibre-native/pull/2182)).
+
+- A `#maplibre-swift` channel was created on Slack for discussion about a possible Swift-based iOS platform.
+
+- Due to the switch to OpenGL ES 3.0 last year, builds for macOS from the `main` branch were temporarily not possible. Now that MapLibre Native has a Metal backend, macOS support can return on `main`. This was delayed a few times, but this month rendering for macOS was made possible again, by brining sample AppKit app back ([#2205](https://github.com/maplibre/maplibre-native/pull/2205)). Next, GLFW will be made to run on macOS (useful for development purposes), and later Qt and Node.js are to return to macOS with Metal support. To everyone interested in using MapLibre Native on macOS, thanks for your patience!
+
+<Image src={screenshot} alt="map" style="max-width:100%; height: auto;" />
