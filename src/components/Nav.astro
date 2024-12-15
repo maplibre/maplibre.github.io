@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+---
+
+<nav
+  class="navbar navbar-expand-lg navbar-dark {{ if not .fullscreen }}
+    bg-navbar
+  {{ else }}
+    bg-fullscreen
+  {{ end }}"
+>
+  <div class="container">
+    <a class="navbar-brand" href="/" aria-label="MapLibre">
+      <Image
+        alt="MapLibre Logo"
+        src="/img/maplibre-logo.svg"
+        height={30}
+        width={120}
+      />
+    </a>
+    <div class="d-flex">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarNavAltMarkup"
+    >
+      <div class="navbar-nav">
+        <li><a class="nav-link" href="/about">About</a></li>
+        <li><a class="nav-link" href="/jobs">Jobs</a></li>
+        <li><a class="nav-link" href="/roadmap">Roadmap</a></li>
+        <li><a class="nav-link" href="/sponsors">Sponsors</a></li>
+        <li><a class="nav-link" href="/news">News</a></li>
+        <li><a class="nav-link" href="/community">Community</a></li>
+      </div>
+    </div>
+  </div>
+</nav>

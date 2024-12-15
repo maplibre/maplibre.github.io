@@ -1,0 +1,123 @@
+---
+title: "MapLibre Newsletter March 2023"
+date: 2023-03-20
+categories: ["newsletter"]
+authors: [wipfli]
+draft: false
+---
+
+import OliverAndBart from "./DSCF9186-3.JPG";
+import { Image } from "astro:assets";
+
+# MapLibre Newsletter - March 2023
+
+## General
+
+#### Bounty Program
+
+We invite you to share feedback on what features and improvements in MapLibre GL JS and MapLibre Native would be helpful for you. Tell us what you need and vote for the things which are most important to you following these [feedback instructions](https://maplibre.org/news/2023-03-13-second-call-for-bounties/).
+
+The MapLibre Governing Board will take your feedback and decide how to allocate Bounty resources on roadmap projects on April 4th, 2023.
+
+Several Bounties are up for takers now. If you would like to work on Bounties, have a look at our updated [step-by-step Bounties guide](https://maplibre.org/roadmap/step-by-step-bounties-guide/).
+
+We encourage individuals and companies to propose epics, i.e., a series of tickets which together move MapLibre forward in one of the Bounty directions. You are free to suggest the Bounty size on each ticket yourself and propose splitting all the available resources of a Bounty direction on the tickets of your epic. A maintainer will consider your proposal and confirm the Bounty sizes.
+
+We are proud to have paid out the first two Bounties to the developers Aidan Hendrickson and Victor Tempranova, see our <a href="https://github.com/maplibre/maplibre/wiki/Developer-Role#current-role-holders-developer-pool">developer pool</a> for an overview.
+
+#### User Stories
+
+Several users have shared their stories how MapLibre serves their use cases and solves their business problems. Thanks everyone for the write-ups, we are glad that we can help you and are committed to doing so in the future!
+
+Read all the stories:
+
+- [Felt](https://felt.com/blog/maplibre-rendering-engine)
+- [The Washington Post](https://www.kschaul.com/post/2023/02/16/how-the-post-is-replacing-mapbox-with-open-source-solutions/)
+- [Austrian public broadcaster ORF.at](https://twitter.com/devORFat/status/1632467991269867521)
+- [UK office for national statistics](https://twitter.com/DrMalcolmMorgan/status/1629848619728732161)
+
+#### Random
+
+We have a Mastodon account now: https://mastodon.social/@maplibre/.
+
+## Past Events
+
+- [Yasunori Kirimoto](https://www.linkedin.com/feed/update/urn:li:activity:7035571220767019008/) gave a talk about MapLibre at FOSS4G Hokkaido, which took place for the first time in 3 years in person again!
+- [Chris Beddow](https://www.linkedin.com/in/cbed/) organized a great meetup for everybody interested in maps in Meta's Zurich office. Among several other talks, [Bart Louwers](https://maplibre.org/about/bart) gave a talk about the past, present, and future of MapLibre Native. [Manuel Roth](https://www.linkedin.com/in/manuel-roth/) from the Swiss TV broadcaster SRF gave a talk about how they use MapLibre GL JS and MapLibre Native for the weather app SRF Meteo. Thank you both for the inspiring presentations!
+
+The Meta maps meetup was also the first time that Oliver Wipfli and Bart Louwers met in person. It was great to see each other and discuss all things around MapLibre!
+
+<figure>
+  <Image
+    src={OliverAndBart}
+    alt="Oliver and Bart"
+    style="img-fluid"
+    style="max-width:600px;width:100%;height: auto;"
+  />
+  <figcaption>
+    Oliver Wipfli (l.) and Bart Louwers (r.) had a floating meeting on lake
+    Zurich.
+  </figcaption>
+</figure>
+
+## MapLibre Native
+
+People interested in contributing can schedule a call with Bart Louwers, maintainer native: <a href="https://github.com/maplibre/maplibre-native/discussions/898">maplibre/maplibre-native#898</a>.
+
+#### Bounties 💰
+
+Have a look at all available [Bounties in MapLibre Native](https://github.com/maplibre/maplibre-native/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22%2C%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+XL%22%2C%22%F0%9F%92%B0+bounty+XXL%22+) and feel free to propose Bounties yourself. Read our [step-by-step Bounties guide](http://localhost:45707/roadmap/step-by-step-bounties-guide/).
+
+#### Contributions
+
+Contributions since February 16th, 2023:
+
+Most notable PRs
+
+- New supported platform: Windows.
+- TypeScript types for Node.js binding.
+- Freed Android SDK from proprietary dependencies making it possible to use MapLibre with Android applications submitted to F-Droid (10.0.0 release for Android).
+- Render tests running on CI
+
+Open discussions:
+
+- Code organization proposal <a href="https://github.com/maplibre/maplibre-native/pull/789">maplibre-native#789</a>.
+
+## MapLibre GL JS
+
+#### Bounties 💰
+
+Have a look at all available [Bounties in MapLibre GL JS](https://github.com/maplibre/maplibre-gl-js/issues?q=is%3Aissue+is%3Aopen+label%3A%22%F0%9F%92%B0+bounty+S%22%2C%22%F0%9F%92%B0+bounty+M%22%2C%22%F0%9F%92%B0+bounty+L%22%2C%22%F0%9F%92%B0+bounty+XL%22%2C%22%F0%9F%92%B0+bounty+XXL%22+) and feel free to propose Bounties yourself. Read our [step-by-step Bounties guide](http://localhost:45707/roadmap/step-by-step-bounties-guide/).
+
+#### Contributions
+
+Contributions since February 16th, 2023:
+
+- ChrisLoer (Felt) improved the line label placement with `text-offset` https://github.com/maplibre/maplibre-gl-js/pull/2260
+- birkskyum migrated the maplibre-gl-style-spec into a separate GitHub repo https://github.com/maplibre/maplibre-gl-js/pull/2198
+- ZeLonewolf and llambanna wrote contributing docs https://github.com/maplibre/maplibre-gl-js/pull/2212 and https://github.com/maplibre/maplibre-gl-js/pull/2196
+- tordans improved the docs for `styleimagemissing` https://github.com/maplibre/maplibre-gl-js/pull/2258
+- We welcome new first time contributors:
+  - <a href="https://github.com/maplibre/maplibre-gl-js/commits?author=maxdacruz">
+      maxdacruz
+    </a>
+  - <a href="https://github.com/maplibre/maplibre-gl-js/commits?author=parkerziegler">
+      parkerziegler
+    </a>
+  - <a href="https://github.com/maplibre/maplibre-gl-js/commits?author=schlosna">
+      schlosna
+    </a>
+- Finally, we have new design proposals to improve the MapLibre Style Specification:
+  - [https://github.com/maplibre/maplibre-gl-style-spec/issues/60](Design Proposal: Expanding tileSources bounds) by pramilk (Microsoft)
+  - [https://github.com/maplibre/maplibre-gl-style-spec/issues/61](Design proposal: Support for refreshTiles per tile source) by pramilk (Microsoft)
+  - [https://github.com/maplibre/maplibre-gl-style-spec/issues/62](Design proposal: Add elevation to symbol layer) by HarelM (maintainer web)
+
+## Upcoming Events
+
+The monthly technical steering committee meetings take place always on the second Wednesday of the month. The next ones are on Wed, **April 12th, 2023** from 7 PM to 9 PM CET. Everyone is welcome to join these meetings. You find the zoom links in our slack channel. We can also send you an email invite. Just let us know. You can join the `#maplibre` slack channel [here](https://slack.openstreetmap.us).
+
+[Oliver Wipfli](https://maplibre.org/about/oliver) and members of the MapLibre community will attend the [2023 Joint OGC-ASF-OSGeo Code Sprint](https://developer.ogc.org/sprints/20/) in Lausanne, Switzerland on **April 25th - 27th, 2023**. The topic of the code sprint is "Open Standards and Open Source Software" and we will discuss how the MapLibre Style Specification and the MVT Specification might be improved in the future. You can attend this code sprint in person or also fully remote. Feel free to join us in Lausanne and [register now](https://portal.ogc.org/public_ogc/register/230425osos_codesprint.php).
+
+[Yuri Astrakhan](https://maplibre.org/about/yuri/), member of the MapLibre Governing Board, plans to attend [State of the Map US](https://2023.stateofthemap.us/) in Richmond, Virginia **June 8th - 11th, 2023**. Come to SotMUS and meet us there!
+
+We also plan to be present in some form at [FOSS4G 2023](https://2023.foss4g.org/) in Prizren, Kosovo, from **June 26th, to July 2nd, 2023**. Unfortunately, we missed the registration deadline for talks but we plan to go there nonetheless and have some sort of presence. We are looking forward to see you at FOSS4G!

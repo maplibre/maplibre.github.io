@@ -1,0 +1,62 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { render } from "astro:content";
+import TitleHeader from "../../components/TitleHeader.astro";
+import PostExcerpt from "@igor.dvlpr/astro-post-excerpt";
+
+const posts = (await getCollection("news")).sort((a, b) => {
+  console.log(b.data);
+  return b.data.date.valueOf() - a.data.date.valueOf();
+});
+---
+
+<style lang="scss">
+  .newsarticle {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: #111422;
+      h3,
+      p:first {
+        color: white !important;
+      }
+    }
+  }
+</style>
+
+<Layout title="News">
+  <TitleHeader>News</TitleHeader>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8">
+        {
+          posts.map((post) => (
+            <a href={`/news/${post.id}/`}>
+              <div class="newsarticle">
+                <h3 class="title" style="color: #e0e0e0;">
+                  {post.data.title}
+                </h3>
+
+                <p style="color: #e0e0e0;">
+                  <PostExcerpt post={post} words={50} addEllipsis={true} />
+                </p>
+
+                <p style="color: #9b91d2;">
+                  {post.data.date.toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
+                </p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>
