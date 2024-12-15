@@ -33,13 +33,14 @@ const bios = defineCollection({
 
 const roadmapItems = defineCollection({
   loader: glob({ pattern: "**/*.mdx", base: "./src/content/roadmap" }),
-  schema: ({ image }) => z.object({
-    title: z.string(),
-    heroImage: image(),
-    status: z.enum(['under-consideration', 'in-progress', 'released']),
-    bountyLink: z.optional(z.string()),
-    bountyActive: z.optional(z.boolean()),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      heroImage: image(),
+      status: z.enum(["under-consideration", "in-progress", "released"]),
+      bountyLink: z.optional(z.string()),
+      bountyActive: z.optional(z.boolean()),
+    }),
 });
 
 export const collections = { news, authors, bios, roadmapItems };

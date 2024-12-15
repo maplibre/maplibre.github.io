@@ -22,7 +22,6 @@ import { Image } from "astro:assets";
 
 // const images = import.meta.glob<{ default: ImageMetadata }>('/src/content/roadmap/**/*.{jpeg,jpg,png,gif}');
 // console.log(images)
-
 ---
 
 <Layout title={roadmapItem.data.title}>
@@ -31,7 +30,7 @@ import { Image } from "astro:assets";
     <div class="row justify-content-center">
       <div class="col-md-10 col-lg-8">
         <Image
-        format="png"
+          format="png"
           alt={roadmapItem.data.title}
           src={roadmapItem.data.heroImage}
           style="max-width:600px;height:auto;width:100%; border-radius: 10px; background-color: white; display: block; margin: 0 auto 20px auto;"
