@@ -21,6 +21,12 @@ const sections = [
     title: "Released",
   },
 ];
+
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  const options = { year: "numeric", month: "long" };
+  return date.toLocaleDateString("en-US", options);
+}
 ---
 
 <Layout title="Roadmap">
@@ -35,16 +41,6 @@ const sections = [
     }
   </style>
   <div class="container">
-    <div class="alert alert-success" role="alert">
-      <b>Bounties:</b> Some projects on our Roadmap have Bounties, i.e., you can
-      get paid for working on them.
-      <a class="btn btn-primary" href="roadmap/step-by-step-bounties-guide"
-        >Read Step-by-Step Bounties Guide...</a
-      >
-    </div>
-
-    <hr />
-
     {
       sections.map((section) => (
         <>
@@ -58,6 +54,7 @@ const sections = [
           >
             {roadmapItems
               .filter((item) => item.data.status == section.status)
+              .sort((a, b) => b.data.released - a.data.released)
               .map((item) => {
                 return (
                   <div class="card">
@@ -72,11 +69,13 @@ const sections = [
                       <a href={`roadmap/${item.id}`} class="btn btn-primary">
                         Read more...
                       </a>
-                      {item.data.bountyActive ? (
-                        <a href={item.data.bountyLink} class="btn btn-light">
-                          💰 Bounties
-                        </a>
-                      ) : null}
+                      {item.data.released ? (
+                        <p style="margin: 10px 0 0 0;">
+                          Released: {formatDate(item.data.released)}
+                        </p>
+                      ) : (
+                        ""
+                      )}
                     </div>
                   </div>
                 );

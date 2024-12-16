@@ -17,6 +17,12 @@ type Props = CollectionEntry<"roadmapItems">;
 const roadmapItem = Astro.props;
 const { Content } = await render(roadmapItem);
 import { Image } from "astro:assets";
+
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  const options = { year: "numeric", month: "long" };
+  return date.toLocaleDateString("en-US", options);
+}
 ---
 
 <Layout title={roadmapItem.data.title}>
@@ -28,9 +34,28 @@ import { Image } from "astro:assets";
           format="png"
           alt={roadmapItem.data.title}
           src={roadmapItem.data.heroImage}
-          style="max-width:600px;height:auto;width:100%; border-radius: 10px; background-color: white; display: block; margin: 0 auto 20px auto;"
+          style="max-height:400px;height:auto;width:auto; max-width: 100%; border-radius: 10px; background-color: white; display: block; margin: 0 auto 20px auto;"
         />
+
         <Content />
+
+        {
+          roadmapItem.data.bountyActive ? (
+            <a href={roadmapItem.data.bountyLink} class="btn btn-light">
+              💰 Bounties
+            </a>
+          ) : null
+        }
+
+        {
+          roadmapItem.data.released ? (
+            <p style="font-weight: bold;">
+              Released: {formatDate(roadmapItem.data.released)}
+            </p>
+          ) : (
+            ""
+          )
+        }
       </div>
     </div>
   </div>
