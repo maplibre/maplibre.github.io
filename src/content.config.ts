@@ -40,10 +40,12 @@ const roadmapItems = defineCollection({
       status: z.enum(["under-consideration", "in-progress", "released"]),
       bountyLink: z.optional(z.string()),
       bountyActive: z.optional(z.boolean()),
-      released: z.optional(z.string().transform((str) => {
-        const [month, year] = str.split(" ");
-        return new Date(`${month} 1, ${year}`);
-      })),
+      released: z.optional(
+        z.string().transform((str) => {
+          const [month, year] = str.split(" ");
+          return new Date(`${month} 1, ${year}`);
+        }),
+      ),
     }),
 });
 

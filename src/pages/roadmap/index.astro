@@ -23,10 +23,10 @@ const sections = [
 ];
 
 function formatDate(dateString) {
-    const date = new Date(dateString);
-    const options = { year: 'numeric', month: 'long' };
-    return date.toLocaleDateString('en-US', options);
-  }
+  const date = new Date(dateString);
+  const options = { year: "numeric", month: "long" };
+  return date.toLocaleDateString("en-US", options);
+}
 ---
 
 <Layout title="Roadmap">
@@ -41,8 +41,6 @@ function formatDate(dateString) {
     }
   </style>
   <div class="container">
-    
-    
     {
       sections.map((section) => (
         <>
@@ -71,7 +69,13 @@ function formatDate(dateString) {
                       <a href={`roadmap/${item.id}`} class="btn btn-primary">
                         Read more...
                       </a>
-                      {item.data.released ? <p style="margin: 10px 0 0 0;">Released: {formatDate(item.data.released)}</p> : ""}
+                      {item.data.released ? (
+                        <p style="margin: 10px 0 0 0;">
+                          Released: {formatDate(item.data.released)}
+                        </p>
+                      ) : (
+                        ""
+                      )}
                     </div>
                   </div>
                 );
