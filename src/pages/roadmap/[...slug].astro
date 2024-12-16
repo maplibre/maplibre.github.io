@@ -37,16 +37,6 @@ function formatDate(dateString) {
           style="max-height:400px;height:auto;width:auto; max-width: 100%; border-radius: 10px; background-color: white; display: block; margin: 0 auto 20px auto;"
         />
 
-        {
-          roadmapItem.data.released ? (
-            <h2 style="margin: 20px 0; text-align:center;">
-              Released: {formatDate(roadmapItem.data.released)}
-            </h2>
-          ) : (
-            ""
-          )
-        }
-
         <Content />
 
         {
@@ -55,6 +45,16 @@ function formatDate(dateString) {
               💰 Bounties
             </a>
           ) : null
+        }
+
+        {
+          roadmapItem.data.released ? (
+            <p style="font-weight: bold;">
+              Released: {formatDate(roadmapItem.data.released)}
+            </p>
+          ) : (
+            ""
+          )
         }
       </div>
     </div>
