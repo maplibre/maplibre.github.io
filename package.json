@@ -19,7 +19,7 @@
     "@igor.dvlpr/astro-post-excerpt": "^3.0.4",
     "astro": "^5.1.0",
     "bootstrap": "^5.3.3",
-    "maplibre-gl": "^4.7.1",
+    "maplibre-gl": "^5.0.0",
     "sass": "1.76.0",
     "solid-js": "^1.9.3"
   },
