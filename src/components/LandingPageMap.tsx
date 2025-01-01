@@ -4,7 +4,7 @@ import { createEffect, onMount } from "solid-js";
 
 export const LandingPageMap = (props: any) => {
   let map;
-  onMount(async () => {
+  onMount(() => {
     map = new Map({
       container: "home-map",
       style: "https://demotiles.maplibre.org/globe.json",
