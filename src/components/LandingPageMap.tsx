@@ -5,16 +5,9 @@ import { createEffect, onMount } from "solid-js";
 export const LandingPageMap = (props: any) => {
   let map;
   onMount(async () => {
-    const response = await fetch("https://demotiles.maplibre.org/style.json");
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const style = await response.json();
-    style.projection = { type: "globe" };
-
     map = new Map({
       container: "home-map",
-      style,
+      style: "https://demotiles.maplibre.org/globe.json",
       center: [0, 0],
       zoom: 1,
       attributionControl: false,
