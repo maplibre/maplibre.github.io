@@ -1,0 +1,144 @@
+---
+title: "MapLibre Newsletter December 2024"
+date: "2025-01-01"
+categories: ["newsletter"]
+authors: [bart, harel, sargun, josxha, frank, ramyaragupathy]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import maplibre_compose_android from "./maplibre-compose-android.gif";
+import maplibre_compose_ios from "./maplibre-compose-ios.gif";
+import martin_sdf from "./martin-sdf.png";
+
+Happy New Year, MapLibre Community! This month, we’re thrilled to share big updates for MapLibre Native (including Vulkan support), the official launch of MapLibre GL JS Version 5.0, new features in Martin Tile Server, and more.
+We’ve also added a new meeting hour to better connect with contributors around the world.
+
+Let’s dive in!
+
+## MapLibre Native
+
+- MapLibre Android [11.7.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.7.0) and [11.7.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.7.1) were released. These versions mark the first-ever releases with Vulkan support. Check out the detailed announcement on [MapLibre Android Vulkan Support](https://maplibre.org/news/2024-12-12-maplibre-android-vulkan/).
+- The latest version of MapLibre iOS [6.9.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.9.0) is here.
+
+### Kotlin Multiplatform
+
+Exciting news for developers interested in [**Kotlin Multiplatform**](https://kotlinlang.org/docs/multiplatform.html): [Sargun Vohra](https://github.com/sargunv), with input from [Tobias Zwick](https://github.com/westnordost), has released [MapLibre for Compose](https://github.com/sargunv/maplibre-compose#maplibre-for-compose)!
+
+The library integrates MapLibre iOS and MapLibre Android and is open to contributions. The README lists various ideas, including adding support for web (presumably by intergrating MapLibre GL JS), which would make the library truly cross-platform.
+
+Originally released late November, the library is now at v0.4.0. Get started here:
+
+- 📂 Repository: [GitHub Repo](https://github.com/sargunv/maplibre-compose)
+- 📖 Documentation: [Explore Docs](https://sargunv.github.io/maplibre-compose/)
+
+Here’s a sneak peek of MapLibre for Compose in action:
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "20px",
+  }}
+>
+  <Image
+    src={maplibre_compose_android}
+    style={{
+      maxWidth: "200px",
+      width: "100%",
+      height: "auto",
+      display: "inline-block",
+    }}
+    alt="MapLibre Compose - Android demo"
+  />
+  <Image
+    src={maplibre_compose_ios}
+    style={{
+      maxWidth: "200px",
+      width: "100%",
+      height: "auto",
+      display: "inline-block",
+    }}
+    alt="MapLibre Compose - iOS demo"
+  />
+</div>
+<br></br>
+
+## MapLibre GL JS
+
+We’re thrilled to announce the official release of [MapLibre GL JS Version 5.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0)! 🌏
+
+This major release, shaped by feedback and several pre-releases (including [5.0.0-pre.9](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.9), [5.0.0-pre.10](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.10) released in December 2024), introduces globe rendering mode, providing a more immersive experience.
+It doesn't mean it's perfect, nothing is, we will continue to improve it, fix bugs and add new features, but we feel it is ready to see the world and get a wider audience.
+
+Try it out and share your thoughts!
+
+<br></br>
+
+## Martin
+
+Martin Tile Server [v0.15.0](https://github.com/maplibre/martin/issues/1632) will have been released™:
+
+While there are a [lot of improvements](https://github.com/maplibre/martin/releases/tag/v0.15.0), here are the stand out features:
+
+- **COG Support**: Basic [`cog` (Cloud Optimized GeoTIFF) support](https://maplibre.org/martin/sources-cog-files.html) was added as a data source. This allows to effectively serve raster tiles similar to mbtiles raster mode and pmtiles raster mode. See [our docs](https://maplibre.org/martin/sources-cog-files.html) for further context.
+- **Web UI framework**: We have laid the foundation for a web-UI, thoug it is still in early development. Get a glimpse of our vision for the UI by visiting this [GitHub issue](https://github.com/maplibre/martin/issues/1120).
+- **SDF sprites**: `SDF` sprites can now be generated via a separate API route. This allows to color sprites in `maplibre-gl`/`maplibre-native` based on map data and have crispier sprites.
+  Limitations include:
+
+  - Single-color support only.
+  - Background customization limited to blurred borders.
+
+    Learn more in [our docs](https://maplibre.org/martin/sources-sprites.html). Here’s an example sprite from [NavigaTUM](https://nav.tum.de):
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <Image
+    src={martin_sdf}
+    style={{
+      maxWidth: "600px",
+      width: "100%",
+      height: "auto",
+      display: "inline-block",
+    }}
+    alt="Martin Tile Server - sprites demo"
+  />
+</div>
+<br></br>
+
+## Flutter MapLibre
+
+Started in September 2024, the Flutter maplibre package was created to provide modern Flutter bindings for MapLibre Native and MapLibre GL JS and a seamless integration into the Flutter ecosystem. Currently, supported platforms are Android and Web, while the iOS implementation is on the way and, as of right now, about halfway done (see [#26](https://github.com/josxha/flutter-maplibre/issues/26)).
+
+Key features include its integration into the Flutter state management system and widget tree, direct interoperability using FFI and JNI, and platform-invariant customizable user interface. A more in depth comparison with `flutter-maplibre-gl` and other similar packages can be found in the `maplibre` docs: [flutter-maplibre.pages.dev/compare/](https://flutter-maplibre.pages.dev/compare/)
+
+The package already receives a couple of hundred downloads each month, and its goal is to become a full alternative to flutter-maplibre-gl by the end of Q1 2025.
+
+- Repository: [github.com/josxha/flutter-maplibre](https://github.com/josxha/flutter-maplibre)
+- pub.dev Package Registry: [pub.dev/packages/maplibre](https://pub.dev/packages/maplibre)
+- Hosted Example App: [flutter-maplibre.pages.dev/demo](https://flutter-maplibre.pages.dev/demo/)
+  <br></br>
+
+## Community Events
+
+MapLibre User Group Japan recently held its 8th X Space on December 26, 2024, attracting 44 listeners! 🎉 If you missed it, you can catch the [recording on X](https://x.com/i/spaces/1vOGwroapBmKB).
+
+For more information, visit the official website: https://mug-jp.org
+
+<br></br>
+
+## Monthly Meetings
+
+We’re continuing our tradition of meeting on the second Wednesday of each month, and now we’re adding an additional session on the last Wednesday to accommodate eastern-friendly time zones.
+
+**Second Wednesday Meetings (January 8, 2025)**
+
+- MapLibre Navigation: 5:00–6:00 PM UTC
+- MapLibre Native: 6:00–7:00 PM UTC
+- MapLibre GL JS: 7:00–8:00 PM UTC
+
+**Last Wednesday Meeting (Eastern-Friendly)**
+
+- January 29, 2025 - 9:00–10:00 AM UTC
+
+All calls are open to everyone. Zoom links can be found in our MapLibre Slack. If you’re not a member, request an invite at https://slack.openstreetmap.us/. We look forward to seeing you!
