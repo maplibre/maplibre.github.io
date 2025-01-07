@@ -8,9 +8,4 @@ export default defineConfig({
   integrations: [mdx(), solidJs()],
   output: "static",
   site: "https://maplibre.org/",
-  vite: {
-    ssr: {
-      external: ["astro/container", "@astrojs/mdx"],
-    },
-  },
 });
