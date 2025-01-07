@@ -1,9 +1,11 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import { render } from "astro:content";
 import TitleHeader from "../../components/TitleHeader.astro";
 import PostExcerpt from "@igor.dvlpr/astro-post-excerpt";
+import iconRss from "../../../public/img/icon/rss.svg";
 
 const posts = (await getCollection("news")).sort((a, b) => {
   console.log(b.data);
@@ -34,7 +36,7 @@ const posts = (await getCollection("news")).sort((a, b) => {
     margin-top: 12px;
     padding-bottom: 3px;
 
-    svg {
+    :global(img) {
       top: -2px;
       position: relative;
     }
@@ -46,18 +48,7 @@ const posts = (await getCollection("news")).sort((a, b) => {
     News
     <span class="badge bg-primary text-white">
       <a href="https://github.com/maplibre/martin">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 16 16"
-          width="16"
-          height="16"
-        >
-          <path
-            fill="#fff"
-            d="M2.002 2.725a.75.75 0 0 1 .797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 0 1-1.497.098 10.502 10.502 0 0 0-9.776-9.776.747.747 0 0 1-.7-.798ZM2.84 7.05h-.002a7.002 7.002 0 0 1 6.113 6.111.75.75 0 0 1-1.49.178 5.503 5.503 0 0 0-4.8-4.8.75.75 0 0 1 .179-1.489ZM2 13a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z"
-          >
-          </path>
-        </svg>
+        <Image src={iconRss} alt="MapLibre RSS feed" height={16} width={16} />
         RSS
       </a>
     </span>
