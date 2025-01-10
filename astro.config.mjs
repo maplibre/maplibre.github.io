@@ -7,4 +7,5 @@ export default defineConfig({
   base: "",
   integrations: [mdx(), solidJs()],
   output: "static",
+  site: "https://maplibre.org/",
 });

@@ -3,10 +3,7 @@ import { Image } from "astro:assets";
 import maplibreLogo from "../../public/img/maplibre-logo.svg";
 import Layout from "../layouts/Layout.astro";
 import { LandingPageMap } from "../components/LandingPageMap";
-
-const title = "MapLibre";
-const description =
-  "The MapLibre Organization is an umbrella for open-source mapping libraries.";
+import { SITE_DESCRIPTION } from "../constants";
 ---
 
 <Layout>
@@ -27,8 +24,7 @@ const description =
                 <p
                   style="word-break:normal; margin-top:30px; max-width: 800px;"
                 >
-                  The MapLibre Organization is an umbrella for open-source
-                  mapping libraries.
+                  {SITE_DESCRIPTION}
                 </p>
 
                 <!-- <p>Open-source map libraries for web and mobile.</p> -->

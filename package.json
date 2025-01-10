@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.0.2",
+    "@astrojs/rss": "^4.0.11",
     "@astrojs/solid-js": "^5.0.0",
     "@fontsource/alata": "^5.1.1",
     "@igor.dvlpr/astro-post-excerpt": "^3.0.4",
@@ -21,7 +22,8 @@
     "bootstrap": "^5.3.3",
     "maplibre-gl": "^5.0.0",
     "sass": "1.76.0",
-    "solid-js": "^1.9.3"
+    "solid-js": "^1.9.3",
+    "ultrahtml": "^1.5.3"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
