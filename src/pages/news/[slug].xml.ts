@@ -13,7 +13,15 @@ import solidRenderer from "@astrojs/solid-js/server.js";
 import { transform, walk } from "ultrahtml";
 import sanitize from "ultrahtml/transformers/sanitize";
 
-import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../constants";
+
+// need to make this endpoint dynamic with only one path
+// otherwise the astro file will take precedence
+export function getStaticPaths() {
+  return [{ params: { slug: "index" } }];
+}
+
+export const prerender = true;
 
 const container = await AstroContainer.create({});
 container.addServerRenderer({ renderer: mdxRenderer, name: "mdx" });

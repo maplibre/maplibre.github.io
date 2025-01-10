@@ -47,7 +47,7 @@ const posts = (await getCollection("news")).sort((a, b) => {
   <TitleHeader>
     News
     <span class="badge bg-primary text-white">
-      <a href="https://github.com/maplibre/martin">
+      <a href={new URL("news/index.xml", Astro.site)}>
         <Image src={iconRss} alt="MapLibre RSS feed" height={16} width={16} />
         RSS
       </a>
