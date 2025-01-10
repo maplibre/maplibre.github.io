@@ -21,8 +21,6 @@ export function getStaticPaths() {
   return [{ params: { slug: "index" } }];
 }
 
-export const prerender = true;
-
 const container = await AstroContainer.create({});
 container.addServerRenderer({ renderer: mdxRenderer, name: "mdx" });
 container.addServerRenderer({ renderer: solidRenderer, name: "solid" });
