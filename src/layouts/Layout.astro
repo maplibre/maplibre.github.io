@@ -2,6 +2,7 @@
 import "../styles/bootstrap.scss";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
+import { SITE_TITLE } from "../constants";
 const { title, description } = Astro.props;
 // import { ClientRouter } from 'astro:transitions';
 ---
@@ -70,8 +71,15 @@ const { title, description } = Astro.props;
       crossorigin
     />
 
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={SITE_TITLE}
+      href={new URL("news/index.xml", Astro.site)}
+    />
+
     <title>
-      {title ? `${title} | MapLibre` : "MapLibre"}
+      {title ? `${title} | ${SITE_TITLE}` : SITE_TITLE}
     </title>
   </head>
   <body>
