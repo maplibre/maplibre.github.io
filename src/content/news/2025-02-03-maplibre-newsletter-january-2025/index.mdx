@@ -2,9 +2,30 @@
 title: "MapLibre Newsletter January 2025"
 date: "2025-02-03"
 categories: ["newsletter"]
-authors: [bart, harel, sargun, josxha, frank, ramyaragupathy]
+authors: [bart, birk, ianthetechie, yuri, harel, brandon, josxha, ramyaragupathy]
 draft: false
 ---
+
+import { Image } from "astro:assets";
+import gratitude_aws from "./aws-2024-sponsor.png";
+
+As we step into 2025, we want to start with a heartfelt thank you to AWS for renewing their sponsorship for MapLibre. Their ongoing commitment since 2022 has played a vital role in the growth, and strengthening of our global community.
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+<Image
+    src={gratitude_aws}
+    style={{
+      maxWidth: "550px",
+      width: "100%",
+      height: "auto",
+      display: "inline-block",
+    }}
+    alt="Thanks to AWS sponsorship renewal!"
+  />
+</div>
+<br></br>
+
+Here's the round-up of updates from January 2025! 
 
 ## MapLibre Native
 
@@ -16,36 +37,51 @@ draft: false
   - Adding support for [MapLibre Tiles](https://github.com/maplibre/maplibre-tile-spec) which we expect will bring better performance.
   - Ongoing performance and stability improvements.
 - We want to bring Vulkan and Metal support to Qt. Qt is currently using an older `opengl2` branch. If you are a [MapLibre Native Qt](https://github.com/maplibre/maplibre-native-qt) user and want to help, please see [this draft PR](https://github.com/maplibre/maplibre-native-qt/pull/59).
-- @TatyanaPolunina, a C++ engineer from Lyft, will be addressing some stability issues Lyft is facing, well as extending the observability of MapLibre Native. We are happy to work with Tetiana and Lyft on MapLibre Native this year!
-- MapLibre Native gained experimental Rust support ([docs](https://maplibre.org/maplibre-native/docs/book/rust.html), [PR](https://github.com/maplibre/maplibre-native/pull/3137)). This allows C++ code to use Rust modules including dependencies. The first demo replaces csscolorparser.hpp with a popular [Rust lib](https://crates.io/crates/csscolorparser) (2.2 million downloads). We need feedback on any potential issues with this approach. Thanks to @louwers and @nyurik.
-- Work [has began](https://github.com/maplibre/maplibre-native/pull/3181) on MapLibre Native Rust wrapper - ability to use native lib as a Rust crate. This will add another supported platform, in addition to Linux/Android/iOS/Node.js/...
+- [@TatyanaPolunina](https://github.com/TatyanaPolunina), a C++ engineer from Lyft, will be addressing some stability issues Lyft is facing, well as extending the observability of MapLibre Native. We are happy to work with Tetiana and Lyft on MapLibre Native this year!
+- MapLibre Native gained experimental Rust support ([docs](https://maplibre.org/maplibre-native/docs/book/rust.html), [PR](https://github.com/maplibre/maplibre-native/pull/3137)). This allows C++ code to use Rust modules including dependencies. The first demo replaces csscolorparser.hpp with a popular [Rust lib](https://crates.io/crates/csscolorparser) (2.2 million downloads). We need feedback on any potential issues with this approach. Thanks to [@louwers](https://github.com/louwers) and [@nyurik](https://github.com/nyurik).
+- Work [has begun](https://github.com/maplibre/maplibre-native/pull/3181) on MapLibre Native Rust wrapper - the ability to use native lib as a Rust crate. This will add another supported platform, in addition to Linux/Android/iOS/Node.js and others.
 
 
-### SwiftUI DSL
+#### SwiftUI DSL
 
-The MapLibre SwiftUI DSL v0.5 release is out with two stand-out features:
+The [MapLibre SwiftUI DSL v0.5 release](https://github.com/maplibre/swiftui-dsl/releases/tag/v0.5.1) is out with two stand-out features:
 
-* Basic support for fill style layers in the DSL. This lets you add things like area of interest shading dynamically using the DSL.
+* Basic support for fill style layers in the DSL. This lets you add things like area-of-interest shading dynamically using the DSL.
 * A revamped read-only proxy interface to the map view. This lets us safely expose access to functions on the underlying map view like `func convert(_ coordinate: CLLocationCoordinate2D, toPointTo: UIView?) -> CGPoint` directly. Such functions won't cause any interference with SwiftUI state, and we now have a way to expose them directly, unlocking even more use cases.
 
-Both new features were implemented by @hactar. These are first passes and don't expose everything theoretically possible by MapLibre. If you'd like access to some method on the `MLNMapView` or need more properties from `MLNFillStyleLayer`, [let us know with an issue or open a PR on GitHub](https://github.com/maplibre/swiftui-dsl)!
+Both new features were implemented by [@hactar](https://github.com/hactar). These are first passes and don't expose everything theoretically possible by MapLibre. If you'd like access to some method on the `MLNMapView` or need more properties from `MLNFillStyleLayer`, [let us know with an issue or open a PR on GitHub](https://github.com/maplibre/swiftui-dsl)!
 
-We've also done some dependency upgrades, including upgrading MapLibre Native to 6.10. @Archdoog notes that if you're using the Mockable package, the change may require some updates to your own code.
+We've also done some dependency upgrades, including upgrading MapLibre Native to 6.10. [@Archdoog](https://github.com/Archdoog) notes that if you're using the Mockable package, the change may require some updates to your own code.
 
+
+#### MapLibre Native - React Native SDK v10
+
+The MapLibre Native - React Native SDK v10 has been [released](https://github.com/maplibre/maplibre-react-native/releases/tag/v10.0.0)!
+Highlights of this release include:
+
+- **New Architecture:** The SDK has not been refactored to use New Architecture yet, so there isn't any performance improvement, but v10 includes a new compat layer that allows MapLibre Native to be used in New Architecture mode.
+
+- **Expo Support:** v10 includes improvements for use in Expo, such as the ability to add Google Location Services.
+
+- **Flexible SDK Versioning:** This release allows users to configure which version of the iOS and Android SDKs from the MapLibre Native distributions are used. This works for minor and patch releases, enabling users of MapLibre React Native to adopt these new versions immediately after they are published, without waiting for a MapLibre React Native release.
+
+- **New Documentation:** https://maplibre.org/maplibre-react-native/
+
+This release has been a year in the making, with 29 alphas and 21 betas! Thanks to [@tyrauber](https://github.com/tyrauber) and [@KiwiKilian](https://github.com/KiwiKilian) for their contributions, helping to enhance its capabilities and improve documentation.
 
 ## Web
 
-The year started with a bang. With the release of the globe almost at new year's eve we were off to a great start of 2025. A very important discussion started with the release of version 5 and the change we decided to do with `geometry-type`. Which drive the trust of 5.0.1 soon after and the revert of a breaking change in the style. 
-While this discussion was valuable we do want to encourage the community to use our pre-releases for majors version and get that feedback before the official version is released. 
-We also released version 5.1.0 this month, and there are nice things cooking as can be read in this newsletter. Great year ahead, no doubt!
+The year started with a bang 🎉. With the [release of the globe](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0) almost on New Year's eve we were off to a great start in 2025. A very important discussion started with the release of version 5 and the change we decided to do with `geometry-type`, which led to the trust of 5.0.1 soon after and the reversion of a breaking change in the style. 
+While this discussion was valuable we encourage the community to use our pre-releases for major version and provide feedback before the official release. 
+We also [released version 5.1.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.1.0) this month, and there are nice things cooking as can be read in this newsletter. Great year ahead, no doubt!
 
-### MapLibre Web Fonts
+#### MapLibre Web Fonts
 
-A group of developers using MapLibre GL JS are interested in building native Web Fonts (`.woff2`) support, as a replacement for needing to fetch and host `glyphs`. This would have key advantages of:
+A group of developers using MapLibre GL JS is interested in building native Web Fonts (`.woff2`) support, as a replacement for needing to fetch and host `glyphs`. This would have key advantages:
 
-* Fewer font files and less data to download when displaying labels
-* Easier workflow for designing maps with custom typography
-* Support for more languages in South and Southeast Asia
+* Fewer font files and less data to download when displaying labels.
+* Easier workflow for designing maps with custom typography.
+* Support for more languages in South and Southeast Asia.
 
 A demonstration is live [here](https://bdon.github.io/maplibre-text/webfonts/).
 
@@ -53,5 +89,24 @@ You can find more information on [GitHub Discussions](https://github.com/maplibr
 
 ## MapLibre Flutter
 
-- The MapLibre Native Android SDKhas been updated to 11.8.0 which adds support for PMTiles. It is planned to add support for PMTiles on web as well to provide feature parity across all platforms.
-- Static typed map styles including expressions have been evaluated. Modelling the maplibre style spec with JSON schema to make the code generation more straight forward looks promising.
+- The MapLibre Native Android SDK has been updated to 11.8.0 which adds support for PMTiles. It is planned to add support for PMTiles on web as well to provide feature parity across all platforms.
+- Static-typed map styles, including expressions have been evaluated. Modeling the MapLibre style spec with JSON schema to make the code generation more straight forward looks promising.
+
+
+## Monthly meetings
+
+We will hold our monthly meeting on the second Wednesday of each month and run an additional session on the last Wednesday to better accommodate participants in Asia time zones.
+
+#### Second Wednesday Meetings (Feb 12, 2025)
+
+* MapLibre Navigation: 5:00–6:00 PM UTC
+* MapLibre Native: 6:00–7:00 PM UTC
+* MapLibre GL JS: 7:00–8:00 PM UTC
+
+#### Last Wednesday Meeting ( Asia Friendly)
+* Feb 26, 2025 - 9:00–10:00 AM UTC
+
+View meeting times in your time zone: https://notime.zone/OFrb-hOVMIx8E.
+
+All calls are open to everyone. Zoom links can be found in our MapLibre Slack. If you’re not a member, request an invite at [OpenStreetMap US Slack community](https://slack.openstreetmap.us/). We look forward to seeing you!
+
