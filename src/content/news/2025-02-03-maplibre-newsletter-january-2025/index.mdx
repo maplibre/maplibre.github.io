@@ -1,0 +1,57 @@
+---
+title: "MapLibre Newsletter January 2025"
+date: "2025-02-03"
+categories: ["newsletter"]
+authors: [bart, harel, sargun, josxha, frank, ramyaragupathy]
+draft: false
+---
+
+## MapLibre Native
+
+
+- [MapLibre Android 11.8.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.8.0) and [MapLibre iOS 6.10.0 ](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.10.0) were released which included the new PMTiles support for MapLibre Native.
+- The MapLibre Native Development Team kicked off their work again this January. They are currently working on:
+  - Extending Custom Drawable Layer support for cross-platform custom layers.
+  - Using a dynamic texture atlas for reduced memory usage.
+  - Adding support for [MapLibre Tiles](https://github.com/maplibre/maplibre-tile-spec) which we expect will bring better performance.
+  - Ongoing performance and stability improvements.
+- We want to bring Vulkan and Metal support to Qt. Qt is currently using an older `opengl2` branch. If you are a [MapLibre Native Qt](https://github.com/maplibre/maplibre-native-qt) user and want to help, please see [this draft PR](https://github.com/maplibre/maplibre-native-qt/pull/59).
+- @TatyanaPolunina, a C++ engineer from Lyft, will be addressing some stability issues Lyft is facing, well as extending the observability of MapLibre Native. We are happy to work with Tetiana and Lyft on MapLibre Native this year!
+- MapLibre Native gained experimental Rust support ([docs](https://maplibre.org/maplibre-native/docs/book/rust.html), [PR](https://github.com/maplibre/maplibre-native/pull/3137)). This allows C++ code to use Rust modules including dependencies. The first demo replaces csscolorparser.hpp with a popular [Rust lib](https://crates.io/crates/csscolorparser) (2.2 million downloads). We need feedback on any potential issues with this approach. Thanks to @louwers and @nyurik.
+- Work [has began](https://github.com/maplibre/maplibre-native/pull/3181) on MapLibre Native Rust wrapper - ability to use native lib as a Rust crate. This will add another supported platform, in addition to Linux/Android/iOS/Node.js/...
+
+
+### SwiftUI DSL
+
+The MapLibre SwiftUI DSL v0.5 release is out with two stand-out features:
+
+* Basic support for fill style layers in the DSL. This lets you add things like area of interest shading dynamically using the DSL.
+* A revamped read-only proxy interface to the map view. This lets us safely expose access to functions on the underlying map view like `func convert(_ coordinate: CLLocationCoordinate2D, toPointTo: UIView?) -> CGPoint` directly. Such functions won't cause any interference with SwiftUI state, and we now have a way to expose them directly, unlocking even more use cases.
+
+Both new features were implemented by @hactar. These are first passes and don't expose everything theoretically possible by MapLibre. If you'd like access to some method on the `MLNMapView` or need more properties from `MLNFillStyleLayer`, [let us know with an issue or open a PR on GitHub](https://github.com/maplibre/swiftui-dsl)!
+
+We've also done some dependency upgrades, including upgrading MapLibre Native to 6.10. @Archdoog notes that if you're using the Mockable package, the change may require some updates to your own code.
+
+
+## Web
+
+The year started with a bang. With the release of the globe almost at new year's eve we were off to a great start of 2025. A very important discussion started with the release of version 5 and the change we decided to do with `geometry-type`. Which drive the trust of 5.0.1 soon after and the revert of a breaking change in the style. 
+While this discussion was valuable we do want to encourage the community to use our pre-releases for majors version and get that feedback before the official version is released. 
+We also released version 5.1.0 this month, and there are nice things cooking as can be read in this newsletter. Great year ahead, no doubt!
+
+### MapLibre Web Fonts
+
+A group of developers using MapLibre GL JS are interested in building native Web Fonts (`.woff2`) support, as a replacement for needing to fetch and host `glyphs`. This would have key advantages of:
+
+* Fewer font files and less data to download when displaying labels
+* Easier workflow for designing maps with custom typography
+* Support for more languages in South and Southeast Asia
+
+A demonstration is live [here](https://bdon.github.io/maplibre-text/webfonts/).
+
+You can find more information on [GitHub Discussions](https://github.com/maplibre/maplibre-gl-js/discussions/2555) or in the `#maplibre-i18n` slack channel.
+
+## MapLibre Flutter
+
+- The MapLibre Native Android SDKhas been updated to 11.8.0 which adds support for PMTiles. It is planned to add support for PMTiles on web as well to provide feature parity across all platforms.
+- Static typed map styles including expressions have been evaluated. Modelling the maplibre style spec with JSON schema to make the code generation more straight forward looks promising.
