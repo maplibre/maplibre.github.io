@@ -33,6 +33,7 @@ With that note, here's the round-up of updates from January 2025!
 ## MapLibre Native
 
 - [MapLibre Android 11.8.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.8.0) and [MapLibre iOS 6.10.0 ](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.10.0) were released which included the new PMTiles support for MapLibre Native.
+- MapLibre Native gained experimental Rust support ([docs](https://maplibre.org/maplibre-native/docs/book/rust.html), [PR](https://github.com/maplibre/maplibre-native/pull/3137)). This allows C++ code to use Rust modules including dependencies. The first demo replaces csscolorparser.hpp with a popular [Rust lib](https://crates.io/crates/csscolorparser) (2.2 million downloads). We need feedback on any potential issues with this approach. Thanks to [@louwers](https://github.com/louwers) and [@nyurik](https://github.com/nyurik).
 - The MapLibre Native Development Team kicked off their work again this January. They are currently working on:
   - Extending Custom Drawable Layer support for cross-platform custom layers.
   - Using a dynamic texture atlas for reduced memory usage.
@@ -40,7 +41,6 @@ With that note, here's the round-up of updates from January 2025!
   - Ongoing performance and stability improvements.
 - We want to bring Vulkan and Metal support to Qt. Qt is currently using an older `opengl2` branch. If you are a [MapLibre Native Qt](https://github.com/maplibre/maplibre-native-qt) user and want to help, please see [this draft PR](https://github.com/maplibre/maplibre-native-qt/pull/59).
 - [@TatyanaPolunina](https://github.com/TatyanaPolunina), a C++ engineer from Lyft, will be addressing some stability issues Lyft is facing, well as extending the observability of MapLibre Native. We are happy to work with Tetiana and Lyft on MapLibre Native this year!
-- MapLibre Native gained experimental Rust support ([docs](https://maplibre.org/maplibre-native/docs/book/rust.html), [PR](https://github.com/maplibre/maplibre-native/pull/3137)). This allows C++ code to use Rust modules including dependencies. The first demo replaces csscolorparser.hpp with a popular [Rust lib](https://crates.io/crates/csscolorparser) (2.2 million downloads). We need feedback on any potential issues with this approach. Thanks to [@louwers](https://github.com/louwers) and [@nyurik](https://github.com/nyurik).
 - Work [has begun](https://github.com/maplibre/maplibre-native/pull/3181) on MapLibre Native Rust wrapper - the ability to use native lib as a Rust crate. This will add another supported platform, in addition to Linux/Android/iOS/Node.js and others.
 
 #### SwiftUI DSL
