@@ -1,9 +1,11 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import { render } from "astro:content";
 import TitleHeader from "../../components/TitleHeader.astro";
 import PostExcerpt from "@igor.dvlpr/astro-post-excerpt";
+import iconRss from "../../../public/img/icon/rss.svg";
 
 const posts = (await getCollection("news")).sort((a, b) => {
   console.log(b.data);
@@ -26,10 +28,32 @@ const posts = (await getCollection("news")).sort((a, b) => {
       }
     }
   }
+
+  .badge {
+    display: block;
+    width: max-content;
+    margin: auto;
+    margin-top: 12px;
+    padding-bottom: 3px;
+
+    :global(img) {
+      top: -2px;
+      position: relative;
+    }
+  }
 </style>
 
 <Layout title="News">
-  <TitleHeader>News</TitleHeader>
+  <TitleHeader>
+    News
+    <span class="badge bg-primary text-white">
+      <a href={new URL("news/index.xml", Astro.site)}>
+        <Image src={iconRss} alt="MapLibre RSS feed" height={16} width={16} />
+        RSS
+      </a>
+    </span>
+  </TitleHeader>
+
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-10 col-lg-8">
