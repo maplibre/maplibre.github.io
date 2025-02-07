@@ -37,6 +37,7 @@ const roadmapItems = defineCollection({
     z.object({
       title: z.string(),
       heroImage: image(),
+      heroImageFit: z.optional(z.enum(["fill", "contain", "cover"])),
       status: z.enum(["under-consideration", "in-progress", "released"]),
       bountyLink: z.optional(z.string()),
       bountyActive: z.optional(z.boolean()),
