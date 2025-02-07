@@ -62,7 +62,7 @@ function formatDate(dateString) {
                       class="card-img-top"
                       src={item.data.heroImage}
                       alt={item.data.title}
-                      style="width: 100%; height: 250px; object-fit: cover;"
+                      style=`width: 100%; height: 250px; object-fit: ${item.data.heroImageFit || "cover"};`
                     />
                     <div class="card-body">
                       <h5 class="card-title">{item.data.title}</h5>
