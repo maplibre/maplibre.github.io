@@ -1,0 +1,210 @@
+---
+title: "MapLibre Newsletter February 2025"
+date: "2025-03-03"
+categories: ["newsletter"]
+authors: [bart, yuri, harel, josxha, ramyaragupathy]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import mlt_road_network_demo from "./mlt-road-network-demo.png";
+import custom_draw_layer_demo from "./custom-draw-layer-demo.png";
+import flutter_preview from "./flutter-preview.mp4";
+import flutter_ios_preview from "./ios-preview.mp4";
+import stamen_ml from "./stamen-ml.gif";
+
+We’re excited to share key updates across MapLibre Native, GL JS, Flutter, and the MapLibre Tile Specification (MLT), along with details on upcoming community meetings.
+
+A huge thank you to everyone who supports MapLibre through [GitHub Sponsors](https://github.com/sponsors/maplibre) and [OpenCollective](https://opencollective.com/maplibre) platforms 🎉. Through these channels, we received $4,644.23 in 2023, and in 2024, contributions grew by 24.3% to $5,772.77 USD. Your support is essential in sustaining and expanding our open-source ecosystem - we truly appreciate it!
+
+We’ve also published the Q4 2024 Financial Report, providing insights into our funding and expenditures. You can read the full report [here](https://maplibre.org/about/reports/Financial-Report-Q4-2024.pdf).
+
+With that note of gratitude, here’s the February 2025 round-up.
+
+## MapLibre Native
+
+- Implementation of the new [MapLibre Tiles format](https://github.com/maplibre/maplibre-tile-spec#maplibre-tiles-mlt) is in full swing. There is a [PR in the `maplibre/maplibre-tile-spec`](https://github.com/maplibre/maplibre-tile-spec/pull/441) repo with a C++ reader implementation and a [draft PR](https://github.com/maplibre/maplibre-native/pull/3246) for the intergration into MapLibre Native.
+
+  Even though development has only recently started, this proof-of-concept can already use MLTs (MapLibre Tiles) as a source alongside [MVTs](https://github.com/mapbox/vector-tile-spec).
+
+{" "}
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center",
+  }}
+>
+  <Image
+    src={mlt_road_network_demo}
+    style={{
+      maxWidth: "550px",
+      width: "100%",
+      height: "auto",
+      display: "inline-block",
+    }}
+    alt="Screenshot showing the road network in Europe from some demo MLTs based on Bing Maps data."
+  />
+  <div
+    style={{
+      fontSize: "0.9em",
+      color: "#BEBEBE",
+      marginTop: "8px",
+      textAlign: "center",
+    }}
+  >
+    Screenshot showing the road network in Europe from some demo MLTs based on
+    Bing Maps data.
+  </div>
+</div>
+
+- [MapLibre iOS 6.11.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.11.0) is now available.
+
+  - Custom Style Layers, allow drawing directly on the map using the Metal API with full Swift compatibility. Learn more in [this guide](https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre-native-for-ios/customstylelayerexample).
+
+- Looking ahead, the upcoming MapLibre iOS 6.12.0 release will expose some low-level events for better observability. More details can be found in [this article](https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre-native-for-ios/observerexample).
+- Custom Drawable Layers allow drawing on the map in a platform-independent way. Currently C++ is required to implement these layers. This month [a significant PR](https://github.com/maplibre/maplibre-native/pull/3210) was merged, introducing several imporvements, including:
+
+  - enhanced functionality and improvements to custom drawable layer,
+  - support for uploading 3D geometries, expanding rendering possibilities.
+
+  {" "}
+
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      flexDirection: "column",
+      alignItems: "center",
+    }}
+  >
+    <Image
+      src={custom_draw_layer_demo}
+      style={{
+        maxWidth: "550px",
+        width: "100%",
+        height: "auto",
+        display: "inline-block",
+      }}
+      alt="Custom Drawable Layer demo available in the GLFW app if you press 'V'."
+    />
+    <div
+      style={{
+        fontSize: "0.9em",
+        color: "#BEBEBE",
+        marginTop: "8px",
+        textAlign: "center",
+      }}
+    >
+      Custom Drawable Layer demo available in the GLFW app if you press 'V'.
+    </div>
+  </div>
+
+- [@frankkienl](https://github.com/frankkienl) from Flitsmeister has created a sample app demonstrating how to integrate MapLibre with Android Auto (and Automotive). This is a fantastic starting point for developers looking to explore automotive applications. Check out the repository here: [MapLibre Android Auto Sample](https://github.com/maplibre/MapLibre-Android-Auto-Sample).
+
+## Web
+
+February was a shorter month, but we still managed to roll out [MapLibre GL JS 5.1.1](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.1.1) with key improvemens.
+
+One notable highlight is the powerful `addProtocol` feature which enabled the release of a new plugin for loading arbitrary fonts using tinySDF:Check out [maplibre-local-glyphs](https://www.npmjs.com/package/maplibre-local-glyphs), developed by [@spatialillusions](https://github.com/spatialillusions) - a big thanks to their contribution!
+This will hopefully pave the way to other font functionality that's coming in the near future. Stay tuned for further developments 🗺️.
+
+## MapLibre Flutter
+
+Version `0.2.1` of [flutter-maplibre](https://github.com/josxha/flutter-maplibre) got released this month. Key feature of this release is the possibility of synchonous controller calls on android due to the exciting release of [Flutter 3.29](https://medium.com/flutter/whats-new-in-flutter-3-29-f90c380c2317). This is a big milestone to seamlessly display and position Flutter widgets on top of the map. Check out the [changelog](https://github.com/josxha/flutter-maplibre/blob/main/CHANGELOG.md#021) for the full list of improvements.
+
+Work is also [progressing on iOS support](https://github.com/josxha/flutter-maplibre/issues/26), with completion expected by March 2025. Stay tuned!
+
+#### Feature Previews
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    gap: "20px",
+    flexWrap: "wrap",
+  }}
+>
+  <div style={{ textAlign: "center", maxWidth: "48%" }}>
+    <video src={flutter_preview} controls style="width: 50%;"></video>
+    <div style={{ fontSize: "0.9em", color: "#BEBEBE", marginTop: "8px" }}>
+      <strong>Flutter Widgets on Top of the Map View</strong>
+      <br></br>
+      Demo showcasing Flutter widgets rendered on top of the map view.
+    </div>
+  </div>
+  <div style={{ textAlign: "center", maxWidth: "48%" }}>
+    <video src={flutter_ios_preview} controls style="width: 50%;"></video>
+    <div style={{ fontSize: "0.9em", color: "#BEBEBE", marginTop: "8px" }}>
+      <strong>iOS Support Preview</strong>
+      <br></br>
+      Preview of upcoming iOS support for flutter-maplibre.
+    </div>
+  </div>
+</div>
+
+## Martin Tile Format (MLT)
+
+Exciting progress continues on the MapLibre Tile (MLT) format!
+
+- **C++ MLT Decoder Implementation:** As mentioned before, [@TimSylvester](http://github.com/TimSylvester) has been actively working on a C++ decoder implementation for MLT. Checkout the ongoing work in [this PR](https://github.com/maplibre/maplibre-tile-spec/pull/441).
+- **Rust based FastPFOR algorithm:** [@jjcfrancisco](http://github.com/jjcfrancisco) and [@nyurik](http://github.com/nyurik) have published a [Rust implementation](https://crates.io/crates/fastpfor) of the FastPFOR algorithm - which serves as the foundation of the MLT format.
+
+A dedicated meeting for MLT development updates takes place every second Monday of the month at **3:15 PM UTC**. The next meeting is scheduled for **March 10, 2025**.
+
+For ongoing updates, discussions, and collaboration, follow the **_#maplibre-tile-format_** Slack channel.
+
+## 🌟 Community Spotlight: Mapping Historical New York with Vector Beeswarm Dot Density
+
+The team at Stamen has introduced a fascinating mapping project using [maplibre-gl-js](https://maplibre.org/maplibre-gl-js/docs/), that visualizes historical New York using Vector Beeswarm Dot Density techniques. This approach beautifully showcases how data can be represented in a spatially meaningful and visually engaging way.
+
+Read more about the project here: [Vector Beeswarm Dot Density with Mapping Historical New York](https://stamen.com/vector-beeswarm-dot-density-with-mapping-historical-new-york/)
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center",
+  }}
+>
+  <Image
+    src={stamen_ml}
+    style={{
+      maxWidth: "550px",
+      maxHeight: "550px",
+      width: "100%",
+      height: "auto",
+      display: "inline-block",
+    }}
+    alt="Animated demo of the Vector Beeswarm Dot Density map.."
+  />
+  <div
+    style={{
+      fontSize: "0.9em",
+      color: "#BEBEBE",
+      marginTop: "8px",
+      textAlign: "center",
+    }}
+  ></div>
+</div>
+
+📢 Have a cool MapLibre-powered project to share? [Let us know](https://github.com/maplibre/maplibre.github.io/issues/291) - we’d love to feature it in our next newsletter! A huge thank you to [Tobias Jordans](https://www.linkedin.com/in/tobiasjordans/) for inspiring this Community Spotlight section. We appreciate the idea and look forward to featuring more exciting projects from the community!
+
+## Monthly meetings
+
+We’re continuing our tradition of meeting on the second Wednesday of each month, and now we’re adding an additional session on the last Wednesday to accommodate eastern-friendly time zones.
+
+- MapLibre Navigation: **March 12, 2025 5:00–6:00 PM UTC**
+- MapLibre Native: **March 12, 2025 6:00–7:00 PM UTC**
+- MapLibre GL JS: **March 12, 2025 - 7:00–8:00 PM UTC**
+
+#### MapLibre Eastern Call (held on the last Wednesday of the month at an Asia/Oceania-friendly time)
+
+- March 26, 2025 - 9:00–10:00 AM UTC
+
+View meeting times in your time zone: https://notime.zone/OKPWfUR_vx2eP.
+
+All calls are open to everyone. Zoom links can be found in our MapLibre Slack. If you’re not a member, request an invite at [OpenStreetMap US Slack community](https://slack.openstreetmap.us/). We look forward to seeing you!
