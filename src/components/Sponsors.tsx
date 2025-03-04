@@ -17,9 +17,9 @@ export const Sponsors = (props: any) => {
   }
 
   onMount(() => {
-  shuffleSponsorList(".gold-list");
-  shuffleSponsorList(".silver-list");
-})
+    shuffleSponsorList(".gold-list");
+    shuffleSponsorList(".silver-list");
+  });
   return (
     <div id="sponsor-list">
       <h2 class="mt-6">Current Members of the Sponsorship Program</h2>
