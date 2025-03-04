@@ -58,12 +58,6 @@ main a {
   word-break: normal;
 }
 
-.silver-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
 .bg-fullscreen {
   background: $background;
 }
@@ -106,12 +100,47 @@ main a {
   }
 }
 
-#sponsor-list {
-  img {
-    background-color: white;
+.gold-list {
+  img,
+  div {
+    width: 220px;
+    max-width: 100%;
+  }
+
+  div {
     padding: 20px;
+  }
+}
+.silver-list {
+  img,
+  div {
+    width: 150px;
+    max-width: 100%;
+  }
+
+  div {
+    padding: 10px;
+  }
+}
+
+.gold-list,
+.silver-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
     border-radius: 10px;
     aspect-ratio: 2;
+  }
+
+  img {
+    height: auto;
+    max-height: 100%;
   }
 }
 
