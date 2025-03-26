@@ -58,7 +58,7 @@ export const CommunityMap = (props: any) => {
       img.src = `community/${person.github}.png`;
 
       const anchor = document.createElement("a");
-      anchor.href = `https://github.com/${person.href}`;
+      anchor.href = `https://github.com/${person.github}`;
       anchor.title = person.github;
 
       anchor.append(img);
