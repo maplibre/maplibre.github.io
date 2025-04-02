@@ -7,30 +7,45 @@ draft: false
 ---
 
 import { Image } from "astro:assets";
-import maptiler from "./maptiler-logo.svg";
-import maplibre from "./maplibre-logo-for-light-bg.svg";
+import maplibreLogo from "./maplibre-logo-for-light-bg.svg";
+import maptilerLogo from "./maptiler-logo.svg";
 
 We are excited to announce that MapTiler has joined the MapLibre project as a Silver Sponsor!
 
 <div
   style={{
     backgroundColor: "white",
-    padding: "2rem 3rem",
+    padding: "2rem",
     border: "10px solid #cfd8dc",
     borderRadius: "0",
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "space-around",
     alignItems: "center",
-    gap: "3rem",
+    gap: "2rem",
     marginBottom: "3rem",
+    flexWrap: "wrap",
   }}
 >
-  <div style={{ display: "flex", alignItems: "center", height: "120px" }}>
-    <Image src={maplibre} alt="MapLibre logo" height={70} />
-  </div>
-  <div style={{ display: "flex", alignItems: "center", height: "120px" }}>
-    <Image src={maptiler} alt="MapTiler logo" height={90} />
-  </div>
+  <Image
+    src={maplibreLogo}
+    alt="MapLibre logo"
+    style={{
+      maxHeight: "70px",
+      height: "auto",
+      width: "auto",
+      objectFit: "contain",
+    }}
+  />
+  <Image
+    src={maptilerLogo}
+    alt="MapTiler logo"
+    style={{
+      maxHeight: "90px",
+      height: "auto",
+      width: "auto",
+      objectFit: "contain",
+    }}
+  />
 </div>
 
 [MapTiler](https://www.maptiler.com/) is a global provider of mapping services and software tools, recognized for their strong commitment to the open-source mapping ecosystem. They are the original creators and primary maintainers of the OpenMapTiles project, and actively contribute to MapLibre, OSMNames, and several other open-source initiatives.
