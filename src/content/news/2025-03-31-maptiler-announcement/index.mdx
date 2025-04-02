@@ -18,21 +18,22 @@ We are excited to announce that MapTiler has joined the MapLibre project as a Si
     padding: "2rem",
     border: "10px solid #cfd8dc",
     borderRadius: "0",
+    marginBottom: "3rem",
     display: "flex",
-    justifyContent: "space-around",
+    justifyContent: "center",
     alignItems: "center",
     gap: "2rem",
-    marginBottom: "3rem",
-    flexWrap: "wrap",
+    flexWrap: "nowrap",
+    overflow: "hidden",
   }}
 >
   <Image
     src={maplibreLogo}
     alt="MapLibre logo"
     style={{
-      maxHeight: "70px",
+      width: "40%",
+      maxWidth: "300px",
       height: "auto",
-      width: "auto",
       objectFit: "contain",
     }}
   />
@@ -40,9 +41,9 @@ We are excited to announce that MapTiler has joined the MapLibre project as a Si
     src={maptilerLogo}
     alt="MapTiler logo"
     style={{
-      maxHeight: "90px",
+      width: "40%",
+      maxWidth: "330px",
       height: "auto",
-      width: "auto",
       objectFit: "contain",
     }}
   />
