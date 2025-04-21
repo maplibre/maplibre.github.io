@@ -2,7 +2,7 @@
 import "../styles/bootstrap.scss";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
-import { SITE_TITLE } from "../constants";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
 const { title, description } = Astro.props;
 // import { ClientRouter } from 'astro:transitions';
 ---
@@ -18,7 +18,7 @@ const { title, description } = Astro.props;
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="MapLibre" />
-    <meta name="description" content={description} />
+    <meta name="description" content={description || SITE_DESCRIPTION} />
     <!-- <ClientRouter /> -->
 
     <meta
@@ -28,8 +28,8 @@ const { title, description } = Astro.props;
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="512" />
     <meta property="og:image:alt" content="MapLibre" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={title || SITE_TITLE} />
+    <meta property="og:description" content={description || SITE_DESCRIPTION} />
     <meta
       property="og:url"
       content={`https://maplibre.org${Astro.url.pathname}`}
@@ -38,8 +38,8 @@ const { title, description } = Astro.props;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@maplibre" />
     <meta name="twitter:creator" content="@maplibre" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:title" content={title || SITE_TITLE} />
+    <meta name="twitter:description" content={description || SITE_DESCRIPTION} />
     <meta
       name="twitter:image:src"
       content="https://maplibre.org/img/share-image.png"
