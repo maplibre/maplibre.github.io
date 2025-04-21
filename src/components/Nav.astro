@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import maplibreLogo from "../../public/img/maplibre-logo.svg";
+import { Icon } from "astro-icon/components";
 ---
 
 <nav
@@ -12,7 +12,7 @@ import maplibreLogo from "../../public/img/maplibre-logo.svg";
 >
   <div class="container">
     <a class="navbar-brand" href="" aria-label="MapLibre">
-      <Image alt="MapLibre Logo" src={maplibreLogo} height={30} width={120} />
+      <Icon name="maplibre" aria-label="MapLibre Logo" height={30} width={120} />
     </a>
     <div class="d-flex">
       <button
