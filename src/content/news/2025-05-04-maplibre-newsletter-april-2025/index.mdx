@@ -1,0 +1,141 @@
+---
+title: "MapLibre Newsletter April 2025"
+date: "2025-05-04"
+categories: ["newsletter"]
+authors: [bart, harel, frank, ramyaragupathy]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import komootLogo from "/public/img/komoot-logo.svg";
+import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
+
+Welcome to the April edition of the MapLibre Monthly!
+
+We’re excited to share major updates across Native, GL JS, and Martin - ranging from performance optimizations to new extensibility features.
+And before we dive in, a heartfelt thanks to [Komoot](https://www.komoot.com/) for renewing their sponsorship!
+
+<div
+  style={{
+    backgroundColor: "white",
+    padding: "2rem",
+    border: "10px solid #cfd8dc",
+    borderRadius: "0",
+    marginBottom: "3rem",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "2rem",
+    flexWrap: "nowrap",
+    overflow: "hidden",
+    flexDirection: "column",
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "2rem",
+      flexWrap: "nowrap",
+      width: "100%",
+    }}
+  >
+    <Image
+      src={maplibreLogo}
+      alt="MapLibre logo"
+      style={{
+        width: "40%",
+        maxWidth: "300px",
+        height: "auto",
+        objectFit: "contain",
+      }}
+    />
+    <Image
+      src={komootLogo}
+      alt="Komoot logo"
+      style={{
+        width: "40%",
+        maxWidth: "330px",
+        height: "auto",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+  <div
+    style={{
+      marginTop: "1rem",
+      fontSize: "1rem",
+      textAlign: "center",
+      color: "#263238",
+      fontStyle: "italic",
+    }}
+  >
+    Komoot’s support as an official MapLibre sponsor - 2023, 2024 & 2025 💙
+  </div>
+</div>
+
+## MapLibre Native
+
+- **Action Journal for Crash Debugging**: We are adding an 'action journal' to MapLibre Native. This is a **persistent log of internal events**, written out as JSON files. You can use this as a sort of black box to get information what the library was doing when rare, difficult to reproduce crashes and bugs happen. Please check out [the PR](https://github.com/maplibre/maplibre-native/pull/3409) and tell us if this is useful. We expect this to be mostly used by mission-critical enterprise type applications, which tend to have extremely low acceptable crash rates.
+
+- **Efficient Memory Management with Dynamic Texture Atlas**: Work on implementing a [dynamic texture atlas](https://github.com/maplibre/maplibre-native/pull/3198) is almost complete. Testing indicates that reduction in memory may be more significant than expected! This can also be useful when using MapLibre Native for server-side rendering. We are very interested to hear your findings on memory usage in production when releases containing this functionality are out.
+
+- **Plugin Support for Custom Layers (WIP)**: There is a [draft PR](https://github.com/maplibre/maplibre-native/pull/3430) that adds plugin functionality to MapLibre Native, allowing **custom layer types** to be added at runtime. Allowing the library to be extended more easily from the outside is something that has been talked about a long time. Although the PR in question is very much a work-in-progress, it is exciting to see some movement in this area which many users will be following with interest.
+
+- **Call for Accessibility Feedback**: We are interested in input from **accessibility** experts or developers who developed accessible maps in the past. Do you have any ideas for MapLibre Native features or perhaps style spec additions that can benefit accessibility? If yes, then please [add to the discussion](https://github.com/maplibre/maplibre-native/discussions/3439).
+
+- Releases this month:
+  - MapLibre iOS [6.12.2](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.12.2), [6.12.3](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.12.3)
+  - MapLibre Android [11.8.6](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.8.6)
+  - MapLibre Node.js [6.1.0](https://github.com/maplibre/maplibre-native/releases/tag/node-v6.1.0).
+
+## Web
+
+We released two versions this month:
+
+- [v5.3.1](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.3.1): A minor update focused on bug fixes.
+- [v5.4.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.4.0): A major release introducing Level of Detail (LOD) controls based on pitch and zoom levels, giving developers more flexibility in how data is rendered dynamically.
+
+Looking ahead, map-state persistence and expanded hillshade options are in the pipeline, stay tuned! There’s also early progress on a plugin to support complicated scripting languages, a feature that’s been discussed in previous newsletter posts.
+
+Be sure to explore the [awesome-maplibre](https://github.com/maplibre/awesome-maplibre) repository. It’s packed with creative tools, plugins, and use cases built by our amazing community!
+
+## Martin Tile Server
+
+We’re actively shaping the roadmap for Martin v1.0 and would love your input!
+
+A discussion is underway on what features or changes are needed before we consider a 1.0 release. If you have thoughts, suggestions, or feature requests, [please join the conversation](https://github.com/maplibre/martin/discussions/1805) and help guide the future of Martin.
+
+## 🌟 Community Spotlight
+
+**[GTFS Visualization for Public Transport in Zamora, Mexico](https://rutaton.zamora.gob.mx)**
+
+This project by [Codeando México](https://codeandomexico.org/) visualizes the public transport routes in Zamora using MapLibre + Svelte. It’s part of a crowdmapping initiative where local students helped digitize the city’s transit network using mobile phones.
+
+Before this effort, the information wasn’t publicly available. Now, it’s accessible to both residents and organizations who can build on the data. A great example of civic tech and open mapping in action!
+
+> “It was super easy to get something done quickly using Svelte + MapLibre.”
+> — Óscar Hernández, Tech Lead @ Codeando México
+
+## 🗓️ Monthly meetings
+
+We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
+
+Upcoming May Calls
+
+- MapLibre Navigation: May 14, 2025 – 4:00–5:00 PM UTC
+- MapLibre Native: May 14, 2025 – 5:00–6:00 PM UTC
+- MapLibre GL JS: May 14, 2025 – 6:00–7:00 PM UTC
+
+🌏 MapLibre Eastern Call
+
+Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
+
+- May 28, 2025 – 9:00–10:00 AM UTC
+
+🔗 [View meeting times in your local timezone](https://notime.zone/OPU6n2O-ij-eN)
+
+All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/).
+We’d love to see you there!
