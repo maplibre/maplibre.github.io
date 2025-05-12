@@ -1,12 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import maplibreLogo from "../../public/img/maplibre-logo.svg";
-import rssIcon from "../../public/img/icon/rss.svg";
-import bskyIcon from "../../public/img/icon/bsky.svg";
-import mstdnIcon from "../../public/img/icon/mstdn.svg";
-import xIcon from "../../public/img/icon/x.svg";
-import linkedin from "../../public/img/icon/linkedin.svg";
-import ghIcon from "../../public/img/icon/gh.svg";
+import { Icon } from "astro-icon/components";
 ---
 
 <footer class="mt-auto">
@@ -16,7 +10,7 @@ import ghIcon from "../../public/img/icon/gh.svg";
     <div class="row py-3">
       <div class="col-4">
         <a href="" aria-label="MapLibre">
-          <Image src={maplibreLogo} alt="MapLibre" height={30} width={120} />
+          <Icon name="maplibre" aria-hidden="true" height={30} width={120} />
         </a>
       </div>
 
@@ -27,42 +21,42 @@ import ghIcon from "../../public/img/icon/gh.svg";
             href={new URL("news/index.xml", Astro.site)}
             aria-label="MapLibre RSS Feed"
           >
-            <Image src={rssIcon} alt="RSS icon" height={16} width={16} />
+            <Icon name="rss" aria-hidden="true" height={16} width={16} />
           </a>
           <a
             class="nav-link text-white"
             href="https://bsky.app/profile/maplibre.org"
             aria-label="MapLibre on Bluesky"
           >
-            <Image src={bskyIcon} alt="Bluesky icon" height={14} width={16} />
+            <Icon name="bsky" aria-hidden="true" height={14} width={16} />
           </a>
           <a
             class="nav-link text-white"
             href="https://mastodon.social/@maplibre"
             aria-label="MapLibre on Mastodon"
           >
-            <Image src={mstdnIcon} alt="Mastodon icon" height={16} width={16} />
+            <Icon name="mstdn" aria-hidden="true" height={16} width={16} />
           </a>
           <a
             class="nav-link text-white"
             href="https://twitter.com/maplibre"
             aria-label="MapLibre on X"
           >
-            <Image src={xIcon} alt="X icon" height={16} width={16} />
+            <Icon name="x" aria-hidden="true" height={16} width={16} />
           </a>
           <a
             class="nav-link text-white"
             href="https://www.linkedin.com/company/maplibre"
             aria-label="MapLibre on Linkedin"
           >
-            <Image src={linkedin} alt="Linkedin icon" height={18} width={18} />
+            <Icon name="linkedin" aria-hidden="true" height={18} width={18} />
           </a>
           <a
             class="nav-link text-white"
             href="https://github.com/MapLibre"
             aria-label="MapLibre on GitHub"
           >
-            <Image src={ghIcon} alt="GitHub icon" height={18} width={18} />
+            <Icon name="gh" aria-hidden="true" height={18} width={18} />
           </a>
         </div>
       </div>
