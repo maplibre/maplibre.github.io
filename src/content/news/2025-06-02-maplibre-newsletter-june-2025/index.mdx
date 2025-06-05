@@ -81,7 +81,7 @@ Read on to catch up on updates from last month and a glimpse of what's ahead.
 
 ## 📱 MapLibre Native
 
-**Plugin Layers are coming:** Plugin layers will allow users to register custom layers with custom style spec extensions. The [design proposal](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2025-05-08-plugin-layers.md) was merged this month, with the [implementation PR](https://github.com/maplibre/maplibre-native/pull/3430) nearing the finish line. Both are spearheaded by Malcolmn Toon working for HudHud who released their [navigation app](https://apps.apple.com/us/app/hudhud-maps/id6477774492) this month.
+**Plugin layers** will allow users to register custom layers with custom style spec extensions. The [design proposal](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2025-05-08-plugin-layers.md) was merged this month, with the [implementation PR](https://github.com/maplibre/maplibre-native/pull/3430) nearing the finish line. Both are spearheaded by Malcolmn Toon working for HudHud who released their [navigation app](https://apps.apple.com/us/app/hudhud-maps/id6477774492) this month.
 
 The first version will have some limitations. Since iOS is the main focus of HudHud right now, it is only available for iOS from the outset. In addition, the custom layers do not have access to sources i.e. the built-in machinery for loading data. You also need to interact with the low-level graphics API (e.g. Metal) directly, and cannot use Drawables which internal layers uses for (platform aspecific) rendering. Lastly, plugin layers cannot participate in things like label placement.
 
@@ -137,7 +137,7 @@ Refinements and further functionality can be added incrementally based on the ne
 
 ## 🌐 MapLibre Web
 
-**Hillshade rendering:** MapLibre GL JS [v5.5.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.5.0) was released this month, featuring support for multiple hillshade rendering methods. This will be a great addition for enhanced terrain visualisation. The release also includes several important bug fixes and performance refinements.
+**Hillshade Rendering:** MapLibre GL JS [v5.5.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.5.0) was released this month, featuring support for multiple hillshade rendering methods. This will be a great addition for enhanced terrain visualisation. The release also includes several important bug fixes and performance refinements.
 
 <div
   style={{
