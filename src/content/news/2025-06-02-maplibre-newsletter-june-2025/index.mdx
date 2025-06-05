@@ -81,22 +81,11 @@ Read on to catch up on updates from last month and a glimpse of what's ahead.
 
 ## 📱 MapLibre Native
 
-**Plugin Layers are coming:** A major step towards customizability, plugin layers will soon allow developers to register custom layers with their own style spec extensions. The [design proposal](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2025-05-08-plugin-layers.md) was merged this month, and the [implementation PR](https://github.com/maplibre/maplibre-native/pull/3430) led by _Malcolm Toon of HudHud_, is nearing completion. HudHud also released their [navigation app](https://apps.apple.com/us/app/hudhud-maps/id6477774492) this month, which showcases MapLibre Native in production.
+**Plugin Layers are coming:** Plugin layers will allow users to register custom layers with custom style spec extensions. The [design proposal](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2025-05-08-plugin-layers.md) was merged this month, with the [implementation PR](https://github.com/maplibre/maplibre-native/pull/3430) nearing the finish line. Both are spearheaded by Malcolmn Toon working for HudHud who released their [navigation app](https://apps.apple.com/us/app/hudhud-maps/id6477774492) this month.
 
-Note: The first version of plugin layer is _**iOS only**_ and comes with a few limitations.
+The first version will have some limitations. Since iOS is the main focus of HudHud right now, it is only available for iOS from the outset. In addition, the custom layers do not have access to sources i.e. the built-in machinery for loading data. You also need to interact with the low-level graphics API (e.g. Metal) directly, and cannot use Drawables which internal layers uses for (platform aspecific) rendering. Lastly, plugin layers cannot participate in things like label placement.
 
-- Custom layers do not have access to built-in data sources.
-- Developers must interact with low-level graphics API (e.g. Metal) directly.
-- Platform specific rendering like Drawables cannot be used.
-- Lastly, plugin layers cannot participate in label placement.
-
-<br></br>
-Despite these constraints, this marks a solid functional foundation. Further
-capabilities can be added incrementally based on community needs. Plugin
-extendability is something that was often discussed the last few years, and it
-is great to see a functional and pragmatic implementation becoming reality.
-Malcolm also shared an impressive GLTF model loading plugin as a proof of
-concept.
+Refinements and further functionality can be added incrementally based on the needs of the community. Extendability is something that was often discussed the last few years, and it is great to see a functional and pragmatic implementation becoming reality. Malcolm shared a GLTF model loading plugin as an example of what a custom plugin layer could do.
 
 {" "}
 
@@ -135,9 +124,9 @@ concept.
   </div>
 </div>
 
-**Action Journal for Debugging:** Thanks to _Adrian Cojocaru_, a new [action journal](https://github.com/maplibre/maplibre-native/commit/08eb760acdf88692139cc9d777ed95074662387e) was merged this month. This is a persistent log of actions the library took, sort of like a black box in a plane, which should help with investigating crashes that are hard to reproduce. Check out the documentation for [iOS](https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre-native-for-ios/actionjournalexample) or [Android](https://maplibre.org/maplibre-native/android/examples/observability/action-journal/) for more information.
+**Action Journal for Debugging:** Thanks to Adrian Cojocaru, a new [action journal](https://github.com/maplibre/maplibre-native/commit/08eb760acdf88692139cc9d777ed95074662387e) was merged this month. This is a persistent log of actions the library took, sort of like a black box in a plane, which should help with investigating crashes that are hard to reproduce. Check out the documentation for [iOS](https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre-native-for-ios/actionjournalexample) or [Android](https://maplibre.org/maplibre-native/android/examples/observability/action-journal/) for more information.
 
-**Dynamic Texture Atlas for Glyphs:** The library now uses a [dynamic texture atlas](https://github.com/maplibre/maplibre-native/pull/3198) for storing glyphs, thanks to _Alex Cristici_. This change has the potential to reduce memory usage, if you have some interesting real-world numbers to share, [we would love to know](https://github.com/maplibre/maplibre-native/discussions/categories/show-and-tell).
+**Dynamic Texture Atlas for Glyphs:** The library now uses a [dynamic texture atlas](https://github.com/maplibre/maplibre-native/pull/3198) for storing glyphs, thanks to Alex Cristici. This change has the potential to reduce memory usage, if you have some interesting real-world numbers to share, [we would love to know](https://github.com/maplibre/maplibre-native/discussions/categories/show-and-tell).
 
 **Goodbye legacy renderer:** Two years ago, the legacy OpenGL ES rendering architecture, was replaced with a [modular](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2022-10-27-rendering-modularization.md) one allowing multiple rendering backends. The code parts of the legacy renderer were stubbed out with `#ifdef`s for a while, meaning it was still possible to make a build that used the legacy renderer. However, this old unused code was finally [removed](https://github.com/maplibre/maplibre-native/pull/3384) in April, with some more [cleanup](https://github.com/maplibre/maplibre-native/pull/3469) this month.
 
@@ -165,9 +154,11 @@ MapLibre GL JS [v5.5.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/
   />
 </div>
 
-**New Team Member:** We are also thrilled about <a href="about/marc" target="_blank">Marc Wilson</a> joining our team as our new Graphics Engineer 🎉! Marc brings deep expertise in rendering and graphics, and we’re excited to see the impact he’ll have on MapLibre GL JS and beyond.
+**New Team Member:** We are also thrilled about <a href="https://github.com/mwilsnd" target="_blank">Marc Wilson</a> joining our team as our new Graphics Engineer 🎉! Marc brings deep expertise in rendering and graphics, and we’re excited to see the impact he’ll have on MapLibre GL JS and beyond.
 
-**New Hosted Project:** [MapLibre Compose](https://github.com/maplibre/maplibre-compose) has officially been onboarded as a [hosted project](https://github.com/maplibre/maplibre/issues/441), marking another step forward in expanding the MapLibre ecosystem.
+**New Hosted Project:** [MapLibre for Compose Multiplatform](https://github.com/maplibre/maplibre-compose) has officially been onboarded as a [hosted project](https://github.com/maplibre/maplibre/issues/441), marking another step forward in expanding the MapLibre ecosystem.
+
+> MapLibre Compose is a Compose Multiplatform wrapper around the MapLibre SDKs for rendering interactive maps. You can use it to add maps to your Compose UIs across Android, iOS, Desktop, and Web.
 
 **Cloud Optimized GeoTIFF(COG) support:** A new COG protocol extension by [@geomatico](https://github.com/geomatico) improves how raster data is loaded in MapLibre GL JS, with no server-side preprocessing required.
 
