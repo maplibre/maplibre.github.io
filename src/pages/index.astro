@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import maplibreLogo from "../../public/img/maplibre-logo.svg";
+import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import { LandingPageMap } from "../components/LandingPageMap";
 import { SITE_DESCRIPTION } from "../constants";
@@ -14,10 +14,11 @@ import { SITE_DESCRIPTION } from "../constants";
           <div class="home-banner">
             <div class="row align-items-center" style="padding: 0px 10px;">
               <div>
-                <Image
-                  src={maplibreLogo}
-                  alt="MapLibre Logo"
+                <Icon
+                  name="maplibre"
+                  aria-label="MapLibre Logo"
                   width={353}
+                  height={100}
                   style="margin: 0 auto;"
                 />
 
