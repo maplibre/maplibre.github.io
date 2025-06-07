@@ -8,5 +8,6 @@ export default defineConfig({
   base: "",
   integrations: [mdx(), solidJs(), icon()],
   output: "static",
+  prefetch: true,
   site: "https://maplibre.org/",
 });
