@@ -1,0 +1,237 @@
+---
+title: "MapLibre Newsletter May 2025"
+date: "2025-06-02"
+categories: ["newsletter"]
+authors: [bart, harel, mpericay, frank, ramyaragupathy]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import mieruneLogo from "/public/img/mierune-logo.svg";
+import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
+
+Welcome to the May edition of the MapLibre newsletter!
+
+This month's updates range from seamless Cloud Optimized GeoTIFF support in GL JS to fresh releases for Martin Tile Server and native SDKs, and the addition of a new team member.
+
+A special thanks to [Mierune](https://www.mierune.co.jp/) for renewing their sponsorship for 2025! Now in its fourth consecutive year, their support has played a vital role in sustaining MapLibre's growth and development.
+
+<div
+  style={{
+    backgroundColor: "white",
+    padding: "2rem",
+    border: "10px solid #cfd8dc",
+    borderRadius: "0",
+    marginBottom: "3rem",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "2rem",
+    flexWrap: "nowrap",
+    overflow: "hidden",
+    flexDirection: "column",
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "2rem",
+      flexWrap: "nowrap",
+      width: "100%",
+    }}
+  >
+    <Image
+      src={maplibreLogo}
+      alt="MapLibre logo"
+      style={{
+        width: "40%",
+        maxWidth: "300px",
+        height: "auto",
+        objectFit: "contain",
+      }}
+    />
+    <Image
+      src={mieruneLogo}
+      alt="Mierune logo"
+      style={{
+        width: "40%",
+        maxWidth: "330px",
+        height: "auto",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+  <div
+    style={{
+      marginTop: "1rem",
+      fontSize: "1rem",
+      textAlign: "center",
+      color: "#263238",
+      fontStyle: "italic",
+    }}
+  >
+    Celebrating four amazing years of support from Mierune (2022–2025) 🙌
+  </div>
+</div>
+
+We’ve also published our <a href="about/reports/Financial-Report-Q1-2025.pdf" target="_blank">Q1 2025 Financial Report</a>, continuing our commitment to transparency and open governance.
+Read on to catch up on updates from last month and a glimpse of what's ahead.
+
+## 📱 MapLibre Native
+
+**Plugin layers** will allow users to register custom layers with custom style spec extensions. The [design proposal](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2025-05-08-plugin-layers.md) was merged this month, with the [implementation PR](https://github.com/maplibre/maplibre-native/pull/3430) nearing the finish line. Both are spearheaded by Malcolmn Toon working for HudHud who released their [navigation app](https://apps.apple.com/us/app/hudhud-maps/id6477774492) this month.
+
+The first version will have some limitations. Since iOS is the main focus of HudHud right now, it is only available for iOS from the outset. In addition, the custom layers do not have access to sources i.e. the built-in machinery for loading data. You also need to interact with the low-level graphics API (e.g. Metal) directly, and cannot use Drawables which internal layers uses for (platform aspecific) rendering. Lastly, plugin layers cannot participate in things like label placement.
+
+Refinements and further functionality can be added incrementally based on the needs of the community. Extendability is something that was often discussed the last few years, and it is great to see a functional and pragmatic implementation becoming reality. Malcolm shared a GLTF model loading plugin as an example of what a custom plugin layer could do.
+
+{" "}
+
+{" "}
+
+<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: "1rem",
+    marginBottom: "1rem",
+  }}
+>
+  <img
+    src="https://github.com/user-attachments/assets/a6789d4e-7734-4f57-b41b-0c15b55e79d5"
+    alt="GLTF plugin demo"
+    style={{
+      width: "40%",
+      height: "auto",
+      maxHeight: "550px",
+      objectFit: "contain",
+    }}
+  />
+  <div
+    style={{
+      fontStyle: "italic",
+      fontSize: "0.95rem",
+      textAlign: "center",
+      marginTop: "0.5rem",
+      color: "#444",
+    }}
+  >
+    GLTF model plugin, rendering the Arc de Triomphe in 3D. Satellite layer
+    courtesy of MapTiler.
+  </div>
+</div>
+
+**Action Journal for Debugging:** Thanks to Adrian Cojocaru, a new [action journal](https://github.com/maplibre/maplibre-native/commit/08eb760acdf88692139cc9d777ed95074662387e) was merged this month. This is a persistent log of actions the library took, sort of like a black box in a plane, which should help with investigating crashes that are hard to reproduce. Check out the documentation for [iOS](https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre-native-for-ios/actionjournalexample) or [Android](https://maplibre.org/maplibre-native/android/examples/observability/action-journal/) for more information.
+
+**Dynamic Texture Atlas for Glyphs:** The library now uses a [dynamic texture atlas](https://github.com/maplibre/maplibre-native/pull/3198) for storing glyphs, thanks to Alex Cristici. This change has the potential to reduce memory usage, if you have some interesting real-world numbers to share, [we would love to know](https://github.com/maplibre/maplibre-native/discussions/categories/show-and-tell).
+
+**Goodbye legacy renderer:** Two years ago, the legacy OpenGL ES rendering architecture, was replaced with a [modular](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2022-10-27-rendering-modularization.md) one allowing multiple rendering backends. The code parts of the legacy renderer were stubbed out with `#ifdef`s for a while, meaning it was still possible to make a build that used the legacy renderer. However, this old unused code was finally [removed](https://github.com/maplibre/maplibre-native/pull/3384) in April, with some more [cleanup](https://github.com/maplibre/maplibre-native/pull/3469) this month.
+
+**Releases this month:**
+
+- MapLibre iOS: [6.13.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.13.0), [6.14.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.14.0)
+- MapLibre Android: [11.8.8](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.8.8), [11.8.9](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.8.9), [11.9.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.9.0)
+
+## 🌐 MapLibre Web
+
+**Hillshade Rendering:** MapLibre GL JS [v5.5.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.5.0) was released this month, featuring support for multiple hillshade rendering methods. This will be a great addition for enhanced terrain visualisation. The release also includes several important bug fixes and performance refinements.
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    marginTop: "1rem",
+    marginBottom: "1rem",
+  }}
+>
+  <img
+    src="https://maplibre.org/maplibre-style-spec/assets/hillshade_methods.png"
+    alt="Hillshade rendering methods in MapLibre GL JS"
+    style={{ width: "80%", height: "auto" }}
+  />
+</div>
+
+**New Team Member:** We are also thrilled about <a href="https://github.com/mwilsnd" target="_blank">Marc Wilson</a> joining our team as our new Graphics Engineer 🎉! Marc brings deep expertise in rendering and graphics, and we’re excited to see the impact he’ll have on MapLibre GL JS and beyond.
+
+**Cloud Optimized GeoTIFF(COG) support:** A new COG protocol extension by [@geomatico](https://github.com/geomatico) improves how raster data is loaded in MapLibre GL JS, with no server-side preprocessing required.
+
+This [maplibre-cog-protocol](https://github.com/geomatico/maplibre-cog-protocol) library allows:
+
+- Visualization of COGs directly in MapLibre GL JS, efficiently loading only the necessary tiles from large raster datasets.
+- It supports dynamic adjustments, such as color manipulation and band mixing directly on the browser.
+
+Try it out:
+
+- [Official GL JS example](https://maplibre.org/maplibre-gl-js/docs/examples/add-cog/)
+- [Live demos](https://labs.geomatico.es/maplibre-cog-protocol) including RGB, NDVI, and a 12GB elevation model.
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    marginTop: "1rem",
+    marginBottom: "2rem",
+  }}
+>
+  <video
+    src="https://github.com/user-attachments/assets/350dd072-43d7-4077-bfec-04db561988f4"
+    controls
+    autoPlay
+    muted
+    loop
+    playsInline
+    style={{
+      width: "80%",
+      maxWidth: "720px",
+      borderRadius: "0.5rem",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+    }}
+  />
+</div>
+
+## 🧱 Martin Tile Server
+
+[Martin v0.17.0](https://github.com/maplibre/martin/releases/tag/v0.17.0) was released in May, bringing several quality-of-life improvements, along with three new features:
+
+- **S3 and S3-Compatible Storage Support for PMTiles:** PMTiles can now be served directly from S3 or any S3-compatible blob store, making cloud deployments simpler and more flexible.
+- **Improved Caching with ETags:** Martin now includes `ETag` headers and supports the `If-None-Match` request header, enabling more efficient CDN-style caching. This potentially reduces bandwidth usage and improves performance, especially in low-connectivity environments.
+- **Configurable CORS Settings:** Developers can now define CORS headers directly in Martin, eliminating the need for external workarounds, thereby improving
+  security and flexibility.
+
+## 🧩 New Hosted Project
+
+[MapLibre for Compose Multiplatform](https://github.com/maplibre/maplibre-compose) has officially been onboarded as a [hosted project](https://github.com/maplibre/maplibre/issues/441), marking another step forward in expanding the MapLibre ecosystem.
+
+> MapLibre Compose is a Compose Multiplatform wrapper around the MapLibre SDKs for rendering interactive maps. You can use it to add maps to your Compose UIs across Android, iOS, Desktop, and Web.
+
+## 👥 Meet Us at State of the Map US!
+
+The MapLibre team will be at [State of the Map US](https://openstreetmap.us/events/state-of-the-map-us/2025/) this month in Boston. If you’re attending, we’d love to connect. Come say hi, and let’s talk maps!
+
+🗓️ Dates: June 19-21, 2025 <br></br>
+📍 Location: [Boston, MA](https://www.openstreetmap.org/relation/2315704)
+
+## 🗓️ Monthly meetings
+
+We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
+
+Upcoming Calls
+
+- MapLibre Navigation: June 11, 2025 – 4:00–5:00 PM UTC
+- MapLibre Native: June 11, 2025 – 5:00–6:00 PM UTC
+- MapLibre GL JS: June 11, 2025 – 6:00–7:00 PM UTC
+
+🌏 MapLibre Eastern Call
+
+Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
+
+- June 25, 2025 – 9:00–10:00 AM UTC
+
+🔗 [View meeting times in your local timezone](https://notime.zone/OS-7DlXOuSRSd).
+
+All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/).
+We’d love to see you there!
