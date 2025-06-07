@@ -5,10 +5,9 @@ handle: marc
 
 <div class="text-center mb-5">
     <img
-        src=""
+        src="https://avatars.githubusercontent.com/u/53413200?v=4"
         width="150"
         class="rounded-circle mt-3"
-        onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';"
     />
     <h3 class="m-3">Marc Wilson</h3>
     <p>Graphics Engineer</p>
