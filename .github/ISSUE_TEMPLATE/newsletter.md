@@ -1,8 +1,16 @@
+---
+name: Newsletter Input Draft
+about: Use this template to invite community inputs for MapLibre newsletter.
+title: "[Newsletter]: "
+labels: newsletter
+assignees: ""
+---
+
 Gathering updates for the MMM edition of the MapLibre newsletter! If you have project updates, community event announcements, or other highlights you’d like to share, please comment below.
 
-🕕 Submission Deadline: DD-MMM XX UTC
-🎫 Previous issue: https://github.com/maplibre/maplibre.github.io/issues/xxx
-🗒 Previous newsletters: https://maplibre.org/categories/newsletter/
+🕕 Submission Deadline: DD-MMM XX UTC </br>
+🎫 Previous issue: https://github.com/maplibre/maplibre.github.io/issues/xxx </br>
+🗒 Previous newsletters: https://maplibre.org/categories/newsletter/ </br>
 
 ## What to Submit
 
