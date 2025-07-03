@@ -1,0 +1,231 @@
+---
+title: "MapLibre Newsletter June 2025"
+date: "2025-07-02"
+categories: ["newsletter"]
+authors: [bart, harel, yuri, ianthetechie, ramyaragupathy]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import mapmeLogo from "/public/img/mapme-logo.svg";
+import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
+import colorRelief from "./color-relief.png";
+import renderingStats from "./rendering-stats.png";
+import desertBus from "./desert-bus.png";
+
+Welcome to the June edition of the MapLibre newsletter!
+
+This month's roundup includes new feature updates in MapLibre Native and Web, along with milestones in projects like the SwiftUI DSL and Compose Playground. We’re also pleased to share that the [MapLibre Workshop Kit](https://github.com/maplibre/workshop) now supports GitHub Codespaces, making it easier to get started without any local setup which means you can generate and serve tiles directly on cloud.
+
+We’re grateful for the continued support of all our sponsors and contributors who make this work possible. In this edition we would specially like to highlight the renewed sponsorship support from [Mapme](https://mapme.com/) 💙
+
+<div
+  style={{
+    backgroundColor: "white",
+    padding: "2rem",
+    border: "10px solid #cfd8dc",
+    borderRadius: "0",
+    marginBottom: "3rem",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "2rem",
+    flexWrap: "nowrap",
+    overflow: "hidden",
+    flexDirection: "column",
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "2rem",
+      flexWrap: "nowrap",
+      width: "100%",
+    }}
+  >
+    <Image
+      src={maplibreLogo}
+      alt="MapLibre logo"
+      style={{
+        width: "40%",
+        maxWidth: "300px",
+        height: "auto",
+        objectFit: "contain",
+      }}
+    />
+    <Image
+      src={mapmeLogo}
+      alt="Mierune logo"
+      style={{
+        width: "40%",
+        maxWidth: "330px",
+        height: "auto",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+  <div
+    style={{
+      marginTop: "1rem",
+      fontSize: "1rem",
+      textAlign: "center",
+      color: "#263238",
+      fontStyle: "italic",
+    }}
+  >
+    Thanks to Mapme for their continued support (2024–2025) 🤝
+  </div>
+</div>
+
+## 📱 MapLibre Native
+
+**Releases this month**
+
+- MapLibre iOS: [6.15.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.15.0), [6.16.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.16.0).
+- MapLibre Android: [11.10.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.10.0), [11.10.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.10.1), [11.10.2](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.10.2), [11.10.3](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.10.3), [11.11.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.11.0).
+
+Refer to the changelog and the linked PRs in the changelog for the details, but here are some highlights from this month's releases.
+
+- We now have [level-of-detail (LOD) controls](https://github.com/maplibre/maplibre-native/pull/2958) available. This functionality is especially useful for navigation use-cases where the map is tilted. To avoid overloading the system you can use the LOD controls to use tiles with a lower zoom level for areas that are further in the distance.
+
+- We have also added the ability to toggle a [rendering statistics HUD](https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre-native-for-ios/renderingstatisticshud/). This is especially useful for users of MapLibre Native on embedded systems.
+
+<div style={{ textAlign: "center" }}>
+  <Image
+    src={renderingStats}
+    style={{
+      maxWidth: "300px",
+      maxHeight: "600px",
+      width: "100%",
+      height: "auto",
+      display: "inline-block",
+    }}
+    alt="Rendering statistics HUD"
+  />
+  <p
+    style={{
+      fontSize: "0.9rem",
+      color: "#555",
+      marginTop: "8px",
+      fontStyle: "italic",
+    }}
+  >
+    <em>Rendering statistics HUD</em>
+  </p>
+</div>
+
+- MapLibre iOS 6.15.0 has support for defining plugin layers as described in [last month's newsletter](https://maplibre.org/news/2025-06-02-maplibre-newsletter-may-2025/). See [this page in the iOS documentation](https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre-native-for-ios/pluginlayers) for more information on what is currently possible and how to create your own plugin layers. There is a [tracking issue](https://github.com/maplibre/maplibre-native/issues/3593) to bring plugin layers to Android too. We are looking forward to see what plugins are developed by the community.
+
+- We fixed a dangling reference bug on Android in [#3522](https://github.com/maplibre/maplibre-native/pull/3522) and [#3541](https://github.com/maplibre/maplibre-native/pull/3541). Thanks to the engineers from ExpressVPN who brought this issue to our attention and were quick to provide feedback to our fix.
+
+**In Development**
+
+- We are developing a long running test for both [Android](https://github.com/maplibre/maplibre-native/pull/3512) and [iOS](https://github.com/maplibre/maplibre-native/pull/3592). This test is intended to ensure that MapLibre Native remains stable when running for very long periods of time (72 hours+). After a vote by the developers, this 'very long running test' is now officially called **Desert Bus**, named after a game from the 90's where you had to drive a bus from Arizona to Nevada (an exciting 8 hour playthrough can be found on [YouTube](https://youtu.be/2LtiHla1dNg)).
+
+<div style={{ textAlign: "center" }}>
+  <Image
+    src={desertBus}
+    style={{
+      maxWidth: "400px",
+      maxHeight: "400px",
+      width: "100%",
+      height: "auto",
+      display: "inline-block",
+    }}
+    alt="Screenshot from Desert Bus"
+  />
+  <p
+    style={{
+      fontSize: "0.9rem",
+      color: "#555",
+      marginTop: "8px",
+      fontStyle: "italic",
+    }}
+  >
+    <em>Screenshot from Desert Bus (the game, not our test)</em>
+  </p>
+</div>
+
+- There is an open [style spec proposal](https://github.com/maplibre/maplibre-style-spec/pull/1204) for how to define font faces in MapLibre style. Access to font files is needed for rendering complex scripts. The style spec extension is the last hurdle before the [PR that intergrates Harfbuzz in MapLibre Native](https://github.com/maplibre/maplibre-native/pull/1439) can be brought to the finish line.
+
+## 🌐 MapLibre Web
+
+We have released [version 5.6.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.6.0) this month which includes two great features:
+
+- [**Global State**](https://maplibre.org/maplibre-style-spec/state/): This feature lets you define the equivalent of global variables in the style JSON and use them throughout the style for things like multilingual support & color theming. This valuable feature addition was contributed by TomTom. Thanks!!
+- **Color relief layer**: The new `color-relief` layer will allow to define coloring of the map according to [elevation](https://maplibre.org/maplibre-style-spec/expressions/#color-relief) as can be seen in the image below.
+
+<div style={{ textAlign: "center" }}>
+  <Image
+    src={colorRelief}
+    style={{
+      maxWidth: "400px",
+      maxHeight: "800px",
+      width: "100%",
+      height: "auto",
+      display: "inline-block",
+    }}
+    alt="Color relief layer GL JS"
+  />
+  <p
+    style={{
+      fontSize: "0.9rem",
+      color: "#555",
+      marginTop: "8px",
+      fontStyle: "italic",
+    }}
+  >
+    <em>Color relief layer GL JS</em>
+  </p>
+</div>
+
+Besides the above nice additions there were some bug fixes contributed.
+We would like once more to thank all the people who devote time to contribute to this project. Without you, it would've not been where it is today!
+
+🎉 We've also been nominated to "project of the week" by PullFlow as can be read here on [their LinkedIn post.](https://www.linkedin.com/posts/pullflow_developerexperience-opensource-webmapping-activity-7339305562985086976-tuR3)
+
+## 🧑‍💻 MapLibre SwiftUI DSL
+
+The [SwiftUI DSL](https://github.com/maplibre/swiftui-dsl) continues to support more of the underlying style features from MapLibre Native, directly from SwiftUI. Over the last month we've merged the following:
+
+- Support for [`lineDashPattern` on `LineStyleLayer`](https://github.com/maplibre/swiftui-dsl/pull/94). This lets you customize the appearance of polylines directly from SwiftUI code (including via reactive bindings!).
+- Support for [new releases of SwiftSyntax](https://github.com/maplibre/swiftui-dsl/pull/93) (the library that Apple released to enable macros, which are used heavily in the library).
+
+Both PRs came from first-time contributors, which is exciting! If you're using MapLibre with SwiftUI, check it out. And if you're missing a particular feature, adding it just might be easier than you think.
+
+## 📦 MapLibre Compose Playground
+
+The MapLibre Compose Playground, one of several community projects integrating MapLibre Native with Jetpack Compose, has reached a new milestone: [a 1.0.0 release](https://github.com/Rallista/maplibre-compose-playground/releases/tag/1.0.0) 🎉
+
+The milestone is a reflection that the library is now stable and being used in "real" apps. The maintainers are also happy to announce that the library now targets MapLibre Android's 11.x branch. Previously there were a few edge cases which mostly manifested on emulators, but these have now been resolved (hat tip to the MapLibre Native team!).
+
+## 👥 Meet Us at FOSS4G Europe!
+
+The MapLibre team will be at [FOSS4G Europe](https://2025.europe.foss4g.org/) this month in Mostar. If you’re attending, stop by, and let’s talk maps!
+
+🗓️ Dates: July 14-20, 2025 <br></br>
+📍 Location: [Mostar, Bosnia-Herzegovina](https://www.openstreetmap.org/relation/8480923)
+
+## 🗓️ Monthly meetings
+
+We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
+
+Upcoming Calls
+
+- MapLibre Navigation: July 09, 2025 – 4:00–5:00 PM UTC
+- MapLibre Native: July 09, 2025 – 5:00–6:00 PM UTC
+- MapLibre GL JS: July 09, 2025 – 6:00–7:00 PM UTC
+
+🌏 MapLibre Eastern Call
+
+Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
+
+- July 30, 2025 – 9:00–10:00 AM UTC
+
+🔗 [View meeting times in your local timezone](https://notime.zone/OUDtdgeUfJKXH).
+
+All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/).
+We’d love to see you there!
