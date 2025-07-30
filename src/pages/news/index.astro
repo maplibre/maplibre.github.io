@@ -8,7 +8,6 @@ import TitleHeader from "../../components/TitleHeader.astro";
 import PostExcerpt from "@igor.dvlpr/astro-post-excerpt";
 
 const posts = (await getCollection("news")).sort((a, b) => {
-  console.log(b.data);
   return b.data.date.valueOf() - a.data.date.valueOf();
 });
 ---
