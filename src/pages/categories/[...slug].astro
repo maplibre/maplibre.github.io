@@ -24,8 +24,6 @@ function capitalizeFirstLetter(val: string) {
 
 const category = Astro.props;
 
-console.log(category);
-
 const posts = (
   await getCollection("news", (post) => {
     return post.data.categories.includes(category.category);
