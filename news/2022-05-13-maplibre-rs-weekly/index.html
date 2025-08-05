@@ -51,7 +51,7 @@ Authors: <a href="authors/maxammann"> <span class="badge bg-light">Max Ammann</s
 In the past week we continued to work on our collaboration with the University of Applied Sciences and Arts (HES-SO/HEIG-VD), Switzerland.
 The main focus of the past week was on documentation and redesigning the renderer and the structure of the maplibre-rs library.</p>
 <p>In the past week, I extracted the render from <a href="https://bevyengine.org/">Bevy</a>. After some discussions <a href="https://github.com/maplibre/maplibre-rs/discussions/75">on Github</a>, Slack and Matrix we concluded that writing a renderer specific to maps is the best option. In general, specialized renderers can be optimized better. By implementing a renderer ourselves, we also stay independent of other projects. For example, Bevy is a render engine (renderer + a lot more) for games. That means that features which are important for bevy are most likely not important for maplibre-rs and vice versa. For example, the Bevy renderer does not support a stencil.</p>
-<p>Because I’m quite unexperienced in the world of 3D graphics, I dediced to base the renderer on some existing one. The best renderers in the Rust world are currently Bevy and rend3. After evaluating both renderers I decided to go with the Bevy one, because rend3 had usages of `unsafe. Both renderers are based around the idea of a <a href="https://logins.github.io/graphics/2021/05/31/RenderGraphs.html">render graph</a>.</p>
+<p>Because I’m quite unexperienced in the world of 3D graphics, I decided to base the renderer on some existing one. The best renderers in the Rust world are currently Bevy and rend3. After evaluating both renderers I decided to go with the Bevy one, because rend3 had usages of `unsafe. Both renderers are based around the idea of a <a href="https://logins.github.io/graphics/2021/05/31/RenderGraphs.html">render graph</a>.</p>
 <h2 id="-housekeeping">🏠 Housekeeping</h2>
 <p>The following will summarizes what happened last week on GitHub.</p>
 <h3 id="-new-features">🎁 New Features</h3>
@@ -75,7 +75,7 @@ Extract <code>winit</code> dependency from main crate.</li>
 <li><a href="https://github.com/maplibre/maplibre-rs/issues/97">#97</a> Initial start of removing unwrap from a Result type<br/>
 Remove <code>.unwrap()</code> from code.</li>
 <li><a href="https://github.com/maplibre/maplibre-rs/issues/88">#88</a> Postponed: Inspect WASM size<br/>
-Optimze WASM size.</li>
+Optimize WASM size.</li>
 <li><a href="https://github.com/maplibre/maplibre-rs/issues/81">#81</a> Update license and code of conduct</li>
 </ul>
 <h3 id="-documentation">📄 Documentation</h3>
