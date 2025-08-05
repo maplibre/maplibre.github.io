@@ -11,6 +11,7 @@ import jawgmapsLogo from "/public/img/jawgmaps-logo.svg";
 import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
 import myanmarImg from "./myanmar.png";
 import thaiImg from "./thai.png";
+import martinImg from "./martin-ui.png";
 
 Welcome to the July edition of the MapLibre newsletter!
 
@@ -165,16 +166,22 @@ This change might cause a few temporary broken links in google search, but we're
 We've added support in the style-spec for `font-faces` for files and urls which is a huge step forward in order to support eastern scripts and other fonts without the need to pre-process them to glyphs.
 The [discussion](https://github.com/maplibre/maplibre-style-spec/pull/1204) around it was very good with a lot of valuable inputs. Thanks to everyone that participated!
 
-# Martin
+## 🧩 Martin
 
-We are currently reviewing the last pull request (f.ex. adding a logo) of martins' new frontend.
-While this feature did not make the july newsletter, here is a sneak peak:
+We’re currently reviewing the final pull request for Martin’s new frontend (including additions like a logo).
+Here’s a sneak peak of what's coming:
 
-<img
-  width="1244"
-  height="646"
-  alt="Image"
-  src="https://github.com/user-attachments/assets/d3b550f7-7224-4990-8f5c-2dab876bff1a"
+<Image
+  src={martinImg}
+  alt="Sneak peek of Martin UI"
+  width={600}
+  style={{
+    maxWidth: "100%",
+    height: "auto",
+    display: "block",
+    margin: "1rem auto",
+    borderRadius: "0.5rem",
+  }}
 />
 
 ## maplibre-native-rs
@@ -186,13 +193,6 @@ MapLibre Native has continued to progress steadily over the past month, with not
 - Early groundwork is being laid for incorporating maplibre-native-rs into the Martin tile server.
 
 We also have a new social image for this project:
-
-<img
-  width="500"
-  height="640"
-  alt="Image"
-  src="https://github.com/user-attachments/assets/89e92871-8b90-41ee-a943-e612b13b7071"
-/>
 
 > The OpenStreetMap homepage introduced [two new featured map layer options](https://blog.openstreetmap.org/2025/07/22/vector-tiles-are-deployed-on-openstreetmap-org/) that use MapLibre GL JS via `maplibre-gl-leaflet`.
 
