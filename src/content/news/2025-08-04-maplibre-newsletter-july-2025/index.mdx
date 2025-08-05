@@ -13,6 +13,8 @@ import myanmarImg from "./myanmar.png";
 import thaiImg from "./thai.png";
 import martinImg from "./martin-ui.png";
 import nativeRsSocialImg from "./maplibre-native-rs.png";
+import foss4gImg from "./foss4g-nl.png";
+import sotmusImg from "./sotm-us.png";
 
 Welcome to the July edition of the MapLibre newsletter!
 
@@ -222,19 +224,53 @@ We also have a new social image for this project:
   </div>
 </div>
 
-## Community spotlight
+## ✨ Community spotlight
 
-The OpenStreetMap homepage introduced [two new featured map layer options](https://blog.openstreetmap.org/2025/07/22/vector-tiles-are-deployed-on-openstreetmap-org/) that use MapLibre GL JS via maplibre-gl-leaflet.
+The OpenStreetMap homepage recently introduced [two new featured map layer options](https://blog.openstreetmap.org/2025/07/22/vector-tiles-are-deployed-on-openstreetmap-org/) powered by MapLibre GL JS via `maplibre-gl-leaflet`. There are also [ongoing discussions](https://github.com/openstreetmap/openstreetmap-website/issues/6234) about whether switching from `maplibre-gl-leaflet` to a more “unwrapped” implementation using maplibre-gl-js directly might offer additional benefits.
 
-> The OpenStreetMap homepage introduced [two new featured map layer options](https://blog.openstreetmap.org/2025/07/22/vector-tiles-are-deployed-on-openstreetmap-org/) that use MapLibre GL JS via `maplibre-gl-leaflet`.
+## 👥 Conferences roundup
 
-There are also talks underway if [new vector layers from `maplibre-gl-leaflet` to “unwrapped” `maplibre-gl-js`](https://github.com/openstreetmap/openstreetmap-website/issues/6234) might be a better choice.
+Over the past two months, we participated in several key events:
 
-## Conferences
+- 🇺🇸 State of the Map US: We delivered hands-on workshops and insightful talks*[Materials available on GitHub](https://github.com/maplibre/workshop/tree/sotmus-2025)*.
+- 🇳🇱 FOSS4G Netherlands: A great opportunity to connect with the local FOSS4G community and showcase MapLibre in action.
+- 🇧🇦 FOSS4G Europe (Mostar): The team hosted sessions, demos, and conversations on open mapping*[Workshop materials here](https://github.com/maplibre/workshop/tree/foss4g-eu-2025)*.
 
-- We had Boston (SotM-US) and Mostar (Foss4g-eu) workshops and talks
-- we plan to go to Auckland and DC (foss4g + foss4g NA)
-- @CommanderStorm want to add any updates about MLN rust wrapper or martin UI?
+We’re grateful to everyone who joined us and we look forward to upcoming events including FOSS4G Oceania in Auckland and FOSS4G North America in Washington, DC.
+
+<div
+  style={{
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    gap: "1rem",
+    margin: "1.5rem 0",
+  }}
+>
+  <Image
+    src={sotmusImg}
+    alt="MapLibre workshop at State of the Map US 2025"
+    style={{
+      width: "100%",
+      maxWidth: "360px",
+      height: "auto",
+      flex: "1 1 300px",
+      borderRadius: "0.5rem",
+    }}
+  />
+  <Image
+    src={foss4gImg}
+    alt="MapLibre presentation at FOSS4G Europe 2025"
+    style={{
+      width: "100%",
+      maxWidth: "360px",
+      height: "auto",
+      flex: "1 1 300px",
+      borderRadius: "0.5rem",
+    }}
+  />
+</div>
 
 ## 🗓️ Monthly meetings
 
