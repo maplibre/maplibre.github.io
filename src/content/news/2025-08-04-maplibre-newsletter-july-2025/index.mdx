@@ -12,6 +12,7 @@ import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.
 import myanmarImg from "./myanmar.png";
 import thaiImg from "./thai.png";
 import martinImg from "./martin-ui.png";
+import nativeRsSocialImg from "./maplibre-native-rs.png";
 
 Welcome to the July edition of the MapLibre newsletter!
 
@@ -184,23 +185,50 @@ Here’s a sneak peak of what's coming:
   }}
 />
 
-## maplibre-native-rs
+## 🦀 maplibre-native-rs
 
 MapLibre Native has continued to progress steadily over the past month, with notable improvements especially for integrating into Rust projects:
 
-- You can now build with maplibre-native-rs using even more static "maplibre-core-amalgam" binaries. ICU and other previously required external dependencies are now bundled into the core libraries, greatly reducing build friction.
+- You can now build with [maplibre-native-rs](https://github.com/maplibre/maplibre-native-rs) using even more static "maplibre-core-amalgam" binaries. ICU and other previously required external dependencies are now bundled into the core libraries, greatly reducing build friction.
 - Platform readiness: There’s still work to be done before reaching production parity, particularly regarding macOS and Windows support.
 - Early groundwork is being laid for incorporating maplibre-native-rs into the Martin tile server.
 
 We also have a new social image for this project:
 
-> The OpenStreetMap homepage introduced [two new featured map layer options](https://blog.openstreetmap.org/2025/07/22/vector-tiles-are-deployed-on-openstreetmap-org/) that use MapLibre GL JS via `maplibre-gl-leaflet`.
-
-There are also talks underway if [new vector layers from `maplibre-gl-leaflet` to “unwrapped” `maplibre-gl-js`](https://github.com/openstreetmap/openstreetmap-website/issues/6234) might be a better choice.
+<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: "1.5rem",
+  }}
+>
+  <Image
+    src={nativeRsSocialImg}
+    alt="MapLibre Native RS promotional image"
+    width={500}
+    style={{
+      maxWidth: "100%",
+      height: "auto",
+      display: "block",
+      borderRadius: "0.5rem",
+    }}
+  />
+  <div style={{ textAlign: "center", marginTop: "0.5rem" }}>
+    <span style={{ color: "#555", fontStyle: "italic", fontSize: "0.9rem" }}>
+      Social image for maplibre-native-rs, Rust native backend of MapLibre.
+    </span>
+  </div>
+</div>
 
 ## Community spotlight
 
 The OpenStreetMap homepage introduced [two new featured map layer options](https://blog.openstreetmap.org/2025/07/22/vector-tiles-are-deployed-on-openstreetmap-org/) that use MapLibre GL JS via maplibre-gl-leaflet.
+
+> The OpenStreetMap homepage introduced [two new featured map layer options](https://blog.openstreetmap.org/2025/07/22/vector-tiles-are-deployed-on-openstreetmap-org/) that use MapLibre GL JS via `maplibre-gl-leaflet`.
+
+There are also talks underway if [new vector layers from `maplibre-gl-leaflet` to “unwrapped” `maplibre-gl-js`](https://github.com/openstreetmap/openstreetmap-website/issues/6234) might be a better choice.
 
 ## Conferences
 
