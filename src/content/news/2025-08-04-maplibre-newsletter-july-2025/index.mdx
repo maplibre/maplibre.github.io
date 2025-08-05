@@ -195,7 +195,7 @@ MapLibre’s 2025 Governing Board election [process](https://github.com/maplibre
 
 - **Render Area Limiting:** Yousif Aldolaijan has contributed a PR to limit the area that is rendered to, while keeping the surface area the same size. This is useful for performance reasons when navigation elements are sometimes overlapping those areas. See [#3676](https://github.com/maplibre/maplibre-native/pull/3676) for the PR and discussion.
 
-- **Concrurrent Animations:** The location component on Android and iOS takes control of animations. This means that users of the built-in location component cannot kick off your animations of their own, as it would conflict with those of the location components. Yousif is exploring concurrent animations as a possible fix for this behavior. Join the [discussion](https://github.com/maplibre/maplibre-native/issues/3667) if you have a similar use case or have solved this problem.
+- **Concurrent Animations:** The location component on Android and iOS takes control of animations. This means that users of the built-in location component cannot kick off your animations of their own, as it would conflict with those of the location components. Yousif is exploring concurrent animations as a possible fix for this behavior. Join the [discussion](https://github.com/maplibre/maplibre-native/issues/3667) if you have a similar use case or have solved this problem.
 
 - **Style JSON Hook:** Malcolm Toon contributed a [PR](https://github.com/maplibre/maplibre-native/pull/3662) (see also the [issue](https://github.com/maplibre/maplibre-native/issues/3663)) to add a hook to transform the style JSON when it is loaded or fed to the map view. Please join the discussion if you have another interesting use case for this.
 
@@ -222,8 +222,7 @@ The [discussion](https://github.com/maplibre/maplibre-style-spec/pull/1204) arou
 
 ## 🧩 Martin
 
-We’re currently reviewing the final pull request for Martin’s new frontend (including additions like a logo).
-Here’s a sneak peak of what's coming:
+[Martin v0.18](https://github.com/maplibre/martin/releases/tag/v0.18.0) has been released, featuring the new web UI frontend with the basic metrics, tile inspection, view styles with Mapunik as an add-on, and view sprites and fonts.
 
 <Image
   src={martinImg}
