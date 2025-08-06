@@ -19,7 +19,7 @@ As an Open Source promoter I believe in transparency and giving back
 to the community what's rightfully theirs. Moving this project forward to
 new technologies and new markets will be my main focus, making sure we
 harness the power of the community by constantly updating our technology
-stack and encoureging the community to contibute to the codebase.
+stack and encouraging the community to contribute to the codebase.
 
 In the day I work as a group leader in Dell Technologies and at night I'm
 working on an open source hobby project called Israel Hiking Map
@@ -35,7 +35,7 @@ I've pushed forward the typescript migration along with the modernization of
 the maplibre-gl-js stack, and helped with the 3D terrain and globe effort.
 
 I generally enjoy participating in open source projects from the development
-side of things and you probably know me from the annoying code review
+side of things, and you probably know me from the annoying code review
 comments I leave when you open a PR 😊.
 
 Feel free to check out my

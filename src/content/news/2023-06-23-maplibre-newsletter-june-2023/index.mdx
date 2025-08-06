@@ -24,7 +24,7 @@ We would like to thank JawgMaps for their trust. As you might have read in our [
 
 As part of the effort to implement a Metal backend for iOS, first the renderer needed to be made [modular](https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2022-10-27-rendering-modularization.md). A team of graphics engineers has been working steadily on this for the last few months, and the PRs for this big refactor of the existing OpenGL ES rendering architecture will be landing soon.
 
-These are the most significant architectural changes to MapLibre Native since the fork. Not only will they allow the creation of alternate rendering backends (including using [Metal](<https://en.wikipedia.org/wiki/Metal_(API)>)), the library will also be more extendible and 'hackable' in general. **We are looking for external graphics engineers, in particular with OpenGL (ES) and C++ software design experience, to help review these changes.** See the suggested PR process from Steve Gifford, project lead of the Metal project, on [Slack](https://osmus.slack.com/archives/C02B2CBSNBU/p1686938801960959) and keep an eye out for the PRs that will start popping up near the end of this month.
+These are the most significant architectural changes to MapLibre Native since the fork. Not only will they allow the creation of alternate rendering backends (including using [Metal](<https://en.wikipedia.org/wiki/Metal_(API)>)), the library will also be more extendable and 'hackable' in general. **We are looking for external graphics engineers, in particular with OpenGL (ES) and C++ software design experience, to help review these changes.** See the suggested PR process from Steve Gifford, project lead of the Metal project, on [Slack](https://osmus.slack.com/archives/C02B2CBSNBU/p1686938801960959) and keep an eye out for the PRs that will start popping up near the end of this month.
 
 ### Design Proposals
 
@@ -44,7 +44,7 @@ These are the most significant architectural changes to MapLibre Native since th
 
 ### Version 3
 
-As with our best release yet of v3 you find the separate post [here](https://maplibre.org/news/2023-05-23-maplibre-gl-js-v3/). Worth noting with v3.1 is that a WebGL1 fallback was added to accomodate users without WebGL2 support: [#2653](https://github.com/maplibre/maplibre-gl-js/issues/2653)
+As with our best release yet of v3 you find the separate post [here](https://maplibre.org/news/2023-05-23-maplibre-gl-js-v3/). Worth noting with v3.1 is that a WebGL1 fallback was added to accommodate users without WebGL2 support: [#2653](https://github.com/maplibre/maplibre-gl-js/issues/2653)
 
 ## Martin
 
