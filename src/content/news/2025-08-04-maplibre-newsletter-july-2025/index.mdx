@@ -1,0 +1,345 @@
+---
+title: "MapLibre Newsletter July 2025"
+date: "2025-08-04"
+categories: ["newsletter"]
+authors: [bart, harel, yuri, frank, ramyaragupathy]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import jawgmapsLogo from "/public/img/jawgmaps-logo.svg";
+import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
+import myanmarImg from "../../../content/roadmap/writing-systems/myanmar.png";
+import thaiImg from "../../../content/roadmap/writing-systems/thai.png";
+import martinImg from "./martin-ui.png";
+import nativeRsSocialImg from "./maplibre-native-rs.png";
+import foss4gImg from "./foss4g-nl.png";
+import sotmusImg from "./sotm-us.png";
+
+Welcome to the July edition of the MapLibre newsletter! We start with a note of gratitude to our sponsor [Jawg Maps](https://www.jawg.io/en/).
+
+<div
+  style={{
+    backgroundColor: "white",
+    padding: "2rem",
+    border: "10px solid #cfd8dc",
+    borderRadius: "0",
+    marginBottom: "3rem",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "2rem",
+    flexWrap: "nowrap",
+    overflow: "hidden",
+    flexDirection: "column",
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "2rem",
+      flexWrap: "nowrap",
+      width: "100%",
+    }}
+  >
+    <Image
+      src={maplibreLogo}
+      alt="MapLibre logo"
+      style={{
+        width: "40%",
+        maxWidth: "300px",
+        height: "auto",
+        objectFit: "contain",
+      }}
+    />
+    <Image
+      src={jawgmapsLogo}
+      alt="Mierune logo"
+      style={{
+        width: "40%",
+        maxWidth: "330px",
+        height: "auto",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+  <div
+    style={{
+      marginTop: "1rem",
+      fontSize: "1rem",
+      textAlign: "center",
+      color: "#263238",
+      fontStyle: "italic",
+    }}
+  >
+    Sincere thanks to Jawg Maps for their ongoing commitment to MapLibre
+    (2023–2025) 🙌
+  </div>
+</div>
+
+This month's newsletter brings exciting updates across the MapLibre ecosystem, from enhanced font support for complex scripts in Native, a new frontend for Martin, to our growing presence at global conferences. We also kicked off the 2025 Governing Board election process, a great opportunity to help shape the project’s future. Read on for the latest updates and ways to get involved!
+
+## 🗳️ Governing Board Elections 2025
+
+MapLibre’s 2025 Governing Board election [process](https://github.com/maplibre/maplibre/issues/447) has begun!
+
+- [Voting Member Nominations are now open](https://github.com/maplibre/maplibre/issues/446). Existing Voting Members can nominate new ones via pull request.
+- Governing Board Candidates can self-nominate by sharing their vision and background in the [candidate discussion thread](https://github.com/maplibre/maplibre/discussions/445).
+
+<div style="overflow-x: auto; margin-top: 1rem; margin-bottom: 1.5rem;">
+  <table style="width: 100%; border-collapse: collapse; min-width: 400px;">
+    <thead>
+      <tr>
+        <th style="text-align: left; padding: 8px 12px; font-weight: 500; color: #cfd8dc;">
+          Date
+        </th>
+        <th style="text-align: left; padding: 8px 12px; font-weight: 500; color: #cfd8dc;">
+          Milestone
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-top: 1px solid #444;">
+        <td style="padding: 10px 12px; font-weight: 600; color: #fff;">
+          Aug 15, 2025
+        </td>
+        <td style="padding: 10px 12px; color: #cfd8dc;">
+          Deadline for Voting Member nominations and Board candidate
+          registration
+        </td>
+      </tr>
+      <tr style="border-top: 1px solid #444;">
+        <td style="padding: 10px 12px; font-weight: 600; color: #fff;">
+          Aug 22, 2025
+        </td>
+        <td style="padding: 10px 12px; color: #cfd8dc;">
+          Deadline for approval of new Voting Members (via PR review)
+        </td>
+      </tr>
+      <tr style="border-top: 1px solid #444;">
+        <td style="padding: 10px 12px; font-weight: 600; color: #fff;">
+          Aug 29, 2025
+        </td>
+        <td style="padding: 10px 12px; color: #cfd8dc;">
+          Governing Board election poll closes (OpaVote)
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+## 📱 MapLibre Native
+
+- **Support for Complex Scripts:** We added support for the new [`font-faces`](https://maplibre.org/maplibre-style-spec/font-faces/) property (see the [implementation PR](https://github.com/maplibre/maplibre-native/pull/3611)). This allows you to use TrueType fonts with MapLibre Native. Font files are needed for [text shaping](https://en.wikipedia.org/wiki/Text_shaping) which many complex (non-latin) scripts require. Thanks goes to Alan Wei Chen, Stefan Karschti and Grab for contributing this functionality.
+
+<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: "1rem",
+  }} >
+  <div
+    style={{
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      alignItems: "flex-start",
+      gap: "1rem",
+    }}
+  >
+    <Image
+      src={myanmarImg}
+      alt="Map showing Myanmar with complex script rendering"
+      style={{
+        maxWidth: "300px",
+        width: "100%",
+        height: "auto",
+        flex: "1 1 300px",
+      }}
+    />
+    <Image
+      src={thaiImg}
+      alt="Map showing Thailand with Thai script rendering"
+      style={{
+        maxWidth: "300px",
+        width: "100%",
+        height: "auto",
+        flex: "1 1 300px",
+      }}
+    />
+  </div>
+
+      <div
+      style={{
+        fontSize: "0.9rem",
+        color: "#555",
+        fontStyle: "italic",
+        marginTop: "0.75rem",
+        textAlign: "center",
+      }}
+
+>
+
+      Screenshots showing complex map rendering. Style © OpenMapTiles. Map data
+      from OpenStreetMap.
+
+    </div>
+
+</div>
+
+- **Crowdsourced Device Testing:** Adrian Cojocaru has developed long running tests for Android and iOS. Now we are thinking about how we can actually run these. Since AWS Device Farm limits runs to 150 minutes, we are thinking about distributing an app that people can download, to run these tests on their own devices. This app would report any issues to a central place. So a crowed-sourced approach to bug hunting. More info will follow and please share your ideas!
+
+- **Render Area Limiting:** Yousif Aldolaijan has contributed a PR to limit the area that is rendered to, while keeping the surface area the same size. This is useful for performance reasons when navigation elements are sometimes overlapping those areas. See [#3676](https://github.com/maplibre/maplibre-native/pull/3676) for the PR and discussion.
+
+- **Concurrent Animations:** The location component on Android and iOS takes control of animations. This means that users of the built-in location component cannot kick off your animations of their own, as it would conflict with those of the location components. Yousif is exploring concurrent animations as a possible fix for this behavior. Join the [discussion](https://github.com/maplibre/maplibre-native/issues/3667) if you have a similar use case or have solved this problem.
+
+- **Style JSON Hook:** Malcolm Toon contributed a [PR](https://github.com/maplibre/maplibre-native/pull/3662) (see also the [issue](https://github.com/maplibre/maplibre-native/issues/3663)) to add a hook to transform the style JSON when it is loaded or fed to the map view. Please join the discussion if you have another interesting use case for this.
+
+- **Custom protocols:** We are investigating what custom protocols similar to the MapLibre GL JS `addProtocol` hook would look like for Native. Malcolm has cooked up a [PR](https://github.com/maplibre/maplibre-native/pull/3665). One discussion point is, if it should be synchronous or asynchronous on the platform level, if it is desirable (and feasible) to give access to the built-in resource loading to the platform level and if custom protocols should be able to do resource loading as well as transformations (or just the former). Please let us know your use cases you imagine for this functionality.
+
+- **Qt backend:** Birk Skyum has made [several PRs](https://github.com/maplibre/maplibre-native-qt/pull/216) to bring the Vulkan and Metal backend to the Qt platform.
+
+- **macOS Metal bugfix:** The Node.js platform with Metal (on macOS) stopped rendering after 32 frames. We added [a flag](https://github.com/maplibre/maplibre-native/pull/3673) that will set up an Objective-C autoreleasepool in the core rendering loop that fixes this issue. A new version of the [maplibre/maplibre-gl-native](https://www.npmjs.com/package/@maplibre/maplibre-gl-native) npm package which contains this fix will be out shortly.
+
+- Releases this month:
+  - MapLibre Android [11.12.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.12.0), [11.12.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.12.1), [11.13.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.13.0).
+  - MapLibre iOS [6.17.1](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.17.1), [6.18.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.18.0)
+
+## 🌐 MapLibre Web
+
+[Version 5.6.1](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.6.1) was released this month with a few bug fixes.
+We also sorted the [examples pages](https://maplibre.org/maplibre-gl-js/docs/examples/) in the documentation, for better consistency between the page titles and their locations in the table of contents.
+This change might cause a few temporary broken links in Google search, but we're sure the broken links will be a short lived problem and expect this to be resolved quickly.
+
+## 📝 Style spec
+
+We've added support in the style-spec for [`font-faces`](https://maplibre.org/maplibre-style-spec/font-faces/) for files and urls which is a huge step forward in order to support eastern scripts and other fonts without the need to pre-process them to glyphs.
+The [discussion](https://github.com/maplibre/maplibre-style-spec/pull/1204) around it was very good with a lot of valuable inputs. Thanks to everyone that participated!
+
+## 🧩 Martin
+
+[Martin v0.18](https://github.com/maplibre/martin/releases/tag/v0.18.0) has been released, featuring the new web UI frontend with the basic metrics, tile inspection, view styles with Mapunik as an add-on, and view sprites and fonts.
+
+<Image
+  src={martinImg}
+  alt="Sneak peek of Martin UI showing performance metrics, and a tile source catalog, tabs for a style catalog, fonts catalog and sprites catalog"
+  width={600}
+  style={{
+    maxWidth: "100%",
+    height: "auto",
+    display: "block",
+    margin: "1rem auto",
+    borderRadius: "0.5rem",
+  }}
+/>
+
+## 🦀 maplibre-native-rs
+
+MapLibre Native has continued to progress steadily over the past month, with notable improvements especially for integrating into Rust projects:
+
+- You can now build with [maplibre-native-rs](https://github.com/maplibre/maplibre-native-rs) using even more static "maplibre-core-amalgam" binaries. ICU and other previously required external dependencies are now bundled into the core libraries, greatly reducing build friction.
+- Platform readiness: There’s still work to be done before reaching production parity, particularly regarding macOS and Windows support.
+- Early groundwork is being laid for incorporating maplibre-native-rs into the Martin tile server.
+
+We also have a new social image for this project:
+
+<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: "1.5rem",
+  }}
+>
+  <Image
+    src={nativeRsSocialImg}
+    alt="MapLibre Native RS promotional image"
+    width={500}
+    style={{
+      maxWidth: "100%",
+      height: "auto",
+      display: "block",
+      borderRadius: "0.5rem",
+    }}
+  />
+  <div style={{ textAlign: "center", marginTop: "0.5rem" }}>
+    <span style={{ color: "#555", fontStyle: "italic", fontSize: "0.9rem" }}>
+      Social image for maplibre-native-rs, Rust native backend of MapLibre.
+    </span>
+  </div>
+</div>
+
+## ✨ Community spotlight
+
+The OpenStreetMap homepage recently introduced [two new featured map layer options](https://blog.openstreetmap.org/2025/07/22/vector-tiles-are-deployed-on-openstreetmap-org/) powered by MapLibre GL JS via `maplibre-gl-leaflet`. There are also [ongoing discussions](https://github.com/openstreetmap/openstreetmap-website/issues/6234) about whether switching from `maplibre-gl-leaflet` to a more “unwrapped” implementation using maplibre-gl-js directly might offer additional benefits.
+
+## 👥 Conferences roundup
+
+Over the past two months, we participated in several key events:
+
+- 🇺🇸 State of the Map US: We delivered hands-on workshops and insightful talks. You can find the materials on [GitHub](https://github.com/maplibre/workshop/tree/sotmus-2025).
+- 🇳🇱 FOSS4G Netherlands: A great opportunity to connect with the local FOSS4G community and showcase MapLibre in action.
+- 🇧🇦 FOSS4G Europe (Mostar): The team hosted sessions, demos, and conversations on open mapping. You can find the workshop materials on [GitHub](https://github.com/maplibre/workshop/tree/foss4g-eu-2025).
+
+We’re grateful to everyone who joined us and we look forward to upcoming events including FOSS4G Oceania in Auckland and FOSS4G North America in Washington, DC.
+
+<div
+  style={{
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    gap: "1rem",
+    margin: "1.5rem 0",
+  }}
+>
+  <Image
+    src={sotmusImg}
+    alt="MapLibre workshop at State of the Map US 2025"
+    style={{
+      width: "100%",
+      maxWidth: "360px",
+      height: "auto",
+      flex: "1 1 300px",
+      borderRadius: "0.5rem",
+    }}
+  />
+  <Image
+    src={foss4gImg}
+    alt="MapLibre presentation at FOSS4G Europe 2025"
+    style={{
+      width: "100%",
+      maxWidth: "360px",
+      height: "auto",
+      flex: "1 1 300px",
+      borderRadius: "0.5rem",
+    }}
+  />
+</div>
+
+## 🗓️ Monthly meetings
+
+We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
+
+Upcoming Calls
+
+- MapLibre Navigation: Aug 13, 2025 – 4:00–5:00 PM UTC
+- MapLibre Native: Aug 13, 2025 – 5:00–6:00 PM UTC
+- MapLibre GL JS: Aug 13, 2025 – 6:00–7:00 PM UTC
+
+🌏 MapLibre Eastern Call
+
+Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
+
+- Aug 27, 2025 – 9:00–10:00 AM UTC
+
+🔗 [View meeting times in your local timezone](https://notime.zone/OWoGsA3EsL3_J).
+
+All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/).
+We’d love to see you there!
