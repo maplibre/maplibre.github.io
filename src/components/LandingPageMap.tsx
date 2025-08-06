@@ -72,8 +72,8 @@ export const LandingPageMap = (props: any) => {
     }
 
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      (window.onload = playAnimation),
-        setInterval(playAnimation, lastPoint.Pause + lastPoint.Duration);
+      window.onload = playAnimation;
+      setInterval(playAnimation, lastPoint.Pause + lastPoint.Duration);
     }
   });
 

@@ -3,6 +3,7 @@ title: "About";
 
 import TitleHeader from "../../components/TitleHeader.astro";
 import board from "../../content/board.json" with { type: "json" };
+import team from "../../content/team.json" with { type: "json" };
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -11,243 +12,240 @@ import Layout from "../../layouts/Layout.astro";
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-sm-10">
-        <p class="text-center">
-          The MapLibre
-          <a href="https://maplibre.org/about/">Governing Board</a> was elected by
-          the
-          <a
-            href="https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md"
-            >Voting Members</a
-          >, a group who represents the broader community, and is in charge to
-          steer the Organization.
-        </p>
-
-        <br />
-        <hr />
-        <h1 class="text-center">Governing Board</h1>
-
-        <div class="container">
-          <div
-            class="justify-content-center"
-            style="display:flex; gap: 20px; flex-wrap: wrap;"
-          >
-            {
-              board.map((member) => (
-                <div class="text-center">
-                  <a href={`about/${member.link}`}>
-                    <img
-                      src={member.avatar}
-                      width="150"
-                      class="rounded-circle mt-3 border  border-white"
-                    />
-                    <h3 class="m-3">{member.name}</h3>
-                  </a>
-                </div>
-              ))
-            }
-          </div>
+        <div class="text-left">
+          <p>
+            <b class="h4">
+              The MapLibre Organization develops free and open-source libraries
+              and tools for mapping that enable others to build applications and
+              services.
+            </b>
+          </p>
+          <p>
+            Our vision is that everyone has free access to the mapping libraries
+            and tools to build the best maps in the world. We strive to provide
+            libraries and tools with the highest performance, most advanced
+            cartographic features, and which are easy to use for developers,
+            offering everything needed to turn raw geospatial data into
+            visualizations on a screen:
+            <b>from bits to pixels.</b>
+          </p>
         </div>
-
-        <hr class="mt-5" />
-        <h1 class="text-center">Team</h1>
-
-        <div class="container">
-          <div
-            class="justify-content-center"
-            style="display:flex; gap: 20px; flex-wrap: wrap;"
-          >
-            <div class="text-center person">
-              <a href="about/bart">
-                <img
-                  src="https://avatars.githubusercontent.com/u/649392?v=4"
-                  width="150"
-                  class="rounded-circle mt-3 border border-white"
-                />
-                <h3 class="m-3">Bart Louwers</h3>
-                MapLibre Native Maintainer
-              </a>
-            </div>
-            <div class="text-center person">
-              <a href="about/harel">
-                <img
-                  src="https://avatars.githubusercontent.com/u/3269297?v=4"
-                  width="150"
-                  class="rounded-circle mt-3 border border-white"
-                />
-                <h3 class="m-3">Harel Mazor</h3>
-                MapLibre GL JS Maintainer
-              </a>
-            </div>
-            <div class="text-center person">
-              <a href="about/marc">
-                <img
-                  src="https://avatars.githubusercontent.com/u/53413200?v=4"
-                  width="150"
-                  class="rounded-circle mt-3 border border-white"
-                />
-                <h3 class="m-3">Marc Wilson</h3>
-                Graphics Engineer
-              </a>
-            </div>
-            <div class="text-center person">
-              <a href="about/ramya">
-                <img
-                  src="https://avatars.githubusercontent.com/u/12103383?v=4"
-                  width="150"
-                  class="rounded-circle mt-3 border border-white"
-                />
-                <h3 class="m-3">Ramya Ragupathy</h3>
-                Head of Product & Operations
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center">
-          <hr />
-          <h1 class="text-center">Charter</h1>
-
+        <p class="text-left">
           The
+          <a
+            href="https://drive.google.com/file/d/1AIwWuNw4BbN0qCUIw_WDk9VTMwChzmgg/view?usp=drive_link"
+            >MapLibre Strategy 2023</a
+          >
+          outlines a vision for our future. <a
+            href="https://maplibre.org/community/"
+            >We invite everyone to join our path and build the best software for
+            maps together!</a
+          >
+        </p>
+        <h1 class="text-center pt-3">Charter</h1>
+        <p class="text-center">
+          The basic rules and goals of the MapLibre Organization are defined in
+          the
           <a href="https://github.com/maplibre/maplibre/blob/main/CHARTER.md"
             >MapLibre Charter</a
-          >
-          defines the basic rules and goals of the MapLibre Organization.
-
-          <hr />
-          <h1 class="text-center">Reports</h1>
-
+          >.
+        </p>
+        <h1 class="text-center pt-3">Reports</h1>
+        <p class="text-center">
           MapLibre finances are transparent and the accounting is fully public.
           Find quarterly financial reports in the
           <a href="about/reports">Reports</a> page.
+        </p>
+        <h1 class="text-center pt-3">Governing Board</h1>
+        <div class="text-center">
+          <p>
+            <div class="container pb-3 px-2">
+              <div
+                class="justify-content-center"
+                style="display:flex; gap: 20px; flex-wrap: wrap;"
+              >
+                {
+                  board.map((member) => (
+                    <div class="text-center person">
+                      <a href={`about/${member.link}`}>
+                        <img
+                          src={member.avatar}
+                          width="150"
+                          class="rounded-circle mt-3 border border-white"
+                        />
+                        <h3 class="m-3">{member.name}</h3>
+                      </a>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </p>
+          <p class="text-center">
+            In charge to steering the Organization is the
+            <a href="https://maplibre.org/about/">MapLibre Governing Board</a>. <br
+            />
+            They are elected by
+            <a
+              href="https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md"
+              >Voting Members</a
+            >, a group who represents the broader community.
+          </p>
+          <div>
+            <h1 class="text-center pt-4">Team</h1>
 
-          <hr />
-          <h1 class="text-center">Strategy</h1>
-          The MapLibre
-          <a
-            href="https://drive.google.com/file/d/1AIwWuNw4BbN0qCUIw_WDk9VTMwChzmgg/view?usp=drive_link"
-            >Strategy 2023</a
+            <div class="container pb-5 pt-2">
+              <div
+                class="justify-content-center"
+                style="display:flex; gap: 20px; flex-wrap: wrap;"
+              >
+                {
+                  team.map((member) => (
+                    <div class="text-center person">
+                      <a href={`about/${member.link}`}>
+                        <img
+                          src={member.avatar}
+                          width="150"
+                          class="rounded-circle mt-3 border border-white"
+                        />
+                        <h3 class="m-3">{member.name}</h3>
+                        {member.position}
+                      </a>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <h1 class="text-center pt-3">Brand Assets</h1>
+          <p class="text-center">
+            Below are the official MapLibre brand assets.
+          </p>
+
+          <h2 class="text-center">Landscape Logos</h2>
+          <div
+            class="d-flex flex-column flex-md-row gap-1 justify-content-center"
           >
-          outlines a vision for our future. We invite everyone to join our path and
-          build the best software for maps together.
-        </div>
-        <hr />
-        <h1 class="text-center">Brand Assets</h1>
-        <p class="text-center">Below are the official MapLibre brand assets.</p>
+            <div>
+              <img
+                src="/img/maplibre-logos/maplibre-logo-dark-blue-bg.png"
+                style="max-width: 300px;"
+              />
+              <p>
+                <a href="/img/maplibre-logos/maplibre-logo-for-dark-bg.svg"
+                  >SVG</a
+                >, <a href="/img/maplibre-logos/maplibre-logo-dark-blue-bg.png"
+                  >PNG</a
+                >, <a
+                  href="/img/maplibre-logos/maplibre-logo-light-transparent-bg.png"
+                  >PNG (transparent BG)</a
+                >
+              </p>
+            </div>
+            <div>
+              <img
+                src="/img/maplibre-logos/maplibre-logo-white-bg.png"
+                style="max-width: 300px;"
+              />
+              <p>
+                <a href="/img/maplibre-logos/maplibre-logo-for-light-bg.svg"
+                  >SVG</a
+                >, <a href="/img/maplibre-logos/maplibre-logo-white-bg.png"
+                  >PNG</a
+                >, <a
+                  href="/img/maplibre-logos/maplibre-logo-dark-transparent-bg.png"
+                  >PNG (transparent BG)</a
+                >
+              </p>
+            </div>
+            <div>
+              <img
+                src="/img/maplibre-logos/maplibre-logo-light-blue-bg.png"
+                style="max-width: 300px;"
+              />
+              <p>
+                <a href="/img/maplibre-logos/maplibre-logo-for-dark-bg.svg"
+                  >SVG</a
+                >, <a href="/img/maplibre-logos/maplibre-logo-light-blue-bg.png"
+                  >PNG</a
+                >
+              </p>
+            </div>
+          </div>
 
-        <h2 class="text-center">Landscape Logos</h2>
-        <div
-          style="display: flex; flex-direction: row; gap: 1em; justify-content: center;"
-        >
-          <div>
-            <img
-              src="/img/maplibre-logos/maplibre-logo-dark-blue-bg.png"
-              style="max-width: 300px;"
-            />
-            <p>
-              <a href="/img/maplibre-logos/maplibre-logo-for-dark-bg.svg">SVG</a
-              >, <a href="/img/maplibre-logos/maplibre-logo-dark-blue-bg.png"
-                >PNG</a
-              >, <a
-                href="/img/maplibre-logos/maplibre-logo-light-transparent-bg.png"
-                >PNG (transparent BG)</a
-              >
-            </p>
-          </div>
-          <div>
-            <img
-              src="/img/maplibre-logos/maplibre-logo-white-bg.png"
-              style="max-width: 300px;"
-            />
-            <p>
-              <a href="/img/maplibre-logos/maplibre-logo-for-light-bg.svg"
-                >SVG</a
-              >, <a href="/img/maplibre-logos/maplibre-logo-white-bg.png">PNG</a
-              >, <a
-                href="/img/maplibre-logos/maplibre-logo-dark-transparent-bg.png"
-                >PNG (transparent BG)</a
-              >
-            </p>
-          </div>
-          <div>
-            <img
-              src="/img/maplibre-logos/maplibre-logo-light-blue-bg.png"
-              style="max-width: 300px;"
-            />
-            <p>
-              <a href="/img/maplibre-logos/maplibre-logo-for-dark-bg.svg">SVG</a
-              >, <a href="/img/maplibre-logos/maplibre-logo-light-blue-bg.png"
-                >PNG</a
-              >
-            </p>
-          </div>
-        </div>
+          <h2 class="text-center">Square Logos</h2>
 
-        <h2 class="text-center">Square Logos</h2>
-        <div
-          style="display: flex; flex-direction: row; gap: 1em; justify-content: center;"
-        >
-          <div>
-            <img
-              src="/img/maplibre-logos/maplibre-logo-square-dark-blue-bg.png"
-              style="max-width: 300px;"
-            />
-            <p>
-              <a href="/img/maplibre-logos/maplibre-logo-square-for-dark-bg.svg"
-                >SVG</a
-              >, <a
-                href="/img/maplibre-logos/maplibre-logo-square-dark-blue-bg.png"
-                >PNG</a
-              >
-            </p>
+          <div
+            class="d-flex flex-column flex-md-row gap-1 justify-content-center"
+          >
+            <div>
+              <img
+                src="/img/maplibre-logos/maplibre-logo-square-dark-blue-bg.png"
+                style="max-width: 300px;"
+              />
+              <p>
+                <a
+                  href="/img/maplibre-logos/maplibre-logo-square-for-dark-bg.svg"
+                  >SVG</a
+                >, <a
+                  href="/img/maplibre-logos/maplibre-logo-square-dark-blue-bg.png"
+                  >PNG</a
+                >
+              </p>
+            </div>
+            <div>
+              <img
+                src="/img/maplibre-logos/maplibre-logo-square-white-bg.png"
+                style="max-width: 300px;"
+              />
+              <p>
+                <a
+                  href="/img/maplibre-logos/maplibre-logo-square-for-light-bg.svg"
+                  >SVG</a
+                >, <a
+                  href="/img/maplibre-logos/maplibre-logo-square-white-bg.png"
+                  >PNG</a
+                >
+              </p>
+            </div>
+            <div>
+              <img
+                src="/img/maplibre-logos/maplibre-logo-square-light-blue-bg.png"
+                style="max-width: 300px;"
+              />
+              <p>
+                <a
+                  href="/img/maplibre-logos/maplibre-logo-square-for-dark-bg.svg"
+                  >SVG</a
+                >, <a
+                  href="/img/maplibre-logos/maplibre-logo-square-light-blue-bg.png"
+                  >PNG</a
+                >
+              </p>
+            </div>
           </div>
-          <div>
-            <img
-              src="/img/maplibre-logos/maplibre-logo-square-white-bg.png"
-              style="max-width: 300px;"
-            />
-            <p>
-              <a
-                href="/img/maplibre-logos/maplibre-logo-square-for-light-bg.svg"
-                >SVG</a
-              >, <a href="/img/maplibre-logos/maplibre-logo-square-white-bg.png"
-                >PNG</a
+          <h2 class="text-center">Colors</h2>
+          <div class="d-flex justify-content-center text-start">
+            <div style="display: grid; grid-template-columns: 4em 17em 4em;">
+              <div
+                style="width: 1em; height: 1em; background: #285DAA; font-size: 2em;"
               >
-            </p>
-          </div>
-          <div>
-            <img
-              src="/img/maplibre-logos/maplibre-logo-square-light-blue-bg.png"
-              style="max-width: 300px;"
-            />
-            <p>
-              <a href="/img/maplibre-logos/maplibre-logo-square-for-dark-bg.svg"
-                >SVG</a
-              >, <a
-                href="/img/maplibre-logos/maplibre-logo-square-light-blue-bg.png"
-                >PNG</a
+              </div><p>Primary</p><p><code>#285DAA</code></p>
+              <div
+                style="width: 1em; height: 1em; background: #95BEFA; font-size: 2em;"
               >
-            </p>
-          </div>
-        </div>
-        <h2 class="text-center">Colors</h2>
-        <div style="display: flex; justify-content: center;">
-          <div style="display: grid;   grid-template-columns: 3em 15em 10em;">
-            <div
-              style="width: 1em; height: 1em; background: #285DAA; font-size: 2em;"
-            >
-            </div><p>Primary</p><p><code>#285DAA</code></p>
-            <div
-              style="width: 1em; height: 1em; background: #95BEFA; font-size: 2em;"
-            >
-            </div><p>Accent</p><p><code>#95BEFA</code></p>
-            <div
-              style="width: 1em; height: 1em; background: #FFFFFF; font-size: 2em;"
-            >
-            </div><p>Background or Primary</p><p><code>#FFFFFF</code></p>
-            <div
-              style="width: 1em; height: 1em; background: #111725; font-size: 2em; border: 1px solid white;"
-            >
-            </div><p>Background (dark)</p><p><code>#111725</code></p>
+              </div><p>Accent</p><p><code>#95BEFA</code></p>
+              <div
+                style="width: 1em; height: 1em; background: #FFFFFF; font-size: 2em;"
+              >
+              </div><p>Background or Primary</p><p><code>#FFFFFF</code></p>
+              <div
+                style="width: 1em; height: 1em; background: #111725; font-size: 2em; border: 1px solid white;"
+              >
+              </div><p>Background (dark)</p><p><code>#111725</code></p>
+            </div>
           </div>
         </div>
       </div>
