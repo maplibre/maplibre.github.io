@@ -20,5 +20,12 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
+# IDE
 .idea/
+.vscode/
+
+# Hugo
+.hugo/
+.hugo_build.lock
+resources/
+static/

@@ -21,9 +21,9 @@ As a passionate advocate for open-source mapping software, I'm committed to driv
 - I organized, found funding, and continue to drive the new [MLT tile format](https://github.com/maplibre/maplibre-tile-spec) initiative that showed up to 6x size reduction compared with MVT! ([video presentation](https://youtu.be/YHcoAFcsES0?si=9wmZjIkM5PmWIrVK&t=1336)). Special thx to @mactrem!
 - I on-boarded and greatly improved [Martin](https://maplibre.org/martin/) - one of the most popular tile server supporting sources like Postgres, MBTiles, PMTiles, Sprites, and Fonts. On GitHub, 2,100 :star2: and rapidly growing!
 - I coordinated the transfer and on-boarded [Maputnik](https://maputnik.github.io/) - map style editor
-- I frequently present and do workshops about MapLibre at the conferences. This year: [FOSS4G EU](https://www.youtube.com/watch?v=6y7zA14Jbc8) (+workshop), State of the Map (OSM-US), and plan to attend FOSS4G in Belem.
+- I frequently present and do workshops about MapLibre at the conferences. This year: [FOSS4G EU](https://www.youtube.com/watch?v=6y7zA14Jbc8) (+workshop), State of the Map (OSM-US), and plan to attend FOSS4G in Belém.
 - I am constantly in communication with community members and sponsors, making sure to hear concerns and community issues.
-- I regularly attend monthly sync-ups with the technical steering commeetees (navigation, native, web, and MLT)
+- I regularly attend monthly sync-ups with the technical steering committees (navigation, native, web, and MLT)
 - I was actively involved in finding the next coordinator to continue the amazing work done by @wipfli
 
 ### My Mission Statement
@@ -43,4 +43,4 @@ All three goals are important - without the community we won't be able to mainta
 - Volunteer Wikipedia core developer since 2005, implemented API and bot frameworks. Later worked for the foundation building Maps and data viz.
 - Built Sophox OSM Sparql index and other OSM tools and libraries
 - Contribute heavily to the Rust ecosystem, including the compiler/libraries
-- Former principle engineer at Elastic (ElasticSearch), now working at Rivian (EV cars need good maps!)
+- Former principal engineer at Elastic (ElasticSearch), now working at Rivian (EV cars need good maps!)

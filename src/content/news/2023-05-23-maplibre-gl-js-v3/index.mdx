@@ -76,7 +76,7 @@ A lot of work has been put into making this version of MapLibre GL JS faster. He
   />
 </a>
 
-This new feature makes it possible to get direct access to the camera transform, and manipulate it, continuously whenever the map is attempting to change it's viewport. It's a small hook, but it's very powerful. It's especially handy for reactive frameworks, where the camera state might be put in a store which can trigger side effects like listing the points of interest currently visible on the map. Another example of when it's relevant is when synching multiple maps, as exemplified with a demo of a minimap and a main map that drives each other here:
+This new feature makes it possible to get direct access to the camera transform, and manipulate it, continuously whenever the map is attempting to change it's viewport. It's a small hook, but it's very powerful. It's especially handy for reactive frameworks, where the camera state might be put in a store which can trigger side effects like listing the points of interest currently visible on the map. Another example of when it's relevant is when syncing multiple maps, as exemplified with a demo of a minimap and a main map that drives each other here:
 
 Sync two maps with the camera transform - [Minimap demo](https://stackblitz.com/edit/vitejs-vite-8nntze?file=src%2FMinimap.tsx)
 

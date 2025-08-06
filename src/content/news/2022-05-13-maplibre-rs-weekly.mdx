@@ -15,7 +15,7 @@ The main focus of the past week was on documentation and redesigning the rendere
 
 In the past week, I extracted the render from [Bevy](https://bevyengine.org/). After some discussions [on Github](https://github.com/maplibre/maplibre-rs/discussions/75), Slack and Matrix we concluded that writing a renderer specific to maps is the best option. In general, specialized renderers can be optimized better. By implementing a renderer ourselves, we also stay independent of other projects. For example, Bevy is a render engine (renderer + a lot more) for games. That means that features which are important for bevy are most likely not important for maplibre-rs and vice versa. For example, the Bevy renderer does not support a stencil.
 
-Because I'm quite unexperienced in the world of 3D graphics, I dediced to base the renderer on some existing one. The best renderers in the Rust world are currently Bevy and rend3. After evaluating both renderers I decided to go with the Bevy one, because rend3 had usages of `unsafe. Both renderers are based around the idea of a [render graph](https://logins.github.io/graphics/2021/05/31/RenderGraphs.html).
+Because I'm quite unexperienced in the world of 3D graphics, I decided to base the renderer on some existing one. The best renderers in the Rust world are currently Bevy and rend3. After evaluating both renderers I decided to go with the Bevy one, because rend3 had usages of `unsafe. Both renderers are based around the idea of a [render graph](https://logins.github.io/graphics/2021/05/31/RenderGraphs.html).
 
 ## 🏠 Housekeeping
 
@@ -42,7 +42,7 @@ The following will summarizes what happened last week on GitHub.
 - [#97](https://github.com/maplibre/maplibre-rs/issues/97) Initial start of removing unwrap from a Result type  
   Remove `.unwrap()` from code.
 - [#88](https://github.com/maplibre/maplibre-rs/issues/88) Postponed: Inspect WASM size  
-  Optimze WASM size.
+  Optimize WASM size.
 - [#81](https://github.com/maplibre/maplibre-rs/issues/81) Update license and code of conduct
 
 ### 📄 Documentation
