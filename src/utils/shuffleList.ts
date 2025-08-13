@@ -1,7 +1,7 @@
 export function shuffleList(selector: string): void {
   const container = document.querySelector(selector);
   if (!container) return;
-  
+
   const items = Array.from(container.children);
 
   // Shuffle using Fisher-Yates algorithm

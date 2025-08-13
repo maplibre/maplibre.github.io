@@ -1,7 +1,7 @@
 import { onMount } from "solid-js";
 import { shuffleList } from "../utils/shuffleList";
 
-export const BoardAndTeam = (props: { board: any[], team: any[] }) => {
+export const BoardAndTeam = (props: { board: any[]; team: any[] }) => {
   onMount(() => {
     shuffleList(".board-list");
     shuffleList(".team-list");
@@ -32,7 +32,9 @@ export const BoardAndTeam = (props: { board: any[], team: any[] }) => {
         </div>
         <p class="text-center">
           In charge to steering the Organization is the
-          <a href="https://maplibre.org/about/">MapLibre Governing Board</a>. <br />
+          <a href="https://maplibre.org/about/">
+            MapLibre Governing Board
+          </a>. <br />
           They are elected by
           <a href="https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md">
             Voting Members
