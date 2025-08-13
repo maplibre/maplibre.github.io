@@ -5,7 +5,7 @@ import TitleHeader from "../../components/TitleHeader.astro";
 import board from "../../content/board.json" with { type: "json" };
 import team from "../../content/team.json" with { type: "json" };
 import Layout from "../../layouts/Layout.astro";
-import { AboutPeopleShuffle } from "../../components/BoardAndTeam";
+import { BoardAndTeam } from "../../components/BoardAndTeam";
 ---
 
 <Layout title="About">
@@ -57,7 +57,7 @@ import { AboutPeopleShuffle } from "../../components/BoardAndTeam";
           Find quarterly financial reports in the
           <a href="about/reports">Reports</a> page.
         </p>
-        <AboutPeopleShuffle board={board} team={team} client:load />
+        <BoardAndTeam board={board} team={team} client:load />
         <div class="text-center">
           <h1 class="text-center pt-3">Brand Assets</h1>
           <p class="text-center">

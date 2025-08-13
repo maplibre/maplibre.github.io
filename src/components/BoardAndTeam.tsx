@@ -1,7 +1,7 @@
 import { onMount } from "solid-js";
 import { shuffleList } from "../utils/shuffleList";
 
-export const AboutPeopleShuffle = (props: { board: any[], team: any[] }) => {
+export const BoardAndTeam = (props: { board: any[], team: any[] }) => {
   onMount(() => {
     shuffleList(".board-list");
     shuffleList(".team-list");
