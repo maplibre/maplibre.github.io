@@ -1,24 +1,10 @@
 import { onMount } from "solid-js";
+import { shuffleList } from "../utils/shuffleList";
 
 export const Sponsors = (props: any) => {
-  function shuffleSponsorList(selector) {
-    const list = document.querySelector(selector);
-    if (!list) return;
-    const items = Array.from(list.querySelectorAll("a"));
-
-    // Shuffle using Fisher-Yates algorithm
-    for (let i = items.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [items[i], items[j]] = [items[j], items[i]];
-    }
-
-    // Append shuffled items back to their container
-    items.forEach((item) => list.appendChild(item));
-  }
-
   onMount(() => {
-    shuffleSponsorList(".gold-list");
-    shuffleSponsorList(".silver-list");
+    shuffleList(".gold-list");
+    shuffleList(".silver-list");
   });
   return (
     <div id="sponsor-list">
