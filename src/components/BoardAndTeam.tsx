@@ -35,11 +35,15 @@ export const BoardAndTeam = (props: { board: any[]; team: any[] }) => {
           <a href="https://maplibre.org/about/">
             MapLibre Governing Board
           </a>. <br />
-          They are elected by
-          <a href="https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md">
-            Voting Members
-          </a>
-          , a group who represents the broader community.
+          <p>
+            <a
+              href="https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md"
+              >Voting Members</a
+            > (max. 10% from a single organization) elect the Governing Board and
+            vote on changes to the MapLibre Charter. New Voting Members are nominated
+            by existing Voting Members for contributing to the community in a non-trivial
+            way or donating funds to MapLibre.
+          </p>
         </p>
         <div>
           <h1 class="text-center pt-4">Team</h1>
