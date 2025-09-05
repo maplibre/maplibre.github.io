@@ -1,0 +1,258 @@
+---
+title: "MapLibre Newsletter August 2025"
+date: "2025-09-04"
+categories: ["newsletter"]
+authors: [bart, harel, birk, yuri, ramyaragupathy]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import msftLogo from "/public/img/msft-logo.svg";
+import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
+import nativeTestApp from "./native-testapp.png";
+import slintWindows from "./slint-windows.png";
+import slintMac from "./slint-macos.jpg";
+
+August was a busy month for the MapLibre community. From welcoming new Voting Members as part of the Governing Board election process to new releases across key projects, there is plenty of progress to celebrate.
+
+First and foremost, we extend our gratitude to [Microsoft](https://www.microsoft.com) for continuing, and increasing their sponsorship for MapLibre this year. Their contribution has nearly doubled, elevating them to Gold Sponsor and providing vital support for the sustainability of our projects.
+
+<div
+  style={{
+    backgroundColor: "white",
+    padding: "2rem",
+    border: "10px solid",
+    borderImage: "linear-gradient(45deg, #d4af37, #f5deb3, #d4af37) 1",
+    borderRadius: "0",
+    marginBottom: "3rem",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "2rem",
+    flexWrap: "nowrap",
+    overflow: "hidden",
+    flexDirection: "column",
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "2rem",
+      flexWrap: "nowrap",
+      width: "100%",
+    }}
+  >
+    <Image
+      src={maplibreLogo}
+      alt="MapLibre logo"
+      style={{
+        width: "40%",
+        maxWidth: "300px",
+        height: "auto",
+        objectFit: "contain",
+      }}
+    />
+    <Image
+      src={msftLogo}
+      alt="Microsoft logo"
+      style={{
+        width: "40%",
+        maxWidth: "330px",
+        height: "auto",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+  <div
+    style={{
+      marginTop: "1rem",
+      fontSize: "1rem",
+      textAlign: "center",
+      color: "#263238",
+      fontStyle: "italic",
+    }}
+  >
+    {" "}
+    Many thanks to Microsoft for their steadfast support to MapLibre (2023-2025)
+    🎉
+  </div>
+</div>
+
+## 🗳️ New Voting Members
+
+As part of the [2025 Governing Board election process](https://github.com/maplibre/maplibre/issues/447), we held [a round of nominations](https://github.com/maplibre/maplibre/issues/446) to expand the Voting Members group. Voting Members are responsible for electing the Governing Board and voting on changes to the [MapLibre Charter](https://github.com/maplibre/maplibre/blob/main/CHARTER.md).
+
+We’re pleased to welcome [19 new Voting Members](https://github.com/maplibre/maplibre/issues/446#issuecomment-3224717918) this August and look forward to their contributions in shaping MapLibre’s future.
+
+You can checkout [the full list of 141 Voting Members in our GitHub documentation](https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md).
+
+## 📱 MapLibre Native
+
+- **Want to help test MapLibre Android?** In addition to our existing continuous integration tests we are taking a crowdsourced approach to testing. We now make releases of the [MapLibre Android TestApp](https://github.com/maplibre/maplibre-native/releases?q=android-testapp&expanded=true). If you want to help, simply download the apk and install it on a Android device you have laying around. Next, open the 'Long running Maps' activity and let it run for up to 72 hours! Crashes are logged to our [Sentry](https://sentry.io/welcome/) so that MapLibre developers can investigate and fix issues.
+
+<div style={{ textAlign: "center" }}>
+  <Image
+    src={nativeTestApp}
+    style={{
+      maxWidth: "300px",
+      maxHeight: "600px",
+      width: "100%",
+      height: "auto",
+      display: "inline-block",
+    }}
+    alt="Android TestApp running the long running test (or 'Desert Bus')"
+  />
+  <p
+    style={{
+      fontSize: "0.9rem",
+      color: "#aaa",
+      marginTop: "8px",
+      fontStyle: "italic",
+    }}
+  >
+    <em>Android TestApp running the long running test (or 'Desert Bus')</em>
+  </p>
+</div>
+
+- MapLibre Android 11 was released well over a year ago, but some people are still on MapLibre Android 10.x.x. We made a [release](https://github.com/maplibre/maplibre-native/releases/tag/android-v10.3.5) for this previous major release to bring 16kb pages support since Google will [require](https://android-developers.googleblog.com/2025/05/prepare-play-apps-for-devices-with-16kb-page-size.html) it for apps on the Google Play store starting November 1.
+
+- Two minor regular releases [MapLibre Android 11.13.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.13.1) and [MapLibre iOS 6.18.1](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.18.1).
+
+- [MapLibre Node.js](https://github.com/maplibre/maplibre-native/releases/tag/node-v6.2.0) also had a release that fixes a problem where it would not render more than 32 frames.
+
+## 🌐 MapLibre Web
+
+Version [5.6.2](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.6.2) and [5.7.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.7.0) were released this month.
+
+These releases focused mainly on some bugs fixes, especially related to the recently added [`global-state`](https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/#setglobalstateproperty) which probably still needs more ironing out. There was also an addition of the [`coveringTiles`](https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/#coveringtiles) method to the public API after it was buried a bit too deep when adding the globe support in version 5.
+
+Huge thanks to all contributors who helped make these improvements possible, we appreciate your efforts and look forward to more contributions!
+
+## 🧩 MapLibre Tile Format
+
+Work continues on the [maplibre-tile-spec](https://github.com/maplibre/maplibre-tile-spec) project, including ongoing discussion about PR processes and the structure of the CLI and encoder/decoder tools.
+Please check out and participate in the GitHub discussion threads and open pull requests. Contributions and comments are highly valued!
+
+## 🎉 Slint SDK Onboarding for MapLibre Native
+
+We’re excited to share the onboarding of a new Slint SDK for MapLibre Native, initiated by [@yuiseki](https://github.com/yuiseki).
+
+- [maplibre-native-slint GitHub repository](https://github.com/maplibre/maplibre-native-slint)
+- [Onboarding Discussion on GitHub](https://github.com/maplibre/maplibre/issues/474)
+
+This project provides a Slint-based integration for MapLibre Native, allowing MapLibre Native rendering to be embedded into Slint-based native GUI applications (desktop and mobile).
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    gap: "2rem",
+    flexWrap: "wrap", 
+    marginTop: "2rem",
+    marginBottom: "2rem",
+    alignItems: "stretch",
+  }}
+>
+  <div
+    style={{
+      flex: "1 1 300px",
+      maxWidth: "400px",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between", 
+      textAlign: "center",
+    }}
+  >
+    <Image
+      src={slintWindows}
+      alt="MapLibre Native Slint on Windows"
+      style={{
+        width: "100%",
+        height: "auto",
+        borderRadius: "6px",
+      }}
+    />
+    <p
+      style={{
+        fontSize: "0.9rem",
+        color: "#aaa",
+        marginTop: "8px",
+        fontStyle: "italic",
+      }}
+    >
+    <em>  Windows screenshot </em>
+    </p>
+  </div>
+
+  <div
+    style={{
+      flex: "1 1 300px",
+      maxWidth: "400px",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between", 
+      textAlign: "center",
+    }}
+  >
+    <Image
+      src={slintMac}
+      alt="MapLibre Native Slint on macOS"
+      style={{
+        width: "100%",
+        height: "auto",
+        borderRadius: "6px",
+      }}
+    />
+    <p
+      style={{
+        fontSize: "0.9rem",
+        color: "#aaa",
+        marginTop: "8px",
+        fontStyle: "italic",
+      }}
+    >
+     <em> macOS screenshot </em>
+    </p>
+  </div>
+</div>
+
+## 🌍 Ecosystem Spotlight: Sprite Sheet Benchmarks
+
+OSM contributor `pnorman` recently [benchmarked three tools](https://www.openstreetmap.org/user/pnorman/diary/407303) for generating sprite sheets: spreet (Rust), @basemaps/sprites, and sprite-one.
+
+These tools are often used when building MapLibre styles. Results show spreet produces smaller, more efficient PNGs, especially after optimization.
+
+## 👥 Conferences
+
+MapLibre is happy to be one of the sponsors of FOSS India 2025, taking place in Bengaluru, India this September. 🎉
+
+As part of our sponsorship, we’re giving away a limited number of free tickets to community members and contributors.
+Details and sign-up are in this discussion thread: [MapLibre: FOSS India 2025 – ticket giveaway](https://github.com/maplibre/maplibre/discussions/459)
+
+- 📅 Event Dates: 20-21 September 2025
+- 📍 Location: [Bengaluru, India](https://www.openstreetmap.org/relation/7902476)
+- 🔗 Event Info: https://fossunited.org/indiafoss/2025
+
+## 🗓️ Monthly meetings
+
+We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
+
+Upcoming Calls
+
+- MapLibre Navigation: Sep 10, 2025 – 4:00–5:00 PM UTC
+- MapLibre Native: Sep 10, 2025 – 5:00–6:00 PM UTC
+- MapLibre GL JS: Sep 10, 2025 – 6:00–7:00 PM UTC
+
+🌏 MapLibre Eastern Call
+
+Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
+
+- Sep 24, 2025 – 9:00–10:00 AM UTC
+
+🔗 [View meeting times in your local timezone](https://notime.zone/OZNF2CjddeqYV).
+
+All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/).
+We’d love to see you there!
