@@ -1,0 +1,482 @@
+---
+import { Image } from "astro:assets";
+import androidPhone from "../../../public/img/maplibre-native-android.png";
+import iosPhone from "../../../public/img/maplibre-native-ios.png";
+import android from "../../assets/maplibre-native/android.png";
+import ios from "../../assets/maplibre-native/ios.png";
+import metal from "../../assets/maplibre-native/metal.png";
+import opengl from "../../assets/maplibre-native/opengl.png";
+import vulkan from "../../assets/maplibre-native/vulkan.png";
+import TitleHeader from "../../components/TitleHeader.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<style lang="scss">
+  .key-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+
+    .benefit {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+  }
+  section {
+    padding: 40px 20px;
+    text-align: center;
+
+    &:nth-child(even) {
+      color: #4a5568;
+      background: #f8fafc;
+    }
+    .header {
+      background: rgb(17, 23, 37);
+    }
+
+    &:nth-child(odd) {
+      color: white;
+      background: #1a365d;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      margin-bottom: 24px;
+      opacity: 0.9;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin: 16px auto 32px;
+      max-width: 600px;
+    }
+  }
+
+  .grid {
+    display: grid;
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+    &.mobile-grid {
+      max-width: 500px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &.graphics-grid {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 600px;
+    }
+
+    &.stats-grid {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 800px;
+    }
+
+    &.ecosystem-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      text-align: left;
+    }
+  }
+
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    img {
+      width: auto;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      color: #1a365d;
+      font-size: 1.1rem;
+      margin: 8px 0;
+    }
+
+    p {
+      color: #64748b;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+  }
+
+  .phone-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      height: 30rem;
+      width: auto;
+    }
+
+    h3 {
+      margin-top: 16px;
+      color: #ffffff;
+    }
+  }
+
+  .stat-card {
+    background: #667eea;
+    border-radius: 12px;
+    padding: 24px;
+    color: white;
+    text-align: center;
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+  }
+
+  .ecosystem-item {
+    border-left: 3px solid #667eea;
+
+    h4 {
+      color: #1a365d;
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+  }
+
+  .learn-more-badges {
+    text-align: center;
+
+    .badge {
+      margin: 4px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 2rem;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+
+      &.mobile-grid {
+        grid-template-columns: 1fr;
+      }
+
+      &.graphics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      &.stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+</style>
+
+<Layout title="MapLibre Native">
+  <section>
+    <h1>MapLibre Native</h1>
+    <p class="tagline">
+      The fully open-source, high-fidelity mapping engine that delivers
+      exceptional performance across all platforms
+    </p>
+
+    <div class="key-benefits">
+      <div class="benefit">🚀 High Performance</div>
+      <div class="benefit">🎯 High Fidelity</div>
+      <div class="benefit">🌍 Cross Platform</div>
+      <div class="benefit">⚡ Modern Graphics</div>
+      <div class="benefit">🤝 Community Driven</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cross-Platform Excellence</h2>
+    <p>
+      One codebase, everywhere your users are. MapLibre Native runs seamlessly
+      across iOS, Android, macOS, Linux, and Windows under x86 or ARM.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>iOS</h3>
+        <p>Swift & Objective-C</p>
+      </div>
+      <div class="card">
+        <h3>Android</h3>
+        <p>Kotlin & Java</p>
+      </div>
+      <div class="card">
+        <h3>Windows</h3>
+        <p>Desktop apps</p>
+      </div>
+      <div class="card">
+        <h3>Linux</h3>
+        <p>Desktop apps</p>
+      </div>
+      <div class="card">
+        <h3>macOS</h3>
+        <p>Desktop apps</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Mobile-First Design</h2>
+    <p>
+      We optimize for mobile performance with smooth animations, efficient
+      memory usage, and responsive touch interactions.
+    </p>
+
+    <div class="grid mobile-grid">
+      <div class="phone-container">
+        <Image src={androidPhone} alt="Android app showcase" />
+        <h3>Android</h3>
+
+        <div class="flex flex-row">
+          <span class="badge bg-primary text-white mx-1">
+            <a href="https://maplibre.org/maplibre-native/android/api/">
+              Docs
+            </a>
+          </span>
+          <span class="badge bg-primary text-white mx-1">
+            <a href="https://maplibre.org/maplibre-native/android/examples/">
+              Examples
+            </a>
+          </span>
+        </div>
+      </div>
+      <div class="phone-container">
+        <Image src={iosPhone} alt="iOS app showcase" />
+        <h3>iOS</h3>
+
+        <span class="badge bg-primary text-white">
+          <a
+            href="https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre"
+          >
+            Docs
+          </a>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Modern Graphics Backends</h2>
+    <p>
+      Support for the latest graphics APIs ensures optimal performance and
+      visual quality on every device.
+    </p>
+
+    <div class="grid graphics-grid">
+      <div class="card graphics-card">
+        <Image src={vulkan} alt="Vulkan API" />
+        <h3>Vulkan</h3>
+      </div>
+      <div class="card graphics-card">
+        <Image src={metal} alt="Metal API" />
+        <h3>Metal</h3>
+      </div>
+      <div class="card graphics-card">
+        <Image src={opengl} alt="OpenGL API" />
+        <h3>OpenGL</h3>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Supported by Leading Companies</h2>
+    <p>
+      Major companies rely on MapLibre Native for their mapping needs,
+      contributing time and money to its development and ensuring
+      enterprise-grade quality.
+    </p>
+
+    <div class="grid">
+      <a href="https://madewithmaplibre.com/" class="btn btn-primary"
+        >Who is using us</a
+      >
+      <a href="/sponsors" class="btn btn-primary">Our sponsors</a>
+    </div>
+  </section>
+
+  <section class="section community-section">
+    <h2>Vibrant Open Source Community</h2>
+    <p>
+      Join thousands of developers contributing to the future of open mapping
+      technology.
+    </p>
+
+    <div class="grid stats-grid">
+      <div class="stat-card">
+        <span class="stat-number">1.5K+</span>
+        <span class="stat-label">GitHub Stars</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">300+</span>
+        <span class="stat-label">Contributors</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">1.000+</span>
+        <span class="stat-label">Community Members</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Open Source</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Rich Ecosystem Integrations</h2>
+    <p>
+      MapLibre Native integrates seamlessly with several community integrations
+      for popular frameworks and tools, making it easy to add mapping to any
+      application.
+    </p>
+
+    <div class="grid ecosystem-grid">
+      <a class="card ecosystem-item" href="https://madewithmaplibre.com/sdks">
+        <h4>React Native</h4>
+        <p>Mobile app development with JavaScript</p>
+      </a>
+      <a class="card ecosystem-item" href="https://madewithmaplibre.com/sdks">
+        <h4>Flutter</h4>
+        <p>Cross-platform mobile development</p>
+      </a>
+      <a class="card ecosystem-item" href="https://madewithmaplibre.com/sdks">
+        <h4>Jetpack Compose</h4>
+        <p>Modern Android UI toolkit</p>
+      </a>
+      <a class="card ecosystem-item" href="https://madewithmaplibre.com/sdks">
+        <h4>Compose Multiplatform</h4>
+        <p>Cross-platform declarative UI</p>
+      </a>
+      <a class="card ecosystem-item" href="https://madewithmaplibre.com/sdks">
+        <h4>Rust</h4>
+        <p>Safe systems programming</p>
+      </a>
+      <a class="card ecosystem-item" href="https://madewithmaplibre.com/sdks">
+        <h4>Node.js</h4>
+        <p>Server-side rendering</p>
+      </a>
+      <a class="card ecosystem-item" href="https://madewithmaplibre.com/sdks">
+        <h4>Qt</h4>
+        <p>Desktop applications</p>
+      </a>
+      <a class="card ecosystem-item" href="https://madewithmaplibre.com/sdks">
+        <h4>Python</h4>
+        <p>Data science workflows</p>
+      </a>
+      <a class="card ecosystem-item" href="https://madewithmaplibre.com/sdks">
+        <h4>Java / Kotlin</h4>
+        <p>Android app development</p>
+      </a>
+      <a class="card ecosystem-item" href="https://madewithmaplibre.com/sdks">
+        <h4>Objective-C / SwiftUI</h4>
+        <p>iOS / MacOS app development</p>
+      </a>
+    </div>
+  </section>
+  <section>
+    <h2>Learn More</h2>
+    <p>
+      Explore documentation, examples, and resources to get started with
+      MapLibre Native across all supported platforms and integrations.
+    </p>
+
+    <div class="learn-more-badges">
+      <span class="badge bg-primary text-white">
+        <a href="https://github.com/maplibre/maplibre-native">
+          <svg
+            role="img"
+            class="inline-icon"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>GitHub</title>
+            <path
+              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+            ></path>
+          </svg>
+          GitHub
+        </a>
+      </span>
+
+      <span class="badge bg-primary text-white">
+        <a href="https://maplibre.org/maplibre-native/android/api/">
+          Android API
+        </a>
+      </span>
+
+      <span class="badge bg-primary text-white">
+        <a href="https://maplibre.org/maplibre-native/android/examples/">
+          Android Examples
+        </a>
+      </span>
+
+      <span class="badge bg-primary text-white">
+        <a
+          href="https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre"
+        >
+          iOS Documentation
+        </a>
+      </span>
+
+      <span class="badge bg-primary text-white">
+        <a href="https://maplibre.org/maplibre-native/cpp/api/">
+          Core C++ API
+        </a>
+      </span>
+
+      <span class="badge bg-primary text-white">
+        <a href="https://maplibre.org/maplibre-native/docs/book/">
+          Developer Docs
+        </a>
+      </span>
+
+      <span class="badge bg-primary text-white">
+        <a href="https://maplibre.org/maplibre-style-spec">Style Spec</a>
+      </span>
+
+      <span class="badge bg-primary text-white">
+        <a href="https://maplibre.org/maplibre-native/node/api/">
+          Node.js API
+        </a>
+      </span>
+
+      <span class="badge bg-primary text-white">
+        <a href="https://github.com/maplibre/maplibre-native/releases">
+          Releases
+        </a>
+      </span>
+    </div>
+  </section>
+</Layout>
