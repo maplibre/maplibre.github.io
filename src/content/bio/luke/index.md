@@ -10,7 +10,7 @@ handle: luke
         class="rounded-circle mt-3"
     />
     <h3 class="m-3">Luke Seelenbinder</h3>
-    <p>Member of the Governing Board</p>
+    <p>Co-founder of MapLibre</p>
     <p><a href="https://www.linkedin.com/in/lukeseelenbinder/">LinkedIn</a> · <a href="https://github.com/lseelenbinder">GitHub</a> · <a href="https://osmus.slack.com/team/U01GBD8M138">Slack</a> · <a href="https://twitter.com/lseelenbinder">X</a>
 </div>
 
