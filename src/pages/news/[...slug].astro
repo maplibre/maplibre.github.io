@@ -53,7 +53,7 @@ const authors = await getCollection("bios", (author) => {
         <div style="margin-bottom: 20px;">
           Authors: {
             authors.map((author) => (
-              <a href={`people/${author.id}`}>
+              <a href={`about/${author.id}`}>
                 <Badge>{author.data.title}</Badge>
               </a>
             ))

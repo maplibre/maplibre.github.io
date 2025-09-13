@@ -18,7 +18,7 @@ export const BoardAndTeam = (props: { board: any[]; team: any[] }) => {
           >
             {props.board.map((member) => (
               <div class="text-center person">
-                <a href={`people/${member.link}`}>
+                <a href={`about/${member.link}`}>
                   <img
                     src={member.avatar}
                     width="150"
@@ -51,7 +51,7 @@ export const BoardAndTeam = (props: { board: any[]; team: any[] }) => {
             >
               {props.team.map((member) => (
                 <div class="text-center person">
-                  <a href={`people/${member.link}`}>
+                  <a href={`about/${member.link}`}>
                     <img
                       src={member.avatar}
                       width="150"
