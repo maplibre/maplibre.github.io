@@ -64,10 +64,11 @@ Community engagement:
 - At Open Source @ TUM, I introduced small, dual-purpose “Christmas” gifts for contributions past a semi-arbitrary bar with great effect. Sending a bit of merch and a handwritten card goes a long way.
   Being an international community, we would need to be more diverse in the concrete messaging (Christmas, Hanukkah, …), but the idea should be transferable.
   <details><summary>Mockup (click to expand)</summary>
-  
+
   <img width="50%" alt="image" src="https://github.com/user-attachments/assets/bab69ba6-fcfc-448b-ae5a-f43a9499bda6" />
-  
+
   </details>
+
 - Apply more of [“isovalents learnings” around building communities](https://archive.fosdeam.org/2024/schedule/event/fosdem-2024-2776-building-an-open-source-community-one-friend-at-a-time/).
 
 ## My goals unrelated to the board
