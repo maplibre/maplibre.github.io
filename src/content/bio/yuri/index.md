@@ -29,6 +29,13 @@ As a passionate advocate for open-source mapping software, I'm committed to driv
 - Numerous engagements with the community at conferences
 - Attend almost all zoom calls to keep up to date on all MapLibre developments and help coordinate all new developments
 
+### A little more about me
+
+- Volunteer Wikipedia core developer since 2005, implemented API and bot frameworks. Later worked for the foundation building Maps and data viz.
+- Built Sophox OSM Sparql index and other OSM tools and libraries
+- Contribute heavily to the Rust ecosystem, including the compiler/libraries
+- Former principal engineer at Elastic (ElasticSearch), now working at Rivian (EV cars need good maps!)
+
 # Financial Disclosure
 
 - From the time of inception, MapLibre has always been my volunteer project, without any financial benefits
