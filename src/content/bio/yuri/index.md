@@ -17,17 +17,20 @@ handle: yuri
 As a passionate advocate for open-source mapping software, I'm committed to driving MapLibre's mission forward.
 
 # Past achievements
-* After the license change, I proposed community to get together under `MapLibre` name, co-founded our organization, set up OpenCollective and its finances, did the initial re-branding and CI automation of the code
+
+- After the license change, I proposed community to get together under `MapLibre` name, co-founded our organization, set up OpenCollective and its finances, did the initial re-branding and CI automation of the code
 
 # This year's achievements
-* Promote MapLibre at 5+ conferences, conducting workshops and lectures
-* Grew MapLibre's Martin project to become the fastest tile server in the world, and gathering over 9 **new** contributors in the last release cycle alone.
-* Continue to lead the new tile format efforts (MLT)
-* Built Rust integration for MapLibre native
-* Numerous engagements with the community at conferences
-* Attend almost all zoom calls to keep up to date on all MapLibre developments and help coordinate all new developments
+
+- Promote MapLibre at 5+ conferences, conducting workshops and lectures
+- Grew MapLibre's Martin project to become the fastest tile server in the world, and gathering over 9 **new** contributors in the last release cycle alone.
+- Continue to lead the new tile format efforts (MLT)
+- Built Rust integration for MapLibre native
+- Numerous engagements with the community at conferences
+- Attend almost all zoom calls to keep up to date on all MapLibre developments and help coordinate all new developments
 
 # Financial Disclosure
-* From the time of inception, MapLibre has always been my volunteer project, without any financial benefits
-* I do not accept any financial compensation from MapLibre apart from the conference travel reimbursements
-* I successfully advocated for MapLibre adaption at Rivian Automotive, my current employer
+
+- From the time of inception, MapLibre has always been my volunteer project, without any financial benefits
+- I do not accept any financial compensation from MapLibre apart from the conference travel reimbursements
+- I successfully advocated for MapLibre adaption at Rivian Automotive, my current employer
