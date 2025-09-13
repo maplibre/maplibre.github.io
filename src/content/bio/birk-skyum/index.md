@@ -1,6 +1,7 @@
 ---
 title: Birk Skyum
 handle: birk-skyum
+github: birkskyum
 ---
 
 <div class="text-center mb-5">

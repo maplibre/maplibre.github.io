@@ -1,6 +1,7 @@
 ---
 title: Harel Mazor
 handle: harel-mazor
+github: HarelM
 ---
 
 <div class="text-center mb-5">

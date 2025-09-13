@@ -1,6 +1,7 @@
 ---
 title: Bart Louwers
 handle: bart-louwers
+github: louwers
 ---
 
 <div class="text-center mb-5">
