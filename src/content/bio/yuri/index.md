@@ -29,6 +29,18 @@ As a passionate advocate for open-source mapping software, I'm committed to driv
 - Numerous engagements with the community at conferences
 - Attend almost all zoom calls to keep up to date on all MapLibre developments and help coordinate all new developments
 
+### My Mission Statement
+
+I believe MapLibre should offer a complete mapping software stack -- "from bits to pixels": given data, the stack should offer a clear path to convert it into tiles, serve tiles to the world, visualize them with MapLibre web / native / rs, and offer extra functionality with plugins (like navigation), as well as style editing and other tooling. The list goes on.
+
+Yes, but what about next year? I believe MapLibre must have three fundamental goals:
+
+- Grow developer community
+- Maintain and improve existing code
+- Research next-generation stack with latest technology (WebGPU, faster tiles, multi-platform, ...)
+
+All three goals are important - without the community we won't be able to maintain a vast codebase. Without investment into the next generation technology, we will quickly become irrelevant.
+
 # A little more about me
 
 - Volunteer Wikipedia core developer since 2005, implemented API and bot frameworks. Later worked for the foundation building Maps and data viz.
