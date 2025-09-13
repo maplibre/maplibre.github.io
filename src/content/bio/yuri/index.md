@@ -47,9 +47,3 @@ All three goals are important - without the community we won't be able to mainta
 - Built Sophox OSM Sparql index and other OSM tools and libraries
 - Contribute heavily to the Rust ecosystem, including the compiler/libraries
 - Former principal engineer at Elastic (ElasticSearch), now working at Rivian (EV cars need good maps!)
-
-# Financial Disclosure
-
-- From the time of inception, MapLibre has always been my volunteer project, without any financial benefits
-- I do not accept any financial compensation from MapLibre apart from the conference travel reimbursements
-- I successfully advocated for MapLibre adaption at Rivian Automotive, my current employer
