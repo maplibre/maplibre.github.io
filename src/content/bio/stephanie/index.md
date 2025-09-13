@@ -20,7 +20,7 @@ My involvement with Maplibre, for instance in my previous role as Director of Ge
 
 I understand how to scale and build, scale and manage map tile and render asset pipelines alongside front end SDKs, APIs, mobile and web apps many times over. I have also given a tremendous amount of thought to maps as HCI (human computer interaction) and GIS as information systems design, and am currently seeking a PhD program where I can study these aspects more formally, with the goal of breaking free of some of the less imaginative tropes that have limited applications and utility in mapping spaces these past 30 years.
 
-My vision for the Maplibre community is to above all support the maintainers, developers and sustaining funders who have made this impossible dream a reality 👏😸. If elected, I will listen and ask a lot of questions, as this has been a passion project for so many, but it's also easy for projects like this to become unwieldy.
+My vision for the Maplibre community is to above all support the maintainers, developers and sustaining funders who have made this impossible dream a reality 👏😸. On the governing board, I will listen and ask a lot of questions, as this has been a passion project for so many, but it's also easy for projects like this to become unwieldy.
 
 A couple of things I would advocate for:
 

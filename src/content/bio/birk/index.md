@@ -14,7 +14,7 @@ handle: birk
     <p><a href="https://www.linkedin.com/in/birkskyum/">LinkedIn</a> · <a href="https://github.com/birkskyum">GitHub</a> · <a href="https://osmus.slack.com/team/U02GUMY099R">Slack</a>
 </div>
 
-My name is Birk Skyum, and I'm a co-founder of MapLibre. It's a privilege to work with so many passionate and talented contributors, and I'm grateful for the progress we've made together as a community. I’d be truly honored to serve another term and help keep our open stack, and our shared vision, moving forward.
+My name is Birk Skyum, and I'm a co-founder of MapLibre. It's a privilege to work with so many passionate and talented contributors, and I'm grateful for the progress we've made together as a community. I'm truly honored to serve yet another term on the governing board and help keep our open stack, and our shared vision, moving forward.
 
 My approach is simple: focus on what brings the most long-term strategic value to MapLibre and its users. Here’s a snapshot of some things I’ve worked on this past year.
 
