@@ -14,8 +14,6 @@ export async function getStaticPaths() {
   }));
 }
 
-
-
 type Props = CollectionEntry<"bios">;
 const bio = Astro.props;
 const { Content: AuthorContent } = await render(bio);
@@ -27,9 +25,6 @@ const posts = (
 ).sort((a, b) => {
   return b.data.date.valueOf() - a.data.date.valueOf();
 });
-
-
-
 ---
 
 <style lang="scss">
@@ -55,9 +50,13 @@ const posts = (
       <div class="col-md-10 col-lg-8">
         <AuthorContent />
 
-        
         {
-          posts.length > 0 ? <hr style="margin: 60px 0px;" /><h2>Articles</h2> : null
+          posts.length > 0 ? (
+            <>
+              <hr style="margin: 60px 0px;" />
+              <h2>Articles</h2>
+            </>
+          ) : null
         }
 
         {
@@ -87,4 +86,3 @@ const posts = (
     </div>
   </div>
 </Layout>
-
