@@ -1,0 +1,543 @@
+---
+import { Image } from "astro:assets";
+import androidPhone from "../../../public/img/maplibre-native-android.png";
+import iosPhone from "../../../public/img/maplibre-native-ios.png";
+import metal from "../../assets/maplibre-native/metal.png";
+import opengl from "../../assets/maplibre-native/opengl.png";
+import vulkan from "../../assets/maplibre-native/vulkan.png";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<style lang="css">
+  .section-odd {
+    background: #111725;
+  }
+
+  .benefit-badge {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .stat-card {
+    background: #285daa;
+  }
+
+  .ecosystem-border {
+    border-left: 3px solid #285daa;
+  }
+
+  .phone-img {
+    height: 30rem;
+    width: auto;
+  }
+
+  .graphics-img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+  }
+</style>
+
+<Layout title="MapLibre Native">
+  <section class="py-5 px-4 text-center text-white section-odd">
+    <div class="container">
+      <h1 class="display-4 mb-3">MapLibre Native</h1>
+      <p class="lead mb-4 opacity-75">
+        The fully open-source, high-fidelity mapping engine that delivers
+        exceptional performance across all platforms
+      </p>
+
+      <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
+        <div class="benefit-badge rounded px-3 py-2 fs-6">
+          🚀 High Performance
+        </div>
+        <div class="benefit-badge rounded px-3 py-2 fs-6">
+          🛡️ Proven Reliability
+        </div>
+        <div class="benefit-badge rounded px-3 py-2 fs-6">
+          🌍 Cross Platform
+        </div>
+        <div class="benefit-badge rounded px-3 py-2 fs-6">
+          ⚡ Modern Graphics
+        </div>
+        <div class="benefit-badge rounded px-3 py-2 fs-6">
+          🤝 Community Driven
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-center bg-light text-dark">
+    <div class="container">
+      <h2 class="h1 mb-3">Cross-Platform Excellence</h2>
+      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
+        One codebase, everywhere your users are. MapLibre Native runs seamlessly
+        across iOS, Android, macOS, Linux, and Windows under x86 or ARM.
+      </p>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <h3 class="card-title h5 text-primary">iOS</h3>
+              <p class="card-text text-dark small">Swift & Objective-C</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <h3 class="card-title h5 text-primary">Android</h3>
+              <p class="card-text text-dark small">Kotlin & Java</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <h3 class="card-title h5 text-primary">Windows</h3>
+              <p class="card-text text-dark small">Desktop apps</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <h3 class="card-title h5 text-primary">Linux</h3>
+              <p class="card-text text-dark small">Desktop apps</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <h3 class="card-title h5 text-primary">macOS</h3>
+              <p class="card-text text-dark small">Desktop apps</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-center text-white section-odd">
+    <div class="container">
+      <h2 class="h1 mb-3">Mobile-First Design</h2>
+      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
+        We optimize for mobile performance with smooth animations, efficient
+        memory usage, and responsive touch interactions.
+      </p>
+
+      <div
+        class="row g-4 justify-content-center"
+        style="max-width: 500px; margin: 0 auto;"
+      >
+        <div class="col-md-6 col-12">
+          <div class="d-flex flex-column align-items-center">
+            <Image
+              src={androidPhone}
+              alt="Android app showcase"
+              class="phone-img mb-3"
+            />
+            <h3 class="text-white mb-3">Android</h3>
+
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+              <span class="badge bg-primary">
+                <a
+                  href="https://maplibre.org/maplibre-native/android/api/"
+                  class="text-decoration-none text-white"
+                >
+                  Docs
+                </a>
+              </span>
+              <span class="badge bg-primary">
+                <a
+                  href="https://maplibre.org/maplibre-native/android/examples/"
+                  class="text-decoration-none text-white"
+                >
+                  Examples
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="d-flex flex-column align-items-center">
+            <Image
+              src={iosPhone}
+              alt="iOS app showcase"
+              class="phone-img mb-3"
+            />
+            <h3 class="text-white mb-3">iOS</h3>
+
+            <span class="badge bg-primary">
+              <a
+                href="https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre"
+                class="text-decoration-none text-white"
+              >
+                Docs
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-center bg-light text-dark">
+    <div class="container">
+      <h2 class="h1 mb-3">Modern Graphics Backends</h2>
+      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
+        Support for the latest graphics APIs ensures optimal performance and
+        visual quality on every device.
+      </p>
+
+      <div
+        class="row g-4 justify-content-center"
+        style="max-width: 600px; margin: 0 auto;"
+      >
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card h-100 shadow-sm">
+            <div
+              class="card-body d-flex flex-column align-items-center text-center"
+            >
+              <Image src={vulkan} alt="Vulkan API" class="graphics-img mb-3" />
+              <h3 class="card-title h5 text-primary">Vulkan</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card h-100 shadow-sm">
+            <div
+              class="card-body d-flex flex-column align-items-center text-center"
+            >
+              <Image src={metal} alt="Metal API" class="graphics-img mb-3" />
+              <h3 class="card-title h5 text-primary">Metal</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <div class="card h-100 shadow-sm">
+            <div
+              class="card-body d-flex flex-column align-items-center text-center"
+            >
+              <Image src={opengl} alt="OpenGL API" class="graphics-img mb-3" />
+              <h3 class="card-title h5 text-primary">OpenGL</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-center text-white section-odd">
+    <div class="container">
+      <h2 class="h1 mb-3">Supported by Leading Companies</h2>
+      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
+        Major companies rely on MapLibre Native for their mapping needs,
+        contributing time and money to its development and ensuring
+        enterprise-grade quality.
+      </p>
+
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="https://madewithmaplibre.com/" class="btn btn-primary btn-lg">
+          Who is using us
+        </a>
+        <a href="/sponsors" class="btn btn-primary btn-lg"> Our sponsors </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-center bg-light text-dark">
+    <div class="container">
+      <h2 class="h1 mb-3">Vibrant Open Source Community</h2>
+      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
+        Join thousands of developers contributing to the future of open mapping
+        technology.
+      </p>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div
+            class="stat-card rounded p-4 text-white text-center h-100 d-flex flex-column justify-content-center"
+          >
+            <div class="display-4 fw-bold mb-2">1.5K+</div>
+            <div class="fs-5 opacity-75">GitHub Stars</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div
+            class="stat-card rounded p-4 text-white text-center h-100 d-flex flex-column justify-content-center"
+          >
+            <div class="display-4 fw-bold mb-2">300+</div>
+            <div class="fs-5 opacity-75">Contributors</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div
+            class="stat-card rounded p-4 text-white text-center h-100 d-flex flex-column justify-content-center"
+          >
+            <div class="display-4 fw-bold mb-2">1.000+</div>
+            <div class="fs-5 opacity-75">Community Members</div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div
+            class="stat-card rounded p-4 text-white text-center h-100 d-flex flex-column justify-content-center"
+          >
+            <div class="display-4 fw-bold mb-2">100%</div>
+            <div class="fs-5 opacity-75">Open Source</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-center text-white section-odd">
+    <div class="container">
+      <h2 class="h1 mb-3">Rich Ecosystem Integrations</h2>
+      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
+        MapLibre Native integrates seamlessly with several community
+        integrations for popular frameworks and tools, making it easy to add
+        mapping to any application.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-lg-6 col-md-6 col-12">
+          <a
+            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+            href="https://madewithmaplibre.com/sdks"
+          >
+            <div class="card-body text-start">
+              <h4 class="card-title h6 text-primary mb-2">React Native</h4>
+              <p class="card-text text-dark small mb-0">
+                Mobile app development with JavaScript
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+          <a
+            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+            href="https://madewithmaplibre.com/sdks"
+          >
+            <div class="card-body text-start">
+              <h4 class="card-title h6 text-primary mb-2">Flutter</h4>
+              <p class="card-text text-dark small mb-0">
+                Cross-platform mobile development
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+          <a
+            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+            href="https://madewithmaplibre.com/sdks"
+          >
+            <div class="card-body text-start">
+              <h4 class="card-title h6 text-primary mb-2">Jetpack Compose</h4>
+              <p class="card-text text-dark small mb-0">
+                Modern Android UI toolkit
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+          <a
+            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+            href="https://madewithmaplibre.com/sdks"
+          >
+            <div class="card-body text-start">
+              <h4 class="card-title h6 text-primary mb-2">
+                Compose Multiplatform
+              </h4>
+              <p class="card-text text-dark small mb-0">
+                Cross-platform declarative UI
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+          <a
+            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+            href="https://madewithmaplibre.com/sdks"
+          >
+            <div class="card-body text-start">
+              <h4 class="card-title h6 text-primary mb-2">Rust</h4>
+              <p class="card-text text-dark small mb-0">
+                Safe systems programming
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+          <a
+            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+            href="https://madewithmaplibre.com/sdks"
+          >
+            <div class="card-body text-start">
+              <h4 class="card-title h6 text-primary mb-2">Node.js</h4>
+              <p class="card-text text-dark small mb-0">
+                Server-side rendering
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+          <a
+            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+            href="https://madewithmaplibre.com/sdks"
+          >
+            <div class="card-body text-start">
+              <h4 class="card-title h6 text-primary mb-2">Qt</h4>
+              <p class="card-text text-dark small mb-0">Desktop applications</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+          <a
+            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+            href="https://madewithmaplibre.com/sdks"
+          >
+            <div class="card-body text-start">
+              <h4 class="card-title h6 text-primary mb-2">Python</h4>
+              <p class="card-text text-dark small mb-0">
+                Data science workflows
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+          <a
+            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+            href="https://madewithmaplibre.com/sdks"
+          >
+            <div class="card-body text-start">
+              <h4 class="card-title h6 text-primary mb-2">Java / Kotlin</h4>
+              <p class="card-text text-dark small mb-0">
+                Android app development
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+          <a
+            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+            href="https://madewithmaplibre.com/sdks"
+          >
+            <div class="card-body text-start">
+              <h4 class="card-title h6 text-primary mb-2">
+                Objective-C / SwiftUI
+              </h4>
+              <p class="card-text text-dark small mb-0">
+                iOS / MacOS app development
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-center bg-light text-dark">
+    <div class="container">
+      <h2 class="h1 mb-3">Learn More</h2>
+      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
+        Explore documentation, examples, and resources to get started with
+        MapLibre Native across all supported platforms and integrations.
+      </p>
+
+      <div class="d-flex flex-wrap justify-content-center gap-2">
+        <span class="badge bg-primary fs-6 p-2">
+          <a
+            href="https://github.com/maplibre/maplibre-native"
+            class="text-decoration-none text-white"
+          >
+            <svg
+              role="img"
+              class="me-1"
+              style="width: 16px; height: 16px; fill: currentColor;"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>GitHub</title>
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+              ></path>
+            </svg>
+            GitHub
+          </a>
+        </span>
+
+        <span class="badge bg-primary fs-6 p-2">
+          <a
+            href="https://maplibre.org/maplibre-native/android/api/"
+            class="text-decoration-none text-white"
+          >
+            Android API
+          </a>
+        </span>
+
+        <span class="badge bg-primary fs-6 p-2">
+          <a
+            href="https://maplibre.org/maplibre-native/android/examples/"
+            class="text-decoration-none text-white"
+          >
+            Android Examples
+          </a>
+        </span>
+
+        <span class="badge bg-primary fs-6 p-2">
+          <a
+            href="https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre"
+            class="text-decoration-none text-white"
+          >
+            iOS Documentation
+          </a>
+        </span>
+
+        <span class="badge bg-primary fs-6 p-2">
+          <a
+            href="https://maplibre.org/maplibre-native/cpp/api/"
+            class="text-decoration-none text-white"
+          >
+            Core C++ API
+          </a>
+        </span>
+
+        <span class="badge bg-primary fs-6 p-2">
+          <a
+            href="https://maplibre.org/maplibre-native/docs/book/"
+            class="text-decoration-none text-white"
+          >
+            Developer Docs
+          </a>
+        </span>
+
+        <span class="badge bg-primary fs-6 p-2">
+          <a
+            href="https://maplibre.org/maplibre-style-spec"
+            class="text-decoration-none text-white">Style Spec</a
+          >
+        </span>
+
+        <span class="badge bg-primary fs-6 p-2">
+          <a
+            href="https://maplibre.org/maplibre-native/node/api/"
+            class="text-decoration-none text-white"
+          >
+            Node.js API
+          </a>
+        </span>
+
+        <span class="badge bg-primary fs-6 p-2">
+          <a
+            href="https://github.com/maplibre/maplibre-native/releases"
+            class="text-decoration-none text-white"
+          >
+            Releases
+          </a>
+        </span>
+      </div>
+    </div>
+  </section>
+</Layout>

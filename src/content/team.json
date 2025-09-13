@@ -1,25 +1,25 @@
 [
   {
     "name": "Bart Louwers",
-    "link": "bart",
+    "link": "bart-louwers",
     "avatar": "https://avatars.githubusercontent.com/u/649392?v=4",
     "position": "MapLibre Native Maintainer"
   },
   {
     "name": "Harel Mazor",
-    "link": "harel",
+    "link": "harel-mazor",
     "avatar": "https://avatars.githubusercontent.com/u/3269297?v=4",
     "position": "MapLibre GL JS Maintainer"
   },
   {
     "name": "Marc Wilson",
-    "link": "marc",
+    "link": "marc-wilson",
     "avatar": "https://avatars.githubusercontent.com/u/53413200?v=4",
     "position": "Graphics Engineer"
   },
   {
     "name": "Ramya Ragupathy",
-    "link": "ramya",
+    "link": "ramya-ragupathy",
     "avatar": "https://avatars.githubusercontent.com/u/12103383?v=4",
     "position": "Head of Product & Operations"
   }
