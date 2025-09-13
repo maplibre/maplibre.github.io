@@ -92,4 +92,3 @@ Originally, we migrated to `tileserver-gl-js` and then used `martin` after contr
 
 Work wise, I am employed by the TU Munich as a student assistant to work on our Roomfinder.
 We use `maplibre-gl-js` and `martin`.
-Given that the university has over 10k employees, I was unable to gain organizational sponsorship of Maplibre from the university.
