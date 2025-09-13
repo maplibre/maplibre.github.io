@@ -43,7 +43,7 @@ Community engagement:
 - I attended the following conferences this year so far:
   - FOSDEM to become a better OSS maintainer
   - FOSSGIS to get a feel for the geo community
-  - Foss4G Europe to advertise Martin and talk to other developers
+  - FOSS4G Europe to advertise Martin and talk to other developers
 
 ## My goals as a board member
 
