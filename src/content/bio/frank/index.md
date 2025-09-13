@@ -80,7 +80,7 @@ Community engagement:
 - Make `maplibre-native-rs` production-ready and usable in more than just Martin's context
 - Experiment with bringing cheaper MLT conversion into Martin
 - Help in the MLT pushdown/onboarding effort in the tooling we rely on
-- Help to present Maplibre at FossDEM, FossGIS, IAA and other more local conferences not already covered by @nyurik to gain/keep mind share
+- Help to present Maplibre at FOSDEM, FOSSGIS, IAA and other more local conferences not already covered by @nyurik to gain/keep mind share
 
 ### A little more about me
 
