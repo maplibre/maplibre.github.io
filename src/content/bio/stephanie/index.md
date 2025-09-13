@@ -11,7 +11,7 @@ handle: stephanie
     />
     <h3 class="m-3">Stephanie May</h3>
     <p>Member of the Governing Board</p>
-    <p><a href="https://www.linkedin.com/in/mizmay/">LinkedIn</a> · <a href="https://github.com/mizmay">GitHub</a> · <a href="https://osmus.slack.com/team/U501RP747">Slack</a>
+    <p><a href="https://mizmay.com/">Website</a> · <a href="https://www.linkedin.com/in/mizmay/">LinkedIn</a> · <a href="https://github.com/mizmay">GitHub</a> · <a href="https://osmus.slack.com/team/U501RP747">Slack</a>
 </div>
 
 My name is Stephanie May 👋. I'm a cartographer with a background building vector tile maps for tech companies. I'd be delighted to serve on the MapLibre board.
