@@ -31,7 +31,7 @@ export const BoardAndTeam = (props: { board: any[]; team: any[] }) => {
           </div>
         </div>
         <p class="text-center">
-          In charge to steering the Organization is the
+          In charge to steering the Organization is the&nbsp;
           <a href="https://maplibre.org/about/">
             MapLibre Governing Board
           </a>. <br />
