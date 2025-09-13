@@ -33,7 +33,7 @@ Implemented Features
 Maintenance
 
 - Reworked Martin's CI, saving 30% of runtime and sped up contributor feedback cycles
-- Reworked martins' documentation to make us more approachable for new contributors/users
+- Reworked Martin's documentation to make us more approachable for new contributors/users
 - Answered/reviewed issues, discussions, PRs, … ⇒ regular maintainer things
 - Reworked smaller parts of maplibre.org like news or about us to be better fitting
 
