@@ -42,7 +42,7 @@ Community engagement:
 - Regularly attend TSC meetings to stay aligned with project direction
 - I attended the following conferences this year so far:
   - FossDem to become a better OSS maintainer
-  - FossGIS to get a feel for the geo community
+  - FOSSGIS to get a feel for the geo community
   - Foss4G Europe to advertise Martin and talk to other developers
 
 ## My goals as a board member
