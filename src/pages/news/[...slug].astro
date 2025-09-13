@@ -22,7 +22,7 @@ function capitalizeFirstLetter(val: string) {
   return String(val).charAt(0).toUpperCase() + String(val).slice(1);
 }
 
-const authors = await getCollection("authors", (author) => {
+const authors = await getCollection("bios", (author) => {
   return post.data.authors.includes(author.data.handle);
 });
 ---
@@ -53,7 +53,7 @@ const authors = await getCollection("authors", (author) => {
         <div style="margin-bottom: 20px;">
           Authors: {
             authors.map((author) => (
-              <a href={`authors/${author.id}`}>
+              <a href={`about/${author.id}`}>
                 <Badge>{author.data.title}</Badge>
               </a>
             ))
