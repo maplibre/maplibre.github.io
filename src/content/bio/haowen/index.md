@@ -22,4 +22,4 @@ These achievements are not possible without some key individuals' hard work. At 
 
 On the on the governing board, I will continue my role as a bridge between MapLibre and major corporate adopters and sponsors. I will continue my commitment to connecting common interests, facilitating the exchange of ideas, and helping navigate diverging interests when they arise. I will drive for further growth in adoptions, contributions, and sponsorships to ensure MapLibre's long-term sustainability and success.
 
-I would be honored to continue serving our community for another term. I believe together, we will build on our momentum and achieve even more in the coming year.
+I'm honored to continue serving our community for another term. I believe together, we will build on our momentum and achieve even more in the coming year.
