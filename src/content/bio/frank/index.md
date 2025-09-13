@@ -92,4 +92,4 @@ Initially built on Mapbox, this choice quickly outgrew our budget, leading to a 
 Originally, we migrated to `tileserver-gl-js` and then used `martin` after contributing SDF sprites support.
 
 Work wise, I am employed by the TU Munich as a student assistant to work on our Roomfinder.
-We use `maplibre-gl-js` and `martin`.
+We use MapLibre GL JS and Martin.
