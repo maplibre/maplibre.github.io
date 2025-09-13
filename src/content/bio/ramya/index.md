@@ -1,6 +1,6 @@
 ---
 title: Ramya Ragupathy
-handle: ramya
+handle: ramya-ragupathy
 ---
 
 <div class="text-center mb-5">
