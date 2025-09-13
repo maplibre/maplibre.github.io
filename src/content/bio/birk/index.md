@@ -10,44 +10,56 @@ handle: birk
         class="rounded-circle mt-3"
     />
     <h3 class="m-3">Birk Skyum</h3>
-    <p>Member of the Governing Board</p>
+    <p>Co-founder of MapLibre and Member of the Governing Board</p>
     <p><a href="https://www.linkedin.com/in/birkskyum/">LinkedIn</a> · <a href="https://github.com/birkskyum">GitHub</a> · <a href="https://osmus.slack.com/team/U02GUMY099R">Slack</a>
 </div>
 
-Hi, I'm Birk. I've been contributing since the early days of MapLibre, and I've been on the board since the first election cycle two years ago, and it's been some constructive years. I've been honored to represent the community for this long, and I'd love to continue my work for another term.
+My name is Birk Skyum, and I'm a co-founder of MapLibre. It's a privilege to work with so many passionate and talented contributors, and I'm grateful for the progress we've made together as a community. I'm truly honored to serve yet another term on the governing board and help keep our open stack, and our shared vision, moving forward.
 
-There is a lot going on right now on all fronts, which is awesome. To give an idea about some of the concrete work I've been leading in the past year, here's a review.
+My approach is simple: focus on what brings the most long-term strategic value to MapLibre and its users. Here’s a snapshot of some things I’ve worked on this past year.
 
-# Efforts in the Past year
+### My Contributions This Year
 
-From 2021-2023 I spent the majority of my time working on tooling, general maintenance, testing, modern node compat, CI for native and gl js, typescript, splitting out style spec, docs etc., but that all runs well now, and we even have excellent maintainers that keeps improving on it.
+_Feature development:_
 
-This past year I directed my attention more towards community and R&D:
+- **Globe support** – Added projection expression syntax to the style spec for adaptive projection transitions ([PR](https://github.com/maplibre/maplibre-style-spec/pull/888))
+- **Globe support** – Enabled terrain features for globe mode in MapLibre GL JS ([PR](https://github.com/maplibre/maplibre-gl-js/pull/4977))
 
-### DevRel - Community and ecosystem
+_Maintenance tasks:_
 
-I've been focusing on helping onboard projects that can benefit from MapLibre to our community, and make sure our compatibility in the ecosystem stays high. Notable examples are:
+- **GL JS Testing and Coverage** – Modernized tests by moving from Jest to Vitest ([PR](https://github.com/maplibre/maplibre-gl-js/pull/4728)). This is a stepping stone toward adopting [Rolldown](https://rolldown.rs/), which will make our GL JS toolchain much faster.
+- **WIP – MapLibre Native Qt SDK** – Adding Vulkan, Metal, and OpenGL 3+ support ([PR](https://github.com/maplibre/maplibre-native-qt/pull/216)). This upgrade is key for expanding our reach among automotive OEMs and Qt developers.
 
-- [Plotly.js](https://github.com/plotly/plotly.js) (MIT-license), an awesome python plotting library, with 4m weekly downloads, that will have support maplibre from the next minor (RC release any day now), and exclusively support maplibre from next major. ( https://github.com/plotly/plotly.js/pull/7015#issuecomment-2275965617 )
+_Community contributions:_
 
-- [Kepler.gl](https://kepler.gl/) (MIT-license), a great tool for data visualization, which now runs on maplibre instead of mapbox, so the entire stack is foss again. ( https://github.com/keplergl/kepler.gl/pull/2461 )
+- [**Made with MapLibre**](https://madewithmaplibre.com/) – I started this showcase to highlight great projects and help boost MapLibre adoption.
+- **Growing MapLibre in Python** – I led the migration to MapLibre GL JS as the default for plotly.js v3 ([writeup](https://plotly.com/blog/plotly-is-switching-to-maplibre/)). With plotly.py v6 ([released Jan 28](https://github.com/plotly/plotly.py/releases/tag/v6.0.0)), MapLibre is now poised to become a go-to for Python mapping (plotly.py has [500k-1m daily downloads](https://pypistats.org/packages/plotly)), which is bringing new people into our community.
+- **Cross-Platform SDKs** – Cross-platform SDKs continue to be a popular choice among mobile developers [trends](https://makeitnew.io/cross-platform-mobile-development-trends-you-need-to-know-in-2025-a00ff6cc34f3). This year, I’ve worked to support onboarding and facilitate maintenance for all four of our MapLibre Native cross-platform SDKs—React Native, Compose, Flutter, and Qt, so we can offer users a strong and unified experience.
+- **TSC Meetings** – I regularly attend our Native and GL JS meetings to stay in sync and always be available for feedback or support.
 
-- [Deck.gl](https://deck.gl/) (MIT-license), I've been trying to facilitate better sync with deck.gl - it was requested maplibre exposed more camera internals, which is in place as part of MapLibre GL JS 4.5.2. ( https://github.com/maplibre/maplibre-gl-js/pull/3136 )
+---
 
-- [OpenPilot](https://github.com/commaai/openpilot) (MIT-license) - Took contact to the team. It's running MapLibre Native now https://github.com/commaai/openpilot/issues/26739
+### My Vision and Priorities for the Board
 
-I expect to start collaborating with this team soon - there's a vote on this change in progress.
+My goal is simple: make MapLibre the highest-quality, most widely adopted map rendering stack in the world. I’m excited about what’s ahead and want to help keep our momentum going:
 
-- [Apache Superset](https://github.com/apache/superset) (ofc. Apache license - 61k GitHub stars) - https://github.com/apache/superset/issues/28356
+- Push GL JS forward with [Luma.gl](https://luma.gl/) for WebGL2 and WebGPU support
+- Help Native strengthen Vulkan/Metal support and remove blockers for broader industry adoption
+- Move forward an additional WebGPU backed on Native, aimed at the web target, for long-term strategic reasons.
 
-### Breaking new ground - Healthy competition amongst our renderers
+- Explore new Native features (like Globe or Terrain) to close the gap with GL JS
 
-In the past year I've been thinking a lot about our long-term strategy, around if we can unify maplibre to a single renderer. In that case we have to figure if it's possible to make MapLibre Native run on the web, and if MapLibre GL JS can be fast enough for mobile use, or if it's better to introduce a third renderer that's a bit of both. I don't know the answer here, but I know that we can pursue each to learn more, and then reassess at a later point. My work in this regard is:
+- Improve support for AR/VR and 3D engines
 
-_**Can we make Native portable?**_
+- Improve support for in-car navigation (e.g. upgrade Qt SDK, C FFI)
+- See the MapLibre Tile format adopted in real-world cases
+- Support Martin in delivering server-rendering with MapLibre Native
+- Experiment with AI tools for repetitive or time-consuming tasks to boost productivity
 
-I've been doing some pioneering work regarding exploring our options for [MapLibre Native Wasm](https://birkskyum.github.io/maplibre-native-wasm/) compilation to run in the browser, which I demonstrated with our first Wasm demo [here](https://birkskyum-maplibre-native-wasm.pages.dev/qt-for-webassembly/webgl1-from-opengl2-legacy-renderer/). This could be the first baby step towards increasing the portability of Native to web, thus making it truly cross-platform.
+### Making MapLibre Portable: Cross-Platform Ambitions
 
-_**Can we make GL JS fast?**_
+To help us stay ahead of the curve, I plan to keep experimenting with emerging tech and share what I learn with the board:
 
-I push for our MapLibre GL JS to move forward towards a [modular graphics backend](https://github.com/maplibre/maplibre-gl-js/issues/4511), so that we can begin refactor to adopt faster WebGL2 and WebGPU functionality. I started [migrating to webgl2](https://github.com/maplibre/maplibre-gl-js/pull/2599) a year ago, but due to a lack of this refactor we had to put this work on hold, and even down-compile to webgl1. If we can make GL JS run superfast, and it already has super high portability, and a much simpler codebase, then I believe it can stand the pressure of the Native renderers.
+**MapLibre Native in the Browser** – Last year, we got Native running in the browser with WebAssembly ([demo](https://birkskyum.github.io/maplibre-native-wasm/)). There’s lots of room to improve performance and build paths, so my next focus is a WebGL2 build for the drawables renderer, right after the [Qt SDK refactor](https://github.com/maplibre/maplibre-native-qt/pull/216) lands. I think we can have WebGL2 ready before year’s end, and then WebGPU is up next.
+
+**MapLibre GL JS Beyond the Browser** – Once GL JS is fully migrated to luma.gl, I’d like to explore its potential outside the browser, such as for server rendering or desktop/mobile apps.
