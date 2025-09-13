@@ -89,7 +89,7 @@ My journey in the community started with a local student club, [`Open Source @ T
 
 As part of this club, I started a [Roomfinder](https://nav.tum.de/navigate?coming_from=5510.02.001&q_from=Chemie&from=chemie&q_to=MW+2001+Rudolf-Diesel-H%C3%B6rsaal&to=5510.02.001&mode=pedestrian) which gradually began to replace the three different legacy Roomfinders our university had accrued at this point.
 Initially built on Mapbox, this choice quickly outgrew our budget, leading to a migration to a self-hosted solution.
-Originally, we migrated to `tileserver-gl-js` and then used `martin` after contributing SDF sprites support.
+Originally, we migrated to TileServer GL and then used Martin after contributing SDF sprites support.
 
 Work wise, I am employed by the TU Munich as a student assistant to work on our Roomfinder.
 We use MapLibre GL JS and Martin.
