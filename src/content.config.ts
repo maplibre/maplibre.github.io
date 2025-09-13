@@ -14,20 +14,12 @@ const news = defineCollection({
   }),
 });
 
-const authors = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/authors" }),
-  schema: z.object({
-    title: z.string(),
-    handle: z.string(),
-    github: z.optional(z.string()),
-  }),
-});
-
 const bios = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/bio" }),
   schema: z.object({
     title: z.string(),
     handle: z.string(),
+    github: z.optional(z.string()),
   }),
 });
 
@@ -50,4 +42,4 @@ const roadmapItems = defineCollection({
     }),
 });
 
-export const collections = { news, authors, bios, roadmapItems };
+export const collections = { news, bios, roadmapItems };
