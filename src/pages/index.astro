@@ -4,6 +4,8 @@ import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import { LandingPageMap } from "../components/LandingPageMap";
 import { SITE_DESCRIPTION } from "../constants";
+import androidImage from "../assets/maplibre-native/maplibre-native-android.png";
+import iosImage from "../assets/maplibre-native/maplibre-native-ios.png";
 ---
 
 <Layout>
@@ -177,16 +179,26 @@ import { SITE_DESCRIPTION } from "../constants";
 
             <div
               class="col-md-12 col-lg-6"
-              style="display: flex; justify-content: center; align-items: center;"
+              style="display: flex; justify-content: center; align-items: center; gap: 1rem;"
             >
-              <div
-                style="background-image: url('img/maplibre-native-android.png'); height: 300px; width:100%;max-width: 150px; background-size: contain;background-position: center; background-repeat: no-repeat;"
-              >
-              </div>
-              <div
-                style="background-image: url('img/maplibre-native-ios.png'); height: 300px; width:100%;max-width: 150px; background-size:contain; background-position: center; background-repeat: no-repeat;"
-              >
-              </div>
+              <Image
+                src={androidImage}
+                alt="MapLibre Native Android"
+                width={150}
+                height={300}
+                densities={[1, 1.5, 2]}
+                quality={95}
+                style="object-fit: contain; max-width: 150px;"
+              />
+              <Image
+                src={iosImage}
+                alt="MapLibre Native iOS"
+                width={150}
+                height={300}
+                densities={[1, 1.5, 2]}
+                quality={95}
+                style="object-fit: contain; max-width: 150px;"
+              />
             </div>
           </div>
         </div>
