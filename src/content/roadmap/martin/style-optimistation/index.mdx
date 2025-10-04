@@ -1,0 +1,34 @@
+---
+title: Advanced Style-Data Cooptimization
+heroImage: "./image.png"
+project: martin
+status: in-progress
+---
+
+Together with the [Techical Unversity of Munichs' chair of Big Geospatial Data Management](https://www.bgd.ed.tum.de/), we are currently working on a thesis where the next generation of vector tile performance from tileservers could come from:
+- At the minimum, the outcome of this initiative will be a documentation page detailing which aspects of vector tiles are not improving performance and why.performance
+- At best, the outcome will be a new optimised mode for serving styles and the data in a co-optimzed fassion.
+
+Here are the optimisations that are currently planned for evaluation:
+
+| **optimisation**              | **requirement** | **description (technique)**                                                                                                                                                        |
+| ----------------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| dead source elimination       | -               | remove impossible or hidden data-sources or style-layers (dead code elimination)                                                                                                   |
+| expression order optimisation | sampling        | optimise the order of reorderable-expressions (like `match`) (selectivity analysis)                                                                                                |
+| expression kind optimisation  | -               | rewrite expensive operators with more performant forms (operator selection)                                                                                                        |
+| constant folding              | full scan       | replace constant style expressions or predicates with literal values (constant folding)                                                                                            |
+| filter reordering             | sampling        | optimize style filter order (like `any`, `all`, `match`, `case`) (selectivity analysis)                                                                                            |
+| metadata refinement           | full scan       | more accurate `{min,max}_zoom` metadata based on the data, filters, and impossible styling conditions (think: `opacity=0` after zooming out) (no exact match)                      |
+| tile shaving                  | -               | only encodes the exact data that a style would actually look at (no exact match)                                                                                                   |
+| transparent reencoding        | -               | reencode tiles into a different tile specification on the fly (storage format)                                                                                                     |
+| compression optimisation      | -               | compress tiles more aggressively or with a different compression algorithm (no exact match)                                                                                        |
+| prewarming caches             | -               | make sure that sprites and fonts are in an in-memory cache (prefetching)                                                                                                           |
+| minimum sprite-set mining     | - / full scan   | some styles may permit to statically know which sprites will be used. For others, one might need to do a full table scan to gather this statistic. (no exact match)                |
+| data layout optimisation      | -               | for dynamic databases, reorganise tile data for access pattern (storage layout)                                                                                                    |
+| overlap reduction             | -               | for some layers like roads or pois at the higher zoom levels overlap is common. If one knows the style redundant data can be removed (storage layout)                              |
+| static generation             | static source   | extract semantics and generate a new, optimal [static instruction set for constructing the tile database](https://github.com/onthegomap/planetiler/tree/main/planetiler-custommap) |
+
+List of some possible optimisations. *full scan* means that this optimisation would require executing one operation over the whole table at minimum. *sampling* means that this data can be gathered by sampling approaches, but evaluating if a full scan could add context will have to be looked at. For sampling-based approaches, the resampling frequency for the dynamic sources noted in `\cref{access:dynamic}` needs to be determined via statistical approaches. The cases where no scan is necessary does not mean that it might not still be beneficial, for example for parameter tuning.
+
+
+GitHub Issues: [#1757](https://github.com/maplibre/martin/issues/1757)
