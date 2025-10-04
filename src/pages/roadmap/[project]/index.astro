@@ -96,7 +96,9 @@ function formatDate(dateValue) {
     }
 
     .project-tab:hover,
-    .project-tab:focus-visible {
+    .project-tab:focus-visible,
+    .roadmap-card:hover,
+    .roadmap-card:focus-visible {
       border-color: #4a89ff;
       color: #fff;
       outline: none;
@@ -173,7 +175,10 @@ function formatDate(dateValue) {
                   const slug = item.id.split("/").slice(-1)[0];
 
                   return (
-                    <div class="card">
+                    <a
+                      class="card roadmap-card"
+                      href={`/roadmap/${projectMeta.id}/${slug}`}
+                    >
                       <Image
                         class="card-img-top"
                         src={item.data.heroImage}
@@ -182,19 +187,14 @@ function formatDate(dateValue) {
                       />
                       <div class="card-body">
                         <h5 class="card-title">{item.data.title}</h5>
-                        <a
-                          href={`/roadmap/${projectMeta.id}/${slug}`}
-                          class="btn btn-primary"
-                        >
-                          Read more...
-                        </a>
                         {item.data.released ? (
                           <p class="card-release">
                             Released: {formatDate(item.data.released)}
                           </p>
                         ) : null}
+                        Read more..
                       </div>
-                    </div>
+                    </a>
                   );
                 })}
               </div>
