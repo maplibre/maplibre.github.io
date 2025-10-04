@@ -1,88 +1,141 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { Image } from "astro:assets";
 import TitleHeader from "../../components/TitleHeader.astro";
 import { getCollection } from "astro:content";
 title: "Roadmap";
 
-const roadmapItems = await getCollection("roadmapItems");
-
-const sections = [
-  {
-    status: "in-progress",
-    title: "In Progress",
-  },
-  {
-    status: "under-consideration",
-    title: "Under Consideration",
-  },
-  {
-    status: "released",
-    title: "Released",
-  },
+const projectTabs = [
+  { id: "general", label: "General", description: "Cross-project efforts and organizational initiatives." },
+  { id: "maplibre-native", label: "MapLibre Native", description: "Roadmap for the native SDKs." },
+  { id: "maplibre-gl-js", label: "MapLibre GL JS", description: "Progress and ideas for the web SDK." },
+  { id: "maplibre-tiles", label: "MapLibre Tiles", description: "Evolution of the MapLibre Tiles specification and tooling." },
+  { id: "martin", label: "Martin", description: "Planned work for the Martin tile server." },
 ];
 
-function formatDate(dateString) {
-  const date = new Date(dateString);
-  const options = { year: "numeric", month: "long" };
-  return date.toLocaleDateString("en-US", options);
+const sections = [
+  { status: "in-progress", label: "In Progress" },
+  { status: "under-consideration", label: "Under Consideration" },
+  { status: "released", label: "Released" },
+];
+
+const roadmapItems = await getCollection("roadmapItems");
+
+function buildProjectStats(projectId: string) {
+  const items = roadmapItems.filter(
+    (item) => (item.data.project ?? "general") === projectId,
+  );
+
+  const byStatus = sections.map((section) => ({
+    section,
+    count: items.filter((item) => item.data.status === section.status).length,
+  }));
+
+  return {
+    total: items.length,
+    byStatus,
+  };
 }
+
+const projectStats = Object.fromEntries(
+  projectTabs.map((tab) => [tab.id, buildProjectStats(tab.id)]),
+);
 ---
 
 <Layout title="Roadmap">
   <TitleHeader>Roadmap</TitleHeader>
   <style>
-    .card {
-      background-color: #1e3150;
+    .roadmap-intro {
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
 
-      > img {
-        background-color: white;
-      }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      display: block;
+      background-color: #102036;
+      color: inherit;
+      border-radius: 16px;
+      padding: 1.75rem;
+      text-decoration: none;
+      height: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .project-card:hover,
+    .project-card:focus-visible {
+      transform: translateY(-4px);
+      border-color: #4a89ff;
+      outline: none;
+    }
+
+    .project-card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      margin-bottom: 1rem;
+    }
+
+    .status-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .status-list li {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .empty-tag {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background-color: rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.7);
     }
   </style>
-  <div class="container">
-    {
-      sections.map((section) => (
-        <>
-          <h2>{section.title}</h2>
+  <div class="container roadmap">
+    <p class="roadmap-intro">
+      Pick a project to explore its roadmap. Each page breaks down initiatives by
+      status so you can see what is underway, under consideration, or already
+      released.
+    </p>
 
-          <div
-            style="display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1rem;
-      margin-bottom: 50px;"
-          >
-            {roadmapItems
-              .filter((item) => item.data.status == section.status)
-              .sort((a, b) => b.data.released - a.data.released)
-              .map((item) => {
-                return (
-                  <div class="card">
-                    <Image
-                      class="card-img-top"
-                      src={item.data.heroImage}
-                      alt={item.data.title}
-                      style={`width: 100%; height: 250px; object-fit: ${item.data.heroImageFit || "cover"};`}
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">{item.data.title}</h5>
-                      <a href={`roadmap/${item.id}`} class="btn btn-primary">
-                        Read more...
-                      </a>
-                      {item.data.released ? (
-                        <p style="margin: 10px 0 0 0;">
-                          Released: {formatDate(item.data.released)}
-                        </p>
-                      ) : (
-                        ""
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
-          </div>
-        </>
-      ))
-    }
+    <div class="project-grid">
+      {projectTabs.map((tab) => {
+        const stats = projectStats[tab.id];
+        const hasItems = stats.total > 0;
+
+        return (
+          <a class="project-card" href={`/roadmap/${tab.id}`}>
+            <h2>{tab.label}</h2>
+            <p>{tab.description}</p>
+            {hasItems ? (
+              <ul class="status-list">
+                {stats.byStatus.map(({ section, count }) => (
+                  <li>
+                    <strong>{count}</strong> {section.label}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <span class="empty-tag">No roadmap items yet</span>
+            )}
+          </a>
+        );
+      })}
+    </div>
   </div>
 </Layout>

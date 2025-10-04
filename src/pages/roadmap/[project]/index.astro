@@ -1,0 +1,138 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import TitleHeader from "../../../components/TitleHeader.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+export const PROJECTS = [
+  { id: "general", label: "General", description: "Cross-project efforts and org-wide initiatives." },
+  { id: "maplibre-native", label: "MapLibre Native", description: "Roadmap items for the native SDKs." },
+  { id: "maplibre-gl-js", label: "MapLibre GL JS", description: "Web SDK evolution and related tooling." },
+  { id: "maplibre-tiles", label: "MapLibre Tiles", description: "Work on the MapLibre Tiles specification and tooling." },
+  { id: "martin", label: "Martin", description: "Tile server roadmap items." },
+];
+
+const sections = [
+  { status: "in-progress", title: "In Progress" },
+  { status: "under-consideration", title: "Under Consideration" },
+  { status: "released", title: "Released" },
+];
+
+export async function getStaticPaths() {
+  return PROJECTS.map((project) => ({
+    params: { project: project.id },
+  }));
+}
+
+const projectId = Astro.params.project ?? "general";
+const projectMeta = PROJECTS.find((project) => project.id === projectId) ?? PROJECTS[0];
+
+const roadmapItems = await getCollection("roadmapItems");
+const projectItems = roadmapItems.filter(
+  (item) => (item.data.project ?? "general") === projectMeta.id,
+);
+
+function sortByReleaseDateDesc(items) {
+  return items.slice().sort((a, b) => {
+    const timeA = a.data.released instanceof Date ? a.data.released.getTime() : 0;
+    const timeB = b.data.released instanceof Date ? b.data.released.getTime() : 0;
+    return timeB - timeA;
+  });
+}
+
+function formatDate(dateValue) {
+  if (!(dateValue instanceof Date)) {
+    return "";
+  }
+
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+  }).format(dateValue);
+}
+---
+
+<Layout title={`${projectMeta.label} Roadmap`}>
+  <TitleHeader>{projectMeta.label} Roadmap</TitleHeader>
+  <style>
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .roadmap .card {
+      background-color: #1e3150;
+
+      > img {
+        background-color: white;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card-release {
+      margin: 10px 0 0;
+    }
+
+    .empty-state {
+      margin: 2rem 0;
+      font-style: italic;
+    }
+  </style>
+  <div class="container roadmap">
+    <p>{projectMeta.description}</p>
+
+    {projectItems.length ? (
+      sections.map((section) => {
+        const items = sortByReleaseDateDesc(
+          projectItems.filter((item) => item.data.status === section.status),
+        );
+
+        if (!items.length) {
+          return null;
+        }
+
+        return (
+          <section>
+            <h2>{section.title}</h2>
+            <div class="cards-grid">
+              {items.map((item) => {
+                const slug = item.id.split("/").slice(-1)[0];
+
+                return (
+                  <div class="card">
+                    <Image
+                      class="card-img-top"
+                      src={item.data.heroImage}
+                      alt={item.data.title}
+                      style={`width: 100%; height: 250px; object-fit: ${item.data.heroImageFit || "cover"};`}
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">{item.data.title}</h5>
+                      <a href={`/roadmap/${projectMeta.id}/${slug}`} class="btn btn-primary">
+                        Read more...
+                      </a>
+                      {item.data.released ? (
+                        <p class="card-release">
+                          Released: {formatDate(item.data.released)}
+                        </p>
+                      ) : null}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        );
+      })
+    ) : (
+      <p class="empty-state">No roadmap items yet.</p>
+    )}
+  </div>
+</Layout>

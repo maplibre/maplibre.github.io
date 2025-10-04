@@ -1,0 +1,102 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import TitleHeader from "../../../components/TitleHeader.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import { render } from "astro:content";
+
+export const PROJECTS = [
+  { id: "general", label: "General" },
+  { id: "maplibre-native", label: "MapLibre Native" },
+  { id: "maplibre-gl-js", label: "MapLibre GL JS" },
+  { id: "maplibre-tiles", label: "MapLibre Tiles" },
+  { id: "martin", label: "Martin" },
+];
+
+export async function getStaticPaths() {
+  const roadmapItems = await getCollection("roadmapItems");
+
+  return roadmapItems.map((item) => {
+    const projectId = item.data.project ?? "general";
+    const slug = item.id.split("/").slice(-1)[0];
+
+    return {
+      params: { project: projectId, item: slug },
+      props: { roadmapItemId: item.id },
+    };
+  });
+}
+
+const projectId = Astro.params.project ?? "general";
+const itemSlug = Astro.params.item;
+
+const roadmapItems = await getCollection("roadmapItems");
+const roadmapItem = roadmapItems.find(
+  (item) =>
+    (item.data.project ?? "general") === projectId &&
+    item.id.split("/").slice(-1)[0] === itemSlug,
+);
+
+if (!roadmapItem) {
+  Astro.response.status = 404;
+}
+
+const projectMeta = PROJECTS.find((project) => project.id === projectId) ?? PROJECTS[0];
+const rendered = roadmapItem ? await render(roadmapItem) : undefined;
+const Content = rendered?.Content;
+
+function formatDate(dateValue) {
+  if (!(dateValue instanceof Date)) {
+    return "";
+  }
+
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+  }).format(dateValue);
+}
+---
+
+{roadmapItem && Content ? (
+  <Layout title={roadmapItem.data.title}>
+    <TitleHeader>{roadmapItem.data.title}</TitleHeader>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+          <p>
+            <a href={`/roadmap/${projectId}`} class="btn btn-link" style="padding: 0;">
+              ← Back to {projectMeta.label} roadmap
+            </a>
+          </p>
+          <Image
+            format="png"
+            alt={roadmapItem.data.title}
+            src={roadmapItem.data.heroImage}
+            style="max-height:400px;height:auto;width:auto; max-width: 100%; border-radius: 10px; background-color: white; display: block; margin: 0 auto 20px auto;"
+          />
+
+          <Content />
+
+          {roadmapItem.data.bountyActive ? (
+            <a href={roadmapItem.data.bountyLink} class="btn btn-light">
+              💰 Bounties
+            </a>
+          ) : null}
+
+          {roadmapItem.data.released ? (
+            <p style="font-weight: bold;">
+              Released: {formatDate(roadmapItem.data.released)}
+            </p>
+          ) : null}
+        </div>
+      </div>
+    </div>
+  </Layout>
+) : (
+  <Layout title="Roadmap Item">
+    <TitleHeader>Roadmap Item Not Found</TitleHeader>
+    <div class="container">
+      <p>We could not find the requested roadmap item.</p>
+    </div>
+  </Layout>
+)}

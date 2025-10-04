@@ -1,0 +1,54 @@
+---
+title: Writing Systems
+heroImage: "./image.png"
+project: maplibre-gl-js
+status: under-consideration
+bountyActive: true
+bountyLink: https://github.com/maplibre/maplibre/issues/193
+---
+
+## MapLibre GL JS
+
+import myanmarImg from "./myanmar.png";
+import thaiImg from "./thai.png";
+import { Image } from "astro:assets";
+
+<div
+  style={{
+    display: "flex",
+    gap: "1rem",
+    flexWrap: "wrap",
+    justifyContent: "center",
+  }}
+>
+  <Image
+    src={myanmarImg}
+    alt="Myanmar"
+    style={{
+      maxWidth: "300px",
+      width: "100%",
+      height: "auto",
+      flex: "1 1 300px",
+    }}
+  />
+  <Image
+    src={thaiImg}
+    alt="Thai"
+    style={{
+      maxWidth: "300px",
+      width: "100%",
+      height: "auto",
+      flex: "1 1 300px",
+    }}
+  />
+  <p>
+    Screenshots showing complex map rendering. Style © OpenMapTiles. Map data
+    from OpenStreetMap
+  </p>
+</div>
+
+
+
+See [#4564](https://github.com/maplibre/maplibre-gl-js/pull/4564) which will allow rendering local (web) fonts with TinySDF.
+
+Also see [maplibre-gl-complex-text](https://github.com/wipfli/maplibre-gl-complex-text) for a plugin-based approach for rendering complex texts.
