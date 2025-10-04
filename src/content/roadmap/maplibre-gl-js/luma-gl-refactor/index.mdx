@@ -1,0 +1,22 @@
+---
+title: Refactor Rendering to luma.gl
+heroImage: "./luma.png"
+project: maplibre-gl-js
+status: in-progress
+---
+
+Refactoring MapLibre GL JS to use the modern [luma.gl](https://github.com/visgl/luma.gl) rendering engine instead of maintaining a large custom WebGL layer.
+
+Why consider this change?
+
+- **Maintenance:** luma.gl already provides device/context management, shader module composition, and typed buffer abstractions that we maintain ourselves today.
+- **WebGPU Path:** luma.gl has active WebGL2 + WebGPU support, which could accelerate MapLibre's transition beyond WebGL once browsers graduate WebGPU to stable status.
+- **Ecosystem:** Aligning with luma.gl opens the door to sharing more tooling with the vis.gl ecosystem (deck.gl, loaders.gl, etc.).
+
+Open questions being answered during this discovery phase:
+
+- How much of our custom rendering pipeline (painter, bucket, program management) can be swapped out incrementally?
+- What are the bundle-size and performance trade-offs when depending on luma.gl?
+- How will the change impact downstream consumers that customize shaders or rely on undocumented WebGL hooks?
+
+If you are interested in helping scope or prototype this work, please join the discussion in the `#maplibre-gl-js` Slack channel or open an exploration issue in the MapLibre GL JS repository.
