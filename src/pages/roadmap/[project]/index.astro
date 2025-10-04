@@ -121,7 +121,12 @@ function formatDate(dateValue) {
       background-color: #1e3150;
 
       > img {
-        background-color: white;
+        /*
+        Using a white or pulsating background would be nicer.
+        On current chrome versions, an 1px border appears in the corners of the image.
+        The corner-border looks very ugly
+        */
+        background-color: #1e3150;
       }
     }
 
