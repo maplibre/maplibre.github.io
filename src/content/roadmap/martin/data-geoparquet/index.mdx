@@ -1,0 +1,22 @@
+---
+title: GeoParquet Support
+heroImage: "./image.png"
+project: martin
+status: under-consideration
+---
+
+High-performance vector tile generation from cloud-native GeoParquet datasets.
+
+GeoParquet combines columnar storage efficiency with geospatial capabilities, enabling Martin to serve tiles from massive datasets in modern data lakes.
+Leverages Apache Arrow for zero-copy processing and supports partitioned datasets in cloud storage.
+
+Key features:
+- Direct cloud storage access (S3, GCS, Azure)
+- Columnar data processing with predicate pushdown
+- Memory-efficient streaming for petabyte-scale data
+
+Ideal for Earth observation data, government geodata repositories, and analytics-driven geospatial workflows.
+
+GitHub Issues: [#1693](https://github.com/maplibre/martin/issues/1693)
+
+Specification: [GeoParquet Format](https://geoparquet.org/)
