@@ -5,11 +5,31 @@ import { getCollection } from "astro:content";
 title: "Roadmap";
 
 const projectTabs = [
-  { id: "general", label: "General", description: "Cross-project efforts and organizational initiatives." },
-  { id: "maplibre-native", label: "MapLibre Native", description: "Roadmap for the native SDKs." },
-  { id: "maplibre-gl-js", label: "MapLibre GL JS", description: "Progress and ideas for the web SDK." },
-  { id: "maplibre-tiles", label: "MapLibre Tiles", description: "Evolution of the MapLibre Tiles specification and tooling." },
-  { id: "martin", label: "Martin", description: "Planned work for the Martin tile server." },
+  {
+    id: "general",
+    label: "General",
+    description: "Cross-project efforts and organizational initiatives.",
+  },
+  {
+    id: "maplibre-native",
+    label: "MapLibre Native",
+    description: "Roadmap for the native SDKs.",
+  },
+  {
+    id: "maplibre-gl-js",
+    label: "MapLibre GL JS",
+    description: "Progress and ideas for the web SDK.",
+  },
+  {
+    id: "maplibre-tiles",
+    label: "MapLibre Tiles",
+    description: "Evolution of the MapLibre Tiles specification and tooling.",
+  },
+  {
+    id: "martin",
+    label: "Martin",
+    description: "Planned work for the Martin tile server.",
+  },
 ];
 
 const sections = [
@@ -65,7 +85,9 @@ const projectStats = Object.fromEntries(
       text-decoration: none;
       height: 100%;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .project-card:hover,
@@ -108,34 +130,36 @@ const projectStats = Object.fromEntries(
   </style>
   <div class="container roadmap">
     <p class="roadmap-intro">
-      Pick a project to explore its roadmap. Each page breaks down initiatives by
-      status so you can see what is underway, under consideration, or already
+      Pick a project to explore its roadmap. Each page breaks down initiatives
+      by status so you can see what is underway, under consideration, or already
       released.
     </p>
 
     <div class="project-grid">
-      {projectTabs.map((tab) => {
-        const stats = projectStats[tab.id];
-        const hasItems = stats.total > 0;
+      {
+        projectTabs.map((tab) => {
+          const stats = projectStats[tab.id];
+          const hasItems = stats.total > 0;
 
-        return (
-          <a class="project-card" href={`/roadmap/${tab.id}`}>
-            <h2>{tab.label}</h2>
-            <p>{tab.description}</p>
-            {hasItems ? (
-              <ul class="status-list">
-                {stats.byStatus.map(({ section, count }) => (
-                  <li>
-                    <strong>{count}</strong> {section.label}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <span class="empty-tag">No roadmap items yet</span>
-            )}
-          </a>
-        );
-      })}
+          return (
+            <a class="project-card" href={`/roadmap/${tab.id}`}>
+              <h2>{tab.label}</h2>
+              <p>{tab.description}</p>
+              {hasItems ? (
+                <ul class="status-list">
+                  {stats.byStatus.map(({ section, count }) => (
+                    <li>
+                      <strong>{count}</strong> {section.label}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <span class="empty-tag">No roadmap items yet</span>
+              )}
+            </a>
+          );
+        })
+      }
     </div>
   </div>
 </Layout>

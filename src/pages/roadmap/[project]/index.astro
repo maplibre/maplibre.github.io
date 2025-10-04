@@ -5,10 +5,26 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 export const PROJECTS = [
-  { id: "general", label: "General", description: "Organizational initiatives." },
-  { id: "maplibre-native", label: "MapLibre Native", description: "Roadmap items for the native SDKs." },
-  { id: "maplibre-gl-js", label: "MapLibre GL JS", description: "Roadmap items for the web SDKs." },
-  { id: "maplibre-tiles", label: "MapLibre Tiles", description: "Work on the MapLibre Tiles specification and tooling." },
+  {
+    id: "general",
+    label: "General",
+    description: "Organizational initiatives.",
+  },
+  {
+    id: "maplibre-native",
+    label: "MapLibre Native",
+    description: "Roadmap items for the native SDKs.",
+  },
+  {
+    id: "maplibre-gl-js",
+    label: "MapLibre GL JS",
+    description: "Roadmap items for the web SDKs.",
+  },
+  {
+    id: "maplibre-tiles",
+    label: "MapLibre Tiles",
+    description: "Work on the MapLibre Tiles specification and tooling.",
+  },
   { id: "martin", label: "Martin", description: "Tile server roadmap items." },
 ];
 
@@ -25,7 +41,8 @@ export async function getStaticPaths() {
 }
 
 const projectId = Astro.params.project ?? "general";
-const projectMeta = PROJECTS.find((project) => project.id === projectId) ?? PROJECTS[0];
+const projectMeta =
+  PROJECTS.find((project) => project.id === projectId) ?? PROJECTS[0];
 
 const roadmapItems = await getCollection("roadmapItems");
 const projectItems = roadmapItems.filter(
@@ -34,8 +51,10 @@ const projectItems = roadmapItems.filter(
 
 function sortByReleaseDateDesc(items) {
   return items.slice().sort((a, b) => {
-    const timeA = a.data.released instanceof Date ? a.data.released.getTime() : 0;
-    const timeB = b.data.released instanceof Date ? b.data.released.getTime() : 0;
+    const timeA =
+      a.data.released instanceof Date ? a.data.released.getTime() : 0;
+    const timeB =
+      b.data.released instanceof Date ? b.data.released.getTime() : 0;
     return timeB - timeA;
   });
 }
@@ -52,9 +71,9 @@ function formatDate(dateValue) {
 }
 ---
 
-  <Layout title={`${projectMeta.label} Roadmap`}>
-    <TitleHeader>{projectMeta.label} Roadmap</TitleHeader>
-    <style>
+<Layout title={`${projectMeta.label} Roadmap`}>
+  <TitleHeader>{projectMeta.label} Roadmap</TitleHeader>
+  <style>
     .project-tabs {
       display: flex;
       flex-wrap: wrap;
@@ -70,7 +89,9 @@ function formatDate(dateValue) {
       background-color: #102036;
       color: inherit;
       text-decoration: none;
-      transition: background-color 0.2s ease, border-color 0.2s ease,
+      transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
         color 0.2s ease;
     }
 
@@ -119,63 +140,70 @@ function formatDate(dateValue) {
   </style>
   <div class="container roadmap">
     <nav class="project-tabs" aria-label="Roadmap sections">
-      {PROJECTS.map((tab) => (
-        <a
-          href={`/roadmap/${tab.id}`}
-          class={`project-tab ${tab.id === projectMeta.id ? "active" : ""}`}
-        >
-          {tab.label}
-        </a>
-      ))}
+      {
+        PROJECTS.map((tab) => (
+          <a
+            href={`/roadmap/${tab.id}`}
+            class={`project-tab ${tab.id === projectMeta.id ? "active" : ""}`}
+          >
+            {tab.label}
+          </a>
+        ))
+      }
     </nav>
 
     <p>{projectMeta.description}</p>
 
-    {projectItems.length ? (
-      sections.map((section) => {
-        const items = sortByReleaseDateDesc(
-          projectItems.filter((item) => item.data.status === section.status),
-        );
+    {
+      projectItems.length ? (
+        sections.map((section) => {
+          const items = sortByReleaseDateDesc(
+            projectItems.filter((item) => item.data.status === section.status),
+          );
 
-        if (!items.length) {
-          return null;
-        }
+          if (!items.length) {
+            return null;
+          }
 
-        return (
-          <section>
-            <h2>{section.title}</h2>
-            <div class="cards-grid">
-              {items.map((item) => {
-                const slug = item.id.split("/").slice(-1)[0];
+          return (
+            <section>
+              <h2>{section.title}</h2>
+              <div class="cards-grid">
+                {items.map((item) => {
+                  const slug = item.id.split("/").slice(-1)[0];
 
-                return (
-                  <div class="card">
-                    <Image
-                      class="card-img-top"
-                      src={item.data.heroImage}
-                      alt={item.data.title}
-                      style={`width: 100%; height: 250px; object-fit: ${item.data.heroImageFit || "cover"};`}
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">{item.data.title}</h5>
-                      <a href={`/roadmap/${projectMeta.id}/${slug}`} class="btn btn-primary">
-                        Read more...
-                      </a>
-                      {item.data.released ? (
-                        <p class="card-release">
-                          Released: {formatDate(item.data.released)}
-                        </p>
-                      ) : null}
+                  return (
+                    <div class="card">
+                      <Image
+                        class="card-img-top"
+                        src={item.data.heroImage}
+                        alt={item.data.title}
+                        style={`width: 100%; height: 250px; object-fit: ${item.data.heroImageFit || "cover"};`}
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">{item.data.title}</h5>
+                        <a
+                          href={`/roadmap/${projectMeta.id}/${slug}`}
+                          class="btn btn-primary"
+                        >
+                          Read more...
+                        </a>
+                        {item.data.released ? (
+                          <p class="card-release">
+                            Released: {formatDate(item.data.released)}
+                          </p>
+                        ) : null}
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-          </section>
-        );
-      })
-    ) : (
-      <p class="empty-state">No roadmap items yet.</p>
-    )}
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })
+      ) : (
+        <p class="empty-state">No roadmap items yet.</p>
+      )
+    }
   </div>
 </Layout>
