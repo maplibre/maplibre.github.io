@@ -1,0 +1,20 @@
+---
+title: Martin Core Library
+heroImage: "./image.png"
+project: martin
+status: released
+released: September 2025
+---
+
+Previously, our code was usable as a library.
+To publish a v1.0 release of martin, we had to decouple the release cycle of our internal code (now `martin-core`) and the public tileserver `martin`.
+`martin-core` is a modular Rust library enabling Martins functionality to be embedded in other rust applications.
+This empowers future embedding tile serving in web applications, building custom GIS tools, and rapid prototyping of geospatial services.
+
+Key features:
+
+- Embeddable tile serving
+- Plugin system for custom sources
+- Full async/await support
+
+Documentation: [Martin Core Library Guide](https://docs.rs/martin-core)
