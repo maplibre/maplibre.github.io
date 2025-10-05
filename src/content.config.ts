@@ -36,8 +36,8 @@ const roadmapItems = defineCollection({
           "general",
           "maplibre-native",
           "maplibre-gl-js",
-          "maplibre-tiles",
-          "martin",
+          "maplibre-tile-format",
+          "martin-tile-server",
         ])
         .default("general"),
       bountyLink: z.optional(z.string()),
