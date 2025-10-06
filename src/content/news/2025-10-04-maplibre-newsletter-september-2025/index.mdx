@@ -3,11 +3,27 @@ title: "MapLibre Newsletter September 2025"
 date: "2025-10-04"
 categories: ["newsletter"]
 authors:
-  [harel-mazor, bart-louwers, joscha-eckert, frank-elsinga, yuri-astrakhan, ramya-ragupathy]
+  [
+    harel-mazor,
+    bart-louwers,
+    birk-skyum,
+    joscha-eckert,
+    frank-elsinga,
+    yuri-astrakhan,
+    ramya-ragupathy,
+  ]
 draft: false
 ---
 
 import { Image } from "astro:assets";
+
+Welcome to the MapLibre Newsletter, September 2025 edition!
+
+This edition features advances in MapLibre Native, GL JS, Flutter, Martin, and more. Plus, we’ve given [our roadmap section](https://maplibre.org/roadmap/) a fresh redesign. Go check it out to see what’s in progress, what’s under consideration, and what’s been released.
+
+A big thanks to [Birk Skyum](https://maplibre.org/about/birk-skyum/), [Frank Elsinga](https://maplibre.org/about/frank-elsinga/) and [Yuri Astrakhan](https://maplibre.org/about/yuri-astrakhan/) for their continued leadership, contributions, and support in driving these initiatives forward. 🙌
+
+With that note, let’s dive in!
 
 ## 📱 MapLibre Native
 
@@ -114,3 +130,43 @@ The MapLibre Native Rust bindings have seen a steady stream of refactorings and 
 We currently offer a single-instance Pool (MapLibre Native internally uses multithreading) for rendering tiles, which already provides solid performance.
 
 Work is ongoing to design a multi-instance Pool, and we’re actively seeking feedback. If you have complex server-side rendering use cases, we’d love to hear from you to ensure the upcoming APIs work well for your needs.
+
+## 🎉 Spatial K Onboarding
+
+We have on-boarded [Spatial K](https://maplibre.org/spatial-k/) (onboarding [ticket](https://github.com/maplibre/maplibre/issues/475)), a set of libraries for working with geospatial data in Kotlin, created by [Derek Ellis](https://github.com/dellisd) and generously passed over to MapLibre for continued collective maintenance.
+
+Spatial K includes:
+
+- An implementation of GeoJSON
+- A port of [Turf.js](https://turfjs.org/) written in pure Kotlin
+- Kotlin Multiplatform support
+- A Kotlin DSL for building GeoJSON objects
+
+It is already in use by [MapLibre Compose](https://maplibre.org/maplibre-compose/).
+
+Expanding on Spatial K
+
+- GeoKJSON: There is a fork of Spatial K named [GeoKJSON](https://elcolto.github.io/GeoKJSON/) by [Sebastian Heeschen](https://github.com/elcolto), which we will be able to upstream into Spatial K, with Sebastian’s guidance. See the [ticket](https://github.com/maplibre/spatial-k/issues/170) for the porting effort.
+- MapLibre Java: There is significant overlap between Spatial K and [MapLibre Java](https://github.com/maplibre/maplibre-java), especially after the recent [refactor to Kotlin](https://github.com/maplibre/maplibre-java/pull/40) by [Fabian Keunecke](https://github.com/Fabi755). This work will help fill in gaps in Spatial K, enabling better alignment between the libraries. See the [ticket](https://github.com/maplibre/spatial-k/issues/154) for details.
+
+## 🗓️ Monthly meetings
+
+We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
+
+Upcoming Calls
+
+- MapLibre Navigation: Oct 08, 2025 – 4:00–5:00 PM UTC
+- MapLibre Native: Oct 08, 2025 – 5:00–6:00 PM UTC
+- MapLibre GL JS: Oct 08, 2025 – 6:00–7:00 PM UTC
+
+🌏 MapLibre Eastern Call
+
+Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
+
+- Oct 29, 2025 – 9:00–10:00 AM UTC
+
+🔗 [View meeting times in your local timezone](https://notime.zone/Oau-Xba7n3s15).
+
+All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/).
+We’d love to see you there!
