@@ -149,7 +149,7 @@ Further details are available [on Slack](https://slack.openstreetmap.us/).
 
 ## 🦀 maplibre-native-rs
 
-The MapLibre Native Rust bindings have seen a steady stream of refactorings and breaking changes to enable server-side rendering both in Martin and other projects possible.
+The MapLibre Native Rust bindings have seen a steady stream of changes to enable server-side map rendering (rasterization) for Martin and other projects.
 
 We currently offer a single-instance Pool (MapLibre Native internally uses multithreading) for rendering tiles, which already provides solid performance.
 
@@ -182,6 +182,7 @@ Work is ongoing to design a multi-instance Pool, and we’re actively seeking fe
     <em> Tile rendering using maplibre-native-rs</em>
   </p>
 </div>
+
 ## 🎉 Spatial K Onboarding
 
 We have on-boarded [Spatial K](https://maplibre.org/spatial-k/) (onboarding [ticket](https://github.com/maplibre/maplibre/issues/475)), a set of libraries for working with geospatial data in Kotlin, created by [Derek Ellis](https://github.com/dellisd) and generously passed over to MapLibre for continued collective maintenance.
@@ -195,7 +196,7 @@ Spatial K includes:
 
 It is already in use by [MapLibre Compose](https://maplibre.org/maplibre-compose/).
 
-Expanding on Spatial K
+**Expanding on Spatial K:**
 
 - GeoKJSON: There is a fork of Spatial K named [GeoKJSON](https://elcolto.github.io/GeoKJSON/) by [Sebastian Heeschen](https://github.com/elcolto), which we will be able to upstream into Spatial K, with Sebastian’s guidance. See the [ticket](https://github.com/maplibre/spatial-k/issues/170) for the porting effort.
 - MapLibre Java: There is significant overlap between Spatial K and [MapLibre Java](https://github.com/maplibre/maplibre-java), especially after the recent [refactor to Kotlin](https://github.com/maplibre/maplibre-java/pull/40) by [Fabian Keunecke](https://github.com/Fabi755). This work will help fill in gaps in Spatial K, enabling better alignment between the libraries. See the [ticket](https://github.com/maplibre/spatial-k/issues/154) for details.
