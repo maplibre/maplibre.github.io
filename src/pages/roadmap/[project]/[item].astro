@@ -17,14 +17,15 @@ export async function getStaticPaths() {
   const roadmapItems = await getCollection("roadmapItems");
 
   return roadmapItems.map((item) => {
-    const projectId = item.data.project ?? "general";
     const slug = item.id.split("/").slice(-1)[0];
 
-    return {
-      params: { project: projectId, item: slug },
-      props: { roadmapItemId: item.id },
-    };
-  });
+    return item.data.project.map((projectId) => {
+      return {
+        params: { project: projectId, item: slug },
+        props: { roadmapItemId: item.id },
+      };
+    });
+  }).flat();
 }
 
 const projectId = Astro.params.project ?? "general";
@@ -33,7 +34,7 @@ const itemSlug = Astro.params.item;
 const roadmapItems = await getCollection("roadmapItems");
 const roadmapItem = roadmapItems.find(
   (item) =>
-    (item.data.project ?? "general") === projectId &&
+    item.data.project.includes(projectId) &&
     item.id.split("/").slice(-1)[0] === itemSlug,
 );
 

@@ -46,7 +46,7 @@ const projectMeta =
 
 const roadmapItems = await getCollection("roadmapItems");
 const projectItems = roadmapItems.filter(
-  (item) => (item.data.project ?? "general") === projectMeta.id,
+  (item) => item.data.project.includes(projectMeta.id),
 );
 
 function sortByReleaseDateDesc(items) {

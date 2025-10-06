@@ -31,7 +31,8 @@ const roadmapItems = defineCollection({
       heroImage: image(),
       heroImageFit: z.optional(z.enum(["fill", "contain", "cover"])),
       status: z.enum(["under-consideration", "in-progress", "released"]),
-      project: z
+      project: z.array(
+        z
         .enum([
           "general",
           "maplibre-native",
@@ -39,7 +40,9 @@ const roadmapItems = defineCollection({
           "maplibre-tile-format",
           "martin-tile-server",
         ])
-        .default("general"),
+        .default("general")
+      )
+      .nonempty(),
       bountyLink: z.optional(z.string()),
       bountyActive: z.optional(z.boolean()),
       released: z.optional(

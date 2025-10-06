@@ -42,7 +42,7 @@ const roadmapItems = await getCollection("roadmapItems");
 
 function buildProjectStats(projectId: string) {
   const items = roadmapItems.filter(
-    (item) => (item.data.project ?? "general") === projectId,
+    (item) => item.data.project.includes(projectId),
   );
 
   const byStatus = sections.map((section) => ({
