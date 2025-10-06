@@ -5,7 +5,7 @@ project: maplibre-native
 status: in-progress
 ---
 
-We already have dedicated backends for Vulkan, Metal, and OpenGL, but the advantage of a WebGPU backend is portability. MapLibre Native can already run in the browser as WebAssembly by compiling the OpenGL backend to WebGL1/2, but that approach is heavy. A WebGPU backend promises significantly better performance, especially for modern browsers on both desktop and mobile.
+We already have dedicated backends for Vulkan, Metal, and OpenGL, but the advantage of adding a WebGPU backend to the list is portability. MapLibre Native can already run in the browser as WebAssembly by compiling the OpenGL backend to WebGL1/2, but that approach is heavy. A WebGPU backend promises significantly better performance, especially for modern browsers on both desktop and mobile.
 
 WebGPU also simplifies cross-platform development stacks such as Compose Multiplatform and Flutter by offering a single rendering backend that can be used across desktop, mobile, and web targets. The goal of this roadmap item is to add a WebGPU backend that can serve as a webgpu web target, which the three existing backends won't be able to cover.
 
