@@ -2,11 +2,33 @@
 title: "MapLibre Newsletter September 2025"
 date: "2025-10-04"
 categories: ["newsletter"]
-authors: []
+authors: [harel-mazor, bart-louwers, ramya-ragupathy]
 draft: false
 ---
 
 import { Image } from "astro:assets";
+
+## 📱 MapLibre Native
+
+- The C++ MapLibre Tiles decoder, written by Tim Sylvester, [got merged](https://github.com/maplibre/maplibre-tile-spec/pull/441) this month. He also worked on the [Java _encoder_](https://github.com/maplibre/maplibre-tile-spec/tree/main/java), the [integration into MapLibre Native](https://github.com/maplibre/maplibre-native/pull/3246) and a new [`encoding`](https://github.com/maplibre/maplibre-style-spec/pull/1251) style spec property for vector sources. After some last-minute optimizations this month, the MapLibre Tile Spec itself is now considered [stable](https://github.com/maplibre/maplibre-tile-spec/pull/560).
+
+  Long story short, all lights are on green you will be able to use the next-generation tile format with MapLibre Native soon (before the end of the year?). Stay tuned!
+
+- [Birk Skyum](https://maplibre.org/about/birk-skyum/) has contributed a [WebGPU backend](https://github.com/maplibre/maplibre-native/pull/3838) for MapLibre Native. We already have dedicated backends for Vulkan, Metal and OpenGL, but the advantage of the new WebGPU backend is that it makes Native more portable.
+
+  Previously we [demonstrated](https://birkskyum-maplibre-native-wasm.pages.dev/qt-for-webassembly/webgl1-from-opengl2-legacy-renderer-qt6-9-1/) that MapLibre Native can run in the browser as WebAssembly by compiling the OpenGL backend to WebGL1/2 but that approach is heavy. The WebGPU backend will be significantly more performant.
+
+  Additionally, the WebGPU backend can simplify cross-platform development with frameworks like Compose Multiplatform and Flutter, by offering a single backend that can be used for all desktop/mobile/web targets.
+
+- We have enabled [immutable releases](https://github.blog/changelog/2025-08-26-releases-now-support-immutability-in-public-preview/). A GitHub feature that makes it impossible to tamper with release assets.
+
+- 🧑‍💻 Join the MapLibre Native Hackathon!
+
+  Hack on the MapLibre Native codebase with guidance from expert contributors. Build plugins, fix bugs, add features,anything goes!
+
+  The hackathon kicks off on Oct 27, 2025, includes office hours on Nov 3 & 10, and wraps up with Demo Day on Nov 12 at the MapLibre Native monthly meeting.
+
+  [Sign up here](https://docs.google.com/forms/d/e/1FAIpQLSfbJe7VohJmbtK83T0s5C49WYxkmKlr424ZPJFrWWwk5LFxVA/viewform) to learn, experiment, and shape the future of the project
 
 ## 🌐 MapLibre GL JS
 
