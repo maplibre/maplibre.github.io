@@ -1,0 +1,218 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import TitleHeader from "../../../components/TitleHeader.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+export const PROJECTS = [
+  {
+    id: "general",
+    label: "General",
+    description: "Organizational initiatives.",
+  },
+  {
+    id: "maplibre-native",
+    label: "MapLibre Native",
+    description: "Roadmap items for the native SDKs.",
+  },
+  {
+    id: "maplibre-gl-js",
+    label: "MapLibre GL JS",
+    description: "Roadmap items for the web SDKs.",
+  },
+  {
+    id: "maplibre-tile-format",
+    label: "MapLibre Tile Format",
+    description: "Work on the MapLibre Tiles specification and tooling.",
+  },
+  {
+    id: "martin-tile-server",
+    label: "Martin Tile Server",
+    description: "Tile server roadmap items.",
+  },
+];
+
+const sections = [
+  { status: "in-progress", title: "In Progress" },
+  { status: "under-consideration", title: "Under Consideration" },
+  { status: "released", title: "Released" },
+];
+
+export async function getStaticPaths() {
+  return PROJECTS.map((project) => ({
+    params: { project: project.id },
+  }));
+}
+
+const projectId = Astro.params.project ?? "general";
+const projectMeta =
+  PROJECTS.find((project) => project.id === projectId) ?? PROJECTS[0];
+
+const roadmapItems = await getCollection("roadmapItems");
+const projectItems = roadmapItems.filter(
+  (item) => (item.data.project ?? "general") === projectMeta.id,
+);
+
+function sortByReleaseDateDesc(items) {
+  return items.slice().sort((a, b) => {
+    const timeA =
+      a.data.released instanceof Date ? a.data.released.getTime() : 0;
+    const timeB =
+      b.data.released instanceof Date ? b.data.released.getTime() : 0;
+    return timeB - timeA;
+  });
+}
+
+function formatDate(dateValue) {
+  if (!(dateValue instanceof Date)) {
+    return "";
+  }
+
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+  }).format(dateValue);
+}
+---
+
+<Layout title={`${projectMeta.label} Roadmap`}>
+  <TitleHeader>{projectMeta.label} Roadmap</TitleHeader>
+  <style>
+    .project-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0 0 2rem;
+    }
+
+    .project-tab {
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background-color: #102036;
+      color: inherit;
+      text-decoration: none;
+      transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .project-tab:hover,
+    .project-tab:focus-visible,
+    .roadmap-card:hover,
+    .roadmap-card:focus-visible {
+      border-color: #4a89ff;
+      color: #fff;
+      outline: none;
+    }
+
+    .project-tab.active {
+      background-color: #1e3150;
+      border-color: #4a89ff;
+      color: #fff;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .roadmap .card {
+      background-color: #1e3150;
+
+      > img {
+        /*
+        Using a white or pulsating background would be nicer.
+        On current chrome versions, an 1px border appears in the corners of the image.
+        The corner-border looks very ugly
+        */
+        background-color: #1e3150;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card-release {
+      margin: 10px 0 0;
+    }
+
+    .empty-state {
+      margin: 2rem 0;
+      font-style: italic;
+    }
+  </style>
+  <div class="container roadmap">
+    <nav class="project-tabs" aria-label="Roadmap sections">
+      {
+        PROJECTS.map((tab) => (
+          <a
+            href={`/roadmap/${tab.id}`}
+            class={`project-tab ${tab.id === projectMeta.id ? "active" : ""}`}
+          >
+            {tab.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <p>{projectMeta.description}</p>
+
+    {
+      projectItems.length ? (
+        sections.map((section) => {
+          const items = sortByReleaseDateDesc(
+            projectItems.filter((item) => item.data.status === section.status),
+          );
+
+          if (!items.length) {
+            return null;
+          }
+
+          return (
+            <section>
+              <h2>{section.title}</h2>
+              <div class="cards-grid">
+                {items.map((item) => {
+                  const slug = item.id.split("/").slice(-1)[0];
+
+                  return (
+                    <a
+                      class="card roadmap-card"
+                      href={`/roadmap/${projectMeta.id}/${slug}`}
+                    >
+                      <Image
+                        class="card-img-top"
+                        src={item.data.heroImage}
+                        alt={item.data.title}
+                        style={`width: 100%; height: 250px; object-fit: ${item.data.heroImageFit || "cover"};`}
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">{item.data.title}</h5>
+                        {item.data.released ? (
+                          <p class="card-release">
+                            Released: {formatDate(item.data.released)}
+                          </p>
+                        ) : null}
+                        Read more..
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })
+      ) : (
+        <p class="empty-state">No roadmap items yet.</p>
+      )
+    }
+  </div>
+</Layout>
