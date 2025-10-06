@@ -16,6 +16,8 @@ draft: false
 ---
 
 import { Image } from "astro:assets";
+import maputnik from "./maputnik.jpg";
+import tileRendering from "./tile-rendering.png";
 
 Welcome to the MapLibre Newsletter, September 2025 edition!
 
@@ -77,6 +79,34 @@ We also added support for more recent changes to the [MapLibre Style Spec](https
 
 This marks a strong start to Maputnik’s new status, and we believe that the more stable and widely used it becomes, the more features it will receive from this great community.
 
+<div style={{ maxWidth: "1000px", margin: "1.5rem auto", textAlign: "center" }}>
+  <Image
+    src={maputnik}
+    alt="Maputnik editor interface"
+    sizes="(min-width: 1280px) 1000px, (min-width: 768px) 800px, 100vw"
+    style={{
+      width: "100%",
+      height: "auto",
+      display: "block",
+      border: "1px solid #e5e7eb",
+      borderRadius: "0.75rem",
+    }}
+    class="shadow-lg"
+    loading="lazy"
+    decoding="async"
+  />
+  <p
+    style={{
+      fontSize: "0.9rem",
+      color: "#666",
+      marginTop: "0.5rem",
+      fontStyle: "italic",
+    }}
+  >
+    <em> Maputnik editor interface </em>
+  </p>
+</div>
+
 ## 🪶 MapLibre Flutter
 
 This month brings a big step forward for the [MapLibre Flutter plugin](https://github.com/josxha/flutter-maplibre): MapLibre Flutter [v0.3.0](https://github.com/josxha/flutter-maplibre/releases/tag/v0.3.0) has been released.
@@ -125,6 +155,33 @@ We currently offer a single-instance Pool (MapLibre Native internally uses multi
 
 Work is ongoing to design a multi-instance Pool, and we’re actively seeking feedback. If you have complex server-side rendering use cases, we’d love to hear from you to ensure the upcoming APIs work well for your needs.
 
+<div style={{ maxWidth: "900px", margin: "1.5rem auto", textAlign: "center" }}>
+  <Image
+    src={tileRendering}
+    alt="Tile rendering using maplibre-native-rs"
+    sizes="(min-width: 1280px) 900px, (min-width: 768px) 700px, 100vw"
+    style={{
+      width: "100%",
+      height: "auto",
+      display: "block",
+      border: "1px solid #e5e7eb",
+      borderRadius: "0.75rem",
+    }}
+    class="shadow-md"
+    loading="lazy"
+    decoding="async"
+  />
+  <p
+    style={{
+      fontSize: "0.9rem",
+      color: "#666",
+      marginTop: "0.5rem",
+      fontStyle: "italic",
+    }}
+  >
+    <em> Tile rendering using maplibre-native-rs</em>
+  </p>
+</div>
 ## 🎉 Spatial K Onboarding
 
 We have on-boarded [Spatial K](https://maplibre.org/spatial-k/) (onboarding [ticket](https://github.com/maplibre/maplibre/issues/475)), a set of libraries for working with geospatial data in Kotlin, created by [Derek Ellis](https://github.com/dellisd) and generously passed over to MapLibre for continued collective maintenance.
