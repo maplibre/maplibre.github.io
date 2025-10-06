@@ -1,0 +1,32 @@
+---
+title: "MapLibre Newsletter September 2025"
+date: "2025-10-04"
+categories: ["newsletter"]
+authors: []
+draft: false
+---
+
+import { Image } from "astro:assets";
+
+## 🌐 MapLibre GL JS
+
+September was a busy month with four new releases:[5.7.1](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.7.1), [5.7.2](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.7.2), [5.7.3](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.7.3) and [5.8.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.8.0).
+
+The latest one, 5.8.0, stands out, as it introduces data-driven styling for [line-dasharray](https://maplibre.org/maplibre-style-spec/layers/#line-dasharray), a long-awaited feature and [the most upvoted issue](https://github.com/maplibre/maplibre-gl-js/issues/1235) in our tracker. Thanks Lucas (@lucaswoj) for this great contribution! We are super excited someone in the community decided to work on it.
+
+Other improvements this month include:
+
+- Fixes for raster tile fading, with more enhancements coming soon thanks to Ryan ([@wayofthefuture](https://github.com/wayofthefuture)).
+- Numerous fixes to [`global-state`](https://maplibre.org/maplibre-style-spec/expressions/#global-state), primarily led by [@melitele](https://github.com/melitele), significantly ironing out most of the related issues.
+
+## ✏️ Maputnik
+
+This month has been a very productive one for [our small style editor](https://maputnik.github.io/).
+
+Maputnik had recently gained the status of a ["supported project"](https://github.com/maplibre/maplibre/blob/main/PROJECT_TIERS.md#supported-project) in MapLibre, so if there's something you'd like to work on and get paid this is now possible.
+
+We have been working hard to update all the libraries to their latest versions, including React to version 19. This upgrade required replacing outdated libraries that are no longer maintained and fixing issues across the existing codebase.
+
+We also added support for more recent changes to the [MapLibre Style Spec](https://maplibre.org/maplibre-style-spec/), such as [globe projection](https://maplibre.org/maplibre-gl-js/docs/examples/display-a-globe-with-a-vector-map/) and [`global-state`](https://maplibre.org/maplibre-style-spec/expressions/#global-state), along with several lesser-known fields introduced in recent years.
+
+This marks a strong start to Maputnik’s new status, and we believe that the more stable and widely used it becomes, the more features it will receive from this great community.
