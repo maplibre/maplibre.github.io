@@ -52,3 +52,19 @@ We have been working hard to update all the libraries to their latest versions, 
 We also added support for more recent changes to the [MapLibre Style Spec](https://maplibre.org/maplibre-style-spec/), such as [globe projection](https://maplibre.org/maplibre-gl-js/docs/examples/display-a-globe-with-a-vector-map/) and [`global-state`](https://maplibre.org/maplibre-style-spec/expressions/#global-state), along with several lesser-known fields introduced in recent years.
 
 This marks a strong start to Maputnik’s new status, and we believe that the more stable and widely used it becomes, the more features it will receive from this great community.
+
+## 🪶 MapLibre Flutter
+
+This month brings a big step forward for the [MapLibre Flutter plugin](https://github.com/josxha/flutter-maplibre): MapLibre Flutter [v0.3.0](https://github.com/josxha/flutter-maplibre/releases/tag/v0.3.0) has been released.
+
+The highlight of this release is full iOS support, enabled through native interoperability between Dart and Swift/ObjC. With this, MapLibre Flutter now runs across Android, iOS, and the web using a modern codebase.
+
+All MapLibre SDK versions have been updated:
+
+- iOS: [v6.19.1](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.19.1)
+- Android: [v11.13.5](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.13.5)
+- Web: [v5.8.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.8.0)
+
+A major ongoing goal for the package is to deliver a seamless cross-platform experience. A map style can now be added as a JSON string, via a Flutter assets path, or through a URI on all platforms. Additionally, PMTiles support on the web has been added to achieve feature parity with Android and iOS.
+
+More functionality has made its way into this release. You can find all user facing changes in the [changelog](https://pub.dev/packages/maplibre/changelog#030).
