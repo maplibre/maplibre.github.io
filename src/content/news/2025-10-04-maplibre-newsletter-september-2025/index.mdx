@@ -16,6 +16,7 @@ draft: false
 ---
 
 import { Image } from "astro:assets";
+import maplibreNativeRsRender from "./maplibre-native-rs.png";
 
 Welcome to the MapLibre Newsletter, September 2025 edition!
 
@@ -123,7 +124,34 @@ The MapLibre Native Rust bindings have seen a steady stream of refactorings and 
 
 We currently offer a single-instance Pool (MapLibre Native internally uses multithreading) for rendering tiles, which already provides solid performance.
 
-Work is ongoing to design a multi-instance Pool, and we’re actively seeking feedback. If you have complex server-side rendering use cases, we’d love to hear from you to ensure the upcoming APIs work well for your needs.
+Work is ongoing to design a multi-instance Pool, and we’re actively seeking feedback.
+**If you have complex server-side rendering use cases, we’d love to hear from you to ensure the upcoming APIs work well for your needs.**
+
+Here is an example of our current rendering pool rendering in action:
+
+<div style={{ textAlign: "center" }}>
+  <Image
+    src={maplibreNativeRsRender}
+    style={{
+      maxWidth: "1920px",
+      maxHeight: "1080px",
+      width: "100%",
+      height: "auto",
+      display: "inline-block",
+    }}
+    alt="2025 Board Members"
+  />
+  <p
+    style={{
+      fontSize: "0.9rem",
+      color: "#555",
+      marginTop: "8px",
+      fontStyle: "italic",
+    }}
+  >
+    <em>OSM Americana at zoom level 0 with the `TileBorders` debug overlay, [© OpenMapTiles](https://www.openmaptiles.org/) [© OpenStreetMap contributors](https://www.openstreetmap.org/copyright)</em>
+  </p>
+</div>
 
 ## 🎉 Spatial K Onboarding
 
