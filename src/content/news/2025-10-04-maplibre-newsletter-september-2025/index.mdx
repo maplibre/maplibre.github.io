@@ -2,7 +2,8 @@
 title: "MapLibre Newsletter September 2025"
 date: "2025-10-04"
 categories: ["newsletter"]
-authors: [harel-mazor, bart-louwers, ramya-ragupathy]
+authors:
+  [harel-mazor, bart-louwers, joscha-eckert, frank-elsinga, yuri-astrakhan, ramya-ragupathy]
 draft: false
 ---
 
@@ -41,6 +42,19 @@ Other improvements this month include:
 - Fixes for raster tile fading, with more enhancements coming soon thanks to Ryan ([@wayofthefuture](https://github.com/wayofthefuture)).
 - Numerous fixes to [`global-state`](https://maplibre.org/maplibre-style-spec/expressions/#global-state), primarily led by [@melitele](https://github.com/melitele), significantly ironing out most of the related issues.
 
+## 📝 MapLibre Style Specification
+
+The [maplibre/maplibre-tile-spec](https://github.com/maplibre/maplibre-tile-spec) project is nearing its first release, focused on functional compatibility with [MVT](https://wiki.openstreetmap.org/wiki/Vector_tiles).
+
+[MLT (MapLibre Tile)](https://maplibre.org/roadmap/maplibre-tile-format/) is a new vector tile format designed for efficient storage and rendering of map data, optimized for the MapLibre ecosystem.
+
+Current implementations include:
+
+- Java: encoder (research quality)
+- C++: decoder (in progress, targeting production quality)
+- JavaScript: decoder (research quality)
+- Rust: encoder and decoder (research quality)
+
 ## ✏️ Maputnik
 
 This month has been a very productive one for [our small style editor](https://maputnik.github.io/).
@@ -68,3 +82,35 @@ All MapLibre SDK versions have been updated:
 A major ongoing goal for the package is to deliver a seamless cross-platform experience. A map style can now be added as a JSON string, via a Flutter assets path, or through a URI on all platforms. Additionally, PMTiles support on the web has been added to achieve feature parity with Android and iOS.
 
 More functionality has made its way into this release. You can find all user facing changes in the [changelog](https://pub.dev/packages/maplibre/changelog#030).
+
+## 🧩 Martin
+
+This month, [Martin](https://martin.maplibre.org/) has undergone significant refactoring.
+
+For those not following Martin’s versioning closely: before reaching v1.0, we are doing SemVer-breaking releases for each minor version (every X in 0.X.Y), since Martin is also published as a Rust library, allowing you to build your own tile server using its internals.
+
+We’ve now refactored the core functionality into a separate library, [`martin-core`](http://lib.rs/martin-core).
+
+Other highlights this month include:
+
+- New warnings for misspelled config keys.
+- A brand new logo 🎉.
+
+On the road to v1.0, we are currently working on three key features:
+
+- OGC API Tiles–compliant source discovery
+- Server-side style raster tile rendering
+- PMTiles sources for more cloud providers, beyond just AWS S3
+
+We’re on track to release Martin v1.0 by the FOSS4G conference in November. You can follow the ongoing work in [this GitHub discussion](https://github.com/maplibre/martin/discussions/1805).
+
+Like other MapLibre projects, Martin has also hardened its CI and release infrastructure against supply chain attacks in this release. We are now publishing immutable, attested releases via CI instead of manually.
+Further details are available [on Slack](https://slack.openstreetmap.us/).
+
+## 🦀 maplibre-native-rs
+
+The MapLibre Native Rust bindings have seen a steady stream of refactorings and breaking changes to enable server-side rendering both in Martin and other projects possible.
+
+We currently offer a single-instance Pool (MapLibre Native internally uses multithreading) for rendering tiles, which already provides solid performance.
+
+Work is ongoing to design a multi-instance Pool, and we’re actively seeking feedback. If you have complex server-side rendering use cases, we’d love to hear from you to ensure the upcoming APIs work well for your needs.
