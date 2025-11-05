@@ -2,31 +2,87 @@
 title: "MapLibre Newsletter October 2025"
 date: "2025-11-04"
 categories: ["newsletter"]
-authors:
-  [
-    harel-mazor,
-    bart-louwers,
-    birk-skyum,
-    frank-elsinga,
-    yuri-astrakhan,
-    ramya-ragupathy,
-  ]
+authors: ["ramya-ragupathy"]
 draft: false
 ---
 
 import { Image } from "astro:assets";
-import maputnik from "./maputnik.jpg";
-import tileRendering from "./tile-rendering.png";
+import radarLogo from "/public/img/radar-logo.svg";
+import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
 
 Welcome to the MapLibre Newsletter, October 2025 edition!
 
-
-## 📱 MapLibre Native
-- Releases
-  - MapLibre Android [12.0.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.0.0), [12.0.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.0.1)
-  - MapLibre iOS [6.19.2](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.19.2), [6.19.3](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.19.3)
-- WebGPU support contributed by Birk Skyum in [#3899](https://github.com/maplibre/maplibre-native/pull/3899).
-- We kicked off the MapLibre Native hackathon. Joining late is possible. Please use the form if you want to [join](https://docs.google.com/forms/d/e/1FAIpQLSfbJe7VohJmbtK83T0s5C49WYxkmKlr424ZPJFrWWwk5LFxVA/viewform?usp=send_form). Projects will be demoed at the MapLibre Native TSC Meeting of 12 November 2025.
+<div
+  style={{
+    backgroundColor: "white",
+    padding: "2rem",
+    border: "10px solid #cfd8dc",
+    borderRadius: "0",
+    marginBottom: "3rem",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "2rem",
+    flexWrap: "nowrap",
+    overflow: "hidden",
+    flexDirection: "column",
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "2rem",
+      flexWrap: "nowrap",
+      width: "100%",
+    }}
+  >
+    <Image
+      src={maplibreLogo}
+      alt="MapLibre logo"
+      style={{
+        width: "40%",
+        maxWidth: "300px",
+        height: "auto",
+        objectFit: "contain",
+      }}
+    />
+    <Image
+      src={radarLogo}
+      alt="Radar logo"
+      style={{
+        width: "40%",
+        maxWidth: "330px",
+        height: "auto",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+  <div
+    style={{
+      marginTop: "1rem",
+      fontSize: "1rem",
+      textAlign: "center",
+      color: "#263238",
+      fontStyle: "italic",
+    }}
+  >
+    Thank you Radar Maps for your sustained support to MapLibre (2023–2025) 🙌
+  </div>
+</div>
+## 📱 MapLibre Native - Releases - MapLibre Android
+[12.0.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.0.0),
+[12.0.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.0.1)
+- MapLibre iOS
+[6.19.2](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.19.2),
+[6.19.3](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.19.3) -
+WebGPU support contributed by Birk Skyum in
+[#3899](https://github.com/maplibre/maplibre-native/pull/3899). - We kicked off
+the MapLibre Native hackathon. Joining late is possible. Please use the form if
+you want to
+[join](https://docs.google.com/forms/d/e/1FAIpQLSfbJe7VohJmbtK83T0s5C49WYxkmKlr424ZPJFrWWwk5LFxVA/viewform?usp=send_form).
+Projects will be demoed at the MapLibre Native TSC Meeting of 12 November 2025.
 
 ## 🌐 MapLibre GL JS
 
@@ -42,6 +98,7 @@ There was also the addition of time control APIs to allow creating videos, and t
 Thanks @bjperson, @chrneumann, @larsmaxfield, @fedetibaldo, @lucaswoj, @manuel-em, @andrewda, @wayofthefuture, @Samarth1696, @cmburcus for your contributions!
 
 We are also working on integrating MLT (MapLibre Tiles) into maplibre-gl-js. We have a draft PR which you can start playing with, we are aiming for an initial support in November, and we will continue the journey of improving its performance and capabilities going forward.
+
 - https://github.com/maplibre/maplibre-gl-js/pull/6570
 
 The TypeScript MLT decoder package pre-release can be found on [npm](https://www.npmjs.com/package/@maplibre/mlt).
@@ -51,7 +108,6 @@ The following two interconnected PRs are a first draft on solving that, but we n
 
 - https://github.com/maplibre/maplibre-gl-js/pull/6521
 - https://github.com/maplibre/maplibre-gl-js/pull/6617
- 
 
 ## 🧩 Martin
 
@@ -65,15 +121,21 @@ The architecture is now locked down, and unless we uncover major bugs, this vers
 
 Huge thanks to everyone contributing code, reviews, testing, and feedback — you make Martin faster, more reliable, and more welcoming ❤️
 
-
 The hallmark features in this release are:
+
 - ⚡ **Smarter, more flexible cache**
   The cache is now split into multiple parts — sprites, fonts, PMTiles directories, and tiles — each with its own configurable limit.
 
   > Tip: Sprites and fonts are now cached too, speeding up vector map rendering.
   >
   > Here is the effect on a small production deployment:
-  > <img width="1332" height="276" alt="Image" src="https://github.com/user-attachments/assets/4fe16397-c697-4d71-9792-8fc88d5018d7" />
+  >
+  > <img
+  >   width="1332"
+  >   height="276"
+  >   alt="Image"
+  >   src="https://github.com/user-attachments/assets/4fe16397-c697-4d71-9792-8fc88d5018d7"
+  > />
 
 - ☁️ **PMTiles: now for GCP, Azure, and more**
   Martin [now supports the following pmtiles backends](https://maplibre.org/martin/sources-files.html#serving-pmtiles-from-local-file-systems-http-or-object-storage):
