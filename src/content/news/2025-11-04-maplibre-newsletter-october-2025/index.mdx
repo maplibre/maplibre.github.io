@@ -1,0 +1,88 @@
+---
+title: "MapLibre Newsletter October 2025"
+date: "2025-11-04"
+categories: ["newsletter"]
+authors:
+  [
+    harel-mazor,
+    bart-louwers,
+    birk-skyum,
+    frank-elsinga,
+    yuri-astrakhan,
+    ramya-ragupathy,
+  ]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import maputnik from "./maputnik.jpg";
+import tileRendering from "./tile-rendering.png";
+
+Welcome to the MapLibre Newsletter, October 2025 edition!
+
+
+## 📱 MapLibre Native
+
+
+## 🌐 MapLibre GL JS
+
+## Web
+
+We have released two major versions this month: [v5.9.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.9.0) and [5.10.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.10.0).
+The major highlights of these versions are the support for both `line-dasharray` and `line-gradient` which looks very nice as can be seen [here](https://maplibre.org/maplibre-gl-js/docs/examples/create-a-gradient-dashed-line-using-an-expression/).
+
+![Dash with gradient](https://maplibre.org/maplibre-gl-js/docs/assets/examples/create-a-gradient-dashed-line-using-an-expression.webp)
+
+There was also the addition of time control APIs to allow creating videos, and the `transformConstrain` hook 🪝to allow changing how the view is constrained, for example by allowing more padding to the map for applications that might not need a "classic" map:
+
+![Drawing](https://private-user-images.githubusercontent.com/83759569/355168273-90454932-cc6b-44dc-962a-928e10eeec61.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjE1NDg5MzQsIm5iZiI6MTc2MTU0ODYzNCwicGF0aCI6Ii84Mzc1OTU2OS8zNTUxNjgyNzMtOTA0NTQ5MzItY2M2Yi00NGRjLTk2MmEtOTI4ZTEwZWVlYzYxLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTEwMjclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMDI3VDA3MDM1NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTFkNTViOWMxYzQ4YTlmMmUxZDFiNWQ4NDc1ZTFlZGYzZDFhN2FlNzI4NWM5NTYxYmZlOTBiZTAyMDg1ZWNmZmUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.qnrWeBVOjmKA2TPuYq97lMmOUkHw6I9RELiYDzO2WSE)
+
+Thanks @bjperson, @chrneumann, @larsmaxfield, @fedetibaldo, @lucaswoj, @manuel-em, @andrewda, @wayofthefuture, @Samarth1696, @cmburcus for your contributions!
+
+We are also working on integrating MLT (MapLibre Tiles) into maplibre-gl-js. We have a draft PR which you can start playing with, we are aiming for an initial support in November, and we will continue the journey of improving its performance and capabilities going forward.
+- https://github.com/maplibre/maplibre-gl-js/pull/6570
+
+The TypeScript MLT decoder package pre-release can be found on [npm](https://www.npmjs.com/package/@maplibre/mlt).
+
+Last but not least we are exploring ways to change how maplibre-gl-js over-scales vector tiles at high zoom levels.
+The following two interconnected PRs are a first draft on solving that, but we need more feedback from developers to know if this is the right approach and if this is something that can be useful. The main motivation around these PRs is to solve a Safari crash on mobile devices when there are a lot of lines and a lot of labels in high zoom levels (contours is the obvious example for this).
+
+- https://github.com/maplibre/maplibre-gl-js/pull/6521
+- https://github.com/maplibre/maplibre-gl-js/pull/6617
+ 
+
+## 📝 MapLibre Tile Specification
+
+## ✏️ Maputnik
+
+## 🪶 MapLibre Flutter
+
+## 🧩 Martin
+
+
+## 🦀 maplibre-native-rs
+
+
+## 🎉  Onboarding
+
+## 🗓️ Monthly meetings
+
+We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
+
+Upcoming Calls
+
+- MapLibre Navigation: Nov 12, 2025 – 4:00–5:00 PM UTC
+- MapLibre Native: Nov 12, 2025 – 5:00–6:00 PM UTC
+- MapLibre GL JS: Nov 12, 2025 – 6:00–7:00 PM UTC
+
+🌏 MapLibre Eastern Call
+
+Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
+
+- Nov 26, 2025 – 9:00–10:00 AM UTC
+
+🔗 [View meeting times in your local timezone](https://notime.zone/OdI1PlUA4gZPM).
+
+All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/).
+We’d love to see you there!
