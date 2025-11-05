@@ -22,11 +22,13 @@ Welcome to the MapLibre Newsletter, October 2025 edition!
 
 
 ## 📱 MapLibre Native
-
+- Releases
+  - MapLibre Android [12.0.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.0.0), [12.0.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.0.1)
+  - MapLibre iOS [6.19.2](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.19.2), [6.19.3](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.19.3)
+- WebGPU support contributed by Birk Skyum in [#3899](https://github.com/maplibre/maplibre-native/pull/3899).
+- We kicked off the MapLibre Native hackathon. Joining late is possible. Please use the form if you want to [join](https://docs.google.com/forms/d/e/1FAIpQLSfbJe7VohJmbtK83T0s5C49WYxkmKlr424ZPJFrWWwk5LFxVA/viewform?usp=send_form). Projects will be demoed at the MapLibre Native TSC Meeting of 12 November 2025.
 
 ## 🌐 MapLibre GL JS
-
-## Web
 
 We have released two major versions this month: [v5.9.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.9.0) and [5.10.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.10.0).
 The major highlights of these versions are the support for both `line-dasharray` and `line-gradient` which looks very nice as can be seen [here](https://maplibre.org/maplibre-gl-js/docs/examples/create-a-gradient-dashed-line-using-an-expression/).
@@ -51,19 +53,43 @@ The following two interconnected PRs are a first draft on solving that, but we n
 - https://github.com/maplibre/maplibre-gl-js/pull/6617
  
 
-## 📝 MapLibre Tile Specification
-
-## ✏️ Maputnik
-
-## 🪶 MapLibre Flutter
-
 ## 🧩 Martin
 
+Martin v0.20.0 - the final step before 1.0 🎉
 
-## 🦀 maplibre-native-rs
+This month in martin, we have published version v0.20.0
+
+We’re getting close!
+This release marks what we expect to be the **final beta before Martin v1.0**.
+The architecture is now locked down, and unless we uncover major bugs, this version will be **re-published as v1.0** within the next week.
+
+Huge thanks to everyone contributing code, reviews, testing, and feedback — you make Martin faster, more reliable, and more welcoming ❤️
 
 
-## 🎉  Onboarding
+The hallmark features in this release are:
+- ⚡ **Smarter, more flexible cache**
+  The cache is now split into multiple parts — sprites, fonts, PMTiles directories, and tiles — each with its own configurable limit.
+
+  > Tip: Sprites and fonts are now cached too, speeding up vector map rendering.
+  >
+  > Here is the effect on a small production deployment:
+  > <img width="1332" height="276" alt="Image" src="https://github.com/user-attachments/assets/4fe16397-c697-4d71-9792-8fc88d5018d7" />
+
+- ☁️ **PMTiles: now for GCP, Azure, and more**
+  Martin [now supports the following pmtiles backends](https://maplibre.org/martin/sources-files.html#serving-pmtiles-from-local-file-systems-http-or-object-storage):
+  - Google Cloud and Azure object storage
+  - Expanded AWS and HTTP backends
+  - Local files as before
+- 🧪 **Experimental: server-side style rendering**
+  You can now render MapLibre styles directly on the server to generate raster tiles. Still experimental, but great for early non-production testing.
+- because of the level of maturity, we demoted the `cog` feature to `unstable-cog`. This means that it is not avaliable in the default bundle anymore, as the feature is still evolving.
+
+If all goes smoothly, expect **Martin v1.0.0 final** very soon 🚀
+Thanks again to everyone in the community for making this possible!
+
+## 🎉 Onboarding
+
+## 👥 Conferences
 
 ## 🗓️ Monthly meetings
 
