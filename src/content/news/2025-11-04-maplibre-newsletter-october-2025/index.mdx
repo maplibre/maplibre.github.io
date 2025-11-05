@@ -9,6 +9,8 @@ draft: false
 import { Image } from "astro:assets";
 import radarLogo from "/public/img/radar-logo.svg";
 import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
+import linedash from "./linedash.webp";
+import martin from "./martin.png";
 
 Welcome to the MapLibre Newsletter, October 2025 edition!
 
@@ -71,36 +73,61 @@ Welcome to the MapLibre Newsletter, October 2025 edition!
     Thank you Radar Maps for your sustained support to MapLibre (2023–2025) 🙌
   </div>
 </div>
-## 📱 MapLibre Native - Releases - MapLibre Android
-[12.0.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.0.0),
-[12.0.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.0.1)
-- MapLibre iOS
-[6.19.2](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.19.2),
-[6.19.3](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.19.3) -
-WebGPU support contributed by Birk Skyum in
-[#3899](https://github.com/maplibre/maplibre-native/pull/3899). - We kicked off
-the MapLibre Native hackathon. Joining late is possible. Please use the form if
-you want to
-[join](https://docs.google.com/forms/d/e/1FAIpQLSfbJe7VohJmbtK83T0s5C49WYxkmKlr424ZPJFrWWwk5LFxVA/viewform?usp=send_form).
-Projects will be demoed at the MapLibre Native TSC Meeting of 12 November 2025.
+
+## 📱 MapLibre Native
+
+- Releases
+  - MapLibre Android:[12.0.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.0.0),
+    [12.0.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.0.1)
+  - MapLibre iOS: [6.19.2](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.19.2),
+    [6.19.3](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.19.3)
+
+- WebGPU support contributed by Birk Skyum in
+  [#3899](https://github.com/maplibre/maplibre-native/pull/3899).
+- We kicked off
+  the MapLibre Native hackathon. Joining late is possible. Please use the form if
+  you want to
+  [join](https://docs.google.com/forms/d/e/1FAIpQLSfbJe7VohJmbtK83T0s5C49WYxkmKlr424ZPJFrWWwk5LFxVA/viewform?usp=send_form).
+  Projects will be demoed at the MapLibre Native TSC Meeting on 12 November 2025.
 
 ## 🌐 MapLibre GL JS
 
 We have released two major versions this month: [v5.9.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.9.0) and [5.10.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.10.0).
 The major highlights of these versions are the support for both `line-dasharray` and `line-gradient` which looks very nice as can be seen [here](https://maplibre.org/maplibre-gl-js/docs/examples/create-a-gradient-dashed-line-using-an-expression/).
 
-![Dash with gradient](https://maplibre.org/maplibre-gl-js/docs/assets/examples/create-a-gradient-dashed-line-using-an-expression.webp)
+<div style={{ maxWidth: "1000px", margin: "1.5rem auto", textAlign: "center" }}>
+  <Image
+    src={linedash}
+    alt="Dash with gradient"
+    sizes="(min-width: 1280px) 1000px, (min-width: 768px) 800px, 100vw"
+    style={{
+      width: "100%",
+      height: "auto",
+      display: "block",
+      border: "1px solid #e5e7eb",
+      borderRadius: "0.75rem",
+    }}
+    class="shadow-lg"
+    loading="lazy"
+    decoding="async"
+  />
+  <p
+    style={{
+      fontSize: "0.9rem",
+      color: "#666",
+      marginTop: "0.5rem",
+      fontStyle: "italic",
+    }}
+  >
+    <em> Dash with gradient </em>
+  </p>
+</div>
 
-There was also the addition of time control APIs to allow creating videos, and the `transformConstrain` hook 🪝to allow changing how the view is constrained, for example by allowing more padding to the map for applications that might not need a "classic" map:
+There was also the addition of time control APIs to allow creating videos, and the `transformConstrain` hook 🪝 to allow changing how the view is constrained, for example by allowing more padding to the map for applications that might not need a "classic" map. _(Check out the [GitHub issue](https://github.com/maplibre/maplibre-gl-js/issues/4510) for further details)_.
 
-![Drawing](https://private-user-images.githubusercontent.com/83759569/355168273-90454932-cc6b-44dc-962a-928e10eeec61.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjE1NDg5MzQsIm5iZiI6MTc2MTU0ODYzNCwicGF0aCI6Ii84Mzc1OTU2OS8zNTUxNjgyNzMtOTA0NTQ5MzItY2M2Yi00NGRjLTk2MmEtOTI4ZTEwZWVlYzYxLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTEwMjclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMDI3VDA3MDM1NFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTFkNTViOWMxYzQ4YTlmMmUxZDFiNWQ4NDc1ZTFlZGYzZDFhN2FlNzI4NWM5NTYxYmZlOTBiZTAyMDg1ZWNmZmUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.qnrWeBVOjmKA2TPuYq97lMmOUkHw6I9RELiYDzO2WSE)
+🙏 Thanks Brice Person, Christian Neumann, Lars Maxfield, Federico Tibaldo, Lucas Wojciechowski, Manuel Emeriau, Andrew Dassonville, Ryan Scully, Samarth Otiya, Corado Burcus for your contributions!
 
-Thanks @bjperson, @chrneumann, @larsmaxfield, @fedetibaldo, @lucaswoj, @manuel-em, @andrewda, @wayofthefuture, @Samarth1696, @cmburcus for your contributions!
-
-We are also working on integrating MLT (MapLibre Tiles) into maplibre-gl-js. We have a draft PR which you can start playing with, we are aiming for an initial support in November, and we will continue the journey of improving its performance and capabilities going forward.
-
-- https://github.com/maplibre/maplibre-gl-js/pull/6570
-
+We are also working on integrating MLT (MapLibre Tiles) into maplibre-gl-js. We have a [draft PR](https://github.com/maplibre/maplibre-gl-js/pull/6570) which you can start playing with, we are aiming for an initial support in November, and we will continue the journey of improving its performance and capabilities going forward.
 The TypeScript MLT decoder package pre-release can be found on [npm](https://www.npmjs.com/package/@maplibre/mlt).
 
 Last but not least we are exploring ways to change how maplibre-gl-js over-scales vector tiles at high zoom levels.
@@ -111,11 +138,12 @@ The following two interconnected PRs are a first draft on solving that, but we n
 
 ## 🧩 Martin
 
-Martin v0.20.0 - the final step before 1.0 🎉
+_Martin v0.20.0 - the final step before 1.0 🎉_
 
-This month in martin, we have published version v0.20.0
+This month in Martin, we have published version v0.20.0
 
 We’re getting close!
+
 This release marks what we expect to be the **final beta before Martin v1.0**.
 The architecture is now locked down, and unless we uncover major bugs, this version will be **re-published as v1.0** within the next week.
 
@@ -129,22 +157,61 @@ The hallmark features in this release are:
   > Tip: Sprites and fonts are now cached too, speeding up vector map rendering.
   >
   > Here is the effect on a small production deployment:
+
+        <div
+
+  style={{
+        maxWidth: "1000px",
+        margin: "1.5rem auto",
+        textAlign: "center",
+      }}
+
   >
-  > <img
-  >   width="1332"
-  >   height="276"
-  >   alt="Image"
-  >   src="https://github.com/user-attachments/assets/4fe16397-c697-4d71-9792-8fc88d5018d7"
-  > />
+
+  <Image
+    src={martin}
+    alt="Martin performance dashboard"
+    sizes="(min-width: 1280px) 1000px, (min-width: 768px) 800px, 100vw"
+    loading="lazy"
+    decoding="async"
+    style={{
+      width: "100%",
+      height: "auto",
+      display: "block",
+      border: "1px solid #e5e7eb",
+      borderRadius: "0.75rem",
+    }}
+    className="shadow-lg"
+  />
+
+        <p
+        style={{
+          fontSize: "0.9rem",
+          color: "#666",
+          marginTop: "0.5rem",
+          fontStyle: "italic",
+        }}
+
+  >
+
+        <em>Performance metrics on a small production deployment</em>
+
+      </p>
+
+  </div>
 
 - ☁️ **PMTiles: now for GCP, Azure, and more**
+
   Martin [now supports the following pmtiles backends](https://maplibre.org/martin/sources-files.html#serving-pmtiles-from-local-file-systems-http-or-object-storage):
   - Google Cloud and Azure object storage
   - Expanded AWS and HTTP backends
   - Local files as before
+
 - 🧪 **Experimental: server-side style rendering**
+
   You can now render MapLibre styles directly on the server to generate raster tiles. Still experimental, but great for early non-production testing.
-- because of the level of maturity, we demoted the `cog` feature to `unstable-cog`. This means that it is not avaliable in the default bundle anymore, as the feature is still evolving.
+
+- Because of the level of maturity, we demoted the `cog` feature to `unstable-cog`. This means that it is not avaliable in the default bundle anymore, as the feature is still evolving.
 
 If all goes smoothly, expect **Martin v1.0.0 final** very soon 🚀
 Thanks again to everyone in the community for making this possible!
