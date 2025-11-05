@@ -1,0 +1,408 @@
+---
+title: "MapLibre Newsletter October 2025"
+date: "2025-11-04"
+categories: ["newsletter"]
+authors:
+  [harel-mazor, bart-louwers, birk-skyum, frank-elsinga, "ramya-ragupathy"]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import radarLogo from "/public/img/radar-logo.svg";
+import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
+import linedash from "./linedash.webp";
+import martin from "./martin.png";
+
+We begin this edition with sincere appreciation for [Radar](https://radar.com/), whose ongoing sponsorship helps sustain the MapLibre community.
+Welcome to the MapLibre Newsletter, October 2025 edition!
+
+<div
+  style={{
+    backgroundColor: "white",
+    padding: "2rem",
+    border: "10px solid #cfd8dc",
+    borderRadius: "0",
+    marginBottom: "3rem",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "2rem",
+    flexWrap: "nowrap",
+    overflow: "hidden",
+    flexDirection: "column",
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "2rem",
+      flexWrap: "nowrap",
+      width: "100%",
+    }}
+  >
+    <Image
+      src={maplibreLogo}
+      alt="MapLibre logo"
+      style={{
+        width: "40%",
+        maxWidth: "300px",
+        height: "auto",
+        objectFit: "contain",
+      }}
+    />
+    <Image
+      src={radarLogo}
+      alt="Radar logo"
+      style={{
+        width: "40%",
+        maxWidth: "330px",
+        height: "auto",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+  <div
+    style={{
+      marginTop: "1rem",
+      fontSize: "1rem",
+      textAlign: "center",
+      color: "#263238",
+      fontStyle: "italic",
+    }}
+  >
+    Thank you Radar for your sustained support to MapLibre (2023–2025) 🙌
+  </div>
+</div>
+
+Before diving into the updates, we’ve added a new .github repository, giving the MapLibre GitHub organization a fresh, welcoming README! Check it out here: https://github.com/maplibre
+
+## 📱 MapLibre Native
+
+- Releases
+
+  <ul class="releases">
+    <li>
+      MapLibre Android:
+      [12.0.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.0.0),
+      [12.0.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.0.1)
+    </li>
+    <li>
+      MapLibre iOS:
+      [6.19.2](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.19.2),
+      [6.19.3](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.19.3)
+    </li>
+  </ul>
+
+- Birk Skyum contributed WebGPU support in [#3899](https://github.com/maplibre/maplibre-native/pull/3899).
+  This means now either wgpu (new) or Dawn can be used as a backend.
+
+- [MapLibre Native Qt](https://github.com/maplibre/maplibre-native-qt): The SDK has been updated to the latest version of MapLibre Native, which had moved more than 1000 commits ahead. As a result, there is now support for Vulkan, Metal, OpenGL 3.0, PMTiles and other upstream improvements. This is already on the main branch which can be used for self-building, and it will be part of the upcoming 4.0 release.
+
+- We kicked off
+  the MapLibre Native hackathon. Joining late is possible. Please use the form if
+  you want to
+  [join](https://docs.google.com/forms/d/e/1FAIpQLSfbJe7VohJmbtK83T0s5C49WYxkmKlr424ZPJFrWWwk5LFxVA/viewform?usp=send_form).
+  Projects will be demoed at the MapLibre Native TSC Meeting on 12 November 2025.
+
+## 🌐 MapLibre GL JS
+
+We have released two major versions this month: [v5.9.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.9.0) and [5.10.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.10.0).
+The major highlights of these versions are the support for both `line-dasharray` and `line-gradient` which looks very nice as can be seen [here](https://maplibre.org/maplibre-gl-js/docs/examples/create-a-gradient-dashed-line-using-an-expression/).
+
+<div style={{ maxWidth: "1000px", margin: "1.5rem auto", textAlign: "center" }}>
+  <Image
+    src={linedash}
+    alt="Dash with gradient"
+    sizes="(min-width: 1280px) 1000px, (min-width: 768px) 800px, 100vw"
+    style={{
+      width: "100%",
+      height: "auto",
+      display: "block",
+      border: "1px solid #e5e7eb",
+      borderRadius: "0.75rem",
+    }}
+    class="shadow-lg"
+    loading="lazy"
+    decoding="async"
+  />
+  <p
+    style={{
+      fontSize: "0.9rem",
+      color: "#666",
+      marginTop: "0.5rem",
+      fontStyle: "italic",
+    }}
+  >
+    <em> Dash with gradient </em>
+  </p>
+</div>
+
+There was also the addition of time control APIs to allow creating videos, and the `transformConstrain` hook 🪝 to allow changing how the view is constrained, for example by allowing more padding to the map for applications that might not need a "classic" map. _(Check out the [GitHub issue](https://github.com/maplibre/maplibre-gl-js/issues/4510) for further details)_.
+
+🙏 Thanks Brice Person, Christian Neumann, Lars Maxfield, Federico Tibaldo, Lucas Wojciechowski, Manuel Emeriau, Andrew Dassonville, Ryan Scully, Samarth Otiya, Corado Burcus for your contributions!
+
+We are also working on integrating MLT (MapLibre Tiles) into maplibre-gl-js. We have a [draft PR](https://github.com/maplibre/maplibre-gl-js/pull/6570) which you can start playing with, we are aiming for an initial support in November, and we will continue the journey of improving its performance and capabilities going forward.
+The TypeScript MLT decoder package pre-release can be found on [npm](https://www.npmjs.com/package/@maplibre/mlt).
+
+Last but not least we are exploring ways to change how maplibre-gl-js over-scales vector tiles at high zoom levels.
+The following two interconnected PRs are a first draft on solving that, but we need more feedback from developers to know if this is the right approach and if this is something that can be useful. The main motivation around these PRs is to solve a Safari crash on mobile devices when there are a lot of lines and a lot of labels in high zoom levels (contours is the obvious example for this).
+
+- https://github.com/maplibre/maplibre-gl-js/pull/6521
+- https://github.com/maplibre/maplibre-gl-js/pull/6617
+
+## 🧩 Martin
+
+_Martin v0.20.0 - the final step before 1.0 🎉_
+
+This month in Martin, we have published version v0.20.0
+
+We’re getting close!
+
+This release marks what we expect to be the **final beta before Martin v1.0**.
+The architecture is now locked down, and unless we uncover major bugs, this version will be **re-published as v1.0** within the next week.
+
+Huge thanks to everyone contributing code, reviews, testing, and feedback — you make Martin faster, more reliable, and more welcoming ❤️
+
+The hallmark features in this release are:
+
+- ⚡ **Smarter, more flexible cache**
+  The cache is now split into multiple parts — sprites, fonts, PMTiles directories, and tiles — each with its own configurable limit.
+
+  > Tip: Sprites and fonts are now cached too, speeding up vector map rendering.
+  >
+  > Here is the effect on a small production deployment:
+
+        <div
+
+  style={{
+        maxWidth: "1000px",
+        margin: "1.5rem auto",
+        textAlign: "center",
+      }}
+
+  >
+
+  <Image
+    src={martin}
+    alt="Martin performance dashboard"
+    sizes="(min-width: 1280px) 1000px, (min-width: 768px) 800px, 100vw"
+    loading="lazy"
+    decoding="async"
+    style={{
+      width: "100%",
+      height: "auto",
+      display: "block",
+      border: "1px solid #e5e7eb",
+      borderRadius: "0.75rem",
+    }}
+    className="shadow-lg"
+  />
+
+        <p
+        style={{
+          fontSize: "0.9rem",
+          color: "#666",
+          marginTop: "0.5rem",
+          fontStyle: "italic",
+        }}
+
+  >
+
+        <em>Performance metrics on a small production deployment</em>
+
+      </p>
+
+  </div>
+
+- ☁️ **PMTiles: now for GCP, Azure, and more**
+
+  Martin [now supports the following pmtiles backends](https://maplibre.org/martin/sources-files.html#serving-pmtiles-from-local-file-systems-http-or-object-storage):
+  - Google Cloud and Azure object storage
+  - Expanded AWS and HTTP backends
+  - Local files as before
+
+- 🧪 **Experimental: server-side style rendering**
+
+  You can now render MapLibre styles directly on the server to generate raster tiles. Still experimental, but great for early non-production testing.
+
+- Because of the level of maturity, we demoted the `cog` feature to `unstable-cog`. This means that it is not avaliable in the default bundle anymore, as the feature is still evolving.
+
+If all goes smoothly, expect **Martin v1.0.0 final** very soon 🚀
+Thanks again to everyone in the community for making this possible!
+
+## 👥 Conferences
+
+We plan to participate and contribute to sessions/workshops in the following events this month.
+
+- [FOSS4G North America 2025](https://www.foss4gna.org/), 3-4 Nov, 2025
+- [FOSS4G Global](https://2025.foss4g.org/), 17-23 Nov, 2025 in Auckland
+
+Talks to watch out for:
+
+<p style="margin-bottom: 0.5rem; color:#666; font-size: 0.85rem;">
+  *All times are in Pacific/Auckland (NZDT).*
+</p>
+
+<div style="overflow-x: auto;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 600px;">
+    <thead>
+      <tr>
+        <th style="border-bottom: 1px solid #ccc; text-align: left; padding: 8px 12px;">Talk/Workshop</th>
+        <th style="border-bottom: 1px solid #ccc; text-align: left; padding: 8px 12px; min-width: 90px;">Date</th>
+        <th style="border-bottom: 1px solid #ccc; text-align: left; padding: 8px 12px;">Time</th>
+        <th style="border-bottom: 1px solid #ccc; text-align: left; padding: 8px 12px;">Duration</th>
+        <th style="border-bottom: 1px solid #ccc; text-align: left; padding: 8px 12px;">Location</th>
+        <th style="border-bottom: 1px solid #ccc; text-align: left; padding: 8px 12px;">Presenter</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td style="padding: 8px 12px;">
+          Tile serving with MapLibre / Martin / Planetiler — base and overlays
+          <span style="display:block; color:#666; font-style:italic; margin-top:2px;">
+            (Beginner-friendly workshop)
+          </span>
+        </td>
+        <td style="padding: 8px 12px;">Nov 17</td>
+        <td style="padding: 8px 12px;">13:30–16:30</td>
+        <td style="padding: 8px 12px;">3h</td>
+        <td style="padding: 8px 12px;">WF702</td>
+        <td style="padding: 8px 12px;">Yuri Astrakhan</td>
+      </tr>
+
+
+      <tr>
+        <td style="padding: 8px 12px;">
+          <a href="https://talks.osgeo.org/foss4g-2025/talk/BMWWR9/">
+            Standalone Web Maps, No Platform Required
+          </a>
+          <span style="display:block; color:#666; font-style:italic; margin-top:2px;">
+             (Beginner-friendly workshop)
+          </span>
+        </td>
+        <td style="padding: 8px 12px;">Nov 18</td>
+        <td style="padding: 8px 12px;">09:00–12:00</td>
+        <td style="padding: 8px 12px;">3h</td>
+        <td style="padding: 8px 12px;">WF711</td>
+        <td style="padding: 8px 12px;">Stephanie May</td>
+      </tr>
+
+      <tr>
+
+      <td style="padding: 8px 12px;">
+        Terra Draw — cross-platform drawing library for all map applications
+        <span style="display:block; color:#666; font-style:italic; margin-top:2px;">
+          (Intermediate-level Workshop)
+        </span>
+      </td>
+      <td style="padding: 8px 12px;">Nov 18</td>
+      <td style="padding: 8px 12px;">09:00</td>
+      <td style="padding: 8px 12px;">3h</td>
+      <td style="padding: 8px 12px;">WF702</td>
+      <td style="padding: 8px 12px;">Jin Igarashi</td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px 12px;">MapLibre — from data to tile rendering, in one status update</td>
+        <td style="padding: 8px 12px;">Nov 19</td>
+        <td style="padding: 8px 12px;">11:00</td>
+        <td style="padding: 8px 12px;">25 min</td>
+        <td style="padding: 8px 12px;">WG308 TE IRINGA</td>
+        <td style="padding: 8px 12px;">Yuri Astrakhan</td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px 12px;">Assessment of Display Performance & Comparative Evaluation of Web Map Libraries for Extensive 3D Geospatial Data</td>
+        <td style="padding: 8px 12px;">Nov 19</td>
+        <td style="padding: 8px 12px;">11:00</td>
+        <td style="padding: 8px 12px;">25 min</td>
+        <td style="padding: 8px 12px;">WG404</td>
+        <td style="padding: 8px 12px;">Toshikazu Seto</td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px 12px;">Implementing Interactive Indoor Maps with MapLibre and IMDF</td>
+        <td style="padding: 8px 12px;">Nov 19</td>
+        <td style="padding: 8px 12px;">15:30</td>
+        <td style="padding: 8px 12px;">25 min</td>
+        <td style="padding: 8px 12px;">WA220</td>
+        <td style="padding: 8px 12px;">Haruki Inoue</td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px 12px;">maplibre-gl-terradraw — new drawing plugin for maplibre-gl-js</td>
+        <td style="padding: 8px 12px;">Nov 19</td>
+        <td style="padding: 8px 12px;">16:00</td>
+        <td style="padding: 8px 12px;">25 min</td>
+        <td style="padding: 8px 12px;">WG404</td>
+        <td style="padding: 8px 12px;">Jin Igarashi</td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px 12px;">deck.gl State of the Union 2025: Globe View, React Widgets, and WebGPU Readiness</td>
+        <td style="padding: 8px 12px;">Nov 19</td>
+        <td style="padding: 8px 12px;">16:30</td>
+        <td style="padding: 8px 12px;">25 min</td>
+        <td style="padding: 8px 12px;">WG308 TE IRINGA</td>
+        <td style="padding: 8px 12px;">Felix Palmer</td>
+      </tr>
+
+
+      <tr>
+        <td style="padding: 8px 12px;">“Chef’s Kiss” Webmaps with Svelte, MapLibre & PMTiles</td>
+        <td style="padding: 8px 12px;">Nov 20</td>
+        <td style="padding: 8px 12px;">09:30</td>
+        <td style="padding: 8px 12px;">25 min</td>
+        <td style="padding: 8px 12px;">WG126</td>
+        <td style="padding: 8px 12px;">Rami DV</td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px 12px;">Fast, Free, and (Mostly) Painless: Getting Started with Open-Source Web Mapping</td>
+        <td style="padding: 8px 12px;">Nov 20</td>
+        <td style="padding: 8px 12px;">09:35</td>
+        <td style="padding: 8px 12px;">5 min</td>
+        <td style="padding: 8px 12px;">WG403</td>
+        <td style="padding: 8px 12px;">Luke Sussex</td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px 12px;">Saving lives with GIS: Engineering our open-source mapping stack</td>
+        <td style="padding: 8px 12px;">Nov 20</td>
+        <td style="padding: 8px 12px;">16:00</td>
+        <td style="padding: 8px 12px;">25 min</td>
+        <td style="padding: 8px 12px;">WG126</td>
+        <td style="padding: 8px 12px;">Stacy Rendall</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+</div>
+
+&nbsp;
+
+## 🗓️ Monthly meetings
+
+We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
+
+Upcoming Calls
+
+- MapLibre Navigation: Nov 12, 2025 – 4:00–5:00 PM UTC
+- MapLibre Native: Nov 12, 2025 – 5:00–6:00 PM UTC
+- MapLibre GL JS: Nov 12, 2025 – 6:00–7:00 PM UTC
+
+🌏 MapLibre Eastern Call
+
+Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
+
+- Nov 26, 2025 – 9:00–10:00 AM UTC
+
+🔗 [View meeting times in your local timezone](https://notime.zone/OdI1PlUA4gZPM).
+
+All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/).
+We’d love to see you there!
