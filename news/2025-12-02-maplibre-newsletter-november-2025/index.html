@@ -46,7 +46,7 @@ Categories: <a href="categories/newsletter"> <span class="badge bg-light">Newsle
 Authors: <a href="about/bart-louwers"> <span class="badge bg-light">Bart Louwers</span> </a><a href="about/frank-elsinga"> <span class="badge bg-light">Frank Elsinga</span> </a><a href="about/harel-mazor"> <span class="badge bg-light">Harel Mazor</span> </a><a href="about/ramya-ragupathy"> <span class="badge bg-light">Ramya Ragupathy</span> </a><a href="about/yuri-astrakhan"> <span class="badge bg-light">Yuri Astrakhan</span> </a> </div> <p>We open this edition by acknowledging AWS for their continued support of MapLibre during 2023–2025. Their contribution plays an important role in sustaining the growth of our open-source ecosystem.</p>
 <div style="background-color:white;padding:2rem;border:10px solid #cfd8dc;border-radius:0;margin:0 auto 3rem;max-width:960px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.5rem"><div style="display:flex;justify-content:center;align-items:center;gap:3rem;flex-wrap:wrap;width:100%"><img src="/_astro/maplibre-logo-for-light-bg.CSR25x_s_Z1yWpiO.svg" alt="MapLibre logo" style="max-height:80px;width:auto;object-fit:contain" loading="lazy" decoding="async" fetchpriority="auto" width="1354" height="317"><img src="/_astro/aws-logo.C7ssGeEp_21Ii1g.svg" alt="AWS logo" style="max-height:80px;width:auto;object-fit:contain" loading="lazy" decoding="async" fetchpriority="auto" width="304" height="182"></div><div style="margin-top:0.5rem;font-size:1rem;text-align:center;color:#263238;font-style:italic;max-width:42rem"><p>Our gratitude goes to AWS for their continued multi-year commitment to
 MapLibre (2023-2025).</p></div></div>
-<p>The highlight of this month is the landmark release of Martin v1.0, a major milestone for the project. In addition, we bring updates on MapLibre Tile (MLT), new releases across MapLibre Native and GL JS, a new video export plugin from the community, and information on upcoming community calls.</p>
+<p>The highlight of this month is the landmark release of Martin v1.0, a major milestone for the project. We also bring updates across MapLibre Native and GL JS, a new video export plugin from the community, and information on upcoming community calls.</p>
 <h2 id="-martin">🧩 Martin</h2>
 <p>🎉 After 8 years in development, <a href="https://maplibre.org/martin/introduction.html">Martin v1.0</a> is here! 🎉</p>
 <p>We are thrilled to announce <a href="https://github.com/maplibre/martin/releases/tag/martin-v1.0.0">the official release of Martin v1.0</a>. Since joining MapLibre in 2022, Martin has evolved from a simple tile server supporting a single PostgreSQL connection into the fastest, feature-rich, open-source tile server available today.</p>
@@ -58,22 +58,6 @@ MapLibre (2023-2025).</p></div></div>
 <li><strong>Developer Flexibility</strong>: The ability to use Martin as a library for building custom tile-serving solutions.</li>
 </ul>
 <p>A special thanks to Stepan Kuzmin, the original author, and to key contributors Yuri Astrakhan, Frank Elsinga, and Lucas, along with everyone else who made this project a success!</p>
-<h2 id="-maplibre-tile">📝 MapLibre Tile</h2>
-<p>Support for the new <strong>MapLibre Tile</strong> (MLT) format has landed in both MapLibre GL JS and MapLibre Native!</p>
-<h4 id="what-is-mlt">What is MLT?</h4>
-<p><a href="https://github.com/maplibre/maplibre-tile-spec">MLT</a> is a new format that we will support alongside <a href="https://github.com/mapbox/vector-tile-spec">MVT</a>. MLT vector tiles have a modern and efficient column oriented format which will save bandwidth as well as storage space for offline use cases.</p>
-<h4 id="how-to-try-mlt">How to try MLT?</h4>
-<p>We have added the <a href="https://maplibre.org/maplibre-style-spec/sources/#encoding"><code>encoding</code></a> property to the style specification, where you can add <code>mlt</code> as a value to add MLT vector tile sources. It will probably be a while before the tile format is widely available, for example from your favorite tile provider.</p>
-<p>The easiest way to try out MLT is to use the <a href="https://raw.githubusercontent.com/maplibre/demotiles/refs/heads/gh-pages/tiles-mlt/plain.json">MLT-based demotiles style</a>. Early adopters might also want to try out the <a href="https://github.com/maplibre/maplibre-tile-spec/tree/main/java/encoding-server">encoding server</a> which converts existing (MVT) styles and vector tile sources to MLT on the fly. This is mostly a tool for development. For actually deploying MLT, you could use <a href="https://github.com/onthegomap/planetiler">Planetiler</a>, as the upcoming version will support outputting MLT.</p>
-<div style="max-width:1000px;margin:1.5rem auto;text-align:center"><img src="/_astro/mlt.CaGKYWCo_Z6Nrwr.webp" alt="MapLibre Tile Support" style="width:75%;height:auto;display:block;margin:0 auto;border:1px solid #e5e7eb;border-radius:0.75rem" loading="lazy" decoding="async" fetchpriority="auto" width="2987" height="1867" class="shadow-lg"><p style="font-size:0.9rem;color:#666;margin-top:0.5rem;font-style:italic"><em>MapLibre Tile Support</em></p></div>
-<h4 id="implementation-status">Implementation Status</h4>
-<p>Refer to <a href="https://maplibre.org/maplibre-tile-spec/implementation-status/">this page</a> for a complete and up-to-date list of integrations and implementations.</p>
-<h4 id="community-feedback">Community Feedback</h4>
-<p>The first results are being reported on <a href="https://maplibre.org/community">our Slack</a>. We would love to hear your experience with using MLT! Join the <code>#maplibre-tile-format</code> channel if you are interested in contributing to the future of the tile format. There are a lot of ideas for exciting extensions.</p>
-<h4 id="acknowledgements">Acknowledgements</h4>
-<p>MapLibre Tile came to be thanks to a multi year collaboration between academia, open source and enterprise. Thank you to everyone that was involved! We are very proud that our community is able to innovate like this.</p>
-<p>Special thanks goes to Markus Tremmel for inventing the format, Yuri Astrakhan for spearheading the project, Tim Sylvester for the C++ implementation, Benedikt Vogl and Niklas Greindl for helping out with the JavaScript implementation.</p>
-<p>Also thanks to Microsoft and Amazon for financing work on MLT.</p>
 <h2 id="-maplibre-native">📱 MapLibre Native</h2>
 <ul>
 <li>
@@ -107,7 +91,7 @@ MapLibre (2023-2025).</p></div></div>
 </ul>
 <h2 id="-maplibre-gl-js">🌐 MapLibre GL JS</h2>
 <p>We have released two major versions this month: <a href="https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.12.0">v5.12</a> and <a href="https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.13.0">v5.13</a>.
-The main feature that was added as part of these versions is support for MLT (MapLibre Tiles) as mentioned above!</p>
+The main feature that was added as part of these versions is support for MLT (MapLibre Tiles)!</p>
 <p><strong>Experimental Tile Slicing</strong></p>
 <ul>
 <li>We’ve introduced an experimental feature for slicing vector tiles on the fly, this solves some precision issues with labels and improves performance for high zoom levels.</li>
