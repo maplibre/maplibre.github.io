@@ -1,0 +1,116 @@
+{
+    "$schema": "https://fundingjson.org/schema/v1.1.0.json",
+    "version": "v1.0.0",
+    "entity": {
+        "type": "organisation",
+        "role": "owner",
+        "name": "MapLibre",
+        "email": "team@maplibre.org",
+        "description": "The MapLibre Organization is an umbrella for open-source mapping libraries.",
+        "webpageUrl": {
+            "url": "https://maplibre.org/"
+        }
+    },
+    "projects": [{
+        "guid": "maplibre-gl-js",
+        "name": "MapLibre GL JS",
+        "description": "Interactive vector tile maps in the browser",
+        "webpageUrl": {
+            "url": "https://maplibre.org/maplibre-gl-js/docs"
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/maplibre/maplibre-gl-js",
+            "wellKnown": "https://maplibre.org/.well-known/funding-manifest-urls"
+        },
+        "licenses": ["spdx:BSD-3-Clause"],
+        "tags": ["maps", "web-development", "data-visualization", "graphics"]
+    }, {
+        "guid": "maplibre-native",
+        "name": "MapLibre Native",
+        "description": "Interactive vector tile maps toolkit for iOS, Android and other platforms",
+        "webpageUrl": {
+            "url": "https://maplibre.org/projects/native/"
+        },
+        "repositoryUrl": {
+            "url": "https://github.com/maplibre/maplibre-native",
+            "wellKnown": "https://maplibre.org/.well-known/funding-manifest-urls"
+        },
+        "licenses": ["spdx:BSD-2-Clause"],
+        "tags": ["maps", "mobile", "data-visualization", "graphics"]
+    }],
+    "funding": {
+        "channels": [{
+            "guid": "open-collective",
+            "type": "payment-provider",
+            "address": "https://opencollective.com/maplibre"
+        }],
+        "plans": [{
+            "guid": "silver-sponsorship",
+            "status": "active",
+            "name": "Silver Sponsorship",
+            "description": "20% allocated to the Development Fund. Logo on our website and in GitHub README, mentioned in all presentations, seat in the Advisory Council.",
+            "amount": 80000,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["open-collective"]
+        }, {
+            "guid": "gold-sponsorship",
+            "status": "active",
+            "name": "Gold Sponsorship",
+            "description": "25% allocated to the Development Fund. Logo on our website and in GitHub README, mentioned in all presentations, seat in the Advisory Council.",
+            "amount": 150000,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["open-collective"]
+        }, {
+            "guid": "platinum-sponsorship",
+            "status": "active",
+            "name": "Platinium Sponsorship",
+            "description": "35% allocated to the Development Fund. Logo on our website and in GitHub README, mentioned in all presentations, seat in the Advisory Council.",
+            "amount": 300000,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["open-collective"]
+        }, {
+            "guid": "diamond-sponsorship",
+            "status": "active",
+            "name": "Diamond Sponsorship",
+              "description": "40% allocated to the Development Fund. Logo on our website and in GitHub README, mentioned in all presentations, seat in the Advisory Council.",
+            "amount": 500000,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["open-collective"]
+        }, {
+            "guid": "donation",
+            "status": "active",
+            "name": "Diamond Sponsorship",
+            "description": "Fund maintainance of our core projects.",
+            "amount": 0,
+            "currency": "USD",
+            "frequency": "yearly",
+            "channels": ["open-collective"]
+        }],
+        "history": [{
+            "year": 2022,
+            "income": 423976.61,
+            "expenses": 79924.71,
+            "currency": "USD"
+        }, {
+            "year": 2023,
+            "income": 391500.59,
+            "expenses": 251900.65,
+            "currency": "USD"
+        }, {
+            "year": 2024,
+            "income": 529306.12,
+            "expenses": 321966.56,
+            "currency": "USD"
+        }, {
+            "year": 2025,
+            "income": 302362.81,
+            "expenses": 253264.9,
+            "currency": "USD"
+        }]
+    }
+}
+
