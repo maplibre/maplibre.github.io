@@ -14,18 +14,6 @@ export const Sponsors = (props: any) => {
         <br />
       </p>
       <div class="gold-list">
-        <a href="https://aws.amazon.com/location/">
-          <div>
-            <img src="img/aws-logo.svg" />
-          </div>
-        </a>
-
-        <a href="https://www.meta.com/">
-          <div>
-            <img src="img/meta-logo.svg" />
-          </div>
-        </a>
-
         <a href="https://www.microsoft.com/">
           <div>
             <img src="img/msft-logo.svg" />
@@ -40,6 +28,11 @@ export const Sponsors = (props: any) => {
       </p>
 
       <div class="silver-list">
+        <a href="https://aws.amazon.com/location/">
+          <div>
+            <img src="img/aws-logo.svg" />
+          </div>
+        </a>
         <a href="https://www.mierune.co.jp/?lang=en">
           <div>
             <img src="img/mierune-logo.svg" />
@@ -58,11 +51,6 @@ export const Sponsors = (props: any) => {
         <a href="https://www.radar.com/">
           <div>
             <img src="img/radar-logo.svg" />
-          </div>
-        </a>
-        <a href="https://www.mappedin.com/">
-          <div>
-            <img src="img/mappedin-logo.svg" />
           </div>
         </a>
         <a href="https://mapme.com/">
