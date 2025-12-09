@@ -83,11 +83,10 @@
         }, {
             "guid": "donation",
             "status": "active",
-            "name": "Diamond Sponsorship",
+            "name": "Donation",
             "description": "Fund maintainance of our core projects.",
             "amount": 0,
             "currency": "USD",
-            "frequency": "yearly",
             "channels": ["open-collective"]
         }],
         "history": [{
