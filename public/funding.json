@@ -20,7 +20,7 @@
         },
         "repositoryUrl": {
             "url": "https://github.com/maplibre/maplibre-gl-js",
-            "wellKnown": "https://maplibre.org/.well-known/funding-manifest-urls"
+            "wellKnown": "https://github.com/maplibre/maplibre-gl-js/blob/main/docs/assets/.well-known/funding-manifest-urls"
         },
         "licenses": ["spdx:BSD-3-Clause"],
         "tags": ["maps", "web-development", "data-visualization", "graphics"]
@@ -33,7 +33,7 @@
         },
         "repositoryUrl": {
             "url": "https://github.com/maplibre/maplibre-native",
-            "wellKnown": "https://maplibre.org/.well-known/funding-manifest-urls"
+            "wellKnown": "https://github.com/maplibre/maplibre-native/blob/main/.well-known/funding-manifest-urls"
         },
         "licenses": ["spdx:BSD-2-Clause"],
         "tags": ["maps", "mobile", "data-visualization", "graphics"]
