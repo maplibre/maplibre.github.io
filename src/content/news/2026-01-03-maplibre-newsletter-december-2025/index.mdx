@@ -2,9 +2,28 @@
 title: "MapLibre Newsletter November 2025"
 date: "2025-12-02"
 categories: ["newsletter"]
-authors:
-  [harel-mazor, bart-louwers, "ramya-ragupathy"]
+authors: [harel-mazor, bart-louwers, "ramya-ragupathy"]
 draft: false
 ---
 
 import { Image } from "astro:assets";
+
+## MapLibre Native
+
+- The latest releases for MapLibre iOS and Android allow adding GeoJSON sources which use synchronous updates. This is especially useful for GeoJSON layers which are time sensitive such as the location puck (the internal location indicator layer on Android has been updated to use a synchronous GeoJSON layer). Please try it out and share your experiences. Thanks Alex Cristici for implementing this functionality.
+- Jesse Crocker and Nathan Olson are cooking up a Terrain 3D implementation for MapLibre Native. See [here](https://github.com/JesseCrocker/maplibre-native/pull/2) and [here](https://github.com/NathanMOlson/maplibre-native/pull/1).
+- Andrew Calcutt is working on a PR to [update Hillshade Algorithms and add Color-Relief Layer support](https://github.com/maplibre/maplibre-native/pull/3965). Please have a look, try it out if you can and give his PR a +1!
+- We are still gathering feedback on a [an Android pre-release](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.3.0-pre0) which enables icon scaling with offsets and makes changes to the transform implementation to allow for concurrent animations. If you have the change please try it out to ensure there are no regressions with your app.
+- Releases this month:
+  - MapLibre Node.js [6.3.0](https://github.com/maplibre/maplibre-native/releases/tag/node-v6.3.0)
+  - MapLibre Android [12.3.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.3.0) [12.3.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.2.3)
+  - MapLibre iOS [6.22.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.22.0) [6.22.1](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.22.1)
+
+<img
+  width="3740"
+  height="2578"
+  alt="Image"
+  src="https://github.com/user-attachments/assets/72757c1c-c0d6-4de0-ac29-030f4289ad45"
+/>
+
+Screenshot of MapLibre Native showing the [Mapterhorn](https://mapterhorn.com/) terrain tiles ([attribution](https://mapterhorn.com/attribution/)) with `basic` as [`hillshade-method`](https://maplibre.org/maplibre-style-spec/layers/#hillshade-method).
