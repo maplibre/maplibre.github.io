@@ -17,6 +17,7 @@ draft: false
 import { Image } from "astro:assets";
 import mapterhorn from "./mapterhorn.png";
 import martin from "./martin.jpg";
+import diplomat from "./diplomat.png";
 
 As we close out 2025, the MapLibre ecosystem continues to move forward across platforms, tooling, and the broader open-source mapping community. While December is traditionally a quieter month, there’s still plenty to share about performance improvements and new capabilities in MapLibre Native, GL JS, and other community-led initiatives.
 
@@ -162,6 +163,28 @@ Another exciting release, version [0.3.3](https://github.com/josxha/flutter-mapl
 
 The [OpenStreetMap Americana](https://americanamap.org/) team has released [Diplomat](https://github.com/osm-americana/diplomat/), a new MapLibre GL JS plugin for converting labels into different languages. Diplomat supports dual language labels and all major tile schemas.
 
+<div
+  style={{ maxWidth: "540px", margin: "2rem auto 1.5rem", textAlign: "center" }}
+>
+  <Image
+    src={diplomat}
+    alt="Multilingual labels rendered with Diplomat"
+    sizes="(min-width: 1024px) 540px, (min-width: 768px) 500px, 100vw"
+    style={{
+      width: "100%",
+      height: "auto",
+      display: "block",
+      borderRadius: "0.5rem",
+    }}
+    class="shadow-sm"
+    loading="lazy"
+    decoding="async"
+  />
+  <p style={{ fontSize: "0.8rem", color: "#666", marginTop: "0.4rem" }}>
+    <em>Multilingual labeling example using Diplomat.</em>
+  </p>
+</div>
+
 **OpenStreetMap Website Migration**
 
 There has also been steady progress on migrating the OpenStreetMap website to MapLibre. So far, [the dashboard landing page has been migrated](https://github.com/openstreetmap/openstreetmap-website/pull/6504), while many other pages are still pending.
@@ -173,7 +196,8 @@ If you’re interested in contributing to this effort, [here's the issue](https:
 We plan to participate and contribute to sessions/workshops in the following events this month.
 
 - [FOSS4G Asia 2026](https://foss4g.asia/2026/), held in [Nashik, Maharashtra, India](https://www.openstreetmap.org/relation/10345696#map=11/19.9724/73.7560), from 21–25 January 2026
-- [State of the Map India 2026 (SOTM India)](https://www.openstreetmap.in/sotm-india/), taking place on 25th January 2026
+- [State of the Map India 2026 (SOTM India)](https://www.openstreetmap.in/sotm-india/), taking place on 25-January 2026
+- [FOSDEM 2026](https://fosdem.org/2026/) in [Brussels](https://www.openstreetmap.org/relation/58274) on 31-January & 3-February 2026 where [Bart Lowers will be presenting a talk on State of the MapLibre Tile Format](https://fosdem.org/2026/schedule/event/QAL9VN-state-of-the-maplibre-tile-format/).
 
 FOSS4G Asia Talks to watch out for:
 
@@ -226,7 +250,7 @@ FOSS4G Asia Talks to watch out for:
         <td style="padding: 8px 12px;">15:00–15:30</td>
         <td style="padding: 8px 12px;">30 min</td>
         <td style="padding: 8px 12px;">Room 2</td>
-        <td style="padding: 8px 12px;">Frank Elsinga, Bart Louwers</td>
+        <td style="padding: 8px 12px;">Frank Elsinga</td>
       </tr>
 
       <tr>
