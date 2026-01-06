@@ -17,7 +17,8 @@ draft: false
 import { Image } from "astro:assets";
 import mapterhorn from "./mapterhorn.png";
 import martin from "./martin.jpg";
-import diplomat from "./diplomat.png";
+import diplomat_before from "./diplomat-before.png";
+import diplomat_after from "./diplomat-after.jpg";
 
 As we close out 2025, the MapLibre ecosystem continues to move forward across platforms, tooling, and the broader open-source mapping community. While December is traditionally a quieter month, there’s still plenty to share about performance improvements and new capabilities in MapLibre Native, GL JS, and other community-led initiatives.
 
@@ -164,25 +165,101 @@ Another exciting release, version [0.3.3](https://github.com/josxha/flutter-mapl
 The [OpenStreetMap Americana](https://americanamap.org/) team has released [Diplomat](https://github.com/osm-americana/diplomat/), a new MapLibre GL JS plugin for converting labels into different languages. Diplomat supports dual language labels and all major tile schemas.
 
 <div
-  style={{ maxWidth: "540px", margin: "2rem auto 1.5rem", textAlign: "center" }}
+  style={{
+    maxWidth: "560px",
+    margin: "2.5rem auto",
+  }}
 >
-  <Image
-    src={diplomat}
-    alt="Multilingual labels rendered with Diplomat"
-    sizes="(min-width: 1024px) 540px, (min-width: 768px) 500px, 100vw"
+  <div
     style={{
-      width: "100%",
-      height: "auto",
-      display: "block",
-      borderRadius: "0.5rem",
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
+      gap: "1rem",
+      alignItems: "start",
     }}
-    class="shadow-sm"
-    loading="lazy"
-    decoding="async"
-  />
-  <p style={{ fontSize: "0.8rem", color: "#666", marginTop: "0.4rem" }}>
-    <em>Multilingual labeling example using Diplomat.</em>
+  >
+    <div style={{ textAlign: "center" }}>
+      <Image
+        src={diplomat_before}
+        alt="Before: single-language labels"
+        sizes="(min-width: 768px) 260px, 100vw"
+        style={{
+          width: "100%",
+          height: "auto",
+          borderRadius: "0.5rem",
+        }}
+        class="shadow-sm"
+        loading="lazy"
+        decoding="async"
+      />
+      <p
+        style={{
+          fontSize: "0.75rem",
+          color: "#666",
+          marginTop: "0.4rem",
+        }}
+      >
+        <em>Before: single-language labeling</em>
+      </p>
+    </div>
+
+    <div style={{ textAlign: "center" }}>
+      <Image
+        src={diplomat_after}
+        alt="After: dual-language labels with Diplomat"
+        sizes="(min-width: 768px) 260px, 100vw"
+        style={{
+          width: "100%",
+          height: "auto",
+          borderRadius: "0.5rem",
+        }}
+        class="shadow-sm"
+        loading="lazy"
+        decoding="async"
+      />
+      <p
+        style={{
+          fontSize: "0.75rem",
+          color: "#666",
+          marginTop: "0.4rem",
+        }}
+      >
+        <em>After: dual-language labels with Diplomat</em>
+      </p>
+    </div>
+
+  </div>
+
+  <div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    marginTop: "0.6rem",
+  }}
+>
+  <p
+    style={{
+      fontSize: "0.75rem",
+      color: "#666",
+      whiteSpace: "nowrap",
+      margin: 0,
+    }}
+  >
+
+    <em style={{
+    margin: "0.6rem auto 0",
+    fontSize: "0.75rem",
+    color: "#666",
+    textAlign: "center",
+    whiteSpace: "nowrap",
+
+}}>
+Map data ©[OpenStreetMap contributors](https://www.openstreetmap.org). Tiles by [OpenMapTiles](https://openmaptiles.org/).
+
+</em>
+
   </p>
+  </div>
 </div>
 
 **OpenStreetMap Website Migration**
