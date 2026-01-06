@@ -1,29 +1,279 @@
 ---
-title: "MapLibre Newsletter November 2025"
-date: "2025-12-02"
+title: "MapLibre Newsletter December 2025"
+date: "2026-01-03"
 categories: ["newsletter"]
-authors: [harel-mazor, bart-louwers, "ramya-ragupathy"]
+authors:
+  [
+    harel-mazor,
+    bart-louwers,
+    frank-elsinga,
+    joscha-eckert,
+    ian-wagner,
+    ramya-ragupathy,
+  ]
 draft: false
 ---
 
 import { Image } from "astro:assets";
+import mapterhorn from "./mapterhorn.png";
+import martin from "./martin.jpg";
 
-## MapLibre Native
+As we close out 2025, the MapLibre ecosystem continues to move forward across platforms, tooling, and the broader open-source mapping community. While December is traditionally a quieter month, there’s still plenty to share about performance improvements and new capabilities in MapLibre Native, GL JS, and other community-led initiatives.
 
-- The latest releases for MapLibre iOS and Android allow adding GeoJSON sources which use synchronous updates. This is especially useful for GeoJSON layers which are time sensitive such as the location puck (the internal location indicator layer on Android has been updated to use a synchronous GeoJSON layer). Please try it out and share your experiences. Thanks Alex Cristici for implementing this functionality.
-- Jesse Crocker and Nathan Olson are cooking up a Terrain 3D implementation for MapLibre Native. See [here](https://github.com/JesseCrocker/maplibre-native/pull/2) and [here](https://github.com/NathanMOlson/maplibre-native/pull/1).
-- Andrew Calcutt is working on a PR to [update Hillshade Algorithms and add Color-Relief Layer support](https://github.com/maplibre/maplibre-native/pull/3965). Please have a look, try it out if you can and give his PR a +1!
-- We are still gathering feedback on a [an Android pre-release](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.3.0-pre0) which enables icon scaling with offsets and makes changes to the transform implementation to allow for concurrent animations. If you have the change please try it out to ensure there are no regressions with your app.
-- Releases this month:
-  - MapLibre Node.js [6.3.0](https://github.com/maplibre/maplibre-native/releases/tag/node-v6.3.0)
-  - MapLibre Android [12.3.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.3.0) [12.3.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.2.3)
-  - MapLibre iOS [6.22.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.22.0) [6.22.1](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.22.1)
+None of this work would be possible without the continued support of our sponsors, whose contributions help keep MapLibre sustainable and moving forward. Thank you for supporting and here’s wishing our community a Mappy New Year 🗺️🎉.
 
-<img
-  width="3740"
-  height="2578"
-  alt="Image"
-  src="https://github.com/user-attachments/assets/72757c1c-c0d6-4de0-ac29-030f4289ad45"
-/>
+## 📱 MapLibre Native
 
-Screenshot of MapLibre Native showing the [Mapterhorn](https://mapterhorn.com/) terrain tiles ([attribution](https://mapterhorn.com/attribution/)) with `basic` as [`hillshade-method`](https://maplibre.org/maplibre-style-spec/layers/#hillshade-method).
+**Faster, Synchronous GeoJSON updates:** The latest releases for MapLibre iOS and Android allow adding GeoJSON sources which use synchronous updates. This is especially useful for time-sensitive GeoJSON layers such as the location puck (the internal location indicator layer on Android has been updated to use a synchronous GeoJSON layer). Please try it out and share your experiences. Thanks [Alex Cristici](https://github.com/alexcristici) for implementing this functionality.
+
+**Terrain 3D support:** [Jesse Crocker](https://github.com/jessecrocker) and [Nathan Olson](https://github.com/NathanMOlson) are cooking up a Terrain 3D implementation for MapLibre Native. Check out the work in progress [here](https://github.com/JesseCrocker/maplibre-native/pull/2) and [here](https://github.com/NathanMOlson/maplibre-native/pull/1).
+
+**Enhanced Hillshade & Color-Relief Layers:** [Andrew Calcutt](https://github.com/acalcutt) is working on a PR to [update Hillshade Algorithms and add Color-Relief Layer support](https://github.com/maplibre/maplibre-native/pull/3965). Please have a look, try it out if you can and give his PR a +1!
+
+**Android Transofrm Updates:** We are still gathering feedback on [an Android pre-release](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.3.0-pre0) that enables icon scaling with offsets and makes changes to the transform implementation to allow for concurrent animations. If you're affected by these changes, please try it and help ensure there are no regressions in your app.
+
+Releases this month:
+
+- MapLibre Node.js [6.3.0](https://github.com/maplibre/maplibre-native/releases/tag/node-v6.3.0)
+- MapLibre Android [12.3.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.3.0), [12.3.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v12.3.1)
+- MapLibre iOS [6.22.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.22.0), [6.22.1](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.22.1)
+
+<div style={{ maxWidth: "600px", margin: "1.5rem auto", textAlign: "center" }}>
+  <Image
+    src={mapterhorn}
+    alt="Mapterhorn"
+    sizes="(min-width: 1024px) 600px, (min-width: 768px) 600px, 100vw"
+    style={{
+      width: "100%",
+      height: "auto",
+      display: "block",
+      border: "1px solid #e5e7eb",
+      borderRadius: "0.75rem",
+    }}
+    class="shadow-md"
+    loading="lazy"
+    decoding="async"
+  />
+  <p>
+    <em
+      style={{
+        fontSize: "0.85rem",
+        color: "#666",
+        marginTop: "0.4rem",
+        fontStyle: "italic",
+      }}
+    >
+      {" "}
+      MapLibre Native with [Mapterhorn](https://mapterhorn.com/) terrain tiles
+      ([attribution](https://mapterhorn.com/attribution/)) with `basic` as
+      [`hillshade-method`](https://maplibre.org/maplibre-style-spec/layers/#hillshade-method).
+    </em>
+  </p>
+</div>
+
+## 🌐 MapLibre GL JS
+
+Version [5.14.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.14.0) and [5.15.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.15.0) are now available! These releases include several bug fixes related to terrain, canvas source, abort errors, GeoJSON handling and general packaging improvements.
+Another notable addition is support for [`global-state`](https://maplibre.org/maplibre-style-spec/expressions/#global-state) in expression visibility.
+
+Many thanks to all the contributors in these releases: [Lucas Wojciechowski](https://github.com/lucaswoj), [David E Disch](https://github.com/Auspicus), [Ryan](https://github.com/wayofthefuture), [Mary](https://github.com/mmc1718), [Andrew Dassonville](https://github.com/andrewda), [Omkarthipparthi](https://github.com/Omkarthipparthi), [Lars Maxfield](https://github.com/larsmaxfield)
+
+**GeoJSON Improvements**
+
+Additionally, [geojson-vt](https://github.com/maplibre/geojson-vt) has been onboarded to the MapLibre GitHub organisation to support incremental tile updates for GeoJSON. We are also researching solutions to some long-standing issues in GeoJSON usage, such as handling nested and undefined properties.
+
+**MLT TypeScript**
+
+There's [an open PR to support decoding of FastPFor](https://github.com/maplibre/maplibre-tile-spec/pull/714), which is the final missing piece for version 1.0 of the tile specification. In parallel, ongoing work is focused on performance optimizations, along with a strong emphasis on unit tests to ensure the codebase is well covered.
+
+**NPM & Tooling**
+
+We've moved all our packages to trusted publishing and aligned the CI workflows to make the changelog and release process consistent across most packages.
+
+## 🧩 Martin
+
+Development slowed down a bit over the past month due to the holiday season, but we still managed to ship a handful of useful improvements in the [1.1.0](https://github.com/maplibre/martin/releases/tag/martin-v1.1.0) and [1.2.0](https://github.com/maplibre/martin/releases/tag/martin-v1.2.0) releases.
+
+Highlights include better support for automation, more flexible error handling, and a few targeted fixes and performance tweaks:
+
+- The `mbtiles summary` command now supports `--format [json | json-pretty | text]`, making it easier to integrate with scripts and other automated tooling (by [Yuri Astrakhan](https://github.com/nyurik)).
+- A new `on_invalid: warn` option allows invalid sources to emit warnings instead of aborting execution, giving users more control over failure behavior (by [Gabe Schine](https://github.com/gabeschine)).
+- Fixed an issue where PostgreSQL sources with `auto_publish: false` would incorrectly warn about all tables and functions; warnings are now limited to explicitly configured sources (by [Brian Todt](https://github.com/todtb)).
+- `martin-cp` now infers default bounds from configured sources, improving performance when copying from sparse source sets (by [Brian Todt](https://github.com/todtb)).
+- Discovery now supports `az://` URL schemes, enabling Azure Blob Storage–based workflows (by [Frank Elsinga](https://github.com/CommanderStorm)).
+
+Even with a quieter month, these changes help smooth out common workflows and make Martin easier to integrate into larger systems.
+
+<div
+  style={{ maxWidth: "540px", margin: "2rem auto 1.5rem", textAlign: "center" }}
+>
+  <Image
+    src={martin}
+    alt="Martin Demo"
+    sizes="(min-width: 1024px) 540px, (min-width: 768px) 500px, 100vw"
+    style={{
+      width: "100%",
+      height: "auto",
+      display: "block",
+      border: "1px solid #e5e7eb",
+      borderRadius: "0.75rem",
+    }}
+    class="shadow-md"
+    loading="lazy"
+    decoding="async"
+  />
+  <p>
+    <em
+      style={{
+        fontSize: "0.8rem",
+        color: "#666",
+        marginTop: "0.4rem",
+        fontStyle: "italic",
+      }}
+    >
+      Screenshot from [Martin demo site](https://martin.maplibre.org/).
+    </em>
+  </p>
+</div>
+## ✨ MapLibre SwiftUI DSL
+
+It's been a few months since our last update, but the [SwiftUI DSL continues to add new features and receive updates](https://github.com/maplibre/swiftui-dsl) to keep pace with the latest MapLibre Native releases as well as updates from Apple.
+
+Some highlights include:
+
+- Support for the latest SwiftSyntax versions and iOS 26
+- A half dozen or so new style property bindings
+- Moving more properties to be controlled via the environment, which should help clean up a lot of code going forward!
+
+Looking back on the year, we've picked up quite [a few new contributors](https://github.com/maplibre/swiftui-dsl/graphs/contributors?from=1%2F4%2F2025)! While we don't yet know how this correlates to usage, it's reasonable to call it a success. Looking forward to 2026, our process for exposing API bindings appears to be working well, so it's time to consider an automated approach to fill in the rest of the missing bindings. Expect an update in future newsletters, or join us in the `#maplibre-swiftui` channel on Slack.
+
+## 🪶 MapLibre Flutter
+
+Since the last update in the September newsletter, we've continued to focus on good stability and cross-platform experience for developers. Version [0.3.1](https://pub.dev/packages/maplibre/changelog#031) and [0.3.2](https://github.com/josxha/flutter-maplibre/blob/main/maplibre/CHANGELOG.md#032) have been released, bringing several notable improvements:
+
+- Moving to 100% ffi interop on Android. We are looking forward to achieving the same on iOS soon.
+- Support for creating map markers from [Material](https://api.flutter.dev/flutter/material/Icons-class.html), [Cupertino](https://api.flutter.dev/flutter/cupertino/CupertinoIcons-class.html) or any other Flutter [IconData](https://api.flutter.dev/flutter/widgets/IconData-class.html). These icons can be displayed on the map without any delay between Flutter and the MapLibre map. For the future, support for rendering complete widgets as map markers is planned.
+
+Another exciting release, version [0.3.3](https://github.com/josxha/flutter-maplibre/milestone/13), is coming soon. A big thanks to everyone involved in the progress and development throughout 2025!
+
+## 🌍 Ecosystem Spotlight
+
+**Diplomat Plugin**
+
+The [OpenStreetMap Americana](https://americanamap.org/) team has released [Diplomat](https://github.com/osm-americana/diplomat/), a new MapLibre GL JS plugin for converting labels into different languages. Diplomat supports dual language labels and all major tile schemas.
+
+**OpenStreetMap Website Migration**
+
+There has also been steady progress on migrating the OpenStreetMap website to MapLibre. So far, [the dashboard landing page has been migrated](https://github.com/openstreetmap/openstreetmap-website/pull/6504), while many other pages are still pending.
+
+If you’re interested in contributing to this effort, [here's the issue](https://github.com/openstreetmap/openstreetmap-website/issues/6234) outlining the overall plan and remaining work.
+
+## 👥 Conferences
+
+We plan to participate and contribute to sessions/workshops in the following events this month.
+
+- [FOSS4G Asia 2026](https://foss4g.asia/2026/), held in [Nashik, Maharashtra, India](https://www.openstreetmap.org/relation/10345696#map=11/19.9724/73.7560), from 21–25 January 2026
+- [State of the Map India 2026 (SOTM India)](https://www.openstreetmap.in/sotm-india/), taking place on 25th January 2026
+
+FOSS4G Asia Talks to watch out for:
+
+<p style="margin-bottom: 0.5rem; color:#666; font-size: 0.85rem;">
+  <em>*All times are in Indian Standard Time (IST, UTC +5:30).* </em>
+</p>
+
+<div style="overflow-x: auto;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 600px;">
+    <thead>
+      <tr>
+        <th style="border-bottom: 1px solid #ccc; text-align: left; padding: 8px 12px;">Talk/Workshop</th>
+        <th style="border-bottom: 1px solid #ccc; text-align: left; padding: 8px 12px; min-width: 90px;">Date</th>
+        <th style="border-bottom: 1px solid #ccc; text-align: left; padding: 8px 12px;">Time</th>
+        <th style="border-bottom: 1px solid #ccc; text-align: left; padding: 8px 12px;">Duration</th>
+        <th style="border-bottom: 1px solid #ccc; text-align: left; padding: 8px 12px;">Location</th>
+        <th style="border-bottom: 1px solid #ccc; text-align: left; padding: 8px 12px;">Presenter</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td style="padding: 8px 12px;">
+          Tile serving with MapLibre / Martin / Planetiler: base and overlays
+        </td>
+        <td style="padding: 8px 12px;">Jan 21</td>
+        <td style="padding: 8px 12px;">14:30–16:30</td>
+        <td style="padding: 8px 12px;">2h</td>
+        <td style="padding: 8px 12px;">Room 1</td>
+        <td style="padding: 8px 12px;">Frank Elsinga</td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px 12px;">
+          High-performance & large-scale geospatial visualisation using MapLibre and Deck.GL (with React)
+        </td>
+        <td style="padding: 8px 12px;">Jan 22</td>
+        <td style="padding: 8px 12px;">09:00–11:00</td>
+        <td style="padding: 8px 12px;">2h</td>
+        <td style="padding: 8px 12px;">Room 1</td>
+        <td style="padding: 8px 12px;">Srijit S. Madhavan</td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px 12px;">
+          State of the MapLibre Tile Format
+        </td>
+        <td style="padding: 8px 12px;">Jan 23</td>
+        <td style="padding: 8px 12px;">15:00–15:30</td>
+        <td style="padding: 8px 12px;">30 min</td>
+        <td style="padding: 8px 12px;">Room 2</td>
+        <td style="padding: 8px 12px;">Frank Elsinga, Bart Louwers</td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px 12px;">
+          Next Generation Tile Server Performance Now
+        </td>
+        <td style="padding: 8px 12px;">Jan 24</td>
+        <td style="padding: 8px 12px;">11:00–11:40</td>
+        <td style="padding: 8px 12px;">40 min</td>
+        <td style="padding: 8px 12px;">Room 1</td>
+        <td style="padding: 8px 12px;">Frank Elsinga</td>
+      </tr>
+
+      <tr>
+        <td style="padding: 8px 12px;">
+          Faster Maps, Smaller MapLibre Vector Tiles, and What’s Next
+        </td>
+        <td style="padding: 8px 12px;">Jan 24</td>
+        <td style="padding: 8px 12px;">11:45–12:15</td>
+        <td style="padding: 8px 12px;">30 min</td>
+        <td style="padding: 8px 12px;">Room 1</td>
+        <td style="padding: 8px 12px;">Frank Elsinga</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+</div>
+
+## 🗓️ Monthly meetings
+
+We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
+
+Upcoming Calls
+
+- MapLibre Navigation: Jan 14, 2026 – 5:00–6:00 PM UTC
+- MapLibre Native: Jan 14, 2026 – 6:00–7:00 PM UTC
+- MapLibre GL JS: Jan 14, 2026 – 7:00–8:00 PM UTC
+
+🌏 MapLibre Eastern Call
+
+Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
+
+- Jan 28, 2026 – 9:00–10:00 AM UTC
+
+🔗 [View meeting times in your local timezone](https://notime.zone/OiHU31IVvQCi6).
+
+All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/).
+We’d love to see you there!
