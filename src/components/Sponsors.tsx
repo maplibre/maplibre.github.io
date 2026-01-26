@@ -16,7 +16,7 @@ export const Sponsors = (props: any) => {
       <div class="gold-list">
         <a href="https://www.microsoft.com/">
           <div>
-            <img src="img/msft-logo.svg" />
+            <img src="/img/msft-logo.svg" />
           </div>
         </a>
       </div>
