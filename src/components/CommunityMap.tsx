@@ -55,7 +55,7 @@ export const CommunityMap = (props: any) => {
     shuffle(JSON.parse(JSON.stringify(props.members))).map((person) => {
       const img = document.createElement("img");
       img.className = "marker";
-      img.src = `community/${person.github}.png`;
+      img.src = `/community/${person.github}.png`;
 
       const anchor = document.createElement("a");
       anchor.href = `https://github.com/${person.github}`;
