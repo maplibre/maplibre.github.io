@@ -1,4 +1,48 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>MapLibre</title><description>The MapLibre Organization is an umbrella for open-source mapping libraries.</description><link>https://maplibre.org/</link><language>en-US</language><lastBuildDate>Fri, 23 Jan 2026 11:35:31 GMT</lastBuildDate><item><title>MapLibre Newsletter December 2025</title><link>https://maplibre.org/news/2026-01-03-maplibre-newsletter-december-2025/</link><guid isPermaLink="true">https://maplibre.org/news/2026-01-03-maplibre-newsletter-december-2025/</guid><pubDate>Sat, 03 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;As we close out 2025, the MapLibre ecosystem continues to move forward across platforms, tooling, and the broader open-source mapping community. While December is traditionally a quieter month, there’s still plenty to share about performance improvements and new capabilities in MapLibre Native, GL JS, and other community-led initiatives.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>MapLibre</title><description>The MapLibre Organization is an umbrella for open-source mapping libraries.</description><link>https://maplibre.org/</link><language>en-US</language><lastBuildDate>Mon, 26 Jan 2026 10:14:23 GMT</lastBuildDate><item><title>Announcing MapLibre Tile: a modern and efficient vector tile format</title><link>https://maplibre.org/news/2026-01-23-mlt-release/</link><guid isPermaLink="true">https://maplibre.org/news/2026-01-23-mlt-release/</guid><pubDate>Fri, 23 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today we are happy to announce &lt;strong&gt;MapLibre Tile&lt;/strong&gt; (MLT), a new modern and efficient vector tile format.&lt;/p&gt;
+&lt;div style=&quot;max-width:1000px;margin:1.5rem auto;text-align:center&quot;&gt;&lt;img src=&quot;https://maplibre.org/_astro/mlt.CaGKYWCo_Z6Nrwr.webp&quot; alt=&quot;MapLibre Tile Support&quot; style=&quot;width:75%;height:auto;display:block;margin:0 auto;border:1px solid #e5e7eb;border-radius:0.75rem&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;2987&quot; height=&quot;1867&quot; class=&quot;shadow-lg&quot;&gt;&lt;p style=&quot;font-size:0.9rem;color:#666;margin-top:0.5rem;font-style:italic&quot;&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;h2 id=&quot;what-is-maplibre-tile&quot;&gt;What is MapLibre Tile?&lt;/h2&gt;
+&lt;p&gt;MapLibre Tile (MLT) is a succesor to &lt;a href=&quot;https://github.com/mapbox/vector-tile-spec&quot;&gt;Mapbox Vector Tile (MVT)&lt;/a&gt;.
+It has been redesigned from the ground up to address the challenges of rapidly growing geospatial data volumes
+and complex next-generation geospatial source formats as well as to leverage the capabilities of modern hardware and APIs.&lt;/p&gt;
+&lt;p&gt;MLT is specifically designed for modern and next generation graphics APIs to enable high-performance processing and rendering of
+large (planet-scale) 2D and 2.5 basemaps. This current implementation offers feature parity with MLT&lt;sup&gt;&lt;a href=&quot;#user-content-fn-1&quot; id=&quot;user-content-fnref-1&quot; data-footnote-ref=&quot;&quot; aria-describedby=&quot;footnote-label&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; while delivering on the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Improved compression ratio&lt;/strong&gt;: up to 6x on large tiles, based on a column oriented layout with recursively applied (custom)
+lightweight encodings. This leads to reduced latency, storage, and egress costs and, in particular, improved cache utilization.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Better decoding performance&lt;/strong&gt;: fast lightweight encodings which can be used in combination with SIMD/vectorization instructions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In addition, MLT was designed to support the following use cases in the future:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Improved support for 3D coordinates&lt;/strong&gt;, i.e. elevation.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Improved processing performance&lt;/strong&gt;, based on storage and in-memory formats that are specifically designed for modern graphics APIs,
+allowing for efficient processing on both CPU and GPU. The formats are designed to be loaded into GPU buffers with little or no additional processing.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Support for linear referencing and m-values&lt;/strong&gt; to efficiently support the upcoming next generation source formats such as Overture Maps (GeoParquet).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Support complex types&lt;/strong&gt;, including nested properties, lists and maps.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As with any MapLibre project, the future of MLT is decided by the needs of the community. There are a lot of exciting ideas for other future extensions and we welcome contributions to &lt;a href=&quot;https://github.com/maplibre/maplibre-tile-spec&quot;&gt;the project&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For a more in-depth exploration of MLT have a look at the &lt;a href=&quot;https://github.com/mactrem/presentations/blob/main/FOSS4G_2024_Europe/FOSS4G_2024_Europe.pdf&quot;&gt;following slides&lt;/a&gt;, watch
+&lt;a href=&quot;https://www.youtube.com/watch?v=YHcoAFcsES0&quot;&gt;this talk&lt;/a&gt; or read &lt;a href=&quot;https://www.arxiv.org/abs/2508.10791&quot;&gt;this paper&lt;/a&gt; by MLT inventor Markus Tremmel.&lt;/p&gt;
+&lt;h2 id=&quot;when-can-i-use-it&quot;&gt;When can I use it?&lt;/h2&gt;
+&lt;p&gt;For the adventerous, the answer is: &lt;strong&gt;today&lt;/strong&gt;. Both MapLibre GL JS and MapLibre Native now support MLT sources. You can use the new &lt;a href=&quot;https://maplibre.org/maplibre-style-spec/sources/#encoding&quot;&gt;&lt;code&gt;encoding&lt;/code&gt;&lt;/a&gt; property on sources in your style JSON with a value of &lt;code&gt;mlt&lt;/code&gt; for MLT vector tile sources.&lt;/p&gt;
+&lt;p&gt;To try out MLT, you have the following options:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The easiest way to try out MLT is to use the &lt;a href=&quot;https://raw.githubusercontent.com/maplibre/demotiles/refs/heads/gh-pages/tiles-mlt/plain.json&quot;&gt;MLT-based demotiles style&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;You can also try out the &lt;a href=&quot;https://github.com/maplibre/maplibre-tile-spec/tree/main/java/encoding-server&quot;&gt;encoding server&lt;/a&gt; which converts existing (MVT based) styles and vector tile sources to MLT on the fly. This is mostly a tool for development.&lt;/li&gt;
+&lt;li&gt;To create tiles for production, you could use &lt;a href=&quot;https://github.com/onthegomap/planetiler&quot;&gt;Planetiler&lt;/a&gt;, as the upcoming version will support generating MLTs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Refer to &lt;a href=&quot;https://maplibre.org/maplibre-tile-spec/implementation-status/&quot;&gt;this page&lt;/a&gt; for a complete and up-to-date list of integrations and implementations. If you are an intergrator working on supporting MLT, feel free to add your own project there.&lt;/p&gt;
+&lt;p&gt;We would love to hear your experience with using MLT! Join the &lt;code&gt;#maplibre-tile-format&lt;/code&gt; channel on &lt;a href=&quot;https://maplibre.org/community&quot;&gt;our Slack&lt;/a&gt; or create an Issue or Discussion on the &lt;a href=&quot;https://github.com/maplibre/maplibre-tile-spec&quot;&gt;tile spec repo&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h2&gt;
+&lt;p&gt;MapLibre Tile came to be thanks to a multi-year collaboration between academia, open source and enterprise. Thank you to everyone that was involved! We are very proud that our community is able to innovate like this.&lt;/p&gt;
+&lt;p&gt;Special thanks goes to Markus Tremmel for inventing the format, Yuri Astrakhan for spearheading the project, Tim Sylvester for the C++ implementation, Harel Mazor, Benedikt Vogl and Niklas Greindl for working on the JavaScript implementation.&lt;/p&gt;
+&lt;p&gt;Also thanks to Microsoft and AWS for financing work on MLT.&lt;/p&gt;
+&lt;section data-footnotes=&quot;&quot; class=&quot;footnotes&quot;&gt;&lt;h2 class=&quot;sr-only&quot; id=&quot;footnote-label&quot;&gt;Footnotes&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li id=&quot;user-content-fn-1&quot;&gt;
+&lt;p&gt;One exception: unlike MVT, MLT does not support layers where a value in a column changes type from feature to feature. &lt;a href=&quot;#user-content-fnref-1&quot; data-footnote-backref=&quot;&quot; aria-label=&quot;Back to reference 1&quot; class=&quot;data-footnote-backref&quot;&gt;↩&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;</content:encoded><author/></item><item><title>MapLibre Newsletter December 2025</title><link>https://maplibre.org/news/2026-01-03-maplibre-newsletter-december-2025/</link><guid isPermaLink="true">https://maplibre.org/news/2026-01-03-maplibre-newsletter-december-2025/</guid><pubDate>Sat, 03 Jan 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;As we close out 2025, the MapLibre ecosystem continues to move forward across platforms, tooling, and the broader open-source mapping community. While December is traditionally a quieter month, there’s still plenty to share about performance improvements and new capabilities in MapLibre Native, GL JS, and other community-led initiatives.&lt;/p&gt;
 &lt;p&gt;None of this work would be possible without the continued support of our &lt;a href=&quot;https://maplibre.org/sponsors/&quot;&gt;sponsors&lt;/a&gt;, whose contributions help keep MapLibre sustainable and moving forward. Thank you for supporting and here’s wishing our community a Mappy New Year 🗺️🎉.&lt;/p&gt;
 &lt;h2 id=&quot;-maplibre-native&quot;&gt;📱 MapLibre Native&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Faster, Synchronous GeoJSON updates:&lt;/strong&gt; The latest releases for MapLibre iOS and Android allow adding GeoJSON sources which use synchronous updates. This is especially useful for time-sensitive GeoJSON layers such as the location puck (the internal location indicator layer on Android has been updated to use a synchronous GeoJSON layer). Please try it out and share your experiences. Thanks &lt;a href=&quot;https://github.com/alexcristici&quot;&gt;Alex Cristici&lt;/a&gt; for implementing this functionality.&lt;/p&gt;
@@ -1010,78 +1054,4 @@ We also &lt;a href=&quot;https://github.com/maplibre/maplibre-gl-js/releases/tag
 &lt;li&gt;Feb 26, 2025 - 9:00–10:00 AM UTC&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;View meeting times in your time zone: &lt;a href=&quot;https://notime.zone/OILeS6ABXai72&quot;&gt;https://notime.zone/OILeS6ABXai72&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;All calls are open to everyone. Zoom links can be found in our MapLibre Slack. If you’re not a member, request an invite at &lt;a href=&quot;https://slack.openstreetmap.us/&quot;&gt;OpenStreetMap US Slack community&lt;/a&gt;. We look forward to seeing you!&lt;/p&gt;</content:encoded><author/></item><item><title>MapLibre Newsletter December 2024</title><link>https://maplibre.org/news/2025-01-05-maplibre-newsletter-december-2024/</link><guid isPermaLink="true">https://maplibre.org/news/2025-01-05-maplibre-newsletter-december-2024/</guid><pubDate>Sun, 05 Jan 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Happy New Year, MapLibre Community! We are thrilled to share big updates for MapLibre Native (including Vulkan support), the official launch of MapLibre GL JS Version 5.0, new features in Martin Tile Server, and more.&lt;/p&gt;
-&lt;p&gt;In January we will hold a MapLibre Eastern Call again to better connect with contributors around the world.&lt;/p&gt;
-&lt;p&gt;Let’s dive in!&lt;/p&gt;
-&lt;h2 id=&quot;maplibre-native&quot;&gt;MapLibre Native&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;MapLibre Android &lt;a href=&quot;https://github.com/maplibre/maplibre-native/releases/tag/android-v11.7.0&quot;&gt;11.7.0&lt;/a&gt; and &lt;a href=&quot;https://github.com/maplibre/maplibre-native/releases/tag/android-v11.7.1&quot;&gt;11.7.1&lt;/a&gt; were released. These versions mark the first-ever releases with Vulkan support. Check out the detailed announcement on &lt;a href=&quot;https://maplibre.org/news/2024-12-12-maplibre-android-vulkan/&quot;&gt;MapLibre Android Vulkan Support&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;The latest version of MapLibre iOS &lt;a href=&quot;https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.9.0&quot;&gt;6.9.0&lt;/a&gt; is here.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;kotlin-multiplatform&quot;&gt;Kotlin Multiplatform&lt;/h3&gt;
-&lt;p&gt;Exciting news for developers interested in &lt;a href=&quot;https://kotlinlang.org/docs/multiplatform.html&quot;&gt;&lt;strong&gt;Kotlin Multiplatform&lt;/strong&gt;&lt;/a&gt;: &lt;a href=&quot;https://github.com/sargunv&quot;&gt;Sargun Vohra&lt;/a&gt;, with input from &lt;a href=&quot;https://github.com/westnordost&quot;&gt;Tobias Zwick&lt;/a&gt;, has released &lt;a href=&quot;https://github.com/maplibre/maplibre-compose#maplibre-for-compose&quot;&gt;MapLibre for Compose&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;The library integrates MapLibre iOS and MapLibre Android and is open to contributions. Experiments that add desktop support as well as support for the web (by integrating with MapLibre GL JS) are underway.&lt;/p&gt;
-&lt;p&gt;Originally released late November, the library is now at v0.4.0. Get started here:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;📂 Repository: &lt;a href=&quot;https://github.com/maplibre/maplibre-compose&quot;&gt;GitHub Repo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;📖 Documentation: &lt;a href=&quot;https://maplibre.org/maplibre-compose/&quot;&gt;Explore Docs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Here’s a sneak peek of MapLibre for Compose in action:&lt;/p&gt;
-&lt;div style=&quot;display:flex;justify-content:center;align-items:center;gap:20px&quot;&gt;&lt;img src=&quot;https://maplibre.org/_astro/maplibre-compose-android.ZmFsHdtY_ZLRntU.webp&quot; style=&quot;max-width:200px;width:100%;height:auto;display:inline-block&quot; alt=&quot;MapLibre Compose - Android demo&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;349&quot; height=&quot;800&quot;&gt;&lt;img src=&quot;https://maplibre.org/_astro/maplibre-compose-ios.DFQuyvpJ_Z1yfczr.webp&quot; style=&quot;max-width:200px;width:100%;height:auto;display:inline-block&quot; alt=&quot;MapLibre Compose - iOS demo&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;348&quot; height=&quot;800&quot;&gt;&lt;/div&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;maplibre-gl-js&quot;&gt;MapLibre GL JS&lt;/h2&gt;
-&lt;p&gt;We’re thrilled to announce the official release of &lt;a href=&quot;https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0&quot;&gt;MapLibre GL JS Version 5.0&lt;/a&gt;! 🌏&lt;/p&gt;
-&lt;p&gt;This major release, shaped by feedback and several pre-releases (including &lt;a href=&quot;https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.9&quot;&gt;5.0.0-pre.9&lt;/a&gt;, &lt;a href=&quot;https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.10&quot;&gt;5.0.0-pre.10&lt;/a&gt; released in December 2024), introduces globe rendering mode, providing a more immersive experience.
-It doesn’t mean it’s perfect, nothing is, we will continue to improve it, fix bugs and add new features, but we feel it is ready to see the world and get a wider audience.&lt;/p&gt;
-&lt;p&gt;Try it out and share your thoughts!&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;martin&quot;&gt;Martin&lt;/h2&gt;
-&lt;p&gt;Martin Tile Server &lt;a href=&quot;https://github.com/maplibre/martin/issues/1632&quot;&gt;v0.15.0&lt;/a&gt; will have been released™:&lt;/p&gt;
-&lt;p&gt;While there are a &lt;a href=&quot;https://github.com/maplibre/martin/releases/tag/v0.15.0&quot;&gt;lot of improvements&lt;/a&gt;, here are the stand out features:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;COG Support&lt;/strong&gt;: Basic &lt;a href=&quot;https://maplibre.org/martin/sources-cog-files.html&quot;&gt;&lt;code&gt;cog&lt;/code&gt; (Cloud Optimized GeoTIFF) support&lt;/a&gt; was added as a data source. This allows to effectively serve raster tiles similar to mbtiles raster mode and pmtiles raster mode. See &lt;a href=&quot;https://maplibre.org/martin/sources-cog-files.html&quot;&gt;our docs&lt;/a&gt; for further context.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Web UI framework&lt;/strong&gt;: We have laid the foundation for a web-UI, though it is still in early development. Get a glimpse of our vision for the UI by visiting this &lt;a href=&quot;https://github.com/maplibre/martin/issues/1120&quot;&gt;GitHub issue&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;SDF sprites&lt;/strong&gt;: &lt;code&gt;SDF&lt;/code&gt; sprites can now be generated via a separate API route. This allows to color sprites in &lt;code&gt;maplibre-gl&lt;/code&gt;/&lt;code&gt;maplibre-native&lt;/code&gt; based on map data and have crispier sprites.
-Limitations include:
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Single-color support only.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Background customization limited to blurred borders.&lt;/p&gt;
-&lt;p&gt;Learn more in &lt;a href=&quot;https://maplibre.org/martin/sources-sprites.html&quot;&gt;the Martin docs&lt;/a&gt;. Here’s an example sprite from &lt;a href=&quot;https://nav.tum.de&quot;&gt;NavigaTUM&lt;/a&gt;:&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div style=&quot;display:flex;justify-content:center&quot;&gt;&lt;img src=&quot;https://maplibre.org/_astro/martin-sdf.CGYMtUjf_tPuGq.webp&quot; style=&quot;max-width:600px;width:100%;height:auto;display:inline-block&quot; alt=&quot;Martin Tile Server - sprites demo&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; fetchpriority=&quot;auto&quot; width=&quot;702&quot; height=&quot;525&quot;&gt;&lt;/div&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;flutter-maplibre&quot;&gt;Flutter MapLibre&lt;/h2&gt;
-&lt;p&gt;Started in September 2024, the Flutter maplibre package was created to provide modern Flutter bindings for MapLibre Native and MapLibre GL JS and a seamless integration into the Flutter ecosystem. Currently, supported platforms are Android and Web, while the iOS implementation is on the way and, as of right now, about halfway done (see &lt;a href=&quot;https://github.com/josxha/flutter-maplibre/issues/26&quot;&gt;#26&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;Key features include its integration into the Flutter state management system and widget tree, direct interoperability using FFI and JNI, and platform-invariant customizable user interface. A more in depth comparison with &lt;code&gt;flutter-maplibre-gl&lt;/code&gt; and other similar packages can be found in the &lt;code&gt;maplibre&lt;/code&gt; docs: &lt;a href=&quot;https://flutter-maplibre.pages.dev/compare/&quot;&gt;flutter-maplibre.pages.dev/compare/&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The package already receives a couple of hundred downloads each month, and its goal is to become a full alternative to flutter-maplibre-gl by the end of Q1 2025.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Repository: &lt;a href=&quot;https://github.com/josxha/flutter-maplibre&quot;&gt;github.com/josxha/flutter-maplibre&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;pub.dev Package Registry: &lt;a href=&quot;https://pub.dev/packages/maplibre&quot;&gt;pub.dev/packages/maplibre&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Hosted Example App: &lt;a href=&quot;https://flutter-maplibre.pages.dev/demo/&quot;&gt;flutter-maplibre.pages.dev/demo&lt;/a&gt;
-&lt;br&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;community-events&quot;&gt;Community Events&lt;/h2&gt;
-&lt;p&gt;MapLibre User Group Japan recently held its 8th X Space on December 26, 2024, attracting 44 listeners! 🎉 If you missed it, you can catch the &lt;a href=&quot;https://x.com/i/spaces/1vOGwroapBmKB&quot;&gt;recording on X&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;For more information, visit the official website: &lt;a href=&quot;https://mug-jp.org&quot;&gt;https://mug-jp.org&lt;/a&gt;.&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;monthly-meetings&quot;&gt;Monthly Meetings&lt;/h2&gt;
-&lt;p&gt;We’re continuing our tradition of meeting on the second Wednesday of each month, and now we’re adding an additional session on the last Wednesday to accommodate eastern-friendly time zones.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Second Wednesday Meetings (January 8, 2025)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;MapLibre Navigation: 5:00–6:00 PM UTC&lt;/li&gt;
-&lt;li&gt;MapLibre Native: 6:00–7:00 PM UTC&lt;/li&gt;
-&lt;li&gt;MapLibre GL JS: 7:00–8:00 PM UTC&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Last Wednesday Meeting (Eastern-Friendly)&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;MapLibre Eastern Call: January 29, 2025 - 9:00–10:00 AM UTC&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;View meeting times in your time zone: &lt;a href=&quot;https://notime.zone/OFrb-hOVMIx8E&quot;&gt;https://notime.zone/OFrb-hOVMIx8E&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;All calls are open to everyone. Zoom links can be found in our MapLibre Slack. If you’re not a member, request an invite at &lt;a href=&quot;https://slack.openstreetmap.us/&quot;&gt;https://slack.openstreetmap.us/&lt;/a&gt;. We look forward to seeing you!&lt;/p&gt;</content:encoded><author/></item></channel></rss>
+&lt;p&gt;All calls are open to everyone. Zoom links can be found in our MapLibre Slack. If you’re not a member, request an invite at &lt;a href=&quot;https://slack.openstreetmap.us/&quot;&gt;OpenStreetMap US Slack community&lt;/a&gt;. We look forward to seeing you!&lt;/p&gt;</content:encoded><author/></item></channel></rss>
