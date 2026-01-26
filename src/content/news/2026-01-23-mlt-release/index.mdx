@@ -2,11 +2,7 @@
 title: "Announcing MapLibre Tile: a modern and efficient vector tile format"
 date: "2026-01-23"
 categories: ["announcements"]
-authors:
-  [
-    ramya-ragupathy,
-    bart-louwers,
-  ]
+authors: [ramya-ragupathy, bart-louwers]
 draft: false
 ---
 
@@ -38,8 +34,7 @@ Today we are happy to announce **MapLibre Tile** (MLT), a new modern and efficie
       marginTop: "0.5rem",
       fontStyle: "italic",
     }}
-  >
-  </p>
+  ></p>
 </div>
 
 ## What is MapLibre Tile?
@@ -54,14 +49,14 @@ large (planet-scale) 2D and 2.5 basemaps. This current implementation offers fea
 [^1]: One exception: unlike MVT, MLT does not support layers where a value in a column changes type from feature to feature
 
 - **Improved compression ratio**: up to 6x on large tiles, based on a column oriented layout with recursively applied (custom)
-    lightweight encodings. This leads to reduced latency, storage, and egress costs and, in particular, improved cache utilization.
+  lightweight encodings. This leads to reduced latency, storage, and egress costs and, in particular, improved cache utilization.
 - **Better decoding performance**: fast lightweight encodings which can be used in combination with SIMD/vectorization instructions.
 
 In addition, MLT was designed to support the following use cases in the future:
 
 - **Improved support for 3D coordinates**, i.e. elevation.
 - **Improved processing performance**, based on storage and in-memory formats that are specifically designed for modern graphics APIs,
-allowing for efficient processing on both CPU and GPU. The formats are designed to be loaded into GPU buffers with little or no additional processing.
+  allowing for efficient processing on both CPU and GPU. The formats are designed to be loaded into GPU buffers with little or no additional processing.
 - **Support for linear referencing and m-values** to efficiently support the upcoming next generation source formats such as Overture Maps (GeoParquet).
 - **Support complex types**, including nested properties, lists and maps.
 
@@ -78,12 +73,11 @@ To try out MLT, you have the following options:
 
 - The easiest way to try out MLT is to use the [MLT-based demotiles style](https://raw.githubusercontent.com/maplibre/demotiles/refs/heads/gh-pages/tiles-mlt/plain.json).
 - Early adopters might also want to try out the [encoding server](https://github.com/maplibre/maplibre-tile-spec/tree/main/java/encoding-server) which converts existing (MVT based) styles and vector tile sources to MLT on the fly. This is mostly a tool for development.
-- For actually generating MLT tiles, you could use [Planetiler](https://github.com/onthegomap/planetiler), as the upcoming version will support generating MLTs.
+- To create tiles for production, you could use [Planetiler](https://github.com/onthegomap/planetiler), as the upcoming version will support generating MLTs.
 
 Refer to [this page](https://maplibre.org/maplibre-tile-spec/implementation-status/) for a complete and up-to-date list of integrations and implementations. If you are an intergrator working on supporting MLT, feel free to add your own project there.
 
-We would love to hear your experience with using MLT! Join the `#maplibre-tile-format` channel on [our Slack](https://maplibre.org/community) or create an Issue or Discussion on the [tile spec repo](https://github.com/maplibre/maplibre-tile-spec). 
-
+We would love to hear your experience with using MLT! Join the `#maplibre-tile-format` channel on [our Slack](https://maplibre.org/community) or create an Issue or Discussion on the [tile spec repo](https://github.com/maplibre/maplibre-tile-spec).
 
 ## Acknowledgements
 
