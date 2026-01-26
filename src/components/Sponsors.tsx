@@ -30,37 +30,37 @@ export const Sponsors = (props: any) => {
       <div class="silver-list">
         <a href="https://aws.amazon.com/location/">
           <div>
-            <img src="img/aws-logo.svg" />
+            <img src="/img/aws-logo.svg" />
           </div>
         </a>
         <a href="https://www.mierune.co.jp/?lang=en">
           <div>
-            <img src="img/mierune-logo.svg" />
+            <img src="/img/mierune-logo.svg" />
           </div>
         </a>
         <a href="https://komoot.com/">
           <div>
-            <img src="img/komoot-logo.svg" />
+            <img src="/img/komoot-logo.svg" />
           </div>
         </a>
         <a href="https://www.jawg.io/">
           <div>
-            <img src="img/jawgmaps-logo.svg" />
+            <img src="/img/jawgmaps-logo.svg" />
           </div>
         </a>
         <a href="https://www.radar.com/">
           <div>
-            <img src="img/radar-logo.svg" />
+            <img src="/img/radar-logo.svg" />
           </div>
         </a>
         <a href="https://mapme.com/">
           <div>
-            <img src="img/mapme-logo.svg" />
+            <img src="/img/mapme-logo.svg" />
           </div>
         </a>
         <a href="https://www.maptiler.com/">
           <div>
-            <img src="img/maptiler-logo.svg" />
+            <img src="/img/maptiler-logo.svg" />
           </div>
         </a>
       </div>
