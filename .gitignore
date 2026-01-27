@@ -30,4 +30,4 @@ pnpm-debug.log*
 resources/
 static/
 
-.link-cherker
+.link-checker
