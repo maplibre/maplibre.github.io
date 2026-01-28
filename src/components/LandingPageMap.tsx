@@ -1,4 +1,4 @@
-import { Map } from "maplibre-gl";
+import { Map, AttributionControl } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { createEffect, onMount } from "solid-js";
 
@@ -11,7 +11,13 @@ export const LandingPageMap = (props: any) => {
       center: [0, 0],
       zoom: 1,
       attributionControl: false,
-    });
+    }).addControl(
+      new AttributionControl({
+        compact: true,
+        customAttribution:
+          '<a href="https://www.naturalearthdata.com/">Natural Earth</a>',
+      }),
+    );
   });
 
   createEffect(() => {
