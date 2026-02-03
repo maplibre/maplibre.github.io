@@ -7,8 +7,12 @@ interface Props {
 
 const { title, visualStyle = "", visualFlex = true } = Astro.props;
 
-const visualBaseStyle = visualFlex ? "display: flex; justify-content: center; align-items: center;" : "";
-const fullVisualStyle = [visualBaseStyle, visualStyle].filter(Boolean).join(" ");
+const visualBaseStyle = visualFlex
+  ? "display: flex; justify-content: center; align-items: center;"
+  : "";
+const fullVisualStyle = [visualBaseStyle, visualStyle]
+  .filter(Boolean)
+  .join(" ");
 ---
 
 <hr />
@@ -28,10 +32,7 @@ const fullVisualStyle = [visualBaseStyle, visualStyle].filter(Boolean).join(" ")
         <br /><br />
       </div>
     </div>
-    <div
-      class="col-md-12 col-lg-6"
-      style={fullVisualStyle || undefined}
-    >
+    <div class="col-md-12 col-lg-6" style={fullVisualStyle || undefined}>
       <slot name="visual" />
     </div>
   </div>

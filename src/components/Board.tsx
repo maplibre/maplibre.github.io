@@ -32,7 +32,8 @@ export const Board = (props: { board: any[] }) => {
           In charge to steering the Organization is the&nbsp;
           <a href="https://maplibre.org/about/governing-board">
             MapLibre Governing Board
-          </a>. <br />
+          </a>
+          . <br />
           They are elected by&nbsp;
           <a href="https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md">
             Voting Members

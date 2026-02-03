@@ -39,35 +39,56 @@ import LinkBadge from "../components/LinkBadge.astro";
           </div>
         </div>
 
-        <ProjectSection title="Map<span style='color: #95BEFA;'>Libre</span> GL JS" visualFlex={false}>
+        <ProjectSection
+          title="Map<span style='color: #95BEFA;'>Libre</span> GL JS"
+          visualFlex={false}
+        >
           <Fragment slot="description">
-            Open-source TypeScript library for publishing maps on your
-            website. Great performance due to GPU-accelerated vector tile
-            rendering.
+            Open-source TypeScript library for publishing maps on your website.
+            Great performance due to GPU-accelerated vector tile rendering.
           </Fragment>
           <Fragment slot="badges">
             <GitHubBadge href="https://github.com/maplibre/maplibre-gl-js" />
-            <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs">API Documentation</LinkBadge>
-            <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/plugins/">Plugins</LinkBadge>
+            <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs"
+              >API Documentation</LinkBadge
+            >
+            <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+              >Plugins</LinkBadge
+            >
           </Fragment>
           <div slot="visual" style="max-width: 500px; margin: 0px auto;">
             <LandingPageMap client:only="solid-js" />
           </div>
         </ProjectSection>
 
-        <ProjectSection title="Map<span style='color: #95BEFA;'>Libre</span> Native" visualStyle="gap: 1rem;">
+        <ProjectSection
+          title="Map<span style='color: #95BEFA;'>Libre</span> Native"
+          visualStyle="gap: 1rem;"
+        >
           <Fragment slot="description">
-            Open-source C++ library for displaying maps inside your mobile
-            or desktop applications, embedded devices or even cars.
+            Open-source C++ library for displaying maps inside your mobile or
+            desktop applications, embedded devices or even cars.
             GPU-acceleration through OpenGL, Metal or Vulkan.
           </Fragment>
           <Fragment slot="badges">
             <GitHubBadge href="https://github.com/maplibre/maplibre-native" />
-            <LinkBadge href="https://maplibre.org/maplibre-native/android/api/">Android API</LinkBadge>
-            <LinkBadge href="https://maplibre.org/maplibre-native/android/examples/">Android Examples</LinkBadge>
-            <LinkBadge href="https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre">iOS Documentation</LinkBadge>
-            <LinkBadge href="https://maplibre.org/maplibre-native/cpp/api/">Core C++ API</LinkBadge>
-            <LinkBadge href="https://maplibre.org/maplibre-native/docs/book/">Developer Docs</LinkBadge>
+            <LinkBadge href="https://maplibre.org/maplibre-native/android/api/"
+              >Android API</LinkBadge
+            >
+            <LinkBadge
+              href="https://maplibre.org/maplibre-native/android/examples/"
+              >Android Examples</LinkBadge
+            >
+            <LinkBadge
+              href="https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre"
+              >iOS Documentation</LinkBadge
+            >
+            <LinkBadge href="https://maplibre.org/maplibre-native/cpp/api/"
+              >Core C++ API</LinkBadge
+            >
+            <LinkBadge href="https://maplibre.org/maplibre-native/docs/book/"
+              >Developer Docs</LinkBadge
+            >
             <LinkBadge href="projects/native/">Read more</LinkBadge>
           </Fragment>
           <Fragment slot="visual">
@@ -92,18 +113,26 @@ import LinkBadge from "../components/LinkBadge.astro";
           </Fragment>
         </ProjectSection>
 
-        <ProjectSection title="Map<span style='color: #95BEFA;'>Libre</span> Style Specification">
+        <ProjectSection
+          title="Map<span style='color: #95BEFA;'>Libre</span> Style Specification"
+        >
           <Fragment slot="description">
-            A MapLibre style is a document that defines the visual
-            appearance of a map: what data to draw, the order to draw it in,
-            and how to style the data when drawing it. A style document is a
-            JSON object with specific root level and nested properties. This
-            specification defines and describes these properties.
+            A MapLibre style is a document that defines the visual appearance of
+            a map: what data to draw, the order to draw it in, and how to style
+            the data when drawing it. A style document is a JSON object with
+            specific root level and nested properties. This specification
+            defines and describes these properties.
           </Fragment>
           <Fragment slot="badges">
-            <GitHubBadge href="https://github.com/maplibre/maplibre-style-spec" />
-            <LinkBadge href="https://maplibre.org/maplibre-style-spec">Style Specification</LinkBadge>
-            <LinkBadge href="https://maplibre.org/maputnik">Maputnik Style Editor</LinkBadge>
+            <GitHubBadge
+              href="https://github.com/maplibre/maplibre-style-spec"
+            />
+            <LinkBadge href="https://maplibre.org/maplibre-style-spec"
+              >Style Specification</LinkBadge
+            >
+            <LinkBadge href="https://maplibre.org/maputnik"
+              >Maputnik Style Editor</LinkBadge
+            >
           </Fragment>
           <Fragment slot="visual">
             <img
@@ -119,15 +148,30 @@ import LinkBadge from "../components/LinkBadge.astro";
           </Fragment>
         </ProjectSection>
 
-        <ProjectSection title="Map<span style='color: #95BEFA;'>Libre</span> Tile Specification">
+        <ProjectSection
+          title="Map<span style='color: #95BEFA;'>Libre</span> Tile Specification"
+        >
           <Fragment slot="description">
-            A next-generation vector tile format redesigned to take advantage of modern hardware. Offers an improved compression ratio, better decoding performance and new capabilities.
+            A next-generation vector tile format redesigned to take advantage of
+            modern hardware. Offers an improved compression ratio, better
+            decoding performance and new capabilities.
           </Fragment>
           <Fragment slot="badges">
-            <GitHubBadge href="https://github.com/maplibre/maplibre-tile-spec" />
-            <LinkBadge href="https://dl.acm.org/doi/epdf/10.1145/3748636.3763208">Publication</LinkBadge>
-            <LinkBadge href="https://maplibre.org/maplibre-tile-spec/specification/">Specification</LinkBadge>
-            <LinkBadge href="https://maplibre.org/maplibre-tile-spec/implementation-status/">Implementation Status</LinkBadge>
+            <GitHubBadge
+              href="https://github.com/maplibre/maplibre-tile-spec"
+            />
+            <LinkBadge
+              href="https://dl.acm.org/doi/epdf/10.1145/3748636.3763208"
+              >Publication</LinkBadge
+            >
+            <LinkBadge
+              href="https://maplibre.org/maplibre-tile-spec/specification/"
+              >Specification</LinkBadge
+            >
+            <LinkBadge
+              href="https://maplibre.org/maplibre-tile-spec/implementation-status/"
+              >Implementation Status</LinkBadge
+            >
           </Fragment>
         </ProjectSection>
 
@@ -135,13 +179,17 @@ import LinkBadge from "../components/LinkBadge.astro";
           <Fragment slot="description">
             Martin is a tile generator and server able to create Map Vector
             Tiles (MVTs) from large
-            <a href="https://maplibre.org/martin/pg-connections.html">PostGIS</a>
+            <a href="https://maplibre.org/martin/pg-connections.html">PostGIS</a
+            >
             databases on the fly, or serve tiles from
-            <a href="https://maplibre.org/martin/sources-files.html">PMTile and MBTile</a>
+            <a href="https://maplibre.org/martin/sources-files.html"
+              >PMTile and MBTile</a
+            >
             files. Martin optimizes for speed and heavy traffic, and is written in
-            <a href="https://github.com/rust-lang/rust">Rust</a>. Martin includes
-            <a href="https://maplibre.org/martin/tools.html">CLI tools</a> for
-            generating, diffing, extracting, and combining MBTiles files.
+            <a href="https://github.com/rust-lang/rust">Rust</a>. Martin
+            includes
+            <a href="https://maplibre.org/martin/tools.html">CLI tools</a> for generating,
+            diffing, extracting, and combining MBTiles files.
           </Fragment>
           <Fragment slot="badges">
             <GitHubBadge href="https://github.com/maplibre/martin" />
