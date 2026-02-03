@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  visualStyle?: string;
+  visualFlex?: boolean;
+}
+
+const { title, visualStyle = "", visualFlex = true } = Astro.props;
+
+const visualBaseStyle = visualFlex ? "display: flex; justify-content: center; align-items: center;" : "";
+const fullVisualStyle = [visualBaseStyle, visualStyle].filter(Boolean).join(" ");
+---
+
+<hr />
+<div class="container">
+  <div class="row">
+    <div
+      class="col-md-12 col-lg-6"
+      style="display: flex; flex-direction: column; justify-content: center;"
+    >
+      <div>
+        <h1 style="color: white;" set:html={title} />
+
+        <slot name="description" />
+        <br /><br />
+
+        <slot name="badges" />
+        <br /><br />
+      </div>
+    </div>
+    <div
+      class="col-md-12 col-lg-6"
+      style={fullVisualStyle || undefined}
+    >
+      <slot name="visual" />
+    </div>
+  </div>
+</div>
