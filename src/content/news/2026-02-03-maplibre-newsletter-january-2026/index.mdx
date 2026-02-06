@@ -166,12 +166,17 @@ Highlights include:
   - `U+E0000` - `U+E01EF` is for tags and variation selectors
   - `U+F0000` - `U+10FFFF` is for private use (i.e. can be assigned arbitrary custom characters without worrying about possible conflict with the future standards)
 
-- **Native subpath support:**
-  A new `route_prefix` config option and `--route-prefix` CLI flag allow Martin to serve from a subpath without requiring reverse-proxy URL rewriting.
-- **MLT decoding support**
-  Martin now supports the MapLibre Tiles Specification (MLT), allowing MLT-based tiles to be served directly. Learn more in our blog post:
-  https://maplibre.org/news/2026-01-23-mlt-release/
+<div style="margin-top: 1.25rem;"></div>
+
+- **Native subpath support:** A new `route_prefix` config option and
+  `--route-prefix` CLI flag allow Martin to serve from a subpath without requiring
+  reverse-proxy URL rewriting.
+
+- **MLT decoding support:**
+  Martin now supports the [MapLibre Tiles Specification (MLT)](https://github.com/maplibre/maplibre-tile-spec/), allowing MLT-based tiles to be served directly.
+
 - Human-readable time estimates in `martin-cp` progress output
+
 - PostgreSQL materialized view support and improved table metadata
 
 Check out the [full changelog on GitHub](https://github.com/maplibre/martin/releases/tag/martin-v1.3.0), and as always, thanks to [Hiroaki Yutani](https://github.com/yutannihilation), [David E Disch](https://github.com/Auspicus), [Amanda](https://github.com/amandasaurus), [Kunal](https://github.com/kunalsinghdadhwal), [thomfuhrmann](https://github.com/thomfuhrmann), [Birk Skyum](https://github.com/birkskyum), [Frank Elsinga](https://github.com/CommanderStorm) and [Yuri Astrakhan](https://github.com/nyurik) who contributed to this release 💙
