@@ -156,7 +156,7 @@ We’ve released [Martin 1.3.0](https://github.com/maplibre/martin/releases/tag/
 Highlights include:
 
 - **More flexible logging:**
-  Martin now uses tracing instead of log, enabling better instrumentation and configurable log output via RUST_LOG_FORMAT. Supported formats include compact (default), json, full, bare, and pretty.
+  Martin now uses tracing instead of log, enabling better instrumentation and configurable log output via `RUST_LOG_FORMAT`. Supported formats include compact (default), json, full, bare, and pretty.
 - **Improved glyph support beyond [`U+FFFF`](https://en.wikipedia.org/wiki/Unicode_block):**
   Fonts with characters outside the Basic Multilingual Plane (e.g. emoji, historic scripts, or private-use glyphs) are now handled correctly.
   We also removed FontSources.masks, reducing memory usage and startup time.
