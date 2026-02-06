@@ -9,7 +9,9 @@ draft: false
 import { Image } from "astro:assets";
 import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
 import mltDemo from "./globe.png";
-import conferenceCollage from "./jan-2026-conferences.png";
+import foss4gAsia from "./foss4g-asia.jpeg";
+import stickers from "./stickers.jpg";
+import fosdemBrussels from "./fosdem-brussels.jpg";
 
 Welcome to the January 2026 edition of MapLibre Newsletter! This edition covers project updates across the MapLibre ecosystem, a round-up of events from the past month, and highlights from our growing global community.
 
@@ -185,38 +187,71 @@ Check out the [full changelog on GitHub](https://github.com/maplibre/martin/rele
 
 Last month, members of the MapLibre team were on the ground connecting with the community, sharing updates, and learning alongside fellow open-source contributors at the following events:
 
-- [FOSS4G Asia](https://foss4g.asia/2026/) in Nashik, India
+- [FOSS4G Asia](https://foss4g.asia/2026/) in Nashik, India where [Frank Elsinga](https://maplibre.org/about/frank-elsinga/) held a [workshop on Tile Serving with MapLibre](https://talks.geoinfo-lab.org/foss4g-asia-2026/talk/review/YS39GBKKBZKJRJ9BKNQZP8ZBMKYYYPXP).
 - [State of the Map India](https://www.openstreetmap.in/sotm-india/) in Nashik, India
-- [FOSDEM](https://fosdem.org/2026/) in Brussels, Belgium
+- [FOSDEM](https://fosdem.org/2026/) in Brussels, Belgium where [Bart Louwers](https://maplibre.org/about/bart-louwers/) presented [State of the MapLibre Tile Format](https://fosdem.org/2026/schedule/event/QAL9VN-state-of-the-maplibre-tile-format/).
 
 <div
   style={{
-    maxWidth: "520px",
-    margin: "1.25rem auto",
-    textAlign: "center",
+    maxWidth: "600px",
+    margin: "1.25rem auto 0",
     padding: "0 0.75rem",
   }}
 >
-  <Image
-    src={conferenceCollage}
-    alt="MapLibre team at community conferences"
-    sizes="(min-width: 1024px) 520px, (min-width: 768px) 520px, 100vw"
+  {/* Collage */}
+  <div
     style={{
-      width: "100%",
-      height: "auto",
-      display: "block",
-      border: "1px solid #e5e7eb",
-      borderRadius: "0.75rem",
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
+      gridTemplateRows: "180px auto",
+      gap: "0.5rem",
     }}
-    class="shadow-md"
-    loading="lazy"
-    decoding="async"
-  />
-  <p
+  >
+    <Image
+      src={foss4gAsia}
+      alt="Frank's workshop at FOSS4G Asia"
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        borderRadius: "0.75rem",
+      }}
+    />
+
+    <Image
+      src={stickers}
+      alt="MapLibre stickers and conference materials"
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        borderRadius: "0.75rem",
+      }}
+    />
+
+    <Image
+      src={fosdemBrussels}
+      alt="MapLibre booth and community interactions at FOSDEM"
+      style={{
+        gridColumn: "1 / -1",
+        width: "100%",
+        height: "auto",
+        objectFit: "cover",
+        borderRadius: "0.75rem",
+      }}
+    />
+
+  </div>
+
+{/* Caption */}
+
+<p
     style={{
       marginTop: "0.5rem",
       marginBottom: 0,
       lineHeight: "1.4",
+      textAlign: "justify",
+      textAlignLast: "center",
     }}
   >
     <em
@@ -226,10 +261,12 @@ Last month, members of the MapLibre team were on the ground connecting with the 
         fontStyle: "italic",
       }}
     >
-      MapLibre team members at recent community conferences, including FOSS4G
-      Asia (Nashik, India), State of the Map India, and FOSDEM (Brussels).
+     MapLibre team members at recent community conferences, including FOSS4G Asia
+    (Nashik, India), State of the Map India, and FOSDEM (Brussels).
     </em>
   </p>
+  
+  
 </div>
 
 It was great to meet community members in person, exchange ideas, and represent MapLibre across regions.
