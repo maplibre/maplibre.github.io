@@ -148,6 +148,33 @@ import LinkBadge from "../components/landing/LinkBadge.astro";
           </Fragment>
         </ProjectSection>
 
+        <ProjectSection
+          title="Map<span style='color: #95BEFA;'>Libre</span> Tile Specification"
+        >
+          <Fragment slot="description">
+            A next-generation vector tile format redesigned to take advantage of
+            modern hardware. Offers an improved compression ratio, better
+            decoding performance and new capabilities.
+          </Fragment>
+          <Fragment slot="badges">
+            <GitHubBadge
+              href="https://github.com/maplibre/maplibre-tile-spec"
+            />
+            <LinkBadge
+              href="https://dl.acm.org/doi/epdf/10.1145/3748636.3763208"
+              >Publication</LinkBadge
+            >
+            <LinkBadge
+              href="https://maplibre.org/maplibre-tile-spec/specification/"
+              >Specification</LinkBadge
+            >
+            <LinkBadge
+              href="https://maplibre.org/maplibre-tile-spec/implementation-status/"
+              >Implementation Status</LinkBadge
+            >
+          </Fragment>
+        </ProjectSection>
+
         <ProjectSection title="Martin">
           <Fragment slot="description">
             Martin is a tile generator and server able to create Map Vector
