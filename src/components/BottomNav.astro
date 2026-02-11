@@ -9,15 +9,15 @@ const navSections = [
     ],
   },
   {
-    heading: "",
+    heading: "Support",
     links: [
-      { label: "Financial Reports", href: "/about/reports" },
       { label: "Sponsors", href: "/sponsors" },
-      { label: "Jobs", href: "/jobs" },
+      { label: "Financial Reports", href: "/about/reports" },
+      { label: "Brand Assets", href: "/about#brand-assets" },
     ],
   },
   {
-    heading: "Get in Touch",
+    heading: "Community",
     links: [
       { label: "Community", href: "/community" },
       { label: "Slack", href: "https://slack.openstreetmap.us" },
@@ -50,11 +50,7 @@ const isExternal = (href: string) => !href.startsWith("/");
       {
         navSections.map((section) => (
           <div class:list={["col-12 col-sm-3 mb-4 mb-sm-0"]}>
-            {section.heading ? (
-              <h5 class="bottom-nav-heading">{section.heading}</h5>
-            ) : (
-              <div class="bottom-nav-heading d-none d-sm-block">&nbsp;</div>
-            )}
+            <h5 class="bottom-nav-heading">{section.heading}</h5>
             <ul class="bottom-nav-list">
               {section.links.map((link) => (
                 <li>
