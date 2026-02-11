@@ -49,8 +49,12 @@ const isExternal = (href: string) => !href.startsWith("/");
     <div class="row">
       {
         navSections.map((section) => (
-          <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
-            <h5 class="bottom-nav-heading">{section.heading || "\u00A0"}</h5>
+          <div class:list={["col-12 col-sm-3 mb-4 mb-sm-0"]}>
+            {section.heading ? (
+              <h5 class="bottom-nav-heading">{section.heading}</h5>
+            ) : (
+              <div class="bottom-nav-heading d-none d-sm-block">&nbsp;</div>
+            )}
             <ul class="bottom-nav-list">
               {section.links.map((link) => (
                 <li>
