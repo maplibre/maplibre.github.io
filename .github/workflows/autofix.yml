@@ -23,7 +23,6 @@ jobs:
 
       - name: Install frontend dependencies
         run: npm clean-install --no-fund
-        working-directory: martin/martin-ui
 
       - run: npm run format
         continue-on-error: true
