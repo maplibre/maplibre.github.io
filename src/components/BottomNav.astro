@@ -4,10 +4,16 @@ const navSections = [
     heading: "The Project",
     links: [
       { label: "About", href: "/about" },
-      { label: "Financial Reports", href: "/about/reports" },
       { label: "Roadmap", href: "/roadmap" },
       { label: "News", href: "/news" },
+    ],
+  },
+  {
+    heading: "",
+    links: [
+      { label: "Financial Reports", href: "/about/reports" },
       { label: "Sponsors", href: "/sponsors" },
+      { label: "Jobs", href: "/jobs" },
     ],
   },
   {
@@ -43,8 +49,8 @@ const isExternal = (href: string) => !href.startsWith("/");
     <div class="row">
       {
         navSections.map((section) => (
-          <div class="col-12 col-sm-6 col-lg-4 mb-4 mb-lg-0">
-            <h5 class="bottom-nav-heading">{section.heading}</h5>
+          <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+            <h5 class="bottom-nav-heading">{section.heading || "\u00A0"}</h5>
             <ul class="bottom-nav-list">
               {section.links.map((link) => (
                 <li>
