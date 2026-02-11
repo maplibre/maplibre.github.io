@@ -42,23 +42,46 @@ const isExternal = (href: string) => !href.startsWith("/");
   <div class="container py-5">
     <div class="row justify-content-center">
       {
-        navSections.map((section) => (
-          <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+        navSections.map((section, index) => (
+          <div
+            class={`col-12 ${index === 0 ? "col-sm-12" : "col-sm-6"} col-lg-4 mb-5 mb-lg-0 text-center text-lg-${index === 0 ? "start" : index === 1 ? "center" : "end"}`}
+          >
             <h5 class="bottom-nav-heading">{section.heading}</h5>
-            <ul class="bottom-nav-list">
-              {section.links.map((link) => (
-                <li>
-                  <a
-                    href={link.href}
-                    {...(isExternal(link.href)
-                      ? { target: "_blank", rel: "noopener" }
-                      : {})}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            {index === 0 ? (
+              <div class="row first-section-row">
+                {section.links.map((link) => (
+                  <div class="col-12 col-sm-6 col-lg-12">
+                    <ul class="bottom-nav-list">
+                      <li>
+                        <a
+                          href={link.href}
+                          {...(isExternal(link.href)
+                            ? { target: "_blank", rel: "noopener" }
+                            : {})}
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <ul class="bottom-nav-list">
+                {section.links.map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      {...(isExternal(link.href)
+                        ? { target: "_blank", rel: "noopener" }
+                        : {})}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         ))
       }
@@ -72,6 +95,10 @@ const isExternal = (href: string) => !href.startsWith("/");
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 1rem;
+  }
+
+  .first-section-row {
+    row-gap: 0.5rem;
   }
 
   .bottom-nav-list {
@@ -97,6 +124,17 @@ const isExternal = (href: string) => !href.startsWith("/");
 
     li:last-child a {
       padding-bottom: 0;
+    }
+  }
+
+  .first-section-row .bottom-nav-list {
+    a {
+      padding: 0;
+    }
+
+    li:first-child a,
+    li:last-child a {
+      padding: 0;
     }
   }
 </style>
