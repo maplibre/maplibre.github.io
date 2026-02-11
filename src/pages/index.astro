@@ -6,6 +6,9 @@ import { LandingPageMap } from "../components/LandingPageMap";
 import { SITE_DESCRIPTION } from "../constants";
 import androidImage from "../assets/maplibre-native/maplibre-native-android.png";
 import iosImage from "../assets/maplibre-native/maplibre-native-ios.png";
+import ProjectSection from "../components/landing/ProjectSection.astro";
+import GitHubBadge from "../components/landing/GitHubBadge.astro";
+import LinkBadge from "../components/landing/LinkBadge.astro";
 ---
 
 <Layout>
@@ -36,332 +39,169 @@ import iosImage from "../assets/maplibre-native/maplibre-native-ios.png";
           </div>
         </div>
 
-        <hr />
-        <div class="container">
-          <div class="row">
-            <div
-              class="col-md-12 col-lg-6"
-              style="display: flex; flex-direction: column; justify-content: center;"
+        <ProjectSection
+          title="Map<span style='color: #95BEFA;'>Libre</span> GL JS"
+          visualFlex={false}
+        >
+          <Fragment slot="description">
+            Open-source TypeScript library for publishing maps on your website.
+            Great performance due to GPU-accelerated vector tile rendering.
+          </Fragment>
+          <Fragment slot="badges">
+            <GitHubBadge href="https://github.com/maplibre/maplibre-gl-js" />
+            <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs"
+              >API Documentation</LinkBadge
             >
-              <div>
-                <h1 style="color: white;">
-                  Map<span style="color: #95BEFA;">Libre</span> GL JS
-                </h1>
-
-                Open-source TypeScript library for publishing maps on your
-                website. Great performance due to GPU-accelerated vector tile
-                rendering.
-                <br /><br />
-
-                <a href="https://github.com/maplibre/maplibre-gl-js">
-                  <span class="badge bg-primary text-white">
-                    <svg
-                      role="img"
-                      class="inline-icon"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <title>GitHub</title>
-                      <path
-                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                      ></path>
-                    </svg>
-                    GitHub</span
-                  ></a
-                >
-
-                <a
-                  class="badge bg-primary text-white"
-                  href="https://maplibre.org/maplibre-gl-js/docs"
-                >
-                  <span>API Documentation </span>
-                </a>
-
-                <span class="badge bg-primary text-white"
-                  ><a href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
-                    >Plugins</a
-                  ></span
-                >
-
-                <span class="badge bg-primary text-white"
-                  ><a href="https://maplibre.org/maplibre-style-spec"
-                    >Style Spec</a
-                  ></span
-                >
-                <br />
-                <br />
-              </div>
-            </div>
-            <div class="col-md-12 col-lg-6">
-              <div style="max-width: 500px; margin: 0px auto;">
-                <LandingPageMap client:only="solid-js" />
-              </div>
-            </div>
+            <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+              >Plugins</LinkBadge
+            >
+          </Fragment>
+          <div slot="visual" style="max-width: 500px; margin: 0px auto;">
+            <LandingPageMap client:only="solid-js" />
           </div>
-        </div>
+        </ProjectSection>
 
-        <hr />
-
-        <div class="container">
-          <div class="row">
-            <div
-              class="col-md-12 col-lg-6"
-              style="display: flex; flex-direction: column; justify-content: center;"
+        <ProjectSection
+          title="Map<span style='color: #95BEFA;'>Libre</span> Native"
+          visualStyle="gap: 1rem;"
+        >
+          <Fragment slot="description">
+            Open-source C++ library for displaying maps inside your mobile or
+            desktop applications, embedded devices or even cars.
+            GPU-acceleration through OpenGL, Metal or Vulkan.
+          </Fragment>
+          <Fragment slot="badges">
+            <GitHubBadge href="https://github.com/maplibre/maplibre-native" />
+            <LinkBadge href="https://maplibre.org/maplibre-native/android/api/"
+              >Android API</LinkBadge
             >
-              <div>
-                <h1 style="color: white;">
-                  Map<span style="color: #95BEFA;">Libre</span> Native
-                </h1>
-
-                Open-source C++ library for displaying maps inside your mobile
-                or desktop applications, embedded devices or even cars.
-                GPU-acceleration through OpenGL, Metal or Vulkan.
-
-                <br /><br />
-
-                <span class="badge bg-primary text-white">
-                  <a href="https://github.com/maplibre/maplibre-native">
-                    <svg
-                      role="img"
-                      class="inline-icon"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <title>GitHub</title>
-                      <path
-                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                      ></path>
-                    </svg>
-                    GitHub</a
-                  ></span
-                >
-
-                <span class="badge bg-primary text-white"
-                  ><a href="https://maplibre.org/maplibre-native/android/api/"
-                    >Android API</a
-                  ></span
-                >
-                <span class="badge bg-primary text-white"
-                  ><a
-                    href="https://maplibre.org/maplibre-native/android/examples/"
-                    >Android Examples</a
-                  ></span
-                >
-                <span class="badge bg-primary text-white"
-                  ><a
-                    href="https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre"
-                    >iOS Documentation</a
-                  ></span
-                >
-                <span class="badge bg-primary text-white"
-                  ><a href="https://maplibre.org/maplibre-native/cpp/api/"
-                    >Core C++ API</a
-                  ></span
-                >
-                <span class="badge bg-primary text-white"
-                  ><a href="https://maplibre.org/maplibre-native/docs/book/"
-                    >Developer Docs</a
-                  ></span
-                >
-
-                <span class="badge bg-primary text-white"
-                  ><a href="https://maplibre.org/maplibre-style-spec"
-                    >Style Spec</a
-                  ></span
-                >
-
-                <span class="badge bg-primary text-white"
-                  ><a href="projects/native/">Read more</a></span
-                >
-              </div>
-              <br /><br />
-            </div>
-
-            <div
-              class="col-md-12 col-lg-6"
-              style="display: flex; justify-content: center; align-items: center; gap: 1rem;"
+            <LinkBadge
+              href="https://maplibre.org/maplibre-native/android/examples/"
+              >Android Examples</LinkBadge
             >
-              <Image
-                src={androidImage}
-                alt="MapLibre Native Android"
-                width={150}
-                height={300}
-                densities={[1, 1.5, 2]}
-                quality={95}
-                style="object-fit: contain; max-width: 150px;"
-              />
-              <Image
-                src={iosImage}
-                alt="MapLibre Native iOS"
-                width={150}
-                height={300}
-                densities={[1, 1.5, 2]}
-                quality={95}
-                style="object-fit: contain; max-width: 150px;"
-              />
-            </div>
+            <LinkBadge
+              href="https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre"
+              >iOS Documentation</LinkBadge
+            >
+            <LinkBadge href="https://maplibre.org/maplibre-native/cpp/api/"
+              >Core C++ API</LinkBadge
+            >
+            <LinkBadge href="https://maplibre.org/maplibre-native/docs/book/"
+              >Developer Docs</LinkBadge
+            >
+            <LinkBadge href="projects/native/">Read more</LinkBadge>
+          </Fragment>
+          <Fragment slot="visual">
+            <Image
+              src={androidImage}
+              alt="MapLibre Native Android"
+              width={150}
+              height={300}
+              densities={[1, 1.5, 2]}
+              quality={95}
+              style="object-fit: contain; max-width: 150px;"
+            />
+            <Image
+              src={iosImage}
+              alt="MapLibre Native iOS"
+              width={150}
+              height={300}
+              densities={[1, 1.5, 2]}
+              quality={95}
+              style="object-fit: contain; max-width: 150px;"
+            />
+          </Fragment>
+        </ProjectSection>
+
+        <ProjectSection
+          title="Map<span style='color: #95BEFA;'>Libre</span> Style Specification"
+        >
+          <Fragment slot="description">
+            A MapLibre style is a document that defines the visual appearance of
+            a map: what data to draw, the order to draw it in, and how to style
+            the data when drawing it. A style document is a JSON object with
+            specific root level and nested properties. This specification
+            defines and describes these properties.
+          </Fragment>
+          <Fragment slot="badges">
+            <GitHubBadge
+              href="https://github.com/maplibre/maplibre-style-spec"
+            />
+            <LinkBadge href="https://maplibre.org/maplibre-style-spec"
+              >Style Specification</LinkBadge
+            >
+            <LinkBadge href="https://maplibre.org/maputnik"
+              >Maputnik Style Editor</LinkBadge
+            >
+          </Fragment>
+          <Fragment slot="visual">
+            <img
+              style="max-width: 150px;"
+              src="img/palette.svg"
+              alt="Style palette"
+            />
+            <a
+              href="https://maplibre.org/maputnik"
+              style="background-image: url('img/maputnik.png'); height: 300px; width:100%;max-width: 150px; background-size:contain; background-position: center; background-repeat: no-repeat;"
+            >
+            </a>
+          </Fragment>
+        </ProjectSection>
+
+        <ProjectSection
+          title="Map<span style='color: #95BEFA;'>Libre</span> Tile Specification"
+        >
+          <Fragment slot="description">
+            A next-generation vector tile format redesigned to take advantage of
+            modern hardware. Offers an improved compression ratio, better
+            decoding performance and new capabilities.
+          </Fragment>
+          <Fragment slot="badges">
+            <GitHubBadge
+              href="https://github.com/maplibre/maplibre-tile-spec"
+            />
+            <LinkBadge
+              href="https://dl.acm.org/doi/epdf/10.1145/3748636.3763208"
+              >Publication</LinkBadge
+            >
+            <LinkBadge
+              href="https://maplibre.org/maplibre-tile-spec/specification/"
+              >Specification</LinkBadge
+            >
+            <LinkBadge
+              href="https://maplibre.org/maplibre-tile-spec/implementation-status/"
+              >Implementation Status</LinkBadge
+            >
+          </Fragment>
+        </ProjectSection>
+
+        <ProjectSection title="Martin">
+          <Fragment slot="description">
+            Martin is a tile generator and server able to create Map Vector
+            Tiles (MVTs) from large
+            <a href="https://maplibre.org/martin/pg-connections.html">PostGIS</a
+            >
+            databases on the fly, or serve tiles from
+            <a href="https://maplibre.org/martin/sources-files.html"
+              >PMTile and MBTile</a
+            >
+            files. Martin optimizes for speed and heavy traffic, and is written in
+            <a href="https://github.com/rust-lang/rust">Rust</a>. Martin
+            includes
+            <a href="https://maplibre.org/martin/tools.html">CLI tools</a> for generating,
+            diffing, extracting, and combining MBTiles files.
+          </Fragment>
+          <Fragment slot="badges">
+            <GitHubBadge href="https://github.com/maplibre/martin" />
+            <LinkBadge href="https://martin.maplibre.org/">Demo</LinkBadge>
+            <LinkBadge href="https://maplibre.org/martin/">Book</LinkBadge>
+          </Fragment>
+          <div
+            slot="visual"
+            style="background-image: url('img/martin.png'); height: 300px; width:100%; background-size:contain; background-position: center; background-repeat: no-repeat;"
+          >
           </div>
-        </div>
-
-        <hr />
-        <div class="container">
-          <div class="row">
-            <div
-              class="col-md-12 col-lg-6"
-              style="display: flex; flex-direction: column; justify-content: center;"
-            >
-              <div>
-                <h1 style="color: white;">
-                  Map<span style="color: #95BEFA;">Libre</span> Style Specification
-                </h1>
-
-                A MapLibre style is a document that defines the visual
-                appearance of a map: what data to draw, the order to draw it in,
-                and how to style the data when drawing it. A style document is a
-                JSON object with specific root level and nested properties. This
-                specification defines and describes these properties.
-                <br /><br />
-
-                <span class="badge bg-primary text-white">
-                  <a href="https://github.com/maplibre/maplibre-style-spec">
-                    <svg
-                      role="img"
-                      class="inline-icon"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <title>GitHub</title>
-                      <path
-                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                      ></path>
-                    </svg>
-                    GitHub</a
-                  ></span
-                >
-
-                <span class="badge bg-primary text-white"
-                  ><a href="https://maplibre.org/maplibre-style-spec"
-                    >Style Specification</a
-                  ></span
-                >
-                <span class="badge bg-primary text-white"
-                  ><a href="https://maplibre.org/maputnik"
-                    >Maputnik Style Editor</a
-                  ></span
-                >
-              </div>
-            </div>
-            <div
-              class="col-md-12 col-lg-6"
-              style="display: flex; justify-content: center; align-items: center;"
-            >
-              <img
-                style="max-width: 150px;"
-                src="img/palette.svg"
-                alt="Style palette"
-              />
-
-              <a
-                href="https://maplibre.org/maputnik"
-                style="background-image: url('img/maputnik.png'); height: 300px; width:100%;max-width: 150px; background-size:contain; background-position: center; background-repeat: no-repeat;"
-              >
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="container">
-          <div class="row">
-            <div
-              class="col-md-12 col-lg-6"
-              style="display: flex; flex-direction: column; justify-content: center;"
-            >
-              <div>
-                <h1 style="color: white;">Martin</h1>
-
-                Martin is a tile generator and server able to create Map Vector
-                Tiles (MVTs) from large
-                <a href="https://maplibre.org/martin/pg-connections.html"
-                  >PostGIS</a
-                >
-                databases on the fly, or serve tiles from
-                <a href="https://maplibre.org/martin/sources-files.html"
-                  >PMTile and MBTile</a
-                >
-                files. Martin optimizes for speed and heavy traffic, and is written
-                in
-                <a href="https://github.com/rust-lang/rust">Rust</a>. Martin
-                includes
-                <a href="https://maplibre.org/martin/tools.html">CLI tools</a> for
-                generating, diffing, extracting, and combining MBTiles files.
-
-                <br /><br />
-
-                <span class="badge bg-primary text-white">
-                  <a href="https://github.com/maplibre/martin">
-                    <svg
-                      role="img"
-                      class="inline-icon"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <title>GitHub</title>
-                      <path
-                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                      ></path>
-                    </svg>
-                    GitHub</a
-                  ></span
-                >
-
-                <span class="badge bg-primary text-white"
-                  ><a href="https://martin.maplibre.org/">Demo</a></span
-                >
-
-                <span class="badge bg-primary text-white"
-                  ><a href="https://maplibre.org/martin/">Book</a></span
-                >
-              </div>
-            </div>
-            <div
-              class="col-md-12 col-lg-6"
-              style="display: flex; justify-content: center; align-items: center;"
-            >
-              <div
-                style="background-image: url('img/martin.png'); height: 300px; width:100%; background-size:contain; background-position: center; background-repeat: no-repeat;"
-              >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <hr />
-
-        <div>
-          <div class="container">
-            <h3>Additional projects</h3>
-
-            <ul>
-              <li>
-                <a href="https://github.com/maplibre/awesome-maplibre"
-                  >Awesome MapLibre on GitHub</a
-                >
-              </li>
-              <li>
-                <a href="https://maplibre.org/maplibre-tile-spec"
-                  >MapLibre Tile Specification</a
-                >
-              </li>
-              <li>
-                <a href="https://github.com/maplibre"
-                  >All MapLibre GitHub repositories</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
+        </ProjectSection>
       </div>
     </div>
   </div>
