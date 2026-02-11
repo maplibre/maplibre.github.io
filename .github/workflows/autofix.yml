@@ -1,0 +1,31 @@
+name: autofix.ci # See https://autofix.ci/security why this name
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions: {}
+
+jobs:
+  format:
+    name: Format code
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with: { persist-credentials: false }
+
+      - name: Setup Node.js
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+
+      - name: Install frontend dependencies
+        run: npm clean-install --no-fund
+
+      - run: npm run format
+        continue-on-error: true
+
+      - uses: autofix-ci/action@7a166d7532b277f34e16238930461bf77f9d7ed8 # v1.3.3
+        with: { commit-message: "fix: formatting" }
