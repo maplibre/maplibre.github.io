@@ -18,7 +18,7 @@
     "@astrojs/solid-js": "^5.0.0",
     "@fontsource/alata": "^5.1.1",
     "@igor.dvlpr/astro-post-excerpt": "^3.0.4",
-    "astro": "^5.13.2",
+    "astro": "^5.16.4",
     "astro-icon": "^1.1.5",
     "bootstrap": "^5.3.8",
     "maplibre-gl": "^5.0.0",
@@ -28,6 +28,7 @@
     "ultrahtml": "^1.5.3"
   },
   "devDependencies": {
+    "astro-broken-links-checker": "^1.0.6",
     "@types/node": "^22.10.2",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1"

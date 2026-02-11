@@ -14,21 +14,9 @@ export const Sponsors = (props: any) => {
         <br />
       </p>
       <div class="gold-list">
-        <a href="https://aws.amazon.com/location/">
-          <div>
-            <img src="img/aws-logo.svg" />
-          </div>
-        </a>
-
-        <a href="https://www.meta.com/">
-          <div>
-            <img src="img/meta-logo.svg" />
-          </div>
-        </a>
-
         <a href="https://www.microsoft.com/">
           <div>
-            <img src="img/msft-logo.svg" />
+            <img src="/img/msft-logo.svg" />
           </div>
         </a>
       </div>
@@ -40,39 +28,39 @@ export const Sponsors = (props: any) => {
       </p>
 
       <div class="silver-list">
+        <a href="https://aws.amazon.com/location/">
+          <div>
+            <img src="/img/aws-logo.svg" />
+          </div>
+        </a>
         <a href="https://www.mierune.co.jp/?lang=en">
           <div>
-            <img src="img/mierune-logo.svg" />
+            <img src="/img/mierune-logo.svg" />
           </div>
         </a>
         <a href="https://komoot.com/">
           <div>
-            <img src="img/komoot-logo.svg" />
+            <img src="/img/komoot-logo.svg" />
           </div>
         </a>
         <a href="https://www.jawg.io/">
           <div>
-            <img src="img/jawgmaps-logo.svg" />
+            <img src="/img/jawgmaps-logo.svg" />
           </div>
         </a>
         <a href="https://www.radar.com/">
           <div>
-            <img src="img/radar-logo.svg" />
-          </div>
-        </a>
-        <a href="https://www.mappedin.com/">
-          <div>
-            <img src="img/mappedin-logo.svg" />
+            <img src="/img/radar-logo.svg" />
           </div>
         </a>
         <a href="https://mapme.com/">
           <div>
-            <img src="img/mapme-logo.svg" />
+            <img src="/img/mapme-logo.svg" />
           </div>
         </a>
         <a href="https://www.maptiler.com/">
           <div>
-            <img src="img/maptiler-logo.svg" />
+            <img src="/img/maptiler-logo.svg" />
           </div>
         </a>
       </div>

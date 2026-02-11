@@ -1,0 +1,224 @@
+---
+title: "MapLibre Newsletter September 2025"
+date: "2025-10-04"
+categories: ["newsletter"]
+authors:
+  [
+    harel-mazor,
+    bart-louwers,
+    birk-skyum,
+    joscha-eckert,
+    frank-elsinga,
+    yuri-astrakhan,
+    ramya-ragupathy,
+  ]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import maputnik from "./maputnik.jpg";
+import tileRendering from "./tile-rendering.png";
+
+Welcome to the MapLibre Newsletter, September 2025 edition!
+
+This edition features advances in MapLibre Native, GL JS, Flutter, Martin, and more. Plus, we’ve given [our roadmap section](https://maplibre.org/roadmap/) a fresh redesign. Go check it out to see what’s in progress, what’s under consideration, and what’s been released.
+A big thanks to [Birk](https://maplibre.org/about/birk-skyum/) for driving this initiative forward. 🙌
+
+With that note, let’s dive in!
+
+## 📱 MapLibre Native
+
+- The C++ MapLibre Tiles decoder, written by Tim Sylvester, [got merged](https://github.com/maplibre/maplibre-tile-spec/pull/441) this month. He also worked on the [Java _encoder_](https://github.com/maplibre/maplibre-tile-spec/tree/main/java), the [integration into MapLibre Native](https://github.com/maplibre/maplibre-native/pull/3246) and a new [`encoding`](https://github.com/maplibre/maplibre-style-spec/pull/1251) style spec property for vector sources. After some last-minute optimizations this month, the MapLibre Tile Spec itself is now considered [stable](https://github.com/maplibre/maplibre-tile-spec/pull/560).
+
+  Long story short, all lights are on green you will be able to use the next-generation tile format with MapLibre Native soon (before the end of the year?). Stay tuned!
+
+- [Birk Skyum](https://maplibre.org/about/birk-skyum/) has contributed a [WebGPU backend](https://github.com/maplibre/maplibre-native/pull/3838) for MapLibre Native. We already have dedicated backends for Vulkan, Metal and OpenGL, but the advantage of the new WebGPU backend is that it makes Native more portable.
+
+  Previously we [demonstrated](https://birkskyum-maplibre-native-wasm.pages.dev/qt-for-webassembly/webgl1-from-opengl2-legacy-renderer-qt6-9-1/) that MapLibre Native can run in the browser as WebAssembly by compiling the OpenGL backend to WebGL1/2 but that approach is heavy. The WebGPU backend will be significantly more performant.
+
+  Additionally, the WebGPU backend can simplify cross-platform development with frameworks like Compose Multiplatform and Flutter, by offering a single backend that can be used for all desktop/mobile/web targets.
+
+- We have enabled [immutable releases](https://github.blog/changelog/2025-08-26-releases-now-support-immutability-in-public-preview/). A GitHub feature that makes it impossible to tamper with release assets.
+
+- 🧑‍💻 Join the MapLibre Native Hackathon!
+
+  Hack on the MapLibre Native codebase with guidance from expert contributors. Build plugins, fix bugs, add features,anything goes!
+
+  The hackathon kicks off on Oct 27, 2025, includes office hours on Nov 3 & 10, and wraps up with Demo Day on Nov 12 at the MapLibre Native monthly meeting.
+
+  [Sign up here](https://docs.google.com/forms/d/e/1FAIpQLSfbJe7VohJmbtK83T0s5C49WYxkmKlr424ZPJFrWWwk5LFxVA/viewform) to learn, experiment, and shape the future of the project
+
+## 🌐 MapLibre GL JS
+
+September was a busy month with four new releases:[5.7.1](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.7.1), [5.7.2](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.7.2), [5.7.3](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.7.3) and [5.8.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.8.0).
+
+The latest one, 5.8.0, stands out, as it introduces data-driven styling for [line-dasharray](https://maplibre.org/maplibre-style-spec/layers/#line-dasharray), a long-awaited feature and [the most upvoted issue](https://github.com/maplibre/maplibre-gl-js/issues/1235) in our tracker. Thanks [Lucas (@lucaswoj)](https://github.com/lucaswoj) for this great contribution! We are super excited someone in the community decided to work on it.
+
+Other improvements this month include:
+
+- Fixes for raster tile fading, with more enhancements coming soon thanks to Ryan ([@wayofthefuture](https://github.com/wayofthefuture)).
+- Numerous fixes to [`global-state`](https://maplibre.org/maplibre-style-spec/expressions/#global-state), primarily led by [@melitele](https://github.com/melitele), significantly ironing out most of the related issues.
+
+## 📝 MapLibre Tile Specification
+
+The [MapLibre Tile Specification](https://github.com/maplibre/maplibre-tile-spec) project is now stable. This first version focuses on functional compatibility with [MVT](https://wiki.openstreetmap.org/wiki/Vector_tiles), with other functionality still experimental and subject to change.
+
+[MLT (MapLibre Tile)](https://maplibre.org/roadmap/maplibre-tile-format/) is a new vector tile format designed for efficient storage and rendering of map data, optimized for the MapLibre ecosystem.
+
+We have added an [implementation status overview page](https://maplibre.org/maplibre-tile-spec/implementation-status/) to the documentation site of the MapLibre Tile Specification. Here you can track the status of (planned) implementations and integrations, or add your own.
+
+## ✏️ Maputnik
+
+This month has been a very productive one for [our small style editor](https://maputnik.github.io/).
+
+Maputnik had recently gained the status of a ["supported project"](https://github.com/maplibre/maplibre/blob/main/PROJECT_TIERS.md#supported-project) in MapLibre, so if there's something you'd like to work on and get paid this is now possible.
+
+[Harel](https://maplibre.org/about/harel-mazor/) has been working hard to update all the libraries to their latest versions, including React to version 19. This upgrade required replacing outdated libraries that are no longer maintained and fixing issues across the existing codebase.
+
+We also added support for more recent changes to the [MapLibre Style Spec](https://maplibre.org/maplibre-style-spec/), such as [globe projection](https://maplibre.org/maplibre-gl-js/docs/examples/display-a-globe-with-a-vector-map/) and [`global-state`](https://maplibre.org/maplibre-style-spec/expressions/#global-state), along with several lesser-known fields introduced in recent years.
+
+This marks a strong start to Maputnik’s new status, and we believe that the more stable and widely used it becomes, the more features it will receive from this great community.
+
+<div style={{ maxWidth: "1000px", margin: "1.5rem auto", textAlign: "center" }}>
+  <Image
+    src={maputnik}
+    alt="Maputnik editor interface"
+    sizes="(min-width: 1280px) 1000px, (min-width: 768px) 800px, 100vw"
+    style={{
+      width: "100%",
+      height: "auto",
+      display: "block",
+      border: "1px solid #e5e7eb",
+      borderRadius: "0.75rem",
+    }}
+    class="shadow-lg"
+    loading="lazy"
+    decoding="async"
+  />
+  <p
+    style={{
+      fontSize: "0.9rem",
+      color: "#666",
+      marginTop: "0.5rem",
+      fontStyle: "italic",
+    }}
+  >
+    <em> Maputnik editor interface </em>
+  </p>
+</div>
+
+## 🪶 MapLibre Flutter
+
+This month brings a big step forward for the [MapLibre Flutter plugin](https://github.com/josxha/flutter-maplibre): MapLibre Flutter [v0.3.0](https://github.com/josxha/flutter-maplibre/releases/tag/v0.3.0) has been released.
+
+The highlight of this release is full iOS support, enabled through native interoperability between Dart and Swift/ObjC. With this, MapLibre Flutter now runs across Android, iOS, and the web using a modern codebase.
+
+All MapLibre SDK versions have been updated:
+
+- iOS: [v6.19.1](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.19.1)
+- Android: [v11.13.5](https://github.com/maplibre/maplibre-native/releases/tag/android-v11.13.5)
+- Web: [v5.8.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.8.0)
+
+A major ongoing goal for the package is to deliver a seamless cross-platform experience. A map style can now be added as a JSON string, via a Flutter assets path, or through a URI on all platforms. Additionally, PMTiles support on the web has been added to achieve feature parity with Android and iOS.
+
+More functionality has made its way into this release. You can find all user facing changes in the [changelog](https://pub.dev/packages/maplibre/changelog#030).
+
+## 🧩 Martin
+
+This month, [Martin](https://martin.maplibre.org/) has undergone significant refactoring.
+
+For those not following Martin’s versioning closely: before reaching v1.0, we are doing SemVer-breaking releases for each minor version (every X in 0.X.Y), since Martin is also published as a Rust library, allowing you to build your own tile server using its internals.
+
+We’ve now refactored the core functionality into a separate library, [`martin-core`](http://lib.rs/martin-core).
+
+Other highlights this month include:
+
+- New warnings for misspelled config keys.
+- A brand new logo thanks to Ryan ([@wayofthefuture](https://github.com/wayofthefuture)) 🎉.
+
+On the road to v1.0, we are currently working on three key features:
+
+- OGC API Tiles–compliant source discovery
+- Server-side style raster tile rendering
+- PMTiles sources for more cloud providers, beyond just AWS S3
+
+We’re on track to release Martin v1.0 by the FOSS4G conference in November. You can follow the ongoing work in [this GitHub discussion](https://github.com/maplibre/martin/discussions/1805).
+
+Like other MapLibre projects, Martin has also hardened its CI and release infrastructure against supply chain attacks in this release. We are now publishing immutable, attested releases via CI instead of manually.
+Further details are available [on Slack](https://slack.openstreetmap.us/).
+
+## 🦀 maplibre-native-rs
+
+The MapLibre Native Rust bindings have seen a steady stream of changes to enable server-side map rendering (rasterization) for Martin and other projects.
+
+We currently offer a single-instance Pool for rendering tiles, which already provides solid performance. MapLibre Native internally uses multithreading.
+
+Work is ongoing to design a multi-instance Pool, and we’re actively seeking feedback. If you have complex server-side rendering use cases, we’d love to hear from you to ensure the upcoming APIs work well for your needs.
+
+<div style={{ maxWidth: "900px", margin: "1.5rem auto", textAlign: "center" }}>
+  <Image
+    src={tileRendering}
+    alt="Tile rendering using maplibre-native-rs"
+    sizes="(min-width: 1280px) 900px, (min-width: 768px) 700px, 100vw"
+    style={{
+      width: "100%",
+      height: "auto",
+      display: "block",
+      border: "1px solid #e5e7eb",
+      borderRadius: "0.75rem",
+    }}
+    class="shadow-md"
+    loading="lazy"
+    decoding="async"
+  />
+  <p
+    style={{
+      fontSize: "0.9rem",
+      color: "#666",
+      marginTop: "0.5rem",
+      fontStyle: "italic",
+    }}
+  >
+    <em> Tile rendering using maplibre-native-rs</em>
+  </p>
+</div>
+
+## 🎉 Spatial K Onboarding
+
+We have on-boarded [Spatial K](https://maplibre.org/spatial-k/) (onboarding [ticket](https://github.com/maplibre/maplibre/issues/475)), a set of libraries for working with geospatial data in Kotlin, created by [Derek Ellis](https://github.com/dellisd) and generously passed over to MapLibre for continued collective maintenance.
+
+Spatial K includes:
+
+- An implementation of GeoJSON
+- A port of [Turf.js](https://turfjs.org/) written in pure Kotlin
+- Kotlin Multiplatform support
+- A Kotlin DSL for building GeoJSON objects
+
+It is already in use by [MapLibre Compose](https://maplibre.org/maplibre-compose/).
+
+**Expanding on Spatial K:**
+
+- GeoKJSON: There is a fork of Spatial K named [GeoKJSON](https://elcolto.github.io/GeoKJSON/) by [Sebastian Heeschen](https://github.com/elcolto), which we will be able to upstream into Spatial K, with Sebastian’s guidance. See the [ticket](https://github.com/maplibre/spatial-k/issues/170) for the porting effort.
+- MapLibre Java: There is significant overlap between Spatial K and [MapLibre Java](https://github.com/maplibre/maplibre-java), especially after the recent [refactor to Kotlin](https://github.com/maplibre/maplibre-java/pull/40) by [Fabian Keunecke](https://github.com/Fabi755). This work will help fill in gaps in Spatial K, enabling better alignment between the libraries. See the [ticket](https://github.com/maplibre/spatial-k/issues/154) for details.
+
+## 🗓️ Monthly meetings
+
+We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
+
+Upcoming Calls
+
+- MapLibre Navigation: Oct 08, 2025 – 4:00–5:00 PM UTC
+- MapLibre Native: Oct 08, 2025 – 5:00–6:00 PM UTC
+- MapLibre GL JS: Oct 08, 2025 – 6:00–7:00 PM UTC
+
+🌏 MapLibre Eastern Call
+
+Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
+
+- Oct 29, 2025 – 9:00–10:00 AM UTC
+
+🔗 [View meeting times in your local timezone](https://notime.zone/Oau-Xba7n3s15).
+
+All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/).
+We’d love to see you there!

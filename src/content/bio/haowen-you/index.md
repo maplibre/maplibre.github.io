@@ -21,6 +21,6 @@ The past year has shown me the power and impact of our community when we all wor
 
 These achievements are not possible without some key individuals' hard work. At the same time, I view them as testaments to our community's collective strength. They reinforce my belief in MapLibre's potential and motivate me to continue to devote myself to supporting our community's growth and success.
 
-On the on the governing board, I will continue my role as a bridge between MapLibre and major corporate adopters and sponsors. I will continue my commitment to connecting common interests, facilitating the exchange of ideas, and helping navigate diverging interests when they arise. I will drive for further growth in adoptions, contributions, and sponsorships to ensure MapLibre's long-term sustainability and success.
+On the governing board, I will continue my role as a bridge between MapLibre and major corporate adopters and sponsors. I will continue my commitment to connecting common interests, facilitating the exchange of ideas, and helping navigate diverging interests when they arise. I will drive for further growth in adoptions, contributions, and sponsorships to ensure MapLibre's long-term sustainability and success.
 
 I'm honored to continue serving our community for another term. I believe together, we will build on our momentum and achieve even more in the coming year.

@@ -29,3 +29,5 @@ pnpm-debug.log*
 .hugo_build.lock
 resources/
 static/
+
+.link-checker
