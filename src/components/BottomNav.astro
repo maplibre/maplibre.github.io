@@ -1,0 +1,102 @@
+---
+const navSections = [
+  {
+    heading: "The Project",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Financial Reports", href: "/about/reports" },
+      { label: "Roadmap", href: "/roadmap" },
+      { label: "News", href: "/news" },
+      { label: "Sponsors", href: "/sponsors" },
+    ],
+  },
+  {
+    heading: "Get in Touch",
+    links: [
+      { label: "Community", href: "/community" },
+      { label: "Slack", href: "https://slack.openstreetmap.us" },
+      { label: "GitHub", href: "https://github.com/maplibre" },
+    ],
+  },
+  {
+    heading: "Links",
+    links: [
+      { label: "Made with MapLibre", href: "https://madewithmaplibre.com/" },
+      {
+        label: "Awesome MapLibre",
+        href: "https://github.com/maplibre/awesome-maplibre",
+      },
+      {
+        label: "All repositories",
+        href: "https://github.com/maplibre#org-profile-repositories",
+      },
+    ],
+  },
+];
+
+const isExternal = (href: string) => !href.startsWith("/");
+---
+
+<nav class="bottom-nav">
+  <hr />
+  <div class="container py-5">
+    <div class="row">
+      {
+        navSections.map((section) => (
+          <div class="col-12 col-sm-6 col-lg-4 mb-4 mb-lg-0">
+            <h5 class="bottom-nav-heading">{section.heading}</h5>
+            <ul class="bottom-nav-list">
+              {section.links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    {...(isExternal(link.href)
+                      ? { target: "_blank", rel: "noopener" }
+                      : {})}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</nav>
+
+<style lang="scss">
+  .bottom-nav-heading {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .bottom-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    a {
+      display: block;
+      padding: 0.5rem 0;
+      color: rgb(203, 213, 225);
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #87b2f0;
+      }
+    }
+
+    li:first-child a {
+      padding-top: 0;
+    }
+
+    li:last-child a {
+      padding-bottom: 0;
+    }
+  }
+</style>
