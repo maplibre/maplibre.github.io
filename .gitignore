@@ -6,6 +6,7 @@ dist/
 
 # dependencies
 node_modules/
+pnpm-lock.yaml
 
 # logs
 npm-debug.log*
@@ -22,12 +23,6 @@ pnpm-debug.log*
 
 # IDE
 .idea/
-.vscode/
-
-# Hugo
-.hugo/
-.hugo_build.lock
-resources/
-static/
+.vscode
 
 .link-checker
