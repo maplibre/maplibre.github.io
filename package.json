@@ -15,6 +15,7 @@
   "dependencies": {
     "@astrojs/mdx": "^4.0.2",
     "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "^3.7.0",
     "@astrojs/solid-js": "^5.0.0",
     "@fontsource/alata": "^5.1.1",
     "@igor.dvlpr/astro-post-excerpt": "^3.0.4",
@@ -28,8 +29,8 @@
     "ultrahtml": "^1.5.3"
   },
   "devDependencies": {
-    "astro-broken-links-checker": "^1.0.6",
     "@types/node": "^22.10.2",
+    "astro-broken-links-checker": "^1.0.6",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1"
   }
