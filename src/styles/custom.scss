@@ -144,6 +144,21 @@ main a {
   }
 }
 
+.table-dark {
+  --bs-table-bg: transparent;
+  --bs-table-hover-bg: rgba(255, 255, 255, 0.05);
+  border-color: rgb(57, 64, 99);
+
+  th {
+    color: $secondary;
+    border-bottom-color: rgb(57, 64, 99);
+  }
+
+  td {
+    border-color: rgb(57, 64, 99);
+  }
+}
+
 .person {
   max-width: 175px;
 }
