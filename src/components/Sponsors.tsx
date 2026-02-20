@@ -63,6 +63,11 @@ export const Sponsors = (props: any) => {
             <img src="/img/maptiler-logo.svg" />
           </div>
         </a>
+        <a href="https://www.caltopo.com/">
+          <div>
+            <img src="/img/caltopo-logo.svg" />
+          </div>
+        </a>
       </div>
     </div>
   );
