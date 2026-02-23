@@ -14,36 +14,36 @@
   <!-- Centered on 480px canvas; GL JS label shifted to clear edges    -->
 
   <!-- GL JS ↔ Native (arc left) -->
-  <path d="M 227,217 Q 217,270 227,323" fill="none"
+  <path d="M 227,195 Q 200,270 227,345" fill="none"
         stroke="#82b4fe" stroke-width="3" stroke-dasharray="5,6"/>
 
   <!-- Martin → GL JS -->
-  <path d="M 350,333 Q 307,228 211,179" fill="none"
+  <path d="M 362,345 Q 290,215 227,195" fill="none"
         stroke="#82b4fe" stroke-width="2.5" stroke-dasharray="5,6"/>
   <!-- Martin → Native -->
-  <path d="M 345,345 Q 298,325 249,345" fill="none"
+  <path d="M 362,345 Q 295,325 227,345" fill="none"
         stroke="#82b4fe" stroke-width="2.5" stroke-dasharray="5,6"/>
 
   <!-- Style Spec → GL JS -->
-  <path d="M 118,142 Q 154,187 207,186" fill="none"
+  <path d="M 102,135 Q 150,185 227,195" fill="none"
         stroke="#82b4fe" stroke-width="2.5" stroke-dasharray="5,6"/>
   <!-- Style Spec → Native -->
-  <path d="M 111,149 Q 137,256 215,327" fill="none"
+  <path d="M 102,135 Q 108,258 227,345" fill="none"
         stroke="#82b4fe" stroke-width="2.5" stroke-dasharray="5,6"/>
   <!-- Style Spec → Maputnik -->
-  <path d="M 97,151 Q 103,210 67,254" fill="none"
+  <path d="M 102,135 Q 48,210 62,270" fill="none"
         stroke="#82b4fe" stroke-width="2.5" stroke-dasharray="5,6"/>
   <!-- Maputnik → GL JS -->
-  <path d="M 78,264 Q 155,257 207,187" fill="none"
+  <path d="M 62,270 Q 130,272 227,195" fill="none"
         stroke="#82b4fe" stroke-width="2.5" stroke-dasharray="5,6"/>
   <!-- MLT → GL JS -->
-  <path d="M 346,141 Q 277,142 207,187" fill="none"
+  <path d="M 362,135 Q 265,140 227,195" fill="none"
         stroke="#82b4fe" stroke-width="2.5" stroke-dasharray="5,6"/>
   <!-- MLT → Native -->
-  <path d="M 351,151 Q 310,257 240,326" fill="none"
+  <path d="M 362,135 Q 340,245 227,345" fill="none"
         stroke="#82b4fe" stroke-width="2.5" stroke-dasharray="5,6"/>
   <!-- MLT → Martin (arc right) -->
-  <path d="M 362,152 Q 412,240 362,328" fill="none"
+  <path d="M 362,135 Q 412,240 362,345" fill="none"
         stroke="#82b4fe" stroke-width="2.5" stroke-dasharray="5"/>
 
   <!-- Emoji nodes (rendered above edges)                              -->
