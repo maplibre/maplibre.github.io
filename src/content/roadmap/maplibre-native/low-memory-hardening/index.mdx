@@ -1,0 +1,11 @@
+---
+title: Low-memory Hardening
+project: maplibre-native
+heroImage: "./image.png"
+status: in-progress
+---
+
+We are working on hardening MapLibre Native under low-memory conditions (both RAM and GPU memory). You can think of:
+
+- Malloc hardening: pre-allocate a large buffer of memory. Use this buffer when memory is requested. This way we can detect when we are almost running out of memory and take action before we actually run out.
+- Fall back to a simpler style when running low on graphical memory.
