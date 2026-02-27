@@ -18,6 +18,8 @@ updates:
       semver-patch-days: 3
       include:
         - "*"
+      exclude:
+        - "maplibre-gl"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
