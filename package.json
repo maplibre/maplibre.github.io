@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
-    "astro-broken-links-checker": "^1.0.6",
+    "astro-broken-links-checker": "^1.0.7",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1"
   }
