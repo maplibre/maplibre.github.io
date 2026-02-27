@@ -23,7 +23,7 @@
     "astro-icon": "^1.1.5",
     "bootstrap": "^5.3.8",
     "maplibre-gl": "^5.19.0",
-    "sass": "1.76.0",
+    "sass": "1.97.3",
     "sharp": "^0.34.5",
     "solid-js": "^1.9.11",
     "ultrahtml": "^1.5.3"
