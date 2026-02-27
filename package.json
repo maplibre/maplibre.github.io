@@ -24,7 +24,7 @@
     "bootstrap": "^5.3.8",
     "maplibre-gl": "^5.19.0",
     "sass": "1.76.0",
-    "sharp": "^0.33.5",
+    "sharp": "^0.34.5",
     "solid-js": "^1.9.11",
     "ultrahtml": "^1.5.3"
   },
