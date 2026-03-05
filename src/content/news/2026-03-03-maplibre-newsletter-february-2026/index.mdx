@@ -15,18 +15,358 @@ draft: false
 ---
 
 import { Image } from "astro:assets";
+import mapTilerLogo from "/public/img/maptiler-logo.svg";
+import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
+import flutteWindows from "./flutter-windows.png";
+import maplibreRsText from "./maplibre-rs-text.png";
+import qgis2VectorTiles from "./qgis2-vector-tiles.gif";
+import mltTui from "./mlt-tui.png";
+import mltQgis from "./mlt-qgis.png";
 
-Welcome to the February 2026 edition of MapLibre Newsletter!
+Welcome to the February 2026 edition of MapLibre Newsletter! This month focuses on cross-platform innovation, from shifting rendering backends to launching AI-ready knowledge libraries.
+A special thanks to MapTiler for their continued support, which is vital to the ongoing development work.
+
+<div
+  style={{
+    backgroundColor: "white",
+    padding: "2rem",
+    border: "10px solid #cfd8dc",
+    borderRadius: 0,
+    margin: "0 auto 3rem",
+    maxWidth: "960px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "1.5rem",
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "3rem",
+      flexWrap: "wrap",     
+      width: "100%",
+    }}
+  >
+    <Image
+      src={maplibreLogo}
+      alt="MapLibre logo"
+      style={{
+        maxHeight: "80px",    
+        width: "auto",
+        objectFit: "contain",
+      }}
+    />
+    <Image
+      src={mapTilerLogo}
+      alt="MapTiler logo"
+      style={{
+        maxHeight: "80px",   
+        width: "auto",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+
+  <div
+    style={{
+      marginTop: "0.5rem",
+      fontSize: "1rem",
+      textAlign: "center",
+      color: "#263238",
+      fontStyle: "italic",
+      maxWidth: "42rem",
+    }}
+  >
+    Our gratitude goes to MapTiler for their continued support to
+    MapLibre.
+  </div>
+</div>
+
+With that note, let's dive into the latest updates across the MapLibre ecosystem!
 
 ## 📱 MapLibre Native
 
+**Core library: Distance-Based Level-of-Detail (LOD)**
+
+Nathan Olson implemented a [distance-based level-of-detail algorithm](https://github.com/maplibre/maplibre-native/pull/4057) into the core library. However, platform APIs for this functionality still need to be added.
+
+**Experimental WebGPU Backends for Mobile**
+
+Birk Skyum implemented a [WebGPU backend for Android](https://github.com/maplibre/maplibre-native/pull/4097) and for [iOS](https://github.com/maplibre/maplibre-native/pull/4103). At this point the motivation behind this is more or less "because we can", but it might offer opportunities to share custom shaders between platforms in the future.
+
+**New Hillshading Algorithms Merged**
+
+Andrew Calcutt's PR that implements additional [hillshade algorithms](https://github.com/maplibre/maplibre-native/pull/3965) has been merged! These algorithms are included in the current pre-release for Node.js, and the next releases for MapLibre iOS and MapLibre Android.
+
+**Android: Transitioning to Vulkan by Default**
+
+We plan to use [Vulkan as a default rendering backend for MapLibre Android](https://github.com/maplibre/maplibre-native/pull/4127). This means the `org.maplibre.gl:android-sdk` package will use Vulkan starting from v13.0.0. You can use the `org.maplibre.gl:android-sdk-opengl` package if you prefer to stick to OpenGL ES for now.
+
 ## 🌐 MapLibre GL JS
 
-## 🧩 MapLibre Tile
+**New Releases: Versions 5.18 and 5.19**
+
+We've released versions [5.18](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.18.0) and [5.19](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.19.0) this month. A major highlight is the migration of our documentation to Zesical, the maintained next-generation replacement of Mkdocs material, which has served us very well until now. We also added [`anisotropicFilterPitch`](https://github.com/maplibre/maplibre-gl-js/pull/7134) to support some interesting data analysis use cases.
+
+We would like to thank all the contributors this month for these versions - truly inspiring work!
+
+🙏 [n4n5](https://github.com/n4n5), [Lars Maxfield](https://github.com/larsmaxfield), [pcardinal](https://github.com/pcardinal), [Simon](https://github.com/simonmnt), [Birk Skyum](https://github.com/birkskyum), [Harel Mazor](https://github.com/HarelM), [Ganesh Lokhande](https://github.com/ganesh8068), [Ryan](https://github.com/wayofthefuture), [Frank Elsinga](https://github.com/CommanderStorm), [Kai Gritun](https://github.com/kaigritun), [Stanislaw Puda](https://github.com/pstaszek), [Lucas Wojciechowski](https://github.com/lucaswoj), [Russell Porter](https://github.com/russellporter)
+
+**The Road to Version 6**
+
+The following PR, which will pave the way for our next breaking change version is now ready to be merged:
+
+👉 https://github.com/maplibre/maplibre-gl-js/pull/6992
+
+We expect to start the pre-release for version 6 in March. While we haven't released a breaking change version in over a year now to keep things as maintainable as possible, it is now time to move forward with changes we've previously deferred.
+
+The primary change in version 6 regarding developer experience will be the transition to ESM. As the industry moves toward ESM and our current build process is becoming increasingly complex, we are considering moving away from releasing a CommonJS version. This transition will allow us to leverage newer technologies like Rolldown.
+
+We woudl love to hear your thoughts on these expected breaking changes to ensure we don't disrupt your workflows too much.
+Please join the discussion in the [relevant tracking issue](https://github.com/maplibre/maplibre-gl-js/issues/6427) and share your feedback.
+
+## 🪶 MapLibre Flutter
+
+Versions [0.3.4](https://github.com/josxha/flutter-maplibre/releases/tag/v0.3.4) and [0.3.4+1](https://github.com/josxha/flutter-maplibre/releases/tag/v0.3.4%2B1) of [maplibre](https://pub.dev/packages/maplibre) have been released this month, bringing significant architectural improvements and expanded platform support.
+
+**iOS transition to FFI**
+
+A major milestone in this release is the complete transition of the iOS implementation to FFI, removing all remaining usage of method channel serialization. This simplifies the integration between Flutter and the native SDK while providing minor performance gains.
+
+**Federated plugin architecture**
+
+As part of an ongoing committment to code quality, the plugin has been reorganized into a fully federated plugin architecture, separating each platform implementation into a dedicated packages. This restructuring improves long-term maintainability and allows each platform to evolve independently. These changes happened under the hood and requires no migration from the users.
+
+**Experimental desktop support**
+
+Experimental support for Windows and macOS has been introduced via a WebView–based implementation using MapLibre GL JS. This is a simple solution to bring performant vector map rendering to these desktop platforms while broader native support continues to evolve.
+
+<div 
+  style={{ 
+    marginBottom: "2rem", 
+    width: "100%", 
+    display: "flex", 
+    flexDirection: "column", 
+    alignItems: "center" 
+  }}
+>
+  <Image
+    src={flutteWindows}
+    alt="MapLibre GL JS map in a Flutter App on Windows"
+    style={{
+      width: "100%",
+      maxWidth: "650px", 
+      height: "auto",
+      display: "block",
+      borderRadius: "8px",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
+    }}
+    loading="lazy"
+    decoding="async"
+  />
+
+  <p
+    style={{
+      marginTop: "0.75rem",
+      marginBottom: 0,
+      lineHeight: "1.4",
+      textAlign: "center",
+      width: "100%",
+      maxWidth: "550px", 
+    }}
+  >
+    <em
+      style={{
+        fontSize: "0.85rem",
+        color: "#666",
+        fontStyle: "italic",
+      }}
+    >
+      MapLibre GL JS map rendering within a Flutter App on Windows.
+    </em>
+  </p>
+</div>
+**Documentation and Future Roadmap**
+
+Alongside these changes, the documentation website has been migrated to Zensical to better align with the design of other MapLibre documentation: https://flutter-maplibre.pages.dev/docs/
+
+Looking ahead, work is progressing on typed style layer properties and expressions, a highgly anticipated feature. We are currently targeting static typing for style expressions, paint/layout properties, and new style layer inspection capabilities for the upcoming [v0.4.0](https://github.com/josxha/flutter-maplibre/milestone/12) release.
+
+## 🤖 Maplibre Agent Skills
+
+In an effort to move with the times and inform the LLMs of all the great things you can build with MapLibre, we've launched [`maplibre-agent-skills`](https://github.com/maplibre/maplibre-agent-skills), a library of structured knowledge files that help AI coding assistants (Claude Code, Cursor, GitHub Copilot) write better MapLibre applications.
+
+Rather than putting up with bad or wrong MapLibre integrations, we're directly informing the AI agents so they in turn share good information and the right recommendations on when it makes sense to use Maplibre, how to deal with tile sources and other renderer resources, and how to follow open-ecosystem patterns.
+
+**Skills available now:**
+
+- `maplibre-tile-sources` — choosing hosted vs. self-hosted tiles, OpenFreeMap, PMTiles, glyphs, CORS
+- `maplibre-pmtiles-patterns` — serverless tile hosting on S3, R2, and static hosts
+- `maplibre-mapbox-migration` — migrating from Mapbox GL JS to MapLibre
+
+Visit [`maplibre-agent-skills`](https://github.com/maplibre/maplibre-agent-skills) for more details on how to use or install these, or review the [open issues](https://github.com/maplibre/maplibre-agent-skills/issues) for what's next.
+
+**We're looking for contributors.** Skills are plain markdown files, easy to read, review. We welcome your expansions, corrections and questions. If you've tackled geocoding, routing, styling, framework integration (React, Vue, Angular, Flutter, Swift), or performance — your experience can make a big impact.
+
+See [contributing guidelines](https://github.com/maplibre/maplibre-agent-skills/blob/main/CONTRIBUTING.md) for how to write a skill, or [open an issue](https://github.com/maplibre/maplibre-agent-skills/issues) to propose a new one we haven't thought of yet.
+
+## 🎨 Style Spec
+
+MapLibre Style Spec continues to evolve to support more complex styling needs:
+`split` and `join`, which allow better string manipulation, are now part of the spec and are expected to be incorporated in maplibre-gl-js soon.
+`resampling` was also added to support other layers besides raster.
+`symbol-elevation` will probably land soon to allow better support for placing symbols in a 3D map, check it out here:
+https://github.com/maplibre/maplibre-style-spec/pull/1508
+
+## 🦀 maplibre-rs
+
+During February focus has been on text rendering, with the following enhancements merged in:
+
+- SDF renderer plugin, adding support for text labels as shown on the picture below. Thanks to @maxammann for the [PR](https://github.com/maplibre/maplibre-rs/pull/314).
+- Support for configurable text-field property for symbol layers, so it's possible to e.g. set the language of the labels. Thanks to @birkskyum for the [PR](https://github.com/maplibre/maplibre-rs/pull/326).
+- Render tests harness added to the project. Thanks to @birkskyum for the [PR](https://github.com/maplibre/maplibre-rs/pull/331).
+
+<div
+style={{
+    marginBottom: "2rem",
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
+  }}
+
+>
+
+<Image
+  src={maplibreRsText}
+  alt="SDF text rendering in maplibre-rs"
+  style={{
+    width: "100%",
+    maxWidth: "650px",
+    height: "auto",
+    display: "block",
+    borderRadius: "8px",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+  }}
+  loading="lazy"
+  decoding="async"
+/>
+
+  <p
+    style={{
+      marginTop: "0.75rem",
+      marginBottom: 0,
+      lineHeight: "1.4",
+      textAlign: "center",
+      width: "100%",
+      maxWidth: "550px", // 
+    }}
+  >
+    <em
+      style={{
+        fontSize: "0.85rem",
+        color: "#666",
+        fontStyle: "italic",
+      }}
+    >
+      Demonstration of the new SDF-based text rendering in maplibre-rs.
+    </em>
+  </p>
+</div>
+
+## 🧩 MapLibre Tile (MLT)
+
+There is a lot of growing interest in [the new format](https://maplibre.org/news/2026-01-23-mlt-release/). Our current priority includes:
+
+- We are rebuilding the test infrastructure to allow high quality decoders in all the major languages.
+- There is also ongoing work on encoders in Rust and C++ to allow seamless integration into all kinds of tools including databases and tiles servers.
+- In MapLibre GL JS, we are working to leverage the native strengths of the MapLibre Tile format directly, moving away from the current method of converting data into an MVT-style model.
+
+The main focus right now is quality, ensuring that decoding is handled perfectly across every supported language.
+
+📣 Call for Volunteers: MLT Logo
+
+MLT project is looking for a volunteer to design our official logo. This is a great opportunity to contribute to the project and leave a lasting mark on the MapLibre ecosystem.
+Please [join the discussion](https://github.com/maplibre/maplibre-tile-spec/issues/942) to provide your inputs or share your submissions!
+
+We've made great progress on the tooling side, including a Rust-based TUI and a dedicated QGIS plugin 🎉 Stay tuned for more updates!
 
 ## ⚙️ Martin
 
-## 👥 Conferences & Events
+While it has been a relatively quiet month as we focus on MLT development, we’ve still shipped several key improvements to the tile server:
+
+Web UI Fixes: The path-prefix now works correctly within the Web UI.
+
+Smarter Routing: Common URL mistakes (e.g., using `/source.mvt` instead of `/source`) now return a 301 redirect instead of a 404, including periodic log hints to help fix configurations.
+
+COG Stability: The experimental Cloud Optimized GeoTIFF (COG) backend was tightened significantly (thanks to @Auspicus, PR #2510). To ensure stability, COGs must now be fully WebMercator-compatible (EPSG:3857), tiled, and consistently sized. Some previously ambiguous COGs may no longer load as we move toward a more predictable, production-ready implementation.
+
+## 🗺️ QGIS2VectorTiles
+
+**QGIS2VectorTiles** streamlines the process of packing a QGIS project into a fully styled vector tile package ready for MapLibre. It allows users to design maps within the familiar and flexible QGIS Desktop and export stunning MapLibre client-side web maps leveraging GDAL’s powerful MVT driver.
+
+The exported output package includes:
+
+- Vector tile source: `XYZ` directory
+- Styled QGIS layer file: A `.qlr` file
+- MapLibre style: A ready-tp-use `.json` stylesheet
+- MapLibre sprites _(optional)_ :`.png` and `.json` files
+- A ready-to-use MapLibre viewer: A pre-configured `.html` file
+
+This package is ideal for:
+
+- Client-side web map rendering via MapLibre, OpenLayers, and Leaflet
+- Lightweight WMS/WMTS vector tile serving via GeoServer and QGIS Server
+- Sharing complex, multi-source styled QGIS projects packaged as a single data source and layer file
+
+A short demo is attached:
+
+<div
+  style={{
+    marginBottom: "2rem",
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  }}
+>
+  <Image
+    src={qgis2VectorTiles}
+    alt="QGIS2VectorTiles workflow demo"
+    style={{
+      width: "100%",
+      maxWidth: "650px",
+      height: "auto",
+      display: "block",
+      borderRadius: "8px",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+    }}
+    loading="lazy"
+    decoding="async"
+  />
+  <p
+    style={{
+      marginTop: "0.75rem",
+      marginBottom: 0,
+      lineHeight: "1.4",
+      textAlign: "center",
+      width: "100%",
+      maxWidth: "550px",
+    }}
+  >
+    <em style={{ fontSize: "0.85rem", color: "#666", fontStyle: "italic" }}>
+      Exporting styled vector tiles directly from QGIS.
+    </em>
+  </p>
+</div>
+
+Thank you to Jossef for the amazing work on this plugin 👏
+
+More information is available on the [plugin homepage](https://gallpeters.github.io/QGIS2VectorTiles/).
 
 ## 🗓️ Monthly meetings
 
@@ -44,10 +384,8 @@ Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
 
 - Mar 25, 2026 – 9:00–10:00 AM UTC
 
-🔗 [View meeting times in your local timezone](shttps://notime.zone/OmyPkU_Ha6K7W).
+🔗 [View meeting times in your local timezone](https://notime.zone/OmyPkU_Ha6K7W).
 
 All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
 Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/).
 We’d love to see you there!
-
-
