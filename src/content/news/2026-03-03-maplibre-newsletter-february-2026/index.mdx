@@ -305,6 +305,8 @@ Smarter Routing: Common URL mistakes (e.g., using `/source.mvt` instead of `/sou
 
 COG Stability: The experimental Cloud Optimized GeoTIFF (COG) backend was tightened significantly (thanks to @Auspicus, PR #2510). To ensure stability, COGs must now be fully WebMercator-compatible (EPSG:3857), tiled, and consistently sized. Some previously ambiguous COGs may no longer load as we move toward a more predictable, production-ready implementation.
 
+[@manbhav234](https://github.com/manbhav234) also migrated [our documentation](https://maplibre.org/martin/) to Zensical, which looks much more modern than what we had before.
+
 ## 🗺️ QGIS2VectorTiles
 
 **QGIS2VectorTiles** streamlines the process of packing a QGIS project into a fully styled vector tile package ready for MapLibre. It allows users to design maps within the familiar and flexible QGIS Desktop and export stunning MapLibre client-side web maps leveraging GDAL’s powerful MVT driver.
