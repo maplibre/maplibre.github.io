@@ -294,6 +294,44 @@ Please [join the discussion](https://github.com/maplibre/maplibre-tile-spec/issu
 
 We've made great progress on the tooling side, including a Rust-based TUI and a dedicated QGIS plugin 🎉 Stay tuned for more updates!
 
+<div 
+  style={{ 
+    display: "flex", 
+    flexDirection: "row", 
+    justifyContent: "space-between", 
+    alignItems: "center", 
+    gap: "1.5rem", 
+    width: "100%", 
+    maxWidth: "960px", 
+    margin: "0 auto 2rem" 
+  }}
+>
+  {/* Left Image: TUI Deep-Dive */}
+  <div style={{ flex: 1 }}>
+    <Image 
+      src={mltTui}
+      alt="MLT Terminal UI (TUI) showing geometry inspection" 
+      style={{ width: "100%", height: "auto", borderRadius: "8px", boxShadow: "0 4px 12px rgba(0,0,0,0.1)" }} 
+    />
+    <p style={{ marginTop: "0.5rem", fontSize: "0.85rem", color: "#666", textAlign: "center" }}>
+      <em>MLT TUI: Direct feature inspection within the terminal.</em>
+    </p>
+  </div>
+
+{/* Right Image: QGIS Plugin Progress */}
+
+  <div style={{ flex: 1 }}>
+    <Image 
+      src={mltQgis} 
+      alt="QGIS Desktop application showing MLT data integration" 
+      style={{ width: "100%", height: "auto", borderRadius: "8px", boxShadow: "0 4px 12px rgba(0,0,0,0.1)" }} 
+    />
+    <p style={{ marginTop: "0.5rem", fontSize: "0.85rem", color: "#666", textAlign: "center" }}>
+      <em>MLT Data integration progress within the QGIS ecosystem.</em>
+    </p>
+  </div>
+</div>
+
 ## ⚙️ Martin
 
 While it has been a relatively quiet month as we focus on MLT development, we’ve still shipped several key improvements to the tile server:
@@ -306,7 +344,9 @@ COG Stability: The experimental Cloud Optimized GeoTIFF (COG) backend was tighte
 
 [@manbhav234](https://github.com/manbhav234) also migrated [our documentation](https://maplibre.org/martin/) to Zensical, which looks much more modern than what we had before.
 
-## 🗺️ Community spotlight: QGIS2VectorTiles
+## ✨ Community spotlight
+
+### QGIS2VectorTiles
 
 **QGIS2VectorTiles** streamlines the process of packing a QGIS project into a fully styled vector tile package ready for MapLibre. It allows users to design maps within the familiar and flexible QGIS Desktop and export stunning MapLibre client-side web maps leveraging GDAL’s powerful MVT driver.
 
