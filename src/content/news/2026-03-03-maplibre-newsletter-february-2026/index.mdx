@@ -338,13 +338,13 @@ We've made great progress on the tooling side, including a Rust-based TUI and a 
 
 While it has been a relatively quiet month as we focus on MLT development, we’ve still shipped several key improvements to the tile server:
 
-Web UI Fixes: The path-prefix now works correctly within the Web UI.
+**Web UI Fixes:** The path-prefix now works correctly within the Web UI.
 
-Smarter Routing: Common URL mistakes (e.g., using `/source.mvt` instead of `/source`) now return a 301 redirect instead of a 404, including periodic log hints to help fix configurations.
+**Smarter Routing:** Common URL mistakes (e.g., using `/source.mvt` instead of `/source`) now return a 301 redirect instead of a 404, including periodic log hints to help fix configurations.
 
-COG Stability: The experimental Cloud Optimized GeoTIFF (COG) backend was tightened significantly (thanks to @Auspicus, PR #2510). To ensure stability, COGs must now be fully WebMercator-compatible (EPSG:3857), tiled, and consistently sized. Some previously ambiguous COGs may no longer load as we move toward a more predictable, production-ready implementation.
+**COG Stability:** The experimental Cloud Optimized GeoTIFF (COG) backend was tightened significantly (thanks to [David E Disch](https://github.com/Auspicus), [PR #2510](https://github.com/maplibre/martin/pull/2510)). To ensure stability, COGs must now be fully WebMercator-compatible (EPSG:3857), tiled, and consistently sized. Some previously ambiguous COGs may no longer load as we move toward a more predictable, production-ready implementation.
 
-[@manbhav234](https://github.com/manbhav234) also migrated [our documentation](https://maplibre.org/martin/) to Zensical, which looks much more modern than what we had before.
+[Manbhav Sugla](https://github.com/manbhav234) also migrated [our documentation](https://maplibre.org/martin/) to Zensical, which looks much more modern than what we had before.
 
 ## ✨ Community spotlight
 
