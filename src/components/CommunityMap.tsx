@@ -74,7 +74,7 @@ export const CommunityMap = (props: any) => {
         }
       });
 
-      img.src = `https://github.com/${person.github}.png?size=80`;
+      img.src = `https://unavatar.io/github/${person.github}?fallback=false`;
     });
   });
 
