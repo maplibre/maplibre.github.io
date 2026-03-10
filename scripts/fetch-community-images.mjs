@@ -1,12 +1,4 @@
 #!/usr/bin/env node
-/**
- * Fetches community member profile images from GitHub and caches them locally.
- *
- * - Members with no cached image are always fetched.
- * - A random subset of members with an existing image are refreshed on each
- *   run so that avatars stay current over time without hitting rate limits.
- */
-
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
