@@ -28,8 +28,8 @@ for (const person of communityMembers) {
 
 // Refresh a random subset of members that already have an image so that
 // avatars are gradually kept up-to-date without exhausting rate limits.
-// With ~130 members and MAX_REFRESH=10 the full set rotates in ~13 runs.
-const MAX_REFRESH = 10;
+// With ~150 members and MAX_REFRESH=25 the full set rotates in ~6 runs.
+const MAX_REFRESH = 25;
 // Fisher-Yates shuffle to avoid the biased distribution of sort-based shuffling.
 for (let i = existingMembers.length - 1; i > 0; i--) {
   const j = Math.floor(Math.random() * (i + 1));
