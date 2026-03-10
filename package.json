@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "fetch-community-images": "node scripts/fetch-community-images.mjs",
     "format": "prettier --write .",
     "format-check": "prettier --check .",
     "postinstall": "cp -r node_modules/@fontsource/alata/files public/"

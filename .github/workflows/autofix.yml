@@ -26,6 +26,10 @@ jobs:
       - name: Install frontend dependencies
         run: npm clean-install --no-fund
 
+      - name: Fetch community member images
+        run: npm run fetch-community-images
+        continue-on-error: true
+
       - run: npm run format
         continue-on-error: true
 
