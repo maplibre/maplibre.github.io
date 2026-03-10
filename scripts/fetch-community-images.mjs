@@ -2,6 +2,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import sharp from "sharp";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.join(__dirname, "..");
@@ -59,7 +60,35 @@ for (const person of toFetch) {
       continue;
     }
     const image = await response.arrayBuffer();
-    await fs.writeFile(imagePath, Buffer.from(image));
+    const newBuffer = Buffer.from(image);
+
+    // Compare at the pixel level to avoid committing files that are binary-
+    // different but visually identical (e.g. due to PNG metadata or
+    // re-compression differences on GitHub's CDN).
+    try {
+      const [existingMeta, newMeta] = await Promise.all([
+        sharp(imagePath).metadata(),
+        sharp(newBuffer).metadata(),
+      ]);
+      if (
+        existingMeta.width === newMeta.width &&
+        existingMeta.height === newMeta.height &&
+        existingMeta.channels === newMeta.channels
+      ) {
+        const [existingPixels, newPixels] = await Promise.all([
+          sharp(imagePath).raw().toBuffer(),
+          sharp(newBuffer).raw().toBuffer(),
+        ]);
+        if (existingPixels.equals(newPixels)) {
+          console.log(`Skipped ${person.github} (no visual change).`);
+          continue;
+        }
+      }
+    } catch {
+      // No existing file or image is unreadable — proceed to write
+    }
+
+    await fs.writeFile(imagePath, newBuffer);
     console.log(`Saved image for ${person.github}.`);
   } catch (error) {
     console.error(`Failed to fetch image for ${person.github}:`, error);
