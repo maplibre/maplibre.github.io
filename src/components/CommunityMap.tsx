@@ -74,7 +74,7 @@ export const CommunityMap = (props: any) => {
         }
       });
 
-      img.src = `https://unavatar.io/github/${person.github}?fallback=false`;
+      img.src = `https://gh-avatars.maplibre.workers.dev/${person.github}`;
     });
   });
 
