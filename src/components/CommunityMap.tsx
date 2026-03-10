@@ -52,19 +52,29 @@ export const CommunityMap = (props: any) => {
       { padding: 50 },
     );
 
-    shuffle(JSON.parse(JSON.stringify(props.members))).map((person) => {
+    shuffle(JSON.parse(JSON.stringify(props.members))).forEach((person) => {
       const img = document.createElement("img");
       img.className = "marker";
-      img.src = `/community/${person.github}.png`;
 
       const anchor = document.createElement("a");
       anchor.href = `https://github.com/${person.github}`;
       anchor.title = person.github;
 
       anchor.append(img);
-      new Marker({ element: anchor })
-        .setLngLat([person.latlon[1], person.latlon[0]])
-        .addTo(map);
+
+      img.addEventListener("load", () => {
+        new Marker({ element: anchor })
+          .setLngLat([person.latlon[1], person.latlon[0]])
+          .addTo(map);
+      });
+
+      img.addEventListener("error", () => {
+        if (import.meta.env.DEV) {
+          console.error(`Failed to load avatar for ${person.github}`);
+        }
+      });
+
+      img.src = `https://github.com/${person.github}.png?size=80`;
     });
   });
 
