@@ -62,14 +62,22 @@ for (const person of toFetch) {
     const image = await response.arrayBuffer();
     const newBuffer = Buffer.from(image);
 
+    // GitHub returns a full-size default image (420 px) when a user does not
+    // exist or has no avatar.  The ?size=50 parameter is ignored in that case,
+    // so we use the actual dimensions as a sentinel to detect placeholders.
+    const newMeta = await sharp(newBuffer).metadata();
+    if (newMeta.width !== 50 || newMeta.height !== 50) {
+      console.warn(
+        `Skipped ${person.github} (unexpected image size ${newMeta.width}×${newMeta.height}).`,
+      );
+      continue;
+    }
+
     // Compare at the pixel level to avoid committing files that are binary-
     // different but visually identical (e.g. due to PNG metadata or
     // re-compression differences on GitHub's CDN).
     try {
-      const [existingMeta, newMeta] = await Promise.all([
-        sharp(imagePath).metadata(),
-        sharp(newBuffer).metadata(),
-      ]);
+      const existingMeta = await sharp(imagePath).metadata();
       if (
         existingMeta.width === newMeta.width &&
         existingMeta.height === newMeta.height &&
