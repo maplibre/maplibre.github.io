@@ -1,5 +1,9 @@
 $background: rgb(17, 23, 37);
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   background-color: $background;
 }
