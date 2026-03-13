@@ -14,7 +14,10 @@ export default defineConfig({
     mdx({
       rehypePlugins: [
         rehypeSlug,
-        [rehypeAutolinkHeadings, { behavior: "wrap", properties: { className: ["heading-link"] } }],
+        [
+          rehypeAutolinkHeadings,
+          { behavior: "wrap", properties: { className: ["heading-link"] } },
+        ],
       ],
     }),
     solidJs(),
