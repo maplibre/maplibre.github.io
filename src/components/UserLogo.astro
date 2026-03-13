@@ -1,0 +1,33 @@
+---
+interface Props {
+  href: string;
+  src: string;
+  alt: string;
+}
+
+const { href, src, alt } = Astro.props;
+---
+
+<style>
+  .logo {
+    height: 40px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.7);
+    transition: filter 0.2s ease;
+  }
+
+  .logo:hover {
+    filter: grayscale(0%) opacity(1);
+  }
+</style>
+
+<a
+  href={href}
+  title={alt}
+  class="d-flex align-items-center justify-content-center text-decoration-none"
+  style="height: 60px;"
+>
+  <img src={src} alt={alt} class="logo" />
+</a>

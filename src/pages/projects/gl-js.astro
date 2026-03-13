@@ -1,30 +1,12 @@
 ---
+import EcosystemCard from "../../components/EcosystemCard.astro";
+import FeatureCard from "../../components/FeatureCard.astro";
+import GitHubBadge from "../../components/landing/GitHubBadge.astro";
+import LinkBadge from "../../components/landing/LinkBadge.astro";
+import StatCard from "../../components/StatCard.astro";
+import UserLogo from "../../components/UserLogo.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
-
-<style lang="css">
-  /* Only styles that have no Bootstrap utility equivalent */
-  .demo-card {
-    transition: transform 0.2s ease;
-  }
-
-  .demo-card:hover {
-    transform: translateY(-4px);
-  }
-
-  .user-logo {
-    height: 40px;
-    width: auto;
-    max-width: 120px;
-    object-fit: contain;
-    filter: grayscale(100%) opacity(0.7);
-    transition: filter 0.2s ease;
-  }
-
-  .user-logo:hover {
-    filter: grayscale(0%) opacity(1);
-  }
-</style>
 
 <Layout title="MapLibre GL JS">
   <section class="py-5 px-4 text-center text-white">
@@ -36,14 +18,11 @@ import Layout from "../../layouts/Layout.astro";
       </p>
 
       <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
-        <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">Open Source</div>
-        <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">
-          Community Governed
-        </div>
-        <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">GPU-Accelerated</div>
-        <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">Web-Native</div>
-        <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">Extensible</div>
-        <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">Globe Support</div>
+        {
+          ["Open Source", "Community Governed", "GPU-Accelerated", "Web-Native", "Extensible", "Globe Support"].map((label) => (
+            <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">{label}</div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -59,54 +38,34 @@ import Layout from "../../layouts/Layout.astro";
 
       <div class="row g-4 justify-content-center">
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body text-center">
-              <h3 class="card-title h5 text-primary">High Performance</h3>
-              <p class="card-text text-dark small">
-                GPU-accelerated rendering with WebGL and WebGPU for smooth,
-                responsive maps at 60fps
-              </p>
-            </div>
-          </div>
+          <FeatureCard title="High Performance">
+            GPU-accelerated rendering with WebGL and WebGPU for smooth,
+            responsive maps at 60fps
+          </FeatureCard>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body text-center">
-              <h3 class="card-title h5 text-primary">Globe &amp; 3D</h3>
-              <p class="card-text text-dark small">
-                Render a full globe, 3D terrain, building extrusions, and custom
-                3D layers with ease
-              </p>
-            </div>
-          </div>
+          <FeatureCard title="Globe &amp; 3D">
+            Render a full globe, 3D terrain, building extrusions, and custom
+            3D layers with ease
+          </FeatureCard>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body text-center">
-              <h3 class="card-title h5 text-primary">Rich Styling</h3>
-              <p class="card-text text-dark small">
-                Powerful MapLibre Style Specification with data-driven
-                expressions for dynamic, expressive maps
-              </p>
-            </div>
-          </div>
+          <FeatureCard title="Rich Styling">
+            Powerful MapLibre Style Specification with data-driven expressions
+            for dynamic, expressive maps
+          </FeatureCard>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div class="card h-100 shadow-sm">
-            <div class="card-body text-center">
-              <h3 class="card-title h5 text-primary">Extensible</h3>
-              <p class="card-text text-dark small">
-                Plugin-friendly architecture with support for custom sources,
-                layers, and controls
-              </p>
-            </div>
-          </div>
+          <FeatureCard title="Extensible">
+            Plugin-friendly architecture with support for custom sources,
+            layers, and controls
+          </FeatureCard>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-5 px-4 text-center text-white section-odd">
+  <section class="py-5 px-4 text-center text-white">
     <div class="container">
       <h2 class="h1 mb-3">Modern Rendering Technologies</h2>
       <p class="lead mb-5 mx-auto" style="max-width: 600px;">
@@ -119,29 +78,15 @@ import Layout from "../../layouts/Layout.astro";
         style="max-width: 600px; margin: 0 auto;"
       >
         <div class="col-md-6 col-12">
-          <div class="card h-100 shadow-sm">
-            <div
-              class="card-body d-flex flex-column align-items-center text-center"
-            >
-              <h3 class="card-title h5 text-primary">WebGL</h3>
-              <p class="card-text text-dark small">
-                Battle-tested GPU rendering available in every modern browser
-              </p>
-            </div>
-          </div>
+          <FeatureCard title="WebGL">
+            Battle-tested GPU rendering available in every modern browser
+          </FeatureCard>
         </div>
         <div class="col-md-6 col-12">
-          <div class="card h-100 shadow-sm">
-            <div
-              class="card-body d-flex flex-column align-items-center text-center"
-            >
-              <h3 class="card-title h5 text-primary">WebGPU</h3>
-              <p class="card-text text-dark small">
-                Next-generation graphics API for even greater performance and
-                visual fidelity
-              </p>
-            </div>
-          </div>
+          <FeatureCard title="WebGPU">
+            Next-generation graphics API for even greater performance and
+            visual fidelity
+          </FeatureCard>
         </div>
       </div>
     </div>
@@ -157,133 +102,93 @@ import Layout from "../../layouts/Layout.astro";
 
       <div class="row g-4">
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none demo-card ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/examples/3d-terrain/"
+            title="3D Terrain"
+            lift
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">3D Terrain</h4>
-              <p class="card-text text-dark small mb-0">
-                Drape raster tiles over elevation data for stunning 3D landscape
-                visualizations
-              </p>
-            </div>
-          </a>
+            Drape raster tiles over elevation data for stunning 3D landscape
+            visualizations
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none demo-card ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/examples/globe-atmosphere/"
+            title="Globe View"
+            lift
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">Globe View</h4>
-              <p class="card-text text-dark small mb-0">
-                Display a full 3D globe with atmospheric effects and vector map
-                overlays
-              </p>
-            </div>
-          </a>
+            Display a full 3D globe with atmospheric effects and vector map
+            overlays
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none demo-card ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/examples/buildings-3d/"
+            title="3D Buildings"
+            lift
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">3D Buildings</h4>
-              <p class="card-text text-dark small mb-0">
-                Extrude polygons to create realistic 3D building and indoor
-                mapping experiences
-              </p>
-            </div>
-          </a>
+            Extrude polygons to create realistic 3D building and indoor
+            mapping experiences
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none demo-card ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/examples/heatmap-layer/"
+            title="Heatmaps"
+            lift
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">Heatmaps</h4>
-              <p class="card-text text-dark small mb-0">
-                Visualize point density with customizable heatmap layers
-              </p>
-            </div>
-          </a>
+            Visualize point density with customizable heatmap layers
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none demo-card ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/examples/animate-point-along-route/"
+            title="Animations"
+            lift
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">Animations</h4>
-              <p class="card-text text-dark small mb-0">
-                Animate points along routes, live data streams, camera
-                fly-throughs, and more
-              </p>
-            </div>
-          </a>
+            Animate points along routes, live data streams, camera
+            fly-throughs, and more
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none demo-card ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/examples/add-3d-model/"
+            title="Custom 3D Models"
+            lift
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">Custom 3D Models</h4>
-              <p class="card-text text-dark small mb-0">
-                Embed three.js and Babylon.js 3D models directly into your map
-                scenes
-              </p>
-            </div>
-          </a>
+            Embed three.js and Babylon.js 3D models directly into your map
+            scenes
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none demo-card ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/examples/cluster/"
+            title="Clustering"
+            lift
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">Clustering</h4>
-              <p class="card-text text-dark small mb-0">
-                Automatically cluster large point datasets with customizable
-                styles and popups
-              </p>
-            </div>
-          </a>
+            Automatically cluster large point datasets with customizable
+            styles and popups
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none demo-card ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/examples/population-density/"
+            title="Data Visualization"
+            lift
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">
-                Data Visualization
-              </h4>
-              <p class="card-text text-dark small mb-0">
-                Visualize population density and other datasets with data-driven
-                styling
-              </p>
-            </div>
-          </a>
+            Visualize population density and other datasets with data-driven
+            styling
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none demo-card ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/examples/satellite-map/"
+            title="Satellite &amp; Raster"
+            lift
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">
-                Satellite &amp; Raster
-              </h4>
-              <p class="card-text text-dark small mb-0">
-                Display satellite imagery, raster tiles, COG sources, and WMS
-                layers
-              </p>
-            </div>
-          </a>
+            Display satellite imagery, raster tiles, COG sources, and WMS
+            layers
+          </EcosystemCard>
         </div>
       </div>
 
@@ -298,7 +203,7 @@ import Layout from "../../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="py-5 px-4 text-center text-white section-odd">
+  <section class="py-5 px-4 text-center text-white">
     <div class="container">
       <h2 class="h1 mb-3">Works With Your Favorite Frameworks</h2>
       <p class="lead mb-5 mx-auto" style="max-width: 600px;">
@@ -309,127 +214,80 @@ import Layout from "../../layouts/Layout.astro";
 
       <div class="row g-4">
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="React"
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">React</h4>
-              <p class="card-text text-dark small mb-0">
-                React MapLibre — idiomatic React bindings for MapLibre GL JS
-              </p>
-            </div>
-          </a>
+            React MapLibre — idiomatic React bindings for MapLibre GL JS
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="Angular"
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">Angular</h4>
-              <p class="card-text text-dark small mb-0">
-                ngx-maplibre-gl — Angular components for embedding MapLibre maps
-              </p>
-            </div>
-          </a>
+            ngx-maplibre-gl — Angular components for embedding MapLibre maps
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="Vue"
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">Vue</h4>
-              <p class="card-text text-dark small mb-0">
-                vue-maplibre-gl — MapLibre GL JS integration for Vue 3
-              </p>
-            </div>
-          </a>
+            vue-maplibre-gl — MapLibre GL JS integration for Vue 3
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="deck.gl"
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">deck.gl</h4>
-              <p class="card-text text-dark small mb-0">
-                Create large-scale WebGL-powered data visualizations on top of
-                MapLibre maps
-              </p>
-            </div>
-          </a>
+            Create large-scale WebGL-powered data visualizations on top of
+            MapLibre maps
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="three.js"
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">three.js</h4>
-              <p class="card-text text-dark small mb-0">
-                Embed full 3D three.js scenes as custom map layers with terrain
-                support
-              </p>
-            </div>
-          </a>
+            Embed full 3D three.js scenes as custom map layers with terrain
+            support
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="Babylon.js"
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">Babylon.js</h4>
-              <p class="card-text text-dark small mb-0">
-                Integrate Babylon.js 3D models and scenes into your map
-                application
-              </p>
-            </div>
-          </a>
+            Integrate Babylon.js 3D models and scenes into your map application
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="terra-draw"
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">terra-draw</h4>
-              <p class="card-text text-dark small mb-0">
-                Draw and edit geometries directly on your MapLibre map with
-                terra-draw
-              </p>
-            </div>
-          </a>
+            Draw and edit geometries directly on your MapLibre map with
+            terra-draw
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="PMTiles"
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">PMTiles</h4>
-              <p class="card-text text-dark small mb-0">
-                Serve single-file tile archives directly from cloud storage with
-                no tile server required
-              </p>
-            </div>
-          </a>
+            Serve single-file tile archives directly from cloud storage with
+            no tile server required
+          </EcosystemCard>
         </div>
         <div class="col-lg-4 col-md-6 col-12">
-          <a
-            class="card h-100 shadow-sm text-decoration-none ecosystem-border"
+          <EcosystemCard
             href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="Mapbox GL Draw"
           >
-            <div class="card-body text-start">
-              <h4 class="card-title h6 text-primary mb-2">Mapbox GL Draw</h4>
-              <p class="card-text text-dark small mb-0">
-                Add draw and edit tools for GeoJSON polygons and shapes to your
-                map
-              </p>
-            </div>
-          </a>
+            Add draw and edit tools for GeoJSON polygons and shapes to your map
+          </EcosystemCard>
         </div>
       </div>
     </div>
@@ -446,104 +304,30 @@ import Layout from "../../layouts/Layout.astro";
       <div
         class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-4"
       >
-        <a
-          href="https://meta.com/"
-          title="Meta"
-          class="user-logo-wrap text-decoration-none"
-        >
-          <img src="/img/meta-logo.svg" alt="Meta" class="user-logo" />
-        </a>
-        <a
-          href="https://www.microsoft.com/"
-          title="Microsoft"
-          class="user-logo-wrap text-decoration-none"
-        >
-          <img
-            src="/img/msft-logo.svg"
-            alt="Microsoft"
-            class="user-logo"
-          />
-        </a>
-        <a
-          href="https://aws.amazon.com/location/"
-          title="Amazon (AWS)"
-          class="user-logo-wrap text-decoration-none"
-        >
-          <img
-            src="/img/aws-logo.svg"
-            alt="Amazon (AWS)"
-            class="user-logo"
-          />
-        </a>
-        <a
-          href="https://www.maptiler.com/"
-          title="MapTiler"
-          class="user-logo-wrap text-decoration-none"
-        >
-          <img src="/img/maptiler-logo.svg" alt="MapTiler" class="user-logo" />
-        </a>
-        <a
-          href="https://www.jawg.io/"
-          title="Jawg"
-          class="user-logo-wrap text-decoration-none"
-        >
-          <img src="/img/jawgmaps-logo.svg" alt="Jawg" class="user-logo" />
-        </a>
-        <a
-          href="https://komoot.com/"
-          title="Komoot"
-          class="user-logo-wrap text-decoration-none"
-        >
-          <img src="/img/komoot-logo.svg" alt="Komoot" class="user-logo" />
-        </a>
-        <a
-          href="https://www.radar.com/"
-          title="Radar"
-          class="user-logo-wrap text-decoration-none"
-        >
-          <img src="/img/radar-logo.svg" alt="Radar" class="user-logo" />
-        </a>
-        <a
-          href="https://www.mappedin.com/"
-          title="Mappedin"
-          class="user-logo-wrap text-decoration-none"
-        >
-          <img
-            src="/img/mappedin-logo.svg"
-            alt="Mappedin"
-            class="user-logo"
-          />
-        </a>
-        <a
-          href="https://www.mierune.co.jp/?lang=en"
-          title="Mierune"
-          class="user-logo-wrap text-decoration-none"
-        >
-          <img src="/img/mierune-logo.svg" alt="Mierune" class="user-logo" />
-        </a>
+        <UserLogo href="https://meta.com/" src="/img/meta-logo.svg" alt="Meta" />
+        <UserLogo href="https://www.microsoft.com/" src="/img/msft-logo.svg" alt="Microsoft" />
+        <UserLogo href="https://aws.amazon.com/location/" src="/img/aws-logo.svg" alt="Amazon (AWS)" />
+        <UserLogo href="https://www.maptiler.com/" src="/img/maptiler-logo.svg" alt="MapTiler" />
+        <UserLogo href="https://www.jawg.io/" src="/img/jawgmaps-logo.svg" alt="Jawg" />
+        <UserLogo href="https://komoot.com/" src="/img/komoot-logo.svg" alt="Komoot" />
+        <UserLogo href="https://www.radar.com/" src="/img/radar-logo.svg" alt="Radar" />
+        <UserLogo href="https://www.mappedin.com/" src="/img/mappedin-logo.svg" alt="Mappedin" />
+        <UserLogo href="https://www.mierune.co.jp/?lang=en" src="/img/mierune-logo.svg" alt="Mierune" />
       </div>
 
       <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
-        <span class="user-name-pill">Lyft</span>
-        <span class="user-name-pill">Grab</span>
-        <span class="user-name-pill">Gojek</span>
-        <span class="user-name-pill">Wikimedia Foundation</span>
-        <span class="user-name-pill">Plotly</span>
-        <span class="user-name-pill">Felt</span>
-        <span class="user-name-pill">CARTO</span>
-        <span class="user-name-pill">Elastic</span>
-        <span class="user-name-pill">Foursquare</span>
-        <span class="user-name-pill">Rivian</span>
-        <span class="user-name-pill">DHL</span>
-        <span class="user-name-pill">DJI</span>
-        <span class="user-name-pill">Michelin</span>
-        <span class="user-name-pill">FlixBus</span>
-        <span class="user-name-pill">AccuWeather</span>
-        <span class="user-name-pill">Windy</span>
-        <span class="user-name-pill">SBB</span>
-        <span class="user-name-pill">National Rail</span>
-        <span class="user-name-pill">Watch Duty</span>
-        <span class="user-name-pill">U.S. National Park Service</span>
+        {
+          [
+            "Lyft", "Grab", "Gojek", "Wikimedia Foundation", "Plotly",
+            "Felt", "CARTO", "Elastic", "Foursquare", "Rivian", "DHL",
+            "DJI", "Michelin", "FlixBus", "AccuWeather", "Windy", "SBB",
+            "National Rail", "Watch Duty", "U.S. National Park Service",
+          ].map((name) => (
+            <span class="border rounded px-3 py-2 small text-secondary text-nowrap">
+              {name}
+            </span>
+          ))
+        }
       </div>
 
       <div class="d-flex flex-wrap justify-content-center gap-3">
@@ -555,7 +339,7 @@ import Layout from "../../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="py-5 px-4 text-center text-white section-odd">
+  <section class="py-5 px-4 text-center text-white">
     <div class="container">
       <h2 class="h1 mb-3">Vibrant Open Source Community</h2>
       <p class="lead mb-5 mx-auto" style="max-width: 600px;">
@@ -565,36 +349,16 @@ import Layout from "../../layouts/Layout.astro";
 
       <div class="row g-4 justify-content-center">
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div
-            class="stat-card rounded p-4 text-white text-center h-100 d-flex flex-column justify-content-center"
-          >
-            <div class="display-4 fw-bold mb-2">7K+</div>
-            <div class="fs-5 opacity-75">GitHub Stars</div>
-          </div>
+          <StatCard value="7K+" label="GitHub Stars" />
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div
-            class="stat-card rounded p-4 text-white text-center h-100 d-flex flex-column justify-content-center"
-          >
-            <div class="display-4 fw-bold mb-2">300+</div>
-            <div class="fs-5 opacity-75">Contributors</div>
-          </div>
+          <StatCard value="300+" label="Contributors" />
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div
-            class="stat-card rounded p-4 text-white text-center h-100 d-flex flex-column justify-content-center"
-          >
-            <div class="display-4 fw-bold mb-2">1,000+</div>
-            <div class="fs-5 opacity-75">Community Members</div>
-          </div>
+          <StatCard value="1,000+" label="Community Members" />
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div
-            class="stat-card rounded p-4 text-white text-center h-100 d-flex flex-column justify-content-center"
-          >
-            <div class="display-4 fw-bold mb-2">100%</div>
-            <div class="fs-5 opacity-75">Open Source</div>
-          </div>
+          <StatCard value="100%" label="Open Source" />
         </div>
       </div>
     </div>
@@ -609,71 +373,12 @@ import Layout from "../../layouts/Layout.astro";
       </p>
 
       <div class="d-flex flex-wrap justify-content-center gap-2">
-        <span class="badge bg-primary fs-6 p-2">
-          <a
-            href="https://github.com/maplibre/maplibre-gl-js"
-            class="text-decoration-none text-white"
-          >
-            <svg
-              role="img"
-              class="me-1"
-              style="width: 16px; height: 16px; fill: currentColor;"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>GitHub</title>
-              <path
-                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-              ></path>
-            </svg>
-            GitHub
-          </a>
-        </span>
-
-        <span class="badge bg-primary fs-6 p-2">
-          <a
-            href="https://maplibre.org/maplibre-gl-js/docs/"
-            class="text-decoration-none text-white"
-          >
-            API Documentation
-          </a>
-        </span>
-
-        <span class="badge bg-primary fs-6 p-2">
-          <a
-            href="https://maplibre.org/maplibre-gl-js/docs/examples/"
-            class="text-decoration-none text-white"
-          >
-            Examples
-          </a>
-        </span>
-
-        <span class="badge bg-primary fs-6 p-2">
-          <a
-            href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
-            class="text-decoration-none text-white"
-          >
-            Plugins
-          </a>
-        </span>
-
-        <span class="badge bg-primary fs-6 p-2">
-          <a
-            href="https://maplibre.org/maplibre-style-spec"
-            class="text-decoration-none text-white"
-          >
-            Style Spec
-          </a>
-        </span>
-
-        <span class="badge bg-primary fs-6 p-2">
-          <a
-            href="https://github.com/maplibre/maplibre-gl-js/releases"
-            class="text-decoration-none text-white"
-          >
-            Releases
-          </a>
-        </span>
+        <GitHubBadge href="https://github.com/maplibre/maplibre-gl-js" />
+        <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/">API Documentation</LinkBadge>
+        <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/examples/">Examples</LinkBadge>
+        <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/plugins/">Plugins</LinkBadge>
+        <LinkBadge href="https://maplibre.org/maplibre-style-spec">Style Spec</LinkBadge>
+        <LinkBadge href="https://github.com/maplibre/maplibre-gl-js/releases">Releases</LinkBadge>
       </div>
     </div>
   </section>
