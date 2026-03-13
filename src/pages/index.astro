@@ -42,6 +42,7 @@ import LinkBadge from "../components/landing/LinkBadge.astro";
         <ProjectSection
           title="Map<span style='color: #95BEFA;'>Libre</span> GL JS"
           visualFlex={false}
+          href="projects/gl-js/"
         >
           <Fragment slot="description">
             Open-source TypeScript library for publishing maps on your website.
@@ -55,7 +56,6 @@ import LinkBadge from "../components/landing/LinkBadge.astro";
             <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
               >Plugins</LinkBadge
             >
-            <LinkBadge href="projects/gl-js/">Read more</LinkBadge>
           </Fragment>
           <div slot="visual" style="max-width: 500px; margin: 0px auto;">
             <LandingPageMap client:only="solid-js" />
