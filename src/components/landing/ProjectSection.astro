@@ -19,7 +19,7 @@ const titleText = title.replace(/<[^>]+>/g, "");
 ---
 
 <hr />
-<div class:list={["container", { "project-link": !!href }]}>
+<div class:list={["container", { "project-link": !!href, "position-relative": !!href, "rounded": !!href }]}>
   {
     href && (
       <a
@@ -40,7 +40,7 @@ const titleText = title.replace(/<[^>]+>/g, "");
         <slot name="description" />
         <br /><br />
 
-        <div class:list={[{ "badges-wrapper": !!href }]}>
+        <div class:list={[{ "position-relative z-2": !!href }]}>
           <slot name="badges" />
         </div>
         <br /><br />
@@ -54,17 +54,10 @@ const titleText = title.replace(/<[^>]+>/g, "");
 
 <style lang="scss">
   .project-link {
-    position: relative;
-    border-radius: 8px;
     transition: background-color 0.3s ease;
 
     &:hover {
       background-color: #111422;
     }
-  }
-
-  .badges-wrapper {
-    position: relative;
-    z-index: 2;
   }
 </style>
