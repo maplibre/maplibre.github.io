@@ -249,6 +249,31 @@ const stats = await fetchRepoStats("maplibre", "maplibre-native");
 
   <section class="py-5 px-4 text-center text-white section-odd">
     <div class="container">
+      <h2 class="h1 mb-3">Vibrant Open Source Community</h2>
+      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
+        Join thousands of developers contributing to the future of open mapping
+        technology.
+      </p>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <StatCard value={stats.stars} label="GitHub Stars" />
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <StatCard value={stats.forks} label="Forks" />
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <StatCard value={stats.commits} label="Commits" />
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <StatCard value={stats.pullRequests} label="Pull Requests" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-center bg-light text-dark">
+    <div class="container">
       <h2 class="h1 mb-3">Supported by Leading Companies</h2>
       <p class="lead mb-5 mx-auto" style="max-width: 600px;">
         Major companies rely on MapLibre Native for their mapping needs,
@@ -279,7 +304,7 @@ const stats = await fetchRepoStats("maplibre", "maplibre-native");
       <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
         {
           nonSponsorUsers.map((name) => (
-            <span class="border border-white border-opacity-25 rounded px-3 py-2 small text-white text-opacity-75 text-nowrap">
+            <span class="border rounded px-3 py-2 small text-secondary text-nowrap">
               {name}
             </span>
           ))
@@ -291,31 +316,6 @@ const stats = await fetchRepoStats("maplibre", "maplibre-native");
           Who is using us
         </a>
         <a href="/sponsors" class="btn btn-primary btn-lg"> Our sponsors </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-5 px-4 text-center bg-light text-dark">
-    <div class="container">
-      <h2 class="h1 mb-3">Vibrant Open Source Community</h2>
-      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
-        Join thousands of developers contributing to the future of open mapping
-        technology.
-      </p>
-
-      <div class="row g-4 justify-content-center">
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <StatCard value={stats.stars} label="GitHub Stars" />
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <StatCard value={stats.forks} label="Forks" />
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <StatCard value={stats.commits} label="Commits" />
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-          <StatCard value={stats.pullRequests} label="Pull Requests" />
-        </div>
       </div>
     </div>
   </section>
