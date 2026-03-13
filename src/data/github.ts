@@ -12,7 +12,7 @@ const authHeaders: Record<string, string> = process.env.GITHUB_TOKEN
 function formatCount(n: number): string {
   if (n >= 1_000_000) return `${Math.floor(n / 1_000_000)}M+`;
   if (n >= 1_000) return `${Math.floor(n / 1_000)}K+`;
-  return `${n}+`;
+  return `${n}`;
 }
 
 /**
