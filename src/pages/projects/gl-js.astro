@@ -5,6 +5,7 @@ import GitHubBadge from "../../components/landing/GitHubBadge.astro";
 import LinkBadge from "../../components/landing/LinkBadge.astro";
 import StatCard from "../../components/StatCard.astro";
 import UserLogo from "../../components/UserLogo.astro";
+import { allSponsors } from "../../data/sponsors";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -311,15 +312,9 @@ import Layout from "../../layouts/Layout.astro";
       <div
         class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-4"
       >
-        <UserLogo href="https://meta.com/" src="/img/meta-logo.svg" alt="Meta" />
-        <UserLogo href="https://www.microsoft.com/" src="/img/msft-logo.svg" alt="Microsoft" />
-        <UserLogo href="https://aws.amazon.com/location/" src="/img/aws-logo.svg" alt="Amazon (AWS)" />
-        <UserLogo href="https://www.maptiler.com/" src="/img/maptiler-logo.svg" alt="MapTiler" />
-        <UserLogo href="https://www.jawg.io/" src="/img/jawgmaps-logo.svg" alt="Jawg" />
-        <UserLogo href="https://komoot.com/" src="/img/komoot-logo.svg" alt="Komoot" />
-        <UserLogo href="https://www.radar.com/" src="/img/radar-logo.svg" alt="Radar" />
-        <UserLogo href="https://www.mappedin.com/" src="/img/mappedin-logo.svg" alt="Mappedin" />
-        <UserLogo href="https://www.mierune.co.jp/?lang=en" src="/img/mierune-logo.svg" alt="Mierune" />
+        {allSponsors.map((s) => (
+          <UserLogo href={s.href} src={s.logo} alt={s.name} />
+        ))}
       </div>
 
       <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
