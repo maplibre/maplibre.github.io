@@ -19,7 +19,12 @@ const titleText = title.replace(/<[^>]+>/g, "");
 ---
 
 <hr />
-<div class:list={["container", { "project-link": !!href, "position-relative": !!href, "rounded": !!href }]}>
+<div
+  class:list={[
+    "container",
+    { "project-link": !!href, "position-relative": !!href, rounded: !!href },
+  ]}
+>
   {
     href && (
       <a
