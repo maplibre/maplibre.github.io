@@ -46,6 +46,3 @@ export const silverSponsors: Sponsor[] = [
     name: "CalTopo",
   },
 ];
-
-/** All sponsors across all tiers, ordered by tier (Gold first, then Silver). */
-export const allSponsors: Sponsor[] = [...goldSponsors, ...silverSponsors];
