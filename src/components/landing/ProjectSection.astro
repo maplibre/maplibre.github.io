@@ -3,9 +3,10 @@ interface Props {
   title: string;
   visualStyle?: string;
   visualFlex?: boolean;
+  href?: string;
 }
 
-const { title, visualStyle = "", visualFlex = true } = Astro.props;
+const { title, visualStyle = "", visualFlex = true, href } = Astro.props;
 
 const visualBaseStyle = visualFlex
   ? "display: flex; justify-content: center; align-items: center;"
@@ -13,10 +14,21 @@ const visualBaseStyle = visualFlex
 const fullVisualStyle = [visualBaseStyle, visualStyle]
   .filter(Boolean)
   .join(" ");
+
+const titleText = title.replace(/<[^>]+>/g, "");
 ---
 
 <hr />
-<div class="container">
+<div class:list={["container", { "project-link": !!href }]}>
+  {
+    href && (
+      <a
+        href={href}
+        class="stretched-link"
+        aria-label={`Read more about ${titleText}`}
+      />
+    )
+  }
   <div class="row">
     <div
       class="col-md-12 col-lg-6"
@@ -28,7 +40,9 @@ const fullVisualStyle = [visualBaseStyle, visualStyle]
         <slot name="description" />
         <br /><br />
 
-        <slot name="badges" />
+        <div class:list={[{ "badges-wrapper": !!href }]}>
+          <slot name="badges" />
+        </div>
         <br /><br />
       </div>
     </div>
@@ -37,3 +51,20 @@ const fullVisualStyle = [visualBaseStyle, visualStyle]
     </div>
   </div>
 </div>
+
+<style lang="scss">
+  .project-link {
+    position: relative;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #111422;
+    }
+  }
+
+  .badges-wrapper {
+    position: relative;
+    z-index: 2;
+  }
+</style>
