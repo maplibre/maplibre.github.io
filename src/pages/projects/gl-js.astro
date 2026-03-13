@@ -21,13 +21,13 @@ import Layout from "../../layouts/Layout.astro";
       <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
         {
           [
-            { emoji: "🔓", label: "Open Source" },
-            { emoji: "🏛️", label: "Community Governed" },
-            { emoji: "⚡", label: "GPU-Accelerated" },
-            { emoji: "🌐", label: "Web-Native" },
-            { emoji: "🔌", label: "Extensible" },
-            { emoji: "🌍", label: "Globe Support" },
-          ].map(({ emoji, label }) => (
+            "🔓 Open Source",
+            "🏛️ Community Governed",
+            "⚡ GPU-Accelerated",
+            "🌐 Web-Native",
+            "🔌 Extensible",
+            "🌍 Globe Support",
+          ].map((label) => (
             <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">
               {emoji} {label}
             </div>
