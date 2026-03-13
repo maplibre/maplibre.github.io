@@ -1,0 +1,33 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  /** When true the card lifts slightly on hover, suitable for "example" links */
+  lift?: boolean;
+}
+
+const { href, title, lift = false } = Astro.props;
+---
+
+<style>
+  .lift {
+    transition: transform 0.2s ease;
+  }
+
+  .lift:hover {
+    transform: translateY(-4px);
+  }
+</style>
+
+<a
+  href={href}
+  class:list={[
+    "card h-100 shadow-sm text-decoration-none border-start border-primary border-3",
+    lift && "lift",
+  ]}
+>
+  <div class="card-body text-start">
+    <h4 class="card-title h6 text-primary mb-2">{title}</h4>
+    <p class="card-text text-dark small mb-0"><slot /></p>
+  </div>
+</a>

@@ -1,0 +1,430 @@
+---
+import EcosystemCard from "../../components/EcosystemCard.astro";
+import FeatureCard from "../../components/FeatureCard.astro";
+import GitHubBadge from "../../components/landing/GitHubBadge.astro";
+import LinkBadge from "../../components/landing/LinkBadge.astro";
+import StatCard from "../../components/StatCard.astro";
+import UserLogo from "../../components/UserLogo.astro";
+import { fetchRepoStats } from "../../data/github";
+import { goldSponsors, silverSponsors } from "../../data/sponsors";
+import Layout from "../../layouts/Layout.astro";
+
+const stats = await fetchRepoStats("maplibre", "maplibre-gl-js");
+---
+
+<Layout title="MapLibre GL JS">
+  <section class="py-5 px-4 text-center text-white">
+    <div class="container">
+      <h1 class="display-4 mb-3">MapLibre GL JS</h1>
+      <p class="lead mb-4 opacity-75">
+        The open-source TypeScript library for publishing interactive,
+        GPU-accelerated maps on the web.
+      </p>
+
+      <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
+        {
+          [
+            "🔓 Open Source",
+            "🏛️ Community Governed",
+            "⚡ GPU-Accelerated",
+            "🌐 Web-Native",
+            "🔌 Extensible",
+            "🌍 Globe Support",
+          ].map((label) => (
+            <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">
+              {label}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-center bg-light text-dark">
+    <div class="container">
+      <h2 class="h1 mb-3">Built for the modern Web</h2>
+      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
+        MapLibre GL JS is a TypeScript library that renders interactive maps
+        from vector tiles and MapLibre Style Specification directly in the
+        browser, using WebGL and soon WebGPU for exceptional performance.
+      </p>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <FeatureCard title="High Performance">
+            GPU-accelerated rendering with WebGL and soon WebGPU for smooth,
+            responsive maps at 60fps
+          </FeatureCard>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <FeatureCard title="Globe & 3D">
+            Render a full globe, 3D terrain, building extrusions, and custom 3D
+            layers with ease
+          </FeatureCard>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <FeatureCard title="Rich Styling">
+            Powerful MapLibre Style Specification with data-driven expressions
+            for dynamic, expressive maps
+          </FeatureCard>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <FeatureCard title="Extensible">
+            Plugin-friendly architecture with support for custom sources,
+            layers, and controls
+          </FeatureCard>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-center text-white">
+    <div class="container">
+      <h2 class="h1 mb-3">Modern Rendering Technologies</h2>
+      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
+        MapLibre GL JS supports WebGL and we are working on a WebGPU API,
+        ensuring the best visual quality and performance in all modern browsers.
+      </p>
+
+      <div
+        class="row g-4 justify-content-center"
+        style="max-width: 600px; margin: 0 auto;"
+      >
+        <div class="col-md-6 col-12">
+          <FeatureCard title="WebGL">
+            Battle-tested GPU rendering available in every modern browser
+          </FeatureCard>
+        </div>
+        <div class="col-md-6 col-12">
+          <FeatureCard title="WebGPU">
+            We are currently working on a supporting the next-generation
+            graphics API for even greater performance and visual fidelity
+          </FeatureCard>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-center bg-light text-dark">
+    <div class="container">
+      <h2 class="h1 mb-3">What You Can Build</h2>
+      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
+        From interactive data visualizations to immersive 3D experiences,
+        MapLibre GL JS gives you the tools to build any mapping application.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/examples/3d-terrain/"
+            title="3D Terrain"
+            lift
+          >
+            Drape raster tiles over elevation data for stunning 3D landscape
+            visualizations
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/examples/globe-atmosphere/"
+            title="Globe View"
+            lift
+          >
+            Display a full 3D globe with atmospheric effects and vector map
+            overlays
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/examples/buildings-3d/"
+            title="3D Buildings"
+            lift
+          >
+            Extrude polygons to create realistic 3D building and indoor mapping
+            experiences
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/examples/heatmap-layer/"
+            title="Heatmaps"
+            lift
+          >
+            Visualize point density with customizable heatmap layers
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/examples/animate-point-along-route/"
+            title="Animations"
+            lift
+          >
+            Animate points along routes, live data streams, camera fly-throughs,
+            and more
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/examples/add-3d-model/"
+            title="Custom 3D Models"
+            lift
+          >
+            Embed three.js and Babylon.js 3D models directly into your map
+            scenes
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/examples/cluster/"
+            title="Clustering"
+            lift
+          >
+            Automatically cluster large point datasets with customizable styles
+            and popups
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/examples/population-density/"
+            title="Data Visualization"
+            lift
+          >
+            Visualize population density and other datasets with data-driven
+            styling
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/examples/satellite-map/"
+            title="Satellite & Raster"
+            lift
+          >
+            Display satellite imagery, raster tiles, COG sources, and WMS layers
+          </EcosystemCard>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <a
+          href="https://maplibre.org/maplibre-gl-js/docs/examples/"
+          class="btn btn-primary btn-lg"
+        >
+          Browse All Examples
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-center text-white">
+    <div class="container">
+      <h2 class="h1 mb-3">Works With Your Favorite Frameworks</h2>
+      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
+        MapLibre GL JS integrates seamlessly with popular JavaScript frameworks
+        and visualization libraries through community-maintained wrappers and
+        plugins.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="React"
+          >
+            React MapLibre — idiomatic React bindings for MapLibre GL JS
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="Angular"
+          >
+            ngx-maplibre-gl — Angular components for embedding MapLibre maps
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="Vue"
+          >
+            vue-maplibre-gl — MapLibre GL JS integration for Vue 3
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="deck.gl"
+          >
+            Create large-scale WebGL-powered data visualizations on top of
+            MapLibre maps
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="three.js"
+          >
+            Embed full 3D three.js scenes as custom map layers with terrain
+            support
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="Babylon.js"
+          >
+            Integrate Babylon.js 3D models and scenes into your map application
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="terra-draw"
+          >
+            Draw and edit geometries directly on your MapLibre map with
+            terra-draw
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="PMTiles"
+          >
+            Serve single-file tile archives directly from cloud storage with no
+            tile server required
+          </EcosystemCard>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+          <EcosystemCard
+            href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+            title="maplibre-gl-compare"
+          >
+            Compare maps with a swipe
+          </EcosystemCard>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-center bg-light text-dark">
+    <div class="container">
+      <h2 class="h1 mb-3">Trusted by Industry Leaders</h2>
+      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
+        Organizations of all sizes rely on MapLibre GL JS to power their mapping
+        experiences — from global technology platforms to public institutions.
+      </p>
+
+      <div
+        class="d-flex flex-wrap justify-content-center align-items-center gap-5 mb-3"
+      >
+        {
+          goldSponsors.map((s) => (
+            <UserLogo href={s.href} src={s.logo} alt={s.name} large />
+          ))
+        }
+      </div>
+
+      <div
+        class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-4"
+      >
+        {
+          silverSponsors.map((s) => (
+            <UserLogo href={s.href} src={s.logo} alt={s.name} />
+          ))
+        }
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+        {
+          [
+            "Meta",
+            "Lyft",
+            "Grab",
+            "Gojek",
+            "Wikimedia Foundation",
+            "Plotly",
+            "Felt",
+            "CARTO",
+            "Elastic",
+            "Foursquare",
+            "Rivian",
+            "DHL",
+            "DJI",
+            "Michelin",
+            "FlixBus",
+            "AccuWeather",
+            "Windy",
+            "SBB",
+            "National Rail",
+            "Watch Duty",
+            "U.S. National Park Service",
+          ].map((name) => (
+            <span class="border rounded px-3 py-2 small text-secondary text-nowrap">
+              {name}
+            </span>
+          ))
+        }
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="https://madewithmaplibre.com/" class="btn btn-primary btn-lg">
+          See all users
+        </a>
+        <a href="/sponsors" class="btn btn-primary btn-lg">Our sponsors</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-center text-white">
+    <div class="container">
+      <h2 class="h1 mb-3">Vibrant Open Source Community</h2>
+      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
+        Join thousands of developers contributing to the future of open mapping
+        technology on the web.
+      </p>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <StatCard value={stats.stars} label="GitHub Stars" />
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <StatCard value={stats.forks} label="Forks" />
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <StatCard value={stats.commits} label="Commits" />
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <StatCard value={stats.pullRequests} label="Pull Requests" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-center bg-light text-dark">
+    <div class="container">
+      <h2 class="h1 mb-3">Learn More</h2>
+      <p class="lead mb-5 mx-auto" style="max-width: 600px;">
+        Explore documentation, examples, and resources to get started with
+        MapLibre GL JS.
+      </p>
+
+      <div class="d-flex flex-wrap justify-content-center gap-2">
+        <GitHubBadge href="https://github.com/maplibre/maplibre-gl-js" />
+        <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/"
+          >API Documentation</LinkBadge
+        >
+        <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/examples/"
+          >Examples</LinkBadge
+        >
+        <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
+          >Plugins</LinkBadge
+        >
+        <LinkBadge href="https://maplibre.org/maplibre-style-spec"
+          >Style Spec</LinkBadge
+        >
+        <LinkBadge href="https://github.com/maplibre/maplibre-gl-js/releases"
+          >Releases</LinkBadge
+        >
+      </div>
+    </div>
+  </section>
+</Layout>

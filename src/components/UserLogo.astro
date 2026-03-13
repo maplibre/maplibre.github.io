@@ -1,0 +1,42 @@
+---
+interface Props {
+  href: string;
+  src: string;
+  alt: string;
+  large?: boolean;
+}
+
+const { href, src, alt, large = false } = Astro.props;
+---
+
+<style>
+  /* Bootstrap has no filter/transition utilities — kept as custom CSS */
+  .logo {
+    height: 40px;
+    max-width: 120px;
+    filter: grayscale(100%) opacity(0.7);
+    transition: filter 0.2s ease;
+  }
+
+  .logo.logo-large {
+    height: 64px;
+    max-width: 180px;
+  }
+
+  .logo:hover {
+    filter: grayscale(0%) opacity(1);
+  }
+</style>
+
+<a
+  href={href}
+  title={alt}
+  class="d-flex align-items-center justify-content-center text-decoration-none"
+  style={large ? "height: 90px;" : "height: 60px;"}
+>
+  <img
+    src={src}
+    alt={alt}
+    class={`w-auto object-fit-contain logo${large ? " logo-large" : ""}`}
+  />
+</a>
