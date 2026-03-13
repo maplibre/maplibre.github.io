@@ -6,7 +6,11 @@ import metal from "../../assets/maplibre-native/metal.png";
 import opengl from "../../assets/maplibre-native/opengl.png";
 import vulkan from "../../assets/maplibre-native/vulkan.png";
 import webgpu from "../../assets/maplibre-native/webgpu.png";
+import StatCard from "../../components/StatCard.astro";
+import { fetchRepoStats } from "../../data/github";
 import Layout from "../../layouts/Layout.astro";
+
+const stats = await fetchRepoStats("maplibre", "maplibre-native");
 ---
 
 <style lang="css">
@@ -16,10 +20,6 @@ import Layout from "../../layouts/Layout.astro";
 
   .benefit-badge {
     background: rgba(255, 255, 255, 0.1);
-  }
-
-  .stat-card {
-    background: #285daa;
   }
 
   .ecosystem-border {
@@ -269,36 +269,16 @@ import Layout from "../../layouts/Layout.astro";
 
       <div class="row g-4 justify-content-center">
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div
-            class="stat-card rounded p-4 text-white text-center h-100 d-flex flex-column justify-content-center"
-          >
-            <div class="display-4 fw-bold mb-2">1.5K+</div>
-            <div class="fs-5 opacity-75">GitHub Stars</div>
-          </div>
+          <StatCard value={stats.stars} label="GitHub Stars" />
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div
-            class="stat-card rounded p-4 text-white text-center h-100 d-flex flex-column justify-content-center"
-          >
-            <div class="display-4 fw-bold mb-2">300+</div>
-            <div class="fs-5 opacity-75">Contributors</div>
-          </div>
+          <StatCard value={stats.forks} label="Forks" />
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div
-            class="stat-card rounded p-4 text-white text-center h-100 d-flex flex-column justify-content-center"
-          >
-            <div class="display-4 fw-bold mb-2">1.000+</div>
-            <div class="fs-5 opacity-75">Community Members</div>
-          </div>
+          <StatCard value={stats.commits} label="Commits" />
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <div
-            class="stat-card rounded p-4 text-white text-center h-100 d-flex flex-column justify-content-center"
-          >
-            <div class="display-4 fw-bold mb-2">100%</div>
-            <div class="fs-5 opacity-75">Open Source</div>
-          </div>
+          <StatCard value={stats.pullRequests} label="Pull Requests" />
         </div>
       </div>
     </div>

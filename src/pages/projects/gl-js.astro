@@ -5,8 +5,11 @@ import GitHubBadge from "../../components/landing/GitHubBadge.astro";
 import LinkBadge from "../../components/landing/LinkBadge.astro";
 import StatCard from "../../components/StatCard.astro";
 import UserLogo from "../../components/UserLogo.astro";
+import { fetchRepoStats } from "../../data/github";
 import { goldSponsors, silverSponsors } from "../../data/sponsors";
 import Layout from "../../layouts/Layout.astro";
+
+const stats = await fetchRepoStats("maplibre", "maplibre-gl-js");
 ---
 
 <Layout title="MapLibre GL JS">
@@ -381,16 +384,16 @@ import Layout from "../../layouts/Layout.astro";
 
       <div class="row g-4 justify-content-center">
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <StatCard value="7K+" label="GitHub Stars" />
+          <StatCard value={stats.stars} label="GitHub Stars" />
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <StatCard value="300+" label="Contributors" />
+          <StatCard value={stats.forks} label="Forks" />
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <StatCard value="1,000+" label="Community Members" />
+          <StatCard value={stats.commits} label="Commits" />
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-          <StatCard value="100%" label="Open Source" />
+          <StatCard value={stats.pullRequests} label="Pull Requests" />
         </div>
       </div>
     </div>
