@@ -5,7 +5,7 @@ import GitHubBadge from "../../components/landing/GitHubBadge.astro";
 import LinkBadge from "../../components/landing/LinkBadge.astro";
 import StatCard from "../../components/StatCard.astro";
 import UserLogo from "../../components/UserLogo.astro";
-import { allSponsors } from "../../data/sponsors";
+import { goldSponsors, silverSponsors } from "../../data/sponsors";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -311,10 +311,20 @@ import Layout from "../../layouts/Layout.astro";
       </p>
 
       <div
+        class="d-flex flex-wrap justify-content-center align-items-center gap-5 mb-3"
+      >
+        {
+          goldSponsors.map((s) => (
+            <UserLogo href={s.href} src={s.logo} alt={s.name} large />
+          ))
+        }
+      </div>
+
+      <div
         class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-4"
       >
         {
-          allSponsors.map((s) => (
+          silverSponsors.map((s) => (
             <UserLogo href={s.href} src={s.logo} alt={s.name} />
           ))
         }

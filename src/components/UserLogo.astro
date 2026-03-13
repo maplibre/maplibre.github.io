@@ -3,9 +3,10 @@ interface Props {
   href: string;
   src: string;
   alt: string;
+  large?: boolean;
 }
 
-const { href, src, alt } = Astro.props;
+const { href, src, alt, large = false } = Astro.props;
 ---
 
 <style>
@@ -18,6 +19,11 @@ const { href, src, alt } = Astro.props;
     transition: filter 0.2s ease;
   }
 
+  .logo.logo-large {
+    height: 64px;
+    max-width: 180px;
+  }
+
   .logo:hover {
     filter: grayscale(0%) opacity(1);
   }
@@ -27,7 +33,7 @@ const { href, src, alt } = Astro.props;
   href={href}
   title={alt}
   class="d-flex align-items-center justify-content-center text-decoration-none"
-  style="height: 60px;"
+  style={large ? "height: 90px;" : "height: 60px;"}
 >
-  <img src={src} alt={alt} class="logo" />
+  <img src={src} alt={alt} class={large ? "logo logo-large" : "logo"} />
 </a>
