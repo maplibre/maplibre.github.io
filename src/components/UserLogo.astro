@@ -10,11 +10,10 @@ const { href, src, alt, large = false } = Astro.props;
 ---
 
 <style>
+  /* Bootstrap has no filter/transition utilities — kept as custom CSS */
   .logo {
     height: 40px;
-    width: auto;
     max-width: 120px;
-    object-fit: contain;
     filter: grayscale(100%) opacity(0.7);
     transition: filter 0.2s ease;
   }
@@ -35,5 +34,9 @@ const { href, src, alt, large = false } = Astro.props;
   class="d-flex align-items-center justify-content-center text-decoration-none"
   style={large ? "height: 90px;" : "height: 60px;"}
 >
-  <img src={src} alt={alt} class={large ? "logo logo-large" : "logo"} />
+  <img
+    src={src}
+    alt={alt}
+    class={`w-auto object-fit-contain logo${large ? " logo-large" : ""}`}
+  />
 </a>
