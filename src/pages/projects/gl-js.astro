@@ -3,22 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <style lang="css">
-  .section-odd {
-    background: #111725;
-  }
-
-  .benefit-badge {
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  .stat-card {
-    background: #285daa;
-  }
-
-  .ecosystem-border {
-    border-left: 3px solid #285daa;
-  }
-
+  /* Only styles that have no Bootstrap utility equivalent */
   .demo-card {
     transition: transform 0.2s ease;
   }
@@ -26,10 +11,23 @@ import Layout from "../../layouts/Layout.astro";
   .demo-card:hover {
     transform: translateY(-4px);
   }
+
+  .user-logo {
+    height: 40px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.7);
+    transition: filter 0.2s ease;
+  }
+
+  .user-logo:hover {
+    filter: grayscale(0%) opacity(1);
+  }
 </style>
 
 <Layout title="MapLibre GL JS">
-  <section class="py-5 px-4 text-center text-white section-odd">
+  <section class="py-5 px-4 text-center text-white">
     <div class="container">
       <h1 class="display-4 mb-3">MapLibre GL JS</h1>
       <p class="lead mb-4 opacity-75">
@@ -38,16 +36,14 @@ import Layout from "../../layouts/Layout.astro";
       </p>
 
       <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
-        <div class="benefit-badge rounded px-3 py-2 fs-6">🤝 Open Source</div>
-        <div class="benefit-badge rounded px-3 py-2 fs-6">
-          👥 Community Governed
+        <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">Open Source</div>
+        <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">
+          Community Governed
         </div>
-        <div class="benefit-badge rounded px-3 py-2 fs-6">
-          🚀 GPU-Accelerated
-        </div>
-        <div class="benefit-badge rounded px-3 py-2 fs-6">🌐 Web-Native</div>
-        <div class="benefit-badge rounded px-3 py-2 fs-6">🔌 Extensible</div>
-        <div class="benefit-badge rounded px-3 py-2 fs-6">🌍 Globe Support</div>
+        <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">GPU-Accelerated</div>
+        <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">Web-Native</div>
+        <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">Extensible</div>
+        <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">Globe Support</div>
       </div>
     </div>
   </section>
@@ -65,11 +61,10 @@ import Layout from "../../layouts/Layout.astro";
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card h-100 shadow-sm">
             <div class="card-body text-center">
-              <div class="fs-1 mb-2">⚡</div>
               <h3 class="card-title h5 text-primary">High Performance</h3>
               <p class="card-text text-dark small">
-                GPU-accelerated rendering with WebGL and WebGPU for silky-smooth
-                60fps maps
+                GPU-accelerated rendering with WebGL and WebGPU for smooth,
+                responsive maps at 60fps
               </p>
             </div>
           </div>
@@ -77,7 +72,6 @@ import Layout from "../../layouts/Layout.astro";
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card h-100 shadow-sm">
             <div class="card-body text-center">
-              <div class="fs-1 mb-2">🌐</div>
               <h3 class="card-title h5 text-primary">Globe &amp; 3D</h3>
               <p class="card-text text-dark small">
                 Render a full globe, 3D terrain, building extrusions, and custom
@@ -89,11 +83,10 @@ import Layout from "../../layouts/Layout.astro";
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card h-100 shadow-sm">
             <div class="card-body text-center">
-              <div class="fs-1 mb-2">🎨</div>
               <h3 class="card-title h5 text-primary">Rich Styling</h3>
               <p class="card-text text-dark small">
                 Powerful MapLibre Style Specification with data-driven
-                expressions for dynamic, beautiful maps
+                expressions for dynamic, expressive maps
               </p>
             </div>
           </div>
@@ -101,7 +94,6 @@ import Layout from "../../layouts/Layout.astro";
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card h-100 shadow-sm">
             <div class="card-body text-center">
-              <div class="fs-1 mb-2">🔌</div>
               <h3 class="card-title h5 text-primary">Extensible</h3>
               <p class="card-text text-dark small">
                 Plugin-friendly architecture with support for custom sources,
@@ -131,7 +123,6 @@ import Layout from "../../layouts/Layout.astro";
             <div
               class="card-body d-flex flex-column align-items-center text-center"
             >
-              <div class="fs-1 mb-3">🖥️</div>
               <h3 class="card-title h5 text-primary">WebGL</h3>
               <p class="card-text text-dark small">
                 Battle-tested GPU rendering available in every modern browser
@@ -144,7 +135,6 @@ import Layout from "../../layouts/Layout.astro";
             <div
               class="card-body d-flex flex-column align-items-center text-center"
             >
-              <div class="fs-1 mb-3">🚀</div>
               <h3 class="card-title h5 text-primary">WebGPU</h3>
               <p class="card-text text-dark small">
                 Next-generation graphics API for even greater performance and
@@ -172,7 +162,6 @@ import Layout from "../../layouts/Layout.astro";
             href="https://maplibre.org/maplibre-gl-js/docs/examples/3d-terrain/"
           >
             <div class="card-body text-start">
-              <div class="fs-2 mb-2">🏔️</div>
               <h4 class="card-title h6 text-primary mb-2">3D Terrain</h4>
               <p class="card-text text-dark small mb-0">
                 Drape raster tiles over elevation data for stunning 3D landscape
@@ -187,7 +176,6 @@ import Layout from "../../layouts/Layout.astro";
             href="https://maplibre.org/maplibre-gl-js/docs/examples/globe-atmosphere/"
           >
             <div class="card-body text-start">
-              <div class="fs-2 mb-2">🌍</div>
               <h4 class="card-title h6 text-primary mb-2">Globe View</h4>
               <p class="card-text text-dark small mb-0">
                 Display a full 3D globe with atmospheric effects and vector map
@@ -202,7 +190,6 @@ import Layout from "../../layouts/Layout.astro";
             href="https://maplibre.org/maplibre-gl-js/docs/examples/buildings-3d/"
           >
             <div class="card-body text-start">
-              <div class="fs-2 mb-2">🏙️</div>
               <h4 class="card-title h6 text-primary mb-2">3D Buildings</h4>
               <p class="card-text text-dark small mb-0">
                 Extrude polygons to create realistic 3D building and indoor
@@ -217,11 +204,9 @@ import Layout from "../../layouts/Layout.astro";
             href="https://maplibre.org/maplibre-gl-js/docs/examples/heatmap-layer/"
           >
             <div class="card-body text-start">
-              <div class="fs-2 mb-2">🔥</div>
               <h4 class="card-title h6 text-primary mb-2">Heatmaps</h4>
               <p class="card-text text-dark small mb-0">
-                Visualize point density with beautiful, customizable heatmap
-                layers
+                Visualize point density with customizable heatmap layers
               </p>
             </div>
           </a>
@@ -232,7 +217,6 @@ import Layout from "../../layouts/Layout.astro";
             href="https://maplibre.org/maplibre-gl-js/docs/examples/animate-point-along-route/"
           >
             <div class="card-body text-start">
-              <div class="fs-2 mb-2">✈️</div>
               <h4 class="card-title h6 text-primary mb-2">Animations</h4>
               <p class="card-text text-dark small mb-0">
                 Animate points along routes, live data streams, camera
@@ -247,7 +231,6 @@ import Layout from "../../layouts/Layout.astro";
             href="https://maplibre.org/maplibre-gl-js/docs/examples/add-3d-model/"
           >
             <div class="card-body text-start">
-              <div class="fs-2 mb-2">🤖</div>
               <h4 class="card-title h6 text-primary mb-2">Custom 3D Models</h4>
               <p class="card-text text-dark small mb-0">
                 Embed three.js and Babylon.js 3D models directly into your map
@@ -262,7 +245,6 @@ import Layout from "../../layouts/Layout.astro";
             href="https://maplibre.org/maplibre-gl-js/docs/examples/cluster/"
           >
             <div class="card-body text-start">
-              <div class="fs-2 mb-2">📍</div>
               <h4 class="card-title h6 text-primary mb-2">Clustering</h4>
               <p class="card-text text-dark small mb-0">
                 Automatically cluster large point datasets with customizable
@@ -277,7 +259,6 @@ import Layout from "../../layouts/Layout.astro";
             href="https://maplibre.org/maplibre-gl-js/docs/examples/population-density/"
           >
             <div class="card-body text-start">
-              <div class="fs-2 mb-2">📊</div>
               <h4 class="card-title h6 text-primary mb-2">
                 Data Visualization
               </h4>
@@ -294,7 +275,6 @@ import Layout from "../../layouts/Layout.astro";
             href="https://maplibre.org/maplibre-gl-js/docs/examples/satellite-map/"
           >
             <div class="card-body text-start">
-              <div class="fs-2 mb-2">🛰️</div>
               <h4 class="card-title h6 text-primary mb-2">
                 Satellite &amp; Raster
               </h4>
@@ -457,18 +437,120 @@ import Layout from "../../layouts/Layout.astro";
 
   <section class="py-5 px-4 text-center bg-light text-dark">
     <div class="container">
-      <h2 class="h1 mb-3">Supported by Leading Companies</h2>
+      <h2 class="h1 mb-3">Trusted by Industry Leaders</h2>
       <p class="lead mb-5 mx-auto" style="max-width: 600px;">
-        Major companies rely on MapLibre GL JS for their mapping needs,
-        contributing time and money to its development and ensuring
-        enterprise-grade quality.
+        Organizations of all sizes rely on MapLibre GL JS to power their mapping
+        experiences — from global technology platforms to public institutions.
       </p>
+
+      <div
+        class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-4"
+      >
+        <a
+          href="https://meta.com/"
+          title="Meta"
+          class="user-logo-wrap text-decoration-none"
+        >
+          <img src="/img/meta-logo.svg" alt="Meta" class="user-logo" />
+        </a>
+        <a
+          href="https://www.microsoft.com/"
+          title="Microsoft"
+          class="user-logo-wrap text-decoration-none"
+        >
+          <img
+            src="/img/msft-logo.svg"
+            alt="Microsoft"
+            class="user-logo"
+          />
+        </a>
+        <a
+          href="https://aws.amazon.com/location/"
+          title="Amazon (AWS)"
+          class="user-logo-wrap text-decoration-none"
+        >
+          <img
+            src="/img/aws-logo.svg"
+            alt="Amazon (AWS)"
+            class="user-logo"
+          />
+        </a>
+        <a
+          href="https://www.maptiler.com/"
+          title="MapTiler"
+          class="user-logo-wrap text-decoration-none"
+        >
+          <img src="/img/maptiler-logo.svg" alt="MapTiler" class="user-logo" />
+        </a>
+        <a
+          href="https://www.jawg.io/"
+          title="Jawg"
+          class="user-logo-wrap text-decoration-none"
+        >
+          <img src="/img/jawgmaps-logo.svg" alt="Jawg" class="user-logo" />
+        </a>
+        <a
+          href="https://komoot.com/"
+          title="Komoot"
+          class="user-logo-wrap text-decoration-none"
+        >
+          <img src="/img/komoot-logo.svg" alt="Komoot" class="user-logo" />
+        </a>
+        <a
+          href="https://www.radar.com/"
+          title="Radar"
+          class="user-logo-wrap text-decoration-none"
+        >
+          <img src="/img/radar-logo.svg" alt="Radar" class="user-logo" />
+        </a>
+        <a
+          href="https://www.mappedin.com/"
+          title="Mappedin"
+          class="user-logo-wrap text-decoration-none"
+        >
+          <img
+            src="/img/mappedin-logo.svg"
+            alt="Mappedin"
+            class="user-logo"
+          />
+        </a>
+        <a
+          href="https://www.mierune.co.jp/?lang=en"
+          title="Mierune"
+          class="user-logo-wrap text-decoration-none"
+        >
+          <img src="/img/mierune-logo.svg" alt="Mierune" class="user-logo" />
+        </a>
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+        <span class="user-name-pill">Lyft</span>
+        <span class="user-name-pill">Grab</span>
+        <span class="user-name-pill">Gojek</span>
+        <span class="user-name-pill">Wikimedia Foundation</span>
+        <span class="user-name-pill">Plotly</span>
+        <span class="user-name-pill">Felt</span>
+        <span class="user-name-pill">CARTO</span>
+        <span class="user-name-pill">Elastic</span>
+        <span class="user-name-pill">Foursquare</span>
+        <span class="user-name-pill">Rivian</span>
+        <span class="user-name-pill">DHL</span>
+        <span class="user-name-pill">DJI</span>
+        <span class="user-name-pill">Michelin</span>
+        <span class="user-name-pill">FlixBus</span>
+        <span class="user-name-pill">AccuWeather</span>
+        <span class="user-name-pill">Windy</span>
+        <span class="user-name-pill">SBB</span>
+        <span class="user-name-pill">National Rail</span>
+        <span class="user-name-pill">Watch Duty</span>
+        <span class="user-name-pill">U.S. National Park Service</span>
+      </div>
 
       <div class="d-flex flex-wrap justify-content-center gap-3">
         <a href="https://madewithmaplibre.com/" class="btn btn-primary btn-lg">
-          Who is using us
+          See all users
         </a>
-        <a href="/sponsors" class="btn btn-primary btn-lg"> Our sponsors </a>
+        <a href="/sponsors" class="btn btn-primary btn-lg">Our sponsors</a>
       </div>
     </div>
   </section>
