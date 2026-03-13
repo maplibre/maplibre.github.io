@@ -46,3 +46,27 @@ export const silverSponsors: Sponsor[] = [
     name: "CalTopo",
   },
 ];
+
+export const nonSponsorUsers: string[] = [
+  "Meta",
+  "Lyft",
+  "Grab",
+  "Gojek",
+  "Wikimedia Foundation",
+  "Plotly",
+  "Felt",
+  "CARTO",
+  "Elastic",
+  "Foursquare",
+  "Rivian",
+  "DHL",
+  "DJI",
+  "Michelin",
+  "FlixBus",
+  "AccuWeather",
+  "Windy",
+  "SBB",
+  "National Rail",
+  "Watch Duty",
+  "U.S. National Park Service",
+];
