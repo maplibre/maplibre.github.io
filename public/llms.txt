@@ -1,0 +1,33 @@
+# MapLibre
+
+> MapLibre is an open-source umbrella organization providing free mapping libraries and tools that enable developers to build high-quality, customizable maps for web, mobile, and desktop applications. The organization is community-driven, transparently governed, and funded by sponsors and grants.
+
+## Main sections
+
+- [Home](https://maplibre.org/): Overview of MapLibre projects, including MapLibre GL JS, MapLibre Native, Style Specification, Tile Specification, and Martin.
+- [About](https://maplibre.org/about/): Organization mission, charter, governance, board and team information, and financial reports.
+- [Projects](https://maplibre.org/projects/gl-js/): MapLibre GL JS — a TypeScript/WebGL library for interactive vector maps on the web.
+- [Projects – Native](https://maplibre.org/projects/native/): MapLibre Native — a C++ library for rendering maps on iOS, Android, and desktop platforms.
+- [Community](https://maplibre.org/community/): A global map of contributors and community members drawn from GitHub contributor history.
+- [Sponsors](https://maplibre.org/sponsors/): Sponsorship tiers, development fund allocation, and how to become a sponsor.
+- [News](https://maplibre.org/news/): Blog posts and project announcements.
+- [Roadmap](https://maplibre.org/roadmap/): Current and planned work across MapLibre projects.
+- [Jobs](https://maplibre.org/jobs/): Open positions within the MapLibre ecosystem.
+- [Brand Assets](https://maplibre.org/brand-assets/): Official logos and brand materials.
+
+## Key facts
+
+- MapLibre is a community-driven open-source organization — all code, governance documents, and financial records are publicly accessible.
+- The organization is governed by an elected board and operates under a published charter: https://github.com/maplibre/maplibre/blob/main/CHARTER.md
+- MapLibre is fiscally hosted by Open Source Collective, a 501(c)(6) non-profit; all transactions are visible at https://opencollective.com/maplibre/transactions
+- The organization publishes quarterly financial reports available at https://maplibre.org/about/
+- MapLibre is funded by corporate sponsors and grants. Sponsorship tiers range from Silver to Diamond; a portion of each sponsorship (20–40 %) goes directly into the Development Fund to pay maintainers.
+- Major sponsors include Amazon, Meta, and Microsoft, among others.
+- Individual contributors and companies can also sponsor via GitHub Sponsors or OpenCollective.
+- MapLibre GL JS is a TypeScript library that uses WebGL/GPU acceleration to render vector and raster tiles in the browser.
+- MapLibre Native is a C++ library that supports iOS, Android, macOS, Linux, Windows, and Qt.
+- The MapLibre Style Specification defines a JSON-based document format for describing map styles.
+- The MapLibre Tile Specification (MLT) is a next-generation vector tile format optimized for modern GPU hardware.
+- Martin is a Rust-based tile server that generates Mapbox Vector Tiles from PostGIS databases, PMTile files, and MBTile files.
+- The organization employs paid maintainers for GL JS and Native, funded entirely through sponsorships and grants.
+- A paid coordinator handles operations, fundraising, and communications on behalf of the community.
