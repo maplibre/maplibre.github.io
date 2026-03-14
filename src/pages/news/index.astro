@@ -7,12 +7,14 @@ import { render } from "astro:content";
 import TitleHeader from "../../components/TitleHeader.astro";
 import PostExcerpt from "@igor.dvlpr/astro-post-excerpt";
 import { SITE_TITLE } from "../../constants";
+import { toJsonLd } from "../../lib/jsonld";
+import type { Blog, WithContext } from "schema-dts";
 
 const posts = (await getCollection("news")).sort((a, b) => {
   return b.data.date.valueOf() - a.data.date.valueOf();
 });
 
-const blogJsonLd = JSON.stringify({
+const blogJsonLd = toJsonLd({
   "@context": "https://schema.org",
   "@type": "Blog",
   name: `${SITE_TITLE} News`,
@@ -27,13 +29,13 @@ const blogJsonLd = JSON.stringify({
     },
   },
   blogPost: posts.slice(0, 10).map((post) => ({
-    "@type": "BlogPosting",
+    "@type": "BlogPosting" as const,
     headline: post.data.title,
     datePublished: post.data.date.toISOString(),
     description: post.data.description,
     url: `https://maplibre.org/news/${post.id}/`,
   })),
-});
+} satisfies WithContext<Blog>);
 ---
 
 <style lang="scss">

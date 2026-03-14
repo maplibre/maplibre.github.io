@@ -9,8 +9,10 @@ import iosImage from "../assets/maplibre-native/maplibre-native-ios.png";
 import ProjectSection from "../components/landing/ProjectSection.astro";
 import GitHubBadge from "../components/landing/GitHubBadge.astro";
 import LinkBadge from "../components/landing/LinkBadge.astro";
+import { toJsonLd } from "../lib/jsonld";
+import type { Organization, WebSite, WithContext } from "schema-dts";
 
-const organizationJsonLd = JSON.stringify({
+const organizationJsonLd = toJsonLd({
   "@context": "https://schema.org",
   "@type": "Organization",
   name: SITE_TITLE,
@@ -22,14 +24,14 @@ const organizationJsonLd = JSON.stringify({
     "https://mastodon.social/@maplibre",
     "https://twitter.com/maplibre",
   ],
-});
+} satisfies WithContext<Organization>);
 
-const websiteJsonLd = JSON.stringify({
+const websiteJsonLd = toJsonLd({
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: SITE_TITLE,
   url: "https://maplibre.org",
-});
+} satisfies WithContext<WebSite>);
 ---
 
 <Layout>

@@ -12,10 +12,12 @@ import {
   silverSponsors,
 } from "../../data/sponsors";
 import Layout from "../../layouts/Layout.astro";
+import { toJsonLd } from "../../lib/jsonld";
+import type { SoftwareApplication, WithContext } from "schema-dts";
 
 const stats = await fetchRepoStats("maplibre", "maplibre-gl-js");
 
-const softwareJsonLd = JSON.stringify({
+const softwareJsonLd = toJsonLd({
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "MapLibre GL JS",
@@ -36,7 +38,7 @@ const softwareJsonLd = JSON.stringify({
     name: "MapLibre",
     url: "https://maplibre.org",
   },
-});
+} satisfies WithContext<SoftwareApplication>);
 ---
 
 <Layout
