@@ -25,9 +25,48 @@ function capitalizeFirstLetter(val: string) {
 const authors = await getCollection("bios", (author) => {
   return post.data.authors.includes(author.data.handle);
 });
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const articleJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: post.data.title,
+  datePublished: post.data.date.toISOString(),
+  description: post.data.description,
+  url: canonicalUrl.href,
+  publisher: {
+    "@type": "Organization",
+    name: "MapLibre",
+    url: "https://maplibre.org",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://maplibre.org/img/maplibre-logo.svg",
+    },
+  },
+  author: authors.map((author) => ({ "@type": "Person", name: author.data.title })),
+  articleSection: post.data.categories.map(capitalizeFirstLetter),
+  inLanguage: "en",
+});
 ---
 
-<Layout title={post.data.title} description={post.data.description}>
+<Layout title={post.data.title} description={post.data.description} ogType="article">
+  <Fragment slot="head">
+    <meta
+      property="article:published_time"
+      content={post.data.date.toISOString()}
+    />
+    {
+      authors.map((a) => (
+        <meta property="article:author" content={a.data.title} />
+      ))
+    }
+    {
+      post.data.categories.map((cat) => (
+        <meta property="article:section" content={capitalizeFirstLetter(cat)} />
+      ))
+    }
+    <script type="application/ld+json" set:html={articleJsonLd} />
+  </Fragment>
   <TitleHeader>{post.data.title}</TitleHeader>
   <div class="container">
     <div class="row justify-content-center">

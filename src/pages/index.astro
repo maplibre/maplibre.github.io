@@ -3,15 +3,40 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import { LandingPageMap } from "../components/LandingPageMap";
-import { SITE_DESCRIPTION } from "../constants";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../constants";
 import androidImage from "../assets/maplibre-native/maplibre-native-android.png";
 import iosImage from "../assets/maplibre-native/maplibre-native-ios.png";
 import ProjectSection from "../components/landing/ProjectSection.astro";
 import GitHubBadge from "../components/landing/GitHubBadge.astro";
 import LinkBadge from "../components/landing/LinkBadge.astro";
+
+const organizationJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE_TITLE,
+  url: "https://maplibre.org",
+  logo: "https://maplibre.org/img/maplibre-logo.svg",
+  description: SITE_DESCRIPTION,
+  sameAs: [
+    "https://github.com/maplibre",
+    "https://mastodon.social/@maplibre",
+    "https://twitter.com/maplibre",
+  ],
+});
+
+const websiteJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_TITLE,
+  url: "https://maplibre.org",
+});
 ---
 
 <Layout>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={organizationJsonLd} />
+    <script type="application/ld+json" set:html={websiteJsonLd} />
+  </Fragment>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-sm-12">

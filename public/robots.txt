@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://maplibre.org/sitemap-index.xml

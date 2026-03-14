@@ -3,8 +3,11 @@ import "../styles/bootstrap.scss";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
-const { title, description } = Astro.props;
+const { title, description, ogType = "website", ogImage } = Astro.props;
 import { ClientRouter, fade } from "astro:transitions";
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const defaultOgImage = new URL("/img/share-image.png", Astro.site).href;
+const socialImage = ogImage || defaultOgImage;
 ---
 
 <!doctype html>
@@ -17,21 +20,19 @@ import { ClientRouter, fade } from "astro:transitions";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="MapLibre" />
     <meta name="description" content={description || SITE_DESCRIPTION} />
+    <link rel="canonical" href={canonicalUrl} />
     <ClientRouter />
 
-    <meta
-      property="og:image"
-      content="https://maplibre.org/img/share-image.png"
-    />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={SITE_TITLE} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={socialImage} />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="512" />
     <meta property="og:image:alt" content="MapLibre" />
     <meta property="og:title" content={title || SITE_TITLE} />
     <meta property="og:description" content={description || SITE_DESCRIPTION} />
-    <meta
-      property="og:url"
-      content={`https://maplibre.org${Astro.url.pathname}`}
-    />
+    <meta property="og:url" content={canonicalUrl.href} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@maplibre" />
@@ -41,10 +42,7 @@ import { ClientRouter, fade } from "astro:transitions";
       name="twitter:description"
       content={description || SITE_DESCRIPTION}
     />
-    <meta
-      name="twitter:image:src"
-      content="https://maplibre.org/img/share-image.png"
-    />
+    <meta name="twitter:image:src" content={socialImage} />
     <meta name="twitter:image:alt" content="MapLibre" />
 
     <link rel="manifest" href="/site.webmanifest" />
@@ -78,6 +76,8 @@ import { ClientRouter, fade } from "astro:transitions";
       title={SITE_TITLE}
       href={new URL("news/index.xml", Astro.site)}
     />
+
+    <slot name="head" />
 
     <title>
       {title ? `${title} | ${SITE_TITLE}` : SITE_TITLE}
