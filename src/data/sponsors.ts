@@ -58,4 +58,9 @@ export const pastSponsors: Sponsor[] = [
     logo: "/img/mappedin-logo.svg",
     name: "Mappedin",
   },
+  {
+    href: "https://www.tomtom.com/",
+    logo: "/img/tomtom-logo.svg",
+    name: "TomTom",
+  },
 ];
