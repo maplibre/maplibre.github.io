@@ -4,23 +4,31 @@ interface Props {
   src: string;
   alt: string;
   large?: boolean;
+  small?: boolean;
 }
 
-const { href, src, alt, large = false } = Astro.props;
+const { href, src, alt, large = false, small = false } = Astro.props;
+const containerHeight = large ? "120px" : small ? "40px" : "70px";
+const logoModifier = large ? " logo-large" : small ? " logo-small" : "";
 ---
 
 <style>
   /* Bootstrap has no filter/transition utilities — kept as custom CSS */
   .logo {
-    height: 40px;
-    max-width: 120px;
+    height: 48px;
+    max-width: 144px;
     filter: grayscale(100%) opacity(0.7);
     transition: filter 0.2s ease;
   }
 
   .logo.logo-large {
-    height: 64px;
-    max-width: 180px;
+    height: 96px;
+    max-width: 240px;
+  }
+
+  .logo.logo-small {
+    height: 24px;
+    max-width: 72px;
   }
 
   .logo:hover {
@@ -32,11 +40,11 @@ const { href, src, alt, large = false } = Astro.props;
   href={href}
   title={alt}
   class="d-flex align-items-center justify-content-center text-decoration-none"
-  style={large ? "height: 90px;" : "height: 60px;"}
+  style={`height: ${containerHeight};`}
 >
   <img
     src={src}
     alt={alt}
-    class={`w-auto object-fit-contain logo${large ? " logo-large" : ""}`}
+    class={`w-auto object-fit-contain logo${logoModifier}`}
   />
 </a>

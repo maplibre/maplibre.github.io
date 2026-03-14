@@ -46,3 +46,16 @@ export const silverSponsors: Sponsor[] = [
     name: "CalTopo",
   },
 ];
+
+export const pastSponsors: Sponsor[] = [
+  {
+    href: "https://www.meta.com/",
+    logo: "/img/meta-logo.svg",
+    name: "Meta",
+  },
+  {
+    href: "https://www.mappedin.com/",
+    logo: "/img/mappedin-logo.svg",
+    name: "Mappedin",
+  },
+];
