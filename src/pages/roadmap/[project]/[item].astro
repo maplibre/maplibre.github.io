@@ -96,7 +96,12 @@ function formatDate(dateValue) {
 
 {
   roadmapItem && Content ? (
-    <Layout title={roadmapItem.data.title}>
+    <Layout
+      title={roadmapItem.data.title}
+      ogImage={
+        new URL(`/og/roadmap/${projectId}/${itemSlug}.png`, Astro.site).href
+      }
+    >
       <TitleHeader>{roadmapItem.data.title}</TitleHeader>
       <div class="container">
         <nav class="project-tabs" aria-label="Roadmap sections">

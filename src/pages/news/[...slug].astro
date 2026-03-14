@@ -58,6 +58,7 @@ const articleJsonLd = toJsonLd({
   title={post.data.title}
   description={post.data.description}
   ogType="article"
+  ogImage={new URL(`/og/news/${post.id}.png`, Astro.site).href}
 >
   <Fragment slot="head">
     <meta
