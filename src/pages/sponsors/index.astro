@@ -2,10 +2,16 @@
 import Donors from "../../components/Donors.astro";
 import { Sponsors } from "../../components/Sponsors.tsx";
 import TitleHeader from "../../components/TitleHeader.astro";
+import { fetchGitHubSponsors } from "../../data/github";
 import { fetchDonors } from "../../data/opencollective";
 import Layout from "../../layouts/Layout.astro";
+import { mergeDonors } from "../../utils/mergeDonors";
 
-const donors = await fetchDonors("maplibre");
+const [ocDonors, ghSponsors] = await Promise.all([
+  fetchDonors("maplibre"),
+  fetchGitHubSponsors("maplibre"),
+]);
+const donors = mergeDonors(ocDonors, ghSponsors);
 
 title: "Sponsors";
 ---

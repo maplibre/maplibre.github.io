@@ -6,7 +6,7 @@ import GitHubBadge from "../../components/landing/GitHubBadge.astro";
 import LinkBadge from "../../components/landing/LinkBadge.astro";
 import StatCard from "../../components/StatCard.astro";
 import UserLogo from "../../components/UserLogo.astro";
-import { fetchRepoStats } from "../../data/github";
+import { fetchGitHubSponsors, fetchRepoStats } from "../../data/github";
 import { fetchDonors } from "../../data/opencollective";
 import {
   goldSponsors,
@@ -14,9 +14,14 @@ import {
   silverSponsors,
 } from "../../data/sponsors";
 import Layout from "../../layouts/Layout.astro";
+import { mergeDonors } from "../../utils/mergeDonors";
 
-const stats = await fetchRepoStats("maplibre", "maplibre-gl-js");
-const donors = await fetchDonors("maplibre");
+const [stats, ocDonors, ghSponsors] = await Promise.all([
+  fetchRepoStats("maplibre", "maplibre-gl-js"),
+  fetchDonors("maplibre"),
+  fetchGitHubSponsors("maplibre"),
+]);
+const donors = mergeDonors(ocDonors, ghSponsors);
 ---
 
 <Layout title="MapLibre GL JS">

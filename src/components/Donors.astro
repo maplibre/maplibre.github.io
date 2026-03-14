@@ -1,5 +1,7 @@
 ---
-import type { Donor } from "../data/opencollective";
+interface Donor {
+  name: string;
+}
 
 interface Props {
   donors: Donor[];
@@ -14,14 +16,13 @@ const { donors } = Astro.props;
       <h2 class="mt-6">Individual Donors</h2>
       <p>
         Thank you to everyone who has donated to MapLibre on{" "}
-        <a href="https://opencollective.com/maplibre">OpenCollective</a>!
+        <a href="https://opencollective.com/maplibre">OpenCollective</a> or{" "}
+        <a href="https://github.com/sponsors/maplibre">GitHub Sponsors</a>!
       </p>
       <p class="text-secondary fst-italic small mb-3">
         Listed by donation amount. Want to be on this list?{" "}
-        <a href="https://opencollective.com/maplibre">
-          Donate on OpenCollective
-        </a>
-        .
+        <a href="https://opencollective.com/maplibre">OpenCollective</a> ·{" "}
+        <a href="https://github.com/sponsors/maplibre">GitHub Sponsors</a>
       </p>
       <div class="d-flex flex-wrap gap-2">
         {donors.map((donor) => (
