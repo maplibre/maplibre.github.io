@@ -59,26 +59,3 @@ export const pastSponsors: Sponsor[] = [
     name: "Mappedin",
   },
 ];
-
-export const nonSponsorUsers: string[] = [
-  "Lyft",
-  "Grab",
-  "Gojek",
-  "Wikimedia Foundation",
-  "Plotly",
-  "Felt",
-  "CARTO",
-  "Elastic",
-  "Foursquare",
-  "Rivian",
-  "DHL",
-  "DJI",
-  "Michelin",
-  "FlixBus",
-  "AccuWeather",
-  "Windy",
-  "SBB",
-  "National Rail",
-  "Watch Duty",
-  "U.S. National Park Service",
-];

@@ -11,7 +11,6 @@ import UserLogo from "../../components/UserLogo.astro";
 import { fetchRepoStats } from "../../data/github";
 import {
   goldSponsors,
-  nonSponsorUsers,
   pastSponsors,
   silverSponsors,
 } from "../../data/sponsors";
@@ -298,16 +297,6 @@ const stats = await fetchRepoStats("maplibre", "maplibre-native");
         {
           silverSponsors.map((s) => (
             <UserLogo href={s.href} src={s.logo} alt={s.name} />
-          ))
-        }
-      </div>
-
-      <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
-        {
-          nonSponsorUsers.map((name) => (
-            <span class="border rounded px-3 py-2 small text-secondary text-nowrap">
-              {name}
-            </span>
           ))
         }
       </div>
