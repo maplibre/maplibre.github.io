@@ -1,3 +1,4 @@
+import satori from "satori";
 import sharp from "sharp";
 import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
@@ -6,18 +7,20 @@ import { resolve, dirname } from "path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "../..");
 
-// Cache the font and logo to avoid reading from disk on every call
-let _fontBase64: string | undefined;
+// ---------------------------------------------------------------------------
+// Asset caching (font + logo are read once per build worker)
+// ---------------------------------------------------------------------------
+
+let _fontData: Buffer | undefined;
 let _logoBase64: string | undefined;
 
-function getFontBase64(): string {
-  if (!_fontBase64) {
-    const fontData = readFileSync(
+function getFontData(): Buffer {
+  if (!_fontData) {
+    _fontData = readFileSync(
       resolve(root, "public/files/alata-latin-400-normal.woff"),
     );
-    _fontBase64 = fontData.toString("base64");
   }
-  return _fontBase64;
+  return _fontData;
 }
 
 async function getLogoBase64(): Promise<string> {
@@ -29,7 +32,7 @@ async function getLogoBase64(): Promise<string> {
       ),
     );
     const resized = await sharp(logoBuffer)
-      .resize({ width: 260 })
+      .resize({ width: 240 })
       .png()
       .toBuffer();
     _logoBase64 = resized.toString("base64");
@@ -37,21 +40,42 @@ async function getLogoBase64(): Promise<string> {
   return _logoBase64;
 }
 
-/** Escape special XML/SVG characters */
-function escapeXml(text: string): string {
-  return text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
+// ---------------------------------------------------------------------------
+// Minimal element-tree types (subset of ReactNode, compatible with satori)
+// ---------------------------------------------------------------------------
+
+type Style = Record<string, string | number>;
+
+type VNodeChild = VNode | string | null;
+
+interface VNode {
+  type: string;
+  props: {
+    style?: Style;
+    children?: VNodeChild | VNodeChild[];
+    src?: string;
+    alt?: string;
+  };
 }
 
-/**
- * Wrap text into lines of at most `maxWidth` pixels wide,
- * using an approximate character-based heuristic.
- */
-function wrapTextApprox(text: string, maxCharsPerLine: number): string[] {
+/** Create a flex-displayed div with optional children */
+function div(style: Style, ...children: VNodeChild[]): VNode {
+  return {
+    type: "div",
+    props: {
+      style: { display: "flex", ...style },
+      children: children.filter((c) => c !== null) as VNodeChild[],
+    },
+  };
+}
+
+/** Create an img element */
+function img(src: string, style: Style): VNode {
+  return { type: "img", props: { src, alt: "", style } };
+}
+
+/** Wrap text into lines of at most maxCharsPerLine (character-count heuristic) */
+function wrapText(text: string, maxCharsPerLine: number): string[] {
   const words = text.split(/\s+/);
   const lines: string[] = [];
   let current = "";
@@ -61,7 +85,6 @@ function wrapTextApprox(text: string, maxCharsPerLine: number): string[] {
       current = candidate;
     } else {
       if (current) lines.push(current);
-      // If single word is still too long, hard-break it
       if (word.length > maxCharsPerLine) {
         let remaining = word;
         while (remaining.length > maxCharsPerLine) {
@@ -78,16 +101,18 @@ function wrapTextApprox(text: string, maxCharsPerLine: number): string[] {
   return lines;
 }
 
-const BADGE_TEXT_SCALE = 11;
-const BADGE_PADDING = 28;
-const BADGE_SPACING = 40;
-const MAX_BADGE_WIDTH = 200;
-const MAX_BADGE_TOTAL_WIDTH = 210;
+/** Convert a kebab-case slug into a title-cased display label */
+function toDisplayLabel(slug: string): string {
+  return slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+// ---------------------------------------------------------------------------
+// Brand tokens
+// ---------------------------------------------------------------------------
 
 const WIDTH = 1200;
 const HEIGHT = 630;
 
-// Brand colors
 const BG_DARK = "#0d1828";
 const BG_MID = "#182840";
 const BLUE_PRIMARY = "#306fca";
@@ -95,12 +120,168 @@ const BLUE_LIGHT = "#4a89ff";
 const BLUE_SECONDARY = "#87b2f0";
 const WHITE = "#ffffff";
 const MUTED = "#8899bb";
+const FONT_FAMILY = "Alata";
+
+// Section label typography constants
+const SECTION_LABEL_FONT_SIZE = 20;
+const SECTION_LABEL_LETTER_SPACING = 5;
+// Approximate px advance per character for Alata at the label font size + letter spacing
+const SECTION_LABEL_CHAR_WIDTH =
+  SECTION_LABEL_FONT_SIZE * 0.6 + SECTION_LABEL_LETTER_SPACING;
+
+// Title line gap as a fraction of font size (20% produces comfortable leading)
+const TITLE_LINE_GAP_RATIO = 0.2;
 
 const STATUS_COLORS: Record<string, { bg: string; text: string }> = {
   "in-progress": { bg: "#1a4a20", text: "#4caf50" },
-  released: { bg: "#1a3a4a", text: "#87b2f0" },
+  released: { bg: "#1a3a4a", text: BLUE_SECONDARY },
   "under-consideration": { bg: "#2a2a1a", text: "#f0c040" },
 };
+
+// ---------------------------------------------------------------------------
+// Shared chrome (background, header, bottom bar)
+// ---------------------------------------------------------------------------
+
+/** Background layers: gradient + subtle radial glow bottom-right */
+function background(): VNode[] {
+  return [
+    div({
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: `linear-gradient(135deg, ${BG_DARK} 0%, ${BG_MID} 100%)`,
+    }),
+    // Glow accent circles (bottom-right)
+    div({
+      position: "absolute",
+      right: -80,
+      bottom: -80,
+      width: 440,
+      height: 440,
+      borderRadius: "50%",
+      background: `radial-gradient(circle, rgba(48,111,202,0.14) 0%, transparent 70%)`,
+    }),
+    div({
+      position: "absolute",
+      right: 20,
+      bottom: -20,
+      width: 240,
+      height: 240,
+      borderRadius: "50%",
+      background: `radial-gradient(circle, rgba(74,137,255,0.10) 0%, transparent 70%)`,
+    }),
+    // Left accent bar
+    div({
+      position: "absolute",
+      left: 0,
+      top: 0,
+      width: 8,
+      height: HEIGHT,
+      background: `linear-gradient(to bottom, ${BLUE_LIGHT}, ${BLUE_PRIMARY})`,
+    }),
+  ];
+}
+
+/** Top header strip: section label left, logo right */
+function header(sectionLabel: string, logoBase64: string): VNode {
+  return div(
+    {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      height: 80,
+      background: `rgba(13, 24, 40, 0.55)`,
+      alignItems: "center",
+      justifyContent: "space-between",
+      padding: "0 80px",
+    },
+    // Section label + underline
+    div(
+      { flexDirection: "column" },
+      div(
+        {
+          color: BLUE_SECONDARY,
+          fontSize: SECTION_LABEL_FONT_SIZE,
+          letterSpacing: SECTION_LABEL_LETTER_SPACING,
+          fontFamily: FONT_FAMILY,
+        },
+        sectionLabel,
+      ),
+      div({
+        width: Math.round(sectionLabel.length * SECTION_LABEL_CHAR_WIDTH),
+        height: 1.5,
+        background: BLUE_SECONDARY,
+        opacity: 0.5,
+        marginTop: 4,
+      }),
+    ),
+    // MapLibre logo
+    img(`data:image/png;base64,${logoBase64}`, { width: 210, height: 36 }),
+  );
+}
+
+/** Bottom bar with maplibre.org attribution */
+function bottomBar(): VNode {
+  return div(
+    {
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      right: 0,
+      height: 42,
+      background: `rgba(13, 24, 40, 0.72)`,
+      alignItems: "center",
+      justifyContent: "flex-end",
+      padding: "0 22px",
+    },
+    div(
+      { color: MUTED, fontSize: 18, fontFamily: FONT_FAMILY, opacity: 0.8 },
+      "maplibre.org",
+    ),
+  );
+}
+
+/** Title block: render each wrapped line as a separate flex div */
+function titleBlock(
+  titleLines: string[],
+  fontSize: number,
+  style: Style = {},
+): VNode {
+  return div(
+    {
+      flexDirection: "column",
+      gap: Math.round(fontSize * TITLE_LINE_GAP_RATIO),
+      ...style,
+    },
+    ...titleLines.map((line) =>
+      div({ color: WHITE, fontSize, fontFamily: FONT_FAMILY }, line),
+    ),
+  );
+}
+
+/** Render the root VNode tree to a PNG buffer via satori + sharp */
+async function renderToPng(root: VNode): Promise<Buffer> {
+  const svg = await satori(root as unknown as Parameters<typeof satori>[0], {
+    width: WIDTH,
+    height: HEIGHT,
+    fonts: [
+      {
+        name: FONT_FAMILY,
+        data: getFontData(),
+        weight: 400,
+        style: "normal",
+      },
+    ],
+  });
+  return sharp(Buffer.from(svg)).png().toBuffer();
+}
+
+// ---------------------------------------------------------------------------
+// Public API
+// ---------------------------------------------------------------------------
 
 /**
  * Generate an OG image for a news post.
@@ -112,57 +293,17 @@ export async function generateNewsOgImage(opts: {
   authors: string[];
 }): Promise<Buffer> {
   const { title, date, categories, authors } = opts;
-
-  const fontBase64 = getFontBase64();
   const logoBase64 = await getLogoBase64();
 
-  const titleLines = wrapTextApprox(title, 30).slice(0, 3);
+  const titleLines = wrapText(title, 30).slice(0, 3);
   const fontSize =
-    titleLines.length === 1 ? 64 : titleLines.length === 2 ? 58 : 50;
-  const lineHeight = fontSize * 1.2;
-
-  const titleStartY = 220;
-  const titleSvg = titleLines
-    .map(
-      (line, i) =>
-        `<text x="80" y="${titleStartY + i * lineHeight}" font-family="Alata, Liberation Sans, sans-serif" font-size="${fontSize}" fill="${WHITE}">${escapeXml(line)}</text>`,
-    )
-    .join("\n");
+    titleLines.length === 1 ? 62 : titleLines.length === 2 ? 55 : 48;
 
   const formattedDate = date.toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
     year: "numeric",
   });
-
-  const categoryBadges = categories
-    .slice(0, 4)
-    .map((cat, i) => {
-      const label = cat
-        .replace(/-/g, " ")
-        .replace(/\b\w/g, (c) => c.toUpperCase());
-      const badgeWidth = Math.min(
-        label.length * BADGE_TEXT_SCALE + BADGE_PADDING,
-        MAX_BADGE_WIDTH,
-      );
-      const x =
-        80 +
-        categories
-          .slice(0, i)
-          .reduce(
-            (acc, c) =>
-              acc +
-              Math.min(
-                c.replace(/-/g, " ").length * BADGE_TEXT_SCALE + BADGE_SPACING,
-                MAX_BADGE_TOTAL_WIDTH,
-              ),
-            0,
-          );
-      return `<rect x="${x}" y="476" width="${badgeWidth}" height="32" rx="16" fill="#1058c0"/>
-<text x="${x + badgeWidth / 2}" y="497" font-family="Alata, Liberation Sans, sans-serif" font-size="16" fill="${WHITE}" text-anchor="middle">${escapeXml(label)}</text>`;
-    })
-    .join("\n");
-
   const metaLine = [
     formattedDate,
     authors.length > 0
@@ -172,18 +313,58 @@ export async function generateNewsOgImage(opts: {
     .filter(Boolean)
     .join("  ·  ");
 
-  const svg = buildSvg({
-    fontBase64,
-    logoBase64,
-    sectionLabel: "NEWS",
-    content: `
-      ${titleSvg}
-      ${categoryBadges}
-      <text x="80" y="550" font-family="Alata, Liberation Sans, sans-serif" font-size="20" fill="${MUTED}">${escapeXml(metaLine)}</text>
-    `,
-  });
+  const categoryBadges =
+    categories.length > 0
+      ? div(
+          { gap: 10, flexWrap: "wrap" },
+          ...categories.slice(0, 4).map((cat) =>
+            div(
+              {
+                background: "#1058c0",
+                borderRadius: 16,
+                padding: "6px 16px",
+                color: WHITE,
+                fontSize: 15,
+                fontFamily: FONT_FAMILY,
+              },
+              toDisplayLabel(cat),
+            ),
+          ),
+        )
+      : null;
 
-  return sharp(Buffer.from(svg)).png().toBuffer();
+  const element = div(
+    {
+      position: "relative",
+      width: WIDTH,
+      height: HEIGHT,
+      fontFamily: FONT_FAMILY,
+      overflow: "hidden",
+    },
+    ...background(),
+    header("NEWS", logoBase64),
+    // Main content area
+    div(
+      {
+        position: "absolute",
+        top: 100,
+        left: 80,
+        right: 80,
+        bottom: 60,
+        flexDirection: "column",
+        justifyContent: "space-between",
+      },
+      titleBlock(titleLines, fontSize),
+      div(
+        { flexDirection: "column", gap: 12 },
+        categoryBadges,
+        div({ color: MUTED, fontSize: 19, fontFamily: FONT_FAMILY }, metaLine),
+      ),
+    ),
+    bottomBar(),
+  );
+
+  return renderToPng(element);
 }
 
 /**
@@ -196,160 +377,103 @@ export async function generateRoadmapOgImage(opts: {
   heroImagePath?: string;
 }): Promise<Buffer> {
   const { title, project, status, heroImagePath } = opts;
-
-  const fontBase64 = getFontBase64();
   const logoBase64 = await getLogoBase64();
 
-  // Labels
-  const projectLabel = project
-    .replace(/-/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
-  const statusLabel = status
-    .replace(/-/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+  const projectLabel = toDisplayLabel(project);
+  const statusLabel = toDisplayLabel(status);
   const statusColor = STATUS_COLORS[status] ?? { bg: "#222", text: WHITE };
 
-  // Embed hero image on the right side if available
-  let heroImageSvg = "";
+  // Load + resize hero image if present
+  let heroEl: VNode | null = null;
   if (heroImagePath) {
     try {
       const heroBuffer = readFileSync(heroImagePath);
       const heroResized = await sharp(heroBuffer)
         .resize({
-          width: 420,
-          height: 360,
+          width: 400,
+          height: 350,
           fit: "contain",
           background: { r: 24, g: 40, b: 64, alpha: 1 },
         })
         .png()
         .toBuffer();
       const heroBase64 = heroResized.toString("base64");
-      heroImageSvg = `
-        <rect x="720" y="140" width="430" height="360" rx="12" fill="#1a2840"/>
-        <image href="data:image/png;base64,${heroBase64}" x="730" y="150" width="410" height="340" preserveAspectRatio="xMidYMid meet" clip-path="url(#heroClip)"/>
-      `;
+      heroEl = div(
+        {
+          position: "absolute",
+          top: 120,
+          right: 60,
+          width: 420,
+          height: 360,
+          borderRadius: 14,
+          overflow: "hidden",
+          background: BG_MID,
+        },
+        img(`data:image/png;base64,${heroBase64}`, {
+          width: 420,
+          height: 360,
+        }),
+      );
     } catch {
       // ignore missing hero image
     }
   }
 
-  // Wrap title accounting for hero image taking right portion
-  const maxChars = heroImagePath ? 22 : 30;
-  const titleLines = wrapTextApprox(title, maxChars).slice(0, 4);
-  const fontSize = titleLines.length <= 2 ? 58 : 48;
-  const lineHeight = fontSize * 1.22;
-  const titleStartY = 230;
+  const maxChars = heroEl ? 22 : 30;
+  const titleLines = wrapText(title, maxChars).slice(0, 4);
+  const fontSize = titleLines.length <= 2 ? 55 : 46;
 
-  const titleSvg = titleLines
-    .map(
-      (line, i) =>
-        `<text x="80" y="${titleStartY + i * lineHeight}" font-family="Alata, Liberation Sans, sans-serif" font-size="${fontSize}" fill="${WHITE}">${escapeXml(line)}</text>`,
-    )
-    .join("\n");
+  const statusBadge = div(
+    {
+      borderRadius: 18,
+      padding: "8px 20px",
+      background: statusColor.bg,
+      border: `1.5px solid ${statusColor.text}`,
+      color: statusColor.text,
+      fontSize: 16,
+      fontFamily: FONT_FAMILY,
+    },
+    statusLabel,
+  );
 
-  // Status badge
-  const statusBadgeWidth = statusLabel.length * 13 + 32;
+  const element = div(
+    {
+      position: "relative",
+      width: WIDTH,
+      height: HEIGHT,
+      fontFamily: FONT_FAMILY,
+      overflow: "hidden",
+    },
+    ...background(),
+    heroEl,
+    header("ROADMAP", logoBase64),
+    // Main content area
+    div(
+      {
+        position: "absolute",
+        top: 96,
+        left: 80,
+        right: heroEl ? 520 : 80,
+        bottom: 60,
+        flexDirection: "column",
+        justifyContent: "space-between",
+      },
+      div(
+        { flexDirection: "column", gap: 16 },
+        div(
+          {
+            color: BLUE_SECONDARY,
+            fontSize: 21,
+            fontFamily: FONT_FAMILY,
+          },
+          projectLabel,
+        ),
+        titleBlock(titleLines, fontSize),
+      ),
+      statusBadge,
+    ),
+    bottomBar(),
+  );
 
-  const content = `
-    ${heroImageSvg}
-    <!-- Project label -->
-    <text x="80" y="195" font-family="Alata, Liberation Sans, sans-serif" font-size="22" fill="${BLUE_SECONDARY}">${escapeXml(projectLabel)}</text>
-    <!-- Title -->
-    ${titleSvg}
-    <!-- Status badge -->
-    <rect x="80" y="490" width="${statusBadgeWidth}" height="36" rx="18" fill="${statusColor.bg}"/>
-    <rect x="80" y="490" width="${statusBadgeWidth}" height="36" rx="18" fill="none" stroke="${statusColor.text}" stroke-width="1.5"/>
-    <text x="${80 + statusBadgeWidth / 2}" y="514" font-family="Alata, Liberation Sans, sans-serif" font-size="17" fill="${statusColor.text}" text-anchor="middle">${escapeXml(statusLabel)}</text>
-  `;
-
-  const svg = buildSvg({
-    fontBase64,
-    logoBase64,
-    sectionLabel: "ROADMAP",
-    content,
-    heroClip: !!heroImagePath,
-  });
-
-  return sharp(Buffer.from(svg)).png().toBuffer();
-}
-
-function buildSvg(opts: {
-  fontBase64: string;
-  logoBase64: string;
-  sectionLabel: string;
-  content: string;
-  heroClip?: boolean;
-}): string {
-  const { fontBase64, logoBase64, sectionLabel, content, heroClip } = opts;
-
-  const heroClipDef = heroClip
-    ? `<clipPath id="heroClip"><rect x="730" y="150" width="410" height="340" rx="10"/></clipPath>`
-    : "";
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${WIDTH}" height="${HEIGHT}">
-  <defs>
-    <style>
-      @font-face {
-        font-family: 'Alata';
-        src: url('data:font/woff;base64,${fontBase64}') format('woff');
-        font-weight: 400;
-        font-style: normal;
-      }
-    </style>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:${BG_DARK};stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:${BG_MID};stop-opacity:1"/>
-    </linearGradient>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:${BLUE_LIGHT};stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:${BLUE_PRIMARY};stop-opacity:1"/>
-    </linearGradient>
-    <linearGradient id="bottomFade" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:${BG_DARK};stop-opacity:0"/>
-      <stop offset="100%" style="stop-color:${BG_DARK};stop-opacity:0.8"/>
-    </linearGradient>
-    ${heroClipDef}
-  </defs>
-
-  <!-- Background -->
-  <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#bgGrad)"/>
-
-  <!-- Subtle dot-grid pattern for map feeling -->
-  <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-    <circle cx="20" cy="20" r="1.2" fill="${BLUE_PRIMARY}" opacity="0.25"/>
-  </pattern>
-  <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#dots)"/>
-
-  <!-- Decorative diagonal lines (subtle) -->
-  <g opacity="0.04" stroke="${BLUE_LIGHT}" stroke-width="1.5">
-    <line x1="0" y1="0" x2="${WIDTH}" y2="${HEIGHT}"/>
-    <line x1="300" y1="0" x2="${WIDTH}" y2="${HEIGHT - 300}"/>
-    <line x1="600" y1="0" x2="${WIDTH}" y2="${HEIGHT - 600}"/>
-    <line x1="0" y1="300" x2="${WIDTH - 300}" y2="${HEIGHT}"/>
-  </g>
-
-  <!-- Glowing circle accent (bottom right) -->
-  <circle cx="1100" cy="580" r="220" fill="${BLUE_PRIMARY}" opacity="0.06"/>
-  <circle cx="1100" cy="580" r="120" fill="${BLUE_PRIMARY}" opacity="0.06"/>
-
-  <!-- Left accent bar -->
-  <rect x="0" y="0" width="8" height="${HEIGHT}" fill="url(#accentGrad)"/>
-
-  <!-- Top header strip -->
-  <rect x="0" y="0" width="${WIDTH}" height="80" fill="${BG_DARK}" opacity="0.5"/>
-
-  <!-- MapLibre logo (top right) -->
-  <image href="data:image/png;base64,${logoBase64}" x="${WIDTH - 310}" y="18" width="260" height="45" preserveAspectRatio="xMidYMid meet"/>
-
-  <!-- Section label (top left) -->
-  <text x="80" y="50" font-family="Alata, Liberation Sans, sans-serif" font-size="20" fill="${BLUE_SECONDARY}" letter-spacing="5">${escapeXml(sectionLabel)}</text>
-  <line x1="80" y1="58" x2="${sectionLabel.length * 20 + 80 + sectionLabel.length * 5}" y2="58" stroke="${BLUE_SECONDARY}" stroke-width="1.5" opacity="0.5"/>
-
-  <!-- Page content -->
-  ${content}
-
-  <!-- Bottom bar -->
-  <rect x="0" y="${HEIGHT - 42}" width="${WIDTH}" height="42" fill="${BG_DARK}" opacity="0.7"/>
-  <text x="${WIDTH - 20}" y="${HEIGHT - 16}" font-family="Alata, Liberation Sans, sans-serif" font-size="18" fill="${MUTED}" text-anchor="end" opacity="0.8">maplibre.org</text>
-</svg>`;
+  return renderToPng(element);
 }
