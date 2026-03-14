@@ -43,13 +43,20 @@ const articleJsonLd = JSON.stringify({
       url: "https://maplibre.org/img/maplibre-logo.svg",
     },
   },
-  author: authors.map((author) => ({ "@type": "Person", name: author.data.title })),
+  author: authors.map((author) => ({
+    "@type": "Person",
+    name: author.data.title,
+  })),
   articleSection: post.data.categories.map(capitalizeFirstLetter),
   inLanguage: "en",
 });
 ---
 
-<Layout title={post.data.title} description={post.data.description} ogType="article">
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+  ogType="article"
+>
   <Fragment slot="head">
     <meta
       property="article:published_time"
