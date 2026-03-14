@@ -5,11 +5,21 @@ import solidJs from "@astrojs/solid-js";
 import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import astroBrokenLinksChecker from "astro-broken-links-checker";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 export default defineConfig({
   base: "",
   integrations: [
-    mdx(),
+    mdx({
+      rehypePlugins: [
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          { behavior: "wrap", properties: { className: ["heading-link"] } },
+        ],
+      ],
+    }),
     solidJs(),
     icon(),
     sitemap(),
