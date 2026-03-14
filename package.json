@@ -34,6 +34,7 @@
     "@types/node": "^25.4.0",
     "astro-broken-links-checker": "^1.0.7",
     "prettier": "^3.8.1",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "schema-dts": "^1.1.5"
   }
 }

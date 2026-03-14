@@ -15,8 +15,33 @@ import {
   silverSponsors,
 } from "../../data/sponsors";
 import Layout from "../../layouts/Layout.astro";
+import { toJsonLd } from "../../lib/jsonld";
+import type { SoftwareApplication, WithContext } from "schema-dts";
 
 const stats = await fetchRepoStats("maplibre", "maplibre-native");
+
+const softwareJsonLd = toJsonLd({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "MapLibre Native",
+  url: "https://maplibre.org/projects/native/",
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "Android, iOS, Linux, macOS, Windows",
+  codeRepository: "https://github.com/maplibre/maplibre-native",
+  license: "https://github.com/maplibre/maplibre-native/blob/main/LICENSE.md",
+  description:
+    "Open-source C++ library for displaying maps inside mobile or desktop applications with GPU-acceleration through OpenGL, Metal, or Vulkan.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "MapLibre",
+    url: "https://maplibre.org",
+  },
+} satisfies WithContext<SoftwareApplication>);
 ---
 
 <style lang="css">
@@ -44,7 +69,13 @@ const stats = await fetchRepoStats("maplibre", "maplibre-native");
   }
 </style>
 
-<Layout title="MapLibre Native">
+<Layout
+  title="MapLibre Native"
+  description="Open-source C++ library for displaying maps inside mobile or desktop applications with GPU-acceleration through OpenGL, Metal, or Vulkan."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={softwareJsonLd} />
+  </Fragment>
   <section class="py-5 px-4 text-center text-white section-odd">
     <div class="container">
       <h1 class="display-4 mb-3">MapLibre Native</h1>

@@ -4,6 +4,8 @@ import { render } from "astro:content";
 import TitleHeader from "../../components/TitleHeader.astro";
 import Layout from "../../layouts/Layout.astro";
 import Badge from "../../components/Badge.astro";
+import { toJsonLd } from "../../lib/jsonld";
+import type { Article, WithContext } from "schema-dts";
 
 export async function getStaticPaths() {
   const posts = await getCollection("news");
@@ -27,7 +29,7 @@ const authors = await getCollection("bios", (author) => {
 });
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
-const articleJsonLd = JSON.stringify({
+const articleJsonLd = toJsonLd({
   "@context": "https://schema.org",
   "@type": "Article",
   headline: post.data.title,
@@ -44,12 +46,12 @@ const articleJsonLd = JSON.stringify({
     },
   },
   author: authors.map((author) => ({
-    "@type": "Person",
+    "@type": "Person" as const,
     name: author.data.title,
   })),
   articleSection: post.data.categories.map(capitalizeFirstLetter),
   inLanguage: "en",
-});
+} satisfies WithContext<Article>);
 ---
 
 <Layout
