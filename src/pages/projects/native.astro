@@ -12,6 +12,7 @@ import { fetchRepoStats } from "../../data/github";
 import {
   goldSponsors,
   nonSponsorUsers,
+  pastSponsors,
   silverSponsors,
 } from "../../data/sponsors";
 import Layout from "../../layouts/Layout.astro";
@@ -301,12 +302,23 @@ const stats = await fetchRepoStats("maplibre", "maplibre-native");
         }
       </div>
 
-      <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+      <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
         {
           nonSponsorUsers.map((name) => (
             <span class="border rounded px-3 py-2 small text-secondary text-nowrap">
               {name}
             </span>
+          ))
+        }
+      </div>
+
+      <p class="small text-secondary mb-2">Past sponsors</p>
+      <div
+        class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-5 opacity-50"
+      >
+        {
+          pastSponsors.map((s) => (
+            <UserLogo href={s.href} src={s.logo} alt={s.name} />
           ))
         }
       </div>
