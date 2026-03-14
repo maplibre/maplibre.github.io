@@ -14,9 +14,38 @@ import {
 import Layout from "../../layouts/Layout.astro";
 
 const stats = await fetchRepoStats("maplibre", "maplibre-gl-js");
+
+const softwareJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "MapLibre GL JS",
+  url: "https://maplibre.org/projects/gl-js/",
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "Web",
+  codeRepository: "https://github.com/maplibre/maplibre-gl-js",
+  license: "https://github.com/maplibre/maplibre-gl-js/blob/main/LICENSE.txt",
+  description:
+    "Open-source TypeScript library for publishing interactive, GPU-accelerated maps on the web.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "MapLibre",
+    url: "https://maplibre.org",
+  },
+});
 ---
 
-<Layout title="MapLibre GL JS">
+<Layout
+  title="MapLibre GL JS"
+  description="Open-source TypeScript library for publishing interactive, GPU-accelerated maps on the web."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={softwareJsonLd} />
+  </Fragment>
   <section class="py-5 px-4 text-center text-white">
     <div class="container">
       <h1 class="display-4 mb-3">MapLibre GL JS</h1>

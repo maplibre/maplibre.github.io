@@ -6,9 +6,33 @@ import Layout from "../../layouts/Layout.astro";
 import { render } from "astro:content";
 import TitleHeader from "../../components/TitleHeader.astro";
 import PostExcerpt from "@igor.dvlpr/astro-post-excerpt";
+import { SITE_TITLE } from "../../constants";
 
 const posts = (await getCollection("news")).sort((a, b) => {
   return b.data.date.valueOf() - a.data.date.valueOf();
+});
+
+const blogJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: `${SITE_TITLE} News`,
+  url: "https://maplibre.org/news/",
+  publisher: {
+    "@type": "Organization",
+    name: SITE_TITLE,
+    url: "https://maplibre.org",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://maplibre.org/img/maplibre-logo.svg",
+    },
+  },
+  blogPost: posts.slice(0, 10).map((post) => ({
+    "@type": "BlogPosting",
+    headline: post.data.title,
+    datePublished: post.data.date.toISOString(),
+    description: post.data.description,
+    url: `https://maplibre.org/news/${post.id}/`,
+  })),
 });
 ---
 
@@ -43,6 +67,9 @@ const posts = (await getCollection("news")).sort((a, b) => {
 </style>
 
 <Layout title="News">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={blogJsonLd} />
+  </Fragment>
   <TitleHeader>
     News
     <span class="badge bg-primary text-white">
