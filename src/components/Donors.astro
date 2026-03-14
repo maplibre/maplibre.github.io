@@ -1,0 +1,35 @@
+---
+import type { Donor } from "../data/opencollective";
+
+interface Props {
+  donors: Donor[];
+}
+
+const { donors } = Astro.props;
+---
+
+{
+  donors.length > 0 && (
+    <div>
+      <h2 class="mt-6">Individual Donors</h2>
+      <p>
+        Thank you to everyone who has donated to MapLibre on{" "}
+        <a href="https://opencollective.com/maplibre">OpenCollective</a>!
+      </p>
+      <p class="text-secondary fst-italic small mb-3">
+        Listed by donation amount. Want to be on this list?{" "}
+        <a href="https://opencollective.com/maplibre">
+          Donate on OpenCollective
+        </a>
+        .
+      </p>
+      <div class="d-flex flex-wrap gap-2">
+        {donors.map((donor) => (
+          <span class="badge bg-secondary text-light fs-6 fw-normal px-3 py-2">
+            {donor.name}
+          </span>
+        ))}
+      </div>
+    </div>
+  )
+}

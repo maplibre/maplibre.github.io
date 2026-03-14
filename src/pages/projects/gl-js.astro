@@ -1,11 +1,13 @@
 ---
 import EcosystemCard from "../../components/EcosystemCard.astro";
+import Donors from "../../components/Donors.astro";
 import FeatureCard from "../../components/FeatureCard.astro";
 import GitHubBadge from "../../components/landing/GitHubBadge.astro";
 import LinkBadge from "../../components/landing/LinkBadge.astro";
 import StatCard from "../../components/StatCard.astro";
 import UserLogo from "../../components/UserLogo.astro";
 import { fetchRepoStats } from "../../data/github";
+import { fetchDonors } from "../../data/opencollective";
 import {
   goldSponsors,
   pastSponsors,
@@ -14,6 +16,7 @@ import {
 import Layout from "../../layouts/Layout.astro";
 
 const stats = await fetchRepoStats("maplibre", "maplibre-gl-js");
+const donors = await fetchDonors("maplibre");
 ---
 
 <Layout title="MapLibre GL JS">
@@ -353,6 +356,16 @@ const stats = await fetchRepoStats("maplibre", "maplibre-gl-js");
           See all users
         </a>
         <a href="/sponsors" class="btn btn-primary btn-lg">Our sponsors</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-white">
+    <div class="container">
+      <div class="d-flex justify-content-center">
+        <div class="col-md-10 col-lg-8">
+          <Donors donors={donors} />
+        </div>
       </div>
     </div>
   </section>

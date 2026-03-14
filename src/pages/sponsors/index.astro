@@ -1,7 +1,11 @@
 ---
+import Donors from "../../components/Donors.astro";
 import { Sponsors } from "../../components/Sponsors.tsx";
 import TitleHeader from "../../components/TitleHeader.astro";
+import { fetchDonors } from "../../data/opencollective";
 import Layout from "../../layouts/Layout.astro";
+
+const donors = await fetchDonors("maplibre");
 
 title: "Sponsors";
 ---
@@ -218,6 +222,8 @@ title: "Sponsors";
             OpenCollective
           </a>
         </div>
+
+        <Donors donors={donors} />
 
         <hr />
 

@@ -6,9 +6,11 @@ import metal from "../../assets/maplibre-native/metal.png";
 import opengl from "../../assets/maplibre-native/opengl.png";
 import vulkan from "../../assets/maplibre-native/vulkan.png";
 import webgpu from "../../assets/maplibre-native/webgpu.png";
+import Donors from "../../components/Donors.astro";
 import StatCard from "../../components/StatCard.astro";
 import UserLogo from "../../components/UserLogo.astro";
 import { fetchRepoStats } from "../../data/github";
+import { fetchDonors } from "../../data/opencollective";
 import {
   goldSponsors,
   pastSponsors,
@@ -17,6 +19,7 @@ import {
 import Layout from "../../layouts/Layout.astro";
 
 const stats = await fetchRepoStats("maplibre", "maplibre-native");
+const donors = await fetchDonors("maplibre");
 ---
 
 <style lang="css">
@@ -317,6 +320,16 @@ const stats = await fetchRepoStats("maplibre", "maplibre-native");
           Who is using us
         </a>
         <a href="/sponsors" class="btn btn-primary btn-lg"> Our sponsors </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 px-4 text-white section-odd">
+    <div class="container">
+      <div class="d-flex justify-content-center">
+        <div class="col-md-10 col-lg-8">
+          <Donors donors={donors} />
+        </div>
       </div>
     </div>
   </section>
