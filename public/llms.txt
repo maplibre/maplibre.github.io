@@ -7,7 +7,7 @@ MapLibre originated in 2020 as a community-driven fork of Mapbox GL JS after Map
 ## Projects & Documentation
 
 - [MapLibre GL JS Docs](https://maplibre.org/maplibre-gl-js/docs/): API reference and tutorials for the TypeScript/WebGL library for interactive vector maps on the web.
-- [MapLibre Native Docs](https://maplibre.org/maplibre-native/docs/): Guides for the C++ library rendering maps on iOS, Android, macOS, Linux, and Windows.
+- [MapLibre Native Docs](https://maplibre.org/projects/native/): Guides for the C++ library rendering maps on iOS, Android, macOS, Linux, and Windows.
 - [Style Specification](https://maplibre.org/maplibre-style-spec/): Complete JSON-based document format for describing map styles.
 - [Martin](https://maplibre.org/martin/): Documentation for the Rust-based tile server generating Mapbox Vector Tiles from PostGIS, PMTiles, and MBTiles.
 - [MapLibre Tile Specification (MLT)](https://github.com/maplibre/maplibre-tile-spec): A next-generation vector tile format optimized for modern GPU hardware.
@@ -21,11 +21,11 @@ MapLibre originated in 2020 as a community-driven fork of Mapbox GL JS after Map
 
 ## Key Technical Facts
 
-- MapLibre GL JS is a TypeScript library utilizing WebGL/GPU acceleration to render vector and raster tiles in the browser.
-- MapLibre Native is a C++ library supporting multiple platforms, including Qt.
-- Martin is written in Rust and can dynamically generate Mapbox Vector Tiles from PostGIS queries or serve tiles from PMTiles and MBTiles archives.
-- The MapLibre ecosystem is a community-driven, open-source fork originating from Mapbox GL JS 1.x.
-- All code, governance documents, and financial records are publicly accessible under the MapLibre organization.
+- MapLibre GL JS is a TypeScript library utilizing WebGL/GPU acceleration to render vector and raster tiles in the browser
+- MapLibre Native is a C++ library supporting multiple platforms, including Qt
+- Martin is written in Rust and can dynamically generate Mapbox Vector Tiles from PostGIS queries or serve tiles from PMTiles and MBTiles archives
+- The MapLibre ecosystem is a community-driven, open-source fork originating from Mapbox GL JS 1.x
+- All code, governance documents, and financial records are publicly accessible under the MapLibre organization
 
 ## Ecosystem
 
@@ -33,7 +33,7 @@ MapLibre software is commonly used with:
 
 - OpenStreetMap data
 - PostGIS spatial databases
-- vector tiles (Mapbox Vector Tile format)
+- vector tiles (MLT or MVT format)
 - PMTiles archives
 - MBTiles tile archives
 - GPU-accelerated WebGL map rendering
