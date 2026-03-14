@@ -49,7 +49,7 @@ Authors: <a href="/about/bart-louwers"> <span class="badge bg-light">Bart Louwer
 <div style="background-color:white;padding:2rem;border:10px solid #cfd8dc;border-radius:0;margin-bottom:3rem;display:flex;justify-content:center;align-items:center;gap:2rem;flex-wrap:nowrap;overflow:hidden;flex-direction:column"><div style="display:flex;justify-content:center;align-items:center;gap:2rem;flex-wrap:nowrap;width:100%"><img src="/_astro/maplibre-logo-for-light-bg.CSR25x_s_Z22k2tS.svg" alt="MapLibre logo" style="width:40%;max-width:300px;height:auto;object-fit:contain" loading="lazy" decoding="async" fetchpriority="auto" width="1354" height="317"><img src="/_astro/mierune-logo.CUcO-raY_1Cx8bO.svg" alt="Mierune logo" style="width:40%;max-width:330px;height:auto;object-fit:contain" loading="lazy" decoding="async" fetchpriority="auto" width="269" height="85"></div><div style="margin-top:1rem;font-size:1rem;text-align:center;color:#263238;font-style:italic"><p>Celebrating four amazing years of support from Mierune (2022–2025) 🙌</p></div></div>
 <p>We’ve also published our <a href="/about/reports/Financial-Report-Q1-2025.pdf" target="_blank">Q1 2025 Financial Report</a>, continuing our commitment to transparency and open governance.
 Read on to catch up on updates from last month and a glimpse of what’s ahead.</p>
-<h2 id="-maplibre-native">📱 MapLibre Native</h2>
+<h2 id="-maplibre-native"><a class="heading-link" href="#-maplibre-native">📱 MapLibre Native</a></h2>
 <p><strong>Plugin layers</strong> will allow users to register custom layers with custom style spec extensions. The <a href="https://github.com/maplibre/maplibre-native/blob/main/design-proposals/2025-05-08-plugin-layers.md">design proposal</a> was merged this month, with the <a href="https://github.com/maplibre/maplibre-native/pull/3430">implementation PR</a> nearing the finish line. Both are spearheaded by Malcolmn Toon working for HudHud who released their <a href="https://apps.apple.com/us/app/hudhud-maps/id6477774492">navigation app</a> this month.</p>
 <p>The first version will have some limitations. Since iOS is the main focus of HudHud right now, it is only available for iOS from the outset. In addition, the custom layers do not have access to sources i.e. the built-in machinery for loading data. You also need to interact with the low-level graphics API (e.g. Metal) directly, and cannot use Drawables which internal layers uses for (platform aspecific) rendering. Lastly, plugin layers cannot participate in things like label placement.</p>
 <p>Refinements and further functionality can be added incrementally based on the needs of the community. Extendability is something that was often discussed the last few years, and it is great to see a functional and pragmatic implementation becoming reality. Malcolm shared a GLTF model loading plugin as an example of what a custom plugin layer could do.</p>
@@ -65,7 +65,7 @@ courtesy of MapTiler.</p></div></div>
 <li>MapLibre iOS: <a href="https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.13.0">6.13.0</a>, <a href="https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.14.0">6.14.0</a></li>
 <li>MapLibre Android: <a href="https://github.com/maplibre/maplibre-native/releases/tag/android-v11.8.8">11.8.8</a>, <a href="https://github.com/maplibre/maplibre-native/releases/tag/android-v11.8.9">11.8.9</a>, <a href="https://github.com/maplibre/maplibre-native/releases/tag/android-v11.9.0">11.9.0</a></li>
 </ul>
-<h2 id="-maplibre-web">🌐 MapLibre Web</h2>
+<h2 id="-maplibre-web"><a class="heading-link" href="#-maplibre-web">🌐 MapLibre Web</a></h2>
 <p><strong>Hillshade Rendering:</strong> MapLibre GL JS <a href="https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.5.0">v5.5.0</a> was released this month, featuring support for multiple hillshade rendering methods. This will be a great addition for enhanced terrain visualisation. The release also includes several important bug fixes and performance refinements.</p>
 <div style="display:flex;justify-content:center;margin-top:1rem;margin-bottom:1rem"><img src="https://maplibre.org/maplibre-style-spec/assets/hillshade_methods.png" alt="Hillshade rendering methods in MapLibre GL JS" style="width:80%;height:auto"/></div>
 <p><strong>New Team Member:</strong> We are also thrilled about <a href="https://github.com/mwilsnd" target="_blank">Marc Wilson</a> joining our team as our new Graphics Engineer 🎉! Marc brings deep expertise in rendering and graphics, and we’re excited to see the impact he’ll have on MapLibre GL JS and beyond.</p>
@@ -81,7 +81,7 @@ courtesy of MapTiler.</p></div></div>
 <li><a href="https://labs.geomatico.es/maplibre-cog-protocol">Live demos</a> including RGB, NDVI, and a 12GB elevation model.</li>
 </ul>
 <div style="display:flex;justify-content:center;margin-top:1rem;margin-bottom:2rem"><video src="https://github.com/user-attachments/assets/350dd072-43d7-4077-bfec-04db561988f4" controls autoPlay muted loop playsInline style="width:80%;max-width:720px;border-radius:0.5rem;box-shadow:0 4px 12px rgba(0,0,0,0.1)"></video></div>
-<h2 id="-martin-tile-server">🧱 Martin Tile Server</h2>
+<h2 id="-martin-tile-server"><a class="heading-link" href="#-martin-tile-server">🧱 Martin Tile Server</a></h2>
 <p><a href="https://github.com/maplibre/martin/releases/tag/v0.17.0">Martin v0.17.0</a> was released in May, bringing several quality-of-life improvements, along with three new features:</p>
 <ul>
 <li><strong>S3 and S3-Compatible Storage Support for PMTiles:</strong> PMTiles can now be served directly from S3 or any S3-compatible blob store, making cloud deployments simpler and more flexible.</li>
@@ -89,16 +89,16 @@ courtesy of MapTiler.</p></div></div>
 <li><strong>Configurable CORS Settings:</strong> Developers can now define CORS headers directly in Martin, eliminating the need for external workarounds, thereby improving
 security and flexibility.</li>
 </ul>
-<h2 id="-new-hosted-project">🧩 New Hosted Project</h2>
+<h2 id="-new-hosted-project"><a class="heading-link" href="#-new-hosted-project">🧩 New Hosted Project</a></h2>
 <p><a href="https://github.com/maplibre/maplibre-compose">MapLibre for Compose Multiplatform</a> has officially been onboarded as a <a href="https://github.com/maplibre/maplibre/issues/441">hosted project</a>, marking another step forward in expanding the MapLibre ecosystem.</p>
 <blockquote>
 <p>MapLibre Compose is a Compose Multiplatform wrapper around the MapLibre SDKs for rendering interactive maps. You can use it to add maps to your Compose UIs across Android, iOS, Desktop, and Web.</p>
 </blockquote>
-<h2 id="-meet-us-at-state-of-the-map-us">👥 Meet Us at State of the Map US!</h2>
+<h2 id="-meet-us-at-state-of-the-map-us"><a class="heading-link" href="#-meet-us-at-state-of-the-map-us">👥 Meet Us at State of the Map US!</a></h2>
 <p>The MapLibre team will be at <a href="https://openstreetmap.us/events/state-of-the-map-us/2025/">State of the Map US</a> this month in Boston. If you’re attending, we’d love to connect. Come say hi, and let’s talk maps!</p>
 <p>🗓️ Dates: June 19-21, 2025 <br/>
 📍 Location: <a href="https://www.openstreetmap.org/relation/2315704">Boston, MA</a></p>
-<h2 id="️-monthly-meetings">🗓️ Monthly meetings</h2>
+<h2 id="️-monthly-meetings"><a class="heading-link" href="#️-monthly-meetings">🗓️ Monthly meetings</a></h2>
 <p>We continue our regular community calls on the <em><strong>second Wednesday</strong></em> of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.</p>
 <p>Upcoming Calls</p>
 <ul>

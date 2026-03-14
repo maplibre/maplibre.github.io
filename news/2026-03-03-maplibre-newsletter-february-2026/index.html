@@ -47,7 +47,7 @@ Authors: <a href="/about/bart-louwers"> <span class="badge bg-light">Bart Louwer
 <p>A special thanks to MapTiler for their continued support. We updated our <a href="https://maplibre.org/sponsors/">Sponsors</a> page this month, to make clearer how organizations and individuals can give. If you have been thinking about contributing, there has never been a better time.</p>
 <div style="background-color:white;padding:2.5rem 2rem;border:4px solid #B0BEC5;border-radius:8px;margin:0 auto 3rem;max-width:960px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.5rem;box-shadow:0 4px 15px rgba(0, 0, 0, 0.05)"><div style="display:flex;justify-content:center;align-items:center;gap:4rem;flex-wrap:wrap;width:100%"><img src="/_astro/maplibre-logo-for-light-bg.CSR25x_s_Z22k2tS.svg" alt="MapLibre logo" style="max-height:70px;width:auto;object-fit:contain" loading="lazy" decoding="async" fetchpriority="auto" width="1354" height="317"><img src="/_astro/maptiler-logo.Ci3qDT4M_nhwl6.svg" alt="MapTiler logo" style="max-height:70px;width:auto;object-fit:contain" loading="lazy" decoding="async" fetchpriority="auto" width="812" height="212"></div><div style="margin-top:0.5rem;font-size:0.95rem;text-align:center;color:#455A64;font-style:italic;max-width:35rem"><p>Our gratitude goes to MapTiler for their continued support to MapLibre.</p></div></div>
 <p>With that note, let’s dive into the latest updates across the MapLibre ecosystem!</p>
-<h2 id="-maplibre-native">📱 MapLibre Native</h2>
+<h2 id="-maplibre-native"><a class="heading-link" href="#-maplibre-native">📱 MapLibre Native</a></h2>
 <p><strong>Core library: Distance-Based Level-of-Detail (LOD)</strong></p>
 <p>Nathan Olson implemented a <a href="https://github.com/maplibre/maplibre-native/pull/4057">distance-based level-of-detail algorithm</a> into the core library. However, platform APIs for this functionality still need to be added.</p>
 <p><strong>Experimental WebGPU Backends for Mobile</strong></p>
@@ -56,7 +56,7 @@ Authors: <a href="/about/bart-louwers"> <span class="badge bg-light">Bart Louwer
 <p>Andrew Calcutt’s PR that implements additional <a href="https://github.com/maplibre/maplibre-native/pull/3965">hillshade algorithms</a> has been merged! These algorithms are included in the current pre-release for Node.js, and the next releases for MapLibre iOS and MapLibre Android.</p>
 <p><strong>Android: Transitioning to Vulkan by Default</strong></p>
 <p>We released <a href="https://github.com/maplibre/maplibre-native/releases/tag/android-v13.0.0">MapLibre Android 13.0.0</a> which now uses Vulkan as a default rendering backend. This means that the <code>org.maplibre.gl:android-sdk</code> package is now using Vulkan. You can use the <code>org.maplibre.gl:android-sdk-opengl</code> package if you prefer to stick to OpenGL ES for now.</p>
-<h2 id="-maplibre-gl-js">🌐 MapLibre GL JS</h2>
+<h2 id="-maplibre-gl-js"><a class="heading-link" href="#-maplibre-gl-js">🌐 MapLibre GL JS</a></h2>
 <p><strong>New Releases: Versions 5.18 and 5.19</strong></p>
 <p>We’ve released versions <a href="https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.18.0">5.18</a> and <a href="https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.19.0">5.19</a> this month. A major highlight is the migration of our documentation to <a href="https://zensical.org/">Zensical</a>, the next-generation replacement of Material for MkDocs, which has served us very well until now. We also added <a href="https://github.com/maplibre/maplibre-gl-js/pull/7134"><code>anisotropicFilterPitch</code></a> to support some interesting data analysis use cases.</p>
 <p>We would like to thank all the contributors this month for these versions - truly inspiring work!</p>
@@ -68,7 +68,7 @@ Authors: <a href="/about/bart-louwers"> <span class="badge bg-light">Bart Louwer
 <p>The primary change in version 6 regarding developer experience will be the transition to ESM. As the industry moves toward ESM and our current build process is becoming increasingly complex, we are considering not releasing a CommonJS version. This transition will allow us to leverage newer technologies like Rolldown.</p>
 <p>We would love to hear your thoughts on these expected breaking changes to ensure we don’t disrupt your workflow.
 Please join the discussion in the <a href="https://github.com/maplibre/maplibre-gl-js/issues/6427">relevant tracking issue</a> and share your feedback.</p>
-<h2 id="-maplibre-flutter">🪶 MapLibre Flutter</h2>
+<h2 id="-maplibre-flutter"><a class="heading-link" href="#-maplibre-flutter">🪶 MapLibre Flutter</a></h2>
 <p>Versions <a href="https://github.com/josxha/flutter-maplibre/releases/tag/v0.3.4">0.3.4</a> and <a href="https://github.com/josxha/flutter-maplibre/releases/tag/v0.3.4%2B1">0.3.4+1</a> of <a href="https://pub.dev/packages/maplibre">maplibre</a> have been released this month, bringing significant architectural improvements and expanded platform support.</p>
 <p><strong>iOS transition to FFI</strong></p>
 <p>A major milestone in this release is the complete transition of the iOS implementation to use <a href="https://dart.dev/interop/c-interop">FFI</a>, removing all remaining usages of method channel serialization. This simplifies the integration between Flutter and the native SDK while providing minor performance gains.</p>
@@ -80,7 +80,7 @@ Please join the discussion in the <a href="https://github.com/maplibre/maplibre-
 <p><strong>Documentation and Future Roadmap</strong></p>
 <p>The documentation website has been migrated to Zensical alongside the broader MapLibre migration. <a href="https://flutter-maplibre.pages.dev/docs/">Check it out</a> and let us know what you think.</p>
 <p>Looking ahead, work is progressing on typed style layer properties and expressions, a highly anticipated feature. We are currently targeting static typing for style expressions, paint/layout properties, and new style layer inspection capabilities for the upcoming <a href="https://github.com/josxha/flutter-maplibre/milestone/12">v0.4.0</a> release.</p>
-<h2 id="-maplibre-agent-skills">🤖 Maplibre Agent Skills</h2>
+<h2 id="-maplibre-agent-skills"><a class="heading-link" href="#-maplibre-agent-skills">🤖 Maplibre Agent Skills</a></h2>
 <p>In an effort to move with the times and inform the LLMs of all the great things you can build with MapLibre, we’ve launched <a href="https://github.com/maplibre/maplibre-agent-skills"><code>maplibre-agent-skills</code></a>, a library of structured knowledge files that help AI coding assistants (Claude Code, Cursor, GitHub Copilot) write better MapLibre applications.</p>
 <p>Rather than putting up with bad or wrong MapLibre integrations, we’re directly informing the AI agents so they in turn share good information and the right recommendations on when it makes sense to use MapLibre, how to deal with tile sources and other renderer resources, and how to follow open-ecosystem patterns.</p>
 <p><strong>Skills available now:</strong></p>
@@ -92,7 +92,7 @@ Please join the discussion in the <a href="https://github.com/maplibre/maplibre-
 <p>Visit <a href="https://github.com/maplibre/maplibre-agent-skills"><code>maplibre-agent-skills</code></a> for more details on how to use or install these, or review the <a href="https://github.com/maplibre/maplibre-agent-skills/issues">open issues</a> for what’s next.</p>
 <p><strong>We’re looking for contributors.</strong> Skills are plain markdown files, easy to read, review. We welcome your expansions, corrections and questions. If you’ve tackled geocoding, routing, styling, framework integration (React, Vue, Angular, Flutter, Swift), or performance — your experience can make a big impact.</p>
 <p>See <a href="https://github.com/maplibre/maplibre-agent-skills/blob/main/CONTRIBUTING.md">contributing guidelines</a> for how to write a skill, or <a href="https://github.com/maplibre/maplibre-agent-skills/issues">open an issue</a> to propose a new one we haven’t thought of yet.</p>
-<h2 id="-style-spec">🎨 Style Spec</h2>
+<h2 id="-style-spec"><a class="heading-link" href="#-style-spec">🎨 Style Spec</a></h2>
 <p>The MapLibre Style Spec continues to evolve to support more complex styling needs:</p>
 <ul>
 <li><a href="https://maplibre.org/maplibre-style-spec/expressions/#split"><code>split</code></a> and <a href="https://maplibre.org/maplibre-style-spec/expressions/#join"><code>join</code></a>, which allow better string manipulation, are now part of the spec and are expected to be incorporated in MapLibre GL JS soon.</li>
@@ -100,7 +100,7 @@ Please join the discussion in the <a href="https://github.com/maplibre/maplibre-
 <li><code>symbol-elevation</code> will probably land soon to allow better support for placing symbols in a 3D map, check it out here:
 <a href="https://github.com/maplibre/maplibre-style-spec/pull/1508">https://github.com/maplibre/maplibre-style-spec/pull/1508</a></li>
 </ul>
-<h2 id="-maplibre-rs">🦀 maplibre-rs</h2>
+<h2 id="-maplibre-rs"><a class="heading-link" href="#-maplibre-rs">🦀 maplibre-rs</a></h2>
 <p>In February our focus has been on text rendering, with the following enhancements merged in:</p>
 <ul>
 <li>SDF renderer plugin, adding support for text labels as shown on the picture below. Thanks to @maxammann for the <a href="https://github.com/maplibre/maplibre-rs/pull/314">PR</a>.</li>
@@ -108,7 +108,7 @@ Please join the discussion in the <a href="https://github.com/maplibre/maplibre-
 <li>Render tests harness added to the project. Thanks to @birkskyum for the <a href="https://github.com/maplibre/maplibre-rs/pull/331">PR</a>.</li>
 </ul>
 <div style="margin-bottom:2rem;width:100%;display:flex;flex-direction:column;align-items:center"><img src="/_astro/maplibre-rs-text.Bbj8NCVH_1MUhl5.webp" alt="SDF text rendering in maplibre-rs" style="width:100%;max-width:650px;height:auto;display:block;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1)" loading="lazy" decoding="async" fetchpriority="auto" width="1408" height="1068"><p style="margin-top:0.75rem;margin-bottom:0;line-height:1.4;text-align:center;width:100%;max-width:550px"><em style="font-size:0.85rem;color:#666;font-style:italic"><p>Demonstration of the new SDF-based text rendering in maplibre-rs.</p></em></p></div>
-<h2 id="-maplibre-tile-mlt">🧩 MapLibre Tile (MLT)</h2>
+<h2 id="-maplibre-tile-mlt"><a class="heading-link" href="#-maplibre-tile-mlt">🧩 MapLibre Tile (MLT)</a></h2>
 <p>There is a growing interest in <a href="https://maplibre.org/news/2026-01-23-mlt-release/">the new format</a>. Our current priorities are:</p>
 <ul>
 <li>Mature decoders. In particular, we are rebuilding the test infrastructure to ensure high quality decoders in all the major languages.</li>
@@ -120,13 +120,13 @@ Please join the discussion in the <a href="https://github.com/maplibre/maplibre-
 Please <a href="https://github.com/maplibre/maplibre-tile-spec/issues/942">join the discussion</a> to provide your inputs or share your submissions!</p>
 <p>We’ve made great progress on the tooling side, including a Rust-based TUI and a dedicated QGIS plugin 🎉 Stay tuned for more updates!</p>
 <div style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:1.5rem;width:100%;max-width:960px;margin:0 auto 2rem"><div style="flex:1"><img src="/_astro/mlt-tui.DwUg70cZ_1TXkOv.webp" alt="MLT Terminal UI (TUI) showing geometry inspection" style="width:100%;height:auto;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1)" loading="lazy" decoding="async" fetchpriority="auto" width="1904" height="953"><p style="margin-top:0.5rem;font-size:0.85rem;color:#666;text-align:center"><em>MLT TUI: Direct feature inspection within the terminal.</em></p></div><div style="flex:1"><img src="/_astro/mlt-qgis.HNtANoDX_ZLTeIz.webp" alt="QGIS Desktop application showing MLT data integration" style="width:100%;height:auto;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1)" loading="lazy" decoding="async" fetchpriority="auto" width="1920" height="1080"><p style="margin-top:0.5rem;font-size:0.85rem;color:#666;text-align:center"><em>MLT Data integration progress within the QGIS ecosystem.</em></p></div></div>
-<h2 id="️-martin">⚙️ Martin</h2>
+<h2 id="️-martin"><a class="heading-link" href="#️-martin">⚙️ Martin</a></h2>
 <p>While it has been a relatively quiet month as we focus on MLT development, we’ve still shipped several key improvements to the tile server:</p>
 <p><strong>Web UI Fixes:</strong> The path-prefix now works correctly within the Web UI.</p>
 <p><strong>Smarter Routing:</strong> Common URL mistakes (e.g., using <code>/source.mvt</code> instead of <code>/source</code>) now return a 301 redirect instead of a 404, including periodic log hints to help fix configurations.</p>
 <p><strong>COG Stability:</strong> The experimental Cloud Optimized GeoTIFF (COG) backend was tightened significantly (thanks to <a href="https://github.com/Auspicus">David E Disch</a>, <a href="https://github.com/maplibre/martin/pull/2510">PR #2510</a>). To ensure stability, COGs must now be fully WebMercator-compatible (EPSG:3857), tiled, and consistently sized. Some previously ambiguous COGs may no longer load as we move toward a more predictable, production-ready implementation.</p>
 <p><a href="https://github.com/manbhav234">Manbhav Sugla</a> also migrated <a href="https://maplibre.org/martin/">our documentation</a> to Zensical, which looks much more modern than what we had before.</p>
-<h2 id="-community-spotlight">✨ Community spotlight</h2>
+<h2 id="-community-spotlight"><a class="heading-link" href="#-community-spotlight">✨ Community spotlight</a></h2>
 <p>Yossef from our community has build <strong>QGIS2VectorTiles</strong> which streamlines the process of packing a QGIS project into a styled vector tile package ready for MapLibre. It allows users to design maps within the familiar and flexible QGIS Desktop and export stunning MapLibre client-side web maps leveraging GDAL’s MVT driver.</p>
 <p>The exported output package includes:</p>
 <ul>
@@ -145,7 +145,7 @@ Please <a href="https://github.com/maplibre/maplibre-tile-spec/issues/942">join 
 <p>A short demo is attached:</p>
 <div style="margin-bottom:2rem;width:100%;display:flex;flex-direction:column;align-items:center"><img src="/_astro/qgis2-vector-tiles.D7dXsT28_Z1utwSB.webp" alt="QGIS2VectorTiles workflow demo" style="width:100%;max-width:650px;height:auto;display:block;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1)" loading="lazy" decoding="async" fetchpriority="auto" width="818" height="480"><p style="margin-top:0.75rem;margin-bottom:0;line-height:1.4;text-align:center;width:100%;max-width:550px"><em style="font-size:0.85rem;color:#666;font-style:italic"><p>Exporting styled vector tiles directly from QGIS.</p></em></p></div>
 <p>More information is available on the <a href="https://gallpeters.github.io/QGIS2VectorTiles/">plugin homepage</a>.</p>
-<h2 id="️-monthly-meetings">🗓️ Monthly meetings</h2>
+<h2 id="️-monthly-meetings"><a class="heading-link" href="#️-monthly-meetings">🗓️ Monthly meetings</a></h2>
 <p>We continue our regular community calls on the <em><strong>second Wednesday</strong></em> of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.</p>
 <p>Upcoming Calls</p>
 <ul>

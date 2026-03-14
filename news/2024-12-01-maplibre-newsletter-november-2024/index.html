@@ -46,7 +46,7 @@ Categories: <a href="/categories/newsletter"> <span class="badge bg-light">Newsl
 Authors: <a href="/about/bart-louwers"> <span class="badge bg-light">Bart Louwers</span> </a><a href="/about/harel-mazor"> <span class="badge bg-light">Harel Mazor</span> </a><a href="/about/joscha-eckert"> <span class="badge bg-light">Joscha Eckert</span> </a><a href="/about/robin-boldt"> <span class="badge bg-light">Robin Boldt</span> </a><a href="/about/ramya-ragupathy"> <span class="badge bg-light">Ramya Ragupathy</span> </a> </div> <p>November month has seen a lot of updates from across different projects in Maplibre ecosystem. From multiple pre-releases for MapLibre GL JS and to groundbreaking updates in Maplibre Native, there’s a lot to explore.</p>
 <p>In addition, a recent survey shed light on user feedback for flutter Maplibre GL. Don’t forget to check upcoming map events and join us for the monthly meetings to stay connected with the community.</p>
 <p>Let’s dive in!</p>
-<h2 id="maplibre-gl-js">MapLibre GL JS</h2>
+<h2 id="maplibre-gl-js"><a class="heading-link" href="#maplibre-gl-js">MapLibre GL JS</a></h2>
 <p>We have released versions <a href="https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.5">5.0.0-pre.5</a>, <a href="https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.6">5.0.0-pre.6</a>, <a href="https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.7">5.0.0-pre.7</a> and <a href="https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0-pre.8">5.0.0-pre.8</a> this month!
 These pre-release versions introduced most of the breaking changes we have planned for version 5.</p>
 <p>For other features we thought about introducing as a breaking change, we found a solution that does not require a breaking change and we’ll see if and when they will be introduced in the future.</p>
@@ -54,7 +54,7 @@ These pre-release versions introduced most of the breaking changes we have plann
 <ul>
 <li><a href="https://github.com/maplibre/maplibre-gl-js/issues/3834">https://github.com/maplibre/maplibre-gl-js/issues/3834</a></li>
 </ul>
-<h2 id="maplibre-native">MapLibre Native</h2>
+<h2 id="maplibre-native"><a class="heading-link" href="#maplibre-native">MapLibre Native</a></h2>
 <ul>
 <li>MapLibre Android <a href="https://github.com/maplibre/maplibre-native/releases/tag/android-v11.6.0">11.6.0</a> and <a href="https://github.com/maplibre/maplibre-native/releases/tag/android-v11.6.1">11.6.1</a> have been released.</li>
 <li>MapLibre iOS <a href="https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.8.1">6.8.1</a> was released.</li>
@@ -63,10 +63,10 @@ These pre-release versions introduced most of the breaking changes we have plann
 <li>We’re experimenting with some new GitHub functionality: <a href="https://github.com/maplibre/maplibre-native/discussions/3053">issue templates and issue types</a>.</li>
 <li>Engineers working for <a href="https://hudhud.sa/en">HudHud</a> have kicked off the development for <strong>3D Model Support</strong> in MapLibre Native. To implement this properly we need to “revive the 3D pass” (which is currently unused), which brings about plenty of complexities. It will be a while until proper 3D support will land, but watch this space, and join the monthly meetings, if you are interested in this.</li>
 </ul>
-<h3 id="vulkan">Vulkan</h3>
+<h3 id="vulkan"><a class="heading-link" href="#vulkan">Vulkan</a></h3>
 <p>We’ve made a <strong>pre-release</strong> of MapLibre Android with <strong>Vulkan support</strong>: <a href="https://github.com/maplibre/maplibre-native/releases/tag/android-v11.6.1-vulkan-pre1">11.6.1-vulkan-pre1</a>. This will likely be the last pre-release, with the official Vulkan-supported release planned for release in early December.</p>
 <p>While OpenGL ES will remain supported and MapLibre Android releases with OpenGL ES will continue for the foreseeable future, Vulkan offers a more modern and performant backend.</p>
-<h4 id="feedback-needed">Feedback Needed!</h4>
+<h4 id="feedback-needed"><a class="heading-link" href="#feedback-needed">Feedback Needed!</a></h4>
 <p>Help us test Vulkan support and ensure there are no regressions for your app by following these steps:</p>
 <ol>
 <li>Use the dependency: <code>org.maplibre.gl:android-sdk:11.6.1-vulkan-pre1</code>.</li>
@@ -80,28 +80,28 @@ These pre-release versions introduced most of the breaking changes we have plann
 </li>
 <li>Share your feedback! You can contribute to the <a href="https://github.com/maplibre/maplibre-native/issues/2787">pre-release thread</a> or <a href="https://github.com/maplibre/maplibre-native/issues/new?template=android-bug-report.yml">create an issue</a>. Positive feedback is welcome, too!</li>
 </ol>
-<h2 id="flutter-maplibre-gl">Flutter MapLibre GL</h2>
+<h2 id="flutter-maplibre-gl"><a class="heading-link" href="#flutter-maplibre-gl">Flutter MapLibre GL</a></h2>
 <p>The survey conducted last month found that users appreciate MapLibre on Flutter and rate the flutter-maplibre-gl package with <strong>4.1 out of 5 stars overall</strong>. The package is praised for its performance, lower cost and integration with Flutter, among other things.
 Stability and platform differences were identified as issues, as 46% of users reported have been affected by platform-specific behavior and 44% of users experienced crashes.</p>
  
 <img src="/_astro/flutter-survey-results.CPzlGU2d_1LwPJ6.webp" style="max-width: 600px; width: 100%; height: auto; display: block; margin: 0 auto;" alt="MapLibre Flutter Survey Results infographic summarizing the findings of a survey conducted on users of the MapLibre Flutter package. Key points include: 62% use it for commercial projects, 72% use it on iOS, and the package has an overall score of 4.1/5. Issues like platform-specific behavior (46%) and app crashes (44%) were reported, while features like navigation, better error logs, and 3D tiles are desired by users. Key features include performance, ease of use, and multi-platform support." loading="lazy" decoding="async" fetchpriority="auto" width="2480" height="3508">
 <br/>
-<h2 id="navigation-android">Navigation Android</h2>
+<h2 id="navigation-android"><a class="heading-link" href="#navigation-android">Navigation Android</a></h2>
 <p>Maplibre-Navigation-Android has been updated to use the latest Maplibre-Native release 11.6.1 and was released as version 4.0.0 with this version. You can find more information about this in the following PR:</p>
 <ul>
 <li><a href="https://github.com/maplibre/maplibre-navigation-android/pull/110">https://github.com/maplibre/maplibre-navigation-android/pull/110</a></li>
 </ul>
-<h2 id="conferences">Conferences</h2>
+<h2 id="conferences"><a class="heading-link" href="#conferences">Conferences</a></h2>
 <p>Check out these events to attend:</p>
 <ul>
 <li><a href="https://2024.foss4g.org/en/">FOSS4G 2024 in Belem, Brazil</a> between 2nd to 8th December 2024</li>
 <li><a href="https://foss4g.asia/2024/">FOSS4G Asia 2024 in Bangkok, Thailand</a> between 15th to 18th December 2024</li>
 <li><a href="https://fossgis-konferenz.de/2025/programm/">FOSSGIS in Münster, Germany</a> between 26th to 29th March 2025</li>
 </ul>
-<h2 id="community-events">Community Events</h2>
+<h2 id="community-events"><a class="heading-link" href="#community-events">Community Events</a></h2>
 <p><strong><em>MapLibre Meetup Japan #03 @ Tokyo</em></strong> was held on November 8th, hosted by the MapLibre User Group Japan (MUG-JP). This event marked the group’s first in-person gathering and saw an impressive turnout of nearly 40 users. The meetup provided a fantastic opportunity to share knowledge and raise awareness about MapLibre.</p>
 <p>A huge thank you to everyone who participated and supported this event! We look forward to more such community engagements in the future. For more details about the event, check out the MapLibre <a href="https://osmus.slack.com/archives/C01G3D28DAB/p1731329007263679">Slack conversation</a>.</p>
-<h2 id="monthly-meetings">Monthly Meetings</h2>
+<h2 id="monthly-meetings"><a class="heading-link" href="#monthly-meetings">Monthly Meetings</a></h2>
 <p>The upcoming monthly meetings will be held as usual on the second Wednesday of the month. These calls are open to everyone, and we encourage you to join us and say hello!</p>
 <ul>
 <li>MapLibre Navigation: December 11th, 2024, 6:00–7:00 PM CET</li>
