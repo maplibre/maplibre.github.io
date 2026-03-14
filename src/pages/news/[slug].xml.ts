@@ -69,7 +69,7 @@ const getPost = async (
     description: post.data.description,
     author: await getAuthors(post.data.authors),
     content,
-    link: `/news/${post.id}/`,
+    link: `${context.site}news/${post.id}/`,
   };
 };
 
@@ -82,6 +82,7 @@ export async function GET(context: APIContext) {
     description: SITE_DESCRIPTION,
     site: context.site || "",
     items: await Promise.all(items.map(async (post) => getPost(context, post))),
-    customData: `<language>en-US</language><lastBuildDate>${new Date().toUTCString()}</lastBuildDate>`,
+    customData: `<language>en-US</language><lastBuildDate>${new Date().toUTCString()}</lastBuildDate><atom:link href="${context.url}" rel="self" type="application/rss+xml"/>`,
+    xmlns: { atom: "http://www.w3.org/2005/Atom" },
   });
 }
