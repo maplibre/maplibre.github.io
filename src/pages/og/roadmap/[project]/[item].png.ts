@@ -21,19 +21,10 @@ export const GET: APIRoute = async ({ props }) => {
     ReturnType<typeof getCollection<"roadmapItems">>
   >[number];
 
-  const heroImage = item.data.heroImage as {
-    src: string;
-    width: number;
-    height: number;
-    format: string;
-    fsPath: string;
-  };
-
   const png = await generateRoadmapOgImage({
     title: item.data.title,
     project: item.data.project ?? "general",
     status: item.data.status,
-    heroImagePath: heroImage?.fsPath,
   });
 
   return new Response(png, {

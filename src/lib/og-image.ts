@@ -27,15 +27,13 @@ const LOGO_PAD = 24;
 const LABEL_SIZE = 28;
 const LABEL_SPACING = 5;
 const META_SIZE = 26; // date + authors
-const BADGE_SIZE = 24; // roadmap status badge
 const TITLE_MAX_CHARS = 26;
-const TITLE_MAX_CHARS_HERO = 20; // narrower when a hero image is present
 const TITLE_LINE_GAP = 0.2; // fraction of font size
 
-const STATUS_COLORS: Record<string, { bg: string; text: string }> = {
-  "in-progress": { bg: "#1a4a20", text: "#4caf50" },
-  released: { bg: "#1a2d4a", text: BLUE_ACCENT },
-  "under-consideration": { bg: "#2a2a1a", text: "#f0c040" },
+const STATUS_COLOR: Record<string, string> = {
+  "in-progress": BLUE_ACCENT,
+  released: WHITE,
+  "under-consideration": WHITE,
 };
 
 let _font: Buffer | undefined;
@@ -255,69 +253,24 @@ export async function generateRoadmapOgImage(opts: {
   title: string;
   project: string;
   status: "under-consideration" | "in-progress" | "released";
-  heroImagePath?: string;
 }): Promise<Buffer> {
-  const { title, project, status, heroImagePath } = opts;
+  const { title, project, status } = opts;
   const logo = await getLogo();
-  const statusColor = STATUS_COLORS[status] ?? { bg: "#222", text: WHITE };
-
-  let heroEl: VNode | null = null;
-  if (heroImagePath) {
-    try {
-      const resized = await sharp(readFileSync(heroImagePath))
-        .resize({
-          width: 400,
-          height: 350,
-          fit: "contain",
-          background: { r: 17, g: 23, b: 37, alpha: 1 },
-        })
-        .png()
-        .toBuffer();
-      heroEl = div(
-        {
-          position: "absolute",
-          top: 100,
-          right: 60,
-          width: 420,
-          height: 380,
-          borderRadius: 14,
-          overflow: "hidden",
-          background: BG_DARK,
-        },
-        img(`data:image/png;base64,${resized.toString("base64")}`, {
-          width: 420,
-          height: 380,
-        }),
-      );
-    } catch {
-      /* ignore missing hero image */
-    }
-  }
-
-  const lines = wrapTitle(
-    title,
-    heroEl ? TITLE_MAX_CHARS_HERO : TITLE_MAX_CHARS,
-    4,
-  );
+  const statusColor = STATUS_COLOR[status] ?? WHITE;
+  const lines = wrapTitle(title, TITLE_MAX_CHARS, 4);
   const fontSize = lines.length <= 2 ? 72 : 60;
 
   return renderToPng(
     div(
-      {
-        position: "relative",
-        width: WIDTH,
-        height: HEIGHT,
-        overflow: "hidden",
-      },
+      { position: "relative", width: WIDTH, height: HEIGHT, overflow: "hidden" },
       background(),
-      heroEl,
       header("ROADMAP", logo),
       div(
         {
           position: "absolute",
           top: 96,
           left: 60,
-          right: heroEl ? 520 : 60,
+          right: 60,
           bottom: 50,
           flexDirection: "column",
           justifyContent: "space-between",
@@ -331,15 +284,7 @@ export async function generateRoadmapOgImage(opts: {
           titleBlock(lines, fontSize),
         ),
         div(
-          {
-            borderRadius: 18,
-            padding: "10px 24px",
-            background: statusColor.bg,
-            border: `1.5px solid ${statusColor.text}`,
-            color: statusColor.text,
-            fontSize: BADGE_SIZE,
-            fontFamily: FONT,
-          },
+          { color: statusColor, fontSize: META_SIZE, fontFamily: FONT, fontWeight: 700 },
           toDisplayLabel(status),
         ),
       ),
