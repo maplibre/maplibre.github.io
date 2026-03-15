@@ -7,10 +7,6 @@ import { resolve, dirname } from "path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "../..");
 
-// ---------------------------------------------------------------------------
-// Brand tokens
-// ---------------------------------------------------------------------------
-
 const WIDTH = 1200;
 const HEIGHT = 630;
 const BG_DARK = "#111725";
