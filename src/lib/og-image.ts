@@ -258,7 +258,12 @@ export async function generateRoadmapOgImage(opts: {
 
   return renderToPng(
     div(
-      { position: "relative", width: WIDTH, height: HEIGHT, overflow: "hidden" },
+      {
+        position: "relative",
+        width: WIDTH,
+        height: HEIGHT,
+        overflow: "hidden",
+      },
       background(),
       header("ROADMAP", logo),
       div(
@@ -280,7 +285,12 @@ export async function generateRoadmapOgImage(opts: {
           titleBlock(lines, fontSize),
         ),
         div(
-          { color: statusColor, fontSize: META_SIZE, fontFamily: FONT, fontWeight: 700 },
+          {
+            color: statusColor,
+            fontSize: META_SIZE,
+            fontFamily: FONT,
+            fontWeight: 700,
+          },
           toDisplayLabel(status),
         ),
       ),
