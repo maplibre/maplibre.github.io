@@ -1,6 +1,6 @@
 import type { APIRoute, GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
-import { generateNewsOgImage } from "../../../lib/og-image";
+import { generateNewsOgImage, toDisplayLabel } from "../../../lib/og-image";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getCollection("news");
@@ -15,11 +15,20 @@ export const GET: APIRoute = async ({ props }) => {
     ReturnType<typeof getCollection<"news">>
   >[number];
 
+  // Resolve author slugs → real names via the bios collection
+  const bios = await getCollection("bios");
+  const handleToName = Object.fromEntries(
+    bios.map((bio) => [bio.data.handle, bio.data.title]),
+  );
+  const authorNames = post.data.authors.map(
+    (slug) => handleToName[slug] ?? toDisplayLabel(slug),
+  );
+
   const png = await generateNewsOgImage({
     title: post.data.title,
     date: post.data.date,
     categories: post.data.categories,
-    authors: post.data.authors,
+    authors: authorNames,
   });
 
   return new Response(png, {

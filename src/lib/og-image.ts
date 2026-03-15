@@ -31,8 +31,9 @@ async function getLogoBase64(): Promise<string> {
         "public/img/maplibre-logos/maplibre-logo-light-transparent-bg.png",
       ),
     );
+    // Source is 1454×417; preserve aspect ratio at LOGO_WIDTH wide
     const resized = await sharp(logoBuffer)
-      .resize({ width: 240 })
+      .resize({ width: LOGO_WIDTH, height: LOGO_HEIGHT, fit: "fill" })
       .png()
       .toBuffer();
     _logoBase64 = resized.toString("base64");
@@ -102,25 +103,28 @@ function wrapText(text: string, maxCharsPerLine: number): string[] {
 }
 
 /** Convert a kebab-case slug into a title-cased display label */
-function toDisplayLabel(slug: string): string {
+export function toDisplayLabel(slug: string): string {
   return slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 // ---------------------------------------------------------------------------
-// Brand tokens
+// Brand tokens (sourced from /src/pages/brand-assets.astro)
 // ---------------------------------------------------------------------------
 
 const WIDTH = 1200;
 const HEIGHT = 630;
 
-const BG_DARK = "#0d1828";
-const BG_MID = "#182840";
-const BLUE_PRIMARY = "#306fca";
-const BLUE_LIGHT = "#4a89ff";
-const BLUE_SECONDARY = "#87b2f0";
+// Official MapLibre brand colors
+const BG_DARK = "#111725"; // Background (dark)
+const BLUE_PRIMARY = "#285DAA"; // Primary
+const BLUE_ACCENT = "#95BEFA"; // Accent
 const WHITE = "#ffffff";
-const MUTED = "#8899bb";
+
 const FONT_FAMILY = "Alata";
+
+// Logo source is 1454×417; rendered at LOGO_WIDTH wide (aspect ratio preserved)
+const LOGO_WIDTH = 210;
+const LOGO_HEIGHT = Math.round(LOGO_WIDTH * (417 / 1454)); // = 60
 
 // Section label typography constants
 const SECTION_LABEL_FONT_SIZE = 20;
@@ -134,54 +138,24 @@ const TITLE_LINE_GAP_RATIO = 0.2;
 
 const STATUS_COLORS: Record<string, { bg: string; text: string }> = {
   "in-progress": { bg: "#1a4a20", text: "#4caf50" },
-  released: { bg: "#1a3a4a", text: BLUE_SECONDARY },
+  released: { bg: "#1a2d4a", text: BLUE_ACCENT },
   "under-consideration": { bg: "#2a2a1a", text: "#f0c040" },
 };
 
 // ---------------------------------------------------------------------------
-// Shared chrome (background, header, bottom bar)
+// Shared chrome (background, header)
 // ---------------------------------------------------------------------------
 
-/** Background layers: gradient + subtle radial glow bottom-right */
-function background(): VNode[] {
-  return [
-    div({
-      position: "absolute",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      background: `linear-gradient(135deg, ${BG_DARK} 0%, ${BG_MID} 100%)`,
-    }),
-    // Glow accent circles (bottom-right)
-    div({
-      position: "absolute",
-      right: -80,
-      bottom: -80,
-      width: 440,
-      height: 440,
-      borderRadius: "50%",
-      background: `radial-gradient(circle, rgba(48,111,202,0.14) 0%, transparent 70%)`,
-    }),
-    div({
-      position: "absolute",
-      right: 20,
-      bottom: -20,
-      width: 240,
-      height: 240,
-      borderRadius: "50%",
-      background: `radial-gradient(circle, rgba(74,137,255,0.10) 0%, transparent 70%)`,
-    }),
-    // Left accent bar
-    div({
-      position: "absolute",
-      left: 0,
-      top: 0,
-      width: 8,
-      height: HEIGHT,
-      background: `linear-gradient(to bottom, ${BLUE_LIGHT}, ${BLUE_PRIMARY})`,
-    }),
-  ];
+/** Flat dark background — no gradients per brand guidelines */
+function background(): VNode {
+  return div({
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: BG_DARK,
+  });
 }
 
 /** Top header strip: section label left, logo right */
@@ -193,17 +167,16 @@ function header(sectionLabel: string, logoBase64: string): VNode {
       left: 0,
       right: 0,
       height: 80,
-      background: `rgba(13, 24, 40, 0.55)`,
       alignItems: "center",
       justifyContent: "space-between",
-      padding: "0 80px",
+      padding: "0 60px",
     },
     // Section label + underline
     div(
       { flexDirection: "column" },
       div(
         {
-          color: BLUE_SECONDARY,
+          color: BLUE_ACCENT,
           fontSize: SECTION_LABEL_FONT_SIZE,
           letterSpacing: SECTION_LABEL_LETTER_SPACING,
           fontFamily: FONT_FAMILY,
@@ -213,34 +186,16 @@ function header(sectionLabel: string, logoBase64: string): VNode {
       div({
         width: Math.round(sectionLabel.length * SECTION_LABEL_CHAR_WIDTH),
         height: 1.5,
-        background: BLUE_SECONDARY,
+        background: BLUE_ACCENT,
         opacity: 0.5,
         marginTop: 4,
       }),
     ),
-    // MapLibre logo
-    img(`data:image/png;base64,${logoBase64}`, { width: 210, height: 36 }),
-  );
-}
-
-/** Bottom bar with maplibre.org attribution */
-function bottomBar(): VNode {
-  return div(
-    {
-      position: "absolute",
-      bottom: 0,
-      left: 0,
-      right: 0,
-      height: 42,
-      background: `rgba(13, 24, 40, 0.72)`,
-      alignItems: "center",
-      justifyContent: "flex-end",
-      padding: "0 22px",
-    },
-    div(
-      { color: MUTED, fontSize: 18, fontFamily: FONT_FAMILY, opacity: 0.8 },
-      "maplibre.org",
-    ),
+    // MapLibre logo — exact aspect ratio, no squishing
+    img(`data:image/png;base64,${logoBase64}`, {
+      width: LOGO_WIDTH,
+      height: LOGO_HEIGHT,
+    }),
   );
 }
 
@@ -285,6 +240,7 @@ async function renderToPng(root: VNode): Promise<Buffer> {
 
 /**
  * Generate an OG image for a news post.
+ * @param authors - Real author display names (not slugs).
  */
 export async function generateNewsOgImage(opts: {
   title: string;
@@ -320,7 +276,7 @@ export async function generateNewsOgImage(opts: {
           ...categories.slice(0, 4).map((cat) =>
             div(
               {
-                background: "#1058c0",
+                background: BLUE_PRIMARY,
                 borderRadius: 16,
                 padding: "6px 16px",
                 color: WHITE,
@@ -341,16 +297,16 @@ export async function generateNewsOgImage(opts: {
       fontFamily: FONT_FAMILY,
       overflow: "hidden",
     },
-    ...background(),
+    background(),
     header("NEWS", logoBase64),
     // Main content area
     div(
       {
         position: "absolute",
         top: 100,
-        left: 80,
-        right: 80,
-        bottom: 60,
+        left: 60,
+        right: 60,
+        bottom: 50,
         flexDirection: "column",
         justifyContent: "space-between",
       },
@@ -358,10 +314,9 @@ export async function generateNewsOgImage(opts: {
       div(
         { flexDirection: "column", gap: 12 },
         categoryBadges,
-        div({ color: MUTED, fontSize: 19, fontFamily: FONT_FAMILY }, metaLine),
+        div({ color: WHITE, fontSize: 19, fontFamily: FONT_FAMILY }, metaLine),
       ),
     ),
-    bottomBar(),
   );
 
   return renderToPng(element);
@@ -393,7 +348,7 @@ export async function generateRoadmapOgImage(opts: {
           width: 400,
           height: 350,
           fit: "contain",
-          background: { r: 24, g: 40, b: 64, alpha: 1 },
+          background: { r: 17, g: 23, b: 37, alpha: 1 },
         })
         .png()
         .toBuffer();
@@ -401,17 +356,17 @@ export async function generateRoadmapOgImage(opts: {
       heroEl = div(
         {
           position: "absolute",
-          top: 120,
+          top: 100,
           right: 60,
           width: 420,
-          height: 360,
+          height: 380,
           borderRadius: 14,
           overflow: "hidden",
-          background: BG_MID,
+          background: BG_DARK,
         },
         img(`data:image/png;base64,${heroBase64}`, {
           width: 420,
-          height: 360,
+          height: 380,
         }),
       );
     } catch {
@@ -444,7 +399,7 @@ export async function generateRoadmapOgImage(opts: {
       fontFamily: FONT_FAMILY,
       overflow: "hidden",
     },
-    ...background(),
+    background(),
     heroEl,
     header("ROADMAP", logoBase64),
     // Main content area
@@ -452,9 +407,9 @@ export async function generateRoadmapOgImage(opts: {
       {
         position: "absolute",
         top: 96,
-        left: 80,
-        right: heroEl ? 520 : 80,
-        bottom: 60,
+        left: 60,
+        right: heroEl ? 520 : 60,
+        bottom: 50,
         flexDirection: "column",
         justifyContent: "space-between",
       },
@@ -462,7 +417,7 @@ export async function generateRoadmapOgImage(opts: {
         { flexDirection: "column", gap: 16 },
         div(
           {
-            color: BLUE_SECONDARY,
+            color: BLUE_ACCENT,
             fontSize: 21,
             fontFamily: FONT_FAMILY,
           },
@@ -472,7 +427,6 @@ export async function generateRoadmapOgImage(opts: {
       ),
       statusBadge,
     ),
-    bottomBar(),
   );
 
   return renderToPng(element);

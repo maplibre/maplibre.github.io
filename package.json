@@ -29,13 +29,16 @@
     "satori": "^0.25.0",
     "sharp": "^0.34.5",
     "solid-js": "^1.9.11",
+    "tsx": "^4.21.0",
     "ultrahtml": "^1.5.3"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.7",
     "@types/node": "^25.4.0",
     "astro-broken-links-checker": "^1.0.7",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
-    "schema-dts": "^1.1.5"
+    "schema-dts": "^1.1.5",
+    "typescript": "^5.9.3"
   }
 }
