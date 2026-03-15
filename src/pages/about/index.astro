@@ -57,7 +57,12 @@ import { BoardAndTeam } from "../../components/BoardAndTeam";
           Find quarterly financial reports in the
           <a href="/about/reports">Reports</a> page.
         </p>
-        <BoardAndTeam board={board} team={team} client:only />
+        <!-- min-height reserves space for the client-only BoardAndTeam component while JS is loading,
+             preventing content below (Brand Assets) from shifting up and then jumping down (CLS).
+             ~800px covers the typical desktop height of the two avatar grids + headings. -->
+        <div style="min-height: 800px;">
+          <BoardAndTeam board={board} team={team} client:only />
+        </div>
         <div class="text-center">
           <h1 id="brand-assets" class="text-center pt-3">Brand Assets</h1>
           <p class="text-center">
