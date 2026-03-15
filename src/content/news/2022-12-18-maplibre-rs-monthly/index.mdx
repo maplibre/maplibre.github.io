@@ -33,14 +33,13 @@ Apart from egui, I also added a visualizing red border around tiles. This helped
   />
   <figcaption>egui integration</figcaption>
 </figure>
-In late summer, [@Drabble](https://github.com/Drabble) already started working
-on a proof-of-concept for extruded 3D buildings. The work required several
-rebases over the months, but it survived and looks stunning! As per-feature
-rendering is currently missing, all buildings have the same height right now. I
-hope to change that in the near future. I noticed that design changes are
-usually accompanied by multiple concrete problems. As we integrate more features
-which are dependent on feature properties (building height, color properties,
-etc.) the required design changes will be uncovered.
+In late summer, [@Drabble](https://github.com/Drabble) already started working on
+a proof-of-concept for extruded 3D buildings. The work required several rebases over
+the months, but it survived and looks stunning! As per-feature rendering is currently
+missing, all buildings have the same height right now. I hope to change that in the
+near future. I noticed that design changes are usually accompanied by multiple concrete
+problems. As we integrate more features which are dependent on feature properties
+(building height, color properties, etc.) the required design changes will be uncovered.
 <figure>
   <Image
     alt="building extrusion"
@@ -50,10 +49,10 @@ etc.) the required design changes will be uncovered.
   />
   <figcaption>3D building extrusion</figcaption>
 </figure>
-In parallel [@Quillasp](https://github.com/Quillasp) worked on adding raster
-tile support to maplibre-rs. It already works on native platforms (Android, iOS,
-Linux, Windows) and in browsers. The decoding of the images is done using
-WebWorkers. In the future, the browser should be tasked with the decoding jobs.
+In parallel [@Quillasp](https://github.com/Quillasp) worked on adding raster tile
+support to maplibre-rs. It already works on native platforms (Android, iOS, Linux,
+Windows) and in browsers. The decoding of the images is done using WebWorkers. In
+the future, the browser should be tasked with the decoding jobs.
 
 <figure>
   <Image
