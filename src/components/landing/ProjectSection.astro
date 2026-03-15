@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 interface Props {
   title: string;
   visualStyle?: string;
@@ -58,6 +60,7 @@ const titleText = title.replace(/<[^>]+>/g, "");
             <div class="position-relative z-2 pt-4 pb-3">
               <a href={href} class="explore-btn">
                 Explore {titleText}
+                <Icon name="chevron-right" aria-hidden="true" height={14} width={14} />
               </a>
             </div>
           )
@@ -88,7 +91,9 @@ const titleText = title.replace(/<[^>]+>/g, "");
   }
 
   .explore-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
     color: #fff;
     background-color: #285daa;
     border-radius: 4px;
