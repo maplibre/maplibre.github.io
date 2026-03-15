@@ -45,12 +45,12 @@ const titleText = title.replace(/<[^>]+>/g, "");
         <slot name="description" />
         <br /><br />
 
-        <div class:list={[{ "position-relative z-2": !!href }, "badges-container"]}>
+        <div class:list={[{ "position-relative z-2 gap": !!href }, "badges-container"]}>
           <slot name="badges" />
         </div>
         {
           href && (
-            <div class="position-relative z-2 mt-4 pb-3">
+            <div class="position-relative z-2 pt-4 pb-3">
               <a href={href} class="explore-btn">
                 Learn more about {titleText}
               </a>
@@ -76,10 +76,9 @@ const titleText = title.replace(/<[^>]+>/g, "");
   }
 
   .badges-container {
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 0.6rem;
-    column-gap: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 0.8rem 3rem;
     align-items: center;
   }
 
