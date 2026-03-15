@@ -22,6 +22,7 @@ export const BoardAndTeam = (props: { board: any[]; team: any[] }) => {
                   <img
                     src={member.avatar}
                     width="150"
+                    height="150"
                     class="rounded-circle mt-3 border border-white"
                   />
                   <h3 class="m-3">{member.name}</h3>
@@ -55,6 +56,7 @@ export const BoardAndTeam = (props: { board: any[]; team: any[] }) => {
                     <img
                       src={member.avatar}
                       width="150"
+                      height="150"
                       class="rounded-circle mt-3 border border-white"
                     />
                     <h3 class="m-3">{member.name}</h3>
