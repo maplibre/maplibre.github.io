@@ -15,8 +15,8 @@ export const FONT = "Alata";
 // Square logo: maplibre-logo-square-for-dark-bg.svg (400×400 source).
 // LOGO_SIZE controls the rendered pixel size; LOGO_PAD is applied equally
 // to the top and right edges.
-export const LOGO_SIZE = 80;
-export const LOGO_PAD = 24;
+export const LOGO_SIZE = 250;
+export const LOGO_PAD = 30;
 
 export const LABEL_SIZE = 28;
 const LABEL_SPACING = 5;

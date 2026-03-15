@@ -35,7 +35,7 @@ async function generateRoadmapOgImage(opts: {
   const statusColor = STATUS_COLOR[status];
   const lines = wrapTitle(title, TITLE_MAX_CHARS, 4);
   const fontSize = lines.length <= 2 ? 72 : 60;
-  const contentTop = LOGO_PAD + LOGO_SIZE + 20;
+  const contentTop = LOGO_PAD + 100;
 
   return renderToPng(
     div(

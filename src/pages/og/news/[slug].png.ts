@@ -40,7 +40,7 @@ async function generateNewsOgImage(opts: {
   const logo = await getLogo();
   const lines = wrapTitle(title, TITLE_MAX_CHARS, 3);
   const fontSize = lines.length === 1 ? 78 : lines.length === 2 ? 68 : 58;
-  const contentTop = LOGO_PAD + LOGO_SIZE + 20;
+  const contentTop = LOGO_PAD + 100;
 
   return renderToPng(
     div(
