@@ -38,10 +38,6 @@ const STATUS_COLORS: Record<string, { bg: string; text: string }> = {
   "under-consideration": { bg: "#2a2a1a", text: "#f0c040" },
 };
 
-// ---------------------------------------------------------------------------
-// Asset caching (read once per build worker)
-// ---------------------------------------------------------------------------
-
 let _font: Buffer | undefined;
 let _logo: string | undefined;
 
@@ -63,10 +59,6 @@ async function getLogo(): Promise<string> {
   return _logo;
 }
 
-// ---------------------------------------------------------------------------
-// Minimal element-tree types (compatible with satori)
-// ---------------------------------------------------------------------------
-
 type Style = Record<string, string | number>;
 type VNodeChild = VNode | string | null;
 
@@ -87,10 +79,6 @@ const img = (src: string, style: Style): VNode => ({
   type: "img",
   props: { src, alt: "", style },
 });
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
 
 /** Break a title into at most maxLines word-wrapped lines of at most maxChars. */
 function wrapTitle(text: string, maxChars: number, maxLines: number): string[] {
@@ -117,8 +105,10 @@ export function toDisplayLabel(slug: string): string {
 
 /**
  * Natural-language author list (max 3 names shown):
- *   1 → "Alice"          2 → "Alice and Bob"
- *   3 → "Alice, Bob and Charlie"     4+ → "Alice, Bob, Charlie, …"
+ *   1. "Alice"
+ *   2. "Alice and Bob"
+ *   3. "Alice, Bob and Charlie"
+ *   3. "Alice, Bob, Charlie, …"
  */
 function formatAuthors(names: string[]): string {
   if (names.length === 1) return names[0];
@@ -126,10 +116,6 @@ function formatAuthors(names: string[]): string {
   if (names.length === 3) return `${names[0]}, ${names[1]} and ${names[2]}`;
   return `${names[0]}, ${names[1]}, ${names[2]}, \u2026`;
 }
-
-// ---------------------------------------------------------------------------
-// Shared chrome
-// ---------------------------------------------------------------------------
 
 const background = (): VNode =>
   div({ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, background: BG_DARK });
@@ -165,11 +151,6 @@ async function renderToPng(element: VNode): Promise<Buffer> {
   return sharp(Buffer.from(svg)).png().toBuffer();
 }
 
-// ---------------------------------------------------------------------------
-// Public API
-// ---------------------------------------------------------------------------
-
-/** Generate an OG image for a news post. Pass real author display names, not slugs. */
 export async function generateNewsOgImage(opts: {
   title: string;
   date: Date;
@@ -205,7 +186,6 @@ export async function generateNewsOgImage(opts: {
   );
 }
 
-/** Generate an OG image for a roadmap item. */
 export async function generateRoadmapOgImage(opts: {
   title: string;
   project: string;
