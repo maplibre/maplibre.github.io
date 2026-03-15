@@ -30,7 +30,7 @@ const titleText = title.replace(/<[^>]+>/g, "");
       <a
         href={href}
         class="stretched-link"
-        aria-label={`Read more about ${titleText}`}
+        aria-label={`Learn more about ${titleText}`}
       />
     )
   }
@@ -52,7 +52,7 @@ const titleText = title.replace(/<[^>]+>/g, "");
           href && (
             <div class="position-relative z-2 mt-3 pb-3">
               <a href={href} class="explore-btn">
-                Explore {titleText}
+                Learn more about {titleText}
               </a>
             </div>
           )
@@ -77,15 +77,15 @@ const titleText = title.replace(/<[^>]+>/g, "");
 
   .explore-btn {
     display: inline-block;
-    color: #95befa;
-    border: 1px solid #95befa;
+    color: #000;
+    background-color: #95befa;
     border-radius: 4px;
     padding: 0.375rem 0.875rem;
     text-decoration: none;
     font-size: 0.9rem;
 
     &:hover {
-      background-color: rgba(149, 190, 250, 0.15);
+      background-color: #aecdfb;
     }
   }
 </style>
