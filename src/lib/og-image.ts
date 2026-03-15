@@ -8,247 +8,159 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "../..");
 
 // ---------------------------------------------------------------------------
-// Asset caching (font + logo are read once per build worker)
-// ---------------------------------------------------------------------------
-
-let _fontData: Buffer | undefined;
-let _logoBase64: string | undefined;
-
-function getFontData(): Buffer {
-  if (!_fontData) {
-    _fontData = readFileSync(
-      resolve(root, "public/files/alata-latin-400-normal.woff"),
-    );
-  }
-  return _fontData;
-}
-
-async function getLogoBase64(): Promise<string> {
-  if (!_logoBase64) {
-    const logoBuffer = readFileSync(
-      resolve(
-        root,
-        "public/img/maplibre-logos/maplibre-logo-light-transparent-bg.png",
-      ),
-    );
-    // Source is 1454×417; preserve aspect ratio at LOGO_WIDTH wide
-    const resized = await sharp(logoBuffer)
-      .resize({ width: LOGO_WIDTH, height: LOGO_HEIGHT, fit: "fill" })
-      .png()
-      .toBuffer();
-    _logoBase64 = resized.toString("base64");
-  }
-  return _logoBase64;
-}
-
-// ---------------------------------------------------------------------------
-// Minimal element-tree types (subset of ReactNode, compatible with satori)
-// ---------------------------------------------------------------------------
-
-type Style = Record<string, string | number>;
-
-type VNodeChild = VNode | string | null;
-
-interface VNode {
-  type: string;
-  props: {
-    style?: Style;
-    children?: VNodeChild | VNodeChild[];
-    src?: string;
-    alt?: string;
-  };
-}
-
-/** Create a flex-displayed div with optional children */
-function div(style: Style, ...children: VNodeChild[]): VNode {
-  return {
-    type: "div",
-    props: {
-      style: { display: "flex", ...style },
-      children: children.filter((c) => c !== null) as VNodeChild[],
-    },
-  };
-}
-
-/** Create an img element */
-function img(src: string, style: Style): VNode {
-  return { type: "img", props: { src, alt: "", style } };
-}
-
-/** Wrap text into lines of at most maxCharsPerLine (character-count heuristic) */
-function wrapText(text: string, maxCharsPerLine: number): string[] {
-  const words = text.split(/\s+/);
-  const lines: string[] = [];
-  let current = "";
-  for (const word of words) {
-    const candidate = current ? `${current} ${word}` : word;
-    if (candidate.length <= maxCharsPerLine) {
-      current = candidate;
-    } else {
-      if (current) lines.push(current);
-      if (word.length > maxCharsPerLine) {
-        let remaining = word;
-        while (remaining.length > maxCharsPerLine) {
-          lines.push(remaining.slice(0, maxCharsPerLine));
-          remaining = remaining.slice(maxCharsPerLine);
-        }
-        current = remaining;
-      } else {
-        current = word;
-      }
-    }
-  }
-  if (current) lines.push(current);
-  return lines;
-}
-
-/** Convert a kebab-case slug into a title-cased display label */
-export function toDisplayLabel(slug: string): string {
-  return slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-}
-
-// ---------------------------------------------------------------------------
-// Brand tokens (sourced from /src/pages/brand-assets.astro)
+// Brand tokens
 // ---------------------------------------------------------------------------
 
 const WIDTH = 1200;
 const HEIGHT = 630;
-
-// Official MapLibre brand colors
-const BG_DARK = "#111725"; // Background (dark)
-const BLUE_PRIMARY = "#285DAA"; // Primary
-const BLUE_ACCENT = "#95BEFA"; // Accent
+const BG_DARK = "#111725";
+const BLUE_ACCENT = "#95BEFA";
 const WHITE = "#ffffff";
+const FONT = "Alata";
 
-const FONT_FAMILY = "Alata";
+// Logo: source 1454×417, rendered at LOGO_W wide (aspect ratio preserved).
+// LOGO_PAD is applied equally to the top and right edges.
+const LOGO_W = 210;
+const LOGO_H = Math.round(LOGO_W * (417 / 1454)); // = 60
+const LOGO_PAD = 24;
 
-// Logo source is 1454×417; rendered at LOGO_WIDTH wide (aspect ratio preserved)
-const LOGO_WIDTH = 210;
-const LOGO_HEIGHT = Math.round(LOGO_WIDTH * (417 / 1454)); // = 60
-// Equal padding applied to both the top and right edges of the logo
-const LOGO_PADDING = 24;
-
-// Section label typography constants
-const SECTION_LABEL_FONT_SIZE = 28;
-const SECTION_LABEL_LETTER_SPACING = 5;
-// Approximate px advance per character for Alata at the label font size + letter spacing
-const SECTION_LABEL_CHAR_WIDTH =
-  SECTION_LABEL_FONT_SIZE * 0.6 + SECTION_LABEL_LETTER_SPACING;
-
-// Title line gap as a fraction of font size (20% produces comfortable leading)
-const TITLE_LINE_GAP_RATIO = 0.2;
-
-// Maximum number of title lines before text is truncated
-const MAX_TITLE_LINES = 3;
-// Maximum characters per line for news titles (tightened to fit larger font sizes)
-const NEWS_TITLE_MAX_CHARS = 26;
-// Maximum characters per roadmap title line with/without a hero image
-const ROADMAP_TITLE_MAX_CHARS_HERO = 20;
-const ROADMAP_TITLE_MAX_CHARS = 26;
+const LABEL_SIZE = 28;
+const LABEL_SPACING = 5;
+const META_SIZE = 26;   // date + authors
+const BADGE_SIZE = 24;  // roadmap status badge
+const TITLE_MAX_CHARS = 26;
+const TITLE_MAX_CHARS_HERO = 20; // narrower when a hero image is present
+const TITLE_LINE_GAP = 0.2;      // fraction of font size
 
 const STATUS_COLORS: Record<string, { bg: string; text: string }> = {
-  "in-progress": { bg: "#1a4a20", text: "#4caf50" },
-  released: { bg: "#1a2d4a", text: BLUE_ACCENT },
+  "in-progress":         { bg: "#1a4a20", text: "#4caf50" },
+  released:              { bg: "#1a2d4a", text: BLUE_ACCENT },
   "under-consideration": { bg: "#2a2a1a", text: "#f0c040" },
 };
 
 // ---------------------------------------------------------------------------
-// Shared chrome (background, header)
+// Asset caching (read once per build worker)
 // ---------------------------------------------------------------------------
 
-/** Flat dark background — no gradients per brand guidelines */
-function background(): VNode {
-  return div({
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: BG_DARK,
-  });
+let _font: Buffer | undefined;
+let _logo: string | undefined;
+
+function getFont(): Buffer {
+  if (!_font)
+    _font = readFileSync(resolve(root, "public/files/alata-latin-400-normal.woff"));
+  return _font;
 }
 
-/** Top header strip: section label left, logo pinned to top-right corner */
-function header(sectionLabel: string, logoBase64: string): VNode {
+async function getLogo(): Promise<string> {
+  if (!_logo) {
+    const raw = readFileSync(
+      resolve(root, "public/img/maplibre-logos/maplibre-logo-light-transparent-bg.png"),
+    );
+    _logo = (
+      await sharp(raw).resize({ width: LOGO_W, height: LOGO_H, fit: "fill" }).png().toBuffer()
+    ).toString("base64");
+  }
+  return _logo;
+}
+
+// ---------------------------------------------------------------------------
+// Minimal element-tree types (compatible with satori)
+// ---------------------------------------------------------------------------
+
+type Style = Record<string, string | number>;
+type VNodeChild = VNode | string | null;
+
+interface VNode {
+  type: string;
+  props: { style?: Style; children?: VNodeChild | VNodeChild[]; src?: string; alt?: string };
+}
+
+const div = (style: Style, ...children: VNodeChild[]): VNode => ({
+  type: "div",
+  props: {
+    style: { display: "flex", ...style },
+    children: children.filter(Boolean) as VNodeChild[],
+  },
+});
+
+const img = (src: string, style: Style): VNode => ({
+  type: "img",
+  props: { src, alt: "", style },
+});
+
+// ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
+
+/** Break a title into at most maxLines word-wrapped lines of at most maxChars. */
+function wrapTitle(text: string, maxChars: number, maxLines: number): string[] {
+  const lines: string[] = [];
+  let current = "";
+  for (const word of text.split(/\s+/)) {
+    if (lines.length === maxLines) break;
+    const next = current ? `${current} ${word}` : word;
+    if (next.length <= maxChars) {
+      current = next;
+    } else {
+      if (current) lines.push(current);
+      current = word;
+    }
+  }
+  if (current && lines.length < maxLines) lines.push(current);
+  return lines;
+}
+
+/** Kebab-case slug → Title Cased display label */
+export function toDisplayLabel(slug: string): string {
+  return slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+/**
+ * Natural-language author list (max 3 names shown):
+ *   1 → "Alice"          2 → "Alice and Bob"
+ *   3 → "Alice, Bob and Charlie"     4+ → "Alice, Bob, Charlie, …"
+ */
+function formatAuthors(names: string[]): string {
+  if (names.length === 1) return names[0];
+  if (names.length === 2) return `${names[0]} and ${names[1]}`;
+  if (names.length === 3) return `${names[0]}, ${names[1]} and ${names[2]}`;
+  return `${names[0]}, ${names[1]}, ${names[2]}, \u2026`;
+}
+
+// ---------------------------------------------------------------------------
+// Shared chrome
+// ---------------------------------------------------------------------------
+
+const background = (): VNode =>
+  div({ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, background: BG_DARK });
+
+/** Section label (top-left) + MapLibre logo (top-right), both at LOGO_PAD from edges. */
+function header(label: string, logo: string): VNode {
+  const underlineW = Math.round(label.length * (LABEL_SIZE * 0.6 + LABEL_SPACING));
   return div(
-    {
-      position: "absolute",
-      top: 0,
-      left: 0,
-      right: 0,
-      height: 80,
-    },
-    // Section label + underline (vertically centered in the strip)
+    { position: "absolute", top: 0, left: 0, right: 0, height: 80 },
     div(
-      {
-        position: "absolute",
-        top: 0,
-        left: 60,
-        bottom: 0,
-        alignItems: "center",
-      },
-      div(
-        { flexDirection: "column" },
-        div(
-          {
-            color: BLUE_ACCENT,
-            fontSize: SECTION_LABEL_FONT_SIZE,
-            letterSpacing: SECTION_LABEL_LETTER_SPACING,
-            fontFamily: FONT_FAMILY,
-          },
-          sectionLabel,
-        ),
-        div({
-          width: Math.round(sectionLabel.length * SECTION_LABEL_CHAR_WIDTH),
-          height: 1.5,
-          background: BLUE_ACCENT,
-          opacity: 0.5,
-          marginTop: 4,
-        }),
-      ),
+      { position: "absolute", top: LOGO_PAD, left: 60, flexDirection: "column" },
+      div({ color: BLUE_ACCENT, fontSize: LABEL_SIZE, letterSpacing: LABEL_SPACING, fontFamily: FONT }, label),
+      div({ width: underlineW, height: 1.5, background: BLUE_ACCENT, opacity: 0.5, marginTop: 4 }),
     ),
-    // MapLibre logo — pinned to top-right with equal padding on top and right
-    img(`data:image/png;base64,${logoBase64}`, {
-      position: "absolute",
-      top: LOGO_PADDING,
-      right: LOGO_PADDING,
-      width: LOGO_WIDTH,
-      height: LOGO_HEIGHT,
+    img(`data:image/png;base64,${logo}`, {
+      position: "absolute", top: LOGO_PAD, right: LOGO_PAD, width: LOGO_W, height: LOGO_H,
     }),
   );
 }
 
-/** Title block: render each wrapped line as a separate flex div */
-function titleBlock(
-  titleLines: string[],
-  fontSize: number,
-  style: Style = {},
-): VNode {
-  return div(
-    {
-      flexDirection: "column",
-      gap: Math.round(fontSize * TITLE_LINE_GAP_RATIO),
-      ...style,
-    },
-    ...titleLines.map((line) =>
-      div({ color: WHITE, fontSize, fontFamily: FONT_FAMILY }, line),
-    ),
+const titleBlock = (lines: string[], size: number): VNode =>
+  div(
+    { flexDirection: "column", gap: Math.round(size * TITLE_LINE_GAP) },
+    ...lines.map((line) => div({ color: WHITE, fontSize: size, fontFamily: FONT }, line)),
   );
-}
 
-/** Render the root VNode tree to a PNG buffer via satori + sharp */
-async function renderToPng(root: VNode): Promise<Buffer> {
-  const svg = await satori(root as unknown as Parameters<typeof satori>[0], {
+async function renderToPng(element: VNode): Promise<Buffer> {
+  const svg = await satori(element as unknown as Parameters<typeof satori>[0], {
     width: WIDTH,
     height: HEIGHT,
-    fonts: [
-      {
-        name: FONT_FAMILY,
-        data: getFontData(),
-        weight: 400,
-        style: "normal",
-      },
-    ],
+    fonts: [{ name: FONT, data: getFont(), weight: 400, style: "normal" }],
   });
   return sharp(Buffer.from(svg)).png().toBuffer();
 }
@@ -257,99 +169,43 @@ async function renderToPng(root: VNode): Promise<Buffer> {
 // Public API
 // ---------------------------------------------------------------------------
 
-/**
- * Generate an OG image for a news post.
- * @param authors - Real author display names (not slugs).
- */
+/** Generate an OG image for a news post. Pass real author display names, not slugs. */
 export async function generateNewsOgImage(opts: {
   title: string;
   date: Date;
-  categories: string[];
   authors: string[];
 }): Promise<Buffer> {
-  const { title, date, categories, authors } = opts;
-  const logoBase64 = await getLogoBase64();
+  const { title, date, authors } = opts;
+  const logo = await getLogo();
+  const lines = wrapTitle(title, TITLE_MAX_CHARS, 3);
+  const fontSize = lines.length === 1 ? 78 : lines.length === 2 ? 68 : 58;
 
-  const titleLines = wrapText(title, NEWS_TITLE_MAX_CHARS).slice(0, MAX_TITLE_LINES);
-  const fontSize =
-    titleLines.length === 1 ? 78 : titleLines.length === 2 ? 68 : 58;
-
-  const formattedDate = date.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
-
-  const categoryBadges =
-    categories.length > 0
-      ? div(
-          { gap: 12, flexWrap: "wrap" },
-          ...categories.slice(0, 4).map((cat) =>
-            div(
-              {
-                background: BLUE_PRIMARY,
-                borderRadius: 16,
-                padding: "7px 20px",
-                color: WHITE,
-                fontSize: 24,
-                fontFamily: FONT_FAMILY,
-              },
-              toDisplayLabel(cat),
-            ),
-          ),
-        )
-      : null;
-
-  const authorsLine =
-    authors.length > 0
-      ? div(
-          { color: WHITE, fontSize: 26, fontFamily: FONT_FAMILY },
-          authors.join(", "),
-        )
-      : null;
-
-  const dateLine = div(
-    { color: BLUE_ACCENT, fontSize: 26, fontFamily: FONT_FAMILY },
-    formattedDate,
-  );
-
-  const element = div(
-    {
-      position: "relative",
-      width: WIDTH,
-      height: HEIGHT,
-      fontFamily: FONT_FAMILY,
-      overflow: "hidden",
-    },
-    background(),
-    header("NEWS", logoBase64),
-    // Main content area
+  return renderToPng(
     div(
-      {
-        position: "absolute",
-        top: 100,
-        left: 60,
-        right: 60,
-        bottom: 50,
-        flexDirection: "column",
-        justifyContent: "space-between",
-      },
-      titleBlock(titleLines, fontSize),
+      { position: "relative", width: WIDTH, height: HEIGHT, overflow: "hidden" },
+      background(),
+      header("NEWS", logo),
       div(
-        { flexDirection: "column", gap: 14 },
-        categoryBadges,
-        authorsLine,
-        dateLine,
+        {
+          position: "absolute", top: 100, left: 60, right: 60, bottom: 50,
+          flexDirection: "column", justifyContent: "space-between",
+        },
+        titleBlock(lines, fontSize),
+        div(
+          { flexDirection: "column", gap: 14 },
+          div({ color: BLUE_ACCENT, fontSize: META_SIZE, fontFamily: FONT },
+            date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
+          ),
+          authors.length > 0
+            ? div({ color: WHITE, fontSize: META_SIZE, fontFamily: FONT }, `by ${formatAuthors(authors)}`)
+            : null,
+        ),
       ),
     ),
   );
-
-  return renderToPng(element);
 }
 
-/**
- * Generate an OG image for a roadmap item.
- */
+/** Generate an OG image for a roadmap item. */
 export async function generateRoadmapOgImage(opts: {
   title: string;
   project: string;
@@ -357,102 +213,52 @@ export async function generateRoadmapOgImage(opts: {
   heroImagePath?: string;
 }): Promise<Buffer> {
   const { title, project, status, heroImagePath } = opts;
-  const logoBase64 = await getLogoBase64();
-
-  const projectLabel = toDisplayLabel(project);
-  const statusLabel = toDisplayLabel(status);
+  const logo = await getLogo();
   const statusColor = STATUS_COLORS[status] ?? { bg: "#222", text: WHITE };
 
-  // Load + resize hero image if present
   let heroEl: VNode | null = null;
   if (heroImagePath) {
     try {
-      const heroBuffer = readFileSync(heroImagePath);
-      const heroResized = await sharp(heroBuffer)
-        .resize({
-          width: 400,
-          height: 350,
-          fit: "contain",
-          background: { r: 17, g: 23, b: 37, alpha: 1 },
-        })
+      const resized = await sharp(readFileSync(heroImagePath))
+        .resize({ width: 400, height: 350, fit: "contain", background: { r: 17, g: 23, b: 37, alpha: 1 } })
         .png()
         .toBuffer();
-      const heroBase64 = heroResized.toString("base64");
       heroEl = div(
-        {
-          position: "absolute",
-          top: 100,
-          right: 60,
-          width: 420,
-          height: 380,
-          borderRadius: 14,
-          overflow: "hidden",
-          background: BG_DARK,
-        },
-        img(`data:image/png;base64,${heroBase64}`, {
-          width: 420,
-          height: 380,
-        }),
+        { position: "absolute", top: 100, right: 60, width: 420, height: 380, borderRadius: 14, overflow: "hidden", background: BG_DARK },
+        img(`data:image/png;base64,${resized.toString("base64")}`, { width: 420, height: 380 }),
       );
-    } catch {
-      // ignore missing hero image
-    }
+    } catch { /* ignore missing hero image */ }
   }
 
-  const maxChars = heroEl ? ROADMAP_TITLE_MAX_CHARS_HERO : ROADMAP_TITLE_MAX_CHARS;
-  const titleLines = wrapText(title, maxChars).slice(0, 4);
-  const fontSize = titleLines.length <= 2 ? 72 : 60;
+  const lines = wrapTitle(title, heroEl ? TITLE_MAX_CHARS_HERO : TITLE_MAX_CHARS, 4);
+  const fontSize = lines.length <= 2 ? 72 : 60;
 
-  const statusBadge = div(
-    {
-      borderRadius: 18,
-      padding: "10px 24px",
-      background: statusColor.bg,
-      border: `1.5px solid ${statusColor.text}`,
-      color: statusColor.text,
-      fontSize: 24,
-      fontFamily: FONT_FAMILY,
-    },
-    statusLabel,
-  );
-
-  const element = div(
-    {
-      position: "relative",
-      width: WIDTH,
-      height: HEIGHT,
-      fontFamily: FONT_FAMILY,
-      overflow: "hidden",
-    },
-    background(),
-    heroEl,
-    header("ROADMAP", logoBase64),
-    // Main content area
+  return renderToPng(
     div(
-      {
-        position: "absolute",
-        top: 96,
-        left: 60,
-        right: heroEl ? 520 : 60,
-        bottom: 50,
-        flexDirection: "column",
-        justifyContent: "space-between",
-      },
+      { position: "relative", width: WIDTH, height: HEIGHT, overflow: "hidden" },
+      background(),
+      heroEl,
+      header("ROADMAP", logo),
       div(
-        { flexDirection: "column", gap: 16 },
+        {
+          position: "absolute", top: 96, left: 60, right: heroEl ? 520 : 60, bottom: 50,
+          flexDirection: "column", justifyContent: "space-between",
+        },
+        div(
+          { flexDirection: "column", gap: 16 },
+          div({ color: BLUE_ACCENT, fontSize: LABEL_SIZE, fontFamily: FONT }, toDisplayLabel(project)),
+          titleBlock(lines, fontSize),
+        ),
         div(
           {
-            color: BLUE_ACCENT,
-            fontSize: 28,
-            fontFamily: FONT_FAMILY,
+            borderRadius: 18, padding: "10px 24px",
+            background: statusColor.bg, border: `1.5px solid ${statusColor.text}`,
+            color: statusColor.text, fontSize: BADGE_SIZE, fontFamily: FONT,
           },
-          projectLabel,
+          toDisplayLabel(status),
         ),
-        titleBlock(titleLines, fontSize),
       ),
-      statusBadge,
     ),
   );
-
-  return renderToPng(element);
 }
+

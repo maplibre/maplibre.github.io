@@ -27,7 +27,6 @@ export const GET: APIRoute = async ({ props }) => {
   const png = await generateNewsOgImage({
     title: post.data.title,
     date: post.data.date,
-    categories: post.data.categories,
     authors: authorNames,
   });
 
