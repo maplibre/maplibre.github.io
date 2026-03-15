@@ -125,9 +125,11 @@ const FONT_FAMILY = "Alata";
 // Logo source is 1454×417; rendered at LOGO_WIDTH wide (aspect ratio preserved)
 const LOGO_WIDTH = 210;
 const LOGO_HEIGHT = Math.round(LOGO_WIDTH * (417 / 1454)); // = 60
+// Equal padding applied to both the top and right edges of the logo
+const LOGO_PADDING = 24;
 
 // Section label typography constants
-const SECTION_LABEL_FONT_SIZE = 20;
+const SECTION_LABEL_FONT_SIZE = 28;
 const SECTION_LABEL_LETTER_SPACING = 5;
 // Approximate px advance per character for Alata at the label font size + letter spacing
 const SECTION_LABEL_CHAR_WIDTH =
@@ -135,6 +137,14 @@ const SECTION_LABEL_CHAR_WIDTH =
 
 // Title line gap as a fraction of font size (20% produces comfortable leading)
 const TITLE_LINE_GAP_RATIO = 0.2;
+
+// Maximum number of title lines before text is truncated
+const MAX_TITLE_LINES = 3;
+// Maximum characters per line for news titles (tightened to fit larger font sizes)
+const NEWS_TITLE_MAX_CHARS = 26;
+// Maximum characters per roadmap title line with/without a hero image
+const ROADMAP_TITLE_MAX_CHARS_HERO = 20;
+const ROADMAP_TITLE_MAX_CHARS = 26;
 
 const STATUS_COLORS: Record<string, { bg: string; text: string }> = {
   "in-progress": { bg: "#1a4a20", text: "#4caf50" },
@@ -158,7 +168,7 @@ function background(): VNode {
   });
 }
 
-/** Top header strip: section label left, logo right */
+/** Top header strip: section label left, logo pinned to top-right corner */
 function header(sectionLabel: string, logoBase64: string): VNode {
   return div(
     {
@@ -167,32 +177,41 @@ function header(sectionLabel: string, logoBase64: string): VNode {
       left: 0,
       right: 0,
       height: 80,
-      alignItems: "center",
-      justifyContent: "space-between",
-      padding: "0 60px",
     },
-    // Section label + underline
+    // Section label + underline (vertically centered in the strip)
     div(
-      { flexDirection: "column" },
+      {
+        position: "absolute",
+        top: 0,
+        left: 60,
+        bottom: 0,
+        alignItems: "center",
+      },
       div(
-        {
-          color: BLUE_ACCENT,
-          fontSize: SECTION_LABEL_FONT_SIZE,
-          letterSpacing: SECTION_LABEL_LETTER_SPACING,
-          fontFamily: FONT_FAMILY,
-        },
-        sectionLabel,
+        { flexDirection: "column" },
+        div(
+          {
+            color: BLUE_ACCENT,
+            fontSize: SECTION_LABEL_FONT_SIZE,
+            letterSpacing: SECTION_LABEL_LETTER_SPACING,
+            fontFamily: FONT_FAMILY,
+          },
+          sectionLabel,
+        ),
+        div({
+          width: Math.round(sectionLabel.length * SECTION_LABEL_CHAR_WIDTH),
+          height: 1.5,
+          background: BLUE_ACCENT,
+          opacity: 0.5,
+          marginTop: 4,
+        }),
       ),
-      div({
-        width: Math.round(sectionLabel.length * SECTION_LABEL_CHAR_WIDTH),
-        height: 1.5,
-        background: BLUE_ACCENT,
-        opacity: 0.5,
-        marginTop: 4,
-      }),
     ),
-    // MapLibre logo — exact aspect ratio, no squishing
+    // MapLibre logo — pinned to top-right with equal padding on top and right
     img(`data:image/png;base64,${logoBase64}`, {
+      position: "absolute",
+      top: LOGO_PADDING,
+      right: LOGO_PADDING,
       width: LOGO_WIDTH,
       height: LOGO_HEIGHT,
     }),
@@ -251,36 +270,28 @@ export async function generateNewsOgImage(opts: {
   const { title, date, categories, authors } = opts;
   const logoBase64 = await getLogoBase64();
 
-  const titleLines = wrapText(title, 30).slice(0, 3);
+  const titleLines = wrapText(title, NEWS_TITLE_MAX_CHARS).slice(0, MAX_TITLE_LINES);
   const fontSize =
-    titleLines.length === 1 ? 62 : titleLines.length === 2 ? 55 : 48;
+    titleLines.length === 1 ? 78 : titleLines.length === 2 ? 68 : 58;
 
   const formattedDate = date.toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
     year: "numeric",
   });
-  const metaLine = [
-    formattedDate,
-    authors.length > 0
-      ? `by ${authors.slice(0, 2).join(", ")}${authors.length > 2 ? ` +${authors.length - 2} more` : ""}`
-      : "",
-  ]
-    .filter(Boolean)
-    .join("  ·  ");
 
   const categoryBadges =
     categories.length > 0
       ? div(
-          { gap: 10, flexWrap: "wrap" },
+          { gap: 12, flexWrap: "wrap" },
           ...categories.slice(0, 4).map((cat) =>
             div(
               {
                 background: BLUE_PRIMARY,
                 borderRadius: 16,
-                padding: "6px 16px",
+                padding: "7px 20px",
                 color: WHITE,
-                fontSize: 15,
+                fontSize: 24,
                 fontFamily: FONT_FAMILY,
               },
               toDisplayLabel(cat),
@@ -288,6 +299,19 @@ export async function generateNewsOgImage(opts: {
           ),
         )
       : null;
+
+  const authorsLine =
+    authors.length > 0
+      ? div(
+          { color: WHITE, fontSize: 26, fontFamily: FONT_FAMILY },
+          authors.join(", "),
+        )
+      : null;
+
+  const dateLine = div(
+    { color: BLUE_ACCENT, fontSize: 26, fontFamily: FONT_FAMILY },
+    formattedDate,
+  );
 
   const element = div(
     {
@@ -312,9 +336,10 @@ export async function generateNewsOgImage(opts: {
       },
       titleBlock(titleLines, fontSize),
       div(
-        { flexDirection: "column", gap: 12 },
+        { flexDirection: "column", gap: 14 },
         categoryBadges,
-        div({ color: WHITE, fontSize: 19, fontFamily: FONT_FAMILY }, metaLine),
+        authorsLine,
+        dateLine,
       ),
     ),
   );
@@ -374,18 +399,18 @@ export async function generateRoadmapOgImage(opts: {
     }
   }
 
-  const maxChars = heroEl ? 22 : 30;
+  const maxChars = heroEl ? ROADMAP_TITLE_MAX_CHARS_HERO : ROADMAP_TITLE_MAX_CHARS;
   const titleLines = wrapText(title, maxChars).slice(0, 4);
-  const fontSize = titleLines.length <= 2 ? 55 : 46;
+  const fontSize = titleLines.length <= 2 ? 72 : 60;
 
   const statusBadge = div(
     {
       borderRadius: 18,
-      padding: "8px 20px",
+      padding: "10px 24px",
       background: statusColor.bg,
       border: `1.5px solid ${statusColor.text}`,
       color: statusColor.text,
-      fontSize: 16,
+      fontSize: 24,
       fontFamily: FONT_FAMILY,
     },
     statusLabel,
@@ -418,7 +443,7 @@ export async function generateRoadmapOgImage(opts: {
         div(
           {
             color: BLUE_ACCENT,
-            fontSize: 21,
+            fontSize: 28,
             fontFamily: FONT_FAMILY,
           },
           projectLabel,
