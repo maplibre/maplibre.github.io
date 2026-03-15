@@ -26,15 +26,15 @@ const LOGO_PAD = 24;
 
 const LABEL_SIZE = 28;
 const LABEL_SPACING = 5;
-const META_SIZE = 26;   // date + authors
-const BADGE_SIZE = 24;  // roadmap status badge
+const META_SIZE = 26; // date + authors
+const BADGE_SIZE = 24; // roadmap status badge
 const TITLE_MAX_CHARS = 26;
 const TITLE_MAX_CHARS_HERO = 20; // narrower when a hero image is present
-const TITLE_LINE_GAP = 0.2;      // fraction of font size
+const TITLE_LINE_GAP = 0.2; // fraction of font size
 
 const STATUS_COLORS: Record<string, { bg: string; text: string }> = {
-  "in-progress":         { bg: "#1a4a20", text: "#4caf50" },
-  released:              { bg: "#1a2d4a", text: BLUE_ACCENT },
+  "in-progress": { bg: "#1a4a20", text: "#4caf50" },
+  released: { bg: "#1a2d4a", text: BLUE_ACCENT },
   "under-consideration": { bg: "#2a2a1a", text: "#f0c040" },
 };
 
@@ -43,17 +43,25 @@ let _logo: string | undefined;
 
 function getFont(): Buffer {
   if (!_font)
-    _font = readFileSync(resolve(root, "public/files/alata-latin-400-normal.woff"));
+    _font = readFileSync(
+      resolve(root, "public/files/alata-latin-400-normal.woff"),
+    );
   return _font;
 }
 
 async function getLogo(): Promise<string> {
   if (!_logo) {
     const raw = readFileSync(
-      resolve(root, "public/img/maplibre-logos/maplibre-logo-light-transparent-bg.png"),
+      resolve(
+        root,
+        "public/img/maplibre-logos/maplibre-logo-light-transparent-bg.png",
+      ),
     );
     _logo = (
-      await sharp(raw).resize({ width: LOGO_W, height: LOGO_H, fit: "fill" }).png().toBuffer()
+      await sharp(raw)
+        .resize({ width: LOGO_W, height: LOGO_H, fit: "fill" })
+        .png()
+        .toBuffer()
     ).toString("base64");
   }
   return _logo;
@@ -64,7 +72,12 @@ type VNodeChild = VNode | string | null;
 
 interface VNode {
   type: string;
-  props: { style?: Style; children?: VNodeChild | VNodeChild[]; src?: string; alt?: string };
+  props: {
+    style?: Style;
+    children?: VNodeChild | VNodeChild[];
+    src?: string;
+    alt?: string;
+  };
 }
 
 const div = (style: Style, ...children: VNodeChild[]): VNode => ({
@@ -118,20 +131,52 @@ function formatAuthors(names: string[]): string {
 }
 
 const background = (): VNode =>
-  div({ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, background: BG_DARK });
+  div({
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: BG_DARK,
+  });
 
 /** Section label (top-left) + MapLibre logo (top-right), both at LOGO_PAD from edges. */
 function header(label: string, logo: string): VNode {
-  const underlineW = Math.round(label.length * (LABEL_SIZE * 0.6 + LABEL_SPACING));
+  const underlineW = Math.round(
+    label.length * (LABEL_SIZE * 0.6 + LABEL_SPACING),
+  );
   return div(
     { position: "absolute", top: 0, left: 0, right: 0, height: 80 },
     div(
-      { position: "absolute", top: LOGO_PAD, left: 60, flexDirection: "column" },
-      div({ color: BLUE_ACCENT, fontSize: LABEL_SIZE, letterSpacing: LABEL_SPACING, fontFamily: FONT }, label),
-      div({ width: underlineW, height: 1.5, background: BLUE_ACCENT, opacity: 0.5, marginTop: 4 }),
+      {
+        position: "absolute",
+        top: LOGO_PAD,
+        left: 60,
+        flexDirection: "column",
+      },
+      div(
+        {
+          color: BLUE_ACCENT,
+          fontSize: LABEL_SIZE,
+          letterSpacing: LABEL_SPACING,
+          fontFamily: FONT,
+        },
+        label,
+      ),
+      div({
+        width: underlineW,
+        height: 1.5,
+        background: BLUE_ACCENT,
+        opacity: 0.5,
+        marginTop: 4,
+      }),
     ),
     img(`data:image/png;base64,${logo}`, {
-      position: "absolute", top: LOGO_PAD, right: LOGO_PAD, width: LOGO_W, height: LOGO_H,
+      position: "absolute",
+      top: LOGO_PAD,
+      right: LOGO_PAD,
+      width: LOGO_W,
+      height: LOGO_H,
     }),
   );
 }
@@ -139,7 +184,9 @@ function header(label: string, logo: string): VNode {
 const titleBlock = (lines: string[], size: number): VNode =>
   div(
     { flexDirection: "column", gap: Math.round(size * TITLE_LINE_GAP) },
-    ...lines.map((line) => div({ color: WHITE, fontSize: size, fontFamily: FONT }, line)),
+    ...lines.map((line) =>
+      div({ color: WHITE, fontSize: size, fontFamily: FONT }, line),
+    ),
   );
 
 async function renderToPng(element: VNode): Promise<Buffer> {
@@ -163,22 +210,40 @@ export async function generateNewsOgImage(opts: {
 
   return renderToPng(
     div(
-      { position: "relative", width: WIDTH, height: HEIGHT, overflow: "hidden" },
+      {
+        position: "relative",
+        width: WIDTH,
+        height: HEIGHT,
+        overflow: "hidden",
+      },
       background(),
       header("NEWS", logo),
       div(
         {
-          position: "absolute", top: 100, left: 60, right: 60, bottom: 50,
-          flexDirection: "column", justifyContent: "space-between",
+          position: "absolute",
+          top: 100,
+          left: 60,
+          right: 60,
+          bottom: 50,
+          flexDirection: "column",
+          justifyContent: "space-between",
         },
         titleBlock(lines, fontSize),
         div(
           { flexDirection: "column", gap: 14 },
-          div({ color: BLUE_ACCENT, fontSize: META_SIZE, fontFamily: FONT },
-            date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
+          div(
+            { color: BLUE_ACCENT, fontSize: META_SIZE, fontFamily: FONT },
+            date.toLocaleDateString("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            }),
           ),
           authors.length > 0
-            ? div({ color: WHITE, fontSize: META_SIZE, fontFamily: FONT }, `by ${formatAuthors(authors)}`)
+            ? div(
+                { color: WHITE, fontSize: META_SIZE, fontFamily: FONT },
+                `by ${formatAuthors(authors)}`,
+              )
             : null,
         ),
       ),
@@ -200,40 +265,80 @@ export async function generateRoadmapOgImage(opts: {
   if (heroImagePath) {
     try {
       const resized = await sharp(readFileSync(heroImagePath))
-        .resize({ width: 400, height: 350, fit: "contain", background: { r: 17, g: 23, b: 37, alpha: 1 } })
+        .resize({
+          width: 400,
+          height: 350,
+          fit: "contain",
+          background: { r: 17, g: 23, b: 37, alpha: 1 },
+        })
         .png()
         .toBuffer();
       heroEl = div(
-        { position: "absolute", top: 100, right: 60, width: 420, height: 380, borderRadius: 14, overflow: "hidden", background: BG_DARK },
-        img(`data:image/png;base64,${resized.toString("base64")}`, { width: 420, height: 380 }),
+        {
+          position: "absolute",
+          top: 100,
+          right: 60,
+          width: 420,
+          height: 380,
+          borderRadius: 14,
+          overflow: "hidden",
+          background: BG_DARK,
+        },
+        img(`data:image/png;base64,${resized.toString("base64")}`, {
+          width: 420,
+          height: 380,
+        }),
       );
-    } catch { /* ignore missing hero image */ }
+    } catch {
+      /* ignore missing hero image */
+    }
   }
 
-  const lines = wrapTitle(title, heroEl ? TITLE_MAX_CHARS_HERO : TITLE_MAX_CHARS, 4);
+  const lines = wrapTitle(
+    title,
+    heroEl ? TITLE_MAX_CHARS_HERO : TITLE_MAX_CHARS,
+    4,
+  );
   const fontSize = lines.length <= 2 ? 72 : 60;
 
   return renderToPng(
     div(
-      { position: "relative", width: WIDTH, height: HEIGHT, overflow: "hidden" },
+      {
+        position: "relative",
+        width: WIDTH,
+        height: HEIGHT,
+        overflow: "hidden",
+      },
       background(),
       heroEl,
       header("ROADMAP", logo),
       div(
         {
-          position: "absolute", top: 96, left: 60, right: heroEl ? 520 : 60, bottom: 50,
-          flexDirection: "column", justifyContent: "space-between",
+          position: "absolute",
+          top: 96,
+          left: 60,
+          right: heroEl ? 520 : 60,
+          bottom: 50,
+          flexDirection: "column",
+          justifyContent: "space-between",
         },
         div(
           { flexDirection: "column", gap: 16 },
-          div({ color: BLUE_ACCENT, fontSize: LABEL_SIZE, fontFamily: FONT }, toDisplayLabel(project)),
+          div(
+            { color: BLUE_ACCENT, fontSize: LABEL_SIZE, fontFamily: FONT },
+            toDisplayLabel(project),
+          ),
           titleBlock(lines, fontSize),
         ),
         div(
           {
-            borderRadius: 18, padding: "10px 24px",
-            background: statusColor.bg, border: `1.5px solid ${statusColor.text}`,
-            color: statusColor.text, fontSize: BADGE_SIZE, fontFamily: FONT,
+            borderRadius: 18,
+            padding: "10px 24px",
+            background: statusColor.bg,
+            border: `1.5px solid ${statusColor.text}`,
+            color: statusColor.text,
+            fontSize: BADGE_SIZE,
+            fontFamily: FONT,
           },
           toDisplayLabel(status),
         ),
@@ -241,4 +346,3 @@ export async function generateRoadmapOgImage(opts: {
     ),
   );
 }
-
