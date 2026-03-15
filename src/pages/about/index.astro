@@ -57,14 +57,31 @@ import { BoardSection, TeamSection } from "../../components/BoardAndTeam";
           Find quarterly financial reports in the
           <a href="/about/reports">Reports</a> page.
         </p>
-        <!-- min-height reserves space for each client-only section while JS is loading,
-             preventing content below from shifting up then jumping down (CLS).
-             Each section is sized independently: ~400px covers one avatar row + heading + text. -->
-        <div style="min-height: 400px;">
-          <BoardSection board={board} client:only />
+        <h1 class="text-center pt-3">Governing Board</h1>
+        <div class="text-center container pb-3 px-2">
+          <!-- min-height reserves space for the client-only avatar list while JS is loading,
+               preventing content below from shifting up then jumping down (CLS). -->
+          <div style="min-height: 200px;">
+            <BoardSection board={board} client:only />
+          </div>
         </div>
-        <div style="min-height: 400px;">
-          <TeamSection team={team} client:only />
+        <p class="text-center">
+          In charge of steering the Organization is the&nbsp;
+          <a href="https://maplibre.org/about/">MapLibre Governing Board</a>.
+          <br />
+          They are elected by&nbsp;
+          <a
+            href="https://github.com/maplibre/maplibre/blob/main/VOTING_MEMBERS.md"
+            >Voting Members</a
+          >, a group who represents the broader community.
+        </p>
+        <h1 class="text-center pt-4">Team</h1>
+        <div class="container pb-5 pt-2">
+          <!-- min-height reserves space for the client-only avatar list while JS is loading,
+               preventing content below from shifting up then jumping down (CLS). -->
+          <div style="min-height: 200px;">
+            <TeamSection team={team} client:only />
+          </div>
         </div>
         <div class="text-center">
           <h1 id="brand-assets" class="text-center pt-3">Brand Assets</h1>
