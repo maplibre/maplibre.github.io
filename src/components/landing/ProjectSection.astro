@@ -45,8 +45,8 @@ const titleText = title.replace(/<[^>]+>/g, "");
         <slot name="description" />
         {
           href && (
-            <div class="position-relative z-2 text-center pb-3">
-              <a href={href} class="read-more-link">Read more</a>
+            <div class="position-relative z-2 text-start pt-2 fw-bold">
+              <a href={href} class="read-more-link">Read more...</a>
             </div>
           )
         }
