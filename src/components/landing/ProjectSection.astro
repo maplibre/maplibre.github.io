@@ -49,6 +49,13 @@ const titleText = title.replace(/<[^>]+>/g, "");
           <slot name="badges" />
         </div>
         <br /><br />
+        {
+          href && (
+            <div class="position-relative z-2 text-center pb-3">
+              <a href={href} class="read-more-link">Read more</a>
+            </div>
+          )
+        }
       </div>
     </div>
     <div class="col-md-12 col-lg-6" style={fullVisualStyle || undefined}>
@@ -64,5 +71,9 @@ const titleText = title.replace(/<[^>]+>/g, "");
     &:hover {
       background-color: #111422;
     }
+  }
+
+  .read-more-link {
+    color: #95befa;
   }
 </style>
