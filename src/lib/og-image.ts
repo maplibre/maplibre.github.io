@@ -172,13 +172,10 @@ export const titleBlock = (lines: string[], size: number): VNode =>
   );
 
 export async function renderToPng(element: VNode): Promise<Buffer> {
-  const svg = await satori(
-    element as unknown as Parameters<typeof satori>[0],
-    {
-      width: WIDTH,
-      height: HEIGHT,
-      fonts: [{ name: FONT, data: getFont(), weight: 400, style: "normal" }],
-    },
-  );
+  const svg = await satori(element as unknown as Parameters<typeof satori>[0], {
+    width: WIDTH,
+    height: HEIGHT,
+    fonts: [{ name: FONT, data: getFont(), weight: 400, style: "normal" }],
+  });
   return sharp(Buffer.from(svg)).png().toBuffer();
 }
