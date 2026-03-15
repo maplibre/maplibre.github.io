@@ -79,7 +79,7 @@ const div = (style: Style, ...children: VNodeChild[]): VNode => ({
   type: "div",
   props: {
     style: { display: "flex", ...style },
-    children: children.filter(Boolean) as VNodeChild[],
+    children: children.filter((c) => c !== null) as VNodeChild[],
   },
 });
 
