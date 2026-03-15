@@ -1,10 +1,9 @@
 import { onMount } from "solid-js";
 import { shuffleList } from "../utils/shuffleList";
 
-export const BoardAndTeam = (props: { board: any[]; team: any[] }) => {
+export const BoardSection = (props: { board: any[] }) => {
   onMount(() => {
     shuffleList(".board-list");
-    shuffleList(".team-list");
   });
 
   return (
@@ -42,30 +41,38 @@ export const BoardAndTeam = (props: { board: any[]; team: any[] }) => {
           </a>
           , a group who represents the broader community.
         </p>
-        <div>
-          <h1 class="text-center pt-4">Team</h1>
+      </div>
+    </>
+  );
+};
 
-          <div class="container pb-5 pt-2">
-            <div
-              class="team-list justify-content-center"
-              style="display:flex; gap: 20px; flex-wrap: wrap;"
-            >
-              {props.team.map((member) => (
-                <div class="text-center person">
-                  <a href={`/about/${member.link}`}>
-                    <img
-                      src={member.avatar}
-                      width="150"
-                      height="150"
-                      class="rounded-circle mt-3 border border-white"
-                    />
-                    <h3 class="m-3">{member.name}</h3>
-                    {member.position}
-                  </a>
-                </div>
-              ))}
+export const TeamSection = (props: { team: any[] }) => {
+  onMount(() => {
+    shuffleList(".team-list");
+  });
+
+  return (
+    <>
+      <h1 class="text-center pt-4">Team</h1>
+      <div class="container pb-5 pt-2">
+        <div
+          class="team-list justify-content-center"
+          style="display:flex; gap: 20px; flex-wrap: wrap;"
+        >
+          {props.team.map((member) => (
+            <div class="text-center person">
+              <a href={`/about/${member.link}`}>
+                <img
+                  src={member.avatar}
+                  width="150"
+                  height="150"
+                  class="rounded-circle mt-3 border border-white"
+                />
+                <h3 class="m-3">{member.name}</h3>
+                {member.position}
+              </a>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </>
