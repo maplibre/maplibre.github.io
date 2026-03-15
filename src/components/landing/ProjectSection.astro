@@ -43,12 +43,6 @@ const titleText = title.replace(/<[^>]+>/g, "");
         <h1 style="color: white;" set:html={title} />
 
         <slot name="description" />
-        <br /><br />
-
-        <div class:list={[{ "position-relative z-2": !!href }]}>
-          <slot name="badges" />
-        </div>
-        <br /><br />
         {
           href && (
             <div class="position-relative z-2 text-center pb-3">
@@ -56,6 +50,12 @@ const titleText = title.replace(/<[^>]+>/g, "");
             </div>
           )
         }
+        <br /><br />
+
+        <div class:list={[{ "position-relative z-2": !!href }]}>
+          <slot name="badges" />
+        </div>
+        <br /><br />
       </div>
     </div>
     <div class="col-md-12 col-lg-6" style={fullVisualStyle || undefined}>
