@@ -12,6 +12,8 @@ import StatCard from "../../components/StatCard.astro";
 import UserLogo from "../../components/UserLogo.astro";
 import { fetchGitHubSponsors, fetchRepoStats } from "../../data/github";
 import { fetchDonors } from "../../data/opencollective";
+import GitHubBadge from "../../components/landing/GitHubBadge.astro";
+import LinkBadge from "../../components/landing/LinkBadge.astro";
 import {
   goldSponsors,
   pastSponsors,
@@ -523,39 +525,30 @@ const softwareJsonLd = toJsonLd({
         Documentation, examples, and resources to get started with MapLibre
         Native across all supported platforms and integrations.
       </p>
-      <LinkBadge href="https://github.com/maplibre/maplibre-native" />
-      <LinkBadge
-        href="https://maplibre.org/maplibre-gl-js/docs/examples/"
-        LinkBadgeles<
-        LinkBadge
-        >LinkBadge
+      <div class="d-flex flex-wrap justify-content-center gap-4">
+        <GitHubBadge href="https://github.com/maplibre/maplibre-native" />
+        <LinkBadge href="https://maplibre.org/maplibre-native/android/api/"
+          >Android API</LinkBadge
+        >
+        <LinkBadge href="https://maplibre.org/maplibre-native/android/examples/"
+          >Android Examples</LinkBadge
+        >
+        <LinkBadge href="https://maplibre.org/maplibre-native/docs/book/"
+          >Developer Guide</LinkBadge
+        >
         <LinkBadge
-          href="https://maplibre.org/maplibre-native/android/api/"
-          LinkBadgeid
-          API<
-          LinkBadge
-          >LinkBadge
-          <LinkBadge
-            href="https://maplibre.org/maplibre-native/android/examples/"
-            >Android Examples</LinkBadge
-          >
-          <LinkBadge href="https://maplibre.org/maplibre-native/docs/book/"
-            >Documentation</LinkBadge
-          >
-          <LinkBadge
-            href="https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre"
-            >iOS Documentation</LinkBadge
-          >
-          <LinkBadge href="https://maplibre.org/maplibre-native/ios/api/"
-            >iOS API</LinkBadge
-          >
-        </LinkBadge>
-      </LinkBadge>
+          href="https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre"
+          >iOS Documentation</LinkBadge
+        >
+        <LinkBadge href="https://maplibre.org/maplibre-native/ios/api/"
+          >iOS API</LinkBadge
+        >
+      </div>
     </div>
   </section>
-  href="https://maplibre.org/maplibre-native/cpp/api/" class="text-decoration-none
-  text-white" > Core C++ API
 </Layout>
+href="https://maplibre.org/maplibre-native/cpp/api/" class="text-decoration-none text-white"
+> Core C++ API
 
 <span class="badge bg-primary fs-6 p-2">
   <a
