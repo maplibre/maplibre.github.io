@@ -6,13 +6,11 @@ interface Props {
 const { href } = Astro.props;
 ---
 
-<a href={href} class="link-badge"><slot /></a>
+<a href={href} class="link-badge text-decoration-none text-nowrap"><slot /></a>
 
 <style>
   .link-badge {
     color: #95befa;
-    text-decoration: none;
-    white-space: nowrap;
 
     &:hover {
       text-decoration: underline;
