@@ -50,14 +50,14 @@ const titleText = title.replace(/<[^>]+>/g, "");
         <div
           class:list={[
             { "position-relative z-2": !!href },
-            "d-flex flex-wrap align-items-center justify-content-center justify-content-sm-start column-gap-5 row-gap-3",
+            "row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-5 gy-3 text-center text-lg-start",
           ]}
         >
           <slot name="badges" />
         </div>
         {
           href && (
-            <div class="position-relative z-2 pt-4 pb-3 text-center text-sm-start">
+            <div class="position-relative z-2 pt-4 pb-3 text-center text-lg-start">
               <a href={href} class="explore-btn">
                 Explore {titleText}
                 <Icon
