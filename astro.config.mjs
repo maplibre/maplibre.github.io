@@ -8,8 +8,15 @@ import astroBrokenLinksChecker from "astro-broken-links-checker";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
+const IOS_DOCS_URL =
+  "https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre";
+
 export default defineConfig({
   base: "",
+  redirects: {
+    "/maplibre-native/ios/api": IOS_DOCS_URL,
+    "/maplibre-native/ios/api/": IOS_DOCS_URL,
+  },
   integrations: [
     mdx({
       rehypePlugins: [
