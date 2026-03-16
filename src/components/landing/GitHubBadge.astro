@@ -6,7 +6,10 @@ interface Props {
 const { href } = Astro.props;
 ---
 
-<a href={href} class="github-badge">
+<a
+  href={href}
+  class="github-badge d-inline-flex align-items-center gap-1 text-decoration-none text-nowrap justify-content-center justify-content-lg-start lh-1 align-middle"
+>
   <svg
     role="img"
     class="inline-icon"
@@ -24,13 +27,6 @@ const { href } = Astro.props;
 <style>
   .github-badge {
     color: #95befa;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    vertical-align: middle;
-    line-height: 1;
-    white-space: nowrap;
 
     &:hover {
       text-decoration: underline;
