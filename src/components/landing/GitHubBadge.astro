@@ -8,7 +8,7 @@ const { href } = Astro.props;
 
 <a
   href={href}
-  class="github-badge d-inline-flex align-items-center gap-1 text-decoration-none text-nowrap justify-content-center justify-content-lg-start lh-1 align-middle"
+  class="github-badge text-decoration-none text-nowrap justify-content-center justify-content-lg-start"
 >
   <svg
     role="img"
@@ -27,6 +27,10 @@ const { href } = Astro.props;
 <style>
   .github-badge {
     color: #95befa;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    line-height: 1;
 
     &:hover {
       text-decoration: underline;
