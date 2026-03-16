@@ -1,12 +1,10 @@
 import satori from "satori";
 import sharp from "sharp";
 import { readFileSync } from "fs";
-import { fileURLToPath } from "url";
-import { resolve, dirname } from "path";
+import { resolve } from "path";
 import { BRAND_BG, BRAND_BLUE } from "../constants";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const root = resolve(__dirname, "../..");
+const root = process.cwd();
 
 const WIDTH = 1200;
 const HEIGHT = 630;
