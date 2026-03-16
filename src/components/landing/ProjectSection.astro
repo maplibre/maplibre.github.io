@@ -97,7 +97,12 @@ const titleText = title.replace(/<[^>]+>/g, "");
     @media (max-width: 575.98px) {
       grid-template-columns: repeat(2, max-content);
       justify-content: center;
+      justify-items: center;
       text-align: center;
+    }
+
+    @media (max-width: 399.98px) {
+      grid-template-columns: 1fr;
     }
   }
 
