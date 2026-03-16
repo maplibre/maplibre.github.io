@@ -49,15 +49,15 @@ const titleText = title.replace(/<[^>]+>/g, "");
 
         <div
           class:list={[
-            { "position-relative z-2 gap": !!href },
-            "badges-container",
+            { "position-relative z-2": !!href },
+            "d-flex flex-wrap align-items-center justify-content-center justify-content-sm-start column-gap-5 row-gap-3",
           ]}
         >
           <slot name="badges" />
         </div>
         {
           href && (
-            <div class="position-relative z-2 pt-4 pb-3 explore-btn-wrapper">
+            <div class="position-relative z-2 pt-4 pb-3 text-center text-sm-start">
               <a href={href} class="explore-btn">
                 Explore {titleText}
                 <Icon
@@ -88,24 +88,6 @@ const titleText = title.replace(/<[^>]+>/g, "");
     }
   }
 
-  .badges-container {
-    display: grid;
-    grid-template-columns: repeat(3, max-content);
-    gap: 0.8rem 3rem;
-    align-items: center;
-
-    @media (max-width: 575.98px) {
-      grid-template-columns: repeat(2, max-content);
-      justify-content: center;
-      justify-items: center;
-      text-align: center;
-    }
-
-    @media (max-width: 399.98px) {
-      grid-template-columns: repeat(1, max-content);
-    }
-  }
-
   .explore-btn {
     display: inline-flex;
     align-items: center;
@@ -119,12 +101,6 @@ const titleText = title.replace(/<[^>]+>/g, "");
 
     &:hover {
       background-color: #3470c4;
-    }
-  }
-
-  .explore-btn-wrapper {
-    @media (max-width: 399.98px) {
-      text-align: center;
     }
   }
 </style>
