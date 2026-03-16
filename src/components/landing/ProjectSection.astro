@@ -57,7 +57,7 @@ const titleText = title.replace(/<[^>]+>/g, "");
         </div>
         {
           href && (
-            <div class="position-relative z-2 pt-4 pb-3">
+            <div class="position-relative z-2 pt-4 pb-3 explore-btn-wrapper">
               <a href={href} class="explore-btn">
                 Explore {titleText}
                 <Icon
@@ -119,6 +119,12 @@ const titleText = title.replace(/<[^>]+>/g, "");
 
     &:hover {
       background-color: #3470c4;
+    }
+  }
+
+  .explore-btn-wrapper {
+    @media (max-width: 399.98px) {
+      text-align: center;
     }
   }
 </style>
