@@ -1,4 +1,7 @@
 ---
+import GitHubBadge from "../components/landing/GitHubBadge.astro";
+import LinkBadge from "../components/landing/LinkBadge.astro";
+
 interface Donor {
   name: string;
 }
@@ -16,13 +19,36 @@ const { donors } = Astro.props;
       <h2 class="mt-6">Individual Donors</h2>
       <p>
         Thank you to everyone who has donated to MapLibre on{" "}
-        <a href="https://opencollective.com/maplibre">OpenCollective</a> or{" "}
-        <a href="https://github.com/sponsors/maplibre">GitHub Sponsors</a>!
+        <a
+          class="btn btn-sm btn-link"
+          href="https://opencollective.com/maplibre"
+        >
+          OpenCollective
+        </a>{" "}
+        or{" "}
+        <a
+          class="btn btn-sm btn-link"
+          href="https://github.com/sponsors/maplibre"
+        >
+          GitHub Sponsors
+        </a>{" "}
+        💙!
       </p>
-      <p class="text-secondary fst-italic small mb-3">
-        Listed by donation amount. Want to be on this list?{" "}
-        <a href="https://opencollective.com/maplibre">OpenCollective</a> ·{" "}
-        <a href="https://github.com/sponsors/maplibre">GitHub Sponsors</a>
+      <p class="text-dark fst-italic small mb-3">
+        Listed by donation amount. <b class="fw-bold">Want to be on this list?</b>{" "}
+        <a
+          class="btn btn-sm btn-link fw-bold text-secondary"
+          href="https://opencollective.com/maplibre"
+        >
+          OpenCollective
+        </a>{" "}
+        ·{" "}
+        <a
+          class="btn btn-sm btn-link fw-bold text-secondary"
+          href="https://github.com/sponsors/maplibre"
+        >
+          GitHub Sponsors
+        </a>
       </p>
       <div class="d-flex flex-wrap gap-2">
         {donors.map((donor) => (
