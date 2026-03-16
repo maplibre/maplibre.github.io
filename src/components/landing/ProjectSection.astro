@@ -93,6 +93,12 @@ const titleText = title.replace(/<[^>]+>/g, "");
     grid-template-columns: repeat(3, max-content);
     gap: 0.8rem 3rem;
     align-items: center;
+
+    @media (max-width: 575.98px) {
+      grid-template-columns: repeat(2, max-content);
+      justify-content: center;
+      text-align: center;
+    }
   }
 
   .explore-btn {
