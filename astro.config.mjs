@@ -37,7 +37,12 @@ export default defineConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          silenceDeprecations: ["import", "if-function", "global-builtin", "color-functions"],
+          silenceDeprecations: [
+            "import",
+            "if-function",
+            "global-builtin",
+            "color-functions",
+          ],
         },
       },
     },
