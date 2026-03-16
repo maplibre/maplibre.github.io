@@ -1,6 +1,7 @@
 import { defineCollection, z } from "astro:content";
 
 import { glob } from "astro/loaders";
+import { ROADMAP_STATUSES } from "./constants";
 
 const news = defineCollection({
   loader: glob({ pattern: "**/*.mdx", base: "./src/content/news" }),
@@ -30,7 +31,7 @@ const roadmapItems = defineCollection({
       title: z.string(),
       heroImage: image(),
       heroImageFit: z.optional(z.enum(["fill", "contain", "cover"])),
-      status: z.enum(["under-consideration", "in-progress", "released"]),
+      status: z.enum(ROADMAP_STATUSES),
       project: z
         .enum([
           "general",

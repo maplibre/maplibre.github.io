@@ -3,15 +3,42 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import { LandingPageMap } from "../components/LandingPageMap";
-import { SITE_DESCRIPTION } from "../constants";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../constants";
 import androidImage from "../assets/maplibre-native/maplibre-native-android.png";
 import iosImage from "../assets/maplibre-native/maplibre-native-ios.png";
 import ProjectSection from "../components/landing/ProjectSection.astro";
 import GitHubBadge from "../components/landing/GitHubBadge.astro";
 import LinkBadge from "../components/landing/LinkBadge.astro";
+import { toJsonLd } from "../lib/jsonld";
+import type { Organization, WebSite, WithContext } from "schema-dts";
+
+const organizationJsonLd = toJsonLd({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE_TITLE,
+  url: "https://maplibre.org",
+  logo: "https://maplibre.org/img/maplibre-logo.svg",
+  description: SITE_DESCRIPTION,
+  sameAs: [
+    "https://github.com/maplibre",
+    "https://mastodon.social/@maplibre",
+    "https://twitter.com/maplibre",
+  ],
+} satisfies WithContext<Organization>);
+
+const websiteJsonLd = toJsonLd({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_TITLE,
+  url: "https://maplibre.org",
+} satisfies WithContext<WebSite>);
 ---
 
 <Layout>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={organizationJsonLd} />
+    <script type="application/ld+json" set:html={websiteJsonLd} />
+  </Fragment>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-sm-12">
@@ -57,7 +84,10 @@ import LinkBadge from "../components/landing/LinkBadge.astro";
               >Plugins</LinkBadge
             >
           </Fragment>
-          <div slot="visual" style="max-width: 500px; margin: 0px auto;">
+          <div
+            slot="visual"
+            style="max-width: 500px; margin: 0px auto; min-height: 300px;"
+          >
             <LandingPageMap client:only="solid-js" />
           </div>
         </ProjectSection>
@@ -81,15 +111,15 @@ import LinkBadge from "../components/landing/LinkBadge.astro";
               href="https://maplibre.org/maplibre-native/android/examples/"
               >Android Examples</LinkBadge
             >
+            <LinkBadge href="https://maplibre.org/maplibre-native/docs/book/"
+              >Developer Docs</LinkBadge
+            >
             <LinkBadge
               href="https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre"
               >iOS Documentation</LinkBadge
             >
             <LinkBadge href="https://maplibre.org/maplibre-native/cpp/api/"
               >Core C++ API</LinkBadge
-            >
-            <LinkBadge href="https://maplibre.org/maplibre-native/docs/book/"
-              >Developer Docs</LinkBadge
             >
           </Fragment>
           <Fragment slot="visual">
@@ -151,6 +181,7 @@ import LinkBadge from "../components/landing/LinkBadge.astro";
 
         <ProjectSection
           title="Map<span style='color: #95BEFA;'>Libre</span> Tile Specification"
+          href="https://maplibre.org/maplibre-tile-spec/specification/"
         >
           <Fragment slot="description">
             A next-generation vector tile format redesigned to take advantage of
@@ -166,17 +197,13 @@ import LinkBadge from "../components/landing/LinkBadge.astro";
               >Publication</LinkBadge
             >
             <LinkBadge
-              href="https://maplibre.org/maplibre-tile-spec/specification/"
-              >Specification</LinkBadge
-            >
-            <LinkBadge
               href="https://maplibre.org/maplibre-tile-spec/implementation-status/"
               >Implementation Status</LinkBadge
             >
           </Fragment>
         </ProjectSection>
 
-        <ProjectSection title="Martin">
+        <ProjectSection title="Martin" href="https://martin.maplibre.org/">
           <Fragment slot="description">
             Martin is a tile generator and server able to create Map Vector
             Tiles (MVTs) from large
@@ -194,7 +221,6 @@ import LinkBadge from "../components/landing/LinkBadge.astro";
           </Fragment>
           <Fragment slot="badges">
             <GitHubBadge href="https://github.com/maplibre/martin" />
-            <LinkBadge href="https://martin.maplibre.org/">Demo</LinkBadge>
             <LinkBadge href="https://maplibre.org/martin/">Book</LinkBadge>
           </Fragment>
           <div

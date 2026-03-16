@@ -18,6 +18,8 @@ import {
 } from "../../data/sponsors";
 import Layout from "../../layouts/Layout.astro";
 import { mergeDonors } from "../../utils/mergeDonors";
+import { toJsonLd } from "../../lib/jsonld";
+import type { SoftwareApplication, WithContext } from "schema-dts";
 
 const [stats, ocDonors, ghSponsors] = await Promise.all([
   fetchRepoStats("maplibre", "maplibre-native"),
@@ -25,6 +27,29 @@ const [stats, ocDonors, ghSponsors] = await Promise.all([
   fetchGitHubSponsors("maplibre"),
 ]);
 const donors = mergeDonors(ocDonors, ghSponsors);
+
+const softwareJsonLd = toJsonLd({
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "MapLibre Native",
+  url: "https://maplibre.org/projects/native/",
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "Android, iOS, Linux, macOS, Windows",
+  codeRepository: "https://github.com/maplibre/maplibre-native",
+  license: "https://github.com/maplibre/maplibre-native/blob/main/LICENSE.md",
+  description:
+    "Open-source C++ library for displaying maps inside mobile or desktop applications with GPU-acceleration through OpenGL, Metal, or Vulkan.",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "MapLibre",
+    url: "https://maplibre.org",
+  },
+} satisfies WithContext<SoftwareApplication>);
 ---
 
 <style lang="css">
@@ -52,7 +77,13 @@ const donors = mergeDonors(ocDonors, ghSponsors);
   }
 </style>
 
-<Layout title="MapLibre Native">
+<Layout
+  title="MapLibre Native"
+  description="Open-source C++ library for displaying maps inside mobile or desktop applications with GPU-acceleration through OpenGL, Metal, or Vulkan."
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={softwareJsonLd} />
+  </Fragment>
   <section class="py-5 px-4 text-center text-white section-odd">
     <div class="container">
       <h1 class="display-4 mb-3">MapLibre Native</h1>
@@ -535,6 +566,15 @@ const donors = mergeDonors(ocDonors, ghSponsors);
 
         <span class="badge bg-primary fs-6 p-2">
           <a
+            href="https://maplibre.org/maplibre-native/docs/book/"
+            class="text-decoration-none text-white"
+          >
+            Developer Docs
+          </a>
+        </span>
+
+        <span class="badge bg-primary fs-6 p-2">
+          <a
             href="https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre"
             class="text-decoration-none text-white"
           >
@@ -548,15 +588,6 @@ const donors = mergeDonors(ocDonors, ghSponsors);
             class="text-decoration-none text-white"
           >
             Core C++ API
-          </a>
-        </span>
-
-        <span class="badge bg-primary fs-6 p-2">
-          <a
-            href="https://maplibre.org/maplibre-native/docs/book/"
-            class="text-decoration-none text-white"
-          >
-            Developer Docs
           </a>
         </span>
 
