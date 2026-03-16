@@ -33,4 +33,13 @@ export default defineConfig({
   output: "static",
   prefetch: true,
   site: "https://maplibre.org/",
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          silenceDeprecations: ["import", "if-function", "global-builtin", "color-functions"],
+        },
+      },
+    },
+  },
 });
