@@ -16,7 +16,7 @@
     "@astrojs/mdx": "^5.0.2",
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.1",
-    "@astrojs/solid-js": "^6.0.0",
+    "@astrojs/solid-js": "^6.0.1",
     "@fontsource/alata": "^5.2.8",
     "@igor.dvlpr/astro-post-excerpt": "4.1.1-alpha.0",
     "astro": "^6.0.7",
