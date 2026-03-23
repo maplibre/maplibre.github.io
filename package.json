@@ -13,7 +13,7 @@
     "postinstall": "cp -r node_modules/@fontsource/alata/files public/"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.1",
+    "@astrojs/mdx": "^5.0.2",
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.1",
     "@astrojs/solid-js": "^6.0.0",
