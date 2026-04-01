@@ -1,7 +1,6 @@
 import type { APIContext } from "astro";
 import rss, { type RSSFeedItem } from "@astrojs/rss";
 import {
-  getCollection,
   getEntry,
   render,
   type CollectionEntry,
