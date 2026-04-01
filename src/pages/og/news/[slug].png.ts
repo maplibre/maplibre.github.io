@@ -1,5 +1,6 @@
 import type { APIRoute, GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
+import { getPublishedNews } from "../../../lib/collections";
 import {
   getLogo,
   renderToPng,
@@ -81,7 +82,7 @@ async function generateNewsOgImage(opts: {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getCollection("news");
+  const posts = await getPublishedNews();
   return posts.map((post) => ({
     params: { slug: post.id },
     props: post,
