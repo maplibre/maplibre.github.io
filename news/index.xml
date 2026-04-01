@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>MapLibre</title><description>The MapLibre Organization is an umbrella for open-source mapping libraries.</description><link>https://maplibre.org/</link><language>en-US</language><lastBuildDate>Mon, 23 Mar 2026 21:53:43 GMT</lastBuildDate><item><title>We&apos;re Sun-setting the Bounty Program</title><link>https://maplibre.org/news/2026-03-17-reinivisioning-the-bounty-program/</link><guid isPermaLink="true">https://maplibre.org/news/2026-03-17-reinivisioning-the-bounty-program/</guid><pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>MapLibre</title><description>The MapLibre Organization is an umbrella for open-source mapping libraries.</description><link>https://maplibre.org/</link><language>en-US</language><lastBuildDate>Wed, 01 Apr 2026 13:28:22 GMT</lastBuildDate><item><title>We&apos;re Sun-setting the Bounty Program</title><link>https://maplibre.org/news/2026-03-17-reinivisioning-the-bounty-program/</link><guid isPermaLink="true">https://maplibre.org/news/2026-03-17-reinivisioning-the-bounty-program/</guid><pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt;
 &lt;strong&gt;MapLibre&lt;/strong&gt; is &lt;strong&gt;sun-setting the bounty program&lt;/strong&gt; as originally conceived because it isn’t a sustainable way to incentivize contributions at our current scale.
 The Board and maintainers are working hard to identify what comes next.
@@ -149,47 +149,7 @@ Please &lt;a href=&quot;https://github.com/maplibre/maplibre-tile-spec/issues/94
 &lt;p&gt;🔗 &lt;a href=&quot;https://notime.zone/OmyPkU_Ha6K7W&quot;&gt;View meeting times in your local timezone&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
 Not yet a member? Request an invite via the &lt;a href=&quot;https://slack.openstreetmap.us/&quot;&gt;OpenStreetMap US Slack&lt;/a&gt;.
-We’d love to see you there!&lt;/p&gt;</content:encoded><author/></item><item><title>Thank You for Powering MapLibre</title><link>https://maplibre.org/news/2026-02-18-supporting-maplibre/</link><guid isPermaLink="true">https://maplibre.org/news/2026-02-18-supporting-maplibre/</guid><pubDate>Wed, 18 Feb 2026 00:00:00 GMT</pubDate><content:encoded>&lt;img src=&quot;https://maplibre.org/_astro/header.jLEYpOLU_Z5xovf.svg&quot; alt=&quot;MapLibre ecosystem diagram: GL JS, Native, Style Spec, Maputnik, MLT, and Martin&quot; style=&quot;width: 100%; height: auto; display: block; margin-bottom: 2rem;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;1200&quot; height=&quot;480&quot;&gt;
-&lt;p&gt;MapLibre exists because organizations and individuals believe in open-source mapping infrastructure. Today we want to thank the sponsors who make that possible, share what we accomplished together in 2025, and explain what we need now.&lt;/p&gt;
-&lt;p&gt;TL;DR 🫵 we need YOU.&lt;/p&gt;
-&lt;p&gt;So first…&lt;/p&gt;
-&lt;h2 id=&quot;-thank-you-to-our-sponsors&quot;&gt;&lt;a class=&quot;heading-link&quot; href=&quot;#-thank-you-to-our-sponsors&quot;&gt;🙏 Thank You to Our Sponsors&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;MapLibre’s Sponsorship Program is the backbone of our financial stability. We are grateful to the companies that have committed to supporting the project:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;🥇 &lt;strong&gt;Gold:&lt;/strong&gt; Microsoft&lt;/li&gt;
-&lt;li&gt;🥈 &lt;strong&gt;Silver:&lt;/strong&gt; AWS, CalTopo, MIERUNE, Komoot, Jawg Maps, Radar, MapMe, MapTiler&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In 2025, Microsoft elevated to Gold Sponsor and CalTopo and MapTiler joined as Silver Sponsor. Every renewal and new commitment strengthens our foundation.&lt;/p&gt;
-&lt;p&gt;We are also delighted with the 80+ individuals who have supported MapLibre through &lt;a href=&quot;https://github.com/sponsors/maplibre&quot;&gt;GitHub Sponsors&lt;/a&gt; and &lt;a href=&quot;https://opencollective.com/maplibre&quot;&gt;OpenCollective&lt;/a&gt;. These recurring donations reflect the commitment and integrity of our community, and help fund infrastructure and maintenance work that is hard to prioritize otherwise.&lt;/p&gt;
-&lt;p&gt;Your contributions fund paid maintainers for MapLibre GL JS and MapLibre Native (infrastructure, PR review, issue triage, documentation), a coordinator (fundraising, newsletter, financial reporting), and the Development Fund for new features. Full details are on our updated &lt;a href=&quot;/sponsors&quot;&gt;Sponsors page&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;-what-we-accomplished-together&quot;&gt;&lt;a class=&quot;heading-link&quot; href=&quot;#-what-we-accomplished-together&quot;&gt;🚀 What We Accomplished Together&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;MapLibre is &lt;a href=&quot;https://github.com/maplibre/awesome-maplibre&quot;&gt;awesome&lt;/a&gt;, and 2025 was a landmark year. Here are some highlights your support helped make real:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;🌐 &lt;strong&gt;MapLibre GL JS v5&lt;/strong&gt; — globe rendering, hillshade, and data-driven line-dasharray (one of our most requested features).&lt;/li&gt;
-&lt;li&gt;⚙️ &lt;strong&gt;Martin v1.0&lt;/strong&gt; — a production-ready tile server after eight years, with Cloud Optimized GeoTIFF support, a web UI, and MLT decoding.&lt;/li&gt;
-&lt;li&gt;📱 &lt;strong&gt;MapLibre Native&lt;/strong&gt; — Vulkan on Android, a WebGPU backend, and expanded reach to Compose Multiplatform and Flutter.&lt;/li&gt;
-&lt;li&gt;🧩 &lt;strong&gt;MapLibre Tiles (MLT)&lt;/strong&gt; — stable specification with decoders in C++, TypeScript, and Java, and support in GL JS and Native.&lt;/li&gt;
-&lt;li&gt;🎨 &lt;strong&gt;Maputnik&lt;/strong&gt; elevated to a supported project.&lt;/li&gt;
-&lt;li&gt;👥 &lt;strong&gt;Community&lt;/strong&gt; has 141 Voting Members and representation at FOSS4G, FOSDEM, State of the Map, and conferences across four continents.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;-what-we-need-next&quot;&gt;&lt;a class=&quot;heading-link&quot; href=&quot;#-what-we-need-next&quot;&gt;💡 What We Need Next&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;We want to broaden and deepen our sources of funding, as our current funding does not cover full-time maintainers for both GL JS and Native. This limits how responsive and proactive we can be in building new features and responding to community requests.&lt;/p&gt;
-&lt;p&gt;Also, a small sponsor base means risk: if even one major sponsor exits, it creates a real gap.&lt;/p&gt;
-&lt;p&gt;We are doing what we can to address this — applying for grants, and doing more outreach — but we need your help. Please spread the word, and consider what you might contribute in 2026:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;💎 &lt;strong&gt;&lt;a href=&quot;/sponsors&quot;&gt;Become a sponsor&lt;/a&gt;&lt;/strong&gt; — corporate tiers from Diamond to Silver. &lt;a href=&quot;mailto:team@maplibre.org&quot;&gt;Contact us&lt;/a&gt; to discuss.&lt;/li&gt;
-&lt;li&gt;💸 &lt;strong&gt;&lt;a href=&quot;https://opencollective.com/maplibre&quot;&gt;Donate as an individual&lt;/a&gt;&lt;/strong&gt; — even small recurring contributions sustain the project. Also available on &lt;a href=&quot;https://github.com/sponsors/maplibre&quot;&gt;GitHub&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;🤝 &lt;strong&gt;Contribute in kind&lt;/strong&gt; — code, developer hours, grant writing, infrastructure, documentation, design, or marketing. &lt;a href=&quot;mailto:team@maplibre.org&quot;&gt;Reach out&lt;/a&gt; if you or your organization can help.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;-we-want-to-hear-from-you&quot;&gt;&lt;a class=&quot;heading-link&quot; href=&quot;#-we-want-to-hear-from-you&quot;&gt;💬 We Want to Hear From You&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;If you already sponsor MapLibre, what motivated you? What do you value most about this project and community? What would you like to see in 2026? Your feedback shapes our priorities — write to &lt;a href=&quot;mailto:team@maplibre.org&quot;&gt;team@maplibre.org&lt;/a&gt; or raise it with the Advisory Council. If you are not sponsoring, write to &lt;a href=&quot;mailto:sponsor@maplibre.org&quot;&gt;sponsor@maplibre.org&lt;/a&gt; and tell us what would motivate you.&lt;/p&gt;
-&lt;p&gt;And if you want to deepen your involvement:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Slack&lt;/strong&gt; — Join at &lt;a href=&quot;https://slack.openstreetmap.us&quot;&gt;slack.openstreetmap.us&lt;/a&gt;, then find us in &lt;code&gt;#maplibre&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Roadmap discussions&lt;/strong&gt; — The &lt;a href=&quot;/community&quot;&gt;Technical Steering Committee&lt;/a&gt; meets monthly (second Wednesday). Follow along and contribute on &lt;a href=&quot;https://github.com/maplibre/maplibre/discussions&quot;&gt;GitHub&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Newsletter&lt;/strong&gt; — Our &lt;a href=&quot;/news&quot;&gt;monthly newsletter&lt;/a&gt; covers releases, community highlights, and events.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Please encourage others to join us. MapLibre’s mission is to keep the best open-source mapping tools free for everyone. We can’t do it without you.&lt;/p&gt;</content:encoded><author/></item><item><title>CalTopo joins the MapLibre Sponsorship program</title><link>https://maplibre.org/news/2026-02-16-caltopo-announcement/</link><guid isPermaLink="true">https://maplibre.org/news/2026-02-16-caltopo-announcement/</guid><pubDate>Mon, 16 Feb 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;We’re pleased to announce that &lt;a href=&quot;https://caltopo.com/about/&quot;&gt;CalTopo&lt;/a&gt; is now a &lt;a href=&quot;https://maplibre.org/sponsors/&quot;&gt;Silver sponsor&lt;/a&gt; of the MapLibre project.&lt;/p&gt;
+We’d love to see you there!&lt;/p&gt;</content:encoded><author/></item><item><title>CalTopo joins the MapLibre Sponsorship program</title><link>https://maplibre.org/news/2026-02-16-caltopo-announcement/</link><guid isPermaLink="true">https://maplibre.org/news/2026-02-16-caltopo-announcement/</guid><pubDate>Mon, 16 Feb 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;We’re pleased to announce that &lt;a href=&quot;https://caltopo.com/about/&quot;&gt;CalTopo&lt;/a&gt; is now a &lt;a href=&quot;https://maplibre.org/sponsors/&quot;&gt;Silver sponsor&lt;/a&gt; of the MapLibre project.&lt;/p&gt;
 &lt;div style=&quot;background-color:white;padding:2rem;border:10px solid #cfd8dc;border-radius:0;margin-bottom:3rem;display:flex;justify-content:center;align-items:center;gap:2rem;flex-wrap:nowrap;overflow:hidden&quot;&gt;&lt;img src=&quot;https://maplibre.org/_astro/maplibre-logo-for-light-bg.CSR25x_s_Z22k2tS.svg&quot; alt=&quot;MapLibre logo&quot; style=&quot;width:40%;max-width:300px;height:auto;object-fit:contain&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;1354&quot; height=&quot;317&quot;&gt;&lt;img src=&quot;https://maplibre.org/_astro/caltopo-logo.D8Dc8mJ3_133LQN.svg&quot; alt=&quot;CalTopo logo&quot; style=&quot;width:40%;max-width:330px;height:auto;object-fit:contain&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;395&quot; height=&quot;96&quot;&gt;&lt;/div&gt;
 &lt;p&gt;CalTopo has built one of the most trusted field mapping platforms in the US, relied on by search and rescue teams, wildland firefighters, and backcountry adventurers who need maps to work when it counts. We’re proud to welcome them as a MapLibre sponsor — and to support the open-source rendering infrastructure that powers their maps.&lt;/p&gt;
 &lt;p&gt;CalTopo is an app for collaborative map building and offline adventuring, and they rely heavily on MapLibre powering their &lt;a href=&quot;https://training.caltopo.com/all_users/getting-started/3D&quot;&gt;3D maps&lt;/a&gt;, making it possible for users to explore terrain in a more intuitive, visual way.&lt;/p&gt;
@@ -1144,6 +1104,68 @@ security and flexibility.&lt;/li&gt;
 &lt;li&gt;June 25, 2025 – 9:00–10:00 AM UTC&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;🔗 &lt;a href=&quot;https://notime.zone/OS-7DlXOuSRSd&quot;&gt;View meeting times in your local timezone&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the &lt;a href=&quot;https://slack.openstreetmap.us/&quot;&gt;OpenStreetMap US Slack&lt;/a&gt;.
+We’d love to see you there!&lt;/p&gt;</content:encoded><author/></item><item><title>MapLibre Newsletter April 2025</title><link>https://maplibre.org/news/2025-05-04-maplibre-newsletter-april-2025/</link><guid isPermaLink="true">https://maplibre.org/news/2025-05-04-maplibre-newsletter-april-2025/</guid><pubDate>Sun, 04 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Welcome to the April edition of the MapLibre Monthly!&lt;/p&gt;
+&lt;p&gt;We’re excited to share major updates across Native, GL JS, and Martin - ranging from performance optimizations to new extensibility features.
+And before we dive in, a heartfelt thanks to &lt;a href=&quot;https://www.komoot.com/&quot;&gt;Komoot&lt;/a&gt; for renewing their sponsorship!&lt;/p&gt;
+&lt;div style=&quot;background-color:white;padding:2rem;border:10px solid #cfd8dc;border-radius:0;margin-bottom:3rem;display:flex;justify-content:center;align-items:center;gap:2rem;flex-wrap:nowrap;overflow:hidden;flex-direction:column&quot;&gt;&lt;div style=&quot;display:flex;justify-content:center;align-items:center;gap:2rem;flex-wrap:nowrap;width:100%&quot;&gt;&lt;img src=&quot;https://maplibre.org/_astro/maplibre-logo-for-light-bg.CSR25x_s_Z22k2tS.svg&quot; alt=&quot;MapLibre logo&quot; style=&quot;width:40%;max-width:300px;height:auto;object-fit:contain&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;1354&quot; height=&quot;317&quot;&gt;&lt;img src=&quot;https://maplibre.org/_astro/komoot-logo.CTu0kONk_Z2hitQY.svg&quot; alt=&quot;Komoot logo&quot; style=&quot;width:40%;max-width:330px;height:auto;object-fit:contain&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; width=&quot;358&quot; height=&quot;108&quot;&gt;&lt;/div&gt;&lt;div style=&quot;margin-top:1rem;font-size:1rem;text-align:center;color:#263238;font-style:italic&quot;&gt;&lt;p&gt;Komoot’s support as an official MapLibre sponsor - 2023, 2024 &amp;amp; 2025 💙&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;maplibre-native&quot;&gt;&lt;a class=&quot;heading-link&quot; href=&quot;#maplibre-native&quot;&gt;MapLibre Native&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Action Journal for Crash Debugging&lt;/strong&gt;: We are adding an ‘action journal’ to MapLibre Native. This is a &lt;strong&gt;persistent log of internal events&lt;/strong&gt;, written out as JSON files. You can use this as a sort of black box to get information what the library was doing when rare, difficult to reproduce crashes and bugs happen. Please check out &lt;a href=&quot;https://github.com/maplibre/maplibre-native/pull/3409&quot;&gt;the PR&lt;/a&gt; and tell us if this is useful. We expect this to be mostly used by mission-critical enterprise type applications, which tend to have extremely low acceptable crash rates.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Efficient Memory Management with Dynamic Texture Atlas&lt;/strong&gt;: Work on implementing a &lt;a href=&quot;https://github.com/maplibre/maplibre-native/pull/3198&quot;&gt;dynamic texture atlas&lt;/a&gt; is almost complete. Testing indicates that reduction in memory may be more significant than expected! This can also be useful when using MapLibre Native for server-side rendering. We are very interested to hear your findings on memory usage in production when releases containing this functionality are out.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Plugin Support for Custom Layers (WIP)&lt;/strong&gt;: There is a &lt;a href=&quot;https://github.com/maplibre/maplibre-native/pull/3430&quot;&gt;draft PR&lt;/a&gt; that adds plugin functionality to MapLibre Native, allowing &lt;strong&gt;custom layer types&lt;/strong&gt; to be added at runtime. Allowing the library to be extended more easily from the outside is something that has been talked about a long time. Although the PR in question is very much a work-in-progress, it is exciting to see some movement in this area which many users will be following with interest.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Call for Accessibility Feedback&lt;/strong&gt;: We are interested in input from &lt;strong&gt;accessibility&lt;/strong&gt; experts or developers who developed accessible maps in the past. Do you have any ideas for MapLibre Native features or perhaps style spec additions that can benefit accessibility? If yes, then please &lt;a href=&quot;https://github.com/maplibre/maplibre-native/discussions/3439&quot;&gt;add to the discussion&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Releases this month:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MapLibre iOS &lt;a href=&quot;https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.12.2&quot;&gt;6.12.2&lt;/a&gt;, &lt;a href=&quot;https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.12.3&quot;&gt;6.12.3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MapLibre Android &lt;a href=&quot;https://github.com/maplibre/maplibre-native/releases/tag/android-v11.8.6&quot;&gt;11.8.6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MapLibre Node.js &lt;a href=&quot;https://github.com/maplibre/maplibre-native/releases/tag/node-v6.1.0&quot;&gt;6.1.0&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;web&quot;&gt;&lt;a class=&quot;heading-link&quot; href=&quot;#web&quot;&gt;Web&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We released two versions this month:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.3.1&quot;&gt;v5.3.1&lt;/a&gt;: A minor update focused on bug fixes.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.4.0&quot;&gt;v5.4.0&lt;/a&gt;: A major release introducing Level of Detail (LOD) controls based on pitch and zoom levels, giving developers more flexibility in how data is rendered dynamically.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Looking ahead, map-state persistence and expanded hillshade options are in the pipeline, stay tuned! There’s also early progress on a plugin to support complicated scripting languages, a feature that’s been discussed in previous newsletter posts.&lt;/p&gt;
+&lt;p&gt;Be sure to explore the &lt;a href=&quot;https://github.com/maplibre/awesome-maplibre&quot;&gt;awesome-maplibre&lt;/a&gt; repository. It’s packed with creative tools, plugins, and use cases built by our amazing community!&lt;/p&gt;
+&lt;h2 id=&quot;martin-tile-server&quot;&gt;&lt;a class=&quot;heading-link&quot; href=&quot;#martin-tile-server&quot;&gt;Martin Tile Server&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We’re actively shaping the roadmap for Martin v1.0 and would love your input!&lt;/p&gt;
+&lt;p&gt;A discussion is underway on what features or changes are needed before we consider a 1.0 release. If you have thoughts, suggestions, or feature requests, &lt;a href=&quot;https://github.com/maplibre/martin/discussions/1805&quot;&gt;please join the conversation&lt;/a&gt; and help guide the future of Martin.&lt;/p&gt;
+&lt;h2 id=&quot;-community-spotlight&quot;&gt;&lt;a class=&quot;heading-link&quot; href=&quot;#-community-spotlight&quot;&gt;🌟 Community Spotlight&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://rutaton.zamora.gob.mx&quot;&gt;GTFS Visualization for Public Transport in Zamora, Mexico&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This project by &lt;a href=&quot;https://codeandomexico.org/&quot;&gt;Codeando México&lt;/a&gt; visualizes the public transport routes in Zamora using MapLibre + Svelte. It’s part of a crowdmapping initiative where local students helped digitize the city’s transit network using mobile phones.&lt;/p&gt;
+&lt;p&gt;Before this effort, the information wasn’t publicly available. Now, it’s accessible to both residents and organizations who can build on the data. A great example of civic tech and open mapping in action!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“It was super easy to get something done quickly using Svelte + MapLibre.”
+— Óscar Hernández, Tech Lead @ Codeando México&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;️-monthly-meetings&quot;&gt;&lt;a class=&quot;heading-link&quot; href=&quot;#️-monthly-meetings&quot;&gt;🗓️ Monthly meetings&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We continue our regular community calls on the &lt;em&gt;&lt;strong&gt;second Wednesday&lt;/strong&gt;&lt;/em&gt; of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.&lt;/p&gt;
+&lt;p&gt;Upcoming May Calls&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MapLibre Navigation: May 14, 2025 – 4:00–5:00 PM UTC&lt;/li&gt;
+&lt;li&gt;MapLibre Native: May 14, 2025 – 5:00–6:00 PM UTC&lt;/li&gt;
+&lt;li&gt;MapLibre GL JS: May 14, 2025 – 6:00–7:00 PM UTC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🌏 MapLibre Eastern Call&lt;/p&gt;
+&lt;p&gt;Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;May 28, 2025 – 9:00–10:00 AM UTC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔗 &lt;a href=&quot;https://notime.zone/OPU6n2O-ij-eN&quot;&gt;View meeting times in your local timezone&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
 Not yet a member? Request an invite via the &lt;a href=&quot;https://slack.openstreetmap.us/&quot;&gt;OpenStreetMap US Slack&lt;/a&gt;.
 We’d love to see you there!&lt;/p&gt;</content:encoded><author/></item></channel></rss>
