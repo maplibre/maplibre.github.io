@@ -109,8 +109,24 @@ const articleJsonLd = toJsonLd({
             ))
           }
         </div>
-        <Content />
+        <div class="news-content">
+          <Content />
+        </div>
       </div>
     </div>
   </div>
 </Layout>
+
+<style>
+  .news-content :global(* + *) {
+    margin-top: 1em;
+  }
+
+  .news-content :global(* + :is(h1, h2, h3, h4, h5, h6)) {
+    margin-top: 1.5em;
+  }
+
+  .news-content :global(li + li) {
+    margin-top: 0.25em;
+  }
+</style>
