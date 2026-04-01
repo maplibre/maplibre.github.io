@@ -49,15 +49,15 @@ const titleText = title.replace(/<[^>]+>/g, "");
 
         <div
           class:list={[
-            { "position-relative z-2 gap": !!href },
-            "badges-container",
+            { "position-relative z-2": !!href },
+            "row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-5 gy-3 text-center text-lg-start",
           ]}
         >
           <slot name="badges" />
         </div>
         {
           href && (
-            <div class="position-relative z-2 pt-4 pb-3">
+            <div class="position-relative z-2 pt-4 pb-3 text-center text-md-start">
               <a href={href} class="explore-btn">
                 Explore {titleText}
                 <Icon
@@ -86,13 +86,6 @@ const titleText = title.replace(/<[^>]+>/g, "");
     &:hover {
       background-color: #111422;
     }
-  }
-
-  .badges-container {
-    display: grid;
-    grid-template-columns: repeat(3, max-content);
-    gap: 0.8rem 3rem;
-    align-items: center;
   }
 
   .explore-btn {
