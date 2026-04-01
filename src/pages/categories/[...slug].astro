@@ -5,9 +5,10 @@ import TitleHeader from "../../components/TitleHeader.astro";
 import Layout from "../../layouts/Layout.astro";
 import Badge from "../../components/Badge.astro";
 import PostExcerpt from "@igor.dvlpr/astro-post-excerpt";
+import { getPublishedNews } from "../../lib/collections";
 
 export async function getStaticPaths() {
-  const news = await getCollection("news");
+  const news = await getPublishedNews();
   const categories = news
     .flatMap((post) => post.data.categories)
     .filter((value, index, self) => self.indexOf(value) === index);
@@ -25,7 +26,7 @@ function capitalizeFirstLetter(val: string) {
 const category = Astro.props;
 
 const posts = (
-  await getCollection("news", (post) => {
+  await getPublishedNews((post) => {
     return post.data.categories.includes(category.category);
   })
 ).sort((a, b) => {

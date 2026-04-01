@@ -1,5 +1,4 @@
 ---
-import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import Layout from "../../layouts/Layout.astro";
@@ -9,8 +8,9 @@ import PostExcerpt from "@igor.dvlpr/astro-post-excerpt";
 import { SITE_TITLE } from "../../constants";
 import { toJsonLd } from "../../lib/jsonld";
 import type { Blog, WithContext } from "schema-dts";
+import { getPublishedNews } from "../../lib/collections";
 
-const posts = (await getCollection("news")).sort((a, b) => {
+const posts = (await getPublishedNews()).sort((a, b) => {
   return b.data.date.valueOf() - a.data.date.valueOf();
 });
 

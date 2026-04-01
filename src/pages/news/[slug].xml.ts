@@ -6,6 +6,7 @@ import {
   render,
   type CollectionEntry,
 } from "astro:content";
+import { getPublishedNews } from "../../lib/collections";
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import mdxRenderer from "@astrojs/mdx/server.js";
 import solidRenderer from "@astrojs/solid-js/server.js";
@@ -74,7 +75,7 @@ const getPost = async (
 };
 
 export async function GET(context: APIContext) {
-  const news = await getCollection("news");
+  const news = await getPublishedNews();
   const items = news.sort((a, b) => +b.data.date - +a.data.date).slice(0, 15);
 
   return rss({
