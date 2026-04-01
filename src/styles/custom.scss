@@ -276,9 +276,9 @@ h2:not(:first-child),
 .h2:not(:first-child),
 h1:not(:first-child),
 .h1:not(:first-child) {
-  margin-top: 40px;
+  margin-top: 2.5em;
 }
 
 li + li {
-  margin-top: 10px;
+  margin-top: 0.625em;
 }
