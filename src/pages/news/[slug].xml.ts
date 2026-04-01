@@ -1,10 +1,6 @@
 import type { APIContext } from "astro";
 import rss, { type RSSFeedItem } from "@astrojs/rss";
-import {
-  getEntry,
-  render,
-  type CollectionEntry,
-} from "astro:content";
+import { getEntry, render, type CollectionEntry } from "astro:content";
 import { getPublishedNews } from "../../lib/collections";
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import mdxRenderer from "@astrojs/mdx/server.js";
