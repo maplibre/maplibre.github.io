@@ -6,9 +6,10 @@ import Layout from "../../layouts/Layout.astro";
 import Badge from "../../components/Badge.astro";
 import { toJsonLd } from "../../lib/jsonld";
 import type { Article, WithContext } from "schema-dts";
+import { getPublishedNews } from "../../lib/collections";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("news");
+  const posts = await getPublishedNews();
   return posts.map((post) => ({
     params: { slug: post.id },
     props: post,

@@ -1,9 +1,9 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import { render } from "astro:content";
-import TitleHeader from "../../components/TitleHeader.astro";
 import Layout from "../../layouts/Layout.astro";
 import PostExcerpt from "@igor.dvlpr/astro-post-excerpt";
+import { getPublishedNews } from "../../lib/collections";
 
 export async function getStaticPaths() {
   const bios = await getCollection("bios");
@@ -19,7 +19,7 @@ const bio = Astro.props;
 const { Content: AuthorContent } = await render(bio);
 
 const posts = (
-  await getCollection("news", (post) => {
+  await getPublishedNews((post) => {
     return post.data.authors.includes(bio.data.handle);
   })
 ).sort((a, b) => {
