@@ -3,7 +3,7 @@ title: "MapLibre Newsletter March 2026"
 date: "2026-04-03"
 categories: ["newsletter"]
 authors: [bart-louwers]
-draft: true
+draft: false
 ---
 
 import mltTalkImg from "./mlt-talk.jpg";
@@ -12,6 +12,44 @@ import mapterhornTalk from "./mapterhorn-talk.jpg";
 
 import { Image } from "astro:assets";
 import "./style.css";
+
+## MapLibre Native
+
+Releases:
+
+- MapLibre Android [13.0.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v13.0.0) [13.0.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v13.0.1) [13.0.2](https://github.com/maplibre/maplibre-native/releases/tag/android-v13.0.2)
+- MapLibre iOS [6.24.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.24.0) [6.25.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.25.0)
+- MapLibre Node.js [6.4.0](https://github.com/maplibre/maplibre-native/releases/tag/node-v6.4.0) [6.4.1](https://github.com/maplibre/maplibre-native/releases/tag/node-v6.4.1)
+
+### Terrain3D
+
+Support for Terrain3D is one of the [most upvoted](https://github.com/maplibre/maplibre-native/issues/252) features for MapLibre Native. While there have been some (mostly) vibe coded prototypes, delivering a production-grade implementation is something that requires a significant amount of solid (graphics) engineering and expertise.
+
+We are pleased to announce that has been some recent movement! We found a company that is willing to spend a serious chunk of money on this. However, **they are looking for another company that is willing to co-fund this feature**.
+
+Please reach out to [team@maplibre.org](mailto:team@maplibre.org) if you work for a company that might be interested.
+
+To be clear, at this point, MapLibre (the organization) is not funding this Terrain3D for MapLibre Native, we just bring in contact interested parties (companies, developers). Of course we do offer maintainer support in the form of concensus building, quality control, continious intergration, communication and release management.
+
+We created a branch `feature/terrain-3d` for hacking on the prototype mentioned earlier, see [this PR](https://github.com/maplibre/maplibre-native/pull/4190).
+
+## Web
+
+We have released 5 versions this month! 5.20, 5.20.1, 5.20.2, 5.21.0, 5.21.1.
+Here are some of the highlights:
+
+- The introduction of geojson-vt updateable feature, which improved the geojson update perfromance significantly, but also introduced some nasty bugs which we addressed as fast as possible lead by @wayofthefuture.
+  The latest version is reported to be 7x faster from when we started geojson optimization a few month ago, thanks to everyone who contributed to this effort, both from code and from test and issue reporting!
+- Memory optimizations and removal of old browsers support code mainly lead by @johanrd.
+- Improved ETag support that was added by @rivkamatan and @wayofthefuture,
+- Resampling support by @larsmaxfield
+- 3D tiles example added by @hh-hang
+
+We mentioned last month that we will start some pre-releases of version 6, but due to the high volume of contributions we have decided to continue with version 5 for now, we are hoping to start it in the coming months nevertheless.
+
+You can check out the full release notes of every version to see how much was contributed this month, amazing work!
+Thanks for all the contributors, keep up the good work:
+@claudiobgit, @Bingtagui404, @xavierjs, @johanrd, @kikuomax, @katemihalikova, @garethbowker, @dannote, @ted-piotrowski, @hh-hang, @yano-h, @rivkamatan, @wayofthefuture, @itisyb, @larsmaxfield, @jtfedd, @madoci and @pcardinal.
 
 ## Conferences
 
