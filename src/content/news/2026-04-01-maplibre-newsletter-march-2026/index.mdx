@@ -83,21 +83,20 @@ We have created a dedicated branch `feature/terrain-3d` for continued work on th
 
 ## 🌐 MapLibre GL JS
 
-We have released 5 versions this month! 5.20, 5.20.1, 5.20.2, 5.21.0, 5.21.1.
-Here are some of the highlights:
+We had a great month with 5 new releases: [v5.20.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.20.0), [v5.20.1](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.20.1), [v5.20.2](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.20.2), [v5.21.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.21.0), [v5.21.1](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.21.1).
 
-- The introduction of geojson-vt updateable feature, which improved the geojson update performance significantly, but also introduced some nasty bugs which we addressed as fast as possible lead by @wayofthefuture.
-  The latest version is reported to be 7x faster from when we started geojson optimization a few month ago, thanks to everyone who contributed to this effort, both from code and from test and issue reporting!
-- Memory optimizations and removal of old browsers support code mainly lead by @johanrd.
-- Improved ETag support that was added by @rivkamatan and @wayofthefuture,
-- Resampling support by @larsmaxfield
-- 3D tiles example added by @hh-hang
+✨ Some of the highlights of this month include:
 
-We mentioned last month that we will start some pre-releases of version 6, but due to the high volume of contributions we have decided to continue with version 5 for now, we are hoping to start it in the coming months nevertheless.
+- We introduced updateable features using [`geojson-vt`](https://maplibre.org/geojson-vt/) which improved the geojson update performance significantly. While this initially caused a few nasty bugs which were quickly resolved, thanks to @wayofthefuture, the results are worth it. The latest version is reportedly 7x faster than when we began GeoJSON optimizations a few months ago. Thank you to everyone who contributed code, testing, and bug reports!
+- Memory optimizations and removal of legacy code supporting outdated browsers, mainly lead by [Johan](https://github.com/johanrd).
+- Improved ETag handling added by [Rivka Matan](https://github.com/rivkamatan) and [Ryan Scully](https://github.com/wayofthefuture) stops the map from re-downloading unchanged data, saving bandwidth and speeding up load times.
+- [Resampling](https://maplibre.org/maplibre-style-spec/layers/#resampling) support available now, added by [Lars Maxfield](https://github.com/larsmaxfield). This option lets users turn off smoothing to see raw, pixel-accurate terrain data instead of a blended or blurry image
+- 3D tiles example added by [Hang](https://github.com/hh-hang)
 
-You can check out the full release notes of every version to see how much was contributed this month, amazing work!
-Thanks for all the contributors, keep up the good work:
-@claudiobgit, @Bingtagui404, @xavierjs, @johanrd, @kikuomax, @katemihalikova, @garethbowker, @dannote, @ted-piotrowski, @hh-hang, @yano-h, @rivkamatan, @wayofthefuture, @itisyb, @larsmaxfield, @jtfedd, @madoci and @pcardinal.
+Last month we mentioned starting pre-releases for Version 6. However due to the high volume of contributions to the current branch, we have decided to continue with Version 5 for now. We still aim to begin the Version 6 transition in the coming months.
+
+🏆 The sheer volume of work contributed this month is amazing! A huge thanks to this month's contributors:
+[Claudio](https://github.com/claudiobgit), [Baixiaochun](https://github.com/Bingtagui404), [Xavier Bourry](https://github.com/xavierjs), [Johan](https://github.com/johanrd), [Kikuo Emoto](https://github.com/kikuomax), [Kate Miháliková](https://github.com/katemihalikova), [Gareth Bowker](https://github.com/garethbowker), [Danila Poyarkov](https://github.com/dannote), [Ted Piotrowski](https://github.com/ted-piotrowski), [Hang](https://github.com/hh-hang), [yano-h-wni](https://github.com/HiroyukiYANO), [Rivka Matan](https://github.com/rivkamatan), [Ryan Scully](https://github.com/wayofthefuture), [ItisYB](https://github.com/itisyb), [Lars Maxfield](https://github.com/larsmaxfield), [JT](https://github.com/jtfedd), [Stephen Andre](https://github.com/madoci) and [PierreC](https://github.com/pcardinal).
 
 ## Conferences
 
