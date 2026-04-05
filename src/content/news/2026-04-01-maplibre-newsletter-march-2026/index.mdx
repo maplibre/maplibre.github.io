@@ -9,59 +9,61 @@ draft: false
 import mltTalkImg from "./mlt-talk.jpg";
 import maplibreGang from "./maplibre-gang.jpg";
 import mapterhornTalk from "./mapterhorn-talk.jpg";
-
+import ReleaseTable from "../../../components/ReleaseTable.astro";
 import { Image } from "astro:assets";
 import "./style.css";
+
+export const mapLibreData = [
+  {
+    name: "Android",
+    versions: [
+      {
+        label: "13.0.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/android-v13.0.0",
+      },
+      {
+        label: "13.0.1",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/android-v13.0.1",
+      },
+      {
+        label: "13.0.2",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/android-v13.0.2",
+      },
+    ],
+  },
+  {
+    name: "iOS",
+    versions: [
+      {
+        label: "6.24.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.24.0",
+      },
+      {
+        label: "6.25.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.25.0",
+      },
+    ],
+  },
+  {
+    name: "Node.js",
+    versions: [
+      {
+        label: "6.4.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/node-v6.4.0",
+      },
+      {
+        label: "6.4.1",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/node-v6.4.1",
+      },
+    ],
+  },
+];
 
 ## 📱 MapLibre Native
 
 ### Releases
 
-<table style="width: 100%; border-collapse: collapse; font-family: sans-serif; color: #e2e8f0; background-color: #0d1117;">
-  <thead>
-    <tr style="background-color: #161b22; text-align: left;">
-      <th style="padding: 12px; border-bottom: 1px solid #30363d; color: #8b949e; font-weight: 400;">
-        Platform
-      </th>
-      <th style="padding: 12px; border-bottom: 1px solid #30363d; color: #8b949e; font-weight: 400;">
-        Latest Versions
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="border-bottom: 1px solid #21262d;">
-      <td style="padding: 12px; vertical-align: top;">
-        <strong>Android</strong>
-      </td>
-      <td style="padding: 12px; line-height: 1.5;">
-
-          [13.0.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v13.0.0), [13.0.1](https://github.com/maplibre/maplibre-native/releases/tag/android-v13.0.1), [13.0.2](https://github.com/maplibre/maplibre-native/releases/tag/android-v13.0.2)
-
-      </td>
-    </tr>
-    <tr style="border-bottom: 1px solid #21262d;">
-      <td style="padding: 12px; vertical-align: top;">
-        <strong>iOS</strong>
-      </td>
-      <td style="padding: 12px; line-height: 1.5;">
-
-          [6.24.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.24.0), [6.25.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.25.0)
-
-      </td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; vertical-align: top;">
-        <strong>Node.js</strong>
-      </td>
-      <td style="padding: 12px; line-height: 1.5;">
-
-          [6.4.0](https://github.com/maplibre/maplibre-native/releases/tag/node-v6.4.0), [6.4.1](https://github.com/maplibre/maplibre-native/releases/tag/node-v6.4.1)
-
-      </td>
-    </tr>
-
-  </tbody>
-</table>
+<ReleaseTable data={mapLibreData} />
 
 ### Terrain3D
 
