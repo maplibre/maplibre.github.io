@@ -1,18 +1,18 @@
 ---
-// src/components/CTA.astro
+// src/components/Announcement.astro
 ---
 
-<div class="cta-callout">
-  <div class="cta-icon">
+<div class="announcement-callout">
+  <div class="announcement-icon">
     <slot name="icon">📣</slot>
   </div>
-  <div class="cta-content">
+  <div class="announcement-content">
     <slot />
   </div>
 </div>
 
 <style>
-  .cta-callout {
+  .announcement-callout {
     background-color: rgba(66, 153, 225, 0.1);
     border-left: 4px solid #4299e1;
     padding: 20px;
@@ -23,31 +23,31 @@
     gap: 16px;
   }
 
-  .cta-icon {
+  .announcement-icon {
     font-size: 1.5rem;
     flex-shrink: 0; /* Prevents the icon from squishing */
     line-height: 1.2;
   }
 
-  .cta-content {
+  .announcement-content {
     color: #e2e8f0;
     font-size: 1rem;
     line-height: 1.6;
   }
 
   /* Ensures any links inside are still readable but not buttons */
-  .cta-content :global(a) {
+  .announcement-content :global(a) {
     color: #63b3ed;
     text-decoration: underline;
     font-weight: 600;
   }
 
-  .cta-content :global(a:hover) {
+  .announcement-content :global(a:hover) {
     color: #90cdf4;
   }
 
   /* Removes margin from the last paragraph inside the slot */
-  .cta-content :global(p:last-child) {
+  .announcement-content :global(p:last-child) {
     margin-bottom: 0;
   }
 </style>
