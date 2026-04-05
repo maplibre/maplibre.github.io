@@ -1,0 +1,85 @@
+---
+// ReleaseTable.astro
+interface Version {
+  label: string;
+  url: string;
+}
+
+interface Platform {
+  name: string;
+  versions: Version[];
+}
+
+interface Props {
+  data: Platform[];
+}
+
+const { data } = Astro.props;
+---
+
+<table class="release-table">
+  <thead>
+    <tr>
+      <th>Platform</th>
+      <th>Latest Versions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      data.map((item) => (
+        <tr>
+          <td class="platform-name">
+            <strong>{item.name}</strong>
+          </td>
+          <td class="version-links">
+            {item.versions.map((v, index) => (
+              <>
+                <a href={v.url}>{v.label}</a>
+                {index < item.versions.length - 1 ? ", " : ""}
+              </>
+            ))}
+          </td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
+
+<style>
+  .release-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    color: #e2e8f0;
+    background-color: #0d1117;
+  }
+
+  .release-table th {
+    background-color: #161b22;
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #30363d;
+    color: #8b949e;
+    font-weight: 400;
+  }
+
+  .release-table td {
+    padding: 12px;
+    vertical-align: top;
+    border-bottom: 1px solid #21262d;
+    line-height: 1.5;
+  }
+
+  .release-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .version-links a {
+    color: #58a6ff;
+    text-decoration: none;
+  }
+
+  .version-links a:hover {
+    text-decoration: underline;
+  }
+</style>
