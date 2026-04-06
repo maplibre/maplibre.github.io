@@ -9,6 +9,7 @@ draft: false
 import mltTalkImg from "./mlt-talk.jpg";
 import maplibreGang from "./maplibre-gang.jpg";
 import mapterhornTalk from "./mapterhorn-talk.jpg";
+import terrain_3d from "./terrain-3d.jpg";
 import ReleaseTable from "../../../components/ReleaseTable.astro";
 import Announcement from "../../../components/Announcement.astro";
 import { Image } from "astro:assets";
@@ -87,6 +88,47 @@ Now, let's dive in for the latest updates!
 
 Support for Terrain3D is one of the [most upvoted](https://github.com/maplibre/maplibre-native/issues/252) features for MapLibre Native. While several, (mostly) vibe coded prototypes have been developed, delivering a production-grade implementation is something that requires a significant investment in graphics engineering and expertise.
 
+<div
+  style="
+    max-width: 600px;
+    margin: 1.5rem auto;
+    text-align: center;
+    padding: 0 0.75rem;
+  "
+>
+  <Image
+    src={terrain_3d}  
+    alt="MapLibre Terrain 3D"
+    style="
+      width: 100%;
+      height: auto;
+      display: block;
+    "
+    loading="lazy"
+    decoding="async"
+  />
+
+  <p
+    style={{
+      marginTop: "0.5rem",
+      marginBottom: 0,
+      lineHeight: "1.4",
+    }}
+  >
+    <em
+      style={{
+        fontSize: "0.8rem",
+        color: "#666",
+        fontStyle: "italic",
+      }}
+    >
+       A visualization of elevation data
+    
+    </em>
+  </p>
+  
+</div>
+
 We are pleased to announce significant progress! We have identified a company that is willing to commit substantial funding to this initiative. However, **they are seeking an additional co-funding partner to bring this feature to life**.
 
 <Announcement>
@@ -121,6 +163,10 @@ Last month we mentioned starting pre-releases for Version 6. However due to the 
 The [MapLibre Tile (MLT) project](https://maplibre.org/news/2026-01-23-mlt-release/) has seen significant progress this month. The Rust implementation is rapidly maturing; we have introduced a comprehensive suite of synthetic tests to ensure stability across edge cases.
 
 Beyond just stability, we have achieved full decoding and expanded partial encoding support, bringing us closer to a production-grade toolkit. This progress is a major step toward making MLT a viable, high-performance alternative to MVT, offering better compression and faster parsing for large-scale geospatial data.
+
+[Tim Sylvester](https://github.com/TimSylvester) also made many improvements to the Java CLI tool. The performance for parallel conversion from MVT has been improved by several orders of magnitude. This now makes it a suitable tool to adapt existing MVT creation pipelines.
+
+In addition, the data input of the Java encoder is being [generalized](https://github.com/maplibre/maplibre-tile-spec/pull/1176). This prepares MLT for a future where the data model of MLT that goes beyond MVT parity, enabling support for m-values or encoding lists and nested key-value structures.
 
 You can follow the development and check out the [MLT Specification](https://github.com/maplibre/maplibre-tile-spec) on GitHub.
 
