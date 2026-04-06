@@ -165,8 +165,13 @@ The [MapLibre Tile (MLT) project](https://maplibre.org/news/2026-01-23-mlt-relea
 Beyond just stability, we have achieved full decoding and expanded partial encoding support, bringing us closer to a production-grade toolkit. This progress is a major step toward making MLT a viable, high-performance alternative to MVT, offering better compression and faster parsing for large-scale geospatial data.
 
 [Tim Sylvester](https://github.com/TimSylvester) also made many improvements to the Java CLI tool. The performance for parallel conversion from MVT has been improved by several orders of magnitude. This now makes it a suitable tool to adapt existing MVT creation pipelines.
-
 In addition, the data input of the Java encoder is being [generalized](https://github.com/maplibre/maplibre-tile-spec/pull/1176). This prepares MLT for a future where the data model of MLT that goes beyond MVT parity, enabling support for m-values or encoding lists and nested key-value structures.
+
+On the rust side (competition is good!), both the encoder and decoder have seen major refactorings by [Yuri Astraken](https://github.com/nyurik) and [Frank Elsinga](https://github.com/CommanderStorm) that have increased this encoders performance and output quality signifcantly.
+It can now beat java in most cases, but this is because we have settings that explore more state-space which is slower.
+More engineering is neccesary to improve performance beyond what java offers.
+There are also experiments using [diplomat](https://github.com/rust-diplomat/diplomat) to provide FFI access to the rust based tooling.
+More on this in the next update.
 
 You can follow the development and check out the [MLT Specification](https://github.com/maplibre/maplibre-tile-spec) on GitHub.
 
