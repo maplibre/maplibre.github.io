@@ -2,24 +2,210 @@
 title: "MapLibre Newsletter March 2026"
 date: "2026-04-03"
 categories: ["newsletter"]
-authors: [bart-louwers]
-draft: true
+authors: [harel-mazor, bart-louwers, frank-elsinga, ramya-ragupathy]
+draft: false
 ---
 
 import mltTalkImg from "./mlt-talk.jpg";
 import maplibreGang from "./maplibre-gang.jpg";
 import mapterhornTalk from "./mapterhorn-talk.jpg";
-
+import terrain_3d from "./terrain-3d.jpg";
+import ReleaseTable from "../../../components/ReleaseTable.astro";
+import Announcement from "../../../components/Announcement.astro";
 import { Image } from "astro:assets";
 import "./style.css";
 
-## Conferences
+export const mapLibreData = [
+  {
+    name: "Android",
+    versions: [
+      {
+        label: "13.0.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/android-v13.0.0",
+      },
+      {
+        label: "13.0.1",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/android-v13.0.1",
+      },
+      {
+        label: "13.0.2",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/android-v13.0.2",
+      },
+    ],
+  },
+  {
+    name: "iOS",
+    versions: [
+      {
+        label: "6.24.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.24.0",
+      },
+      {
+        label: "6.25.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.25.0",
+      },
+    ],
+  },
+  {
+    name: "Node.js",
+    versions: [
+      {
+        label: "6.4.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/node-v6.4.0",
+      },
+      {
+        label: "6.4.1",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/node-v6.4.1",
+      },
+    ],
+  },
+];
+
+Welcome to the March 2026 edition of the MapLibre Newsletter! This month marks a significant transition for our community. We have made the decision to [sunset the current MapLibre Bounty Program](https://maplibre.org/news/2026-03-17-reinivisioning-the-bounty-program/) as we shift towards a contributor recognition system.
+
+Please stay tuned for more details in the coming months as we finalize how this new system will empower our community. In the meantime, we encourage everyone to read the FAQ included in our recent blog post for more context on this change.
+
+This evolution is made possible by the continued and growing support from our partners.
+
+<Announcement>
+  🙏 We are particularly grateful to [Notion](https://www.notion.com/) for their
+  recent [financial
+  contribution](https://opencollective.com/maplibre/contributions/935577) via
+  Open Collective.
+</Announcement>
+
+Contributions like these are vital as we look out for co-funding models for major features like Terrain3D and the maturation of the MapLibre Tile (MLT) project.
+
+Now, let's dive in for the latest updates!
+
+## 📱 MapLibre Native
+
+### Releases
+
+<ReleaseTable data={mapLibreData} />
+
+### Terrain3D: Call for Funding
+
+Support for Terrain3D is one of the [most upvoted](https://github.com/maplibre/maplibre-native/issues/252) features for MapLibre Native. While several, (mostly) vibe coded prototypes have been developed, delivering a production-grade implementation is something that requires a significant investment in graphics engineering and expertise.
+
+<div
+  style="
+    max-width: 600px;
+    margin: 1.5rem auto;
+    text-align: center;
+    padding: 0 0.75rem;
+  "
+>
+  <Image
+    src={terrain_3d}  
+    alt="MapLibre Terrain 3D"
+    style="
+      width: 100%;
+      height: auto;
+      display: block;
+    "
+    loading="lazy"
+    decoding="async"
+  />
+
+  <p
+    style={{
+      marginTop: "0.5rem",
+      marginBottom: 0,
+      lineHeight: "1.4",
+    }}
+  >
+    <em
+      style={{
+        fontSize: "0.8rem",
+        color: "#666",
+        fontStyle: "italic",
+      }}
+    >
+       A visualization of elevation data
+    
+    </em>
+  </p>
+  
+</div>
+
+We are pleased to announce significant progress! We have identified a company that is willing to commit substantial funding to this initiative. However, **they are seeking an additional co-funding partner to bring this feature to life**.
+
+<Announcement>
+  If your organization is interested in supporting this development, please
+  reach out to us at team@maplibre.org. We are also open to connecting with
+  individual developers who are interested in contributing to this effort.
+</Announcement>
+
+To clarify, MapLibre (the organization) is not directly funding Terrain3D for MapLibre Native at this stage. Instead we are facilitating connections between interested parties (companies, developers). MapLibre will provide maintainer support through consensus building, quality control, CI/CD, communication and release management.
+
+We have created a dedicated branch `feature/terrain-3d` for continued work on the initial prototype. You can follow the progress in [this PR](https://github.com/maplibre/maplibre-native/pull/4190).
+
+## 🌐 MapLibre GL JS
+
+We had a great month with 5 new releases: [v5.20.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.20.0), [v5.20.1](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.20.1), [v5.20.2](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.20.2), [v5.21.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.21.0), [v5.21.1](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.21.1).
+
+✨ Some of the highlights of this month include:
+
+- We introduced updateable features to the [geojson-vt](https://maplibre.org/geojson-vt/) library, which improved the GeoJSON update performance significantly. While this initially caused a few nasty bugs which were quickly resolved thanks to [Ryan Scully](https://github.com/wayofthefuture), the results are worth it. The latest version is reportedly 7x faster compared to when we began GeoJSON optimizations a few months ago. Many thanks to everyone who contributed code, helped with the testing, and submitted bug reports!
+- Memory optimizations and removal of legacy code supporting outdated browsers, mainly lead by [Johan](https://github.com/johanrd).
+- Improved ETag handling added by [Rivka Matan](https://github.com/rivkamatan) and [Ryan Scully](https://github.com/wayofthefuture) stops the map from re-downloading unchanged data, saving bandwidth and speeding up load times.
+- [Resampling](https://maplibre.org/maplibre-style-spec/layers/#resampling) support is available now. This was added by [Lars Maxfield](https://github.com/larsmaxfield). This option lets users turn off smoothing to see raw, pixel-accurate terrain data instead of a blended or blurry image
+- An example of how to use MapLibre GL JS with 3D tiles example was added by [Hang](https://github.com/hh-hang).
+
+Last month we mentioned starting pre-releases for Version 6. However due to the high volume of contributions to the current branch, we have decided to continue with Version 5 for now. We still aim to begin the Version 6 transition in the coming months.
+
+🏆 The sheer volume of work contributed this month is amazing! A huge thanks to this month's contributors:
+[Claudio](https://github.com/claudiobgit), [Baixiaochun](https://github.com/Bingtagui404), [Xavier Bourry](https://github.com/xavierjs), [Johan](https://github.com/johanrd), [Kikuo Emoto](https://github.com/kikuomax), [Kate Miháliková](https://github.com/katemihalikova), [Gareth Bowker](https://github.com/garethbowker), [Danila Poyarkov](https://github.com/dannote), [Ted Piotrowski](https://github.com/ted-piotrowski), [Hang](https://github.com/hh-hang), [yano-h-wni](https://github.com/HiroyukiYANO), [Rivka Matan](https://github.com/rivkamatan), [Ryan Scully](https://github.com/wayofthefuture), [ItisYB](https://github.com/itisyb), [Lars Maxfield](https://github.com/larsmaxfield), [JT](https://github.com/jtfedd), [Stephen Andre](https://github.com/madoci) and [PierreC](https://github.com/pcardinal).
+
+## 🧩 MapLibre Tile (MLT)
+
+The [MapLibre Tile (MLT) project](https://maplibre.org/news/2026-01-23-mlt-release/) has seen significant progress this month. The Rust implementation is rapidly maturing; we have introduced a comprehensive suite of synthetic tests to ensure stability across edge cases.
+
+Beyond just stability, we have achieved full decoding and expanded partial encoding support, bringing us closer to a production-grade toolkit. This progress is a major step toward making MLT a viable, high-performance alternative to MVT, offering better compression and faster parsing for large-scale geospatial data.
+
+[Tim Sylvester](https://github.com/TimSylvester) also made many improvements to the Java CLI tool. The performance for parallel conversion from MVT has been improved by several orders of magnitude. This now makes it a suitable tool to adapt existing MVT creation pipelines.
+In addition, the data input of the Java encoder is being [generalized](https://github.com/maplibre/maplibre-tile-spec/pull/1176). This prepares MLT for a future where the data model of MLT that goes beyond MVT parity, enabling support for m-values or encoding lists and nested key-value structures.
+
+On the rust side (competition is good!), both the encoder and decoder have seen major refactorings by [Yuri Astraken](https://github.com/nyurik) and [Frank Elsinga](https://github.com/CommanderStorm) that have increased this encoders performance and output quality signifcantly.
+It can now beat java in most cases, but this is because we have settings that explore more state-space which is slower.
+More engineering is neccesary to improve performance beyond what java offers.
+There are also experiments using [diplomat](https://github.com/rust-diplomat/diplomat) to provide FFI access to the rust based tooling.
+More on this in the next update.
+
+You can follow the development and check out the [MLT Specification](https://github.com/maplibre/maplibre-tile-spec) on GitHub.
+
+## 🦀 Martin
+
+This month, like the last month, has been focused on implementing a production-grade MLT encoder/decoder, so there has not been much movement regarding Martin.
+
+We fixed a startup crash that occurred when `ST_Extent` returns a `LineString` instead of `Polygon` , and added [ZSTD support](https://facebook.github.io/zstd/) thanks to [@nuts-rice](https://github.com/nuts-rice).
+We also further reworked [our new documentation site](https://maplibre.org/martin/) and ironed out a few of the remaining inconsistencies.
+
+## ✨ Community spotlight
+
+We are tracking an exciting development in the rendering world: [the Slug algorithm is now out-of-patent](https://terathon.com/blog/decade-slug.html).
+
+Most maps currently draw text using pictures of letters, which can look fuzzy when you zoom in close to the map view. The Slug algorithm replaces these pictures with mathematical blueprints, allowing labels to remain perfectly crisp at any angle or scale.
+
+<Announcement>
+  Now that this technology is public property, we are looking for community
+  members to help us research how to bring these benefits to MapLibre. Join us
+  in our [GitHub
+  discussion](https://github.com/maplibre/maplibre/discussions/493).
+</Announcement>
+
+## 👥 Conferences & Events
 
 ### FOSSGIS
 
-MapLibre was represented at the [FOSSGIS](https://fossgis-konferenz.de/2026/), a German open source geospatial and OpenStreetMap conference. Oliver Wipfli, previously coordinator for MapLibre shared about how his project [Mapterhorn](https://mapterhorn.com/) is expanding from terrain tiles to create a new dataset with sattelite coverage. [Kilian Finger](https://github.com/KiwiKilian) was also there, who is getting [MapLibre React Native](https://maplibre.org/maplibre-react-native/) ready for the new architecture. Lastly [Frank Elsinga](https://maplibre.org/about/frank-elsinga/) and [Bart Louwers](https://maplibre.org/about/bart-louwers/) gave a talk on the latest MapLibre developments, with a focus on giving a basic introduction to MapLibre Tile (MLT).
+MapLibre was well-represented at the [FOSSGIS](https://fossgis-konferenz.de/2026/), a German open source geospatial and OpenStreetMap conference. It was a fantastic opportunity to connect with the community and share updates on our projects.
 
-If you want to view the MapLibre talks at the conference, see the links below (they are in German).
+- Oliver Wipfli(former MapLibre coordinator) shared how his project [Mapterhorn](https://mapterhorn.com/) is expanding from terrain tiles to create a new dataset with satellite coverage.
+- [Kilian Finger](https://github.com/KiwiKilian) discussed progess on getting [MapLibre React Native](https://maplibre.org/maplibre-react-native/) ready for the new architecture.
+- [Frank Elsinga](https://maplibre.org/about/frank-elsinga/) and [Bart Louwers](https://maplibre.org/about/bart-louwers/) gave a talk on the latest MapLibre developments, specifically introducing the community to MapLibre Tile (MLT).
+
+If you want to view the MapLibre talks at the conference, checkout the recordings below (they are in German):
 
 - [Schnellere Karten, kleinere MapLibre Vektorkacheln und weitere Neuerungen](https://media.ccc.de/v/fossgis2026-83258-schnellere-karten-kleinere-maplibre-vektorkacheln-und-weitere-neuerungen) ([slides](https://pretalx.com/media/fossgis2026/submissions/NYSASD/resources/MapLibre-FOSSG_wz7XMwI.pdf))
 
@@ -49,3 +235,25 @@ If you want to view the MapLibre talks at the conference, see the links below (t
   style="display: block; margin: auto;"
 />
 </div>
+
+## 🗓️ Monthly meetings
+
+We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
+
+Upcoming Calls
+
+- MapLibre Navigation: Apr 8, 2026 – 4:00–5:00 PM UTC
+- MapLibre Native: Apr 8, 2026 – 5:00–6:00 PM UTC
+- MapLibre GL JS: Apr 8, 2026 – 6:00–7:00 PM UTC
+
+🌏 MapLibre Eastern Call
+
+Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
+
+- Apr 29, 2026 – 9:00–10:00 AM UTC
+
+🔗 [View meeting times in your local timezone](https://notime.zone/OpS0SwKw2wiQK).
+
+All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/) and join the `#maplibre` channel.
+We’d love to see you there!
