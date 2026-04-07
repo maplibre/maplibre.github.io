@@ -70,7 +70,6 @@ const websiteJsonLd = toJsonLd({
           title="Map<span style='color: #95BEFA;'>Libre</span> GL JS"
           visualFlex={false}
           href="projects/gl-js/"
-          stretchedLink={false}
         >
           <Fragment slot="description">
             Open-source TypeScript library for publishing maps on your website.
@@ -87,6 +86,7 @@ const websiteJsonLd = toJsonLd({
           </Fragment>
           <div
             slot="visual"
+            class="position-relative z-2"
             style="max-width: 500px; margin: 0px auto; min-height: 300px;"
           >
             <LandingPageMap client:only="solid-js" />
