@@ -6,9 +6,16 @@ interface Props {
   visualStyle?: string;
   visualFlex?: boolean;
   href?: string;
+  stretchedLink?: boolean;
 }
 
-const { title, visualStyle = "", visualFlex = true, href } = Astro.props;
+const {
+  title,
+  visualStyle = "",
+  visualFlex = true,
+  href,
+  stretchedLink = true,
+} = Astro.props;
 
 const visualBaseStyle = visualFlex
   ? "display: flex; justify-content: center; align-items: center;"
@@ -24,11 +31,15 @@ const titleText = title.replace(/<[^>]+>/g, "");
 <div
   class:list={[
     "container",
-    { "project-link": !!href, "position-relative": !!href, rounded: !!href },
+    {
+      "project-link": !!href && stretchedLink,
+      "position-relative": !!href && stretchedLink,
+      rounded: !!href && stretchedLink,
+    },
   ]}
 >
   {
-    href && (
+    href && stretchedLink && (
       <a
         href={href}
         class="stretched-link"
@@ -49,7 +60,7 @@ const titleText = title.replace(/<[^>]+>/g, "");
 
         <div
           class:list={[
-            { "position-relative z-2": !!href },
+            { "position-relative z-2": !!href && stretchedLink },
             "row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-5 gy-3 text-center text-lg-start",
           ]}
         >
