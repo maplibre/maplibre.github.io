@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>MapLibre</title><description>The MapLibre Organization is an umbrella for open-source mapping libraries.</description><link>https://maplibre.org/</link><language>en-US</language><lastBuildDate>Mon, 06 Apr 2026 23:00:52 GMT</lastBuildDate><item><title>MapLibre Newsletter March 2026</title><link>https://maplibre.org/news/2026-04-01-maplibre-newsletter-march-2026/</link><guid isPermaLink="true">https://maplibre.org/news/2026-04-01-maplibre-newsletter-march-2026/</guid><pubDate>Fri, 03 Apr 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Welcome to the March 2026 edition of the MapLibre Newsletter! This month marks a significant transition for our community. We have made the decision to &lt;a href=&quot;https://maplibre.org/news/2026-03-17-reinivisioning-the-bounty-program/&quot;&gt;sunset the current MapLibre Bounty Program&lt;/a&gt; as we shift towards a contributor recognition system.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>MapLibre</title><description>The MapLibre Organization is an umbrella for open-source mapping libraries.</description><link>https://maplibre.org/</link><language>en-US</language><lastBuildDate>Wed, 08 Apr 2026 17:25:34 GMT</lastBuildDate><item><title>MapLibre Newsletter March 2026</title><link>https://maplibre.org/news/2026-04-01-maplibre-newsletter-march-2026/</link><guid isPermaLink="true">https://maplibre.org/news/2026-04-01-maplibre-newsletter-march-2026/</guid><pubDate>Fri, 03 Apr 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Welcome to the March 2026 edition of the MapLibre Newsletter! This month marks a significant transition for our community. We have made the decision to &lt;a href=&quot;https://maplibre.org/news/2026-03-17-reinivisioning-the-bounty-program/&quot;&gt;sunset the current MapLibre Bounty Program&lt;/a&gt; as we shift towards a contributor recognition system.&lt;/p&gt;
 &lt;p&gt;Please stay tuned for more details in the coming months as we finalize how this new system will empower our community. In the meantime, we encourage everyone to read the FAQ included in our recent blog post for more context on this change.&lt;/p&gt;
 &lt;p&gt;This evolution is made possible by the continued and growing support from our partners.&lt;/p&gt;
 &lt;div class=&quot;announcement-callout&quot; data-astro-cid-tmlihunq=&quot;&quot;&gt; &lt;div class=&quot;announcement-icon&quot; data-astro-cid-tmlihunq=&quot;&quot;&gt; 📣 &lt;/div&gt; &lt;div class=&quot;announcement-content&quot; data-astro-cid-tmlihunq=&quot;&quot;&gt; &lt;p&gt;🙏 We are particularly grateful to &lt;a href=&quot;https://www.notion.com/&quot;&gt;Notion&lt;/a&gt; for their
@@ -85,16 +85,15 @@ discussion&lt;/a&gt;.&lt;/p&gt; &lt;/div&gt; &lt;/div&gt;
 &lt;p&gt;We continue our regular community calls on the &lt;em&gt;&lt;strong&gt;second Wednesday&lt;/strong&gt;&lt;/em&gt; of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.&lt;/p&gt;
 &lt;p&gt;Upcoming Calls&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;MapLibre Navigation: Apr 8, 2026 – 4:00–5:00 PM UTC&lt;/li&gt;
-&lt;li&gt;MapLibre Native: Apr 8, 2026 – 5:00–6:00 PM UTC&lt;/li&gt;
-&lt;li&gt;MapLibre GL JS: Apr 8, 2026 – 6:00–7:00 PM UTC&lt;/li&gt;
+&lt;li&gt;MapLibre Navigation: Apr 8, 2026 – 5:00–6:00 PM UTC&lt;/li&gt;
+&lt;li&gt;MapLibre Native: Apr 8, 2026 – 6:00–7:00 PM UTC&lt;/li&gt;
+&lt;li&gt;MapLibre GL JS: Apr 8, 2026 – 7:00–8:00 PM UTC&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;🌏 MapLibre Eastern Call&lt;/p&gt;
 &lt;p&gt;Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Apr 29, 2026 – 9:00–10:00 AM UTC&lt;/li&gt;
+&lt;li&gt;Apr 29, 2026 – 10:00–11:00 AM UTC&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;🔗 &lt;a href=&quot;https://notime.zone/OpS0SwKw2wiQK&quot;&gt;View meeting times in your local timezone&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
 Not yet a member? Request an invite via the &lt;a href=&quot;https://slack.openstreetmap.us/&quot;&gt;OpenStreetMap US Slack&lt;/a&gt; and join the &lt;code&gt;#maplibre&lt;/code&gt; channel.
 We’d love to see you there!&lt;/p&gt;</content:encoded><author/></item><item><title>We&apos;re Sun-setting the Bounty Program</title><link>https://maplibre.org/news/2026-03-17-reinivisioning-the-bounty-program/</link><guid isPermaLink="true">https://maplibre.org/news/2026-03-17-reinivisioning-the-bounty-program/</guid><pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate><content:encoded>&lt;blockquote&gt;
