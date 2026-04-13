@@ -19,7 +19,7 @@
     "@astrojs/solid-js": "^6.0.1",
     "@fontsource/alata": "^5.2.8",
     "@igor.dvlpr/astro-post-excerpt": "4.1.1-alpha.0",
-    "astro": "^6.1.4",
+    "astro": "^6.1.5",
     "astro-icon": "^1.1.5",
     "bootstrap": "^5.3.8",
     "maplibre-gl": "^5.22.0",
