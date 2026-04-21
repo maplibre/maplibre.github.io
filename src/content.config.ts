@@ -1,4 +1,5 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from 'astro/zod';
 
 import { glob } from "astro/loaders";
 import { ROADMAP_STATUSES } from "./constants";
@@ -41,8 +42,6 @@ const roadmapItems = defineCollection({
           "martin-tile-server",
         ])
         .default("general"),
-      bountyLink: z.optional(z.string()),
-      bountyActive: z.optional(z.boolean()),
       released: z.optional(
         z.string().transform((str) => {
           const [month, year] = str.split(" ");

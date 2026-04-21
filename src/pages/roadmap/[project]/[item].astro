@@ -134,12 +134,6 @@ function formatDate(dateValue) {
 
             <Content />
 
-            {roadmapItem.data.bountyActive ? (
-              <a href={roadmapItem.data.bountyLink} class="btn btn-light">
-                💰 Bounties
-              </a>
-            ) : null}
-
             {roadmapItem.data.released ? (
               <p style="font-weight: bold;">
                 Released: {formatDate(roadmapItem.data.released)}
