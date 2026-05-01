@@ -20,6 +20,7 @@ import { BRAND_BLUE } from "../../../../constants";
 import type { RoadmapStatus } from "../../../../constants";
 
 const STATUS_COLOR: Record<RoadmapStatus, string> = {
+  "partially-funded": "#ffffff",
   "in-progress": BRAND_BLUE,
   released: "#ffffff",
   "under-consideration": "#ffffff",
