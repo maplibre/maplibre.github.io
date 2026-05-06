@@ -2,7 +2,8 @@
 title: "MapLibre Newsletter April 2026"
 date: "2026-05-03"
 categories: ["newsletter"]
-authors: [harel-mazor, bart-louwers, frank-elsinga, ramya-ragupathy]
+authors:
+  [harel-mazor, bart-louwers, joscha-eckert, stephanie-may, ramya-ragupathy]
 draft: false
 ---
 
@@ -10,6 +11,7 @@ import flutter_examples from "./flutter_examples.png";
 import flutter_hover from "./flutter_hover.png";
 import { Image } from "astro:assets";
 import ReleaseTable from "../../../components/ReleaseTable.astro";
+import Announcement from "../../../components/Announcement.astro";
 
 export const nativeReleases = [
   {
@@ -36,6 +38,8 @@ export const nativeReleases = [
   },
 ];
 
+Welcome to the April 2026 edition of the MapLibre Newsletter! This month, we have exciting updates across all our projects. Key milestones include overhauls for React Native and Flutter, the transition toward MapLibre GL JS v6, and foundational research into a native MLT 3D tile format.
+
 ## 📱 MapLibre Native
 
 [Alex Cristici](https://github.com/alexcristici) improved the resilience of MapLibre Native when running out of memory (see [PR](https://github.com/maplibre/maplibre-native/pull/4178)). Additionally, [Sargun Vohra](https://github.com/sargunv), author of [MapLibre Compose](https://maplibre.org/maplibre-compose/), is working on a C ABI(Application Binary Interface) for MapLibre Native (see [repository](https://github.com/sargunv/maplibre-native-ffi)), which could serve as a strong foundation for both new and existing platforms.
@@ -43,6 +47,7 @@ export const nativeReleases = [
 **Releases:**
 
 <ReleaseTable data={nativeReleases} />
+
 ## 🌐 MapLibre GL JS
 
 Versions [5.22.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.22.0), [5.23.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.23.0), and [5.24.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.24.0) were released this month, introducing mostly performance improvements and bug fixes along with minor public API additions, and marking the final releases for version 5.
@@ -54,7 +59,10 @@ The primary breaking changes for this version include:
 - **Dropping WebGL1 support** to resolve long-standing bugs and feature requests while improving performance and compatibility with modern libraries.
 - **Transitioning from CommonJS to ESM**, which will allow us to move faster, adopt modern tools, and upgrade our overall build system and infrastructure.
 
+<Announcement>
 Once all breaking changes are in place, we will provide a migration guide to assist with the transition from version 5 to version 6. While most changes so far are fairly trivial, some may be tricky; we encourage you to try these pre-releases and help us build robust migration documentation for the community.
+
+</Announcement>
 
 It has been over a year since our last major update, and we believe now is the right time to move on from legacy constraints we have carried for a while.
 
@@ -62,11 +70,36 @@ As always, we would like to thank all our contributors:
 
 👏 [Xavier Bourry](https://github.com/xavierjs), [Frank Elsing](https://github.com/CommanderStorm), [Jakub Pelc](https://github.com/kubapelc), [itisyb](https://github.com/itisyb), [Yu Chun Tsao](https://github.com/YuChunTsao), [neodescis](https://github.com/neodescis), [Matt Van Horn](https://github.com/mvanhorn), [Will Field](https://github.com/Willjfield), [Ashwin Chandran](https://github.com/ashwinuae), [Seokcheol Jeong](https://github.com/kkokkojeong), [Sam](https://github.com/Lievesley), and [Kyℓe Hensel](https://github.com/k-yle).
 
+## 🧩 MapLibre Tile (MLT)
+
+Markus Tremmel has shared initial design considerations and encoding strategies for **MLT 3D**, building on an original proposal by Anas. This project explores how a dedicated 3D tile format can be optimized for the MapLibre ecosystem while identifying key areas where it diverges from existing standards like 3D Tiles.
+
+There is potential for direct MapLibre GL JS integration, which would pave the way for more robust 3D capabilities natively and the project is currently seeking feedback on both use cases and technical encoding.
+
+<Announcement>
+  You can explore the design document and provide feedback on the [GitHub
+  repository](https://github.com/mactrem/mlt-3d).
+</Announcement>
+
+## ⚛️ MapLibre React Native
+
+[MapLibre React Native v11](https://github.com/maplibre/maplibre-react-native/releases/tag/v11.0.0) is here, and it is the first release to exclusively support React Native's new architecture. Alongside this foundational shift, the entire API has been overhauled to align with MapLibre GL JS, making it easier than ever to share knowledge and code between web and native map implementations.
+
+One of the most exciting additions is style-spec compliant `paint` and `layout` props on the unified `Layer` component. This means layer definitions exported from the style spec can be spread directly onto a `Layer` component with no translation needed.
+
+<Announcement>
+  A full migration guide with before-and-after code snippets for every breaking
+  change is available in the [v11 migration
+  docs](https://maplibre.org/maplibre-react-native/docs/setup/migrations/v11).
+  Grateful to everyone who contributed to this release and look forward to
+  building on this clean foundation in the versions ahead!
+</Announcement>
+
 ## 🪶 MapLibre Flutter
 
 ### flutter-maplibre-gl
 
-[**flutter-maplibre-gl**](https://github.com/maplibre/flutter-maplibre-gl) (the long-standing Flutter plugin) has shipped v0.26.0! This reelease focuses on closing years of accumulated backlog and bringing the package back to a healthy maintenance baseline.
+[**flutter-maplibre-gl**](https://github.com/maplibre/flutter-maplibre-gl), the long-standing Flutter plugin, has shipped v0.26.0! This release focuses on closing years of accumulated backlog and bringing the package back to a healthy maintenance baseline.
 
 <div
   style={{
@@ -110,7 +143,7 @@ As always, we would like to thank all our contributors:
 - **WASM release mode on Flutter Web** — long-standing build issues with WASM in release mode have been resolved, making Flutter Web a viable production target.
 - **`takeSnapshot()`** — a single, unified snapshot API now works consistently across Android, iOS, and Web.
 - **Tap handling** — `onMapClick` now reliably fires on every tap, including taps on rendered features.
-- **Feature State on Web** — `setFeatureState`, `getFeatureState`, and `removeFeatureState` are now available on the Web platform, closing a feature parity gap with thenative platforms.
+- **Feature State on Web** — `setFeatureState`, `getFeatureState`, and `removeFeatureState` are now available on the Web platform, closing a feature parity gap with the native platforms.
 - **Camera interpolation** — `easeCamera` now accepts interpolation curves, removing velocity jumps in GPS-following scenarios.
 - **Synchronous GeoJSON drag** — drag handling for GeoJSON features is now synchronous, eliminating stale positions during interactions.
 - **A long tail of fixes** — including Android split-screen behavior, an iOS `onStyleLoaded` race condition, and a brand new example app.
@@ -161,7 +194,23 @@ Special thanks to all the contributors and maintainers for shepherding the packa
 
 Version [0.3.5](https://pub.dev/packages/maplibre/changelog#035) of the [flutter-maplibre](https://github.com/josxha/flutter-maplibre) has been released, featuring several improvements to consistency and stability alongside general maintenance. The MapLibre SDKs and the dependencies on `jni` / `jnigen` have been updated.
 
-As an ongoing task, work continues on static typed expressions that fit well into Dart. Ideas regarding the Dart syntax, can be [discussed here](https://github.com/josxha/flutter-maplibre/issues/72#issuecomment-4358841272).
+<Announcement>
+  As an ongoing task, work continues on static typed expressions that fit well
+  into Dart. Ideas regarding the Dart syntax, can be [discussed
+  here](https://github.com/josxha/flutter-maplibre/issues/72#issuecomment-4358841272).
+</Announcement>
+
+## ✨ Community Spotlight
+
+HDTP is an open data platform by Codeando México that features a notable GTFS Realtime (GTFS-RT) visualizer. This tool combines MapLibre with deck.gl to create [an interactive map (_checkout the cine mode_)](https://hdtp.codeandomexico.org/datos/mex-cdmx-cdmx-metrobus-rt) for exploring real-time transit data, efficiently displaying live vehicle positions.
+
+## 👥 Conferences & Events
+
+### LinuxFest Northwest
+
+On April 25, Stephanie May and Matt Wilden delivered a joint presentation at [LinuxFest Northwest](https://linuxfestnorthwest.org/) on the synergies between MapLibre and OpenStreetMap US. They discussed how the tooling and infrastructure across both ecosystems have matured enough for anyone to build an open-source map—including building custom tiles, styling layers, and scaling a CDN or dynamic tile server.
+
+The enthusiastic crowd was eager to dive deeper into the world of open mapping. You can find the slides for their talk, titled "The Latest in Open Source Maps," [here](https://github.com/mizmay/LinuxFestNorthwest2026/blob/main/The%20Latest%20in%20Open%20Source%20Maps.pdf), along with [various demos showcasing how accessible working with open-source data and maps has become](https://github.com/mizmay/LinuxFestNorthwest2026).
 
 ## 🗓️ Monthly meetings
 
@@ -176,7 +225,7 @@ Upcoming Calls
 
 Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
 
-- May, 2026 – 10:00–11:00 AM UTC
+- May 27, 2026 – 9–10:00 AM UTC
 
 All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
 Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/) and join the `#maplibre` channel.
