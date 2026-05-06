@@ -6,20 +6,62 @@ authors: [harel-mazor, bart-louwers, frank-elsinga, ramya-ragupathy]
 draft: false
 ---
 
+import ReleaseTable from "../../../components/ReleaseTable.astro";
+
+export const nativeReleases = [
+  {
+    name: "Android",
+    versions: [
+      {
+        label: "13.1.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/android-v13.1.0",
+      },
+    ],
+  },
+  {
+    name: "iOS",
+    versions: [
+      {
+        label: "6.25.1",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.25.1",
+      },
+      {
+        label: "6.26.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.26.0",
+      },
+    ],
+  },
+];
+
+## AI Policy
+
+MapLibre has a new [AI Policy](https://github.com/maplibre/maplibre/blob/main/AI_POLICY.md)! The summary: don't let AI speak for you, disclose AI usage and verify AI assisted contributions before marking a pull request (PR) as ready for review. Maintainers have the freedom to implement it in a way they deem appropriate for their projects. [Feedback](https://github.com/maplibre/maplibre/discussions/499) on this policy is very much welcome.
+
+## 📱 MapLibre Native
+
+[Alex Cristici](https://github.com/alexcristici) improved the resilience of MapLibre Native when running out of memory (see [PR](https://github.com/maplibre/maplibre-native/pull/4178)). Additionally, [Sargun Vohra](https://github.com/sargunv), author of [MapLibre Compose](https://maplibre.org/maplibre-compose/), is working on a C ABI(Application Binary Interface) for MapLibre Native (see [repository](https://github.com/sargunv/maplibre-native-ffi)), which could serve as a strong foundation for both new and existing platforms.
+
+**Releases:**
+
+<ReleaseTable data={nativeReleases} />
 ## 🌐 MapLibre GL JS
-Version 5.22.0, 5.23.0 and 5.24.0 were released this month.
-These version introduced mostly performance improvements and bug fixes along minor public API additions.
-They also mark the last version 5 releases.
-We have started releasing version 6 pre-releases with the breaking changes we aim to do as part of this breaking change versions. We will continue to release those in the next few weeks and hopefully finish shortly.
-The major breaking changes we aim to do as part of this version are:
-- Dropping support for webgl1 in order to be able to fix some long lasting bugs and feature request alongside improving performance and better compatibility with modern libraries.
-- Dropping commonjs build and use ESM. This will allow us to move faster, adopt new tools and in general modernize our build system and infrastructure.
 
-Once we have all the breaking change in place we will create a migration guide to help out migrating from version 5 to version 6. Most of the changes we've seen so far are fairly trivial, but might be tricky in some cases, so feel free to try out these pre-releases and help us create good migration documentation for future developers.
+Versions [5.22.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.22.0), [5.23.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.23.0), and [5.24.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.24.0) were released this month, introducing mostly performance improvements and bug fixes along with minor public API additions, and marking the final releases for version 5.
 
-We haven't released a breaking change version for over a year now and we believe this is a good time to say goodbye to some old stuff that we have dragged for a long time.
+We have begun releasing version 6 pre-releases featuring the breaking changes planned for this major update. We will continue rolling these out over the next few weeks and expect to finish shortly.
 
-As always, we would like to thank all the contributors: @xavierjs, @CommanderStorm, @kubapelc, @itisyb, @YuChunTsao, @neodescis, @mvanhorn, @Willjfield, @ashwinuae, @kkokkojeong, @Lievesley, @k-yle
+The primary breaking changes for this version include:
+
+- **Dropping WebGL1 support** to resolve long-standing bugs and feature requests while improving performance and compatibility with modern libraries.
+- **Transitioning from CommonJS to ESM**, which will allow us to move faster, adopt modern tools, and upgrade our overall build system and infrastructure.
+
+Once all breaking changes are in place, we will provide a migration guide to assist with the transition from version 5 to version 6. While most changes so far are fairly trivial, some may be tricky; we encourage you to try these pre-releases and help us build robust migration documentation for the community.
+
+It has been over a year since our last major update, and we believe now is the right time to move on from legacy constraints we have carried for a while.
+
+As always, we would like to thank all our contributors:
+
+👏 [Xavier Bourry](https://github.com/xavierjs), [Frank Elsing](https://github.com/CommanderStorm), [Jakub Pelc](https://github.com/kubapelc), [itisyb](https://github.com/itisyb), [Yu Chun Tsao](https://github.com/YuChunTsao), [neodescis](https://github.com/neodescis), [Matt Van Horn](https://github.com/mvanhorn), [Will Field](https://github.com/Willjfield), [Ashwin Chandran](https://github.com/ashwinuae), [Seokcheol Jeong](https://github.com/kkokkojeong), [Sam](https://github.com/Lievesley), and [Kyℓe Hensel](https://github.com/k-yle).
 
 ## 🗓️ Monthly meetings
 
