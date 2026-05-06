@@ -1,0 +1,16 @@
+.fossgiscollage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.fossgiscollage img {
+  max-width: 100%;
+  height: auto;
+}
+
+.maplibregang {
+  grid-column: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
