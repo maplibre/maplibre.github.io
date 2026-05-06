@@ -6,6 +6,9 @@ authors: [harel-mazor, bart-louwers, frank-elsinga, ramya-ragupathy]
 draft: false
 ---
 
+import flutter_examples from "./flutter_examples.png";
+import flutter_hover from "./flutter_hover.png";
+import { Image } from "astro:assets";
 import ReleaseTable from "../../../components/ReleaseTable.astro";
 
 export const nativeReleases = [
@@ -33,10 +36,6 @@ export const nativeReleases = [
   },
 ];
 
-## AI Policy
-
-MapLibre has a new [AI Policy](https://github.com/maplibre/maplibre/blob/main/AI_POLICY.md)! The summary: don't let AI speak for you, disclose AI usage and verify AI assisted contributions before marking a pull request (PR) as ready for review. Maintainers have the freedom to implement it in a way they deem appropriate for their projects. [Feedback](https://github.com/maplibre/maplibre/discussions/499) on this policy is very much welcome.
-
 ## 📱 MapLibre Native
 
 [Alex Cristici](https://github.com/alexcristici) improved the resilience of MapLibre Native when running out of memory (see [PR](https://github.com/maplibre/maplibre-native/pull/4178)). Additionally, [Sargun Vohra](https://github.com/sargunv), author of [MapLibre Compose](https://maplibre.org/maplibre-compose/), is working on a C ABI(Application Binary Interface) for MapLibre Native (see [repository](https://github.com/sargunv/maplibre-native-ffi)), which could serve as a strong foundation for both new and existing platforms.
@@ -62,6 +61,107 @@ It has been over a year since our last major update, and we believe now is the r
 As always, we would like to thank all our contributors:
 
 👏 [Xavier Bourry](https://github.com/xavierjs), [Frank Elsing](https://github.com/CommanderStorm), [Jakub Pelc](https://github.com/kubapelc), [itisyb](https://github.com/itisyb), [Yu Chun Tsao](https://github.com/YuChunTsao), [neodescis](https://github.com/neodescis), [Matt Van Horn](https://github.com/mvanhorn), [Will Field](https://github.com/Willjfield), [Ashwin Chandran](https://github.com/ashwinuae), [Seokcheol Jeong](https://github.com/kkokkojeong), [Sam](https://github.com/Lievesley), and [Kyℓe Hensel](https://github.com/k-yle).
+
+## 🪶 MapLibre Flutter
+
+### flutter-maplibre-gl
+
+[**flutter-maplibre-gl**](https://github.com/maplibre/flutter-maplibre-gl) (the long-standing Flutter plugin) has shipped v0.26.0! This reelease focuses on closing years of accumulated backlog and bringing the package back to a healthy maintenance baseline.
+
+<div
+  style={{
+    maxWidth: "600px",
+    margin: "2rem auto",
+    textAlign: "center",
+    padding: "0 0.75rem",
+  }}
+>
+  <div
+    style={{
+      backgroundColor: "#161b22",
+      borderRadius: "12px",
+      padding: "12px",
+      border: "1px solid #30363d",
+    }}
+  >
+    <Image
+      src={flutter_examples}
+      alt="MapLibre Examples Gallery"
+      style={{
+        width: "100%",
+        height: "auto",
+        display: "block",
+        borderRadius: "6px",
+      }}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <p style={{ marginTop: "0.75rem", lineHeight: "1.4" }}>
+    <em style={{ fontSize: "0.9rem", color: "#8b949e", fontStyle: "italic" }}>
+      Interactive examples of new features.
+    </em>
+  </p>
+</div>
+
+**Highlights:**
+
+- **Offline regions, rebuilt end-to-end** — the offline manager now supports pause/resume of downloads, per-tile progress reporting, cache eviction policies, and rate-limit safety on the tile server side.
+- **WASM release mode on Flutter Web** — long-standing build issues with WASM in release mode have been resolved, making Flutter Web a viable production target.
+- **`takeSnapshot()`** — a single, unified snapshot API now works consistently across Android, iOS, and Web.
+- **Tap handling** — `onMapClick` now reliably fires on every tap, including taps on rendered features.
+- **Feature State on Web** — `setFeatureState`, `getFeatureState`, and `removeFeatureState` are now available on the Web platform, closing a feature parity gap with thenative platforms.
+- **Camera interpolation** — `easeCamera` now accepts interpolation curves, removing velocity jumps in GPS-following scenarios.
+- **Synchronous GeoJSON drag** — drag handling for GeoJSON features is now synchronous, eliminating stale positions during interactions.
+- **A long tail of fixes** — including Android split-screen behavior, an iOS `onStyleLoaded` race condition, and a brand new example app.
+
+<div
+  style={{
+    maxWidth: "600px",
+    margin: "2rem auto",
+    textAlign: "center",
+    padding: "0 0.75rem",
+  }}
+>
+  <div
+    style={{
+      backgroundColor: "#161b22",
+      borderRadius: "12px",
+      padding: "12px",
+      border: "1px solid #30363d",
+    }}
+  >
+    <Image
+      src={flutter_hover}
+      alt="MapLibre Hover Effect Demo"
+      style={{
+        width: "100%",
+        height: "auto",
+        display: "block",
+        borderRadius: "6px",
+      }}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <p style={{ marginTop: "0.75rem", lineHeight: "1.4" }}>
+    <em style={{ fontSize: "0.9rem", color: "#8b949e", fontStyle: "italic" }}>
+      A screenshot of the new hover effect.
+    </em>
+  </p>
+</div>
+
+Full changelog: https://github.com/maplibre/flutter-maplibre-gl/blob/main/CHANGELOG.md
+
+Package: https://pub.dev/packages/maplibre_gl
+
+Special thanks to all the contributors and maintainers for shepherding the package through this work.
+
+### flutter-maplibre
+
+Version [0.3.5](https://pub.dev/packages/maplibre/changelog#035) of the [flutter-maplibre](https://github.com/josxha/flutter-maplibre) has been released, featuring several improvements to consistency and stability alongside general maintenance. The MapLibre SDKs and the dependencies on `jni` / `jnigen` have been updated.
+
+As an ongoing task, work continues on static typed expressions that fit well into Dart. Ideas regarding the Dart syntax, can be [discussed here](https://github.com/josxha/flutter-maplibre/issues/72#issuecomment-4358841272).
 
 ## 🗓️ Monthly meetings
 
