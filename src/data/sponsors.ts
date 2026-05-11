@@ -10,14 +10,14 @@ export const goldSponsors: Sponsor[] = [
     logo: "/img/msft-logo.svg",
     name: "Microsoft",
   },
-];
-
-export const silverSponsors: Sponsor[] = [
   {
     href: "https://aws.amazon.com/location/",
     logo: "/img/aws-logo.svg",
     name: "Amazon (AWS)",
   },
+];
+
+export const silverSponsors: Sponsor[] = [
   {
     href: "https://www.mierune.co.jp/?lang=en",
     logo: "/img/mierune-logo.svg",
@@ -44,6 +44,11 @@ export const silverSponsors: Sponsor[] = [
     href: "https://www.caltopo.com/",
     logo: "/img/caltopo-logo.svg",
     name: "CalTopo",
+  },
+  {
+    href: "https://www.smartmaps.net/en/",
+    logo: "/img/smartmaps-logo.svg",
+    name: "SmartMaps",
   },
 ];
 
