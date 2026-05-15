@@ -5,7 +5,7 @@ project: maplibre-gl-js
 status: in-progress
 ---
 
-Adding a WebGPU rendering backend to MapLibre GL JS alongside the existing WebGL2 renderer. This uses the WebGPU API directly, without an abstraction layer.
+Adding a WebGPU rendering backend to MapLibre GL JS alongside the existing WebGL2 renderer. This uses the WebGPU API directly, without an abstraction layer. As part of this effort, the WebGL2 renderer is also being modernized to use features like Uniform Buffer Objects, immutable textures, and layout qualifiers that bring it closer to how WebGPU works.
 
 The approach follows MapLibre Native's architecture, where each backend (OpenGL, Metal, WebGPU) implements the same Drawable interface. In GL JS, the two backends will be `Drawable._drawWebGL()` and `Drawable._drawWebGPU()`, sharing all non-GPU code (style evaluation, tile loading, symbol placement, etc.).
 
