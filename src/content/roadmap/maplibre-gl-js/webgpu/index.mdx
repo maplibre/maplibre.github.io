@@ -1,0 +1,21 @@
+---
+title: WebGPU Renderer
+heroImage: "./webgpu.svg"
+project: maplibre-gl-js
+status: in-progress
+---
+
+Adding a WebGPU rendering backend to MapLibre GL JS alongside the existing WebGL2 renderer. This uses the WebGPU API directly, without an abstraction layer.
+
+The approach follows MapLibre Native's architecture, where each backend (OpenGL, Metal, WebGPU) implements the same Drawable interface. In GL JS, the two backends will be `Drawable._drawWebGL()` and `Drawable._drawWebGPU()`, sharing all non-GPU code (style evaluation, tile loading, symbol placement, etc.).
+
+The work is split into four phases:
+
+1. **WebGL2 Texture/Shader Improvements** - Adopt WebGL2-only features like `texStorage2D` and layout qualifiers that align with WebGPU's model.
+2. **Drawable Rendering Architecture** - Restructure the renderer around Drawables with Uniform Buffer Objects, following MapLibre Native's pattern.
+3. **WebGL2 Vertex and Shader Improvements** - Integer vertex attributes, GLSL ES 3.00 features, and instanced rendering.
+4. **WebGPU Backend** - Add the WebGPU code path, port GLSL shaders to WGSL, and establish WebGPU render testing.
+
+Each phase is independently shippable. The WebGL2 improvements in phases 1-3 prepare the codebase so that adding WebGPU in phase 4 is a contained change rather than a rewrite.
+
+If you are interested in contributing to this effort, please reach out on Slack (`#maplibre-gl-js`) or open a discussion in the MapLibre GL JS repository.
