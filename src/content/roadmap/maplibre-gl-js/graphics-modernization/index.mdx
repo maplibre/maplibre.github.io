@@ -11,9 +11,9 @@ The approach follows MapLibre Native's architecture, where each backend (OpenGL,
 
 The work is split into four phases:
 
-1. **WebGL2 Texture/Shader Improvements** - Adopt WebGL2-only features like `texStorage2D` and layout qualifiers that align with WebGPU's model.
+1. **WebGL2 Texture and Shader Improvements** - Adopt WebGL2-only features like immutable textures and layout qualifiers that align with WebGPU's model.
 2. **Drawable Rendering Architecture** - Restructure the renderer around Drawables with Uniform Buffer Objects, following MapLibre Native's pattern.
-3. **WebGL2 Vertex and Shader Improvements** - Integer vertex attributes, GLSL ES 3.00 features, and instanced rendering.
+3. **WebGL2 Vertex and Rendering Improvements** - Integer vertex attributes, additional GLSL ES 3.00 features, and instanced rendering.
 4. **WebGPU Backend** - Add the WebGPU code path, port GLSL shaders to WGSL, and establish WebGPU render testing.
 
 Each phase is independently shippable. The WebGL2 improvements in phases 1-3 prepare the codebase so that adding WebGPU in phase 4 is a contained change rather than a rewrite.
