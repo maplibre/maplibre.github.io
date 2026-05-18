@@ -1,0 +1,136 @@
+---
+title: "Welcoming YellowMap as a Silver Sponsor!"
+date: "2026-05-15"
+categories: ["announcements"]
+authors: [ramya-ragupathy]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import maplibreLogo from "./maplibre-logo-for-light-bg.svg";
+import yellowmapLogo from "./smartmaps-logo.svg";
+import smartmapsExample from "./smartmaps-store-locator.png";
+import Announcement from "../../../components/Announcement.astro";
+
+We are thrilled to officially welcome [YellowMap](https://yellowmap.com/) as a Silver sponsor of the MapLibre organization!
+
+<div
+  style={{
+    backgroundColor: "white",
+    padding: "2rem",
+    border: "10px solid #cfd8dc",
+    borderRadius: "0",
+    marginBottom: "3rem",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "2rem",
+    flexWrap: "nowrap",
+    overflow: "hidden",
+  }}
+>
+  <Image
+    src={maplibreLogo}
+    alt="MapLibre logo"
+    style={{
+      width: "40%",
+      maxWidth: "300px",
+      height: "auto",
+      objectFit: "contain",
+    }}
+  />
+  <Image
+    src={yellowmapLogo}
+    alt="YellowMap logo"
+    style={{
+      width: "40%",
+      maxWidth: "330px",
+      height: "auto",
+      objectFit: "contain",
+    }}
+  />
+</div>
+
+## Why YellowMap Chose MapLibre: A Shift to Modern Vector Maps
+
+For YellowMap, the decision to migrate to MapLibre was driven by a desire to modernise and add functionality. They recently transitioned from raster map configurations to vector tile approach allowing for smoother zooming and easier customisation. During this transition, YellowMap conducted exhaustive high-load and performance testing that confirmed MapLibre could meet their high standards.
+
+<Announcement>
+  Today, YellowMap's infrastructure, powered by a Kubernetes cluster, serves
+  nearly a million map views a day and handles global map tile updates every
+  four weeks. MapLibre GL JS has helped them handle this massive scale
+  effortlessly.
+</Announcement>
+
+## How YellowMap Meets Data Compliance Needs with MapLibre
+
+At the core of YellowMap's product offering is [SmartMaps](https://www.smartmaps.net/en/), built to address the strict data privacy demands of the European B2B market.
+While many modern mapping providers rely on external content delivery networks (CDNs) or track user behaviors via cookies, YellowMap takes a self-hosted approach:
+
+- 100% GDPR Compliance: YellowMap hosts all mapping systems entirely on their own self-managed servers.
+
+- No Tracking: SmartMaps solution operates completely without cookies and never transfers user data (such as IP addresses or advertising IDs) to external providers or third-party CDNs.
+
+- Digital Sovereignty: SmartMaps' independent architecture provides data security for privacy-critical B2B power users, including major financial institutions like Deutsche Bank, where end-users rely on secure interfaces to do things like look up local ATM branches.
+
+<div
+  style={{
+    maxWidth: "600px",
+    margin: "2rem auto",
+    textAlign: "center",
+    padding: "0 0.75rem",
+  }}
+>
+  <div
+    style={{
+      backgroundColor: "#161b22",
+      borderRadius: "12px",
+      padding: "12px",
+      border: "1px solid #30363d",
+    }}
+  >
+    <Image
+      src={smartmapsExample}
+      alt="SmartMaps store locator example"
+      style={{
+        width: "100%",
+        height: "auto",
+        display: "block",
+        borderRadius: "6px",
+      }}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <p style={{ marginTop: "0.75rem", lineHeight: "1.4" }}>
+    <em style={{ fontSize: "0.9rem", color: "#8b949e", fontStyle: "italic" }}>
+      Showcase of SmartMaps used in a store-locator application.
+    </em>
+  </p>
+</div>
+
+<Announcement>
+  MapLibre's open-source, vendor-agnostic nature goes hand-in-hand with
+  YellowMap's data privacy and digital sovereignty philosophy, allowing them to
+  maintain complete ownership of their tech stack and uphold their digital
+  sovereignty unique selling proposition (USP).
+</Announcement>
+
+## How YellowMap Utilizes MapLibre Today
+
+YellowMap’s core mapping SDK, [smartgl](https://www.smartmaps.net/en/), functions as a specialized wrapper around MapLibre GL JS. Their current deployment relies heavily on several advanced MapLibre features:
+
+- [Globe View](https://maplibre.org/maplibre-gl-js/docs/examples/display-a-globe-with-a-vector-map/): Providing an immersive, global perspective for large-scale data visualization.
+
+- [Multi-Language Support](https://maplibre.org/maplibre-gl-js/docs/examples/change-a-maps-language/): Enabling end users customers to switch map languages dynamically.
+
+## The Road Ahead
+
+YellowMap's integration with MapLibre is only expanding. Driven by upcoming client requests, they are currently preparing to integrate MapLibre Native into their environment, with internal technical documentation slated for completion in the coming days.
+
+YellowMap is also interested in developments surrounding the entire backend tile generation stack, Martin tile server format integrations, and native support for simple SVG sources.
+
+---
+
+We are incredibly grateful for YellowMap’s support, which helps ensure that MapLibre remains open, and community-driven mapping framework for everyone.
+If you are interested in [sponsoring](https://maplibre.org/sponsors/) MapLibre, please reach out to us at sponsor@maplibre.org. We would love to hear from you!
