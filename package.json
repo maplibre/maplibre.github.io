@@ -28,7 +28,7 @@
     "sass": "1.99.0",
     "satori": "^0.26.0",
     "sharp": "^0.34.5",
-    "solid-js": "^1.9.12",
+    "solid-js": "^1.9.13",
     "ultrahtml": "^1.5.3"
   },
   "devDependencies": {
