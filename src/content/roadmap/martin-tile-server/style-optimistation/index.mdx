@@ -3,6 +3,9 @@ title: Advanced Style-Data Cooptimization
 heroImage: "./image.png"
 project: martin-tile-server
 status: under-consideration
+helpWanted: true
+developerLink: https://github.com/maplibre/martin/issues/1757
+fundingLink: https://opencollective.com/maplibre/projects/style-optimisation-martin
 ---
 
 Together with the [Techical Unversity of Munichs' chair of Big Geospatial Data Management](https://www.bgd.ed.tum.de/), we are currently working on a thesis where the next generation of vector tile performance from tile servers could come from:
@@ -31,4 +34,3 @@ Here are the optimisations that are currently planned for evaluation:
 
 List of some possible optimisations. _full scan_ means that this optimisation would require executing one operation over the whole table at minimum. _sampling_ means that this data can be gathered by sampling approaches, but evaluating if a full scan could add context will have to be looked at. For sampling-based approaches, the resampling frequency for the dynamic sources noted in `\cref{access:dynamic}` needs to be determined via statistical approaches. The cases where no scan is necessary does not mean that it might not still be beneficial, for example for parameter tuning.
 
-GitHub Issues: [#1757](https://github.com/maplibre/martin/issues/1757)

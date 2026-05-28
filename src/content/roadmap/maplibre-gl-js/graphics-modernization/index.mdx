@@ -3,6 +3,9 @@ title: Graphics Modernization
 heroImage: "./graphics-modernization.png"
 project: maplibre-gl-js
 status: in-progress
+helpWanted: true
+developerLink: https://github.com/maplibre/maplibre-gl-js/issues/7640
+fundingLink: https://opencollective.com/maplibre/projects/graphics-modernization
 ---
 
 MapLibre GL JS is getting a WebGPU rendering backend alongside the existing WebGL2 renderer. As part of this effort, the WebGL2 renderer is also being modernized to use features like Uniform Buffer Objects, immutable textures, and layout qualifiers that bring it closer to how WebGPU works.
@@ -18,4 +21,4 @@ The work is split into four phases:
 
 Each phase is independently shippable. The WebGL2 improvements in phases 1-3 prepare the codebase so that adding WebGPU in phase 4 is a contained change rather than a rewrite.
 
-Progress can be followed in the [Graphics Modernization](https://github.com/maplibre/maplibre-gl-js/issues/7640) tracking issue. If you are interested in contributing, please reach out on Slack (`#maplibre-gl-js`) or comment on the issue.
+If you are interested in contributing, reach out on Slack (`#maplibre-gl-js`).
