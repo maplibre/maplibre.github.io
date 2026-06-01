@@ -1,6 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import TitleHeader from "../../../components/TitleHeader.astro";
+import HelpWanted from "../../../components/HelpWanted.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
@@ -134,29 +135,12 @@ function formatDate(dateValue) {
 
             <Content />
 
-            {roadmapItem.data.helpWanted ? (
-              <div class="mt-4">
-                <h5>Get Involved</h5>
-                <div class="d-flex gap-3 flex-wrap mt-2">
-                  {roadmapItem.data.developerLink ? (
-                    <a
-                      href={roadmapItem.data.developerLink}
-                      class="btn btn-outline-light"
-                    >
-                      Technical Discussion
-                    </a>
-                  ) : null}
-                  {roadmapItem.data.fundingLink ? (
-                    <a
-                      href={roadmapItem.data.fundingLink}
-                      class="btn btn-primary"
-                    >
-                      Funding
-                    </a>
-                  ) : null}
-                </div>
-              </div>
-            ) : null}
+            {roadmapItem.data.helpWanted && (
+              <HelpWanted
+                developerLink={roadmapItem.data.developerLink}
+                fundingLink={roadmapItem.data.fundingLink}
+              />
+            )}
 
             {roadmapItem.data.released ? (
               <p style="font-weight: bold;">
