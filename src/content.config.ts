@@ -31,12 +31,15 @@ const roadmapItems = defineCollection({
     z.object({
       title: z.string(),
       heroImage: z.optional(
-        z.object({
-          url: image(),
-          fit: z.optional(z.enum(["fill", "contain", "cover"])),
-          credit: z.optional(z.string()),
-          creditUrl: z.optional(z.string().url()),
-        }),
+        z.preprocess(
+          (val) => (typeof val === "string" ? { url: val } : val),
+          z.object({
+            url: image(),
+            fit: z.optional(z.enum(["fill", "contain", "cover"])),
+            credit: z.optional(z.string()),
+            creditUrl: z.optional(z.string().url()),
+          }),
+        ),
       ),
       status: z.enum(ROADMAP_STATUSES),
       project: z

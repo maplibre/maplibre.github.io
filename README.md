@@ -42,4 +42,4 @@ If you are on the map, but don't want to be, please open a pull request or issue
 Any third-party image or map data should carry a credit or source.
 
 - For inline images in MDX or Astro pages, wrap in `<figure>` with a `<figcaption class="figure-caption">`.
-- For roadmap hero images, add `heroImageCredit` and (optionally) `heroImageCreditUrl` to the item's frontmatter; the layout renders the credit automatically.
+- For roadmap hero images, use the nested `heroImage` frontmatter object: `url` (required), `fit` (optional), `credit` (optional), `creditUrl` (optional). The layout renders the credit automatically.
