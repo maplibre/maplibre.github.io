@@ -126,12 +126,26 @@ function formatDate(dateValue) {
                 ← Back to {projectMeta.label} roadmap
               </a>
             </p>
-            <Image
-              format="png"
-              alt={roadmapItem.data.title}
-              src={roadmapItem.data.heroImage}
-              style="max-height:400px;height:auto;width:auto; max-width: 100%; border-radius: 10px; background-color: white; display: block; margin: 0 auto 20px auto;"
-            />
+            <figure>
+              <Image
+                format="png"
+                alt={roadmapItem.data.title}
+                src={roadmapItem.data.heroImage}
+                style="max-height:400px;height:auto;width:auto; max-width: 100%; border-radius: 10px; background-color: white; display: block; margin: 0 auto;"
+              />
+              {roadmapItem.data.heroImageCredit && (
+                <figcaption class="figure-caption">
+                  Image credit:{" "}
+                  {roadmapItem.data.heroImageCreditUrl ? (
+                    <a href={roadmapItem.data.heroImageCreditUrl}>
+                      {roadmapItem.data.heroImageCredit}
+                    </a>
+                  ) : (
+                    roadmapItem.data.heroImageCredit
+                  )}
+                </figcaption>
+              )}
+            </figure>
 
             <Content />
 
