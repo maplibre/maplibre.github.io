@@ -135,14 +135,7 @@ MapLibre’s 2025 Governing Board election [process](https://github.com/maplibre
 
 - **Support for Complex Scripts:** We added support for the new [`font-faces`](https://maplibre.org/maplibre-style-spec/font-faces/) property (see the [implementation PR](https://github.com/maplibre/maplibre-native/pull/3611)). This allows you to use TrueType fonts with MapLibre Native. Font files are needed for [text shaping](https://en.wikipedia.org/wiki/Text_shaping) which many complex (non-latin) scripts require. Thanks goes to Alan Wei Chen, Stefan Karschti and Grab for contributing this functionality.
 
-<div
-  style={{
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: "1rem",
-  }} >
+<figure>
   <div
     style={{
       display: "flex",
@@ -173,24 +166,8 @@ MapLibre’s 2025 Governing Board election [process](https://github.com/maplibre
       }}
     />
   </div>
-
-      <div
-      style={{
-        fontSize: "0.9rem",
-        color: "#555",
-        fontStyle: "italic",
-        marginTop: "0.75rem",
-        textAlign: "center",
-      }}
-
->
-
-      Screenshots showing complex map rendering. Style © OpenMapTiles. Map data
-      from OpenStreetMap.
-
-    </div>
-
-</div>
+  <figcaption class="figure-caption text-center">Screenshots showing complex map rendering. Style © OpenMapTiles. Map data from OpenStreetMap.</figcaption>
+</figure>
 
 - **Crowdsourced Device Testing:** Adrian Cojocaru has developed long running tests for Android and iOS. Now we are thinking about how we can actually run these. Since AWS Device Farm limits runs to 150 minutes, we are thinking about distributing an app that people can download, to run these tests on their own devices. This app would report any issues to a central place. So a crowed-sourced approach to bug hunting. More info will follow and please share your ideas!
 

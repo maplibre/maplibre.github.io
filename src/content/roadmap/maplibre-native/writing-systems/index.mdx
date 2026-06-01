@@ -14,36 +14,35 @@ import myanmarImg from "./myanmar.png";
 import thaiImg from "./thai.png";
 import { Image } from "astro:assets";
 
-<div
-  style={{
-    display: "flex",
-    gap: "1rem",
-    flexWrap: "wrap",
-    justifyContent: "center",
-  }}
->
-  <Image
-    src={myanmarImg}
-    alt="Myanmar"
+<figure>
+  <div
     style={{
-      maxWidth: "300px",
-      width: "100%",
-      height: "auto",
-      flex: "1 1 300px",
+      display: "flex",
+      gap: "1rem",
+      flexWrap: "wrap",
+      justifyContent: "center",
     }}
-  />
-  <Image
-    src={thaiImg}
-    alt="Thai"
-    style={{
-      maxWidth: "300px",
-      width: "100%",
-      height: "auto",
-      flex: "1 1 300px",
-    }}
-  />
-  <p>
-    Screenshots showing complex map rendering. Style © OpenMapTiles. Map data
-    from OpenStreetMap
-  </p>
-</div>
+  >
+    <Image
+      src={myanmarImg}
+      alt="Myanmar"
+      style={{
+        maxWidth: "300px",
+        width: "100%",
+        height: "auto",
+        flex: "1 1 300px",
+      }}
+    />
+    <Image
+      src={thaiImg}
+      alt="Thai"
+      style={{
+        maxWidth: "300px",
+        width: "100%",
+        height: "auto",
+        flex: "1 1 300px",
+      }}
+    />
+  </div>
+  <figcaption class="figure-caption text-center">Screenshots showing complex map rendering. Style © OpenMapTiles. Map data from OpenStreetMap.</figcaption>
+</figure>
