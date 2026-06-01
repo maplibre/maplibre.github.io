@@ -30,8 +30,14 @@ const roadmapItems = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      heroImage: image(),
-      heroImageFit: z.optional(z.enum(["fill", "contain", "cover"])),
+      heroImage: z.optional(
+        z.object({
+          url: image(),
+          fit: z.optional(z.enum(["fill", "contain", "cover"])),
+          credit: z.optional(z.string()),
+          creditUrl: z.optional(z.string().url()),
+        }),
+      ),
       status: z.enum(ROADMAP_STATUSES),
       project: z
         .enum([
