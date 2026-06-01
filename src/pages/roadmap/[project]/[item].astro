@@ -139,12 +139,18 @@ function formatDate(dateValue) {
                 <h5>Get Involved</h5>
                 <div class="d-flex gap-3 flex-wrap mt-2">
                   {roadmapItem.data.developerLink ? (
-                    <a href={roadmapItem.data.developerLink} class="btn btn-outline-light">
+                    <a
+                      href={roadmapItem.data.developerLink}
+                      class="btn btn-outline-light"
+                    >
                       Technical Discussion
                     </a>
                   ) : null}
                   {roadmapItem.data.fundingLink ? (
-                    <a href={roadmapItem.data.fundingLink} class="btn btn-primary">
+                    <a
+                      href={roadmapItem.data.fundingLink}
+                      class="btn btn-primary"
+                    >
                       Funding
                     </a>
                   ) : null}

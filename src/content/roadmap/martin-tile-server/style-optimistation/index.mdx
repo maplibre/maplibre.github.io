@@ -33,4 +33,3 @@ Here are the optimisations that are currently planned for evaluation:
 | static generation             | static source   | extract semantics and generate a new, optimal [static instruction set for constructing the tile database](https://github.com/onthegomap/planetiler/tree/main/planetiler-custommap) |
 
 List of some possible optimisations. _full scan_ means that this optimisation would require executing one operation over the whole table at minimum. _sampling_ means that this data can be gathered by sampling approaches, but evaluating if a full scan could add context will have to be looked at. For sampling-based approaches, the resampling frequency for the dynamic sources noted in `\cref{access:dynamic}` needs to be determined via statistical approaches. The cases where no scan is necessary does not mean that it might not still be beneficial, for example for parameter tuning.
-
