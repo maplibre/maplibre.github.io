@@ -135,10 +135,10 @@ function formatDate(dateValue) {
 
             <Content />
 
-            {roadmapItem.data.helpWanted && (
+            {roadmapItem.data.links && (
               <HelpWanted
-                developerLink={roadmapItem.data.developerLink}
-                fundingLink={roadmapItem.data.fundingLink}
+                developer={roadmapItem.data.links.developer}
+                funding={roadmapItem.data.links.funding}
               />
             )}
 

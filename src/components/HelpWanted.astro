@@ -1,25 +1,25 @@
 ---
 interface Props {
-  developerLink?: string;
-  fundingLink?: string;
+  developer?: string;
+  funding?: string;
 }
 
-const { developerLink, fundingLink } = Astro.props;
+const { developer, funding } = Astro.props;
 ---
 
 <div class="mt-4">
   <h5>Get Involved</h5>
   <div class="d-flex gap-3 flex-wrap mt-2">
     {
-      developerLink && (
-        <a href={developerLink} class="btn btn-outline-light">
+      developer && (
+        <a href={developer} class="btn btn-outline-light">
           Technical Discussion
         </a>
       )
     }
     {
-      fundingLink && (
-        <a href={fundingLink} class="btn btn-primary">
+      funding && (
+        <a href={funding} class="btn btn-primary">
           Funding
         </a>
       )
