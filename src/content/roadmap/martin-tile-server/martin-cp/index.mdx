@@ -1,0 +1,20 @@
+---
+title: martin-cp Bulk Tile Generation
+heroImage: "./image.png"
+project: martin-tile-server
+status: released
+released: November 2023
+---
+
+`martin-cp` is a standalone CLI for bulk-copying tiles from any Martin-supported source into an MBTiles or PMTiles archive - similar in spirit to `tilelive-copy` and `tippecanoe`, but reusing Martin's own source configuration and CLI.
+
+It runs without starting the tile server, ships as a single binary with no external dependencies, and is intended for seeding caches, producing offline extracts, and generating static tile archives for CDN distribution.
+
+Capabilities:
+
+- Copy tiles from any configured Martin source (PostGIS, MBTiles, PMTiles, ..) into MBTiles or PMTiles
+- Bounding box, zoom range, and minimum-zoom filtering
+- Default bounds inferred from configured sources for sparse source sets
+- Human-readable progress and time estimates
+
+Documentation: [martin-cp Guide](https://maplibre.org/martin/martin-cp.html)
