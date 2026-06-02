@@ -1,0 +1,20 @@
+---
+title: Hot Reloading (Watch Mode)
+heroImage: "./image.svg"
+project: martin-tile-server
+status: in-progress
+---
+
+Pick up new and changed data sources without restarting Martin.
+
+When a new MBTiles file lands in a watched directory, a PostGIS table is published, or a remote PMTiles archive is replaced, Martin should refresh its catalog and any affected caches in place - keeping the server live while the data underneath evolves.
+The old `WATCH_MODE` was removed because it relied on a global lock per request; the replacement is a decentralised reloader per source type, coordinated through a `TileSourceManager` that serialises catalog updates.
+
+Per-source status:
+
+- [x] (released) **MBTiles** - directories watched via OS file events; added/removed files appear in the catalog automatically
+- [x] (released) **PMTiles** - file additions and removals are picked up the same way
+- [x] (released) **COG** - Cloud Optimised GeoTIFF sources reuse the same reloader pattern
+- [ ] **PostgreSQL/PostGIS** - discovery decoupled from init and source fingerprints landed; underlying trait refactor and the `PostgresReloader` itself are still open
+
+GitHub Issues: [#288](https://github.com/maplibre/martin/issues/288)
