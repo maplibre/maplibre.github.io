@@ -48,10 +48,12 @@ const roadmapItems = defineCollection({
           return new Date(`${month} 1, ${year}`);
         }),
       ),
-      links: z.optional(z.object({
-        developer: z.optional(z.string().url()),
-        funding: z.optional(z.string().url()),
-      })),
+      links: z.optional(
+        z.object({
+          developer: z.optional(z.string().url()),
+          funding: z.optional(z.string().url()),
+        }),
+      ),
     }),
 });
 
