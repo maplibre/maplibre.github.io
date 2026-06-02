@@ -1,0 +1,21 @@
+---
+title: DuckDB Support
+heroImage: "./image.png"
+project: martin-tile-server
+status: in-progress
+---
+
+Native vector tile generation from DuckDB databases, including the spatial extension and DuckLake.
+
+Since DuckDB 1.4 ships `ST_AsMVT` and `ST_AsMVTGeom`, Martin can talk to DuckDB similarly to how it talks to PostGIS today — opening a path for Parquet, DuckLake, and GeoParquet stacks to serve tiles directly, without a PostgreSQL proxy in front.
+
+Key capabilities:
+
+- Table, view, and function-based tile sources
+- Automatic schema discovery and catalog generation
+- File-backed and in-memory databases, including remote object storage
+- Built on the new `martin-core` architecture
+
+Being implemented by [@manbhav234](https://github.com/manbhav234) as a [Google Summer of Code 2026](https://wiki.openstreetmap.org/wiki/Google_Summer_of_Code/2026/Project_ideas) project.
+
+GitHub Issues: [#2264](https://github.com/maplibre/martin/issues/2264)
