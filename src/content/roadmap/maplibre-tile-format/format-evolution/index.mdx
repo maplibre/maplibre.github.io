@@ -1,0 +1,18 @@
+---
+title: MLT format evolution
+heroImage: "./image.svg"
+project: maplibre-tile-format
+status: under-consideration
+links:
+  developer: https://github.com/maplibre/maplibre-tile-spec/discussions/1201
+  funding: https://opencollective.com/maplibre
+---
+
+MLT 1.0 is stable and recommended for production.
+Several extensions are being designed and prototyped that may land as a future MLT release.
+
+Themes under exploration:
+
+- **3D support** - 3D coordinates and elevation for 2.5D and 3D basemaps
+- **Nested types** - Lists, maps, and nested properties to support modern source formats such as Overture (GeoParquet)
+- **Smaller metadata** - Reduce per-tile header overhead and share encoding metadata across columns

@@ -1,0 +1,22 @@
+---
+title: Rust codec
+heroImage: "./image.svg"
+project: maplibre-tile-format
+status: in-progress
+links:
+  developer: https://github.com/maplibre/maplibre-tile-spec/pull/1328
+  funding: https://opencollective.com/maplibre
+---
+
+The Rust implementation is our newest implementation for MLT, providing both encoder and decoder in a single workspace.
+Comparing with the other implementations, we offer a memory safe, more performant, and easy-to-use codec for MLT.
+Given the things we learned from the Java encoder, we made significant encoding size improvements too, next to the advancements in decoding performance.
+
+It is the foundation other languages consume via FFI bindings:
+
+- [x] C / C++ headers - generated via [Diplomat](https://github.com/rust-diplomat/diplomat), with a CMake demo and integration tests
+- [x] Java bindings - generated via Diplomat
+- [x] Kotlin bindings - generated via Diplomat
+- [x] Python bindings - [`mlt-py`](https://github.com/maplibre/maplibre-tile-spec/tree/main/rust/mlt-py) via PyO3
+- [x] WebAssembly bindings - [`mlt-wasm`](https://github.com/maplibre/maplibre-tile-spec/tree/main/rust/mlt-wasm)
+
