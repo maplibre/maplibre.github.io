@@ -3,6 +3,8 @@ title: Advanced Style-Data Cooptimization
 heroImage: "./image.svg"
 project: martin-tile-server
 status: under-consideration
+links:
+  developer: https://github.com/maplibre/martin/issues/1757
 ---
 
 Together with the [Technical University of Munich's chair of Big Geospatial Data Management](https://www.bgd.ed.tum.de/), we are currently working on a thesis where the next generation of vector tile performance from tile servers could come from:
@@ -28,5 +30,3 @@ Here are the optimisations that are currently planned for evaluation:
 | data layout optimisation      | -               | for dynamic databases, reorganise tile data for access pattern (storage layout)                                                                                                    |
 | overlap reduction             | -               | for some layers like roads or pois at the higher zoom levels overlap is common. If one knows the style redundant data can be removed (storage layout)                              |
 | static generation             | static source   | extract semantics and generate a new, optimal [static instruction set for constructing the tile database](https://github.com/onthegomap/planetiler/tree/main/planetiler-custommap) |
-
-GitHub Issues: [#1757](https://github.com/maplibre/martin/issues/1757)
