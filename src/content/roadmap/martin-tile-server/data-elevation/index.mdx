@@ -1,0 +1,21 @@
+---
+title: Elevation & Contour Tiles
+heroImage: "./image.svg"
+project: martin-tile-server
+status: in-progress
+links:
+  developer: https://github.com/maplibre/martin/issues/2061
+---
+
+Server-side generation of vector tiles from elevation data (DEMs), starting with contour lines.
+
+Pre-computing contour lines on the server keeps the CPU budget on the client low - useful for MapLibre Native targets and shared/cacheable rendering - while letting Martin act as a forwarding layer in front of remote DEM sources.
+
+Scope under design:
+
+- Decode DEM formats into a raw elevation buffer
+- Generate isolines via the [`contour`](https://crates.io/crates/contour) crate with configurable intervals and major/minor attributes
+- Emit MVT layers consumable by any MapLibre style
+- Reusable upstream-forwarding service so other backends can share remote data plumbing
+
+Prototype work by [@anjx123](https://github.com/anjx123).
