@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" role="img" aria-label="Style – optimistation">
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+  <rect width="960" height="960" fill="#2d1b69"/>
+  <g text-anchor="middle"
+     font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+     font-size="220" font-weight="900">
+    <text x="480" y="535" fill="#ffffff" opacity="0.55" filter="url(#glow)">Style</text>
+    <text x="480" y="535" fill="#ffffff">Style</text>
+  </g>
+  <text x="480" y="665" text-anchor="middle" fill="#ffffff"
+        font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+        font-size="80" font-weight="500" opacity="0.92">optimistation</text>
+</svg>
