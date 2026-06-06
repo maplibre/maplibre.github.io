@@ -36,3 +36,10 @@ If you would like to be included in the MapLibre community map, fork this repo, 
 ### Please Remove Me
 
 If you are on the map, but don't want to be, please open a pull request or issue.
+
+## Image and map credits
+
+Any third-party image or map data should carry a credit or source, if not already credited through MapLibre's built-in attribution control:
+
+- For inline images in MDX or Astro pages, wrap in `<figure>` with a `<figcaption class="figure-caption">`.
+- For roadmap hero images, use the nested `heroImage` frontmatter object: `url` (required), `fit` (`fill` | `contain` | `cover`, default `cover`), `credit` (recommended for third-party images), `creditUrl` (optional). The layout renders the credit automatically.

@@ -67,9 +67,9 @@ For YellowMap, the decision to migrate to MapLibre was driven by a desire to mod
 At the core of YellowMap's product offering is [SmartMaps](https://www.smartmaps.net/en/), built to address the strict data privacy demands of the European B2B market.
 While many modern mapping providers rely on external content delivery networks (CDNs) or track user behaviors via cookies, YellowMap takes a self-hosted approach:
 
-- 100% GDPR Compliance: YellowMap hosts all mapping systems entirely on their own self-managed servers.
+- 100% [GDPR](https://www.smartmaps.net/en/gdpr/) Compliance: YellowMap hosts all mapping systems entirely on their own self-managed servers.
 
-- No Tracking: SmartMaps solution operates completely without cookies and never transfers user data (such as IP addresses or advertising IDs) to external providers or third-party CDNs.
+- No Tracking: SmartMaps solution operates completely without cookies and does not transmit any user data (such as IP addresses or advertising IDs) to external providers or third-party CDNs.
 
 - Digital Sovereignty: SmartMaps' independent architecture provides data security for privacy-critical B2B power users, including major financial institutions like Sparkasse, where end-users rely on secure interfaces to do things like look up local ATM branches.
 
@@ -118,15 +118,17 @@ While many modern mapping providers rely on external content delivery networks (
 
 ## How YellowMap Utilizes MapLibre Today
 
-YellowMap’s core mapping SDK, [smartgl](https://www.smartmaps.net/en/), functions as a specialized wrapper around MapLibre GL JS. Their current deployment relies heavily on several advanced MapLibre features:
+YellowMap’s core mapping SDK, [SmartMaps GL](https://docs.smartmaps.cloud/maps/), functions as a specialized wrapper around MapLibre GL JS. Their current deployment relies heavily on several advanced MapLibre features:
 
 - [Globe View](https://maplibre.org/maplibre-gl-js/docs/examples/display-a-globe-with-a-vector-map/): Providing an immersive, global perspective for large-scale data visualization.
 
 - [Multi-Language Support](https://maplibre.org/maplibre-gl-js/docs/examples/change-a-maps-language/): Enabling end users customers to switch map languages dynamically.
 
+- [3D Buildings](https://maplibre.org/maplibre-gl-js/docs/examples/display-buildings-in-3d/): Rendering buildings as 3D extrusions for detailed cityscapes and immersive urban visualizations.
+
 ## The Road Ahead
 
-YellowMap's integration with MapLibre is only expanding. Driven by upcoming client requests, they are currently preparing to integrate MapLibre Native into their environment, with internal technical documentation slated for completion in the coming days.
+YellowMap's integration with MapLibre is only expanding. Driven by growing customer demand for digital sovereignty and data protection, they are currently preparing to integrate MapLibre Native into their environment, with internal technical documentation slated for completion in the coming days.
 
 YellowMap is also interested in developments surrounding the entire backend tile generation stack, Martin tile server format integrations, and native support for simple SVG sources.
 

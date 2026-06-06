@@ -89,7 +89,14 @@ const websiteJsonLd = toJsonLd({
             class="position-relative z-2"
             style="max-width: 500px; margin: 0px auto; min-height: 300px;"
           >
-            <LandingPageMap client:only="solid-js" />
+            <figure>
+              <LandingPageMap client:only="solid-js" />
+              <figcaption class="figure-caption">
+                Map data: <a href="https://www.naturalearthdata.com/"
+                  >Natural Earth</a
+                >
+              </figcaption>
+            </figure>
           </div>
         </ProjectSection>
 
