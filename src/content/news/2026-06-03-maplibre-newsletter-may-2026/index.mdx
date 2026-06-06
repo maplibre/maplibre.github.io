@@ -1,0 +1,236 @@
+---
+title: "MapLibre Newsletter May 2026"
+date: "2026-06-03"
+categories: ["newsletter"]
+authors:
+  [harel-mazor, bart-louwers, frank-elsinga, stephanie-may, ramya-ragupathy]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import komootLogo from "/public/img/komoot-logo.svg";
+import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
+import ReleaseTable from "../../../components/ReleaseTable.astro";
+import Announcement from "../../../components/Announcement.astro";
+import ContributorGrid from "../../../components/ContributorGrid.astro";
+
+Welcome to the May 2026 edition of the MapLibre Newsletter!
+
+Our sincere thanks go out to [Komoot](https://www.komoot.com/) for their ongoing support of MapLibre since 2023. Please refer to our [Sponsors page](https://maplibre.org/sponsors/) for more details on how organizations and individuals can give back to the project. Your contribution will directly help us run the project successfully and keep the community thriving.
+
+Read on for this month's updates!
+
+<div
+  style={{
+    backgroundColor: "white",
+    padding: "2.5rem 2rem",
+    border: "4px solid #B0BEC5", 
+    borderRadius: "8px",
+    margin: "0 auto 3rem",
+    maxWidth: "960px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "2rem",
+    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.05)"
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "baseline", 
+      gap: "5rem", 
+      flexWrap: "wrap",     
+      width: "100%",
+    }}
+  >
+    <Image
+      src={maplibreLogo}
+      alt="MapLibre logo"
+      style={{
+        height: "50px", 
+        width: "auto",
+        objectFit: "contain",
+      }}
+    />
+    <Image
+      src={komootLogo}
+      alt="Komoot logo"
+      style={{
+        height: "52px",
+        width: "auto",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+
+  <div
+    style={{
+      marginTop: "1.5rem", 
+      fontSize: "0.95rem",
+      textAlign: "center",
+      color: "#455A64",
+      fontStyle: "italic",
+      maxWidth: "35rem",
+      lineHeight: "1.4"
+    }}
+  >
+    We are deeply grateful to Komoot for their steadfast support of the MapLibre community since 2023.
+  </div>
+</div>
+
+## 📱 MapLibre Native
+
+**Memory Optimization**: Taking advantage of [instancing](https://en.wikipedia.org/wiki/Geometry_instancing), Alex Christi managed to significantly reduce the memory usage of fill extrusion layers (see [PR](https://github.com/maplibre/maplibre-native/pull/4256)). Right now, this is implemented for the Metal backend, with Vulkan following suit thanks to Adrian Cojocaru's work (see [PR](https://github.com/maplibre/maplibre-native/pull/4310)). If you are a heavy user of fill extrusion layers, we would love to hear your experience.
+
+**Android Renderer**: With Vulkan now being the default renderer in MapLibre Android 13.0.0, more people are trying out the Vulkan backend. MapLibre Android [13.2.0](https://github.com/maplibre/maplibre-native/releases/tag/android-v13.2.0) introduced some Vulkan specific bugfixes.
+
+**HarmonyOS Ecosystem Expansion**: [This MapLibre Native PR](https://github.com/maplibre/maplibre-native/pull/4315) adds support for a new platform, [HarmonyOS](https://en.wikipedia.org/wiki/HarmonyOS), Huawei's commercial OS competing with Android and iOS in China. It is related to [OpenHarmony](https://en.wikipedia.org/wiki/OpenHarmony), an open source project also utilized by initiatives like [Oniro](https://oniroproject.org).
+
+**Cross-Language Bindings**: Separately, [MapLibre Native FFI](https://github.com/maplibre/maplibre-native-ffi) (the experimental C API wrapper for MapLibre Native), has made great progress since onboarding last month. It has officially landed Java, Rust, Zig, and Kotlin Native bindings, while filling out its support matrix across macOS, Windows, and Linux using Vulkan, Metal, and OpenGL.
+
+<p>
+  Dave Brophy opened several PRs this month, including an implementation of
+  [contour lines](https://github.com/maplibre/maplibre-native/issues/4283) based
+  on Raster DEM data. Unfortunately, the PR was closed since we require
+  contributions to have a [human in the
+  loop](https://github.com/maplibre/blob/main/AI_POLICY.md). In practice, this
+  means a feature like this can only be contributed to the core library by
+  someone with a strong graphics background and knowledge of MapLibre Native
+  rendering internals.
+</p>
+
+<Announcement>
+  <h4>Code Integrity & AI Policy</h4>
+  <p>
+    We want the core of MapLibre Native to be stable and maintainable for the
+    long term. This means being judicious in accepting pull requests, especially
+    those written using an LLM. At the same time, we understand that some of our
+    users want to move quickly, and these days that often means using AI to
+    write functionality.
+  </p>
+  <p>
+    <strong>Our Solution:</strong> We plan to create a [plugin
+    API](https://maplibre.org/roadmap/maplibre-native/plugin-api/) for MapLibre
+    Native. This will allow developers to extend the library without changing
+    the core codebase. As an example, MapLibre GL JS has a popular [contour
+    plugin](https://github.com/onthegomap/maplibre-contour); in the future,
+    MapLibre Native might have one as well.
+  </p>
+</Announcement>
+
+## 🌐 MapLibre GL JS
+
+A lot of performance improvements have been added in [our latest pre-releases](https://github.com/maplibre/maplibre-gl-js/releases). Now that we have officially dropped support for WebGL 1, we are looking to modernize our WebGL stack further. Check out the [#7640](https://github.com/maplibre/maplibre-gl-js/issues/7640) tracking issue for more details and to follow along.
+
+<Announcement>
+  <h4>Help Us Test the MapLibre GL JS v6 pre-releases</h4>
+  <p>
+    We have already implemented most of the breaking changes for the upcoming
+    release, and we hope to ship the new major version soon. To ensure a
+    flawless launch, we are releasing a new version after nearly every PR merge.
+  </p>
+  <p>
+    <strong>Our request to you:</strong> Please test the latest pre-releases in
+    your environments and let us know if we broke anything before the major
+    version is released!
+  </p>
+</Announcement>
+
+For those of you who build MapLibre GL JS locally and ship custom changes, we have great news! We have switched to using **Rolldown**, cutting our local build times down from minutes to seconds. This is a massive boost to the developer experience!
+
+<p>
+  🤝 We would like to thank all the people who have contributed PRs this month:
+</p>
+
+<ContributorGrid
+  contributors={[
+    "xavierjs",
+    "birkskyum",
+    "lucaswoj",
+    "CommanderStorm",
+    "safwat-halaby",
+  ]}
+/>
+
+<Announcement>
+  <h4>Style Specification: Share Your Inputs</h4>
+  <p>
+    A discussion around line opacity and layer opacity in general is currently
+    underway. We want to ensure our future spec design meets real-world
+    developer needs.
+  </p>
+  <p>
+    Please head over to the tracking thread to share your inputs with us:
+    [Discussion #503](https://github.com/maplibre/maplibre/discussions/503)
+  </p>
+</Announcement>
+
+## 🦀 Martin
+
+Nine `martin` [releases](https://github.com/maplibre/martin/releases) shipped across April and May (1.5.0 through 1.10.1), with matching `martin-core` and `mbtiles` versions.
+April is folded in here because no changelog went out at the time.
+
+Key highlights include:
+
+**On-the-fly MLT support**: The biggest change is MLT (MapLibre Tiles) support.
+Martin now transcodes MVT to MLT (and back) on the fly, picking the format from the client's `Accept` header.
+On our test fixture, MLT is about 39% smaller on the wire and about 12% faster to serve from cache due to that. Checkout the [full guide](https://github.com/maplibre/martin/blob/main/docs/content/using-guides/mlt.md) if you want to dig in.
+
+**Server-side raster rendering**: Now stable and on by default on Linux builds via MapLibre Native (`styles: rendering: true`). This closes a massive milestone [#978](https://github.com/maplibre/martin/issues/978) open since October 2023.
+
+**Live source reloading**: MBTiles directories hot-reload as of April, COG and PMTiles followed in May, and PostgreSQL groundwork is in place for the PG reload work that comes next.
+
+🤝 Thanks to the community around Martin:
+
+<ContributorGrid
+  contributors={[
+    "Auspicus",
+    "michaelkirk",
+    "carderne",
+    "sharkAndshark",
+    "mvanhorn",
+    "jo-chemla",
+    "ianthetechie",
+    "pawurb",
+    "idovmamane",
+    "Weixing-Zhang",
+    "nyurik",
+    "NlDev-hub",
+    "mwtoews",
+    "manbhav234",
+  ]}
+/>
+
+<Announcement>
+
+📣 As we scope next steps for server-side raster rendering, we want you to tell us what you'd want from the API (overlays, query params, perf knobs).
+
+☀️ GSoC Spotlight: DuckDB backend! A warm welcome to Manbhav Sugla ([@manbhav234](https://github.com/manbhav234)), our Google Summer of Code student, whose first PR: [#2831 `feat: duckdb-source implementation at martin-core`](https://github.com/maplibre/martin/pull/2831), landed in draft and kicks off a brand-new DuckDB source for Martin, with reviews and suggestions welcome.
+
+</Announcement>
+
+## ✨ Community Spotlight
+
+## 👥 Conferences & Events
+
+## 🗓️ Monthly meetings
+
+We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
+
+Upcoming Calls
+
+- MapLibre Native: Jun 10, 2026 – 7:00–8:00 PM Berlin Time (UTC+2)
+- MapLibre GL JS: Jun 10, 2026 – 8:00–9:00 PM Berlin Time (UTC+2)
+
+🌏 MapLibre Eastern Call
+
+Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
+
+- Jun 24, 2026 – 9–10:00 AM UTC
+
+All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/) and join the `#maplibre` channel.
+We’d love to see you there!

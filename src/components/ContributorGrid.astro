@@ -1,0 +1,57 @@
+---
+// ContributorGrid.astro
+interface Props {
+  contributors: string[];
+}
+
+const { contributors = [] } = Astro.props;
+---
+
+<div class="contributor-flex-container">
+  {
+    contributors.map((username) => (
+      <table
+        class="avatar-table"
+        style="border-collapse: collapse; border: 0; padding: 0; margin: 0;"
+      >
+        <tr>
+          <td style="padding: 0; border: 0; vertical-align: middle; width: 90px; height: 90px;">
+            <a
+              href={`https://github.com/` + username}
+              title={`@` + username}
+              style="display: block; text-decoration: none; width: 90px; height: 90px; overflow: hidden; border-radius: 50%;"
+            >
+              <img
+                src={`https://github.com/` + username + `.png`}
+                alt={`@` + username}
+                style="width: 90px; height: 90px; min-width: 90px; min-height: 90px; max-width: 90px; max-height: 90px; object-fit: cover; border-radius: 50%; border: 2.5px solid #334155; box-sizing: border-box;"
+              />
+            </a>
+          </td>
+        </tr>
+      </table>
+    ))
+  }
+</div>
+
+<style>
+  .contributor-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    align-items: center;
+  }
+
+  .avatar-table {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .avatar-table:hover {
+    transform: scale(1.05);
+  }
+</style>
