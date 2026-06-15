@@ -25,7 +25,7 @@
     "maplibre-gl": "^5.24.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
-    "sass": "1.100.0",
+    "sass": "1.101.0",
     "satori": "^0.26.0",
     "sharp": "^0.34.5",
     "solid-js": "^1.9.13",
