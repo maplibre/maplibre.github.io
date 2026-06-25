@@ -1,0 +1,1 @@
+function e(e){let t=document.querySelector(e);if(!t)return;let n=Array.from(t.children);for(let e=n.length-1;e>0;e--){let t=Math.floor(Math.random()*(e+1));[n[e],n[t]]=[n[t],n[e]]}n.forEach(e=>t.appendChild(e))}export{e as t};

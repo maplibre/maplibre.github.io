@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 960" role="img" aria-label="MLT 1.0 - MVT-compatible">
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+  <rect width="960" height="960" fill="#111725"/>
+  <g text-anchor="middle"
+     font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+     font-size="180" font-weight="900">
+    <text x="480" y="510" fill="#95BEFA" opacity="0.55" filter="url(#glow)">MLT 1.0</text>
+    <text x="480" y="510" fill="#ffffff">MLT 1.0</text>
+  </g>
+  <text x="480" y="640" text-anchor="middle" fill="#95BEFA"
+        font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+        font-size="70" font-weight="500" opacity="0.92">MVT-compatible</text>
+</svg>
