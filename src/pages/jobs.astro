@@ -3,6 +3,7 @@ title: "Jobs";
 
 import TitleHeader from "../components/TitleHeader.astro";
 import Layout from "../layouts/Layout.astro";
+import Announcement from "../components/Announcement.astro";
 ---
 
 <Layout title="Jobs">
@@ -18,7 +19,12 @@ import Layout from "../layouts/Layout.astro";
           small core team and a global network of contributors.
         </p>
 
-        <p>We currently do not have any open positions.</p>
+        <Announcement>
+          <strong>We are hiring!</strong> We are currently looking for a
+          <a href="/jobs/graphics-engineer/">Graphics Engineer</a>
+          to join our ecosystem and push forward modern, high-performance rendering
+          solutions.
+        </Announcement>
 
         <h3>Contributing to MapLibre</h3>
 
