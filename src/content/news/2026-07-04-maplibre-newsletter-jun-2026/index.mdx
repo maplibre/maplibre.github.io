@@ -1,0 +1,209 @@
+---
+title: "MapLibre Newsletter June 2026"
+date: "2026-07-04"
+categories: ["newsletter"]
+authors: [harel-mazor, bart-louwers, ramya-ragupathy]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import mieruneLogo from "/public/img/mierune-logo.svg";
+import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
+import conference from "./conference.png";
+import ReleaseTable from "../../../components/ReleaseTable.astro";
+import Announcement from "../../../components/Announcement.astro";
+import ContributorGrid from "../../../components/ContributorGrid.astro";
+
+export const nativeReleases = [
+  {
+    name: "Android",
+    versions: [
+      {
+        label: "13.3.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/android-v13.3.0",
+      },
+      {
+        label: "13.3.1",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/android-v13.3.1",
+      },
+    ],
+  },
+  {
+    name: "iOS",
+    versions: [
+      {
+        label: "6.27.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.27.0",
+      },
+    ],
+  },
+];
+
+Welcome to the June 2026 edition of the MapLibre Newsletter!
+
+We would like to extend our sincere thanks to [Mierune](https://www.mierune.co.jp/), MapLibre’s inaugural sponsor, for their continuous backing since 2022.
+
+As we keep building and evolving, contributions from organizations and individuals alike are what keep our project running smoothly and our community thriving.
+If you would like to support our ongoing work, please visit the MapLibre [Sponsors page](https://maplibre.org/sponsors/) for more details.
+
+<div
+  style={{
+    backgroundColor: "white",
+    padding: "2.5rem 2rem",
+    border: "4px solid #B0BEC5", 
+    borderRadius: "8px",
+    margin: "0 auto 3rem",
+    maxWidth: "960px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "2rem",
+    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.05)"
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "baseline", 
+      gap: "5rem", 
+      flexWrap: "wrap",     
+      width: "100%",
+    }}
+  >
+    <Image
+      src={maplibreLogo}
+      alt="MapLibre logo"
+      style={{
+        height: "50px", 
+        width: "auto",
+        objectFit: "contain",
+      }}
+    />
+    <Image
+      src={mieruneLogo}
+      alt="Mierune logo"
+      style={{
+        height: "55px",
+        width: "auto",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+
+  <div
+    style={{
+      marginTop: "1.5rem", 
+      fontSize: "0.95rem",
+      textAlign: "center",
+      color: "#455A64",
+      fontStyle: "italic",
+      maxWidth: "35rem",
+      lineHeight: "1.4"
+    }}
+  >
+   A huge shoutout to Mierune, MapLibre’s very first sponsor!
+  </div>
+</div>
+
+<Announcement> 
+<h4>📢 We are Hiring: Graphics Engineer</h4>
+
+<p>
+We are looking for a Graphics Engineer to join our team!
+
+If you are passionate about open-source geospatial tools and low-level graphics programming, we would love to hear from you.
+
+Check out the job description at [maplibre.org/jobs/graphics-engineer](https://maplibre.org/jobs/graphics-engineer).
+
+</p>
+
+</Announcement>
+
+## 📱 MapLibre Native
+
+- Thanks to the efforts of Adrian Cojocaru and Alex Cristici, the [instancing based fill extrusion optimizations](https://github.com/maplibre/maplibre-native/pull/4310) is now implemented for the Vulkan backend as well. If you are using MapLibre Android, this is yet another reason to switch to the Vulkan backend (the default since version 13.0.0).
+
+- Harel Mazor shared a [blog post](https://medium.com/@harel.mazor/putting-mapeak-on-the-dashboard-a6cc73d4f99e) detailing his experiences adding Android Auto and Carplay support to his app using MapLibre Native. He also published a project to bring contours to MapLibre iOS and Android using a Rust-based [HTTP interceptor](https://github.com/Mapeak-com/maplibre-contour-rs).
+
+- Over on Slack, Vladyslav Odobesku created a [discussion thread](https://osmus.slack.com/archives/C04G140P9U6/p1781859352910629) about adding a Kotlin based `CustomVectorTileProvider` that would be a more performant alternative to `CustomGeometrySource` for Android developers.
+
+- [MapLibre Native FFI](https://maplibre.org/maplibre-native-ffi) project now features browser support using the WebGPU backend. Dive into the [Slack discussion thread](https://osmus.slack.com/archives/C02B2CBSNBU/p1782547722335569?thread_ts=1778119369.635259&cid=C02B2CBSNBU) and [the relevant PR](https://github.com/maplibre/maplibre-native-ffi/pull/285) for more details.
+
+- Taku Fukada from our valued sponsor MIERUNE implemented [double resolution rendering for CJK characters](https://github.com/maplibre/maplibre-native/pull/4304). This makes these characters much more legible on mobile screens. MapLibre GL JS has had this behavior for a while already and we're thrilled to bring this crisp rendering to MapLibre Native.
+
+**Releases:**
+
+<ReleaseTable data={nativeReleases} />
+
+## 🌐 MapLibre GL JS
+
+We have rolled out seven pre-releases for version 6: [6.0.0-12](https://github.com/maplibre/maplibre-gl-js/releases#release-v6.0.0-12) through [6.0.0-18](https://github.com/maplibre/maplibre-gl-js/releases#release-v6.0.0-18).
+
+We are nearing the finish line for the version 6 breaking changes! You can track our final milestones on the tracking issue: [#6427](https://github.com/maplibre/maplibre-gl-js/pull/6427)
+
+We have just a few remaining Pull Requests that needs community's input before they close:
+
+    - PR [#7800](https://github.com/maplibre/maplibre-gl-js/pull/7800)
+    - PR [#7839](https://github.com/maplibre/maplibre-gl-js/pull/7839)
+
+<p>
+  🤝 We would like to thank all the people who have contributed to the project
+  this month:
+</p>
+
+<ContributorGrid
+  contributors={[
+    "DoFabien",
+    "kamil-sienkiewicz-asi",
+    "xavierjs",
+    "dangkyokhoang",
+    "CommanderStorm",
+    "ckolin",
+    "cat0825",
+    "kodeezabdullah",
+    "johanrd",
+    "springmeyer",
+    "katemihalikova",
+    "cyphercodes",
+    "ted-piotrowski",
+    "widefire",
+    "lucaswoj",
+  ]}
+/>
+
+## 👥 Conferences & Events
+
+Last month (June 11–13), our board members headed to Madison, Wisconsin for [State of the Map US 2026](https://openstreetmap.us/events/state-of-the-map-us/2026/) to connect with the community and share what we've been building.
+A huge thank you to the organizers and everyone who stopped by to chat with us!
+
+<Image
+  src={conference}
+  alt="Board members at State of the Map US 2026"
+  style={{
+    height: "auto",
+    maxHeight: "400px",
+    width: "100%",
+    objectFit: "contain",
+  }}
+/>
+
+## 🗓️ Monthly meetings
+
+We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
+
+Upcoming Calls
+
+- MapLibre Native: Jul 08, 2026 – 7:00–8:00 PM Berlin Time (UTC+2)
+- MapLibre GL JS: Jul 08, 2026 – 8:00–9:00 PM Berlin Time (UTC+2)
+
+🌏 MapLibre Eastern Call
+
+Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
+
+- Jul 29, 2026 – 9–10:00 AM UTC
+
+All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/) and join the `#maplibre` channel.
+We’d love to see you there!
