@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: MapLibre_Native_Ubuntu_24_04_x86_14_core
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.0
       - uses: actions/setup-node@v6.4.0
