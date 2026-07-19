@@ -1,0 +1,18 @@
+---
+title: Alternate Coordinate Reference Systems
+heroImage: "./image.svg"
+project: martin-tile-server
+status: under-consideration
+links:
+  developer: https://github.com/maplibre/martin/issues/343
+---
+
+Serve tiles in coordinate reference systems beyond Web Mercator (EPSG:3857) — most commonly geographic coordinates (EPSG:4326), but also national and polar projections.
+
+Web Mercator is the default across the web mapping stack, but many organisations — cadastral, scientific, polar, and government users — need data delivered in a projection that preserves their measurements. Supporting alternate CRSs would let Martin serve these communities directly instead of forcing a reprojection step upstream.
+
+Scope to define before committing:
+
+- Which CRSs to support first (EPSG:4326 is the most requested)
+- How tile pyramids / tiling schemes are defined for non-Mercator projections (ties into [OGC API Tiles & STAC](/roadmap/martin-tile-server/ogc-stac-compliance) tile-matrix-sets)
+- Whether reprojection happens on ingest, on the fly, or both

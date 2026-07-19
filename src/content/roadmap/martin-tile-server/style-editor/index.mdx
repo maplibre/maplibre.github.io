@@ -1,0 +1,18 @@
+---
+title: Embedded Style Editor
+heroImage: "./image.svg"
+project: martin-tile-server
+status: under-consideration
+links:
+  developer: https://github.com/maplibre/martin/issues/852
+---
+
+Author and preview MapLibre styles directly against a running Martin instance by embedding the [Maputnik](https://maplibre.org/maputnik/) visual style editor.
+
+Martin already knows every source, sprite, and font it serves. Surfacing that catalog inside an embedded Maputnik would let users create and iterate on styles against live data without hand-editing JSON or wiring up a separate editor — closing the loop between the tiles Martin serves and the styles it [serves](/roadmap/martin-tile-server/style-serving) back.
+
+Pieces this depends on:
+
+- A fonts listing endpoint so the editor can offer available glyphs ([#1610](https://github.com/maplibre/martin/issues/1610))
+- Save-back / persistence of edited styles into Martin's catalog
+- Building on the existing [Frontend UI](/roadmap/martin-tile-server/frontend) as the host surface

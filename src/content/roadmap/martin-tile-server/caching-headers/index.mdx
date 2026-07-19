@@ -1,0 +1,18 @@
+---
+title: HTTP Cache-Control Headers
+heroImage: "./image.svg"
+project: martin-tile-server
+status: under-consideration
+links:
+  developer: https://github.com/maplibre/martin/issues/749
+---
+
+Emit HTTP `Cache-Control` and `Expires` headers alongside the existing `ETag` so that CDNs, reverse proxies, and browsers can cache tiles for a configurable lifetime instead of revalidating every request.
+
+Tiles are among the most cacheable resources a map serves, yet without freshness headers every client is forced back to origin. Adding configurable `max-age` (ideally per source) would dramatically cut load for deployments that sit behind a CDN.
+
+Open questions to resolve before committing:
+
+- Global default vs. per-source `max-age` configuration
+- How this interacts with [Hot Reloading](/roadmap/martin-tile-server/reloading) and cache invalidation when the underlying data changes ([#1707](https://github.com/maplibre/martin/issues/1707))
+- Sensible defaults for dynamic PostGIS sources vs. immutable PMTiles/MBTiles archives
