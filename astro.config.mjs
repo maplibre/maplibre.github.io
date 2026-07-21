@@ -30,6 +30,7 @@ export default defineConfig({
       linkCheckerDir: ".link-checker", // Optional: directory for cache and log files (default: '.link-checker')
     }),
   ],
+  compressHTML: true,
   output: "static",
   prefetch: true,
   site: "https://maplibre.org/",
