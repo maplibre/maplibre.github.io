@@ -1,5 +1,7 @@
-import maplibregl from "maplibre-gl";
+import * as maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import workerUrl from "maplibre-gl/dist/maplibre-gl-worker?url";
+maplibregl.setWorkerUrl(workerUrl);
 import { onMount } from "solid-js";
 
 export const TerrainMap = (props: any) => {
