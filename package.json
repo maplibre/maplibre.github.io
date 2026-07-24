@@ -26,7 +26,7 @@
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "sass": "1.101.3",
-    "satori": "^0.28.0",
+    "satori": "^0.28.1",
     "sharp": "^0.35.3",
     "solid-js": "^1.9.14",
     "ultrahtml": "^1.7.0"
