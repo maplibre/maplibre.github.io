@@ -1,0 +1,359 @@
+---
+title: "MapLibre Newsletter July 2026"
+date: "2026-08-02"
+categories: ["newsletter"]
+authors: [harel-mazor, bart-louwers, frank-elsinga, ramya-ragupathy]
+draft: false
+---
+
+import { Image } from "astro:assets";
+import mieruneLogo from "/public/img/jawgmaps-logo.svg";
+import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
+import roundedCorners from "./native-rounded-corners.png";
+import flutterParity from "./flutter-maplibre-gl-parity.png";
+import ReleaseTable from "../../../components/ReleaseTable.astro";
+import Announcement from "../../../components/Announcement.astro";
+import ContributorGrid from "../../../components/ContributorGrid.astro";
+
+Welcome to the July 2026 edition of the MapLibre Newsletter!
+
+It's been a big month. MapLibre GL JS v6 just shipped, barely eight months after v5 landed in December 2025. Additionally, MapLibre Native landed its first-ever style spec property before GL JS, Martin pushed out three releases in a row, and Flutter got an experimental FFI engine that's 10x faster on data-heavy maps.
+
+Before we dive in, we begin with a note of gratitude to [JawgMaps](https://www.jawg.io/), for their continuous backing of MapLibre since 2023. Contributions like theirs, from organizations and individuals alike, are what keep our project running and our community thriving. If you'd like to support our ongoing work, visit the MapLibre [Sponsors page](https://maplibre.org/sponsors/) for more details.
+
+<div
+  style={{
+    backgroundColor: "white",
+    padding: "2.5rem 2rem",
+    border: "4px solid #B0BEC5", 
+    borderRadius: "8px",
+    margin: "0 auto 3rem",
+    maxWidth: "960px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "2rem",
+    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.05)"
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "baseline", 
+      gap: "5rem", 
+      flexWrap: "wrap",     
+      width: "100%",
+    }}
+  >
+    <Image
+      src={maplibreLogo}
+      alt="MapLibre logo"
+      style={{
+        height: "50px", 
+        width: "auto",
+        objectFit: "contain",
+      }}
+    />
+    <Image
+      src={mieruneLogo}
+      alt="Mierune logo"
+      style={{
+        height: "55px",
+        width: "auto",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+
+  <div
+    style={{
+      marginTop: "1.5rem", 
+      fontSize: "0.95rem",
+      textAlign: "center",
+      color: "#455A64",
+      fontStyle: "italic",
+      maxWidth: "35rem",
+      lineHeight: "1.4"
+    }}
+  >
+   Big thanks to JawgMaps, for supporting us since 2023!
+  </div>
+</div>
+
+## 🏛️ Governing Board Update & 2026 Elections
+
+**Board Change:** [Frank Elsinga](https://maplibre.org/about/frank-elsinga/) has stepped down from the Governing Board. Per [the MapLibre Charter](https://github.com/maplibre/maplibre/blob/main/CHARTER.md#replacement-of-governing-board-members), his seat is filled by Stefan Karschti, who placed sixth in [last year's allocation](https://maplibre.org/news/2025-09-22-board-elections-2025/). Thank you, Frank, for your service this term!
+
+**2026 Elections:** Nominations are open for [this year's Governing Board election](https://github.com/maplibre/maplibre/issues/508).
+
+<div style="overflow-x: auto;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 500px;">
+    <colgroup>
+      <col style="width: 140px;" />
+      <col />
+    </colgroup>
+    <thead>
+      <tr>
+        <th style="border-bottom: 1px solid #ccc; text-align: left; vertical-align: top; padding: 8px 12px;">
+          Date
+        </th>
+        <th style="border-bottom: 1px solid #ccc; text-align: left; vertical-align: top; padding: 8px 12px;">
+          Milestone
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 8px 12px; vertical-align: top; border-bottom: 1px solid #333;">
+          Aug 14, 2026
+        </td>
+        <td style="padding: 8px 12px; vertical-align: top; border-bottom: 1px solid #333;">
+          Deadline for [Voting Member
+          nominations](https://github.com/maplibre/maplibre/issues/506) and
+          [Board candidate
+          registration](https://github.com/maplibre/maplibre/discussions/507)
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 12px; vertical-align: top; border-bottom: 1px solid #333;">
+          Aug 20, 2026
+        </td>
+        <td style="padding: 8px 12px; vertical-align: top; border-bottom: 1px solid #333;">
+          Deadline for approval of new Voting Members (via PR review)
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 12px; vertical-align: top;">Aug 31, 2026</td>
+        <td style="padding: 8px 12px; vertical-align: top;">
+          Governing Board election poll closes (OpaVote)
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+## 📱 MapLibre Native
+
+**Rounded Fill Extrusion Corners:** Support for rounded fill extrusion corners has been implemented by Alex Cristici in [#4343](https://github.com/maplibre/maplibre-native/pull/4343). You can now use the [`fill-extrusion-rounded-corner-distance`](https://maplibre.org/maplibre-style-spec/layers/#fill-extrusion-rounded-corner-distance) style spec property. Notably this is the very first time a new visual style spec property has landed in MapLibre Native before MapLibre GL JS since the fork! Special thanks to Steve Gifford for the [original proposal](https://github.com/maplibre/maplibre-style-spec/issues/1682).
+
+<div
+  style={{
+    maxWidth: "600px",
+    margin: "2rem auto",
+    textAlign: "center",
+    padding: "0 0.75rem",
+  }}
+>
+  <div
+    style={{
+      backgroundColor: "#161b22",
+      borderRadius: "12px",
+      padding: "12px",
+      border: "1px solid #30363d",
+    }}
+  >
+    <Image
+      src={roundedCorners}
+      alt="Native rounded corners for fill extrusions"
+      style={{
+        width: "100%",
+        height: "auto",
+        display: "block",
+        borderRadius: "6px",
+      }}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <p style={{ marginTop: "0.75rem", lineHeight: "1.4" }}>
+    <em style={{ fontSize: "0.9rem", color: "#8b949e", fontStyle: "italic" }}>
+      Screenshot showing the new rounded corners for fill extrusions in action.
+      OpenMapTiles based map style.
+    </em>
+  </p>
+</div>
+
+**Crisper CJK Text Rendering:** CJK characters that use local glyph rasterization are now rendered with double the resolution, matching MapLibre GL JS and significantly improving the legibility of these characters. This was [implemented](https://github.com/maplibre/maplibre-native/pull/4304) by Taku Fukada, an engineer at our valued sponsor [MIERUNE](https://github.com/MIERUNE).
+
+**Android feature-state support:** The [`feature-state`](https://maplibre.org/maplibre-style-spec/expressions/#feature-state) functionality is a way to read and set properties on individual features, which can be used for styling with a style expression. Android support was added in [#4219](https://github.com/maplibre/maplibre-native/pull/4219) by Brandon Roeder. A [PR](https://github.com/maplibre/maplibre-native/pull/4420) from Markus Wendorf that adds a similar API to MapLibre iOS is still open.
+
+**Fresh PMTiles Documentation:** Stephanie May contributed fresh new PMTiles documentation in [#4278](https://github.com/maplibre/maplibre-native/pull/4278). Check out the new guides in both the [MapLibre Android](https://maplibre.org/maplibre-native/android/examples/data/PMTiles/) and [MapLibre iOS](https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre-native-for-ios/pmtiles) docs.
+
+## 🌐 MapLibre GL JS
+
+<Announcement>
+
+<h4>📢 v6 Release</h4>
+<p>
+  We published the final four
+  pre-releases([6.0.0-19](https://github.com/maplibre/maplibre-gl-js/releases/tag/v6.0.0-19),
+  [6.0.0-20](https://github.com/maplibre/maplibre-gl-js/releases/tag/v6.0.0-20),
+  [6.0.0-21](https://github.com/maplibre/maplibre-gl-js/releases/tag/v6.0.0-21),
+  and
+  [6.0.0-22](https://github.com/maplibre/maplibre-gl-js/releases/tag/v6.0.0-22))
+  of Version 6 alongside the official
+  [v6.0.0](https://github.com/maplibre/maplibre-gl-js/releases#release-v6.0.0)
+  release itself. This is a huge milestone for us! While it introduces breaking
+  changes, it also paves the way for future improvements. For more details,
+  check out our [migration
+  guide](https://maplibre.org/maplibre-gl-js/docs/guides/v5-to-v6-migration-guide/).
+</p>
+
+</Announcement>
+
+It has been over a year and a half since [our last major update](https://github.com/maplibre/maplibre-gl-js/releases/tag/v5.0.0), and breaking changes were piling up. So we needed to carve out a dedicated breaking release, but don't worry, we don't plan on doing another one anytime soon (we know how painful migrations can be!).
+
+We noticed this release created complication for projects pinned to latest. We strongly advise against auto-updating to latest versions in production for this exact reason. Always pinning to specific versions will keep your builds safe and predictable.
+
+We had a stack of non-breaking features and bug fixes ready to go that we didn't want to mix into the core 6.0.0 release. To keep things clean, we also shipped [v6.1.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v6.1.0) this month.
+
+<Announcement>
+  <h4>🤝 A Quick Note for Contributors</h4>
+  <p>
+    While the momentum around AI tools makes drafting code faster than ever, we
+    kindly ask contributors to focus on driving a single PR to completion before
+    opening new ones. We take quality and maintainability very seriously.
+    Aligning code to MapLibre standards, conducting thorough reviews, and making
+    necessary adjustments takes time. Focusing on one high-quality pull request
+    at a time helps us review faster and get your contributions to a "ready to
+    merge" state smoothly.
+  </p>
+</Announcement>
+
+<p>🙏 Thanks to all the contributors this month:</p>
+
+<ContributorGrid
+  contributors={[
+    "CommanderStorm",
+    "DoFabien",
+    "birkskyum",
+    "plantain",
+    "YuChunTsao",
+    "qorexdevs",
+    "bradymadden97",
+    "kamil-sienkiewicz-asi",
+    "mondsichtung",
+    "lazerg",
+    "clement-igonet",
+    "hugosmoreira",
+    "cat0825",
+    "jan-grzybek",
+    "pabueco",
+  ]}
+/>
+
+## 🦀 Martin
+
+Over the last two months, Martin shipped three major releases ([v1.11.0](https://github.com/maplibre/martin/releases#release-martin-v1.11.0), [v1.12.0](https://github.com/maplibre/martin/releases#release-martin-v1.12.0), and [v1.13.0](https://github.com/maplibre/martin/releases#release-martin-v1.13.0)).
+Key highlights include:
+
+- **Live Source Reloading:** Hot-reloading has been completed across all source types to keep data fresh without server restarts. Local PMTiles and COG files reload on filesystem changes, while PostgreSQL and remote object stores poll on a configurable timer to update their schemas and sources.
+- **Direct GeoJSON Tile Serving:** Martin can now serve vector tiles directly from WGS84 `.geojson`/`.json` files on the fly. It constructs a Hilbert R-Tree index on startup, then queries, clips, and encodes MVTs per request. It also supports filesystem-event hot-reloading.
+- **Upstream Tile Passthrough:** Martin now supports acting as a proxy cache for upstream HTTP tile servers. It fetches tiles from configured templates or mirror servers, allowing developers to wrap external tiles in Martin's caching pipeline and hide upstream credentials.
+- **Static Map Overlays:** A new endpoint renders static map images with styled vector overlays (fills, lines, circles) drawn on top. The camera can center on coordinates, a bounding box, or auto-fit to the overlays.
+- **GSoC Spotlight:** Google Summer of Code student [Manbhav](https://github.com/manbhav234) laid the groundwork for serving tiles directly from DuckDB and GeoParquet. This includes core integration logic and initial config-resolver wiring.
+
+<p>🙏 Thanks to all the contributors who made these releases possible:</p>
+
+<ContributorGrid
+  contributors={[
+    "AnayGarodia",
+    "chrisdebian",
+    "Auspicus",
+    "floze-the-genius",
+    "CommanderStorm",
+    "gabeschine",
+    "JakeLow",
+    "johncarmack",
+    "manbhav234",
+    "hamarituc",
+    "michaelkirk",
+    "pawelurbanek",
+    "thomfuhrmann",
+    "Weixing-Zhang",
+    "yuiseki",
+    "nyurik",
+  ]}
+/>
+
+## 🎨 MapLibre Compose
+
+MapLibre Compose now features an experimental desktop implementation rewrite backed by maplibre-native-ffi on [the desktop-ffi-rewrite branch](https://github.com/maplibre/maplibre-compose/pull/834). This has allowed us to:
+
+- bring Compose Desktop to near-parity with Compose Android and iOS in functionality.
+- supports proper compositing with Compose UI on desktop.
+
+This new architecture is expected to resolve a large collection of longstanding open issues, including [#570](https://github.com/maplibre/maplibre-compose/issues/570), [#627](https://github.com/maplibre/maplibre-compose/issues/627), [#595](https://github.com/maplibre/maplibre-compose/issues/595), [#184](https://github.com/maplibre/maplibre-compose/issues/184), [#568](https://github.com/maplibre/maplibre-compose/issues/568), [#608](https://github.com/maplibre/maplibre-compose/issues/608)
+
+## 🪶 MapLibre Flutter
+
+This month [`flutter-maplibre-gl`](https://github.com/maplibre/flutter-maplibre-gl) grew an experimental new engine: a pure-Dart FFI backend for Android, on the [`exp/native-ffi-android`](https://github.com/maplibre/flutter-maplibre-gl/tree/exp/native-ffi-android/maplibre_gl_native) branch.
+By driving the map directly through the [MapLibre Native C API](https://github.com/maplibre/maplibre-native-ffi) with `dart:ffi`, we can now achieve:
+
+- 10x Faster Data Pipelines: Replacing large GeoJSON sources (e.g., 20k points) is ~10x faster, sustaining ~30 Hz live updates without UI thread jank.
+- Jank-Free Frame Delivery: A dedicated native thread handles frame rendering so background Dart tasks (like GC) never drop frames.
+- Gesture responsiveness, where platform views historically held an edge, reached full parity across pan, pinch, and rotate by moving to a vsync-aligned frame loop and display-thread rendering.
+
+<div
+  style={{
+    maxWidth: "600px",
+    margin: "2rem auto",
+    textAlign: "center",
+    padding: "0 0.75rem",
+  }}
+>
+  <div
+    style={{
+      backgroundColor: "#161b22",
+      borderRadius: "12px",
+      padding: "12px",
+      border: "1px solid #30363d",
+    }}
+  >
+    <Image
+      src={flutterParity}
+      alt="Native rounded corners for fill extrusions"
+      style={{
+        width: "100%",
+        height: "auto",
+        display: "block",
+        borderRadius: "6px",
+      }}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <p style={{ marginTop: "0.75rem", lineHeight: "1.4" }}>
+    <em style={{ fontSize: "0.9rem", color: "#8b949e", fontStyle: "italic" }}>
+      Screenshot of interaction performance benchmark: FFI backend vs. Platform
+      Channels.
+    </em>
+  </p>
+</div>
+
+The public `maplibre_gl` API is unchanged: a single `MapLibreGlNative.use()` call before `runApp` opts an app in. This is an experimental spike (Android arm64 only). Threading lessons learned here are directly shaping maplibre-native-ffi's executor design [#433](https://github.com/maplibre/maplibre-native-ffi/pull/433). Thanks to @sargunv for the C API collaboration!
+
+## 👥 Conferences & Events
+
+Keep an eye on our blog for an upcoming post covering MapLibre's schedule and participation at upcoming geo conferences.
+
+## 🗓️ Monthly meetings
+
+We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
+
+Upcoming Calls
+
+- MapLibre Native: Aug 12, 2026 – 7:00–8:00 PM Berlin Time (UTC+2)
+- MapLibre GL JS: Aug 12, 2026 – 8:00–9:00 PM Berlin Time (UTC+2)
+
+🌏 MapLibre Eastern Call
+
+Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
+
+- Aug 26, 2026 – 9–10:00 AM UTC
+
+All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/) and join the `#maplibre` channel.
+We’d love to see you there!
