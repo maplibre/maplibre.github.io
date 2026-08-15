@@ -84,13 +84,6 @@ This matters because DuckDB parallelizes a single query internally. A tile query
 
 Integrating this with Tokio required one additional boundary. `duckdb-rs` is synchronous, whereas Martin's tile interface is asynchronous. Connection checkout must remain non-blocking, and executing `ST_AsMVT` must not occupy a Tokio worker thread. `deadpool` provides asynchronous checkout and the actual DuckDB call is moved to Tokio's blocking pool:
 
-```rust
-pub async fn generate_tile<T, F>(&self, f: F) -> DuckDBResult<T> {
-    let mut conn = self.pool.get().await?;
-    tokio::task::spawn_blocking(move || f(&mut conn)).await?
-}
-```
-
 Connection creation follows the same pattern because extension loading and session setup are blocking operations. The returned connections are health-checked to ensure they can be reused.
 
 ## Bounds and SQL utilities ([#2902](https://github.com/maplibre/martin/pull/2902))
