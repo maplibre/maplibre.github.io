@@ -1,0 +1,148 @@
+---
+title: "GSoC'26: DuckDB Backend for Martin TileServer"
+date: "2026-08-15"
+categories: ["community-post"]
+authors: [manbhav-sugla]
+draft: false
+description: "How I added DuckDB and GeoParquet tile serving to Martin during Google Summer of Code 2026."
+---
+
+import { Image } from "astro:assets";
+import architecture from "./Martin-Architecture.png";
+
+## Introduction and Motivation
+
+Hi everyone, I have been working on DuckDB support for [Martin](https://github.com/maplibre/martin) as part of Google Summer of Code, under the mentorship of [Frank Elsinga](https://github.com/CommanderStorm). Martin already serves vector tiles from PostGIS and from pre-generated archives such as PMTiles and MBTiles. This project adds a path for serving tiles directly from analytical datasets like GeoParquet directly via DuckDB.
+
+The motivation for this is that many geospatial workflows already use DuckDB and GeoParquet for storage and analysis. Until now, putting that same data on a map generally required importing it into PostGIS, generating a separate tile archive, or maintaining a proxy layer. DuckDB's spatial extension now provides `ST_AsMVT` and `ST_AsMVTGeom`, making it possible for Martin to generate vector tiles from those datasets directly. Track the progress on this feature here - [#2264](https://github.com/maplibre/martin/issues/2264).
+
+<figure>
+  <Image
+    src={architecture}
+    alt="Martin architecture: configuration and map clients flow through the source resolver, tile catalog, and HTTP tile service. DuckDB sources sit alongside PostGIS and PMTiles/MBTiles, using a connection pool and the spatial extension to read GeoParquet and DuckDB files."
+    style="width: 100%; height: auto; display: block;"
+  />
+  <figcaption class="figure-caption">
+    How DuckDB-backed sources fit into Martin.
+  </figcaption>
+</figure>
+
+## Config Structure for DuckDB backed sources
+
+The first major decision was to design an appropriate config structure to parse for building sources backed by DuckDB. This had two main paths: `.duckdb` files and GeoParquet analytic datasets. The following config structure was then designed incorporating already existing features Martin provides like auto discovery of spatially enabled tables etc.
+
+```yaml
+duckdb:
+  pool_size: 4
+  auto_bounds: quick
+  sources:
+    - database: /data/tiles.duckdb
+      auto_publish:
+        tables:
+          from_schemas: autodetect
+          source_id_format: "{table}"
+          id_columns: [id, gid]
+          extent: 4096
+          buffer: 64
+          clip_geom: true
+
+      tables:
+        roads:
+          schema: main
+          table: roads
+          geometry_column: geom
+          srid: 4326
+          minzoom: 0
+          maxzoom: 14
+          properties:
+            id: int4
+            name: varchar
+
+    - geoparquet: /data/buildings.parquet
+      layer_id: buildings
+      geometry_column: geom
+      srid: 4326
+      minzoom: 0
+      maxzoom: 14
+      extent: 4096
+      buffer: 64
+```
+
+## martin-core: DuckDBSource and pool ([#2831](https://github.com/maplibre/martin/pull/2831))
+
+The next step was to add the runtime layer in `martin-core` to provide a way for Martin to hold DuckDB connections and execute tile SQL through its existing `Source` abstraction.
+
+DuckDB has a different operating model from Postgres. It is an embedded analytical engine, so Martin opens a `duckdb::Connection` directly in its own process rather than connecting to a database server. That connection can query GeoParquet in place using `read_parquet(...)` and the data does not need to be imported first. The spatial extension is loaded on each connection to provide the MVT functions, while remote GeoParquet sources also require DuckDB's `httpfs` extension.
+
+The implementation introduces a single `DuckDBSource` for all DuckDB-backed layers. A database table and a GeoParquet file require different configuration, but they all ultimately run a query with `z`, `x`, and `y` parameters. `DuckDBSqlInfo` therefore stores the generated query, while the source-specific logic is largely confined to building its `FROM` clause. This kept the execution path shared and left room for database-backed sources to be added without another tile-source implementation.
+
+Connections are reused through `DuckDBPool`. Database-file sources open read-only connections to the `.duckdb` file. GeoParquet sources instead create an in-memory DuckDB connection, load the required extensions, and read the external file when a query runs. The pool is limited by `pool_size`, so requests wait for an available connection.
+
+This matters because DuckDB parallelizes a single query internally. A tile query can use several worker threads for Parquet scans, spatial filtering, and MVT encoding, with the limit controlled by `Config::threads`. Martin may also have multiple pooled connections, so the effective level of parallelism is approximately `pool_size × threads`. The default pool size is four.
+
+Integrating this with Tokio required one additional boundary. `duckdb-rs` is synchronous, whereas Martin's tile interface is asynchronous. Connection checkout must remain non-blocking, and executing `ST_AsMVT` must not occupy a Tokio worker thread. `deadpool` provides asynchronous checkout and the actual DuckDB call is moved to Tokio's blocking pool:
+
+```rust
+pub async fn generate_tile<T, F>(&self, f: F) -> DuckDBResult<T> {
+    let mut conn = self.pool.get().await?;
+    tokio::task::spawn_blocking(move || f(&mut conn)).await?
+}
+```
+
+Connection creation follows the same pattern because extension loading and session setup are blocking operations. The returned connections are health-checked to ensure they can be reused.
+
+## Bounds and SQL utilities ([#2902](https://github.com/maplibre/martin/pull/2902))
+
+The next piece was source metadata. Martin exposes TileJSON for every source, and TileJSON needs geographic bounds. A GeoParquet file does not provide an equivalent server-side catalogue, so the DuckDB backend needs to derive its bounds from the geometries it reads.
+
+This PR added three bounds modes. `skip` leaves bounds out of TileJSON. `calc` computes an exact extent with DuckDB spatial functions and transforms the result to WGS84. `quick`, the default, first tries `ST_Extent_Approx`, which uses cached geometry bounding boxes where they are available. The quick path is time-limited: if it cannot produce a result in time, Martin starts without bounds rather than delaying startup. If the approximate function is unavailable or produces no result, it falls back to the exact calculation.
+
+The exact query also handles point-like or otherwise degenerate extents. A zero-width or zero-height box is buffered before conversion, producing valid TileJSON bounds instead of an invalid envelope.
+
+The PR also introduced the small SQL utility layer used by the following resolver work. Identifiers, string values, schema-qualified relations, and EPSG CRS values are escaped separately before being placed in generated SQL. This is necessary because relation names and file paths cannot be passed as normal query parameters in every position used by DuckDB's spatial and `read_parquet(...)` functions. Keeping that logic in one place made the later SQL generation both safer and easier to read.
+
+## GeoParquet configuration and resolution ([#2931](https://github.com/maplibre/martin/pull/2931))
+
+With the runtime and metadata utilities in place, the next PR defined the GeoParquet source model and the resolver that turns a configured file into a `DuckDBSource`.
+
+The resolver begins with `DESCRIBE SELECT * FROM read_parquet(...)`. It identifies the geometry column, validates an optional feature ID column, and treats the remaining columns as MVT properties. A configured geometry column takes precedence; otherwise, Martin accepts a file with exactly one `GEOMETRY` column and rejects files with none or several ambiguous candidates.
+
+The source CRS can be configured explicitly or discovered with `ST_CRS`. The resolver accepts `EPSG:*` values and `OGC:CRS84`, then records the result as an SRID. Before building the tile query, it applies `ST_SetCRS` to the geometry. This is important because GeoParquet processing pipelines can preserve the geometry while dropping the CRS metadata DuckDB needs for a correct transformation.
+
+The generated query follows the normal MVT flow: create the requested tile envelope, transform source geometries into Web Mercator, filter features against the tile bounds, pass each geometry through `ST_AsMVTGeom`, and finally assemble the layer with `ST_AsMVT`. The layer ID, feature ID, extent, buffer, clipping behaviour, and zoom limits all come from the source configuration.
+
+The resolver combines this query with the bounds calculation from the previous PR and builds TileJSON from the discovered schema and metadata. At that point it can return a complete `DuckDBSource`. The remaining work was to connect this resolver to Martin's top-level lifecycle and verify the full HTTP path.
+
+## End-to-end local GeoParquet support ([#3054](https://github.com/maplibre/martin/pull/3054))
+
+This PR connected DuckDB configuration to Martin's normal startup lifecycle. When `unstable-duckdb` is enabled, Martin resolves the `duckdb:` block alongside its other source types and adds each valid GeoParquet source to the catalog.
+
+That completed the local GeoParquet path: configuration file to resolver, resolver to `DuckDBSource`, and `DuckDBSource` to the usual catalog, TileJSON, and `/{source}/{z}/{x}/{y}` endpoints. Invalid entries follow Martin's warning policy, so one malformed GeoParquet source does not prevent valid siblings from starting.
+
+The end-to-end tests start Martin with a temporary configuration, verify the catalog and generated TileJSON, request a real vector tile, and inspect the decoded MVT output. The fixture includes a polygon that crosses a tile edge, confirming that DuckDB clips it correctly while retaining features inside the tile.
+
+The PR also introduced `just test-duckdb` and a feature-gated CI job. This keeps the expensive bundled DuckDB build out of unrelated test suites while ensuring the complete GeoParquet path is tested whenever DuckDB support changes.
+
+## What this enables
+
+The immediate use case is serving a map directly from a GeoParquet dataset. Martin can expose a parquet analytical dataset directly as a standard vector-tile endpoint without a separate PostGIS import. MapLibre clients receive the usual catalog, TileJSON, and MVT responses.
+
+This is particularly useful when DuckDB is already the analytical layer. The same files can support batch analysis and map rendering, avoiding a second spatial database that exists only to serve tiles.
+
+The shared `DuckDBSource` design also provides a path beyond GeoParquet. The execution and pooling layer does not depend on `read_parquet(...)` and future sources can generate SQL against tables in a `.duckdb` file while using the same tile-serving code.
+
+## Remaining work
+
+The current implementation is intentionally gated behind `unstable-duckdb`. Before it can become a stable Martin backend, the most important work is:
+
+- **DuckDB database sources:** implement structured configuration and resolution for tables and auto-publish. Those fields are parsed today but are not served.
+- **Remote GeoParquet:** the connection layer supports HTTP(S) through `httpfs`; it still needs dedicated end-to-end coverage.
+- **Discovery and CLI support:** add directory/glob discovery for Parquet files and a command-line configuration path comparable to Postgres.
+- **Operational features:** support query cancellation and URL query parameters where appropriate.
+- **Hot reload:** detect changes to local GeoParquet files and refresh their sources without restarting Martin, matching the reload support available for other file-backed sources.
+- **Documentation and stabilization:** document the configuration, resource trade-offs, and when to choose DuckDB over PostGIS or pre-generated archives; then evaluate removing the `unstable-` feature gate.
+
+## Conclusion
+
+This work establishes the core path for serving vector tiles from local GeoParquet through DuckDB.
+For users whose geospatial data already lives in analytical files, this provides a simpler route from data to map: keep the dataset in GeoParquet, query it with DuckDB, and serve it through Martin!
