@@ -12,7 +12,9 @@ import architecture from "./Martin-Architecture.png";
 
 ## Introduction and Motivation
 
-Hi everyone, I have been working on DuckDB support for [Martin](https://github.com/maplibre/martin) as part of Google Summer of Code, under the mentorship of [Frank Elsinga](https://github.com/CommanderStorm). Martin already serves vector tiles from PostGIS and from pre-generated archives such as PMTiles and MBTiles. This project adds a path for serving tiles directly from analytical datasets like GeoParquet directly via DuckDB.
+Hi everyone, I have been working on DuckDB support for [Martin](https://github.com/maplibre/martin) as part of Google Summer of Code, under the mentorship of [Frank Elsinga](https://github.com/CommanderStorm).
+Martin already serves vector tiles from PostGIS, from pre-generated archives such as PMTiles and MBTilles, can extract images from COG and convert geojson to vector tiles on the fly.
+This project adds a path for serving tiles directly from analytical datasets like GeoParquet directly via DuckDB.
 
 The motivation for this is that many geospatial workflows already use DuckDB and GeoParquet for storage and analysis. Until now, putting that same data on a map generally required importing it into PostGIS, generating a separate tile archive, or maintaining a proxy layer. DuckDB's spatial extension now provides `ST_AsMVT` and `ST_AsMVTGeom`, making it possible for Martin to generate vector tiles from those datasets directly. Track the progress on this feature here - [#2264](https://github.com/maplibre/martin/issues/2264).
 
