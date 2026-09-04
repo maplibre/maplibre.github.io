@@ -1,0 +1,35 @@
+.img-compare {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 12px 0;
+
+  td {
+    width: 50%;
+    vertical-align: top;
+  }
+
+  img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .img-compare {
+    &,
+    tbody,
+    tr,
+    td {
+      display: block;
+      width: 100%;
+    }
+
+    td {
+      margin-bottom: 1rem;
+    }
+  }
+}

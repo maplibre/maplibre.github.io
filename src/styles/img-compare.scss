@@ -1,0 +1,30 @@
+.img-compare {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 12px 0;
+}
+.img-compare td {
+  width: 50%;
+  vertical-align: top;
+}
+.img-compare img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .img-compare,
+  .img-compare tbody,
+  .img-compare tr,
+  .img-compare td {
+    display: block;
+    width: 100%;
+  }
+  .img-compare td {
+    margin-bottom: 1rem;
+  }
+}
