@@ -11,7 +11,7 @@ github: CommanderStorm
         class="rounded-circle mt-3"
     />
     <h3 class="m-3">Frank Elsinga</h3>
-    <p>Member of the Governing Board</p>
+    <p>Former Governing Board Member</p>
     <p><a href="https://www.linkedin.com/in/frankelsinga/">LinkedIn</a> · <a href="https://github.com/CommanderStorm">GitHub</a> · <a href="https://osmus.slack.com/team/U07SNL36BN3">Slack</a>
 </div>
 

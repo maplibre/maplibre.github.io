@@ -14,14 +14,13 @@ handle: yuri-astrakhan
     <p><a href="https://www.linkedin.com/in/yurik/">LinkedIn</a> · <a href="https://github.com/nyurik">GitHub</a> · <a href="https://osmus.slack.com/team/UD83BMK5W">Slack</a> · <a href="https://twitter.com/nyuriks">X</a>
 </div>
 
+Dear MapLibre community,
+
 As a passionate advocate for open-source mapping software, I'm committed to driving MapLibre's mission forward.
 
 # Past achievements
 
 - After the license change, I proposed community to get together under `MapLibre` name, co-founded our organization, set up OpenCollective and its finances, did the initial re-branding and CI automation of the code
-
-# This year's achievements
-
 - Promote MapLibre at 5+ conferences, conducting workshops and lectures
 - Grew MapLibre's Martin project to become the fastest tile server in the world, and gathering over 9 **new** contributors in the last release cycle alone.
 - Continue to lead the new tile format efforts (MLT)
@@ -29,17 +28,11 @@ As a passionate advocate for open-source mapping software, I'm committed to driv
 - Numerous engagements with the community at conferences
 - Attend almost all zoom calls to keep up to date on all MapLibre developments and help coordinate all new developments
 
-### My Mission Statement
+# Financial Disclosure
 
-I believe MapLibre should offer a complete mapping software stack -- "from bits to pixels": given data, the stack should offer a clear path to convert it into tiles, serve tiles to the world, visualize them with MapLibre web / native / rs, and offer extra functionality with plugins (like navigation), as well as style editing and other tooling. The list goes on.
-
-Yes, but what about next year? I believe MapLibre must have three fundamental goals:
-
-- Grow developer community
-- Maintain and improve existing code
-- Research next-generation stack with latest technology (WebGPU, faster tiles, multi-platform, ...)
-
-All three goals are important - without the community we won't be able to maintain a vast codebase. Without investment into the next generation technology, we will quickly become irrelevant.
+- From the time of inception, MapLibre has always been my volunteer project, without any financial benefits
+- I do not accept any financial compensation from MapLibre apart from the conference travel reimbursements
+- I successfully advocated for MapLibre adaption at Rivian and Volkswagen Group Technologies, my current employer
 
 # A little more about me
 

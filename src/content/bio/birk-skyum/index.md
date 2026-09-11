@@ -11,7 +11,7 @@ github: birkskyum
         class="rounded-circle mt-3"
     />
     <h3 class="m-3">Birk Skyum</h3>
-    <p>Co-founder of MapLibre and Member of the Governing Board</p>
+    <p>Co-founder of MapLibre, currently serving as Graphics Engineer</p>
     <p><a href="https://www.linkedin.com/in/birkskyum/">LinkedIn</a> · <a href="https://github.com/birkskyum">GitHub</a> · <a href="https://osmus.slack.com/team/U02GUMY099R">Slack</a>
 </div>
 
