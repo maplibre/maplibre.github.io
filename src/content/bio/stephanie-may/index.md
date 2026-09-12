@@ -10,7 +10,7 @@ handle: stephanie-may
         class="rounded-circle mt-3"
     />
     <h3 class="m-3">Stephanie May</h3>
-    <p>Member of the Governing Board</p>
+    <p>Former Governing Board Member</p>
     <p><a href="https://mizmay.com/">Website</a> · <a href="https://www.linkedin.com/in/mizmay/">LinkedIn</a> · <a href="https://github.com/mizmay">GitHub</a> · <a href="https://osmus.slack.com/team/U501RP747">Slack</a>
 </div>
 
