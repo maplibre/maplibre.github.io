@@ -6,11 +6,6 @@ export interface Sponsor {
 
 export const goldSponsors: Sponsor[] = [
   {
-    href: "https://www.microsoft.com/",
-    logo: "/img/msft-logo.svg",
-    name: "Microsoft",
-  },
-  {
     href: "https://aws.amazon.com/location/",
     logo: "/img/aws-logo.svg",
     name: "Amazon (AWS)",
@@ -18,6 +13,11 @@ export const goldSponsors: Sponsor[] = [
 ];
 
 export const silverSponsors: Sponsor[] = [
+  {
+    href: "https://www.microsoft.com/",
+    logo: "/img/msft-logo.svg",
+    name: "Microsoft",
+  },
   {
     href: "https://www.mierune.co.jp/?lang=en",
     logo: "/img/mierune-logo.svg",
