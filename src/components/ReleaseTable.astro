@@ -25,23 +25,21 @@ const { data } = Astro.props;
     </tr>
   </thead>
   <tbody>
-    {
-      data.map((item) => (
-        <tr>
-          <td class="platform-name">
-            <strong>{item.name}</strong>
-          </td>
-          <td class="version-links">
-            {item.versions.map((v, index) => (
-              <>
-                <a href={v.url}>{v.label}</a>
-                {index < item.versions.length - 1 ? ", " : ""}
-              </>
-            ))}
-          </td>
-        </tr>
-      ))
-    }
+    {data.map((item) => (
+      <tr>
+        <td class="platform-name">
+          <strong>{item.name}</strong>
+        </td>
+        <td class="version-links">
+          {item.versions.map((v, index) => (
+            <>
+              <a href={v.url}>{v.label}</a>
+              {index < item.versions.length - 1 ? ", " : ""}
+            </>
+          ))}
+        </td>
+      </tr>
+    ))}
   </tbody>
 </table>
 

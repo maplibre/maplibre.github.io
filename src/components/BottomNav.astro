@@ -47,27 +47,25 @@ const isExternal = (href: string) => !href.startsWith("/");
   <hr />
   <div class="container py-5">
     <div class="row gy-5">
-      {
-        navSections.map((section) => (
-          <div class:list={["col col-12 col-sm-6 col-lg-3 text-center"]}>
-            <h5 class="bottom-nav-heading">{section.heading}</h5>
-            <ul class="bottom-nav-list">
-              {section.links.map((link) => (
-                <li>
-                  <a
-                    href={link.href}
-                    {...(isExternal(link.href)
-                      ? { target: "_blank", rel: "noopener" }
-                      : {})}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))
-      }
+      {navSections.map((section) => (
+        <div class:list={["col col-12 col-sm-6 col-lg-3 text-center"]}>
+          <h5 class="bottom-nav-heading">{section.heading}</h5>
+          <ul class="bottom-nav-list">
+            {section.links.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  {...(isExternal(link.href)
+                    ? { target: "_blank", rel: "noopener" }
+                    : {})}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   </div>
 </nav>

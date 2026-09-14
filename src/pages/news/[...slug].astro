@@ -66,48 +66,40 @@ const articleJsonLd = toJsonLd({
       property="article:published_time"
       content={post.data.date.toISOString()}
     />
-    {
-      authors.map((a) => (
-        <meta property="article:author" content={a.data.title} />
-      ))
-    }
-    {
-      post.data.categories.map((cat) => (
-        <meta property="article:section" content={capitalizeFirstLetter(cat)} />
-      ))
-    }
-    <script type="application/ld+json" set:html={articleJsonLd} />
+    {authors.map((a) => (
+      <meta property="article:author" content={a.data.title} />
+    ))}
+    {post.data.categories.map((cat) => (
+      <meta property="article:section" content={capitalizeFirstLetter(cat)} />
+    ))}
+    <script type="application/ld+json" set:html={articleJsonLd}></script>
   </Fragment>
   <TitleHeader>{post.data.title}</TitleHeader>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-10 col-lg-8">
         <p style="color: #9b91d2; margin: 0;">
-          {
-            post.data.date.toLocaleDateString("en-US", {
-              month: "short",
-              day: "numeric",
-              year: "numeric",
-            })
-          }
+          {post.data.date.toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          })}
         </p>
         <div>
-          Categories: {
-            post.data.categories.map((cat) => (
-              <a href={`/categories/${cat}`}>
-                <Badge>{capitalizeFirstLetter(cat)}</Badge>
-              </a>
-            ))
-          }
+          Categories:{" "}
+          {post.data.categories.map((cat) => (
+            <a href={`/categories/${cat}`}>
+              <Badge>{capitalizeFirstLetter(cat)}</Badge>
+            </a>
+          ))}
         </div>
         <div style="margin-bottom: 20px;">
-          Authors: {
-            authors.map((author) => (
-              <a href={`/about/${author.id}`}>
-                <Badge>{author.data.title}</Badge>
-              </a>
-            ))
-          }
+          Authors:{" "}
+          {authors.map((author) => (
+            <a href={`/about/${author.id}`}>
+              <Badge>{author.data.title}</Badge>
+            </a>
+          ))}
         </div>
         <div class="news-content">
           <Content />

@@ -36,8 +36,8 @@ const websiteJsonLd = toJsonLd({
 
 <Layout>
   <Fragment slot="head">
-    <script type="application/ld+json" set:html={organizationJsonLd} />
-    <script type="application/ld+json" set:html={websiteJsonLd} />
+    <script type="application/ld+json" set:html={organizationJsonLd}></script>
+    <script type="application/ld+json" set:html={websiteJsonLd}></script>
   </Fragment>
   <div class="container">
     <div class="row justify-content-center">
@@ -54,9 +54,7 @@ const websiteJsonLd = toJsonLd({
                   style="margin: 0 auto;"
                 />
 
-                <p
-                  style="word-break:normal; margin-top:30px; max-width: 800px;"
-                >
+                <p style="word-break:normal; margin-top:30px; max-width: 800px;">
                   {SITE_DESCRIPTION}
                 </p>
 
@@ -77,12 +75,12 @@ const websiteJsonLd = toJsonLd({
           </Fragment>
           <Fragment slot="badges">
             <GitHubBadge href="https://github.com/maplibre/maplibre-gl-js" />
-            <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs"
-              >API Documentation</LinkBadge
-            >
-            <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
-              >Plugins</LinkBadge
-            >
+            <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs">
+              API Documentation
+            </LinkBadge>
+            <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/plugins/">
+              Plugins
+            </LinkBadge>
           </Fragment>
           <div
             slot="visual"
@@ -92,9 +90,8 @@ const websiteJsonLd = toJsonLd({
             <figure>
               <LandingPageMap client:only="solid-js" />
               <figcaption class="figure-caption">
-                Map data: <a href="https://www.naturalearthdata.com/"
-                  >Natural Earth</a
-                >
+                Map data:{" "}
+                <a href="https://www.naturalearthdata.com/">Natural Earth</a>
               </figcaption>
             </figure>
           </div>
@@ -112,23 +109,21 @@ const websiteJsonLd = toJsonLd({
           </Fragment>
           <Fragment slot="badges">
             <GitHubBadge href="https://github.com/maplibre/maplibre-native" />
-            <LinkBadge href="https://maplibre.org/maplibre-native/android/api/"
-              >Android API</LinkBadge
-            >
-            <LinkBadge
-              href="https://maplibre.org/maplibre-native/android/examples/"
-              >Android Examples</LinkBadge
-            >
-            <LinkBadge href="https://maplibre.org/maplibre-native/docs/book/"
-              >Developer Docs</LinkBadge
-            >
-            <LinkBadge
-              href="https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre"
-              >iOS Documentation</LinkBadge
-            >
-            <LinkBadge href="https://maplibre.org/maplibre-native/cpp/api/"
-              >Core C++ API</LinkBadge
-            >
+            <LinkBadge href="https://maplibre.org/maplibre-native/android/api/">
+              Android API
+            </LinkBadge>
+            <LinkBadge href="https://maplibre.org/maplibre-native/android/examples/">
+              Android Examples
+            </LinkBadge>
+            <LinkBadge href="https://maplibre.org/maplibre-native/docs/book/">
+              Developer Docs
+            </LinkBadge>
+            <LinkBadge href="https://maplibre.org/maplibre-native/ios/latest/documentation/maplibre">
+              iOS Documentation
+            </LinkBadge>
+            <LinkBadge href="https://maplibre.org/maplibre-native/cpp/api/">
+              Core C++ API
+            </LinkBadge>
           </Fragment>
           <Fragment slot="visual">
             <Image
@@ -152,9 +147,7 @@ const websiteJsonLd = toJsonLd({
           </Fragment>
         </ProjectSection>
 
-        <ProjectSection
-          title="Map<span style='color: #95BEFA;'>Libre</span> Style Specification"
-        >
+        <ProjectSection title="Map<span style='color: #95BEFA;'>Libre</span> Style Specification">
           <Fragment slot="description">
             A MapLibre style is a document that defines the visual appearance of
             a map: what data to draw, the order to draw it in, and how to style
@@ -163,15 +156,13 @@ const websiteJsonLd = toJsonLd({
             defines and describes these properties.
           </Fragment>
           <Fragment slot="badges">
-            <GitHubBadge
-              href="https://github.com/maplibre/maplibre-style-spec"
-            />
-            <LinkBadge href="https://maplibre.org/maplibre-style-spec"
-              >Style Specification</LinkBadge
-            >
-            <LinkBadge href="https://maplibre.org/maputnik"
-              >Maputnik Style Editor</LinkBadge
-            >
+            <GitHubBadge href="https://github.com/maplibre/maplibre-style-spec" />
+            <LinkBadge href="https://maplibre.org/maplibre-style-spec">
+              Style Specification
+            </LinkBadge>
+            <LinkBadge href="https://maplibre.org/maputnik">
+              Maputnik Style Editor
+            </LinkBadge>
           </Fragment>
           <Fragment slot="visual">
             <img
@@ -182,8 +173,7 @@ const websiteJsonLd = toJsonLd({
             <a
               href="https://maplibre.org/maputnik"
               style="background-image: url('img/maputnik.png'); height: 300px; width:100%;max-width: 150px; background-size:contain; background-position: center; background-repeat: no-repeat;"
-            >
-            </a>
+            ></a>
           </Fragment>
         </ProjectSection>
 
@@ -197,17 +187,13 @@ const websiteJsonLd = toJsonLd({
             decoding performance and new capabilities.
           </Fragment>
           <Fragment slot="badges">
-            <GitHubBadge
-              href="https://github.com/maplibre/maplibre-tile-spec"
-            />
-            <LinkBadge
-              href="https://dl.acm.org/doi/epdf/10.1145/3748636.3763208"
-              >Publication</LinkBadge
-            >
-            <LinkBadge
-              href="https://maplibre.org/maplibre-tile-spec/implementation-status/"
-              >Implementation Status</LinkBadge
-            >
+            <GitHubBadge href="https://github.com/maplibre/maplibre-tile-spec" />
+            <LinkBadge href="https://dl.acm.org/doi/epdf/10.1145/3748636.3763208">
+              Publication
+            </LinkBadge>
+            <LinkBadge href="https://maplibre.org/maplibre-tile-spec/implementation-status/">
+              Implementation Status
+            </LinkBadge>
           </Fragment>
         </ProjectSection>
 
@@ -215,17 +201,19 @@ const websiteJsonLd = toJsonLd({
           <Fragment slot="description">
             Martin is a tile generator and server able to create Map Vector
             Tiles (MVTs) from large
-            <a href="https://maplibre.org/martin/pg-connections.html">PostGIS</a
-            >
+            <a href="https://maplibre.org/martin/pg-connections.html">
+              PostGIS
+            </a>
             databases on the fly, or serve tiles from
-            <a href="https://maplibre.org/martin/sources-files.html"
-              >PMTile and MBTile</a
-            >
-            files. Martin optimizes for speed and heavy traffic, and is written in
+            <a href="https://maplibre.org/martin/sources-files.html">
+              PMTile and MBTile
+            </a>
+            files. Martin optimizes for speed and heavy traffic, and is written
+            in
             <a href="https://github.com/rust-lang/rust">Rust</a>. Martin
             includes
-            <a href="https://maplibre.org/martin/tools.html">CLI tools</a> for generating,
-            diffing, extracting, and combining MBTiles files.
+            <a href="https://maplibre.org/martin/tools.html">CLI tools</a> for
+            generating, diffing, extracting, and combining MBTiles files.
           </Fragment>
           <Fragment slot="badges">
             <GitHubBadge href="https://github.com/maplibre/martin" />
@@ -234,8 +222,7 @@ const websiteJsonLd = toJsonLd({
           <div
             slot="visual"
             style="background-image: url('img/martin.png'); height: 300px; width:100%; background-size:contain; background-position: center; background-repeat: no-repeat;"
-          >
-          </div>
+          ></div>
         </ProjectSection>
       </div>
     </div>
