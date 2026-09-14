@@ -95,83 +95,81 @@ function formatDate(dateValue) {
   }
 </style>
 
-{
-  roadmapItem && Content ? (
-    <Layout
-      title={roadmapItem.data.title}
-      ogImage={
-        new URL(`/og/roadmap/${projectId}/${itemSlug}.png`, Astro.site).href
-      }
-    >
-      <TitleHeader>{roadmapItem.data.title}</TitleHeader>
-      <div class="container">
-        <nav class="project-tabs" aria-label="Roadmap sections">
-          {PROJECTS.map((tab) => (
+{roadmapItem && Content ? (
+  <Layout
+    title={roadmapItem.data.title}
+    ogImage={
+      new URL(`/og/roadmap/${projectId}/${itemSlug}.png`, Astro.site).href
+    }
+  >
+    <TitleHeader>{roadmapItem.data.title}</TitleHeader>
+    <div class="container">
+      <nav class="project-tabs" aria-label="Roadmap sections">
+        {PROJECTS.map((tab) => (
+          <a
+            href={`/roadmap/${tab.id}`}
+            class={`project-tab ${tab.id === projectId ? "active" : ""}`}
+          >
+            {tab.label}
+          </a>
+        ))}
+      </nav>
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+          <p>
             <a
-              href={`/roadmap/${tab.id}`}
-              class={`project-tab ${tab.id === projectId ? "active" : ""}`}
+              href={`/roadmap/${projectId}`}
+              class="btn btn-link"
+              style="padding: 0;"
             >
-              {tab.label}
+              ← Back to {projectMeta.label} roadmap
             </a>
-          ))}
-        </nav>
-        <div class="row justify-content-center">
-          <div class="col-md-10 col-lg-8">
-            <p>
-              <a
-                href={`/roadmap/${projectId}`}
-                class="btn btn-link"
-                style="padding: 0;"
-              >
-                ← Back to {projectMeta.label} roadmap
-              </a>
-            </p>
-            {roadmapItem.data.heroImage && (
-              <figure>
-                <Image
-                  alt={roadmapItem.data.title}
-                  src={roadmapItem.data.heroImage.url}
-                  style="max-height:400px;height:auto;width:auto; max-width: 100%; border-radius: 10px; background-color: white; display: block; margin: 0 auto;"
-                />
-                {roadmapItem.data.heroImage.credit && (
-                  <figcaption class="figure-caption">
-                    Image credit:{" "}
-                    {roadmapItem.data.heroImage.creditUrl ? (
-                      <a href={roadmapItem.data.heroImage.creditUrl}>
-                        {roadmapItem.data.heroImage.credit}
-                      </a>
-                    ) : (
-                      roadmapItem.data.heroImage.credit
-                    )}
-                  </figcaption>
-                )}
-              </figure>
-            )}
-
-            <Content />
-
-            {roadmapItem.data.links && (
-              <HelpWanted
-                developer={roadmapItem.data.links.developer}
-                funding={roadmapItem.data.links.funding}
+          </p>
+          {roadmapItem.data.heroImage && (
+            <figure>
+              <Image
+                alt={roadmapItem.data.title}
+                src={roadmapItem.data.heroImage.url}
+                style="max-height:400px;height:auto;width:auto; max-width: 100%; border-radius: 10px; background-color: white; display: block; margin: 0 auto;"
               />
-            )}
+              {roadmapItem.data.heroImage.credit && (
+                <figcaption class="figure-caption">
+                  Image credit:{" "}
+                  {roadmapItem.data.heroImage.creditUrl ? (
+                    <a href={roadmapItem.data.heroImage.creditUrl}>
+                      {roadmapItem.data.heroImage.credit}
+                    </a>
+                  ) : (
+                    roadmapItem.data.heroImage.credit
+                  )}
+                </figcaption>
+              )}
+            </figure>
+          )}
 
-            {roadmapItem.data.released ? (
-              <p style="font-weight: bold;">
-                Released: {formatDate(roadmapItem.data.released)}
-              </p>
-            ) : null}
-          </div>
+          <Content />
+
+          {roadmapItem.data.links && (
+            <HelpWanted
+              developer={roadmapItem.data.links.developer}
+              funding={roadmapItem.data.links.funding}
+            />
+          )}
+
+          {roadmapItem.data.released ? (
+            <p style="font-weight: bold;">
+              Released: {formatDate(roadmapItem.data.released)}
+            </p>
+          ) : null}
         </div>
       </div>
-    </Layout>
-  ) : (
-    <Layout title="Roadmap Item">
-      <TitleHeader>Roadmap Item Not Found</TitleHeader>
-      <div class="container">
-        <p>We could not find the requested roadmap item.</p>
-      </div>
-    </Layout>
-  )
-}
+    </div>
+  </Layout>
+) : (
+  <Layout title="Roadmap Item">
+    <TitleHeader>Roadmap Item Not Found</TitleHeader>
+    <div class="container">
+      <p>We could not find the requested roadmap item.</p>
+    </div>
+  </Layout>
+)}

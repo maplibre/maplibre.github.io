@@ -27,15 +27,13 @@ const titleText = title.replace(/<[^>]+>/g, "");
     { "project-link": !!href, "position-relative": !!href, rounded: !!href },
   ]}
 >
-  {
-    href && (
-      <a
-        href={href}
-        class="stretched-link"
-        aria-label={`Read more about ${titleText}`}
-      />
-    )
-  }
+  {href && (
+    <a
+      href={href}
+      class="stretched-link"
+      aria-label={`Read more about ${titleText}`}
+    />
+  )}
   <div class="row">
     <div
       class="col-md-12 col-lg-6"
@@ -45,7 +43,8 @@ const titleText = title.replace(/<[^>]+>/g, "");
         <h1 style="color: white;" set:html={title} />
 
         <slot name="description" />
-        <br /><br />
+        <br />
+        <br />
 
         <div
           class:list={[
@@ -55,21 +54,19 @@ const titleText = title.replace(/<[^>]+>/g, "");
         >
           <slot name="badges" />
         </div>
-        {
-          href && (
-            <div class="position-relative z-2 pt-4 pb-3 text-center text-md-start">
-              <a href={href} class="explore-btn">
-                Explore {titleText}
-                <Icon
-                  name="chevron-right"
-                  aria-hidden="true"
-                  height={14}
-                  width={14}
-                />
-              </a>
-            </div>
-          )
-        }
+        {href && (
+          <div class="position-relative z-2 pt-4 pb-3 text-center text-md-start">
+            <a href={href} class="explore-btn">
+              Explore {titleText}
+              <Icon
+                name="chevron-right"
+                aria-hidden="true"
+                height={14}
+                width={14}
+              />
+            </a>
+          </div>
+        )}
         <br />
       </div>
     </div>

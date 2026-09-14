@@ -49,38 +49,34 @@ const posts = (
       <div class="col-md-10 col-lg-8">
         <AuthorContent />
 
-        {
-          posts.length > 0 ? (
-            <>
-              <hr style="margin: 60px 0px;" />
-              <h2>Articles</h2>
-            </>
-          ) : null
-        }
+        {posts.length > 0 ? (
+          <>
+            <hr style="margin: 60px 0px;" />
+            <h2>Articles</h2>
+          </>
+        ) : null}
 
-        {
-          posts.map((post) => (
-            <a href={`/news/${post.id}/`}>
-              <div class="newsarticle">
-                <h3 class="title" style="color: #e0e0e0;">
-                  {post.data.title}
-                </h3>
+        {posts.map((post) => (
+          <a href={`/news/${post.id}/`}>
+            <div class="newsarticle">
+              <h3 class="title" style="color: #e0e0e0;">
+                {post.data.title}
+              </h3>
 
-                <p style="color: #e0e0e0;">
-                  <PostExcerpt post={post} words={50} addEllipsis={true} />
-                </p>
+              <p style="color: #e0e0e0;">
+                <PostExcerpt post={post} words={50} addEllipsis={true} />
+              </p>
 
-                <p style="color: #9b91d2;">
-                  {post.data.date.toLocaleDateString("en-US", {
-                    month: "short",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
-                </p>
-              </div>
-            </a>
-          ))
-        }
+              <p style="color: #9b91d2;">
+                {post.data.date.toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </p>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </div>

@@ -28,6 +28,8 @@ const { href, title, lift = false } = Astro.props;
 >
   <div class="card-body text-start">
     <h4 class="card-title h6 text-primary mb-2">{title}</h4>
-    <p class="card-text text-dark small mb-0"><slot /></p>
+    <p class="card-text text-dark small mb-0">
+      <slot />
+    </p>
   </div>
 </a>

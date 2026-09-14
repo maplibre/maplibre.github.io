@@ -152,70 +152,66 @@ function formatDate(dateValue) {
   </style>
   <div class="container roadmap">
     <nav class="project-tabs" aria-label="Roadmap sections">
-      {
-        PROJECTS.map((tab) => (
-          <a
-            href={`/roadmap/${tab.id}`}
-            class={`project-tab ${tab.id === projectMeta.id ? "active" : ""}`}
-          >
-            {tab.label}
-          </a>
-        ))
-      }
+      {PROJECTS.map((tab) => (
+        <a
+          href={`/roadmap/${tab.id}`}
+          class={`project-tab ${tab.id === projectMeta.id ? "active" : ""}`}
+        >
+          {tab.label}
+        </a>
+      ))}
     </nav>
 
     <p>{projectMeta.description}</p>
 
-    {
-      projectItems.length ? (
-        sections.map((section) => {
-          const items = sortByReleaseDateDesc(
-            projectItems.filter((item) => item.data.status === section.status),
-          );
+    {projectItems.length ? (
+      sections.map((section) => {
+        const items = sortByReleaseDateDesc(
+          projectItems.filter((item) => item.data.status === section.status),
+        );
 
-          if (!items.length) {
-            return null;
-          }
+        if (!items.length) {
+          return null;
+        }
 
-          return (
-            <section>
-              <h2>{section.title}</h2>
-              <div class="cards-grid">
-                {items.map((item) => {
-                  const slug = item.id.split("/").slice(-1)[0];
+        return (
+          <section>
+            <h2>{section.title}</h2>
+            <div class="cards-grid">
+              {items.map((item) => {
+                const slug = item.id.split("/").slice(-1)[0];
 
-                  return (
-                    <a
-                      class="card roadmap-card"
-                      href={`/roadmap/${projectMeta.id}/${slug}`}
-                    >
-                      {item.data.heroImage && (
-                        <Image
-                          class="card-img-top"
-                          src={item.data.heroImage.url}
-                          alt={item.data.title}
-                          style={`width: 100%; height: 250px; object-fit: ${item.data.heroImage.fit || "cover"};`}
-                        />
-                      )}
-                      <div class="card-body">
-                        <h5 class="card-title">{item.data.title}</h5>
-                        {item.data.released ? (
-                          <p class="card-release">
-                            Released: {formatDate(item.data.released)}
-                          </p>
-                        ) : null}
-                        Read more..
-                      </div>
-                    </a>
-                  );
-                })}
-              </div>
-            </section>
-          );
-        })
-      ) : (
-        <p class="empty-state">No roadmap items yet.</p>
-      )
-    }
+                return (
+                  <a
+                    class="card roadmap-card"
+                    href={`/roadmap/${projectMeta.id}/${slug}`}
+                  >
+                    {item.data.heroImage && (
+                      <Image
+                        class="card-img-top"
+                        src={item.data.heroImage.url}
+                        alt={item.data.title}
+                        style={`width: 100%; height: 250px; object-fit: ${item.data.heroImage.fit || "cover"};`}
+                      />
+                    )}
+                    <div class="card-body">
+                      <h5 class="card-title">{item.data.title}</h5>
+                      {item.data.released ? (
+                        <p class="card-release">
+                          Released: {formatDate(item.data.released)}
+                        </p>
+                      ) : null}
+                      Read more..
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        );
+      })
+    ) : (
+      <p class="empty-state">No roadmap items yet.</p>
+    )}
   </div>
 </Layout>

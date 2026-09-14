@@ -6,7 +6,9 @@ interface Props {
 const { href } = Astro.props;
 ---
 
-<a href={href} class="link-badge text-decoration-none text-nowrap"><slot /></a>
+<a href={href} class="link-badge text-decoration-none text-nowrap">
+  <slot />
+</a>
 
 <style>
   .link-badge {

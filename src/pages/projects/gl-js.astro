@@ -46,7 +46,7 @@ const softwareJsonLd = toJsonLd({
   description="Open-source TypeScript library for publishing interactive, GPU-accelerated maps on the web."
 >
   <Fragment slot="head">
-    <script type="application/ld+json" set:html={softwareJsonLd} />
+    <script type="application/ld+json" set:html={softwareJsonLd}></script>
   </Fragment>
   <section class="py-5 px-4 text-center text-white">
     <div class="container">
@@ -57,20 +57,18 @@ const softwareJsonLd = toJsonLd({
       </p>
 
       <div class="d-flex flex-wrap justify-content-center gap-3 mt-5">
-        {
-          [
-            "🔓 Open Source",
-            "🏛️ Community Governed",
-            "⚡ GPU-Accelerated",
-            "🌐 Web-Native",
-            "🔌 Extensible",
-            "🌍 Globe Support",
-          ].map((label) => (
-            <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">
-              {label}
-            </div>
-          ))
-        }
+        {[
+          "🔓 Open Source",
+          "🏛️ Community Governed",
+          "⚡ GPU-Accelerated",
+          "🌐 Web-Native",
+          "🔌 Extensible",
+          "🌍 Globe Support",
+        ].map((label) => (
+          <div class="bg-white bg-opacity-10 rounded px-3 py-2 fs-6">
+            {label}
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -348,42 +346,32 @@ const softwareJsonLd = toJsonLd({
         experiences — from global technology platforms to public institutions.
       </p>
 
-      <div
-        class="d-flex flex-wrap justify-content-center align-items-center gap-5 mb-3"
-      >
-        {
-          goldSponsors.map((s) => (
-            <UserLogo href={s.href} src={s.logo} alt={s.name} large />
-          ))
-        }
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-5 mb-3">
+        {goldSponsors.map((s) => (
+          <UserLogo href={s.href} src={s.logo} alt={s.name} large />
+        ))}
       </div>
 
-      <div
-        class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-4"
-      >
-        {
-          silverSponsors.map((s) => (
-            <UserLogo href={s.href} src={s.logo} alt={s.name} />
-          ))
-        }
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-4">
+        {silverSponsors.map((s) => (
+          <UserLogo href={s.href} src={s.logo} alt={s.name} />
+        ))}
       </div>
 
       <p class="small text-secondary mb-2">Past sponsors</p>
-      <div
-        class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-5 opacity-50"
-      >
-        {
-          pastSponsors.map((s) => (
-            <UserLogo href={s.href} src={s.logo} alt={s.name} small />
-          ))
-        }
+      <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-5 opacity-50">
+        {pastSponsors.map((s) => (
+          <UserLogo href={s.href} src={s.logo} alt={s.name} small />
+        ))}
       </div>
 
       <div class="d-flex flex-wrap justify-content-center gap-3">
         <a href="https://madewithmaplibre.com/" class="btn btn-primary btn-lg">
           See all users
         </a>
-        <a href="/sponsors" class="btn btn-primary btn-lg">Our sponsors</a>
+        <a href="/sponsors" class="btn btn-primary btn-lg">
+          Our sponsors
+        </a>
       </div>
     </div>
   </section>
@@ -423,21 +411,21 @@ const softwareJsonLd = toJsonLd({
 
       <div class="d-flex flex-wrap justify-content-center gap-2">
         <GitHubBadge href="https://github.com/maplibre/maplibre-gl-js" />
-        <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/"
-          >API Documentation</LinkBadge
-        >
-        <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/examples/"
-          >Examples</LinkBadge
-        >
-        <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/plugins/"
-          >Plugins</LinkBadge
-        >
-        <LinkBadge href="https://maplibre.org/maplibre-style-spec"
-          >Style Spec</LinkBadge
-        >
-        <LinkBadge href="https://github.com/maplibre/maplibre-gl-js/releases"
-          >Releases</LinkBadge
-        >
+        <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/">
+          API Documentation
+        </LinkBadge>
+        <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/examples/">
+          Examples
+        </LinkBadge>
+        <LinkBadge href="https://maplibre.org/maplibre-gl-js/docs/plugins/">
+          Plugins
+        </LinkBadge>
+        <LinkBadge href="https://maplibre.org/maplibre-style-spec">
+          Style Spec
+        </LinkBadge>
+        <LinkBadge href="https://github.com/maplibre/maplibre-gl-js/releases">
+          Releases
+        </LinkBadge>
       </div>
     </div>
   </section>

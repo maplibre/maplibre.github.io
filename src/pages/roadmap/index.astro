@@ -137,30 +137,28 @@ const projectStats = Object.fromEntries(
     </p>
 
     <div class="project-grid">
-      {
-        projectTabs.map((tab) => {
-          const stats = projectStats[tab.id];
-          const hasItems = stats.total > 0;
+      {projectTabs.map((tab) => {
+        const stats = projectStats[tab.id];
+        const hasItems = stats.total > 0;
 
-          return (
-            <a class="project-card" href={`/roadmap/${tab.id}`}>
-              <h2>{tab.label}</h2>
-              <p>{tab.description}</p>
-              {hasItems ? (
-                <ul class="status-list">
-                  {stats.byStatus.map(({ section, count }) => (
-                    <li>
-                      <strong>{count}</strong> {section.label}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <span class="empty-tag">No roadmap items yet</span>
-              )}
-            </a>
-          );
-        })
-      }
+        return (
+          <a class="project-card" href={`/roadmap/${tab.id}`}>
+            <h2>{tab.label}</h2>
+            <p>{tab.description}</p>
+            {hasItems ? (
+              <ul class="status-list">
+                {stats.byStatus.map(({ section, count }) => (
+                  <li>
+                    <strong>{count}</strong> {section.label}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <span class="empty-tag">No roadmap items yet</span>
+            )}
+          </a>
+        );
+      })}
     </div>
   </div>
 </Layout>
