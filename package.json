@@ -32,7 +32,7 @@
     "ultrahtml": "^1.7.0"
   },
   "devDependencies": {
-    "@types/node": "^26.5.1",
+    "@types/node": "^26.6.1",
     "astro-broken-links-checker": "^1.1.0",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^1.0.0",
