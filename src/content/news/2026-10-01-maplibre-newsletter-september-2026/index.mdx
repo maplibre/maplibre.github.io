@@ -1,0 +1,105 @@
+---
+title: "MapLibre Newsletter September 2026"
+date: "2026-10-01"
+categories: ["newsletter"]
+authors: [harel-mazor, bart-louwers, birk-skyum, frank-elsinga, ramya-ragupathy]
+draft: true
+---
+
+import ZoomableImage from "../../../components/ZoomableImage.astro";
+import waves from "./waves.gif";
+import polygonLayer from "./polygon-layer.gif";
+import locationIndicator from "./location-indicator.png";
+import eiffelTower from "./eifel-tower.png";
+import fireworks from "./fireworks.gif";
+import flowDirection from "./flow-direction.gif";
+import snowflakes from "./snowflakes.gif";
+import weather from "./weather.gif";
+import terrain from "./terrain.mp4?url";
+import openHarmony from "./openharmony.png";
+
+## MapLibre Native
+
+### Plugin system
+
+<div
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+    gap: "1rem",
+    alignItems: "center",
+    justifyItems: "center",
+  }}
+>
+  <ZoomableImage
+    src={waves}
+    alt="Waves plugin demo"
+    style={{ width: "100%", height: "auto" }}
+  />
+  <ZoomableImage
+    src={polygonLayer}
+    style={{ width: "100%", height: "auto" }}
+    alt="Polygon layer plugin demo"
+  />
+  <ZoomableImage
+    src={locationIndicator}
+    alt="Location indicator plugin demo"
+    style={{ width: "100%", height: "auto" }}
+  />
+  <ZoomableImage
+    src={eiffelTower}
+    alt="Eiffel Tower plugin demo"
+    style={{ width: "100%", height: "auto" }}
+  />
+  <ZoomableImage
+    src={fireworks}
+    alt="Fireworks plugin demo"
+    style={{ width: "100%", height: "auto" }}
+  />
+  <ZoomableImage
+    src={flowDirection}
+    alt="Flow direction plugin demo"
+    style={{ width: "100%", height: "auto" }}
+  />
+  <ZoomableImage
+    src={snowflakes}
+    alt="Snowflakes plugin demo"
+    style={{ width: "100%", height: "auto" }}
+  />
+  <ZoomableImage
+    src={weather}
+    alt="Weather plugin demo"
+    style={{ width: "100%", height: "auto" }}
+  />
+</div>
+
+### Ongoing Terrain3D work
+
+<video
+  src={terrain}
+  controls
+  playsInline
+  style={{ width: "50%", height: "auto" }}
+  aria-label="Terrain3D demo"
+/>
+
+### OpenHarmony Platform
+
+<ZoomableImage
+  src={openHarmony}
+  alt="MapLibre Native on OpenHarmony"
+  style={{ maxWidth: "100%", height: "auto" }}
+/>
+
+### OSM sound demo
+
+[Taro Matsuzawa (smellman)](https://github.com/smellman) made this OSM sound demo. Check out the [source code on GitHub](https://github.com/smellman/osm-sound-demo-slint).
+
+<iframe
+  src="https://www.youtube.com/embed/rzl2hSKqNcE"
+  title="OSM sound demo by Taro Matsuzawa"
+  style={{ width: "100%", aspectRatio: "16 / 9", border: "0" }}
+  loading="lazy"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+/>
