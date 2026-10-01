@@ -3,6 +3,7 @@
 interface Version {
   label: string;
   url: string;
+  note?: string;
 }
 
 interface Platform {
@@ -34,6 +35,7 @@ const { data } = Astro.props;
           {item.versions.map((v, index) => (
             <>
               <a href={v.url}>{v.label}</a>
+              {v.note ? ` ${v.note}` : ""}
               {index < item.versions.length - 1 ? ", " : ""}
             </>
           ))}
