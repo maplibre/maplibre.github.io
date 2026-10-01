@@ -26,7 +26,7 @@ An update on the new cross-platform plugin system for MapLibre Native. A first v
 
 It should be noted that during this development phase the plugin system is not stable yet. Regular builds also do not include it yet (all intergration code is guarded with a `MLN_WITH_PLUGINS` build flag). However, for those that want to experiment with the plugin API already, we did put out a pre-release for MapLibre Android that includes it. Please see [this repository](https://github.com/louwers/maplibre-native-plugin-android-example) for an example. MapLibre iOS will follow suit.
 
-Note that these plugins tie directly into the core. The plugins are *cross-platform*, and thanks to the C API, once the API is stable, people will be able to publish plugins that will continue working across versions. We believe that this has the potential to create a true plugin ecosystem for MapLibre Native. By having a powerful plugin system, we allow people to extend the library and experiment, while keeping the core library stable (and small). Below you can find a small taste of some interesting ideas.
+Note that these plugins tie directly into the core. The plugins are _cross-platform_, and thanks to the C API, once the API is stable, people will be able to publish plugins that will continue working across versions. We believe that this has the potential to create a true plugin ecosystem for MapLibre Native. By having a powerful plugin system, we allow people to extend the library and experiment, while keeping the core library stable (and small). Below you can find a small taste of some interesting ideas.
 
 <figure
   style={{
@@ -81,7 +81,9 @@ Note that these plugins tie directly into the core. The plugins are *cross-platf
     Examples of plugins that the new plugin API enables: waves, an{" "}
     <a href="https://en.wikipedia.org/wiki/Regular_polygon">n-gon</a> layer,
     custom location indicators, 3D models, fireworks, flow direction, snow and
-    animated symbols (click to enlarge). Thanks to Sargun Vohra for sharing his experiments. Map data from OpenStreetMap and styles based on OpenMapTiles shown.
+    animated symbols (click to enlarge). Thanks to Sargun Vohra for sharing his
+    experiments. Map data from OpenStreetMap and styles based on OpenMapTiles
+    shown.
   </figcaption>
 </figure>
 
