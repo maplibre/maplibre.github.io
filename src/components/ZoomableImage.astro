@@ -35,7 +35,7 @@ const { src, alt, style } = Astro.props;
   }
 
   /* Grid gaps provide spacing between adjacent images. */
-  .zoomable-image + .zoomable-image {
+  .zoomable-image ~ .zoomable-image {
     margin-top: 0;
   }
 </style>
