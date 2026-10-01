@@ -8,13 +8,13 @@ draft: true
 
 import ZoomableImage from "../../../components/ZoomableImage.astro";
 import ReleaseTable from "../../../components/ReleaseTable.astro";
-import waves from "./waves.gif";
-import polygonLayer from "./polygon-layer.gif";
+import waves from "./waves.webp";
+import polygonLayer from "./polygon-layer.webp";
 import locationIndicator from "./location-indicator.png";
 import eiffelTower from "./eifel-tower.png";
-import fireworks from "./fireworks.gif";
+import fireworks from "./fireworks.webp";
 import flowDirection from "./flow-direction.gif";
-import snowflakes from "./snowflakes.gif";
+import snowflakes from "./snowflakes.webp";
 import weather from "./weather.gif";
 import terrain from "./terrain.mp4?url";
 import openHarmony from "./openharmony.png";
@@ -54,7 +54,7 @@ export const nativeReleases = [
 
 An update on the new cross-platform plugin system for MapLibre Native. A first version of the [C API](https://github.com/maplibre/maplibre-native/blob/ba9fc57bc88725d7602fd652e601384e9f2e3183/include/mln/plugin/plugin_api.h) has landed this month! We also already saw various PRs ([#4654](https://github.com/maplibre/maplibre-native/pull/4654), [#4692](https://github.com/maplibre/maplibre-native/pull/4692), [#4665](https://github.com/maplibre/maplibre-native/pull/4665)) that extended the capabilities of the plugin system. This is exactly the approach that we want to take: gradually expand the scope of the plugin system to make sure it fits all the use cases that our users have.
 
-It should be noted that during this development phase the plugin system is not stable yet. Regular builds also do not include it yet (all intergration code is guarded with a `MLN_WITH_PLUGINS` build flag). However, for those that want to experiment with the plugin API already, we did put out a pre-release for MapLibre Android that includes it. Please see [this repository](https://github.com/louwers/maplibre-native-plugin-android-example) for an example. MapLibre iOS will follow suit.
+It should be noted that during this development phase the plugin system is not stable yet. Regular builds also do not include it yet (all integration code is guarded with a `MLN_WITH_PLUGINS` build flag). However, for those that want to experiment with the plugin API already, we did put out a pre-release for MapLibre Android that includes it. Please see [this repository](https://github.com/louwers/maplibre-native-plugin-android-example) for an example. MapLibre iOS will follow suit.
 
 Note that these plugins tie directly into the core. The plugins are _cross-platform_, and thanks to the C API, once the API is stable, people will be able to publish plugins that will continue working across versions. We believe that this has the potential to create a true plugin ecosystem for MapLibre Native. By having a powerful plugin system, we allow people to extend the library and experiment, while keeping the core library stable (and small). Below you can find a small taste of some interesting ideas.
 
@@ -152,7 +152,7 @@ With [#4315](https://github.com/maplibre/maplibre-native/pull/4315) merged we no
 
 ### Call for MapLibre Accessibility Features
 
-Tim Sylvester implemented the ability to introspect rendered features in [#4460](https://github.com/maplibre/maplibre-native/pull/4460) this month. While this functionality was built primarily with testing purposes in mind, it might offer some opportunities for MapLibre Native to better intergrate with accessibility tools such as screen readers. We would be very eager to hear from people willing to [share](https://github.com/maplibre/maplibre-native/discussions/3439) their ideas on how to push such accessibility efforts.
+Tim Sylvester implemented the ability to introspect rendered features in [#4460](https://github.com/maplibre/maplibre-native/pull/4460) this month. While this functionality was built primarily with testing purposes in mind, it might offer some opportunities for MapLibre Native to better integrate with accessibility tools such as screen readers. We would be very eager to hear from people willing to [share](https://github.com/maplibre/maplibre-native/discussions/3439) their ideas on how to push such accessibility efforts.
 
 ## Other news
 

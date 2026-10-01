@@ -43,9 +43,19 @@ const { src, alt, style } = Astro.props;
 <script>
   import PhotoSwipeLightbox from "photoswipe/lightbox";
 
-  const lightbox = new PhotoSwipeLightbox({
-    gallery: "a.zoomable-image",
-    pswpModule: () => import("photoswipe"),
+  let lightbox: PhotoSwipeLightbox | undefined;
+
+  document.addEventListener("astro:before-swap", () => {
+    lightbox?.destroy();
+    lightbox = undefined;
   });
-  lightbox.init();
+
+  document.addEventListener("astro:page-load", () => {
+    lightbox?.destroy();
+    lightbox = new PhotoSwipeLightbox({
+      gallery: "a.zoomable-image",
+      pswpModule: () => import("photoswipe"),
+    });
+    lightbox.init();
+  });
 </script>
