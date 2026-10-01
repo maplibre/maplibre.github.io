@@ -1,0 +1,169 @@
+---
+title: "MapLibre Newsletter September 2026"
+date: "2026-10-01"
+categories: ["newsletter"]
+authors: [ramya-ragupathy, bart-louwers]
+draft: true
+---
+
+import ZoomableImage from "../../../components/ZoomableImage.astro";
+import ReleaseTable from "../../../components/ReleaseTable.astro";
+import waves from "./waves.webp";
+import polygonLayer from "./polygon-layer.webp";
+import locationIndicator from "./location-indicator.png";
+import eiffelTower from "./eifel-tower.png";
+import fireworks from "./fireworks.webp";
+import flowDirection from "./flow-direction.gif";
+import snowflakes from "./snowflakes.webp";
+import weather from "./weather.gif";
+import terrain from "./terrain.mp4?url";
+import openHarmony from "./openharmony.png";
+
+export const nativeReleases = [
+  {
+    name: "Android",
+    versions: [
+      {
+        label: "13.5.2",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/android-v13.5.2",
+      },
+      {
+        label: "13.6.1",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/android-v13.6.1",
+      },
+      {
+        label: "13.6.1 pre-release",
+        note: "(with plugin API)",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/android-v13.6.1-pre935d410353da9d701ad42c97f2e0c300c8d408b8",
+      },
+    ],
+  },
+  {
+    name: "iOS",
+    versions: [
+      {
+        label: "6.30.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.30.0",
+      },
+      {
+        label: "6.31.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.31.0",
+      },
+    ],
+  },
+];
+
+## MapLibre Native
+
+### Cross-platform Plugin System
+
+An update on the new cross-platform plugin system for MapLibre Native. A first version of the [C API](https://github.com/maplibre/maplibre-native/blob/ba9fc57bc88725d7602fd652e601384e9f2e3183/include/mln/plugin/plugin_api.h) has landed this month! We also already saw various PRs ([#4654](https://github.com/maplibre/maplibre-native/pull/4654), [#4692](https://github.com/maplibre/maplibre-native/pull/4692), [#4665](https://github.com/maplibre/maplibre-native/pull/4665)) that extended the capabilities of the plugin system. This is exactly the approach that we want to take: gradually expand the scope of the plugin system to make sure it fits all the use cases that our users have.
+
+It should be noted that during this development phase the plugin system is not stable yet. Regular builds also do not include it yet (all integration code is guarded with a `MLN_WITH_PLUGINS` build flag). However, for those that want to experiment with the plugin API already, we did put out a pre-release for MapLibre Android that includes it. Please see [this repository](https://github.com/louwers/maplibre-native-plugin-android-example) for an example. MapLibre iOS will follow suit.
+
+Note that these plugins tie directly into the core. The plugins are _cross-platform_, and thanks to the C API, once the API is stable, people will be able to publish plugins that will continue working across versions. We believe that this has the potential to create a true plugin ecosystem for MapLibre Native. By having a powerful plugin system, we allow people to extend the library and experiment, while keeping the core library stable (and small). Below you can find a small taste of some interesting ideas.
+
+<figure
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+    gap: "1rem",
+    alignItems: "center",
+    justifyItems: "center",
+  }}
+>
+  <ZoomableImage
+    src={waves}
+    alt="Waves plugin demo"
+    style={{ width: "100%", height: "auto" }}
+  />
+  <ZoomableImage
+    src={polygonLayer}
+    style={{ width: "100%", height: "auto" }}
+    alt="Polygon layer plugin demo"
+  />
+  <ZoomableImage
+    src={locationIndicator}
+    alt="Location indicator plugin demo"
+    style={{ width: "100%", height: "auto" }}
+  />
+  <ZoomableImage
+    src={eiffelTower}
+    alt="Eiffel Tower plugin demo"
+    style={{ width: "100%", height: "auto" }}
+  />
+  <ZoomableImage
+    src={fireworks}
+    alt="Fireworks plugin demo"
+    style={{ width: "100%", height: "auto" }}
+  />
+  <ZoomableImage
+    src={flowDirection}
+    alt="Flow direction plugin demo"
+    style={{ width: "100%", height: "auto" }}
+  />
+  <ZoomableImage
+    src={snowflakes}
+    alt="Snowflakes plugin demo"
+    style={{ width: "100%", height: "auto" }}
+  />
+  <ZoomableImage
+    src={weather}
+    alt="Weather plugin demo"
+    style={{ width: "100%", height: "auto" }}
+  />
+  <figcaption style={{ gridColumn: "1 / -1", fontSize: "0.9em" }}>
+    Examples of plugins that the new plugin API enables: waves, an{" "}
+    <a href="https://en.wikipedia.org/wiki/Regular_polygon">n-gon</a> layer,
+    custom location indicators, 3D models, fireworks, flow direction, snow and
+    animated symbols (click to enlarge). Thanks to Sargun Vohra for sharing his
+    experiments. Map data from OpenStreetMap and styles based on OpenMapTiles
+    shown.
+  </figcaption>
+</figure>
+
+### Ongoing Terrain3D work
+
+Terrain3D is a work-in-progress, with people still hacking away at the [`feature/terrain-3d`](https://github.com/maplibre/maplibre-native/pull/4190#issuecomment-5782583773) branch until it can be declared feature complete and stable. Patrik Drhlik [decided](https://github.com/maplibre/maplibre-native/pull/4190#issuecomment-5782583773) to become an early adopter and try it out. He shared the following promising video:
+
+<figure>
+  <video
+    src={terrain}
+    controls
+    playsInline
+    style={{ display: "block", width: "50%", height: "auto", margin: "0 auto" }}
+    aria-label="Terrain3D demo"
+  />
+  <figcaption style={{ textAlign: "center", fontSize: "0.9em" }}>
+    Terrain3D in Patrik's <a href="https://mapriot.com/">MapRiot</a> app.
+  </figcaption>
+</figure>
+
+### OpenHarmony Platform
+
+With [#4315](https://github.com/maplibre/maplibre-native/pull/4315) merged we now have a new platform: [OpenHarmony](https://en.wikipedia.org/wiki/OpenHarmony). OpenHarmony has about 20% smartphone market share in [China](https://www.idc.com/resource-center/blog/china-smartphone-market-decline-q2-2026) and about 5% [globally](https://counterpointresearch.com/en/insights/global-smartphone-os-market-share). What makes this platform interesting as well is [Oniro](https://oniroproject.org/). This is an Eclipse Foundation Project that builds on OpenHarmony and is "dedicated to the development of an open source vendor-neutral Operating System (OS) platform".
+
+<figure>
+  <ZoomableImage
+    src={openHarmony}
+    alt="MapLibre Native on OpenHarmony"
+    style={{ maxWidth: "100%", height: "auto" }}
+  />
+  <figcaption style={{ textAlign: "center", fontSize: "0.9em" }}>
+    MapLibre Native running on OpenHarmony, this interactive sample is included
+    in the platform and can use either Vulkan or OpenGL ES.
+  </figcaption>
+</figure>
+
+### Call for MapLibre Accessibility Features
+
+Tim Sylvester implemented the ability to introspect rendered features in [#4460](https://github.com/maplibre/maplibre-native/pull/4460) this month. While this functionality was built primarily with testing purposes in mind, it might offer some opportunities for MapLibre Native to better integrate with accessibility tools such as screen readers. We would be very eager to hear from people willing to [share](https://github.com/maplibre/maplibre-native/discussions/3439) their ideas on how to push such accessibility efforts.
+
+## Other news
+
+- Android can now [load PMTiles directly from APK assets](https://github.com/maplibre/maplibre-native/pull/4602), allowing apps to bundle offline tile archives in this format
+- The [`semiliteral` expression](https://github.com/maplibre/maplibre-native/pull/4604) is now supported in Native, matching GL JS. It allows array-valued properties, such as text offsets, to contain elements calculated using expressions.
+
+### Releases
+
+<ReleaseTable data={nativeReleases} />
