@@ -2,7 +2,7 @@
 title: "MapLibre Newsletter September 2026"
 date: "2026-10-01"
 categories: ["newsletter"]
-authors: [harel-mazor, bart-louwers, birk-skyum, frank-elsinga, ramya-ragupathy]
+authors: [ramya-ragupathy, bart-louwers]
 draft: true
 ---
 
@@ -20,7 +20,13 @@ import openHarmony from "./openharmony.png";
 
 ## MapLibre Native
 
-### Plugin system
+### Cross-platform Plugin System
+
+An update on the new cross-platform plugin system for MapLibre Native. A first version of the [C API](https://github.com/maplibre/maplibre-native/blob/ba9fc57bc88725d7602fd652e601384e9f2e3183/include/mln/plugin/plugin_api.h) has landed this month! We also already saw various PRs ([#4654](https://github.com/maplibre/maplibre-native/pull/4654), [#4692](https://github.com/maplibre/maplibre-native/pull/4692), [#4665](https://github.com/maplibre/maplibre-native/pull/4665)) that extended the capabilities of the plugin system. This is exactly the approach that we want to take: gradually expand the scope of the plugin system to make sure it fits all the use cases that our users have.
+
+It should be noted that during this development phase the plugin system is not stable yet. Regular builds also do not include it yet (all intergration code is guarded with a `MLN_WITH_PLUGINS` build flag). However, for those that want to experiment with the plugin API already, we did put out a pre-release for MapLibre Android that includes it. Please see [this repository](https://github.com/louwers/maplibre-native-plugin-android-example) for an example. MapLibre iOS will follow suit.
+
+Note that these plugins tie directly into the core. The plugins are *cross-platform*, and thanks to the C API, once the API is stable, people will be able to publish plugins that will continue working across versions. We believe that this has the potential to create a true plugin ecosystem for MapLibre Native. By having a powerful plugin system, we allow people to extend the library and experiment, while keeping the core library stable (and small). Below you can find a small taste of some interesting ideas.
 
 <figure
   style={{
@@ -72,14 +78,16 @@ import openHarmony from "./openharmony.png";
     style={{ width: "100%", height: "auto" }}
   />
   <figcaption style={{ gridColumn: "1 / -1", fontSize: "0.9em" }}>
-    Examples of plugins that the new plugin API will enable: waves, an{" "}
-    <a href="https://en.wikipedia.org/wiki/Regular_polygon">n-gon layer</a>,
+    Examples of plugins that the new plugin API enables: waves, an{" "}
+    <a href="https://en.wikipedia.org/wiki/Regular_polygon">n-gon</a> layer,
     custom location indicators, 3D models, fireworks, flow direction, snow and
-    animated symbols. Thanks to Sargun Vohra for sharing his experiments.
+    animated symbols (click to enlarge). Thanks to Sargun Vohra for sharing his experiments. Map data from OpenStreetMap and styles based on OpenMapTiles shown.
   </figcaption>
 </figure>
 
 ### Ongoing Terrain3D work
+
+Terrain3D is a work-in-progress, with people still hacking away at the [`feature/terrain-3d`](https://github.com/maplibre/maplibre-native/pull/4190#issuecomment-5782583773) branch until it can be declared feature complete and stable. Patrik Drhlik is [decided](https://github.com/maplibre/maplibre-native/pull/4190#issuecomment-5782583773) to become an an early adopter and try it out for the [app](https://mapriot.com/). He shared the following promising video:
 
 <video
   src={terrain}
@@ -90,6 +98,8 @@ import openHarmony from "./openharmony.png";
 />
 
 ### OpenHarmony Platform
+
+With [#4315](https://github.com/maplibre/maplibre-native/pull/4315) merged we now have a new platform: [OpenHarmony](https://en.wikipedia.org/wiki/OpenHarmony). OpenHarmony has about 20% smartphone market share in [China](https://www.idc.com/resource-center/blog/china-smartphone-market-decline-q2-2026) and about 5% [globally]https://counterpointresearch.com/en/insights/global-smartphone-os-market-share). What makes this platform interesting as well is [Oniro](https://oniroproject.org/). This is an Eclipse Foundation Project that builds on OpenHarmony and is "dedicated to the development of an open source vendor-neutral Operating System (OS) platform".
 
 <ZoomableImage
   src={openHarmony}
