@@ -7,6 +7,7 @@ draft: true
 ---
 
 import ZoomableImage from "../../../components/ZoomableImage.astro";
+import ReleaseTable from "../../../components/ReleaseTable.astro";
 import waves from "./waves.gif";
 import polygonLayer from "./polygon-layer.gif";
 import locationIndicator from "./location-indicator.png";
@@ -17,6 +18,35 @@ import snowflakes from "./snowflakes.gif";
 import weather from "./weather.gif";
 import terrain from "./terrain.mp4?url";
 import openHarmony from "./openharmony.png";
+
+export const nativeReleases = [
+  {
+    name: "Android",
+    versions: [
+      {
+        label: "13.5.2",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/android-v13.5.2",
+      },
+      {
+        label: "13.6.1",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/android-v13.6.1",
+      },
+    ],
+  },
+  {
+    name: "iOS",
+    versions: [
+      {
+        label: "6.30.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.30.0",
+      },
+      {
+        label: "6.31.0",
+        url: "https://github.com/maplibre/maplibre-native/releases/tag/ios-v6.31.0",
+      },
+    ],
+  },
+];
 
 ## MapLibre Native
 
@@ -108,3 +138,13 @@ With [#4315](https://github.com/maplibre/maplibre-native/pull/4315) merged we no
   alt="MapLibre Native on OpenHarmony"
   style={{ maxWidth: "100%", height: "auto" }}
 />
+
+
+### Call for MapLibre Accessibility Features
+
+Tim Sylvester implemented the ability to introspect rendered features in [#4460](https://github.com/maplibre/maplibre-native/pull/4460) this month. While this functionality was built primarily with testing purposes in mind, it might offer some opportunities for MapLibre Native to better intergrate with accessibility tools such as screen readers. We would be very eager to hear from people willing to [share](https://github.com/maplibre/maplibre-native/discussions/3439) their ideas on how to push such accessibility efforts.
+
+
+### Releases
+
+<ReleaseTable data={nativeReleases} />
