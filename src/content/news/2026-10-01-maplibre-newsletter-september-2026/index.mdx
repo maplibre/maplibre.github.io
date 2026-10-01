@@ -119,25 +119,35 @@ Note that these plugins tie directly into the core. The plugins are _cross-platf
 
 ### Ongoing Terrain3D work
 
-Terrain3D is a work-in-progress, with people still hacking away at the [`feature/terrain-3d`](https://github.com/maplibre/maplibre-native/pull/4190#issuecomment-5782583773) branch until it can be declared feature complete and stable. Patrik Drhlik is [decided](https://github.com/maplibre/maplibre-native/pull/4190#issuecomment-5782583773) to become an an early adopter and try it out for the [app](https://mapriot.com/). He shared the following promising video:
+Terrain3D is a work-in-progress, with people still hacking away at the [`feature/terrain-3d`](https://github.com/maplibre/maplibre-native/pull/4190#issuecomment-5782583773) branch until it can be declared feature complete and stable. Patrik Drhlik [decided](https://github.com/maplibre/maplibre-native/pull/4190#issuecomment-5782583773) to become an early adopter and try it out. He shared the following promising video:
 
-<video
-  src={terrain}
-  controls
-  playsInline
-  style={{ width: "50%", height: "auto" }}
-  aria-label="Terrain3D demo"
-/>
+<figure>
+  <video
+    src={terrain}
+    controls
+    playsInline
+    style={{ display: "block", width: "50%", height: "auto", margin: "0 auto" }}
+    aria-label="Terrain3D demo"
+  />
+  <figcaption style={{ textAlign: "center", fontSize: "0.9em" }}>
+    Terrain3D in Patrik's <a href="https://mapriot.com/">MapRiot</a> app.
+  </figcaption>
+</figure>
 
 ### OpenHarmony Platform
 
 With [#4315](https://github.com/maplibre/maplibre-native/pull/4315) merged we now have a new platform: [OpenHarmony](https://en.wikipedia.org/wiki/OpenHarmony). OpenHarmony has about 20% smartphone market share in [China](https://www.idc.com/resource-center/blog/china-smartphone-market-decline-q2-2026) and about 5% [globally](https://counterpointresearch.com/en/insights/global-smartphone-os-market-share). What makes this platform interesting as well is [Oniro](https://oniroproject.org/). This is an Eclipse Foundation Project that builds on OpenHarmony and is "dedicated to the development of an open source vendor-neutral Operating System (OS) platform".
 
-<ZoomableImage
-  src={openHarmony}
-  alt="MapLibre Native on OpenHarmony"
-  style={{ maxWidth: "100%", height: "auto" }}
-/>
+<figure>
+  <ZoomableImage
+    src={openHarmony}
+    alt="MapLibre Native on OpenHarmony"
+    style={{ maxWidth: "100%", height: "auto" }}
+  />
+  <figcaption style={{ textAlign: "center", fontSize: "0.9em" }}>
+    MapLibre Native running on OpenHarmony.
+  </figcaption>
+</figure>
 
 
 ### Call for MapLibre Accessibility Features
