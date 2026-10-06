@@ -188,9 +188,9 @@ interactive inspector.</p> </div> </div>
 <div style="max-width:600px;margin:2rem auto;text-align:center;padding:0 0.75rem"><div style="background-color:#161b22;border-radius:12px;padding:12px;border:1px solid #30363d"> <img src="/_astro/mlt.C9tXjR80_YGTpW.webp" alt="MapLibre Tiles v2 Inspector" style="width:100%;height:auto;display:block;border-radius:6px" loading="lazy" decoding="async" width="1910" height="1031"></div><p style="margin-top:0.75rem;line-height:1.4"><em style="font-size:0.9rem;color:#8b949e;font-style:italic"><p>MapLibre Tiles v2 Inspector</p></em></p></div>
 <p>In terms of what we are still discussing (please join our slack channel 😉) before we can move for stabilization:</p>
 <ul>
-<li>do we want <code>rANS</code> entropy coding for vertex streams that are smaller, but also,</li>
-<li>does the proposed z coordinate system work for all use cases that are planned?</li>
-<li>and removing the unused Morton encoding variants.</li>
+<li>Do we want <code>rANS</code> entropy coding for vertex streams that are smaller, but also 15% slower to decode and more complex?</li>
+<li>Does the proposed z coordinate system work for all use cases that are planned?</li>
+<li>Do we want to remove the unused Morton encoding variants?</li>
 </ul>
 <h2 id="-maplibre-compose">🎨 MapLibre Compose</h2>
 <p>Over the past couple of months, MapLibre Compose has shipped a shared implementation for Android, iOS, and desktop built on <a href="https://github.com/maplibre/maplibre-native-ffi">MapLibre Native FFI</a>. These releases closed nearly all the previously open issues (about 80!), completed feature parity work for desktop and web, including map styling and proper compositing with Compose UI, added long-requested features including a <a href="https://github.com/maplibre/maplibre-compose/releases/tag/v0.16.0">map snapshotter and imperative styling APIs</a>, plus support and demos for integrating maps with <a href="https://github.com/maplibre/maplibre-compose/pull/1301">Android Auto</a> and <a href="https://github.com/maplibre/maplibre-compose/releases/tag/v0.17.0">CarPlay</a>.</p>
