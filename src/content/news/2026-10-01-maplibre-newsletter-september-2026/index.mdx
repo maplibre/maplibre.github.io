@@ -3,11 +3,16 @@ title: "MapLibre Newsletter September 2026"
 date: "2026-10-01"
 categories: ["newsletter"]
 authors: [ramya-ragupathy, bart-louwers]
-draft: true
+draft: false
 ---
 
+import { Image } from "astro:assets";
 import ZoomableImage from "../../../components/ZoomableImage.astro";
 import ReleaseTable from "../../../components/ReleaseTable.astro";
+import Announcement from "../../../components/Announcement.astro";
+import ContributorGrid from "../../../components/ContributorGrid.astro";
+import mapmeLogo from "/public/img/mapme-logo.svg";
+import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
 import waves from "./waves.webp";
 import polygonLayer from "./polygon-layer.webp";
 import locationIndicator from "./location-indicator.png";
@@ -18,6 +23,7 @@ import snowflakes from "./snowflakes.webp";
 import weather from "./weather.gif";
 import terrain from "./terrain.mp4?url";
 import openHarmony from "./openharmony.png";
+import mlt from "./mlt.png";
 
 export const nativeReleases = [
   {
@@ -53,11 +59,85 @@ export const nativeReleases = [
   },
 ];
 
+<div
+  style={{
+    backgroundColor: "white",
+    padding: "2.5rem 2rem",
+    border: "4px solid #B0BEC5", 
+    borderRadius: "8px",
+    margin: "0 auto 3rem",
+    maxWidth: "960px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "2rem",
+    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.05)"
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "baseline", 
+      gap: "5rem", 
+      flexWrap: "wrap",     
+      width: "100%",
+    }}
+  >
+    <Image
+      src={maplibreLogo}
+      alt="MapLibre logo"
+      style={{
+        height: "50px", 
+        width: "auto",
+        objectFit: "contain",
+      }}
+    />
+    <Image
+      src={mapmeLogo}
+      alt="MapMe logo"
+      style={{
+        height: "55px",
+        width: "auto",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+
+  <div
+    style={{
+      marginTop: "1.5rem", 
+      fontSize: "0.95rem",
+      textAlign: "center",
+      color: "#455A64",
+      fontStyle: "italic",
+      maxWidth: "35rem",
+      lineHeight: "1.4"
+    }}
+  >
+  Sincere thanks to Mapme for their continuous backing since 2024 🤝.
+  </div>
+</div>
+
 ## MapLibre Native
 
 ### Cross-platform Plugin System
 
-An update on the new cross-platform plugin system for MapLibre Native. A first version of the [C API](https://github.com/maplibre/maplibre-native/blob/ba9fc57bc88725d7602fd652e601384e9f2e3183/include/mln/plugin/plugin_api.h) has landed this month! We also already saw various PRs ([#4654](https://github.com/maplibre/maplibre-native/pull/4654), [#4692](https://github.com/maplibre/maplibre-native/pull/4692), [#4665](https://github.com/maplibre/maplibre-native/pull/4665)) that extended the capabilities of the plugin system. This is exactly the approach that we want to take: gradually expand the scope of the plugin system to make sure it fits all the use cases that our users have.
+An update on the new cross-platform plugin system for MapLibre Native.
+
+<Announcement>
+  🚀 A first version of the [C
+  API](https://github.com/maplibre/maplibre-native/blob/ba9fc57bc88725d7602fd652e601384e9f2e3183/include/mln/plugin/plugin_api.h)
+  has landed this month!
+</Announcement>
+We also already saw various PRs
+([#4654](https://github.com/maplibre/maplibre-native/pull/4654),
+[#4692](https://github.com/maplibre/maplibre-native/pull/4692),
+[#4665](https://github.com/maplibre/maplibre-native/pull/4665)) that extended
+the capabilities of the plugin system. This is exactly the approach that we want
+to take: gradually expand the scope of the plugin system to make sure it fits
+all the use cases that our users have.
 
 It should be noted that during this development phase the plugin system is not stable yet. Regular builds also do not include it yet (all integration code is guarded with a `MLN_WITH_PLUGINS` build flag). However, for those that want to experiment with the plugin API already, we did put out a pre-release for MapLibre Android that includes it. Please see [this repository](https://github.com/louwers/maplibre-native-plugin-android-example) for an example. MapLibre iOS will follow suit.
 
@@ -117,7 +197,9 @@ Note that these plugins tie directly into the core. The plugins are _cross-platf
     <a href="https://en.wikipedia.org/wiki/Regular_polygon">n-gon</a> layer,
     custom location indicators, 3D models, fireworks, flow direction, snow and
     animated symbols (click to enlarge). Thanks to Sargun Vohra for sharing his
-    experiments. Map data from OpenStreetMap and styles based on OpenMapTiles
+    experiments. Map data from{" "}
+    <a href="https://www.openstreetmap.org/">OpenStreetMap</a> and styles based
+    on <a href="https://openmaptiles.org/">OpenMapTiles</a>
     shown.
   </figcaption>
 </figure>
@@ -161,9 +243,229 @@ Tim Sylvester implemented the ability to introspect rendered features in [#4460]
 
 ## Other news
 
-- Android can now [load PMTiles directly from APK assets](https://github.com/maplibre/maplibre-native/pull/4602), allowing apps to bundle offline tile archives in this format
+- Android can now [load PMTiles directly from APK assets](https://github.com/maplibre/maplibre-native/pull/4602), allowing apps to bundle offline tile archives in this format.
 - The [`semiliteral` expression](https://github.com/maplibre/maplibre-native/pull/4604) is now supported in Native, matching GL JS. It allows array-valued properties, such as text offsets, to contain elements calculated using expressions.
 
 ### Releases
 
 <ReleaseTable data={nativeReleases} />
+
+## 🌐 MapLibre GL JS
+
+<Announcement>
+
+💪 We did a large sweep this month over the open issues and closed about 80 of them (~25%). We also
+swept through the PRs and revived some stale ones. Many thanks to John Carmack for driving
+this effort!
+
+Additionally we have added support for the [font-faces](https://maplibre.org/maplibre-gl-js/docs/examples/style-labels-with-font-faces/)` style spec property, officially closing one of the last major gaps between native and web.
+
+</Announcement>
+We released 8 versions this month: [6.7](https://github.com/maplibre/maplibre-gl-js/releases#release-v6.7.0), [6.8](https://github.com/maplibre/maplibre-gl-js/releases#release-v6.8.0), [6.9](https://github.com/maplibre/maplibre-gl-js/releases#release-v6.9.0), [6.9.1](https://github.com/maplibre/maplibre-gl-js/releases#release-v6.9.1), [6.10](https://github.com/maplibre/maplibre-gl-js/releases#release-v6.10.0), [6.11](https://github.com/maplibre/maplibre-gl-js/releases#release-v6.11.0), [6.11.1](https://github.com/maplibre/maplibre-gl-js/releases#release-v6.11.1) and [6.11.2](https://github.com/maplibre/maplibre-gl-js/releases#release-v6.11.2).
+These versions are packed with new features, fixes and improvements. Our pace is increasing
+dramatically with the extensive use of AI, but we make sure to fully review and test all the code
+that ships in order to keep our quality high. Check out our AI contribution policy in the [contributing guide](https://github.com/maplibre/maplibre/blob/main/AI_POLICY.md).
+
+Here are some highlights from these releases, although there are too many to list:
+
+- The `[font-faces](https://maplibre.org/maplibre-gl-js/docs/examples/style-labels-with-font-faces/)` style spec property is now supported, which allows using font files with
+  MapLibre. This was one of the last gaps between native and web, and it is now closed.
+- Along with the above addition, we have improved out-of-the-box support for all kinds of complex
+  script languages and made RTL an out-of-the-box feature that doesn't require an external plugin.
+- The terrain feature is finally production-grade: for a long time terrain performance was lacking,
+  especially on mobile devices, and there were a lot of bugs related to "jumps". Recent versions
+  have made it smooth and fast.
+- There were some sky-related bug fixes and improvements, so the sky looks a lot better — try it out!
+- A lot of small performance improvements to increase the Lighthouse ranking.
+
+💙 As always, we would like to thank all the contributors this month, this wouldn't have been
+possible without your help!
+
+<ContributorGrid
+  contributors={[
+    "johncarmack1984",
+    "mondsichtung",
+    "lucaswoj",
+    "lazerg",
+    "miakh",
+    "NEKOYASAN",
+    "hiddewie",
+    "bradymadden97",
+    "giswqs",
+    "AveryanAlex",
+    "cherenkov",
+    "deniial00",
+    "str0kes",
+    "yuiseki",
+    "patte",
+    "birkskyum",
+    "clement-igonet",
+    "Turbo87",
+    "UberMouse",
+    "bigmistqke",
+    "nostrorom",
+    "jokrasno",
+    "vlumi",
+    "spliffone",
+    "avosa",
+    "ArcSolver",
+    "Kanahiro",
+    "schickm",
+    "kirthi-b",
+    "xavierjs",
+    "MannXo",
+    "timsluis",
+    "DoFabien",
+    "Yasser-Ameur",
+    "drakeo338",
+    "zdila",
+  ]}
+/>
+
+## 🦀 Martin
+
+<Announcement>
+  Martin 2.0 is now officially in beta! Test it against your setup and check out
+  our new migration guide.
+</Announcement>
+
+We released 3 versions this month: [1.16.0](https://github.com/maplibre/martin/releases/tag/martin-v1.16.0), [1.16.1](https://github.com/maplibre/martin/releases/tag/martin-v1.16.1) and the first beta of [Martin 2.0 (2.0.0-beta.0)](https://github.com/maplibre/martin/releases/tag/martin-v2.0.0-beta.0).
+We merged more than 150 non-bot PRs, and **Martin 2.0 is now in beta**.
+Please try the beta against your setup and [tell us](https://github.com/maplibre/martin/issues) what breaks.
+We have written a [migration guide](https://maplibre.org/martin/migration-guide/):
+2.0 removes the options that v1.x and v0.x deprecated, changes some defaults and needs PostGIS 3.5 or newer.
+If Martin 1.16 starts without deprecation warnings for you, you're probably fine (the only un-warned change is `martin-cp` -> `martin cp`).
+
+Here are some highlights:
+
+- **Tile grids other than Web Mercator**: PostgreSQL, MBTiles and PMTiles sources can now be served
+  on other grids, such as national or polar ones. Seven grids from the OGC registry are built in
+  (for example `NZTM2000Quad`), and you can define your own in the config.
+- **Server-side rendering is stable**: It is no longer experimental. It has moved out of the
+  default build into the `-full` Docker images and tarballs due to having some shared library version dependencies.
+- **Faster startup**: Martin accepts connections while its sources are still loading, and PostgreSQL discovery does less work per table. `/health` still only reports ready once everything has loaded.
+- **Aliases** for fonts, sprites and tile sources: give a font fallback stack, a sprite set or a
+  set of tile sources one name, and a style can request it like a single source.
+- **CQL2 filters on table sources**: write `filter: population > 100000` on a table instead of
+  writing a SQL function.
+- **A terminal dashboard** shows sources, request rates, a live world map of tile requests and the log. In 2.0 it is on by default in an interactive terminal (`--no-tui` turns it off).
+- `martin-cp` is now the `martin cp` subcommand. It can skip now also skip tiles below an empty tile, which took a world copy from 243s down to 11s on our test database.
+- Performance work on the tile cache: on a warm cache, serving a tile's content dropped from
+  107µs to 29µs.
+- Unstable (feature-gated) work continued on DuckDB/GeoParquet sources (`s3://`, `hf://` and
+  more, `.duckdb` files, hot reload) and on remote COG sources.
+
+As always, we would like to thank all the contributors this month, this wouldn't have been
+possible without your help!
+
+<ContributorGrid
+  contributors={[
+    "johncarmack1984",
+    "CommanderStorm",
+    "deniial00",
+    "AbhijitDoesCoding",
+  ]}
+/>
+
+## MapLibre Tiles (MLT)
+
+<Announcement>
+  📦 Announcement: MLT v2 has evolved from a spec skeleton into a fully working
+  format complete with its own high-performance Rust encoder/decoder, docs, and
+  interactive inspector.
+</Announcement>
+
+This month was about [MLT v2](https://github.com/maplibre/maplibre-tile-spec). It went from a header and metadata skeleton to a working format with its own encoder, decoder, docs and inspector. Everything MLTv2 is still behind the `unstable-v2` feature while there are still unresolved questions (see below).
+
+We shipped [13 releases of mlt-core (0.12.7 -> 0.16.0)](https://crates.io/crates/mlt-core), along with the mlt CLI, the FFI, WASM and Python bindings, and @maplibre/mlt 1.2.1 and 1.3.0.
+
+Here are some highlights, although there are too many to list:
+
+- Every column kind now round-trips in v2. That covers strings, floats, nested properties and m-values. Nested properties use an ORC-style node tree, and a nested node's structure is written once per row instead of once per entry. That saves 13.6% on a group of name\* columns and 9.8% on a bag of all properties.
+- Strings. Dictionaries are front-coded, and a layer can share one dictionary across columns. Together that cuts the whole tile by 18.3% on OpenMapTiles and 21.5% on the tiles that one of our sponsors Amazon provided.
+- Floats. A float column can be stored as a dictionary or with ALP, which is chosen only when every value comes back bit for bit. ALP stores a frame of reference, races FastPFOR against varint for its offsets, and packs its two parameters into a single byte. This cuts decimal columns by 19.5% and makes the parameter search about 10x faster.
+- Smaller headers.
+  - The extent fits in a nibble.
+  - The column and m-value counts share one variant.
+  - Raw streams with a fixed element width no longer store their byte length.
+  - The spare nibble in the layer header now holds the geometry type when a layer has only one. About 60% of layers are like this and no longer write a types stream.
+- Geometry. Dictionary and tessellated layouts have been merged. A layer made only of tessellated polygons stores can store just its triangles, and triangle indices count from the layer's first vertex instead of relatively to the start.
+- Presence and dictionary codes. Dictionary children share their parent's presence bitfield, presence can be run-length encoded again (up to 4% smaller), and dictionary codes are bit-packed when that beats one varint per code.
+- Tile inspector. The new inspector is built on our WASM bindings to the high performance rust encoder/decoder. It shows a hex view of the tile next to a tree of its regions, draws the geometry, loads tiles from a URL, and has filters with live counts. Check it out -> https://maplibre.org/maplibre-tile-spec/inspector/
+- We have also rewritten most of our docs and it should be much more approachable. If something is unclear, that is a bug and we would love your questions.
+- We have also done a bunch of Hardening.
+  - Malformed FSST data, oversized dictionary child counts, vertex index overflow and float encodings that don't fit are now rejected instead of panicking.
+  - Polygon rings with no area are skipped during tessellation.
+  - Tests moved to cargo-nextest, with a big push on coverage of the error paths in the codecs.
+- Cleanup. We removed the Pseudodecimal encoding, which was never implemented, the Java encoding server, the (currently sadly unmaintained) C++ encoder from CI.
+
+<div
+  style={{
+    maxWidth: "600px",
+    margin: "2rem auto",
+    textAlign: "center",
+    padding: "0 0.75rem",
+  }}
+>
+  <div
+    style={{
+      backgroundColor: "#161b22",
+      borderRadius: "12px",
+      padding: "12px",
+      border: "1px solid #30363d",
+    }}
+  >
+    <Image
+      src={mlt}
+      alt="MapLibre Tiles v2 Inspector"
+      style={{
+        width: "100%",
+        height: "auto",
+        display: "block",
+        borderRadius: "6px",
+      }}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <p style={{ marginTop: "0.75rem", lineHeight: "1.4" }}>
+    <em style={{ fontSize: "0.9rem", color: "#8b949e", fontStyle: "italic" }}>
+      MapLibre Tiles v2 Inspector
+    </em>
+
+  </p>
+</div>
+
+In terms of what we are still discussing (please join our slack channel 😉) before we can move for stabilization:
+
+- do we want `rANS` entropy coding for vertex streams that are smaller, but also,
+- does the proposed z coordinate system work for all use cases that are planned?
+- and removing the unused Morton encoding variants.
+
+### MapLibre Compose
+
+Over the past couple of months, MapLibre Compose has shipped a shared implementation for Android, iOS, and desktop built on [MapLibre Native FFI](https://github.com/maplibre/maplibre-native-ffi). These releases closed nearly all the previously open issues (about 80!), completed feature parity work for desktop and web, including map styling and proper compositing with Compose UI, added long-requested features including a [map snapshotter and imperative styling APIs](https://github.com/maplibre/maplibre-compose/releases/tag/v0.16.0), plus support and demos for integrating maps with [Android Auto](https://github.com/maplibre/maplibre-compose/pull/1301) and [CarPlay](https://github.com/maplibre/maplibre-compose/releases/tag/v0.17.0).
+
+[StreetComplete](https://github.com/streetcomplete/StreetComplete), the OpenStreetMap surveying app, has also [merged its migration](https://github.com/streetcomplete/StreetComplete/pull/7088) from direct MapLibre Native Android integration to MapLibre Compose, sharing its map implementation across Android and iOS.
+
+MapLibre Compose is now essentially feature-complete, except for Kotlin Wasm support which is in draft until the next Compose Multiplatform release. The remaining work before 1.0 is improving documentation, performance, finding and squashing bugs, and improving API ergonomics. User feedback is especially important at this stage.
+
+## 🗓️ Monthly meetings
+
+We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
+As an exception, this month we will have it one day earlier to accommodate maintainer's availability.
+
+Upcoming Calls
+
+- MapLibre Native: Oct 13, 2026 – 7:00–8:00 PM Berlin Time (UTC+2)
+- MapLibre GL JS: Oct 13, 2026 – 8:00–9:00 PM Berlin Time (UTC+2)
+
+🌏 MapLibre Eastern Call
+
+Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
+
+- Oct 28, 2026 – 9–10:00 AM UTC
+
+All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
+Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/) and join the `#maplibre` channel.
+We’d love to see you there!
