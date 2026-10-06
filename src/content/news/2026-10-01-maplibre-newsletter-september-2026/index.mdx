@@ -24,6 +24,7 @@ import weather from "./weather.gif";
 import terrain from "./terrain.mp4?url";
 import openHarmony from "./openharmony.png";
 import mlt from "./mlt.png";
+import telAviv from "./telaviv.png";
 
 export const nativeReleases = [
   {
@@ -58,6 +59,8 @@ export const nativeReleases = [
     ],
   },
 ];
+
+Welcome to the September 2026 edition of the MapLibre newsletter! A special thanks to our sponsor, **Mapme**, for their renewed sponsorship and steadfast support since 2024. This month is packed with major milestones across projects. Let's dive right in!
 
 <div
   style={{
@@ -442,13 +445,65 @@ In terms of what we are still discussing (please join our slack channel 😉) be
 - does the proposed z coordinate system work for all use cases that are planned?
 - and removing the unused Morton encoding variants.
 
-### MapLibre Compose
+## 🎨 MapLibre Compose
 
 Over the past couple of months, MapLibre Compose has shipped a shared implementation for Android, iOS, and desktop built on [MapLibre Native FFI](https://github.com/maplibre/maplibre-native-ffi). These releases closed nearly all the previously open issues (about 80!), completed feature parity work for desktop and web, including map styling and proper compositing with Compose UI, added long-requested features including a [map snapshotter and imperative styling APIs](https://github.com/maplibre/maplibre-compose/releases/tag/v0.16.0), plus support and demos for integrating maps with [Android Auto](https://github.com/maplibre/maplibre-compose/pull/1301) and [CarPlay](https://github.com/maplibre/maplibre-compose/releases/tag/v0.17.0).
 
 [StreetComplete](https://github.com/streetcomplete/StreetComplete), the OpenStreetMap surveying app, has also [merged its migration](https://github.com/streetcomplete/StreetComplete/pull/7088) from direct MapLibre Native Android integration to MapLibre Compose, sharing its map implementation across Android and iOS.
 
 MapLibre Compose is now essentially feature-complete, except for Kotlin Wasm support which is in draft until the next Compose Multiplatform release. The remaining work before 1.0 is improving documentation, performance, finding and squashing bugs, and improving API ergonomics. User feedback is especially important at this stage.
+
+## ✨ Community Spotlight
+
+### MapLibre Navigation SDK 5.0.0
+
+Version [5.0.0 of the MapLibre Navigation SDK](https://github.com/maplibre/maplibre-navigation-android/releases/tag/5.0.0) has been released, bringing KMP compatibility and major improvements! Huge thanks to [Fabian Keunecke](https://github.com/Fabi755) for the great work! 🎉
+
+### Tel Aviv 2035
+
+**Tel Aviv 2035:** A 3D map of Tel Aviv-Yafo built in just _one hour_ with MapLibre GL JS at the Fable 5.1 Build Day on September 17, 2026, where it won the Breakthrough track!
+
+- **Repo (MIT):** [github.com/benjddd/fable-build-day-tlv-2026](https://github.com/benjddd/fable-build-day-tlv-2026) (tag `build-day-2026-09-17-winner`; see `MAKING_OF.md`)
+- **Live App:** [tlvnext.com](https://tlvnext.com/?lang=en) | **Short Film:** [Watch here](https://tlvnext.com/films/build-day-2026)
+
+**About the Build:** Built as a one-page web app using MapLibre GL JS `[fill-extrusion](https://maplibre.org/maplibre-gl-js/docs/examples/display-buildings-in-3d/)` over municipality raster orthophotos (1997–2025).
+
+<div
+  style={{
+    maxWidth: "600px",
+    margin: "2rem auto",
+    textAlign: "center",
+    padding: "0 0.75rem",
+  }}
+>
+  <div
+    style={{
+      backgroundColor: "#161b22",
+      borderRadius: "12px",
+      padding: "12px",
+      border: "1px solid #30363d",
+    }}
+  >
+    <Image
+      src={telAviv}
+      alt="Tel Aviv 2035"
+      style={{
+        width: "100%",
+        height: "auto",
+        display: "block",
+        borderRadius: "6px",
+      }}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <p style={{ marginTop: "0.75rem", lineHeight: "1.4" }}>
+    <em style={{ fontSize: "0.9rem", color: "#8b949e", fontStyle: "italic" }}>
+      Tel Aviv 2035: existing buildings coloured by year, with permitted and planned volumes in blue
+    </em>
+
+  </p>
+</div>
 
 ## 🗓️ Monthly meetings
 
