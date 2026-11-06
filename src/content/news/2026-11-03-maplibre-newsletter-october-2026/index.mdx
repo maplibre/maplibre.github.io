@@ -7,31 +7,347 @@ draft: false
 ---
 
 import { Image } from "astro:assets";
-import ZoomableImage from "../../../components/ZoomableImage.astro";
-import ReleaseTable from "../../../components/ReleaseTable.astro";
 import Announcement from "../../../components/Announcement.astro";
 import ContributorGrid from "../../../components/ContributorGrid.astro";
-import mapmeLogo from "/public/img/mapme-logo.svg";
+import microsoftLogo from "/public/img/msft-logo.svg";
 import maplibreLogo from "/public/img/maplibre-logos/maplibre-logo-for-light-bg.svg";
+import crsShowcase from "./crs.png";
+import fcStage from "./fcStage.jpg";
+import fcAudience from "./fcAudience.jpg";
+import fcAboutMe from "./fcAbout.jpg";
+import agentAbout from "./agentAbout.jpeg";
+import agentHiroshima from "./agentHiroshima.jpeg";
 
+export const rowStyle = (min) => ({
+  display: "grid",
+  gridTemplateColumns: `repeat(auto-fit, minmax(min(100%, ${min}px), 1fr))`,
+  gap: "0.5rem",
+  alignItems: "start",
+});
+export const rowImg = {
+  width: "100%",
+  height: "auto",
+  aspectRatio: "4 / 3",
+  objectFit: "cover",
+  margin: 0,
+  display: "block",
+};
+export const caption = {
+  textAlign: "center",
+  fontSize: "0.875rem",
+  marginTop: "0.5rem",
+  fontStyle: "italic",
+  color: "#6b7280",
+};
 
-Welcome to the October 2026 edition of the MapLibre newsletter! A special thanks to our sponsor, Mapme, for their renewed sponsorship and steadfast support since 2024. This month is packed with major milestones across projects. Let's dive right in!
+Welcome to the October 2026 edition of the MapLibre newsletter!
 
+It was a busy month across the ecosystem: the Plugin API landed in stable MapLibre Native releases, MapLibre Native FFI bindings are now published across all major package registries, MapLibre GL JS shipped its most requested feature, experimental custom Coordinate Reference System. Plus, the Style Spec approved new additions, MapLibre Flutter was presented at FlutterCon Berlin, and MapLibre Agent Skills v0.3.0 is out.
+
+A special thanks to our sponsor, Microsoft, for their continued support.
+
+<div
+  style={{
+    backgroundColor: "white",
+    padding: "2.5rem 2rem",
+    border: "4px solid #B0BEC5", 
+    borderRadius: "8px",
+    margin: "0 auto 3rem",
+    maxWidth: "960px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "2rem",
+    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.05)"
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "baseline", 
+      gap: "5rem", 
+      flexWrap: "wrap",     
+      width: "100%",
+    }}
+  >
+    <Image
+      src={maplibreLogo}
+      alt="MapLibre logo"
+      style={{
+        height: "50px", 
+        width: "auto",
+        objectFit: "contain",
+      }}
+    />
+    <Image
+      src={microsoftLogo}
+      alt="Microsoft logo"
+      style={{
+        height: "55px",
+        width: "auto",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+
+  <div
+    style={{
+      marginTop: "1.5rem", 
+      fontSize: "0.95rem",
+      textAlign: "center",
+      color: "#455A64",
+      fontStyle: "italic",
+      maxWidth: "35rem",
+      lineHeight: "1.4"
+    }}
+  >
+  Our thanks to Microsoft for their renewed sponsorship and steadfast support since 2024.
+  </div>
+</div>
+
+## 📱 MapLibre Native
+
+- We now have stable releases that include the [Plugin API](https://github.com/maplibre/maplibre-native/blob/main/include/mln/plugin/plugin_api.h) announced [last month](https://maplibre.org/news/2026-10-01-maplibre-newsletter-september-2026/). For iOS, we distribute it via Swift Package Manager using a [new distribution repository](https://github.com/maplibre/maplibre-ios-with-plugin-api). For MapLibre Android we also released separate plugin-enabled builds (see the [Artifacts overview](https://maplibre.org/maplibre-native/android/examples/artifacts/) in the docs).
+- [MapLibre iOS 7.0.0](https://github.com/maplibre/maplibre-native/releases/tag/ios-v7.0.0) was released. We bumped the minimum iOS version to 15.5. One exciting feature is support for [`global-state`](https://maplibre.org/maplibre-style-spec/expressions/#global-state) expressions. Perhaps less exciting, but very helpful when you need to symbolicate a crash: debug symbols are now included in the XCFramework.
+- Pre-releases for MapLibre iOS and MapLibre Android that [support globe projection](https://github.com/maplibre/maplibre-native/releases?q=-globe&expanded=true) were released last month. Please report any issues in [#4533](https://github.com/maplibre/maplibre-native/pull/4533).
+- Some large strides by Nikko Vellios, Patrik Drhlik, Andrew Calcutt and others have been made on the [`feature/terrain3d`](https://github.com/maplibre/maplibre-native/pull/4190) branch last month. Stay tuned for pre-releases!
+
+## 🌐 MapLibre GL JS
+
+We released versions [v6.12.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v6.12.0), [v6.13.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v6.13.0), [v6.14.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v6.14.0), [v6.15.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v6.15.0) and [v6.16.0](https://github.com/maplibre/maplibre-gl-js/releases/tag/v6.16.0) this month.
+
+<Announcement>
+  🌍 v6.15 ships the project's most requested feature: experimental support for
+  custom Coordinate Reference System(CRS).
+</Announcement>
+
+National grid maps, polar maps and all sorts of world projections are now supported. You can pass in your own projection logic, so it's very flexible.
+
+Explore it in the [showcase](https://makewithmaplibre.com/projections/), and let us know what you think in the [Slack announcement](https://osmus.slack.com/archives/C03TFH5NE83/p1792330301936529). Big thanks to [John Carmack](https://github.com/johncarmack1984) and [Birk Skyum](https://github.com/birkskyum) for getting this over the finish line!
+
+<figure style={{ margin: "1.5rem 0" }}>
+  <Image
+    src={crsShowcase}
+    alt="Grid of maps rendered with custom CRS: national grids such as Australia, France and Great Britain, world projections such as Equal Earth and Mollweide, and polar views of the Arctic and Antarctica"
+    widths={[400, 800, 1200]}
+    sizes="(max-width: 800px) 100vw, 800px"
+    quality={70}
+    style={{ width: "100%", height: "auto", display: "block", margin: 0 }}
+  />
+  <figcaption style={caption}>
+    Custom CRS showcase: national grids, world projections and polar maps
+  </figcaption>
+</figure>
+
+We also added experimental terrain support for custom layers, which improves the [deck.gl](https://deck.gl/) integration.
+
+These versions also ship lots of bug fixes and performance improvements, so make sure to upgrade to the latest version.
+
+Thanks to everyone who contributed this month!
+
+<ContributorGrid
+  contributors={[
+    "Anandb71",
+    "architpai",
+    "sebxt",
+    "birkskyum",
+    "cherenkov",
+    "clement-igonet",
+    "clementperon",
+    "CommanderStorm",
+    "crackalamoo",
+    "Dimononon",
+    "DoFabien",
+    "drakeo338",
+    "erenbati",
+    "heikki",
+    "hiddewie",
+    "ingalls",
+    "johncarmack1984",
+    "k-yle",
+    "lazerg",
+    "lucaswoj",
+    "maartenla",
+    "NEKOYASAN",
+    "samuelsmarason",
+    "sargunv",
+    "SatvikMishra08",
+    "sx4im",
+    "timsluis",
+    "tordans",
+    "yeomin4242",
+    "yulman2207",
+  ]}
+/>
+
+## 🔗 MapLibre Native FFI
+
+MapLibre Native FFI has hit a major milestone; all of its language bindings are now published to their package registries. Kotlin Multiplatform bindings were already on Maven Central, and the C library on GitHub Releases, and now we've also got:
+
+- Dart releases on [pub.dev](https://pub.dev/packages/maplibre_native_ffi)
+- C# releases on [NuGet](https://www.nuget.org/packages/Maplibre.NativeFfi)
+- Go releases on [pkg.go.dev](https://pkg.go.dev/github.com/maplibre/maplibre-native-ffi/bindings/go)
+- Python releases on [PyPI](https://pypi.org/project/maplibre-native-ffi/)
+- Rust releases on [crates.io](https://crates.io/crates/maplibre-native-ffi)
+- Swift releases on [SPI](https://swiftpackageindex.com/maplibre/maplibre-native-ffi-distribution)
+- TypeScript releases on [NPM](https://www.npmjs.com/package/@maplibre/native-ffi) and [OHPM](https://ohpm.openharmony.cn/#/en/detail/@maplibre%2Fnative-ffi-opengl) for the browser, Node, Bun, Deno, Hermes, and ArkTS
+
+[Sargun Vohra](https://github.com/sargunv) also completed internal rework so the library now manages threads that were previously left to the host integration. That change is what made the Flutter integration described in the next section of the newsletter possible. Each language binding is now generated automatically from the C header, which makes it easier to iterate on the API and to maintain or add language bindings.
+
+## 🪶 MapLibre Flutter
+
+### flutter-maplibre
+
+Versions [0.3.7](https://pub.dev/packages/maplibre/changelog#037) and [0.3.7+1](https://pub.dev/packages/maplibre/changelog#0371) for [flutter-maplibre](https://github.com/josxha/flutter-maplibre) were released this month. These are maintenance releases with updated dependencies and a couple of bug fixes.
+
+Work is ongoing for the upcoming `0.4.0` release. The package has been migrated to unified C bindings using [maplibre-native-ffi](https://github.com/maplibre/maplibre-native-ffi), which removed about 160,000 lines of code. Most of that was generated code but it still shows how much complexity the platform-specific SDK bindings added.
+The upcoming release also delivers the most upvoted feature request on the issue tracker: better type safety in the API with statically typed layer properties and statically typed expressions.
+The prerelease is available on pub.dev now: [v0.4.0-pre.1](https://pub.dev/packages/maplibre/versions/0.4.0-pre.1).
+
+<Announcement>
+  Feedback is very welcome! Share it on
+  [GitHub](https://github.com/josxha/flutter-maplibre/issues/new/choose) or in
+  the [`#maplibre-flutter` Slack channel](https://slack.openstreetmap.us/).
+</Announcement>
+
+### flutter-maplibre-gl
+
+#### FlutterCon Berlin
+
+On 9 October, MapLibre Flutter was presented at [FlutterCon](https://www.nextappcon.com/fluttercon) at [next.app devCon](https://www.nextappcon.com/) in Berlin, in the talk [**Chasing Behavioral Parity**](https://www.nextappcon.com/fluttercon-new-speakers/gabriel-palmisano) by Gabriel Palmisano. The [slides](https://gabbopalma.github.io/slides/behavioral-parity/) themselves ran on Flutter, next to a live globe drawn by the plugin. After the talk, many community members joined discussions about the future of the package. Thank you to everyone who stopped by with questions, use cases and ideas.
+
+<figure style={{ margin: "1.5rem 0" }}>
+  <div style={rowStyle(160)}>
+    <Image
+      src={fcStage}
+      alt="On stage at FlutterCon Berlin under the Chasing Behavioral Parity title slide"
+      widths={[400, 800]}
+      sizes="(max-width: 600px) 100vw, 33vw"
+      quality={70}
+      style={rowImg}
+    />
+    <Image
+      src={fcAudience}
+      alt="Asking the room who knows MapLibre Flutter, next to a live MapLibre globe"
+      widths={[400, 800]}
+      sizes="(max-width: 600px) 100vw, 33vw"
+      quality={70}
+      style={rowImg}
+    />
+    <Image
+      src={fcAboutMe}
+      alt="The about-me slide: a MapLibre map flying from Bari to Pesaro to Berlin"
+      widths={[400, 800]}
+      sizes="(max-width: 600px) 100vw, 33vw"
+      quality={70}
+      style={rowImg}
+    />
+  </div>
+  <figcaption style={caption}>
+    Chasing Behavioral Parity at FlutterCon Berlin, 9 October 2026
+  </figcaption>
+</figure>
+
+<Announcement>
+  🎉 [flutter-maplibre-gl 0.28.0](https://pub.dev/packages/maplibre_gl) is
+  coming!
+</Announcement>
+
+The next release closes more than 50 issues since 0.27.0, with one theme: the same call gives the same result on every platform.
+
+- **Typed native bridge:** [Pigeon](https://pub.dev/packages/pigeon)-generated messages replace hand-written method channels on Android and iOS, laying the groundwork for an FFI backend.
+- **Consistent error handling and gestures:** shared error codes across platforms, and feature taps, drags and camera events behave the same everywhere.
+- **New APIs:** `moveLayer`, `setLayerZoomRange`, `setLayersVisibility`, `panInertia`, image sources on Web, F-Droid-friendly Android builds and more.
+- **Updated engines:** MapLibre Native Android 13.7.1, iOS 6.31.0, GL JS 6.14.0.
+
+Most apps upgrade without code changes. See the [migration guide](https://maplibre.org/flutter-maplibre-gl/migration/#upgrading-to-0280) and [docs](https://maplibre.org/flutter-maplibre-gl/) for the exceptions. `maplibre_gl` also passed 150,000 monthly downloads, nearly double August's figure.
+
+## 🤖 MapLibre Agent Skills
+
+MapLibre Agent Skills drops the latest eval-tested MapLibre guidance into agent-assisted coding environments including Cursor, Copilot, Codex and Claude Code so they stop guessing and are kept current beyond their training data.
+
+[v0.3.0](https://github.com/maplibre/maplibre-agent-skills) shipped on 26 October with 11 skills, covering cartography, fonts and glyphs, sprites and icons, terrain, tile sources, PMTiles, source wiring, and Mapbox and v6 migration. It also adds a Claude Code plugin marketplace:
+
+```
+/plugin install maplibre-agent-skills --marketplace maplibre/maplibre-agent-skills
+```
+
+It's been a big quarter. [Stephanie May](https://github.com/mizmay) overhauled the repo's skill structure and eval process and gave a [well-received](https://nickbearman.com/blog/2026-09-foss4g-2026/index.html) [talk at FOSS4G 2026 in Hiroshima](https://talks.osgeo.org/foss4g-2026/talk/RT8SMH/). [John Carmack](https://github.com/johncarmack1984)hardened the CI and automation and fixed countless small issues along the way.
+
+<figure style={{ margin: "1.5rem 0" }}>
+  <div style={{ ...rowStyle(180), maxWidth: "480px", margin: "0 auto" }}>
+    <Image
+      src={agentHiroshima}
+      alt="Stephanie May presenting at FOSS4G 2026 in Hiroshima"
+      widths={[300, 600]}
+      sizes="(max-width: 600px) 100vw, 240px"
+      quality={65}
+      style={rowImg}
+    />
+    <Image
+      src={agentAbout}
+      alt="Slide introducing MapLibre Agent Skills from the FOSS4G 2026 talk"
+      widths={[300, 600]}
+      sizes="(max-width: 600px) 100vw, 240px"
+      quality={65}
+      style={rowImg}
+    />
+  </div>
+  <figcaption style={caption}>
+    Stephanie May presenting MapLibre Agent Skills at FOSS4G 2026, Hiroshima
+  </figcaption>
+</figure>
+
+#### Evals and Automation
+
+- **Drift checks.** A scheduled workflow re-grades the skills, commits dated results, and syncs each skill's `verified` / `provisional` status from the outcome. Since mid-September it has run nearly every week.
+- **Release watch.** A weekly job now files an issue when a new MapLibre release removes, renames or deprecates something a skill still mentions.
+- **Release automation.** The Changelog is automated from a field in the PR template, and the Release workflow regenerates the table of available skills and their eval status each time a release is cut.
+- **AI failure reporting.** Issue and PR templates for AI-failure reports.
+- **Spec compliance.** `validate:skills` checks front matter against the Agent Skills spec.
+
+#### What's next
+
+A [Native/GL JS parity skill](https://github.com/maplibre/maplibre-agent-skills/pull/165) is the next candidate. If you maintain a repo in the MapLibre ecosystem, reach out about guiding coding agents on your contribution practices. We'd love for you to [try the skills](https://github.com/maplibre/maplibre-agent-skills)!
+
+<Announcement>
+  And channels are [open to thoughts, skills, and suggestions from
+  you](https://github.com/maplibre/maplibre-agent-skills/blob/main/CONTRIBUTING.md)
+  🫵 💟
+</Announcement>
+## 🎨 Style Spec
+
+This month we approved:
+
+- [experimental support for `emptyResponse`](https://github.com/maplibre/maplibre-style-spec/pull/1935) to try and support sparse tile matrix by defining better what the server returns as an empty response.
+- [support for `elevation` in `fill-extrusion-color`](https://github.com/maplibre/maplibre-style-spec/pull/1851) to better facilitate coloring buildings by height.
+- [support for `{fill,line}-layer-blend`](https://github.com/maplibre/maplibre-style-spec/pull/1798) to bring more graphics capabilities to the style spec.
+
+We also included the [TileJSON additions to the docs](https://maplibre.org/maplibre-style-spec/tilejson/), clearly marking which parts come from TileJSON 3.0 and which are MapLibre extensions.
+
+<Announcement>
+📝 The MapLibre Style Spec is evolving! Join the discussion on [shadows](https://github.com/maplibre/maplibre-gl-js/discussions/8739), [rooftops](https://github.com/maplibre/maplibre-gl-js/discussions/8734) and immersive 3D, all features we are considering adding to the style spec.
+
+We start with spec changes before implementation so that we can take as much input as possible into account. The best way to move a spec proposal forward is to present it at one of the monthly meetings, so we can shape it together.
+
+</Announcement>
 
 ## 🗓️ Monthly meetings
 
 We continue our regular community calls on the _**second Wednesday**_ of each month, with an additional session on the last Wednesday to better accommodate Asia/Oceania time zones.
 
-Upcoming Calls
+#### Upcoming Calls
 
-- MapLibre Native: Nov 11, 2026 – 7:00–8:00 PM Berlin Time (UTC+2)
-- MapLibre GL JS: Nov 11, 2026 – 8:00–9:00 PM Berlin Time (UTC+2)
+- MapLibre Native: Nov 11, 2026 – 7:00–8:00 PM Berlin Time (UTC+1)
+- MapLibre GL JS: Nov 11, 2026 – 8:00–9:00 PM Berlin Time (UTC+1)
 
-🌏 MapLibre Eastern Call
+#### 🌏 MapLibre Eastern Call
 
 Held on the last Wednesday of the month at an Asia/Oceania-friendly hour:
 
-- Nov 25, 2026 – 9–10:00 AM UTC
+- Nov 25, 2026 – 9:00–10:00 AM UTC
 
 All calls are open to everyone. Zoom links are shared in the MapLibre Slack.
 Not yet a member? Request an invite via the [OpenStreetMap US Slack](https://slack.openstreetmap.us/) and join the `#maplibre` channel.
