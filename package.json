@@ -22,7 +22,7 @@
     "astro": "^7.4.12",
     "astro-icon": "^1.2.0",
     "bootstrap": "^5.3.9",
-    "maplibre-gl": "^6.18.0",
+    "maplibre-gl": "^6.19.0",
     "photoswipe": "^5.4.4",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
